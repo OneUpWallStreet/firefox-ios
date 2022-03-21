@@ -30,8 +30,6 @@ class DismissableNavigationViewController: UINavigationController, OnViewDismiss
 
 extension BrowserViewController: URLBarDelegate, FeatureFlagsProtocol {
     func showTabTray(withFocusOnUnselectedTab tabToFocus: Tab? = nil) {
-        Sentry.shared.clearBreadcrumbs()
-
         updateFindInPageVisibility(visible: false)
 
         self.tabTrayViewController = TabTrayViewController(tabTrayDelegate: self,
@@ -78,7 +76,7 @@ extension BrowserViewController: URLBarDelegate, FeatureFlagsProtocol {
 
     private func shouldShowChronTabs() -> Bool {
         var shouldShowChronTabs = false // default don't show
-        let chronDebugValue = profile.prefs.boolForKey(PrefsKeys.ChronTabsPrefKey)
+        let chronDebugValue = profile.prefs.boolForKey(PrefsKeys.FeatureFlags.ChronologicalTabs)
         let chronLPValue = chronTabsUserResearch?.chronTabsState ?? false
 
         // Only allow chron tabs on iPhone
@@ -94,7 +92,8 @@ extension BrowserViewController: URLBarDelegate, FeatureFlagsProtocol {
                     // Respect LP value
                     shouldShowChronTabs = chronLPValue
                 }
-                profile.prefs.setBool(shouldShowChronTabs, forKey: PrefsKeys.ChronTabsPrefKey)
+                profile.prefs.setBool(shouldShowChronTabs,
+                                      forKey: PrefsKeys.FeatureFlags.ChronologicalTabs)
             }
         }
 
@@ -323,7 +322,11 @@ extension BrowserViewController: URLBarDelegate, FeatureFlagsProtocol {
             Telemetry.default.recordSearch(location: .actionBar, searchEngine: engine.engineID ?? "other")
             GleanMetrics.Search.counts["\(engine.engineID ?? "custom").\(SearchesMeasurement.SearchLocation.actionBar.rawValue)"].add()
             searchTelemetry?.shouldSetUrlTypeSearch = true
-            tab.updateTimerAndObserving(state: .navSearchLoaded, searchTerm: text, searchProviderUrl: searchURL.absoluteString, nextUrl: "")
+            
+            let searchData = TabGroupData(searchTerm: text,
+                                          searchUrl: searchURL.absoluteString,
+                                          nextReferralUrl: "")
+            tab.metadataManager?.updateTimerAndObserving(state: .navSearchLoaded, searchData: searchData)
             finishEditingAndSubmit(searchURL, visitType: VisitType.typed, forTab: tab)
         } else {
             // We still don't have a valid URL, so something is broken. Give up.

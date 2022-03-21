@@ -79,19 +79,15 @@ class FxHomeHorizontalCell: UICollectionViewCell, ReusableCell {
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.backgroundColor = UIColor.clear
-        imageView.layer.cornerRadius = TopSiteCellUX.iconCornerRadius
+        imageView.layer.cornerRadius = TopSiteItemCell.UX.iconCornerRadius
         imageView.layer.masksToBounds = true
     }
 
     private var fallbackFaviconBackground: UIView = .build { view in
-        view.layer.cornerRadius = TopSiteCellUX.cellCornerRadius
-        view.layer.borderWidth = TopSiteCellUX.borderWidth
-        view.layer.shadowOffset = CGSize(width: 0, height: 2)
-        view.layer.shadowRadius = TopSiteCellUX.shadowRadius
+        view.layer.cornerRadius = TopSiteItemCell.UX.cellCornerRadius
+        view.layer.borderWidth = TopSiteItemCell.UX.borderWidth
         view.backgroundColor = UIColor.theme.homePanel.shortcutBackground
-        view.layer.borderColor = TopSiteCellUX.borderColor.cgColor
-        view.layer.shadowColor = UIColor.theme.homePanel.shortcutShadowColor
-        view.layer.shadowOpacity = UIColor.theme.homePanel.shortcutShadowOpacity
+        view.layer.borderColor = TopSiteItemCell.UX.borderColor.cgColor
     }
 
     // Contains the hero image and fallback favicons
@@ -221,9 +217,7 @@ extension FxHomeHorizontalCell: NotificationThemeable {
         }
 
         fallbackFaviconBackground.backgroundColor = UIColor.theme.homePanel.shortcutBackground
-        fallbackFaviconBackground.layer.borderColor = TopSiteCellUX.borderColor.cgColor
-        fallbackFaviconBackground.layer.shadowColor = UIColor.theme.homePanel.shortcutShadowColor
-        fallbackFaviconBackground.layer.shadowOpacity = UIColor.theme.homePanel.shortcutShadowOpacity
+        fallbackFaviconBackground.layer.borderColor = TopSiteItemCell.UX.borderColor.cgColor
         contentView.backgroundColor = UIColor.theme.homePanel.recentlySavedBookmarkCellBackground
     }
 }

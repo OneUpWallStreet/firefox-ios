@@ -15,7 +15,7 @@ enum OneLineTableViewCustomization {
     case inactiveCell
 }
 
-class OneLineTableViewCell: UITableViewCell, NotificationThemeable {
+class OneLineTableViewCell: UITableViewCell, NotificationThemeable, ReusableCell {
     // Tableview cell items
     
     override var indentationLevel: Int {
@@ -61,6 +61,7 @@ class OneLineTableViewCell: UITableViewCell, NotificationThemeable {
 
     lazy var bottomSeparatorView: UIView = .build { separatorLine in
         //separator hidden by default
+        separatorLine.isHidden = true
         separatorLine.backgroundColor = UIColor.Photon.Grey40
     }
     

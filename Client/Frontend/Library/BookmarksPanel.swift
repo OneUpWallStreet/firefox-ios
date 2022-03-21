@@ -86,7 +86,7 @@ class BookmarksPanel: SiteTableViewController, LibraryPanel {
     }
     
     func addNewBookmarkItemAction() {
-        let newBookmark = SingleActionViewModel(title: .BookmarksNewBookmark, iconString: "action_bookmark", tapHandler: { _ in
+        let newBookmark = SingleActionViewModel(title: .BookmarksNewBookmark, iconString: ImageIdentifiers.actionAddBookmark, tapHandler: { _ in
             guard let bookmarkFolder = self.bookmarkFolder else {
                 return
             }
@@ -359,6 +359,7 @@ class BookmarksPanel: SiteTableViewController, LibraryPanel {
         }
 
         let cell = tableView.dequeueReusableCell(withIdentifier: BookmarkNodeCellIdentifier, for: indexPath) as! OneLineTableViewCell
+        
         switch bookmarkNode {
         case let bookmarkFolder as BookmarkFolderData:
             if bookmarkFolder.isRoot, let localizedString = LocalizedRootBookmarkFolderStrings[bookmarkFolder.guid] {
@@ -499,13 +500,13 @@ extension BookmarksPanel: LibraryPanelContextMenu {
         let pinTopSite = SingleActionViewModel(title: .AddToShortcutsActionTitle, iconString: ImageIdentifiers.addShortcut, tapHandler: { _ in
             self.profile.history.addPinnedTopSite(site).uponQueue(.main) { result in
                 if result.isSuccess {
-                    SimpleToast().showAlertWithText(.AppMenuAddPinToShortcutsConfirmMessage, bottomContainer: self.view)
+                    SimpleToast().showAlertWithText(.AppMenu.AddPinToShortcutsConfirmMessage, bottomContainer: self.view)
                 }
             }
         }).items
         actions.append(pinTopSite)
 
-        let removeAction = SingleActionViewModel(title: .RemoveBookmarkContextMenuTitle, iconString: "action_bookmark_remove", tapHandler: { _ in
+        let removeAction = SingleActionViewModel(title: .RemoveBookmarkContextMenuTitle, iconString: ImageIdentifiers.actionRemoveBookmark, tapHandler: { _ in
             self.deleteBookmarkNodeAtIndexPath(indexPath)
             TelemetryWrapper.recordEvent(category: .action, method: .delete, object: .bookmark, value: .bookmarksPanel, extras: ["gesture": "long-press"])
         }).items

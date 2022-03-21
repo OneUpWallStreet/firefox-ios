@@ -9,6 +9,8 @@ struct JumpBackInCollectionCellUX {
     static let verticalCellSpacing: CGFloat = 8
     static let iPadHorizontalSpacing: CGFloat = 48
     static let iPadCellSpacing: CGFloat = 16
+    static let iPhoneLandscapeCellWidth: CGFloat = 0.475
+    static let iPhonePortraitCellWidth: CGFloat = 0.95
 }
 
 class FxHomeJumpBackInCollectionCell: UICollectionViewCell, ReusableCell {
@@ -25,6 +27,10 @@ class FxHomeJumpBackInCollectionCell: UICollectionViewCell, ReusableCell {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(FxHomeHorizontalCell.self, forCellWithReuseIdentifier: FxHomeHorizontalCell.cellIdentifier)
+        collectionView.contentInset = UIEdgeInsets(top: HistoryHighlightsCollectionCellUX.verticalPadding,
+                                                   left: HistoryHighlightsCollectionCellUX.horizontalPadding,
+                                                   bottom: HistoryHighlightsCollectionCellUX.verticalPadding,
+                                                   right: HistoryHighlightsCollectionCellUX.horizontalPadding)
 
         return collectionView
     }()
@@ -55,9 +61,9 @@ class FxHomeJumpBackInCollectionCell: UICollectionViewCell, ReusableCell {
         contentView.addSubview(collectionView)
 
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2),
+            collectionView.topAnchor.constraint(equalTo: contentView.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2),
+            collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
@@ -112,7 +118,7 @@ extension FxHomeJumpBackInCollectionCell: UICollectionViewDataSource {
         let site = Site(url: firstGroupItem?.lastKnownUrl?.absoluteString ?? "", title: firstGroupItem?.lastTitle ?? "")
 
         let descriptionText = String.localizedStringWithFormat(.FirefoxHomepage.JumpBackIn.GroupSiteCount, group.groupedItems.count)
-        let faviconImage = UIImage(imageLiteralResourceName: "recently_closed").withRenderingMode(.alwaysTemplate)
+        let faviconImage = UIImage(imageLiteralResourceName: ImageIdentifiers.stackedTabsIcon).withRenderingMode(.alwaysTemplate)
         let cellViewModel = FxHomeHorizontalCellViewModel(titleText: group.searchTerm.localizedCapitalized,
                                                           descriptionText: descriptionText,
                                                           tag: indexPath.item,

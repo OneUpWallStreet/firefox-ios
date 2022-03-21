@@ -226,7 +226,7 @@ class TelemetryWrapper {
             GleanMetrics.Preferences.closePrivateTabs.set(false)
         }
         // Pocket stories visible
-        if let pocketStoriesVisible = prefs.boolForKey(PrefsKeys.ASPocketStoriesVisible) {
+        if let pocketStoriesVisible = prefs.boolForKey(PrefsKeys.FeatureFlags.ASPocketStories) {
             GleanMetrics.ApplicationServices.pocketStoriesVisible.set(pocketStoriesVisible)
         } else {
             GleanMetrics.ApplicationServices.pocketStoriesVisible.set(true)
@@ -382,6 +382,8 @@ extension TelemetryWrapper {
         case syncSignIn = "sync-sign-in"
         case syncCreateAccount = "sync-create-account"
         case libraryPanel = "library-panel"
+        case navigateToGroupHistory = "navigate-to-group-history"
+        case selectedHistoryItem = "selected-history-item"
         case sharePageWith = "share-page-with"
         case sendToDevice = "send-to-device"
         case copyAddress = "copy-address"
@@ -430,6 +432,8 @@ extension TelemetryWrapper {
         case tabView = "tab-view"
         case bookmarksPanel = "bookmarks-panel"
         case historyPanel = "history-panel"
+        case historyPanelNonGroupItem = "history-panel-non-grouped-item"
+        case historyPanelGroupedItem = "history-panel-grouped-item"
         case readingPanel = "reading-panel"
         case downloadsPanel = "downloads-panel"
         case syncPanel = "sync-panel"
@@ -657,9 +661,14 @@ extension TelemetryWrapper {
         case (.action, .view, .pocketSectionImpression, _, _):
             GleanMetrics.Pocket.sectionImpressions.add()
 
-        // MARK: Library
+        // MARK: Library Panel
         case (.action, .tap, .libraryPanel, let type?, _):
             GleanMetrics.Library.panelPressed[type.rawValue].add()
+        // History Panel related
+        case (.action, .navigate, .navigateToGroupHistory, _, _):
+            GleanMetrics.History.groupList.add()
+        case (.action, .tap, .selectedHistoryItem, let type?, _):
+            GleanMetrics.History.selectedItem[type.rawValue].add()
         // MARK: Sync
         case (.action, .open, .syncTab, _, _):
             GleanMetrics.Sync.openTab.add()
@@ -685,7 +694,7 @@ extension TelemetryWrapper {
             GleanMetrics.AppMenu.nightModeEnabled.add()
         case (.action, .tap, .nightModeDisabled, _, _):
             GleanMetrics.AppMenu.nightModeDisabled.add()
-        case (.action, .tap, .whatsNew, _, _):
+        case (.action, .open, .whatsNew, _, _):
             GleanMetrics.AppMenu.whatsNew.add()
         case (.action, .open, .settings, _, _):
             GleanMetrics.AppMenu.settings.add()
@@ -833,8 +842,8 @@ extension TelemetryWrapper {
         case (.action, .tap, .wallpaperSettings, .wallpaperSelected, let extras):
             if let name = extras?[EventExtraKey.wallpaperName.rawValue] as? String,
                let type = extras?[EventExtraKey.wallpaperType.rawValue] as? String {
-                GleanMetrics.WallpaperAnalytics.cycleWallpaperButton.record(
-                    GleanMetrics.WallpaperAnalytics.CycleWallpaperButtonExtra(
+                GleanMetrics.WallpaperAnalytics.wallpaperSelected.record(
+                    GleanMetrics.WallpaperAnalytics.WallpaperSelectedExtra(
                         wallpaperName: name,
                         wallpaperType: type
                     )
@@ -879,8 +888,8 @@ extension TelemetryWrapper {
         value: EventValue?,
         extras: [String: Any]?
     ) {
-            let msg = "Uninstrumented metric recorded: \(category), \(method), \(object), \(value), \(String(describing: extras))"
-            Sentry.shared.send(message: msg, severity: .debug)
+        let msg = "Uninstrumented metric recorded: \(category), \(method), \(object), \(String(describing: value)), \(String(describing: extras))"
+        Sentry.shared.send(message: msg, severity: .debug)
     }
 }
 

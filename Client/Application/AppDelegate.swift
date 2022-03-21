@@ -223,11 +223,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             shouldPerformAdditionalDelegateHandling = false
         }
 
-        // Force the ToolbarTextField in LTR mode - without this change the UITextField's clear
-        // button will be in the incorrect position and overlap with the input text. Not clear if
-        // that is an iOS bug or not.
-        AutocompleteTextField.appearance().semanticContentAttribute = .forceLeftToRight
-
         pushNotificationSetup()
 
         // user research variable setup for Chron tabs user research
@@ -430,7 +425,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // only if iOS 14 is available.
         if #available(iOS 14.0, *) {
             guard let profile = profile else { return }
-            TopSitesHandler.writeWidgetKitTopSites(profile: profile)
+            TopSitesHelper.writeWidgetKitTopSites(profile: profile)
         }
     }
 

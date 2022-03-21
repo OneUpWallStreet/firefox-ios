@@ -54,6 +54,9 @@ let EnterNewBookmarkTitleAndUrl = "EnterNewBookmarkTitleAndUrl"
 let RequestDesktopSite = "RequestDesktopSite"
 let RequestMobileSite = "RequestMobileSite"
 
+let m1Rosetta = "rosetta"
+let intel = "intel"
+
 // These are in the exact order they appear in the settings
 // screen. XCUIApplication loses them on small screens.
 // This list should only be for settings screens that can be navigated to
@@ -178,6 +181,8 @@ class Action {
     static let PinToTopSitesPAM = "PinToTopSitesPAM"
     static let CopyAddressPAM = "CopyAddressPAM"
     static let ShareBrowserTabMenuOption = "ShareBrowserTabMenuOption"
+    static let SentToDevice = "SentToDevice"
+    static let AddToReadingListBrowserTabMenu = "AddToReadingListBrowserTabMenu"
 
     static let SelectAutomatically = "SelectAutomatically"
     static let SelectManually = "SelectManually"
@@ -315,9 +320,11 @@ func createScreenGraph(for test: XCTestCase, with app: XCUIApplication) -> MMScr
     map.addScreenState(URLBarLongPressMenu) { screenState in
         let menu = app.tables["Context Menu"].firstMatch
 
-        screenState.gesture(forAction: Action.LoadURLByPasting, Action.LoadURL) { userState in
-            UIPasteboard.general.string = userState.url ?? defaultURL
-            menu.otherElements[ImageIdentifiers.pasteAndGo].firstMatch.tap()
+        if !(processIsTranslatedStr() == m1Rosetta) {
+            screenState.gesture(forAction: Action.LoadURLByPasting, Action.LoadURL) { userState in
+                UIPasteboard.general.string = userState.url ?? defaultURL
+                menu.otherElements[ImageIdentifiers.pasteAndGo].firstMatch.tap()
+            }
         }
 
         screenState.gesture(forAction: Action.SetURLByPasting) { userState in
@@ -478,7 +485,7 @@ func createScreenGraph(for test: XCTestCase, with app: XCUIApplication) -> MMScr
 
     map.addScreenState(MobileBookmarksAdd) { screenState in
         screenState.gesture(forAction: Action.AddNewBookmark, transitionTo: EnterNewBookmarkTitleAndUrl) { userState in
-            app.tables.cells["action_bookmark"].tap()
+            app.tables.cells[ImageIdentifiers.actionAddBookmark].tap()
         }
         screenState.gesture(forAction: Action.AddNewFolder) { userState in
             app.tables.cells["bookmarkFolder"].tap()
@@ -495,16 +502,20 @@ func createScreenGraph(for test: XCTestCase, with app: XCUIApplication) -> MMScr
     }
 
     map.addScreenState(HomePanel_TopSites) { screenState in
-        let topSites = app.cells["TopSitesCell"]
-        screenState.press(topSites.cells.matching(identifier: "TopSite").element(boundBy: 0), to: TopSitesPanelContextMenu)
+        let topSites = app.cells[AccessibilityIdentifiers.FirefoxHomepage.TopSites.section]
+        screenState.press(topSites.cells.matching(identifier: AccessibilityIdentifiers.FirefoxHomepage.TopSites.itemCell).element(boundBy: 0), to: TopSitesPanelContextMenu)
 
     }
 
     map.addScreenState(LibraryPanel_History) { screenState in
-        screenState.press(app.tables["History List"].cells.element(boundBy: 2), to: HistoryPanelContextMenu)
-        screenState.tap(app.cells["HistoryPanel.recentlyClosedCell"], to: HistoryRecentlyClosed)
+        screenState.press(app.tables[AccessibilityIdentifiers.LibraryPanels.HistoryPanel.tableView].cells.element(boundBy: 2), to: HistoryPanelContextMenu)
+        screenState.tap(app.cells[AccessibilityIdentifiers.LibraryPanels.HistoryPanel.recentlyClosedCell], to: HistoryRecentlyClosed)
         screenState.gesture(forAction: Action.ClearRecentHistory) { userState in
-            app.tables["History List"].cells.matching(identifier: "HistoryPanel.clearHistory").element(boundBy: 0).tap()
+            app.tables[AccessibilityIdentifiers.LibraryPanels.HistoryPanel.tableView]
+                .cells
+                .matching(identifier: AccessibilityIdentifiers.LibraryPanels.HistoryPanel.clearHistoryCell)
+                .element(boundBy: 0)
+                .tap()
         }
         screenState.gesture(forAction: Action.CloseHistoryListPanel, transitionTo: HomePanelsScreen) { userState in
                 app.buttons["Done"].tap()
@@ -947,6 +958,8 @@ func createScreenGraph(for test: XCTestCase, with app: XCUIApplication) -> MMScr
 
         screenState.tap(app.tables.otherElements[ImageIdentifiers.whatsNew], forAction: Action.OpenWhatsNewPage) { userState in
         }
+        screenState.tap(app.tables.otherElements[ImageIdentifiers.sendToDevice], forAction: Action.SentToDevice) { userState in
+        }
 
         screenState.tap(app.tables.otherElements[ImageIdentifiers.share], forAction: Action.ShareBrowserTabMenuOption) {
             userState in
@@ -962,6 +975,7 @@ func createScreenGraph(for test: XCTestCase, with app: XCUIApplication) -> MMScr
         screenState.tap(app.tables.otherElements[ImageIdentifiers.copyLink], forAction: Action.CopyAddressPAM)
 
         screenState.tap(app.tables.otherElements[ImageIdentifiers.addToBookmark], forAction: Action.BookmarkThreeDots, Action.Bookmark)
+        screenState.tap(app.tables.otherElements[ImageIdentifiers.addToReadingList], forAction: Action.AddToReadingListBrowserTabMenu)
 
         screenState.dismissOnUse = true
         screenState.backAction = cancelBackAction
@@ -976,7 +990,11 @@ extension MMNavigator where T == FxUserState {
         UIPasteboard.general.string = urlString
         userState.url = urlString
         userState.waitForLoading = waitForLoading
-        performAction(Action.LoadURL)
+        if processIsTranslatedStr() == m1Rosetta {
+            performAction(Action.LoadURLByTyping)
+        } else {
+            performAction(Action.LoadURL)
+        }
     }
 
     // Opens a URL in a new tab.
@@ -1013,38 +1031,38 @@ extension MMNavigator where T == FxUserState {
             self.goto(HomePanelsScreen)
         }
     }
-
-    func browserPerformAction(_ view: BrowserPerformAction) {
-        let BrowserMenuOptions = [.openTopSitesOption, .toggleHideImages, .toggleNightMode, BrowserPerformAction.openSettingsOption]
-
-        let app = XCUIApplication()
-
-        if BrowserMenuOptions.contains(view) {
-            waitForExistence(app.buttons[AccessibilityIdentifiers.Toolbar.settingsMenuButton], timeout: 5)
-            self.goto(BrowserTabMenu)
-            app.tables["Context Menu"].otherElements[view.rawValue].tap()
-        }
-    }
 }
-enum BrowserPerformAction: String {
-    // Tab menu (site actions)
-    case toggleBookmarkOption = "menu-Bookmark"
-    case addReadingListOption = "addToReadingList"
-    case copyURLOption = "menu-Copy-Link"
-    case findInPageOption = "menu-FindInPage"
-    case toggleDesktopOption = "menu-RequestDesktopSite"
-    case pinToTopSitesOption = "action_pin"
-    case sendToDeviceOption = "menu-Send-to-Device"
-    case shareOption = "action_share"
 
-    // Tab Menu (home page and site actions)
-    case openTopSitesOption = "menu-panel-TopSites"
-    case openBookMarksOption = "menu-panel-Bookmarks"
-    case openHistoryOption = "menu-panel-History"
-    case openReadingListOption = "menu-panel-ReadingList"
-    case toggleHideImages = "menu-NoImageMode"
-    case toggleNightMode = "menu-NightMode"
-    case openSettingsOption = "menu-Settings"
+// Temporary code to detect the MacOS where tests are running
+// and so load websites one way or the other as per the condition above
+// in the openURLBar method. This is due to issue:
+// https://github.com/mozilla-mobile/firefox-ios/issues/9910#issue-1120710818
+
+let NATIVE_EXECUTION    = Int32(0)
+let EMULATED_EXECUTION   = Int32(1)
+
+func processIsTranslated() ->Int32 {
+    var ret = Int32(0)
+    var size = ret.bitWidth
+    let result = sysctlbyname("sysctl.proc_translated", &ret, &size, nil, 0)
+    if result == -1 {
+        if (errno == ENOENT){
+          return 0
+        }
+        return -1
+      }
+    return ret
+}
+
+func processIsTranslatedStr() -> String {
+    switch processIsTranslated() {
+    case NATIVE_EXECUTION:
+        return "native"
+    case EMULATED_EXECUTION:
+        return "rosetta"
+    default:
+        return "unkown"
+    }
 }
 
 extension XCUIElement {

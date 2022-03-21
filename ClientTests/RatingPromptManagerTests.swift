@@ -5,7 +5,6 @@
 import XCTest
 import StoreKit
 import Shared
-import Sentry
 import Storage
 
 @testable import Client
@@ -16,17 +15,12 @@ class RatingPromptManagerTests: XCTestCase {
     var promptManager: RatingPromptManager!
     var mockProfile: MockProfile!
     var createdGuids: [String] = []
+    var sentry: CrashingMockSentryClient!
 
     override func setUp() {
         super.setUp()
 
         urlOpenerSpy = URLOpenerSpy()
-        mockProfile = MockProfile(databasePrefix: "ratingPromptManager")
-        mockProfile._reopen()
-
-        // Make sure engine is set to Google
-        let googleEngine = mockProfile.searchEngines.orderedEngines.first(where: { $0.shortName == "Google" })!
-        mockProfile.searchEngines.defaultEngine = googleEngine
     }
 
     override func tearDown() {
@@ -35,9 +29,9 @@ class RatingPromptManagerTests: XCTestCase {
         createdGuids = []
         promptManager?.reset()
         promptManager = nil
-        mockProfile._shutdown()
+        mockProfile?._shutdown()
         mockProfile = nil
-        Sentry.shared.client = nil
+        sentry = nil
         urlOpenerSpy = nil
     }
 
@@ -78,7 +72,7 @@ class RatingPromptManagerTests: XCTestCase {
 
     func testShouldShowPrompt_sentryHasCrashedInLastSession_returnsFalse() {
         setupEnvironment(isBrowserDefault: true)
-        Sentry.shared.client = try! CrashingMockSentryClient()
+        sentry?.enableCrashOnLastLaunch = true
 
         promptManager.showRatingPromptIfNeeded()
         XCTAssertEqual(ratingPromptOpenCount, 0)
@@ -91,8 +85,8 @@ class RatingPromptManagerTests: XCTestCase {
     }
 
     func testShouldShowPrompt_hasTPStrict_returnsTrue() {
-        mockProfile.prefs.setString(BlockingStrength.strict.rawValue, forKey: ContentBlockingConfig.Prefs.StrengthKey)
         setupEnvironment()
+        mockProfile.prefs.setString(BlockingStrength.strict.rawValue, forKey: ContentBlockingConfig.Prefs.StrengthKey)
 
         promptManager.showRatingPromptIfNeeded()
         XCTAssertEqual(ratingPromptOpenCount, 1)
@@ -101,32 +95,32 @@ class RatingPromptManagerTests: XCTestCase {
     // MARK: Bookmarks
 
     func testShouldShowPrompt_hasNotMinimumMobileBookmarksCount_returnsFalse() {
-        createBookmarks(bookmarkCount: 2, withRoot: BookmarkRoots.MobileFolderGUID)
         setupEnvironment()
+        createBookmarks(bookmarkCount: 2, withRoot: BookmarkRoots.MobileFolderGUID)
         updateData(expectedRatingPromptOpenCount: 0)
     }
 
     func testShouldShowPrompt_hasMinimumMobileBookmarksCount_returnsTrue() {
-        createBookmarks(bookmarkCount: 5, withRoot: BookmarkRoots.MobileFolderGUID)
         setupEnvironment()
+        createBookmarks(bookmarkCount: 5, withRoot: BookmarkRoots.MobileFolderGUID)
         updateData(expectedRatingPromptOpenCount: 1)
     }
 
     func testShouldShowPrompt_hasOtherBookmarksCount_returnsFalse() {
-        createBookmarks(bookmarkCount: 5, withRoot: BookmarkRoots.ToolbarFolderGUID)
         setupEnvironment()
+        createBookmarks(bookmarkCount: 5, withRoot: BookmarkRoots.ToolbarFolderGUID)
         updateData(expectedRatingPromptOpenCount: 0)
     }
 
     func testShouldShowPrompt_has5FoldersInMobileBookmarks_returnsFalse() {
-        createFolders(folderCount: 5, withRoot: BookmarkRoots.MobileFolderGUID)
         setupEnvironment()
+        createFolders(folderCount: 5, withRoot: BookmarkRoots.MobileFolderGUID)
         updateData(expectedRatingPromptOpenCount: 0)
     }
 
     func testShouldShowPrompt_has5SeparatorsInMobileBookmarks_returnsFalse() {
-        createSeparators(separatorCount: 5, withRoot: BookmarkRoots.MobileFolderGUID)
         setupEnvironment()
+        createSeparators(separatorCount: 5, withRoot: BookmarkRoots.MobileFolderGUID)
         updateData(expectedRatingPromptOpenCount: 0)
     }
 
@@ -166,11 +160,11 @@ class RatingPromptManagerTests: XCTestCase {
 
 private extension RatingPromptManagerTests {
 
-    func createFolders(folderCount: Int, withRoot root: String) {
+    func createFolders(folderCount: Int, withRoot root: String, file: StaticString = #filePath, line: UInt = #line) {
         (1...folderCount).forEach { index in
             mockProfile.places.createFolder(parentGUID: root, title: "Folder \(index)", position: nil).uponQueue(.main) { guid in
                 guard let guid = guid.successValue else {
-                    XCTFail("CreateFolder method did not return GUID")
+                    XCTFail("CreateFolder method did not return GUID", file: file, line: line)
                     return
                 }
                 self.createdGuids.append(guid)
@@ -185,11 +179,11 @@ private extension RatingPromptManagerTests {
         }
     }
 
-    func createSeparators(separatorCount: Int, withRoot root: String) {
+    func createSeparators(separatorCount: Int, withRoot root: String, file: StaticString = #filePath, line: UInt = #line) {
         (1...separatorCount).forEach { index in
             mockProfile.places.createSeparator(parentGUID: root, position: nil).uponQueue(.main) { guid in
                 guard let guid = guid.successValue else {
-                    XCTFail("CreateFolder method did not return GUID")
+                    XCTFail("CreateFolder method did not return GUID", file: file, line: line)
                     return
                 }
                 self.createdGuids.append(guid)
@@ -222,16 +216,16 @@ private extension RatingPromptManagerTests {
         }
     }
 
-    func updateData(expectedRatingPromptOpenCount: Int) {
+    func updateData(expectedRatingPromptOpenCount: Int, file: StaticString = #filePath, line: UInt = #line) {
         let expectation = self.expectation(description: "Rating prompt manager data is loaded")
         promptManager.updateData(dataLoadingCompletion: { [weak self] in
             guard let promptManager = self?.promptManager else {
-                XCTFail("Should have reference to promptManager")
+                XCTFail("Should have reference to promptManager", file: file, line: line)
                 return
             }
 
             promptManager.showRatingPromptIfNeeded()
-            XCTAssertEqual(self?.ratingPromptOpenCount, expectedRatingPromptOpenCount)
+            XCTAssertEqual(self?.ratingPromptOpenCount, expectedRatingPromptOpenCount, file: file, line: line)
             expectation.fulfill()
         })
         waitForExpectations(timeout: 5, handler: nil)
@@ -245,9 +239,10 @@ private extension RatingPromptManagerTests {
     func setupEnvironment(numberOfSession: Int32 = 5,
                           hasCumulativeDaysOfUse: Bool = true,
                           isBrowserDefault: Bool = false,
-                          hasSyncAccount: Bool = false) {
+                          functionName: String = #function) {
+        mockProfile = MockProfile(databasePrefix: functionName)
+        mockProfile._reopen()
 
-        mockProfile.hasSyncableAccountMock = hasSyncAccount
         mockProfile.prefs.setInt(numberOfSession, forKey: PrefsKeys.SessionCount)
         setupPromptManager(hasCumulativeDaysOfUse: hasCumulativeDaysOfUse)
         RatingPromptManager.isBrowserDefault = isBrowserDefault
@@ -255,8 +250,10 @@ private extension RatingPromptManagerTests {
 
     func setupPromptManager(hasCumulativeDaysOfUse: Bool) {
         let mockCounter = CumulativeDaysOfUseCounterMock(hasCumulativeDaysOfUse)
+        sentry = CrashingMockSentryClient()
         promptManager = RatingPromptManager(profile: mockProfile,
-                                            daysOfUseCounter: mockCounter)
+                                            daysOfUseCounter: mockCounter,
+                                            sentry: sentry)
     }
 
     func createSite(number: Int) -> Site {
@@ -286,14 +283,11 @@ class CumulativeDaysOfUseCounterMock: CumulativeDaysOfUseCounter {
 }
 
 // MARK: - CrashingMockSentryClient
-class CrashingMockSentryClient: Client {
-
-    convenience init() throws {
-        try self.init(dsn: "https://public@sentry.example.com/1")
-    }
-
-    override func crashedLastLaunch() -> Bool {
-        return true
+class CrashingMockSentryClient: SentryProtocol {
+    var enableCrashOnLastLaunch = false
+    
+    var crashedLastLaunch: Bool {
+        return enableCrashOnLastLaunch
     }
 }
 

@@ -13,7 +13,7 @@ enum InactiveTabSection: Int, CaseIterable {
     case closeAllTabsButton
 }
 
-protocol InactiveTabsDelegate {
+protocol InactiveTabsDelegate: AnyObject {
     func toggleInactiveTabSection(hasExpanded: Bool)
     func didSelectInactiveTab(tab: Tab?)
     func didTapCloseAllTabs()
@@ -35,7 +35,7 @@ class InactiveTabCell: UICollectionViewCell, NotificationThemeable, UITableViewD
     let InactiveTabsCloseAllButtonIdentifier = "InactiveTabsCloseAllButtonIdentifier"
     let InactiveTabsHeaderIdentifier = "InactiveTabsHeaderIdentifier"
     var hasExpanded = false
-    var delegate: InactiveTabsDelegate?
+    weak var delegate: InactiveTabsDelegate?
     
     // Views
     lazy var tableView: UITableView = {
@@ -132,6 +132,8 @@ class InactiveTabCell: UICollectionViewCell, NotificationThemeable, UITableViewD
             cell.customization = .inactiveCell
             cell.backgroundColor = .clear
             cell.accessoryView = nil
+            cell.bottomSeparatorView.isHidden = false
+            
             guard let tab = inactiveTabsViewModel?.inactiveTabs[indexPath.item] else { return cell }
             cell.titleLabel.text = tab.displayTitle
             cell.leftImageView.setImageAndBackground(forIcon: tab.displayFavicon, website: getTabDomainUrl(tab: tab)) {}
@@ -302,9 +304,8 @@ class InactiveTabHeader: UITableViewHeaderFooterView, NotificationThemeable {
     }
 
     var titleInsets: CGFloat {
-        get {
-            return UIScreen.main.bounds.size.width == self.frame.size.width && UIDevice.current.userInterfaceIdiom == .pad ? FirefoxHomeHeaderViewUX.insets : FirefoxHomeUX.minimumInsets
-        }
+        let isHomeHeaderInset = (UIScreen.main.bounds.size.width == self.frame.size.width) && UIDevice.current.userInterfaceIdiom == .pad
+        return isHomeHeaderInset ? FirefoxHomeHeaderViewUX.insets : FirefoxHomeViewModel.UX.minimumInsets
     }
 
     override func prepareForReuse() {
