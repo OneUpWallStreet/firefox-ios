@@ -16,6 +16,10 @@ enum ContextualHintViewType: String {
     case jumpBackIn = "JumpBackIn"
     case inactiveTabs = "InactiveTabs"
     case toolbarLocation = "ToolbarLocation"
+
+    var hintExtraForToolbarLocation: String {
+        BrowserViewController.foregroundBVC().isBottomSearchBar ? "ToolbarLocationBottom" : "ToolbarLocationTop"
+    }
 }
 
 class ContextualHintViewModel {
@@ -25,12 +29,11 @@ class ContextualHintViewModel {
     // MARK: - Properties
     var hintType: ContextualHintViewType
     var timer: Timer?
-    var presentFromTimer: (() -> Void)? = nil
+    var presentFromTimer: (() -> Void)?
     private var profile: Profile
     private var hasSentTelemetryEvent = false
 
     var arrowDirection = UIPopoverArrowDirection.down
-
     private var hasAlreadyBeenPresented: Bool {
         guard let contextualHintData = profile.prefs.boolForKey(prefsKey) else {
             return false
@@ -43,7 +46,7 @@ class ContextualHintViewModel {
     // CFR has not yet been presented. On iPad we don't present the onboarding CFR
     private var canJumpBackInBePresented: Bool {
         guard UIDevice.current.userInterfaceIdiom != .pad else { return true }
-        
+
         if let hasShownOnboardingCFR = profile.prefs.boolForKey(CFRPrefsKeys.ToolbarOnboardingKey.rawValue),
            hasShownOnboardingCFR {
             return true
@@ -95,6 +98,7 @@ class ContextualHintViewModel {
         var timeInterval: TimeInterval = 0
 
         switch hintType {
+        case .inactiveTabs: timeInterval = 0.25
         case .toolbarLocation: timeInterval = 0.5
         default: timeInterval = 1.25
         }
@@ -110,6 +114,7 @@ class ContextualHintViewModel {
 
     func stopTimer() {
         timer?.invalidate()
+        timer = nil
     }
 
     // MARK: Text
@@ -149,7 +154,8 @@ class ContextualHintViewModel {
 
     // MARK: - Telemetry
     func sendTelemetryEvent(for eventType: CFRTelemetryEvent) {
-        let extra = [TelemetryWrapper.EventExtraKey.cfrType.rawValue: hintType.rawValue]
+        let hintTypeExtra = hintType == .toolbarLocation ? hintType.hintExtraForToolbarLocation : hintType.rawValue
+        let extra = [TelemetryWrapper.EventExtraKey.cfrType.rawValue: hintTypeExtra]
 
         switch eventType {
         case .closeButton:
@@ -180,6 +186,8 @@ class ContextualHintViewModel {
 
     // MARK: - Present
     @objc private func presentHint() {
+        guard shouldPresentContextualHint() else { return }
+
         timer?.invalidate()
         timer = nil
         presentFromTimer?()

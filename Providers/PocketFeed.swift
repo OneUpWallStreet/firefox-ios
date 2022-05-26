@@ -6,12 +6,6 @@ import Foundation
 import Shared
 import Storage
 
-private let PocketEnvAPIKey = "PocketEnvironmentAPIKey"
-private let PocketGlobalFeed = "https://getpocket.cdn.mozilla.net/v3/firefox/global-recs"
-private let MaxCacheAge: Timestamp = OneMinuteInMilliseconds * 60 // 1 hour in milliseconds
-private let SupportedLocales = ["en_CA", "en_US", "en_GB", "en_ZA", "de_DE", "de_AT", "de_CH"]
-public let PocketVideoFeed = "https://getpocket.cdn.mozilla.net/v3/firefox/global-video-recs"
-
 /*s
  The Pocket class is used to fetch stories from the Pocked API.
  Right now this only supports the global feed
@@ -21,66 +15,76 @@ public let PocketVideoFeed = "https://getpocket.cdn.mozilla.net/v3/firefox/globa
 struct PocketStory {
     let url: URL
     let title: String
+    let timeToRead: Int64
     let storyDescription: String
     let imageURL: URL
     let domain: String
 
     static func parseJSON(list: Array<[String: Any]>) -> [PocketStory] {
         return list.compactMap({ (storyDict) -> PocketStory? in
-            guard let urlS = storyDict["url"] as? String, let domain = storyDict["domain"] as? String,
-                let imageURLS = storyDict["image_src"] as? String,
-                let title = storyDict["title"] as? String,
-                let description = storyDict["excerpt"] as? String else {
-                    return nil
-            }
+            guard let urlS = storyDict["url"] as? String,
+                  let domain = storyDict["domain"] as? String,
+                  let imageURLS = storyDict["image_src"] as? String,
+                  let title = storyDict["title"] as? String,
+                  let timeToRead = storyDict["time_to_read"] as? Int64,
+                  let description = storyDict["excerpt"] as? String else {
+                      return nil
+                  }
+
             guard let url = URL(string: urlS), let imageURL = URL(string: imageURLS) else {
                 return nil
             }
-            return PocketStory(url: url, title: title, storyDescription: description, imageURL: imageURL, domain: domain)
+
+            return PocketStory(url: url,
+                               title: title,
+                               timeToRead: timeToRead,
+                               storyDescription: description,
+                               imageURL: imageURL,
+                               domain: domain)
         })
     }
+
 }
 
-private class PocketError: MaybeErrorType {
-    var description = "Failed to load from API"
-}
+class Pocket: FeatureFlaggable, URLCaching {
 
-class Pocket {
+    private class PocketError: MaybeErrorType {
+        var description = "Failed to load from API"
+    }
+
+    private let PocketEnvAPIKey = "PocketEnvironmentAPIKey"
+
+    private static let SupportedLocales = ["en_CA", "en_US", "en_GB", "en_ZA", "de_DE", "de_AT", "de_CH"]
     private let pocketGlobalFeed: String
+
+    static let GlobalFeed = "https://getpocket.cdn.mozilla.net/v3/firefox/global-recs"
     static let MoreStoriesURL = URL(string: "https://getpocket.com/explore?src=ff_ios&cdn=0")!
 
     // Allow endPoint to be overriden for testing
-    init(endPoint: String = PocketGlobalFeed) {
+    init(endPoint: String = Pocket.GlobalFeed) {
         self.pocketGlobalFeed = endPoint
     }
 
-    lazy fileprivate var urlSession = makeURLSession(userAgent: UserAgent.defaultClientUserAgent, configuration: URLSessionConfiguration.default)
-
-    private func findCachedResponse(for request: URLRequest) -> [String: Any]? {
-        let cachedResponse = URLCache.shared.cachedResponse(for: request)
-        guard let cachedAtTime = cachedResponse?.userInfo?["cache-time"] as? Timestamp, (Date.now() - cachedAtTime) < MaxCacheAge else {
-            return nil
-        }
-
-        guard let data = cachedResponse?.data, let json = try? JSONSerialization.jsonObject(with: data, options: []) else {
-            return nil
-        }
-
-        return json as? [String: Any]
+    var urlCache: URLCache {
+        return URLCache.shared
     }
 
-    private func cache(response: HTTPURLResponse?, for request: URLRequest, with data: Data?) {
-        guard let resp = response, let data  = data else {
-            return
-        }
-        let metadata = ["cache-time": Date.now()]
-        let cachedResp = CachedURLResponse(response: resp, data: data, userInfo: metadata, storagePolicy: .allowed)
-        URLCache.shared.removeCachedResponse(for: request)
-        URLCache.shared.storeCachedResponse(cachedResp, for: request)
-    }
+    lazy private var urlSession = makeURLSession(userAgent: UserAgent.defaultClientUserAgent, configuration: URLSessionConfiguration.default)
+
+    private lazy var pocketKey: String? = {
+        return Bundle.main.object(forInfoDictionaryKey: PocketEnvAPIKey) as? String
+    }()
 
     // Fetch items from the global pocket feed
     func globalFeed(items: Int = 2) -> Deferred<Array<PocketStory>> {
+        if shouldUseMockData {
+            return getMockDataFeed(items: items)
+        } else {
+            return getGlobalFeed(items: items)
+        }
+    }
+
+    private func getGlobalFeed(items: Int = 2) -> Deferred<Array<PocketStory>> {
         let deferred = Deferred<Array<PocketStory>>()
 
         guard let request = createGlobalFeedRequest(items: items) else {
@@ -112,7 +116,7 @@ class Pocket {
 
     // Returns nil if the locale is not supported
     static func IslocaleSupported(_ locale: String) -> Bool {
-        return SupportedLocales.contains(locale)
+        return Pocket.SupportedLocales.contains(locale)
     }
 
     // Create the URL request to query the Pocket API. The max items that the query can return is 20
@@ -124,8 +128,8 @@ class Pocket {
         let locale = Locale.current.identifier
         let pocketLocale = locale.replacingOccurrences(of: "_", with: "-")
         var params = [URLQueryItem(name: "count", value: String(items)), URLQueryItem(name: "locale_lang", value: pocketLocale), URLQueryItem(name: "version", value: "3")]
-        if let _ = Bundle.main.object(forInfoDictionaryKey: PocketEnvAPIKey) as? String {
-            params.append(URLQueryItem(name: "consumer_key", value: "69688-0187b8205b7a75b05d897e97"))
+        if let pocketKey = pocketKey {
+            params.append(URLQueryItem(name: "consumer_key", value: pocketKey))
         }
 
         guard let feedURL = URL(string: pocketGlobalFeed)?.withQueryParams(params) else {
@@ -133,5 +137,24 @@ class Pocket {
         }
 
         return URLRequest(url: feedURL, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 5)
+    }
+
+    private var shouldUseMockData: Bool {
+        return featureFlags.isCoreFeatureEnabled(.useMockData) && (pocketKey == "" || pocketKey == nil)
+    }
+
+    private func getMockDataFeed(items: Int = 2) -> Deferred<Array<PocketStory>> {
+        let deferred = Deferred<Array<PocketStory>>()
+        let path = Bundle(for: type(of: self)).path(forResource: "pocketglobalfeed", ofType: "json")
+        let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
+
+        let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+        guard let items = json?["recommendations"] as? Array<[String: Any]> else {
+            deferred.fill([])
+            return deferred
+        }
+
+        deferred.fill(PocketStory.parseJSON(list: items))
+        return deferred
     }
 }

@@ -10,13 +10,34 @@ enum AppSettingsDeeplinkOption {
     case customizeHomepage
     case customizeTabs
     case customizeToolbar
+    case customizeTopSites
     case wallpaper
 }
 
 /// App Settings Screen (triggered by tapping the 'Gear' in the Tab Tray Controller)
-class AppSettingsTableViewController: SettingsTableViewController, FeatureFlagsProtocol {
+class AppSettingsTableViewController: SettingsTableViewController, FeatureFlaggable {
+
+    // MARK: - Properties
     var deeplinkTo: AppSettingsDeeplinkOption?
 
+    // MARK: - Initializers
+    init(with profile: Profile,
+         and tabManager: TabManager,
+         delegate: SettingsDelegate?,
+         deeplinkingTo destination: AppSettingsDeeplinkOption? = nil) {
+        self.deeplinkTo = destination
+
+        super.init()
+        self.profile = profile
+        self.tabManager = tabManager
+        self.settingsDelegate = delegate
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - View lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +56,7 @@ class AppSettingsTableViewController: SettingsTableViewController, FeatureFlagsP
 
         // Refresh the user's FxA profile upon viewing settings. This will update their avatar,
         // display name, etc.
-        ////profile.rustAccount.refreshProfile()
+        //// profile.rustAccount.refreshProfile()
 
         checkForDeeplinkSetting()
     }
@@ -51,10 +72,10 @@ class AppSettingsTableViewController: SettingsTableViewController, FeatureFlagsP
 
         case .customizeHomepage:
             viewController = HomePageSettingViewController(prefs: profile.prefs)
-            
+
         case .customizeTabs:
             viewController = TabsSettingsViewController()
-            
+
         case .customizeToolbar:
             let viewModel = SearchBarSettingsViewModel(prefs: profile.prefs)
             viewController = SearchBarSettingsViewController(viewModel: viewModel)
@@ -65,6 +86,9 @@ class AppSettingsTableViewController: SettingsTableViewController, FeatureFlagsP
             // Push wallpaper settings view controller directly as its not of type settings viewcontroller
             navigationController?.pushViewController(wallpaperVC, animated: true)
             return
+
+        case .customizeTopSites:
+            viewController = TopSitesSettingsViewController()
         }
 
         viewController.profile = profile
@@ -93,7 +117,9 @@ class AppSettingsTableViewController: SettingsTableViewController, FeatureFlagsP
             generalSettings.insert(SearchBarSetting(settings: self), at: 5)
         }
 
-        if featureFlags.isFeatureActiveForBuild(.tabTrayGroups) || featureFlags.isFeatureActiveForBuild(.inactiveTabs) {
+        let tabTrayGroupsAreBuildActive = featureFlags.isFeatureEnabled(.tabTrayGroups, checking: .buildOnly)
+        let inactiveTabsAreBuildActive = featureFlags.isFeatureEnabled(.inactiveTabs, checking: .buildOnly)
+        if tabTrayGroupsAreBuildActive || inactiveTabsAreBuildActive {
             generalSettings.insert(TabsSetting(), at: 3)
         }
 
@@ -121,7 +147,8 @@ class AppSettingsTableViewController: SettingsTableViewController, FeatureFlagsP
 
         if #available(iOS 14.0, *) {
             settings += [
-                SettingSection(footerTitle: NSAttributedString(string: String.DefaultBrowserCardDescription), children: [DefaultBrowserSetting()])
+                SettingSection(footerTitle: NSAttributedString(string: String.FirefoxHomepage.HomeTabBanner.EvergreenMessage.HomeTabBannerDescription),
+                               children: [DefaultBrowserSetting()])
             ]
         }
 
@@ -182,7 +209,6 @@ class AppSettingsTableViewController: SettingsTableViewController, FeatureFlagsP
                 SentryIDSetting(settings: self),
                 ChangeToChinaSetting(settings: self),
                 ShowEtpCoverSheet(settings: self),
-                ToggleChronTabs(settings: self),
                 TogglePullToRefresh(settings: self),
                 ToggleInactiveTabs(settings: self),
                 ToggleHistoryGroups(settings: self),

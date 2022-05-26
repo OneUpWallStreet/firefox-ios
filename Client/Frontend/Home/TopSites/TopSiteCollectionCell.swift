@@ -22,7 +22,7 @@ class TopSiteCollectionCell: UICollectionViewCell, ReusableCell {
         collectionView.isScrollEnabled = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.layer.masksToBounds = false
-        
+
         return collectionView
     }()
 
@@ -90,11 +90,12 @@ class TopSiteCollectionCell: UICollectionViewCell, ReusableCell {
         let point = longPressGestureRecognizer.location(in: collectionView)
         guard let indexPath = collectionView.indexPathForItem(at: point),
               let viewModel = viewModel,
-              let tileLongPressedHandler = viewModel.tileLongPressedHandler
+              let tileLongPressedHandler = viewModel.tileLongPressedHandler,
+              let site = viewModel.tileManager.getSiteDetail(index: indexPath.row)
         else { return }
 
-        let parentIndexPath = IndexPath(row: indexPath.row, section: viewModel.topSitesShownInSection)
-        tileLongPressedHandler(parentIndexPath)
+        let sourceView = collectionView.cellForItem(at: indexPath)
+        tileLongPressedHandler(site, sourceView)
     }
 }
 
@@ -110,7 +111,8 @@ extension TopSiteCollectionCell: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(cellType: TopSiteItemCell.self, for: indexPath),
            let contentItem = viewModel?.tileManager.getSite(index: indexPath.row) {
-            cell.configure(contentItem)
+            cell.configure(contentItem, position: indexPath.row)
+            viewModel?.topSiteImpressionTelemetry(contentItem, position: indexPath.row)
             return cell
 
         } else if let cell = collectionView.dequeueReusableCell(cellType: EmptyTopSiteCell.self, for: indexPath) {

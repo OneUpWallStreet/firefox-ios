@@ -16,13 +16,8 @@ class FxHomePocketViewModel {
     private let isZeroSearch: Bool
     private var hasSentPocketSectionEvent = false
 
-    var onTapTileAction: ((URL) -> Void)? = nil
-    var onLongPressTileAction: ((IndexPath) -> Void)? = nil
-
-    // Need to save the parent's section for the long press action
-    // since it's currently handled in FirefoxHomeViewController
-    // TODO: https://github.com/mozilla-mobile/firefox-ios/issues/10241
-    var pocketShownInSection: Int = 0
+    var onTapTileAction: ((URL) -> Void)?
+    var onLongPressTileAction: ((Site, UIView?) -> Void)?
 
     init(profile: Profile, isZeroSearch: Bool) {
         self.profile = profile
@@ -75,13 +70,20 @@ class FxHomePocketViewModel {
     func recordTapOnStory(index: Int) {
         // Pocket site extra
         let key = TelemetryWrapper.EventExtraKey.pocketTilePosition.rawValue
-        let siteExtra = [key : "\(index)"]
+        let siteExtra = [key: "\(index)"]
 
         // Origin extra
         let originExtra = TelemetryWrapper.getOriginExtras(isZeroSearch: isZeroSearch)
         let extras = originExtra.merge(with: siteExtra)
 
         TelemetryWrapper.recordEvent(category: .action, method: .tap, object: .pocketStory, value: nil, extras: extras)
+    }
+
+    func domainAndReadingTimeForStory(atIndex: Int) -> String {
+        let pocketStory = pocketStories[atIndex]
+        let domainAndReadingTime = "\(pocketStory.domain) • \(String.localizedStringWithFormat(String.FirefoxHomepage.Pocket.NumberOfMinutes, pocketStory.timeToRead))"
+
+        return domainAndReadingTime
     }
 
     // MARK: - Private
@@ -95,7 +97,7 @@ class FxHomePocketViewModel {
 }
 
 // MARK: FXHomeViewModelProtocol
-extension FxHomePocketViewModel: FXHomeViewModelProtocol, FeatureFlagsProtocol {
+extension FxHomePocketViewModel: FXHomeViewModelProtocol, FeatureFlaggable {
 
     var sectionType: FirefoxHomeSectionType {
         return .pocket
@@ -105,9 +107,7 @@ extension FxHomePocketViewModel: FXHomeViewModelProtocol, FeatureFlagsProtocol {
         // For Pocket, the user preference check returns a user preference if it exists in
         // UserDefaults, and, if it does not, it will return a default preference based on
         // a (nimbus pocket section enabled && Pocket.isLocaleSupported) check
-        guard featureFlags.isFeatureActiveForBuild(.pocket),
-              featureFlags.userPreferenceFor(.pocket) == UserFeaturePreference.enabled
-        else { return false }
+        guard featureFlags.isFeatureEnabled(.pocket, checking: .buildAndUser) else { return false }
 
         return true
     }

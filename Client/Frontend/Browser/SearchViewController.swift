@@ -5,7 +5,7 @@
 import UIKit
 import Shared
 import Storage
-import MozillaAppServices
+import Glean
 import Telemetry
 
 private enum SearchListSection: Int, CaseIterable {
@@ -67,7 +67,7 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
     private var openedTabs = [Tab]()
     private var filteredOpenedTabs = [Tab]()
     private var tabManager: TabManager
-    
+
     // Views for displaying the bottom scrollable search engine list. searchEngineScrollView is the
     // scrollable container; searchEngineScrollViewContent contains the actual set of search engine buttons.
     private let searchEngineContainerView = UIView()
@@ -77,7 +77,7 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
     private lazy var bookmarkedBadge: UIImage = {
         return UIImage(named: "bookmark_results")!
     }()
-    
+
     private lazy var openAndSyncTabBadge: UIImage = {
         return UIImage(named: "sync_open_tab")!
     }()
@@ -92,7 +92,7 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
         self.tabManager = tabManager
         self.experimental = Experiments.shared.getVariables(featureId: .search).getVariables("awesome-bar")
         super.init(profile: profile)
-        
+
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
         }
@@ -132,7 +132,7 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
         blur.snp.makeConstraints { make in
             make.edges.equalTo(self.view)
         }
-    
+
         searchEngineContainerView.snp.makeConstraints { make in
             make.left.right.bottom.equalToSuperview()
         }
@@ -168,7 +168,7 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
     private func layoutSearchEngineScrollViewContent() {
         searchEngineScrollViewContent.snp.remakeConstraints { make in
             make.center.equalTo(self.searchEngineScrollView).priority(10)
-            //left-align the engines on iphones, center on ipad
+            // left-align the engines on iphones, center on ipad
             if UIScreen.main.traitCollection.horizontalSizeClass == .compact {
                 make.left.equalTo(self.searchEngineScrollView).priority(1000)
             } else {
@@ -222,18 +222,23 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
     }
 
     private func layoutTable() {
-        tableView.snp.remakeConstraints { make in
-            make.top.equalTo(self.view.snp.top)
-            make.leading.trailing.equalTo(self.view)
-            make.bottom.equalTo(self.searchEngineScrollView.snp.top)
-        }
+        // Note: We remove and re-add tableview from superview so that we can update
+        // the constraints to be aligned with Search Engine Scroll View top anchor
+        tableView.removeFromSuperview()
+        view.addSubviews(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: searchEngineScrollView.topAnchor)
+        ])
     }
 
     func reloadSearchEngines() {
         searchEngineScrollViewContent.subviews.forEach { $0.removeFromSuperview() }
         var leftEdge = searchEngineScrollViewContent.snp.left
 
-        //search settings icon
+        // search settings icon
         let searchButton = UIButton()
         searchButton.setImage(UIImage(named: "quickSearch"), for: [])
         searchButton.imageView?.contentMode = .center
@@ -244,13 +249,13 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
         searchEngineScrollViewContent.addSubview(searchButton)
         searchButton.snp.makeConstraints { make in
             make.size.equalTo(SearchViewControllerUX.FaviconSize)
-            //offset the left edge to align with search results
+            // offset the left edge to align with search results
             make.left.equalTo(leftEdge).offset(SearchViewControllerUX.SuggestionMargin * 2)
             make.top.equalTo(self.searchEngineScrollViewContent).offset(SearchViewControllerUX.SuggestionMargin)
             make.bottom.equalTo(self.searchEngineScrollViewContent).offset(-SearchViewControllerUX.SuggestionMargin)
         }
 
-        //search engines
+        // search engines
         leftEdge = searchButton.snp.right
         for engine in quickSearchEngines {
             let engineButton = UIButton()
@@ -335,7 +340,7 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
             self.view.layoutIfNeeded()
         })
     }
-    
+
     private func getCachedTabs() {
         assert(Thread.isMainThread)
         // Short circuit if the user is not logged in
@@ -354,7 +359,7 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
             }
         }
     }
-    
+
     func searchTabs(for searchString: String) {
         let currentTabs = viewModel.isPrivate ? tabManager.privateTabs : tabManager.normalTabs
 
@@ -391,7 +396,7 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
             return find(in: text)
         }
     }
-    
+
     func searchRemoteTabs(for searchString: String) {
         filteredRemoteClientTabs.removeAll()
         for remoteClientTab in remoteClientTabs {
@@ -415,7 +420,7 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
             return false
         }
     }
-    
+
     private func querySuggestClient() {
         suggestClient?.cancelPendingRequest()
 
@@ -445,7 +450,7 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
             } else {
                 self.suggestions = suggestions!
                 // Remove user searching term inside suggestions list
-                self.suggestions?.removeAll(where: { $0.trimmingCharacters(in: .whitespacesAndNewlines) == self.searchQuery.trimmingCharacters(in: .whitespacesAndNewlines) } )
+                self.suggestions?.removeAll(where: { $0.trimmingCharacters(in: .whitespacesAndNewlines) == self.searchQuery.trimmingCharacters(in: .whitespacesAndNewlines) })
                 // First suggestion should be what the user is searching
                 self.suggestions?.insert(self.searchQuery, at: 0)
             }
@@ -546,8 +551,8 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
     }
 
     func getAttributedBoldSearchSuggestions(searchPhrase: String, query: String) -> NSAttributedString {
-        let boldAttributes = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: DynamicFontHelper().DefaultStandardFont.pointSize)]
-        let regularAttributes = [NSAttributedString.Key.font : DynamicFontHelper().DefaultStandardFont]
+        let boldAttributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: DynamicFontHelper().DefaultStandardFont.pointSize)]
+        let regularAttributes = [NSAttributedString.Key.font: DynamicFontHelper().DefaultStandardFont]
         let attributedString = NSMutableAttributedString(string: "", attributes: regularAttributes)
         let phraseString = NSAttributedString(string: searchPhrase, attributes: regularAttributes)
         let suggestion = searchPhrase.components(separatedBy: query)
@@ -559,7 +564,7 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
         attributedString.append(restOfSuggestion)
         return attributedString
     }
-    
+
     private func getCellForSection(_ twoLineCell: TwoLineImageOverlayCell, oneLineCell: OneLineTableViewCell, for section: SearchListSection, _ indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         switch section {
@@ -635,7 +640,7 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
         }
         return cell
     }
-    
+
     @objc func append(_ sender: UIButton) {
         let buttonPosition = sender.convert(CGPoint(), to: tableView)
         if let indexPath = tableView.indexPathForRow(at: buttonPosition), let newQuery = suggestions?[indexPath.row] {

@@ -1,9 +1,74 @@
 ---
 channels:
-  - Fennec
-  - FirefoxBeta
-  - Firefox
+  - developer
+  - beta
+  - release
 features:
+  general-app-features:
+    description: The feature that contains feature flags for the entire application
+    variables:
+      pull-to-refresh:
+        description: "This property defines whether or not the feature is enabled"
+        type: GeneralFeature
+        default:
+          {
+            "status": true
+          }
+      report-site-issue:
+        description: "This property defines whether or not the feature is enabled"
+        type: GeneralFeature
+        default:
+          {
+            "status": false
+          }
+      shake-to-restore:
+        description: "This property defines whether or not the feature is enabled"
+        type: GeneralFeature
+        default:
+          {
+            "status": false
+          }
+    defaults:
+      - channel: beta
+        value: {
+          "pull-to-refresh": {
+            "status": true
+          },
+          "report-site-issue": {
+            "status": true
+          },
+          "shake-to-restore": {
+            "status": true
+          }
+        }
+      - channel: developer
+        value: {
+          "pull-to-refresh": {
+            "status": true
+          },
+          "report-site-issue": {
+            "status": true
+          },
+          "shake-to-restore": {
+            "status": true
+          }
+        }
+  start-at-home-feature:
+    description: The controls for Start at Home feature
+    variables:
+      setting:
+        description: "This property provides a default setting for the startAtHomeFeature"
+        type: StartAtHome
+        default: after-four-hours
+    defaults:
+      - channel: beta
+        value: {
+          "setting": after-four-hours
+        }
+      - channel: developer
+        value: {
+          "setting": after-four-hours
+        }
   search:
     description: The search feature
     variables:
@@ -12,7 +77,12 @@ features:
         type: AwesomeBar
         default:
           {
-            "use-page-content": false
+            "use-page-content": false,
+            "search-highlights": false,
+            "position": {
+              "is-position-feature-enabled": true,
+              "is-bottom": true
+            }
           }
       spotlight:
         description: "This property is covers the properties related to the spotlight"
@@ -25,10 +95,30 @@ features:
             "icon": "letter",
             "keep-for-days": null
           }
-    defaults: null
+    defaults:
+      - channel: beta
+        value: {
+          "awesome-bar": {
+            "search-highlights": true,
+            "position": {
+              "is-position-feature-enabled": true,
+              "is-bottom": true
+            }
+          }
+        }
+      - channel: developer
+        value: {
+          "awesome-bar": {
+            "search-highlights": true,
+            "position": {
+              "is-position-feature-enabled": true,
+              "is-bottom": true
+            }
+          }
+        }
   nimbus-validation:
     description: "A feature that does not correspond to an application feature suitable for showing
-    that Nimbus is working."
+      that Nimbus is working."
     variables:
       settings-title:
         description: The title of displayed in the Settings screen and app menu.
@@ -42,32 +132,98 @@ features:
         description: The drawable displayed in the app menu for Settings
         type: String
         default: "menu-Settings"
+
   homescreenFeature:
     description: The homescreen that the user goes to when they press home or new tab.
     variables:
       sections-enabled:
         description: "This property provides a lookup table of whether or not the given section should be enabled.
-        If the section is enabled, it should be toggleable in the settings screen, and on by default."
+          If the section is enabled, it should be toggleable in the settings screen, and on by default."
         type: Map<HomeScreenSection, Boolean>
         default:
           {
             "top-sites": true,
-            "jump-back-in": false,
-            "recently-saved": false,
-            "recent-explorations": false,
-            "pocket": true,
-            "library-shortcuts": true
+            "jump-back-in": true,
+            "recently-saved": true,
+            "recent-explorations": true,
+            "pocket": true
+          }
+      sponsored-tiles:
+        description: "This property defines the sponsored tile feature on the
+        homepage, which is not a section therein."
+        type: SponsoredTiles
+        default:
+          {
+            "status": false,
+            "max-number-of-tiles": 2
+          }
+      wallpaper-feature:
+        description: "This property defines the wallpaper feature on the
+        homepage, which is not a section therein."
+        type: GeneralFeature
+        default:
+          {
+            "status": true,
           }
     defaults:
-      - channel: Fennec
+      - channel: developer
         value: {
           "sections-enabled": {
             "top-sites": true,
             "jump-back-in": true,
             "recently-saved": true,
             "recent-explorations": true,
-            "pocket": true,
-            "library-shortcuts": true
+            "pocket": true
+          },
+          "sponsored-tiles": {
+            "status": true,
+            "max-number-of-tiles": 2
+          },
+          "wallpaper-feature": {
+            "status": true
+          }
+        }
+      - channel: beta
+        value: {
+          "sections-enabled": {
+            "top-sites": true,
+            "jump-back-in": true,
+            "recently-saved": true,
+            "recent-explorations": true,
+            "pocket": true
+          },
+          "sponsored-tiles": {
+            "status": true,
+            "max-number-of-tiles": 1
+          },
+          "wallpaper-feature": {
+            "status": true
+          }
+        }
+  search-term-groups-feature:
+    description: The feature that controls whether or not search term groups are enabled.
+    variables:
+      grouping-enabled:
+        description: "This property provides a lookup table of whether or not the given grouping should be enabled."
+        type: Map<SearchTermGroups, Boolean>
+        default:
+          {
+            "history-groups": true,
+            "tab-tray-groups": false,
+          }
+    defaults:
+      - channel: beta
+        value: {
+          "grouping-enabled": {
+            "history-groups": true,
+            "tab-tray-groups": true,
+          }
+        }
+      - channel: developer
+        value: {
+          "grouping-enabled": {
+            "history-groups": true,
+            "tab-tray-groups": true,
           }
         }
   tabTrayFeature:
@@ -75,14 +231,122 @@ features:
     variables:
       sections-enabled:
         description: "This property provides a lookup table of whether or not the given section should be enabled.
-        If the section is enabled, it should be toggleable in the settings screen, and on by default."
+          If the section is enabled, it should be toggleable in the settings screen, and on by default."
         type: Map<TabTraySection, Boolean>
         default:
           {
-            "inactive-tabs": true,
+            "inactive-tabs": false,
           }
+    defaults:
+      - channel: beta
+        value: {
+          "sections-enabled": {
+            "inactive-tabs": true
+          }
+        }
+      - channel: developer
+        value: {
+          "sections-enabled": {
+            "inactive-tabs": true
+          }
+        }
+  messaging:
+    description: |
+      Configuration for the messaging system.
+
+      In practice this is a set of growable lookup tables for the
+      message controller to piece together.
+
+    variables:
+      message-under-experiment:
+        description: Id or prefix of the message under experiment.
+        type: Option<String>
+        default: null
+
+      messages:
+        description: A growable collection of messages, where the Key is the message identifier and the value is its associated MessageData.
+        type: Map<String, MessageData>
+        default: {}
+
+      triggers:
+        description: >
+          A collection of out the box trigger
+          expressions. Each entry maps to a
+          valid JEXL expression.
+        type: Map<String, String>
+        default: {}
+      styles:
+        description: >
+          A map of styles to configure message
+          appearance.
+        type: Map<String, StyleData>
+        default: {}
+
+      actions:
+        type: Map<String, String>
+        description: A growable map of action URLs.
+        default: {}
+      on-control:
+        type: ControlMessageBehavior
+        description: What should be displayed when a control message is selected.
+        default: show-next-message
+    defaults:
+      - value:
+          triggers:
+            USER_RECENTLY_INSTALLED:  days_since_install < 7
+            USER_RECENTLY_UPDATED:    days_since_update < 7 && days_since_install != days_since_update
+            USER_TIER_ONE_COUNTRY:    ('US' in locale || 'GB' in locale || 'CA' in locale || 'DE' in locale || 'FR' in locale)
+            USER_EN_SPEAKER:          "'en' in locale"
+            USER_DE_SPEAKER:          "'de' in locale"
+            USER_FR_SPEAKER:          "'fr' in locale"
+            DEVICE_ANDROID:           os == 'Android'
+            DEVICE_IOS:               os == 'iOS'
+            ALWAYS:                   "true"
+            NEVER:                    "false"
+          actions:
+            OPEN_SETTINGS:               ://deep-link?url=settings/general
+            OPEN_SETTINGS_NEW_TAB:       ://deep-link?url=settings/newtab
+            OPEN_SETTINGS_HOMESCREEN:    ://deep-link?url=settings/homepage
+            OPEN_SETTINGS_WALLPAPERS:    ://deep-link?url=settings/wallpaper
+            OPEN_SETTINGS_EMAIL:         ://deep-link?url=settings/mailto
+            OPEN_SETTINGS_SEARCH_ENGINE: ://deep-link?url=settings/search
+            OPEN_SETTINGS_PRIVACY:       ://deep-link?url=settings/clear-private-data
+            OPEN_SETTINGS_FXA:           ://deep-link?url=settings/fxa
+            OPEN_SETTINGS_THEME:         ://deep-link?url=settings/theme
+            VIEW_BOOKMARKS:              ://deep-link?url=homepanel/bookmarks
+            VIEW_TOP_SITES:              ://deep-link?url=homepanel/top-sites
+            VIEW_READING_LIST:           ://deep-link?url=homepanel/reading-list
+            VIEW_HISTORY:                ://deep-link?url=homepanel/history
+            VIEW_DOWNLOADS:              ://deep-link?url=homepanel/downloads
+            ENABLE_PRIVATE_BROWSING:     ://deep-link?url=homepanel/new-private-tab
+            MAKE_DEFAULT_BROWSER:        ://deep-link?url=default-browser/system-settings
+          styles:
+            DEFAULT:
+              priority: 50
+              max-display-count: 5
+            PERSISTENT:
+              priority: 50
+              max-display-count: 20
+            SURVEY:
+              priority: 55
+              max-display-count: 10
+            WARNING:
+              priority: 60
+              max-display-count: 10
+            URGENT:
+              priority: 100
+              max-display-count: 10
+
 types:
   objects:
+    GeneralFeature:
+      description: "The configuration for the a feature that can be enabled or disabled"
+      fields:
+        status:
+          type: Boolean
+          description: Whether or not the feature is enabled
+          default: false
+
     AwesomeBar:
       description: "Represents the awesome bar object"
       fields:
@@ -91,6 +355,114 @@ types:
           type: Boolean
           default: false
           required: true
+        search-highlights:
+          description: "Whether or not search highlights are enabled"
+          type: Boolean
+          default: false
+        position:
+          description: "This property defines whether or not the feature is
+          enabled, and the position of the search bar"
+          type: SearchBarPositionFeature
+          default:
+            {
+              "is-position-feature-enabled": true,
+              "is-bottom": true
+            }
+
+    SearchBarPositionFeature:
+      description: "The configuration for the bottom search bar on the homescreen"
+      fields:
+        is-position-feature-enabled:
+          type: Boolean
+          description: Whether or not the feature is enabled
+          default: true
+        is-bottom:
+          type: Boolean
+          description: Whether or not the default position is at the bottom
+          default: true
+
+    SponsoredTiles:
+      description: "The configuration for the sponsored tile on the homescreen"
+      fields:
+        status:
+          type: Boolean
+          description: Whether or not the feature is enabled
+          default: false
+        max-number-of-tiles:
+          type: Int
+          description: The maximum number of sponsored tiles a user can see
+          default: 2
+
+    MessageData:
+      description: >
+        An object to describe a message. It uses human
+        readable strings to describe the triggers, action and
+        style of the message as well as the text of the message
+        and call to action.
+      fields:
+        action:
+          type: String
+          description: >
+            A URL of a page or a deeplink.
+            This may have substitution variables in.
+          # This should never be defaulted.
+          default: ""
+        title:
+          type: Option<String>
+          description: "The title text displayed to the user"
+          default: null
+        text:
+          type: String
+          description: "The message text displayed to the user"
+          # This should never be defaulted.
+          default: ""
+        is-control:
+          type: Boolean
+          description: "Indicates if this message is the control message, if true shouldn't be displayed"
+          default: false
+        button-label:
+          type: Option<String>
+          description: >
+            The text on the button. If no text
+            is present, the whole message is clickable.
+          default: null
+        style:
+          type: String
+          description: >
+            The style as described in a
+            `StyleData` from the styles table.
+          default: DEFAULT
+        trigger:
+          type: List<String>
+          description: >
+            A list of strings corresponding to
+            targeting expressions. The message will be
+            shown if all expressions `true`.
+          default: []
+        surface:
+          type: MessageSurfaceId
+          description: Each message will tell us the surface it is targeting with this.
+          # To start, we default to the new-tab-card
+          default: new-tab-card
+
+    StyleData:
+      description: >
+        A group of properities (predominantly visual) to
+        describe the style of the message.
+      fields:
+        priority:
+          type: Int
+          description: >
+            The importance of this message.
+            0 is not very important, 100 is very important.
+          default: 50
+        max-display-count:
+          type: Int
+          description: >
+            How many sessions will this message be shown to the user
+            before it is expired.
+          default: 5
+
     Spotlight:
       description: "An object representing the spotlight"
       fields:
@@ -118,6 +490,7 @@ types:
           default: null
           description: "Number of days to keep"
           required: true
+
   enums:
     IconType:
       description: The different types of icons
@@ -128,6 +501,27 @@ types:
           description: A favicon icon
         letter:
           description: A letter icon
+
+    MessageSurfaceId:
+      description: >
+        For messaging, we would like to have a message tell us which surface its associated with.
+        This is a label that matches across both Android and iOS.
+      variants:
+        new-tab-card:
+          description: This is the card that appears at the top on the Firefox Home Page.
+        Unknown:
+          description: A message has NOT declared its target surface.
+
+    StartAtHome:
+      description: The identifiers for the different types of options for StartAtHome
+      variants:
+        disabled:
+          description: App always opens to the last tab the user was on.
+        after-four-hours:
+          description: App opens to a new homepage tab after four hours of inactivity
+        always:
+          description: App opens to a new homepage tab after five minutes of inactiviny
+
     HomeScreenSection:
       description: The identifiers for the sections of the homescreen.
       variants:
@@ -141,10 +535,25 @@ types:
           description: The tab groups
         pocket:
           description: The pocket section. This should only be available in the US.
-        library-shortcuts:
-          description: Library shortcuts section
+
     TabTraySection:
       description: The identifiers for the sections of the tab tray.
       variants:
         inactive-tabs:
           description: Tabs that have been automatically closed for the user.
+
+    SearchTermGroups:
+      description: The identifiers for the different types of search term groups.
+      variants:
+        history-groups:
+          description: Grouping for items in History and RecentlyVisited
+        tab-tray-groups:
+          description: Grouping for items in the Tab Tray and in JumpBackIn
+
+    ControlMessageBehavior:
+      description: An enum to influence what should be displayed when a control message is selected.
+      variants:
+        show-next-message:
+          description: The next eligible message should be shown.
+        show-none:
+          description: The surface should show no message.

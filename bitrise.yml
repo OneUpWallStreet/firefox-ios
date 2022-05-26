@@ -57,6 +57,9 @@ workflows:
         - content: |-
             ./bootstrap.sh
         title: Run bootstrap
+    - swiftlint-extended@1:
+        inputs:
+        - linting_path: "$BITRISE_SOURCE_DIR"
     - script@1:
         inputs:
         - content: |-
@@ -312,7 +315,7 @@ workflows:
     - 5_deploy_and_slack
     meta:
       bitrise.io:
-        stack: osx-xcode-13.1.x
+        stack: osx-xcode-13.2.x
         machine_type_id: g2.4core
   RunSmokeXCUITestsiPad:
     steps:
@@ -585,7 +588,7 @@ workflows:
       in master
     meta:
       bitrise.io:
-        stack: osx-xcode-13.1.x
+        stack: osx-xcode-13.2.x
         machine_type_id: g2.4core
     before_run:
     - 1_git_clone_and_post_clone
@@ -737,7 +740,7 @@ workflows:
     description: This step is to build, archive and upload Firefox Release and Beta
     meta:
       bitrise.io:
-        stack: osx-xcode-13.1.x
+        stack: osx-xcode-13.2.x
         machine_type_id: g2.8core
   SPM_Deploy_Beta_Only:
     steps:
@@ -834,7 +837,7 @@ workflows:
     description: This step is to build, archive and upload Firefox Release and Beta
     meta:
       bitrise.io:
-        stack: osx-xcode-13.1.x
+        stack: osx-xcode-13.2.x
         machine_type_id: g2.8core
   SPM_Nightly_Beta_Only:
     steps:
@@ -931,7 +934,7 @@ workflows:
     description: This step is to build, archive and upload Firefox Release and Beta
     meta:
       bitrise.io:
-        stack: osx-xcode-13.1.x
+        stack: osx-xcode-13.2.x
         machine_type_id: g2.8core
 app:
   envs:
@@ -946,16 +949,16 @@ app:
     BITRISE_NIGHTLY_VERSION: '9000'
   - opts:
       is_expand: false
-    BITRISE_RELEASE_VERSION: '98.1'
+    BITRISE_RELEASE_VERSION: '101.0'
   - opts:
       is_expand: false
-    BITRISE_BETA_VERSION: '98.1'
+    BITRISE_BETA_VERSION: '101.0'
 trigger_map:
 - push_branch: main
   workflow: RunUnitTests
 - push_branch: epic-branch/*
   workflow: RunUnitTests
-- push_branch: v98.1
+- push_branch: v101.0
   workflow: SPM_Deploy_Prod_Beta
 - pull_request_target_branch: main
   workflow: RunUnitTests

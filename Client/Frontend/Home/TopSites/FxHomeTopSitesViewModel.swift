@@ -30,30 +30,22 @@ class FxHomeTopSitesViewModel {
     }
 
     private let profile: Profile
-    private let nimbus: FxNimbus
     private let isZeroSearch: Bool
+    private var sentImpressionTelemetry = [String: Bool]()
 
     var sectionDimension: SectionDimension = FxHomeTopSitesViewModel.defaultDimension
     static var defaultDimension = SectionDimension(numberOfRows: 2, numberOfTilesPerRow: 6)
 
     var tilePressedHandler: ((Site, Bool) -> Void)?
-    var tileLongPressedHandler: ((IndexPath) -> Void)?
+    var tileLongPressedHandler: ((Site, UIView?) -> Void)?
     weak var delegate: FxHomeTopSitesViewModelDelegate?
 
     lazy var tileManager: FxHomeTopSitesManager = {
         return FxHomeTopSitesManager(profile: profile)
     }()
 
-    // Need to save the parent's section for the long press action
-    // since it's currently handled in FirefoxHomeViewController
-    // TODO: https://github.com/mozilla-mobile/firefox-ios/issues/10241
-    var topSitesShownInSection: Int = 0
-
-    private lazy var homescreen = nimbus.features.homescreenFeature.value()
-
-    init(profile: Profile, isZeroSearch: Bool, nimbus: FxNimbus) {
+    init(profile: Profile, isZeroSearch: Bool) {
         self.profile = profile
-        self.nimbus = nimbus
         self.isZeroSearch = isZeroSearch
         tileManager.delegate = self
     }
@@ -114,17 +106,17 @@ class FxHomeTopSitesViewModel {
     }
 
     func tilePressed(site: HomeTopSite, position: Int) {
-        topSiteTracking(site: site, position: position)
+        topSitePressTracking(homeTopSite: site, position: position)
         tilePressedHandler?(site.site, site.isGoogleURL)
     }
 
-    func topSiteTracking(site: HomeTopSite, position: Int) {
+    // MARK: - Telemetry
+
+    private func topSitePressTracking(homeTopSite: HomeTopSite, position: Int) {
         // Top site extra
-        let topSitePositionKey = TelemetryWrapper.EventExtraKey.topSitePosition.rawValue
-        let topSiteTileTypeKey = TelemetryWrapper.EventExtraKey.topSiteTileType.rawValue
-        let isPinnedAndGoogle = site.isPinned && site.isGoogleGUID
-        let type = isPinnedAndGoogle ? "google" : site.isPinned ? "user-added" : site.isSuggested ? "suggested" : "history-based"
-        let topSiteExtra = [topSitePositionKey : "\(position)", topSiteTileTypeKey: type]
+        let type = homeTopSite.getTelemetrySiteType()
+        let topSiteExtra = [TelemetryWrapper.EventExtraKey.topSitePosition.rawValue: "\(position)",
+                            TelemetryWrapper.EventExtraKey.topSiteTileType.rawValue: type]
 
         // Origin extra
         let originExtra = TelemetryWrapper.getOriginExtras(isZeroSearch: isZeroSearch)
@@ -135,37 +127,27 @@ class FxHomeTopSitesViewModel {
                                      object: .topSiteTile,
                                      value: nil,
                                      extras: extras)
-    }
 
-    // MARK: Context actions
-
-    func getTopSitesAction(site: Site) -> [PhotonRowActions]{
-        let removeTopSiteAction = SingleActionViewModel(title: .RemoveContextMenuTitle,
-                                                        iconString: ImageIdentifiers.actionRemove,
-                                                        tapHandler: { _ in
-            self.hideURLFromTopSites(site)
-        }).items
-
-        let pinTopSite = SingleActionViewModel(title: .AddToShortcutsActionTitle,
-                                               iconString: ImageIdentifiers.addShortcut,
-                                               tapHandler: { _ in
-            self.pinTopSite(site)
-        }).items
-
-        let removePinTopSite = SingleActionViewModel(title: .RemoveFromShortcutsActionTitle,
-                                                     iconString: ImageIdentifiers.removeFromShortcut,
-                                                     tapHandler: { _ in
-            self.removePinTopSite(site)
-        }).items
-
-        let topSiteActions: [PhotonRowActions]
-        if let _ = site as? PinnedSite {
-            topSiteActions = [removePinTopSite]
-        } else {
-            topSiteActions = [pinTopSite, removeTopSiteAction]
+        // Sponsored tile specific telemetry
+        if let tile = homeTopSite.site as? SponsoredTile {
+            SponsoredTileTelemetry.sendClickTelemetry(tile: tile, position: position)
         }
-        return topSiteActions
     }
+
+    func topSiteImpressionTelemetry(_ homeTopSite: HomeTopSite, position: Int) {
+        guard !hasSentImpressionForTile(homeTopSite) else { return }
+        homeTopSite.impressionTracking(position: position)
+    }
+
+    private func hasSentImpressionForTile(_ homeTopSite: HomeTopSite) -> Bool {
+        guard sentImpressionTelemetry[homeTopSite.site.url] != nil else {
+            sentImpressionTelemetry[homeTopSite.site.url] = true
+            return false
+        }
+        return true
+    }
+
+    // MARK: - Context actions
 
     func hideURLFromTopSites(_ site: Site) {
         guard let host = site.tileURL.normalizedHost else { return }
@@ -176,17 +158,17 @@ class FxHomeTopSitesViewModel {
             deleteTileForSuggestedSite(url)
         }
 
-        profile.history.removeHostFromTopSites(host).uponQueue(.main) { result in
-            guard result.isSuccess else { return }
+        profile.history.removeHostFromTopSites(host).uponQueue(.main) { [weak self] result in
+            guard result.isSuccess, let self = self else { return }
             self.tileManager.refreshIfNeeded(forceTopSites: true)
         }
     }
 
-    private func removePinTopSite(_ site: Site) {
+    func removePinTopSite(_ site: Site) {
         tileManager.removePinTopSite(site: site)
     }
 
-    private func pinTopSite(_ site: Site) {
+    func pinTopSite(_ site: Site) {
         profile.history.addPinnedTopSite(site).uponQueue(.main) { result in
             guard result.isSuccess else { return }
             self.tileManager.refreshIfNeeded(forceTopSites: true)
@@ -201,14 +183,14 @@ class FxHomeTopSitesViewModel {
 }
 
 // MARK: FXHomeViewModelProtocol
-extension FxHomeTopSitesViewModel: FXHomeViewModelProtocol, FeatureFlagsProtocol {
+extension FxHomeTopSitesViewModel: FXHomeViewModelProtocol, FeatureFlaggable {
 
     var sectionType: FirefoxHomeSectionType {
         return .topSites
     }
 
     var isEnabled: Bool {
-        homescreen.sectionsEnabled[.topSites] == true
+        return featureFlags.isFeatureEnabled(.topSites, checking: .buildAndUser)
     }
 
     var hasData: Bool {
@@ -220,7 +202,7 @@ extension FxHomeTopSitesViewModel: FXHomeViewModelProtocol, FeatureFlagsProtocol
     }
 
     func updateData(completion: @escaping () -> Void) {
-        tileManager.loadTopSitesData(completion: completion)
+        tileManager.loadTopSitesData(dataLoadingCompletion: completion)
     }
 }
 

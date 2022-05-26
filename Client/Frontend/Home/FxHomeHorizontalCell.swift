@@ -27,7 +27,7 @@ struct FxHomeHorizontalCellViewModel {
     let descriptionText: String
     let tag: Int
     var hasFavicon: Bool // Pocket has no favicon
-    var favIconImage: UIImage? = nil
+    var favIconImage: UIImage?
     var heroImage: UIImage?
 }
 
@@ -94,7 +94,7 @@ class FxHomeHorizontalCell: UICollectionViewCell, ReusableCell {
     private var imageContainer: UIView = .build { view in
         view.backgroundColor = .clear
     }
-    
+
     // MARK: - Variables
     var notificationCenter: NotificationCenter = NotificationCenter.default
 
@@ -133,8 +133,8 @@ class FxHomeHorizontalCell: UICollectionViewCell, ReusableCell {
     func configure(viewModel: FxHomeHorizontalCellViewModel) {
         tag = viewModel.tag
         itemTitle.text = viewModel.titleText
-        descriptionLabel.text = viewModel.descriptionText
         heroImage.image = viewModel.heroImage
+        descriptionLabel.text = viewModel.descriptionText
 
         if viewModel.hasFavicon {
             faviconImage.image = viewModel.favIconImage

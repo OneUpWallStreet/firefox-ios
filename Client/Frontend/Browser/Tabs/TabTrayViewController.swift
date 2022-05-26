@@ -18,14 +18,21 @@ protocol TabTrayViewDelegate: UIViewController {
 }
 
 class TabTrayViewController: UIViewController {
-    
+
+    struct UX {
+        struct NavigationMenu {
+            static let height: CGFloat = 32
+            static let width: CGFloat = 343
+        }
+    }
+
     // MARK: - Variables
     var viewModel: TabTrayViewModel
     var openInNewTab: ((_ url: URL, _ isPrivate: Bool) -> Void)?
     var didSelectUrl: ((_ url: URL, _ visitType: VisitType) -> Void)?
     var notificationCenter: NotificationCenter
     var nimbus: FxNimbus
-    
+
     // MARK: - UI Elements
     // Buttons & Menus
     lazy var deleteButton: UIBarButtonItem = {
@@ -56,19 +63,19 @@ class TabTrayViewController: UIViewController {
                                      style: .plain,
                                      target: self,
                                      action: #selector(didTapSyncTabs))
-        
+
         button.accessibilityIdentifier = "syncTabsButtonTabTray"
         return button
     }()
-    
+
     lazy var syncLoadingView: UIStackView = {
         let syncingLabel = UILabel()
         syncingLabel.text = .SyncingMessageWithEllipsis
-        
+
         let activityIndicator = UIActivityIndicatorView(style: .medium)
         activityIndicator.color = .systemGray
         activityIndicator.startAnimating()
-        
+
         let stackView = UIStackView(arrangedSubviews: [syncingLabel, activityIndicator])
         stackView.spacing = 12
         return stackView
@@ -84,7 +91,7 @@ class TabTrayViewController: UIViewController {
         let fixedSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace,
                                target: nil,
                                action: nil)
-        fixedSpace.width = 32
+        fixedSpace.width = CGFloat(UX.NavigationMenu.height)
         return fixedSpace
     }()
 
@@ -147,7 +154,6 @@ class TabTrayViewController: UIViewController {
     // MARK: - Initializers
     init(tabTrayDelegate: TabTrayDelegate? = nil,
          profile: Profile,
-         showChronTabs: Bool = false,
          tabToFocus: Tab? = nil,
          tabManager: TabManager = BrowserViewController.foregroundBVC().tabManager,
          and notificationCenter: NotificationCenter = NotificationCenter.default,
@@ -157,18 +163,16 @@ class TabTrayViewController: UIViewController {
         self.notificationCenter = notificationCenter
         self.viewModel = TabTrayViewModel(tabTrayDelegate: tabTrayDelegate,
                                           profile: profile,
-                                          showChronTabs: showChronTabs,
                                           tabToFocus: tabToFocus,
                                           tabManager: tabManager)
 
         super.init(nibName: nil, bundle: nil)
-        
+
         setupNotifications(forObserver: self,
                            observing: [.DisplayThemeChanged,
                                        .ProfileDidStartSyncing,
                                        .ProfileDidFinishSyncing,
-                                       .TabClosed])
-        
+                                       .UpdateLabelOnTabClosed])
     }
 
     required init?(coder: NSCoder) {
@@ -204,12 +208,12 @@ class TabTrayViewController: UIViewController {
 
     private func viewSetup() {
         viewModel.syncedTabsController.remotePanelDelegate = self
-        
+
         if let appWindow = (UIApplication.shared.delegate?.window),
            let window = appWindow as UIWindow? {
             window.backgroundColor = .black
         }
-        
+
         if shouldUseiPadSetup() {
             iPadViewSetup()
         } else {
@@ -218,7 +222,7 @@ class TabTrayViewController: UIViewController {
 
         showPanel(viewModel.tabTrayView)
     }
-    
+
     func updatePrivateUIState() {
         UserDefaults.standard.set(viewModel.tabManager.selectedTab?.isPrivate ?? false, forKey: "wasLastSessionPrivate")
     }
@@ -235,7 +239,7 @@ class TabTrayViewController: UIViewController {
 
     fileprivate func iPhoneViewSetup() {
         navigationItem.rightBarButtonItem = doneButton
-        
+
         view.addSubview(navigationToolbar)
 
         navigationToolbar.snp.makeConstraints { make in
@@ -244,8 +248,8 @@ class TabTrayViewController: UIViewController {
         }
 
         navigationMenu.snp.makeConstraints { make in
-            make.width.lessThanOrEqualTo(343)
-            make.height.equalTo(ChronologicalTabsControllerUX.navigationMenuHeight)
+            make.width.lessThanOrEqualTo(UX.NavigationMenu.width)
+            make.height.equalTo(UX.NavigationMenu.height)
         }
     }
 
@@ -282,6 +286,7 @@ class TabTrayViewController: UIViewController {
         updateToolbarItems(forSyncTabs: viewModel.profile.hasSyncableAccount())
         viewModel.tabTrayView.didTogglePrivateMode(privateMode)
         updatePrivateUIState()
+        updateTitle()
     }
 
     private func showPanel(_ panel: UIViewController) {
@@ -326,14 +331,14 @@ class TabTrayViewController: UIViewController {
             setToolbarItems(newToolbarItems, animated: true)
         }
     }
-    
+
     private func updateButtonTitle(_ notification: Notification) {
         switch notification.name {
         case .ProfileDidStartSyncing:
             // Update Sync Tab button
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                
+
                 self.syncTabButton.isEnabled = false
                 self.syncTabButton.customView = self.syncLoadingView
             }
@@ -341,7 +346,7 @@ class TabTrayViewController: UIViewController {
             // Update Sync Tab button
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                
+
                 self.syncTabButton.customView = nil
                 self.syncTabButton.title = .FxASyncNow
                 self.syncTabButton.isEnabled = true
@@ -355,16 +360,18 @@ class TabTrayViewController: UIViewController {
 // MARK: - Notifiable protocol
 extension TabTrayViewController: Notifiable {
     func handleNotifications(_ notification: Notification) {
-        switch notification.name {
-        case .DisplayThemeChanged:
-            applyTheme()
-        case .ProfileDidStartSyncing, .ProfileDidFinishSyncing:
-            updateButtonTitle(notification)
-        case .TabClosed:
-            countLabel.text = viewModel.normalTabsCount
-            iPhoneNavigationMenuIdentifiers.setImage(UIImage(named: "nav-tabcounter")!.overlayWith(image: countLabel), forSegmentAt: 0)
-        default:
-            break
+        ensureMainThread { [weak self] in
+            switch notification.name {
+            case .DisplayThemeChanged:
+                self?.applyTheme()
+            case .ProfileDidStartSyncing, .ProfileDidFinishSyncing:
+                self?.updateButtonTitle(notification)
+            case .UpdateLabelOnTabClosed:
+                guard let label = self?.countLabel else { return }
+                self?.countLabel.text = self?.viewModel.normalTabsCount
+                self?.iPhoneNavigationMenuIdentifiers.setImage(UIImage(named: "nav-tabcounter")!.overlayWith(image: label), forSegmentAt: 0)
+            default: break
+            }
         }
     }
 }
@@ -406,6 +413,7 @@ extension TabTrayViewController: UIAdaptivePresentationControllerDelegate, UIPop
     }
 
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        notificationCenter.post(name: .TabsTrayDidClose, object: nil)
         TelemetryWrapper.recordEvent(category: .action, method: .close, object: .tabTray)
     }
 }
@@ -425,6 +433,7 @@ extension TabTrayViewController {
     }
 
     @objc func didTapDone() {
+        notificationCenter.post(name: .TabsTrayDidClose, object: nil)
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -450,7 +459,7 @@ extension TabTrayViewController: RemotePanelDelegate {
         self.didSelectUrl?(url, visitType)
         self.dismissVC()
     }
-    
+
     // Sign In and Create Account Helper
     func fxaSignInOrCreateAccountHelper() {
         let fxaParams = FxALaunchParams(query: ["entrypoint": "homepanel"])

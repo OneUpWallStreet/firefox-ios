@@ -6,12 +6,11 @@ import Foundation
 import Storage
 
 class FirefoxHomeRecentlySavedViewModel {
-    
+
     // MARK: - Properties
 
     var isZeroSearch: Bool
     private let profile: Profile
-    private let nimbus: FxNimbus
 
     private lazy var siteImageHelper = SiteImageHelper(profile: profile)
     private var readingListItems = [ReadingListItem]()
@@ -19,13 +18,10 @@ class FirefoxHomeRecentlySavedViewModel {
     private let recentItemsHelper = RecentItemsHelper()
     private let dataQueue = DispatchQueue(label: "com.moz.recentlySaved.queue")
 
-    init(isZeroSearch: Bool, profile: Profile, nimbus: FxNimbus) {
+    init(isZeroSearch: Bool, profile: Profile) {
         self.isZeroSearch = isZeroSearch
         self.profile = profile
-        self.nimbus = nimbus
     }
-
-    private lazy var homescreen = nimbus.features.homescreenFeature.value()
 
     var recentItems: [RecentlySavedItem] {
         var items = [RecentlySavedItem]()
@@ -89,16 +85,14 @@ class FirefoxHomeRecentlySavedViewModel {
 }
 
 // MARK: FXHomeViewModelProtocol
-extension FirefoxHomeRecentlySavedViewModel: FXHomeViewModelProtocol, FeatureFlagsProtocol {
+extension FirefoxHomeRecentlySavedViewModel: FXHomeViewModelProtocol, FeatureFlaggable {
 
     var sectionType: FirefoxHomeSectionType {
         return .recentlySaved
     }
 
     var isEnabled: Bool {
-        return featureFlags.isFeatureActiveForBuild(.recentlySaved)
-        && homescreen.sectionsEnabled[.recentlySaved] == true
-        && featureFlags.userPreferenceFor(.recentlySaved) == UserFeaturePreference.enabled
+        return featureFlags.isFeatureEnabled(.recentlySaved, checking: .buildAndUser)
     }
 
     var hasData: Bool {

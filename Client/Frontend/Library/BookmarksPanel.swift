@@ -33,7 +33,7 @@ fileprivate class SeparatorTableViewCell: OneLineTableViewCell {
     }
 }
 
-class BookmarksPanel: SiteTableViewController, LibraryPanel {
+class BookmarksPanel: SiteTableViewController, LibraryPanel, CanRemoveQuickActionBookmark {
     enum BookmarksSection: Int, CaseIterable {
         case bookmarks
         case recent
@@ -46,6 +46,7 @@ class BookmarksPanel: SiteTableViewController, LibraryPanel {
     var bookmarkFolder: BookmarkFolderData?
     var bookmarkNodes = [BookmarkNodeData]()
     var recentBookmarks = [BookmarkNodeData]()
+    var chevronImage = UIImage(named: ImageIdentifiers.menuChevron)
 
     fileprivate var flashLastRowOnNextReload = false
 
@@ -84,7 +85,7 @@ class BookmarksPanel: SiteTableViewController, LibraryPanel {
         tableView.allowsSelectionDuringEditing = true
         tableView.backgroundColor = UIColor.theme.homePanel.panelBackground
     }
-    
+
     func addNewBookmarkItemAction() {
         let newBookmark = SingleActionViewModel(title: .BookmarksNewBookmark, iconString: ImageIdentifiers.actionAddBookmark, tapHandler: { _ in
             guard let bookmarkFolder = self.bookmarkFolder else {
@@ -134,7 +135,7 @@ class BookmarksPanel: SiteTableViewController, LibraryPanel {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-    
+
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if tableView.isEditing {
             disableEditMode()
@@ -190,7 +191,7 @@ class BookmarksPanel: SiteTableViewController, LibraryPanel {
     func enableEditMode() {
         self.tableView.setEditing(true, animated: true)
     }
-    
+
     func disableEditMode() {
         self.tableView.setEditing(false, animated: true)
     }
@@ -228,6 +229,7 @@ class BookmarksPanel: SiteTableViewController, LibraryPanel {
             }
             tableView.deleteRows(at: [indexPath], with: .left)
             tableView.endUpdates()
+            removeBookmarkShortcut()
         }
 
         // If this node is a folder and it is not empty, we need
@@ -359,7 +361,7 @@ class BookmarksPanel: SiteTableViewController, LibraryPanel {
         }
 
         let cell = tableView.dequeueReusableCell(withIdentifier: BookmarkNodeCellIdentifier, for: indexPath) as! OneLineTableViewCell
-        
+
         switch bookmarkNode {
         case let bookmarkFolder as BookmarkFolderData:
             if bookmarkFolder.isRoot, let localizedString = LocalizedRootBookmarkFolderStrings[bookmarkFolder.guid] {
@@ -370,7 +372,8 @@ class BookmarksPanel: SiteTableViewController, LibraryPanel {
 
             cell.leftImageView.image = LegacyThemeManager.instance.currentName == .dark ? bookmarkFolderIconDark : bookmarkFolderIconNormal
             cell.leftImageView.contentMode = .center
-            cell.accessoryType = .disclosureIndicator
+            let imageView = UIImageView(image: chevronImage)
+            cell.accessoryView = imageView
             cell.editingAccessoryType = .disclosureIndicator
             return cell
         case let bookmarkItem as BookmarkItemData:
@@ -393,7 +396,7 @@ class BookmarksPanel: SiteTableViewController, LibraryPanel {
                 cell.setNeedsLayout()
             }
 
-            cell.accessoryType = .none
+            cell.accessoryView = nil
             cell.editingAccessoryType = .disclosureIndicator
             return cell
         case is BookmarkSeparatorData:

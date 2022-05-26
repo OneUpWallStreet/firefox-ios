@@ -64,15 +64,15 @@ enum Experiments {
             }
         }
     }
-    
-    private static var studiesSetting: Bool? = nil;
-    private static var telemetrySetting: Bool? = nil;
-    
+
+    private static var studiesSetting: Bool?
+    private static var telemetrySetting: Bool?
+
     static func setStudiesSetting(_ setting: Bool) {
         studiesSetting = setting
         updateGlobalUserParticipation()
     }
-    
+
     static func setTelemetrySetting(_ setting: Bool) {
         telemetrySetting = setting
         if !setting {
@@ -80,7 +80,7 @@ enum Experiments {
         }
         updateGlobalUserParticipation()
     }
-    
+
     private static func updateGlobalUserParticipation() {
         // we only want to reset the globalUserParticipation flag if both settings have been
         // initialized.
@@ -142,7 +142,7 @@ enum Experiments {
     static func usePreviewCollection(storage: UserDefaults = .standard) -> Bool {
         storage.bool(forKey: NIMBUS_USE_PREVIEW_COLLECTION_KEY)
     }
-    
+
     static var customTargetingAttributes: [String: String] = [:]
 
     static var serverSettings: NimbusServerSettings? = {
@@ -166,10 +166,6 @@ enum Experiments {
 
     /// The `NimbusApi` object. This is the entry point to do anything with the Nimbus SDK on device.
     public static var shared: NimbusApi = {
-        guard FeatureFlagsManager.shared.isFeatureActiveForBuild(.nimbus) else {
-            return NimbusDisabled.shared
-        }
-
         guard let dbPath = Experiments.dbPath else {
             log.error("Nimbus didn't get to create, because of a nil dbPath")
             return NimbusDisabled.shared
@@ -185,7 +181,7 @@ enum Experiments {
         )
 
         let errorReporter: NimbusErrorReporter = { err in
-            Sentry.shared.sendWithStacktrace(
+            SentryIntegration.shared.sendWithStacktrace(
                 message: "Error in Nimbus SDK",
                 tag: SentryTag.nimbus,
                 severity: .error,

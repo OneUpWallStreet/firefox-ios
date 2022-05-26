@@ -34,7 +34,7 @@ class FxHomeHistoryHightlightsViewModel {
 
         return count < HistoryHighlightsCollectionCellConstants.maxNumberOfItemsPerColumn ? count : HistoryHighlightsCollectionCellConstants.maxNumberOfItemsPerColumn
     }
-    
+
     /// Group weight used to create collection view compositional layout
     /// Case 1: For compact and a single column use 0.9 to ocuppy must of the width of the parent
     /// Case 2: For compact and multiple columns 0.8 to show part of the next column
@@ -60,7 +60,7 @@ class FxHomeHistoryHightlightsViewModel {
         self.tabManager = tabManager
         self.foregroundBVC = foregroundBVC
 
-        loadItems() {}
+        loadItems {}
     }
 
     // MARK: - Public methods
@@ -94,7 +94,9 @@ class FxHomeHistoryHightlightsViewModel {
     // MARK: - Private Methods
 
     private func loadItems(completion: @escaping () -> Void) {
-        HistoryHighlightsManager.getHighlightsData(with: profile, and: tabManager.tabs) { [weak self] highlights in
+        HistoryHighlightsManager.getHighlightsData(with: profile,
+                                                   and: tabManager.tabs,
+                                                   shouldGroupHighlights: true) { [weak self] highlights in
             self?.historyItems = highlights
             completion()
         }
@@ -102,15 +104,16 @@ class FxHomeHistoryHightlightsViewModel {
 }
 
 // MARK: FXHomeViewModelProtocol
-extension FxHomeHistoryHightlightsViewModel: FXHomeViewModelProtocol, FeatureFlagsProtocol {
+extension FxHomeHistoryHightlightsViewModel: FXHomeViewModelProtocol, FeatureFlaggable {
 
     var sectionType: FirefoxHomeSectionType {
         return .historyHighlights
     }
 
     var isEnabled: Bool {
-        return featureFlags.isFeatureActiveForBuild(.historyHighlights)
-        && featureFlags.userPreferenceFor(.historyHighlights) == UserFeaturePreference.enabled && !isPrivate
+        guard featureFlags.isFeatureEnabled(.historyHighlights, checking: .buildAndUser) else { return false }
+
+        return !isPrivate
     }
 
     var hasData: Bool {

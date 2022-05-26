@@ -88,13 +88,12 @@ class HistoryHighlightsManager {
         completion: @escaping ([ASGroup<HistoryHighlight>]?, [HistoryHighlight]) -> Void
     ) {
 
-        SearchTermGroupsManager.getHighlightGroups(with: profile,
+        SearchTermGroupsUtility.getHighlightGroups(with: profile,
                                                    from: highlights,
                                                    using: .orderedAscending) { groups, filteredItems in
             completion(groups, filteredItems)
         }
     }
-
 
     /// Collate `HistoryHighlight` groups and individual `HistoryHighlight` items, such that
     /// the resulting array alternates between them, starting with individual highlights.
@@ -115,10 +114,12 @@ class HistoryHighlightsManager {
 
         for (index, group) in groups.enumerated() {
             let insertIndex = (index * 2) + 1
-            if insertIndex < highlightItems.count {
+            if insertIndex <= highlightItems.count {
                 highlightItems.insert(group, at: insertIndex)
             } else {
-                highlightItems.append(contentsOf: groups)
+                // insert remaining items
+                let restOfGroups = Array(groups[index..<groups.count])
+                highlightItems.append(contentsOf: restOfGroups)
                 break
             }
         }

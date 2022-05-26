@@ -31,7 +31,8 @@ class HistoryTests: BaseTestCase {
                                LaunchArguments.SkipETPCoverSheet,
                                LaunchArguments.SkipDefaultBrowserOnboarding,
                                LaunchArguments.LoadDatabasePrefix + historyDB,
-                               LaunchArguments.SkipContextualHints]
+                               LaunchArguments.SkipContextualHints,
+                               LaunchArguments.TurnOffTabGroupsInUserPreferences]
         }
         super.setUp()
     }
@@ -199,7 +200,7 @@ class HistoryTests: BaseTestCase {
         app.tables.cells.staticTexts[closedWebPageLabel].press(forDuration: 1)
         waitForExistence(app.tables["Context Menu"])
         XCTAssertTrue(app.tables.otherElements[ImageIdentifiers.newTab].exists)
-        XCTAssertTrue(app.tables.otherElements["quick_action_new_private_tab"].exists)
+        XCTAssertTrue(app.tables.otherElements[ImageIdentifiers.newPrivateTab].exists)
     }
 
     func testOpenInNewTabRecentlyClosedItem() {
@@ -238,7 +239,7 @@ class HistoryTests: BaseTestCase {
 
         app.tables.cells.staticTexts[closedWebPageLabel].press(forDuration: 1)
         waitForExistence(app.tables["Context Menu"])
-        app.tables.otherElements["quick_action_new_private_tab"].tap()
+        app.tables.otherElements[ImageIdentifiers.newPrivateTab].tap()
 
         navigator.toggleOn(userState.isPrivate, withAction: Action.TogglePrivateMode)
         navigator.goto(TabTray)

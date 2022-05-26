@@ -9,7 +9,7 @@ import XCGLogger
 
 private let log = Logger.browserLogger
 
-class TestAppDelegate: AppDelegate {
+class TestAppDelegate: AppDelegate, FeatureFlaggable {
 
     lazy var dirForTestProfile = { return "\(self.appRootDir())/profile.testProfile" }()
 
@@ -97,6 +97,14 @@ class TestAppDelegate: AppDelegate {
             profile.prefs.setString(ETPCoverSheetShowType.DoNotShow.rawValue, forKey: PrefsKeys.KeyETPCoverSheetShowType)
         }
 
+        if launchArguments.contains(LaunchArguments.TurnOffTabGroupsInUserPreferences) {
+            profile.prefs.setBool(false, forKey: PrefsKeys.FeatureFlags.TabTrayGroups)
+        }
+
+        if launchArguments.contains(LaunchArguments.SkipSponsoredShortcuts) {
+            profile.prefs.setBool(false, forKey: PrefsKeys.FeatureFlags.SponsoredShortcuts)
+        }
+
         // Don't show the What's New page.
         if launchArguments.contains(LaunchArguments.SkipWhatsNew) {
             profile.prefs.setInt(1, forKey: PrefsKeys.KeyLastVersionNumber)
@@ -111,11 +119,6 @@ class TestAppDelegate: AppDelegate {
             profile.prefs.setInt(1, forKey: PrefsKeys.IntroSeen)
         }
 
-        // Change to 0 to deactivate chron tabs
-        if launchArguments.contains(LaunchArguments.ChronTabs) {
-            profile.prefs.setBool(false, forKey: PrefsKeys.FeatureFlags.ChronologicalTabs)
-        }
-
         if launchArguments.contains(LaunchArguments.StageServer) {
             profile.prefs.setInt(1, forKey: PrefsKeys.UseStageServer)
         }
@@ -128,7 +131,7 @@ class TestAppDelegate: AppDelegate {
         return profile
     }
 
-    override func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    override func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
         // If the app is running from a XCUITest reset all settings in the app
         if ProcessInfo.processInfo.arguments.contains(LaunchArguments.ClearProfile) {

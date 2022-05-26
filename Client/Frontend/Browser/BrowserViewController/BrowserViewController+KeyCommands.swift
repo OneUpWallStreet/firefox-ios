@@ -26,12 +26,7 @@ extension BrowserViewController {
     }
 
     private func showPanel(_ panel: LibraryPanelType) {
-        guard let libraryViewController = self.libraryViewController else {
-            showLibrary(panel: panel)
-            return
-        }
-
-        libraryViewController.selectedPanel = panel
+        showLibrary(panel: panel)
     }
 
     @objc private func openClearHistoryPanelKeyCommand() {
@@ -119,6 +114,7 @@ extension BrowserViewController {
                                      extras: ["action": "new-tab"])
         let isPrivate = tabManager.selectedTab?.isPrivate ?? false
         openBlankNewTab(focusLocationField: true, isPrivate: isPrivate)
+        keyboardPressesHandler.reset()
     }
 
     @objc private func newPrivateTabKeyCommand() {
@@ -150,6 +146,7 @@ extension BrowserViewController {
             return
         }
         tabManager.removeTab(currentTab)
+        keyboardPressesHandler.reset()
     }
 
     @objc private func undoLastTabClosedKeyCommand() {
@@ -355,13 +352,13 @@ extension BrowserViewController {
             UIKeyCommand(action: #selector(zoomOut), input: "-", modifierFlags: .command, discoverabilityTitle: shortcuts.ZoomOut),
             UIKeyCommand(action: #selector(resetZoom), input: "0", modifierFlags: .command, discoverabilityTitle: shortcuts.ActualSize),
             UIKeyCommand(action: #selector(reloadTabKeyCommand), input: "r", modifierFlags: .command, discoverabilityTitle: shortcuts.ReloadPage),
-            
+
             // History
             UIKeyCommand(action: #selector(goBackKeyCommand), input: "[", modifierFlags: .command, discoverabilityTitle: shortcuts.Back),
             UIKeyCommand(action: #selector(openClearHistoryPanelKeyCommand), input: "\u{8}", modifierFlags: [.shift, .command], discoverabilityTitle: shortcuts.ClearRecentHistory),
             UIKeyCommand(action: #selector(goForwardKeyCommand), input: "]", modifierFlags: .command, discoverabilityTitle: shortcuts.Forward),
             UIKeyCommand(action: #selector(showHistoryKeyCommand), input: "y", modifierFlags: .command, discoverabilityTitle: shortcuts.ShowHistory),
-            
+
             // Bookmarks
             UIKeyCommand(action: #selector(showBookmarksKeyCommand), input: "o", modifierFlags: [.shift, .command], discoverabilityTitle: shortcuts.ShowBookmarks),
             UIKeyCommand(action: #selector(addBookmarkKeyCommand), input: "d", modifierFlags: .command, discoverabilityTitle: shortcuts.AddBookmark),

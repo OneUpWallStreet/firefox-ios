@@ -39,7 +39,7 @@ enum MenuButtonToastAction {
 ///     - The home page menu, determined with isHomePage variable
 ///     - The file URL menu, shown when the user is on a url of type `file://`
 ///     - The site menu, determined by the absence of isHomePage and isFileURL
-class MainMenuActionHelper: PhotonActionSheetProtocol, FeatureFlagsProtocol {
+class MainMenuActionHelper: PhotonActionSheetProtocol, FeatureFlaggable, CanRemoveQuickActionBookmark {
 
     typealias FXASyncClosure = (params: FxALaunchParams?, flowType: FxAPageType, referringPage: ReferringPage)
 
@@ -290,6 +290,7 @@ class MainMenuActionHelper: PhotonActionSheetProtocol, FeatureFlagsProtocol {
     private func getFindInPageAction() -> PhotonRowActions {
         return SingleActionViewModel(title: .AppMenu.AppMenuFindInPageTitleString,
                                      iconString: ImageIdentifiers.findInPage) { _ in
+            TelemetryWrapper.recordEvent(category: .action, method: .tap, object: .findInPage)
             self.delegate?.showFindInPage()
         }.items
     }
@@ -360,11 +361,13 @@ class MainMenuActionHelper: PhotonActionSheetProtocol, FeatureFlagsProtocol {
     }
 
     private func getReportSiteIssueAction() -> PhotonRowActions? {
-        guard featureFlags.isFeatureActiveForBuild(.reportSiteIssue) else { return nil }
+        guard featureFlags.isFeatureEnabled(.reportSiteIssue, checking: .buildOnly) else { return nil }
+
         return SingleActionViewModel(title: .AppMenu.AppMenuReportSiteIssueTitleString,
                                      iconString: ImageIdentifiers.reportSiteIssue) { _ in
             guard let tabURL = self.selectedTab?.url?.absoluteString else { return }
             self.delegate?.openURLInNewTab(SupportUtils.URLForReportSiteIssue(tabURL), isPrivate: false)
+            TelemetryWrapper.recordEvent(category: .action, method: .tap, object: .reportSiteIssue)
         }.items
     }
 
@@ -396,10 +399,10 @@ class MainMenuActionHelper: PhotonActionSheetProtocol, FeatureFlagsProtocol {
 
         let openSettings = SingleActionViewModel(title: title,
                                                  iconString: icon) { _ in
-            let settingsTableViewController = AppSettingsTableViewController()
-            settingsTableViewController.profile = self.profile
-            settingsTableViewController.tabManager = self.tabManager
-            settingsTableViewController.settingsDelegate = self.menuActionDelegate
+            let settingsTableViewController = AppSettingsTableViewController(
+                with: self.profile,
+                and: self.tabManager,
+                delegate: self.menuActionDelegate)
 
             let controller = ThemedNavigationController(rootViewController: settingsTableViewController)
             // On iPhone iOS13 the WKWebview crashes while presenting file picker if its not full screen. Ref #6232
@@ -477,7 +480,7 @@ class MainMenuActionHelper: PhotonActionSheetProtocol, FeatureFlagsProtocol {
 
         let iconString = needsReAuth ? ImageIdentifiers.warning : ImageIdentifiers.placeholderAvatar
 
-        var iconURL: URL? = nil
+        var iconURL: URL?
         if let str = rustAccount.userProfile?.avatarUrl, let url = URL(string: str) {
             iconURL = url
         }
@@ -689,6 +692,7 @@ class MainMenuActionHelper: PhotonActionSheetProtocol, FeatureFlagsProtocol {
             self.profile.places.deleteBookmarksWithURL(url: url.absoluteString).uponQueue(.main) { result in
                 guard result.isSuccess else { return }
                 self.delegate?.showToast(message: .AppMenu.RemoveBookmarkConfirmMessage, toastAction: .removeBookmark, url: url.absoluteString)
+                self.removeBookmarkShortcut()
             }
 
             TelemetryWrapper.recordEvent(category: .action, method: .delete, object: .bookmark, value: .pageActionMenu)

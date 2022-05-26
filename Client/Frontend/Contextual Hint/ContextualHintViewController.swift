@@ -76,9 +76,9 @@ class ContextualHintViewController: UIViewController, OnViewDismissable {
 
     // MARK: - Properties
     private var viewModel: ContextualHintViewModel
-    private var onViewSummoned: (() -> Void)? = nil
-    var onViewDismissed: (() -> Void)? = nil
-    private var onActionTapped: (() -> Void)? = nil
+    private var onViewSummoned: (() -> Void)?
+    var onViewDismissed: (() -> Void)?
+    private var onActionTapped: (() -> Void)?
     private var topContainerConstraint: NSLayoutConstraint?
     private var bottomContainerConstraint: NSLayoutConstraint?
 
@@ -200,7 +200,7 @@ class ContextualHintViewController: UIViewController, OnViewDismissable {
         topContainerConstraint?.isActive = true
         bottomContainerConstraint = containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         bottomContainerConstraint?.isActive = true
-        
+
         descriptionLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: .vertical)
     }
 
@@ -259,10 +259,11 @@ class ContextualHintViewController: UIViewController, OnViewDismissable {
         anchor: UIView,
         withArrowDirection arrowDirection: UIPopoverArrowDirection,
         andDelegate delegate: UIPopoverPresentationControllerDelegate,
-        presentedUsing presentation: (() -> Void)? = nil,
+        presentedUsing presentation: (() -> Void)?,
         withActionBeforeAppearing preAction: (() -> Void)? = nil,
         actionOnDismiss postAction: (() -> Void)? = nil,
-        andActionForButton buttonAction: (() -> Void)? = nil
+        andActionForButton buttonAction: (() -> Void)? = nil,
+        andShouldStartTimerRightAway shouldStartTimer: Bool = true
     ) {
         stopTimer()
         self.modalPresentationStyle = .popover
@@ -277,10 +278,16 @@ class ContextualHintViewController: UIViewController, OnViewDismissable {
 
         setupContent()
         toggleArrowBasedConstraints()
-        if viewModel.shouldPresentContextualHint() { viewModel.startTimer() }
+        if viewModel.shouldPresentContextualHint() && shouldStartTimer {
+            viewModel.startTimer()
+        }
     }
 
     public func stopTimer() {
         viewModel.stopTimer()
+    }
+
+    public func startTimer() {
+        viewModel.startTimer()
     }
 }

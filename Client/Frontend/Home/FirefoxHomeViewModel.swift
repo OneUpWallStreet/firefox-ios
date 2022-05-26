@@ -8,7 +8,7 @@ protocol FirefoxHomeViewModelDelegate: AnyObject {
     func reloadSection(index: Int?)
 }
 
-class FirefoxHomeViewModel: FeatureFlagsProtocol {
+class FirefoxHomeViewModel: FeatureFlaggable {
 
     struct UX {
         static let topSitesHeight: CGFloat = 90
@@ -19,14 +19,12 @@ class FirefoxHomeViewModel: FeatureFlagsProtocol {
         static let spacingBetweenSections: CGFloat = 24
         static let sectionInsetsForIpad: CGFloat = 101
         static let minimumInsets: CGFloat = 15
-        static let libraryShortcutsHeight: CGFloat = 90
-        static let libraryShortcutsMaxWidth: CGFloat = 375
         static let customizeHomeHeight: CGFloat = 100
         static let logoHeaderHeight: CGFloat = 85
     }
 
     // MARK: - Properties
-    
+
     // Privacy of home page is controlled throught notifications since tab manager selected tab
     // isn't always the proper privacy mode that should be reflected on the home page
     var isPrivate: Bool {
@@ -51,15 +49,7 @@ class FirefoxHomeViewModel: FeatureFlagsProtocol {
     var jumpBackInViewModel: FirefoxHomeJumpBackInViewModel
     var historyHighlightsViewModel: FxHomeHistoryHightlightsViewModel
     var pocketViewModel: FxHomePocketViewModel
-
-    lazy var homescreen = nimbus.features.homescreenFeature.value()
-
-    // MARK: - Section availability variables
-
-    var isYourLibrarySectionEnabled: Bool {
-        UIDevice.current.userInterfaceIdiom != .pad &&
-            homescreen.sectionsEnabled[.libraryShortcuts] == true
-    }
+    var customizeButtonViewModel: FxHomeCustomizeButtonViewModel
 
     // MARK: - Initializers
     init(profile: Profile,
@@ -72,35 +62,34 @@ class FirefoxHomeViewModel: FeatureFlagsProtocol {
         self.headerViewModel = FxHomeLogoHeaderViewModel(profile: profile)
         self.topSiteViewModel = FxHomeTopSitesViewModel(
             profile: profile,
-            isZeroSearch: isZeroSearch,
-            nimbus: nimbus)
+            isZeroSearch: isZeroSearch)
         self.jumpBackInViewModel = FirefoxHomeJumpBackInViewModel(
             isZeroSearch: isZeroSearch,
             profile: profile,
-            isPrivate: isPrivate,
-            nimbus: nimbus)
+            isPrivate: isPrivate)
         self.recentlySavedViewModel = FirefoxHomeRecentlySavedViewModel(
             isZeroSearch: isZeroSearch,
-            profile: profile,
-            nimbus: nimbus)
+            profile: profile)
         self.historyHighlightsViewModel = FxHomeHistoryHightlightsViewModel(
             with: profile,
             isPrivate: isPrivate)
         self.pocketViewModel = FxHomePocketViewModel(
             profile: profile,
             isZeroSearch: isZeroSearch)
+        self.customizeButtonViewModel = FxHomeCustomizeButtonViewModel()
         self.childViewModels = [headerViewModel,
                                 topSiteViewModel,
                                 jumpBackInViewModel,
                                 recentlySavedViewModel,
                                 historyHighlightsViewModel,
-                                pocketViewModel]
-        self.nimbus = nimbus
+                                pocketViewModel,
+                                customizeButtonViewModel]
         self.isPrivate = isPrivate
 
+        self.nimbus = nimbus
         topSiteViewModel.delegate = self
     }
-    
+
     // MARK: - Interfaces
 
     func updateData() {
@@ -109,27 +98,12 @@ class FirefoxHomeViewModel: FeatureFlagsProtocol {
             self.update(section: section)
         }
     }
-    
+
     func updateEnabledSections() {
         enabledSections.removeAll()
 
         childViewModels.forEach {
             if $0.shouldShow { enabledSections.append($0.sectionType) }
-        }
-
-        // Sections that have no view model yet
-        // please remove when they have a view model and comform to FXHomeViewModelProtocol
-        for section in FirefoxHomeSectionType.allCases {
-            switch section {
-            case .libraryShortcuts:
-                if isYourLibrarySectionEnabled {
-                    enabledSections.append(.libraryShortcuts)
-                }
-            case .customizeHome:
-                enabledSections.append(.customizeHome)
-            default:
-                break
-            }
         }
     }
 
@@ -144,7 +118,6 @@ class FirefoxHomeViewModel: FeatureFlagsProtocol {
 
 extension FirefoxHomeViewModel: FxHomeTopSitesViewModelDelegate {
     func reloadTopSites() {
-        let index = enabledSections.firstIndex(of: FirefoxHomeSectionType.topSites)
-        delegate?.reloadSection(index: index)
+        update(section: topSiteViewModel)
     }
 }

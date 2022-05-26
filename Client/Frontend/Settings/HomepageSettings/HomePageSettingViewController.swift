@@ -5,48 +5,34 @@
 import Foundation
 import Shared
 
-class HomePageSettingViewController: SettingsTableViewController, FeatureFlagsProtocol {
+class HomePageSettingViewController: SettingsTableViewController, FeatureFlaggable {
 
     // MARK: - Variables
     /* variables for checkmark settings */
     let prefs: Prefs
-    var nimbus: FxNimbus
     var currentNewTabChoice: NewTabPage!
     var currentStartAtHomeSetting: StartAtHomeSetting!
     var hasHomePage = false
 
-    lazy var homescreen = nimbus.features.homescreenFeature.value()
-
     var isJumpBackInSectionEnabled: Bool {
-        let isFeatureEnabled = featureFlags.isFeatureActiveForBuild(.jumpBackIn)
-        let isNimbusFeatureEnabled = homescreen.sectionsEnabled[.jumpBackIn] == true
-        guard isFeatureEnabled, isNimbusFeatureEnabled else { return false }
-        return true
+        return featureFlags.isFeatureEnabled(.jumpBackIn, checking: .buildOnly)
     }
 
     var isRecentlySavedSectionEnabled: Bool {
-        let isFeatureEnabled = featureFlags.isFeatureActiveForBuild(.recentlySaved)
-        let isNimbusFeatureEnabled = homescreen.sectionsEnabled[.recentlySaved] == true
-        guard isFeatureEnabled, isNimbusFeatureEnabled else { return false }
-        return true
+        return featureFlags.isFeatureEnabled(.recentlySaved, checking: .buildOnly)
     }
 
     var isWallpaperSectionEnabled: Bool {
-        let isFeatureEnabled = featureFlags.isFeatureActiveForBuild(.wallpapers)
-        guard isFeatureEnabled else { return false }
-        return true
+        return featureFlags.isFeatureEnabled(.wallpapers, checking: .buildOnly)
     }
 
     var isHistoryHighlightsSectionEnabled: Bool {
-        // TODO: If this feature is going behind a Nimbus flag, that should be added here
-        return featureFlags.isFeatureActiveForBuild(.historyHighlights)
+        return featureFlags.isFeatureEnabled(.historyHighlights, checking: .buildOnly)
     }
 
     // MARK: - Initializers
-    init(prefs: Prefs,
-         nimbus: FxNimbus = FxNimbus.shared) {
+    init(prefs: Prefs) {
         self.prefs = prefs
-        self.nimbus = nimbus
         super.init(style: .grouped)
 
         self.title = .SettingsHomePageSectionName
@@ -104,6 +90,7 @@ class HomePageSettingViewController: SettingsTableViewController, FeatureFlagsPr
         showWebPage.textField.textAlignment = .natural
 
         return SettingSection(title: NSAttributedString(string: .SettingsHomePageURLSectionTitle),
+                              footerTitle: NSAttributedString(string: .Settings.Homepage.Current.Description),
                               children: [showTopSites, showWebPage])
     }
 
@@ -147,20 +134,20 @@ class HomePageSettingViewController: SettingsTableViewController, FeatureFlagsPr
             sectionItems.append(wallpaperSetting)
         }
 
-        return SettingSection(title: NSAttributedString(string: .SettingsCustomizeHomeTitle),
+        return SettingSection(title: NSAttributedString(string: .Settings.Homepage.CustomizeFirefoxHome.Title),
                               footerTitle: NSAttributedString(string: .Settings.Homepage.CustomizeFirefoxHome.Description),
                               children: sectionItems)
     }
 
     private func setupStartAtHomeSection() -> SettingSection? {
-        guard featureFlags.isFeatureActiveForBuild(.startAtHome) else { return nil }
-        guard let startAtHomeSetting: StartAtHomeSetting = featureFlags.userPreferenceFor(.startAtHome) else { return nil }
+        guard featureFlags.isFeatureEnabled(.startAtHome, checking: .buildOnly) else { return nil }
+        guard let startAtHomeSetting: StartAtHomeSetting = featureFlags.getCustomState(for: .startAtHome) else { return nil }
         currentStartAtHomeSetting = startAtHomeSetting
 
         typealias a11y = AccessibilityIdentifiers.Settings.Homepage.StartAtHome
 
         let onOptionSelected: ((Bool, StartAtHomeSetting) -> Void) = { state, option in
-            self.featureFlags.setUserPreferenceFor(.startAtHome, to: option)
+            self.featureFlags.set(feature: .startAtHome, to: option)
             self.tableView.reloadData()
 
             let extras = [TelemetryWrapper.EventExtraKey.preference.rawValue: PrefsKeys.FeatureFlags.StartAtHome,
@@ -208,28 +195,28 @@ class HomePageSettingViewController: SettingsTableViewController, FeatureFlagsPr
 
 // MARK: - TopSitesSettings
 extension HomePageSettingViewController {
-    class TopSitesSettings: Setting {
-        let profile: Profile
+    class TopSitesSettings: Setting, FeatureFlaggable {
+        var profile: Profile
 
         override var accessoryType: UITableViewCell.AccessoryType { return .disclosureIndicator }
-        override var status: NSAttributedString {
-            let num = self.profile.prefs.intForKey(PrefsKeys.NumberOfTopSiteRows) ?? TopSitesRowCountSettingsController.defaultNumberOfRows
-            return NSAttributedString(string: String(format: .TopSitesRowCount, num))
-        }
-
-        override var accessibilityIdentifier: String? { return "TopSitesRows" }
+        override var accessibilityIdentifier: String? { return AccessibilityIdentifiers.Settings.Homepage.CustomizeFirefox.Shortcuts.settingsPage }
         override var style: UITableViewCell.CellStyle { return .value1 }
+
+        override var status: NSAttributedString {
+            let areShortcutsOn = featureFlags.isFeatureEnabled(.topSites, checking: .userOnly)
+            let status: String = areShortcutsOn ? .Settings.Homepage.Shortcuts.ToggleOn : .Settings.Homepage.Shortcuts.ToggleOff
+            return NSAttributedString(string: String(format: status))
+        }
 
         init(settings: SettingsTableViewController) {
             self.profile = settings.profile
-            super.init(title: NSAttributedString(string: .Settings.Homepage.CustomizeFirefoxHome.Shortcuts,
-                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.theme.tableView.rowText]))
+            super.init(title: NSAttributedString(string: .Settings.Homepage.Shortcuts.ShortcutsPageTitle))
         }
 
         override func onClick(_ navigationController: UINavigationController?) {
-            let viewController = TopSitesRowCountSettingsController(prefs: profile.prefs)
-            viewController.profile = profile
-            navigationController?.pushViewController(viewController, animated: true)
+            let topSitesVC = TopSitesSettingsViewController()
+            topSitesVC.profile = profile
+            navigationController?.pushViewController(topSitesVC, animated: true)
         }
     }
 }
@@ -242,7 +229,7 @@ extension HomePageSettingViewController {
         var tabManager: TabManager
 
         override var accessoryType: UITableViewCell.AccessoryType { return .disclosureIndicator }
-        override var accessibilityIdentifier: String? { return "WallpaperSettings" }
+        override var accessibilityIdentifier: String? { return AccessibilityIdentifiers.Settings.Homepage.CustomizeFirefox.wallpaper }
         override var style: UITableViewCell.CellStyle { return .value1 }
 
         init(settings: SettingsTableViewController,

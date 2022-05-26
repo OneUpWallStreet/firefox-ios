@@ -82,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Need to get "settings.sendUsageData" this way so that Sentry can be initialized
         // before getting the Profile.
         let sendUsageData = NSUserDefaultsPrefs(prefix: "profile").boolForKey(AppConstants.PrefSendUsageData) ?? true
-        Sentry.shared.setup(sendUsageData: sendUsageData)
+        SentryIntegration.shared.setup(sendUsageData: sendUsageData)
 
         // Set the Firefox UA for browsing.
         setUserAgent()
@@ -103,12 +103,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let profile = getProfile(application)
 
         telemetry = TelemetryWrapper(profile: profile)
-        FeatureFlagsManager.shared.initializeFeatures(with: profile)
-        ThemeManager.shared.updateProfile(with: profile)
+
+        // Initialize the feature flag subsytem.
+        // Among other things, it toggles on and off Nimbus, Contile, Adjust.
+        // i.e. this must be run before initializing those systems.
+        FeatureFlagsManager.shared.initializeDeveloperFeatures(with: profile)
+        FeatureFlagUserPrefsMigrationUtility(with: profile).attemptMigration()
 
         // Start intialzing the Nimbus SDK. This should be done after Glean
         // has been started.
         initializeExperiments()
+
+        ThemeManager.shared.updateProfile(with: profile)
 
         // Set up a web server that serves us static content. Do this early so that it is ready when the UI is presented.
         setUpWebServer(profile)
@@ -121,7 +127,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         self.tabManager = TabManager(profile: profile, imageStore: imageStore)
-        
+
         setupRootViewController()
 
         // Add restoration class, the factory that will return the ViewController we
@@ -225,9 +231,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         pushNotificationSetup()
 
-        // user research variable setup for Chron tabs user research
-        _ = ChronTabsUserResearch()
-
         if let profile = self.profile {
             let persistedCurrentVersion = InstallType.persistedCurrentVersion()
             let introScreen = profile.prefs.intForKey(PrefsKeys.IntroSeen)
@@ -250,7 +253,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 profile.prefs.setBool(true, forKey: PrefsKeys.KeySecondRun)
             }
         }
-
 
         BGTaskScheduler.shared.register(forTaskWithIdentifier: "org.mozilla.ios.sync.part1", using: DispatchQueue.global()) { task in
             guard self.profile?.hasSyncableAccount() ?? false else {
@@ -308,7 +310,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let profile = profile, let _ = profile.prefs.boolForKey(PrefsKeys.AppExtensionTelemetryOpenUrl) {
             profile.prefs.removeObjectForKey(PrefsKeys.AppExtensionTelemetryOpenUrl)
             var object = TelemetryWrapper.EventObject.url
-            if case .text(_) = routerpath {
+            if case .text = routerpath {
                 object = .searchText
             }
             TelemetryWrapper.recordEvent(category: .appExtensionAction, method: .applicationOpenUrl, object: object)
@@ -404,6 +406,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BrowserViewController.foregroundBVC().downloadQueue.pauseAll()
 
         TelemetryWrapper.recordEvent(category: .action, method: .background, object: .app)
+        TabsQuantityTelemetry.trackTabsQuantity(tabManager: tabManager)
 
         let singleShotTimer = DispatchSource.makeTimerSource(queue: DispatchQueue.main)
         // 2 seconds is ample for a localhost request to be completed by GCDWebServer. <500ms is expected on newer devices.
@@ -476,7 +479,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // readable from extensions, so they can just use the cached identifier.
 
         SDWebImageDownloader.shared.setValue(firefoxUA, forHTTPHeaderField: "User-Agent")
-        //SDWebImage is setting accept headers that report we support webp. We don't
+        // SDWebImage is setting accept headers that report we support webp. We don't
         SDWebImageDownloader.shared.setValue("image/*;q=0.8", forHTTPHeaderField: "Accept")
 
         // Record the user agent for use by search suggestion clients.
@@ -608,7 +611,7 @@ extension AppDelegate {
             }
         }
 
-        static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation:UIInterfaceOrientation) {
+        static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation: UIInterfaceOrientation) {
             self.lockOrientation(orientation)
             UIDevice.current.setValue(rotateOrientation.rawValue, forKey: "orientation")
         }

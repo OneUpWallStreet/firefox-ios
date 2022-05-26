@@ -16,7 +16,8 @@ class L10nSuite1SnapshotTests: L10nBaseSnapshotTests {
             args = [LaunchArguments.ClearProfile,
                     LaunchArguments.SkipWhatsNew,
                     LaunchArguments.SkipETPCoverSheet,
-                    LaunchArguments.SkipContextualHints]
+                    LaunchArguments.SkipContextualHints,
+                    LaunchArguments.TurnOffTabGroupsInUserPreferences]
         }
         super.setUp()
     }
@@ -32,7 +33,7 @@ class L10nSuite1SnapshotTests: L10nBaseSnapshotTests {
             num += 1
         }
     }
-    
+
     func testWebViewContextMenu () throws {
         throw XCTSkip ("Failing a lot and now new strings here")
         // Drag the context menu up to show all the options
@@ -75,7 +76,7 @@ class L10nSuite1SnapshotTests: L10nBaseSnapshotTests {
         navigator.openURL(loremIpsumURL)
         waitUntilPageLoad()
         waitForNoExistence(app.staticTexts["XCUITests-Runner pasted from Fennec"])
-        
+
         navigator.toggleOff(userState.requestDesktopSite, withAction: Action.ToggleRequestDesktopSite)
         navigator.goto(ReloadLongPressMenu)
         snapshot("ContextMenuReloadButton-01")
@@ -88,7 +89,7 @@ class L10nSuite1SnapshotTests: L10nBaseSnapshotTests {
         sleep(3)
         waitForExistence(app.buttons["urlBar-cancel"], timeout: 15)
         app.buttons["urlBar-cancel"].tap()
-        //waitForExistence(app.buttons[AccessibilityIdentifiers.Toolbar.settingsMenuButton], timeout: 15)
+        // waitForExistence(app.buttons[AccessibilityIdentifiers.Toolbar.settingsMenuButton], timeout: 15)
         navigator.nowAt(NewTabScreen)
         app.collectionViews.cells[AccessibilityIdentifiers.FirefoxHomepage.TopSites.itemCell].firstMatch.swipeUp()
         snapshot("TopSitesMenu-00")
@@ -110,7 +111,9 @@ class L10nSuite1SnapshotTests: L10nBaseSnapshotTests {
         navigator.performAction(Action.CloseURLBarOpen)
         navigator.nowAt(NewTabScreen)
         waitForExistence(app.buttons[AccessibilityIdentifiers.Toolbar.settingsMenuButton], timeout: 10)
-        navigator.goto(HistoryPanelContextMenu)
+        navigator.goto(LibraryPanel_History)
+        waitForExistence(app.tables["History List"])
+        app.tables["History List"].cells.element(boundBy: 1).staticTexts.element(boundBy: 1).press(forDuration: 2)
         snapshot("HistoryTableContextMenu-01")
     }
 
@@ -188,6 +191,8 @@ class L10nSuite1SnapshotTests: L10nBaseSnapshotTests {
     }
 
     func testMenuOnTopSites() {
+        typealias homeTabBannerA11y = AccessibilityIdentifiers.FirefoxHomepage.HomeTabBanner
+
         waitForExistence(app.buttons["urlBar-cancel"], timeout: 15)
         app.buttons["urlBar-cancel"].tap()
         waitForExistence(app.buttons[AccessibilityIdentifiers.Toolbar.settingsMenuButton], timeout: 10)
@@ -198,9 +203,9 @@ class L10nSuite1SnapshotTests: L10nBaseSnapshotTests {
         // Set as Default browser screenshot
         navigator.goto(NewTabScreen)
         if #available(iOS 14, *) {
-            waitForExistence(app.buttons["Home.learnMoreDefaultBrowserbutton"], timeout: 15)
-            app.buttons["Home.learnMoreDefaultBrowserbutton"].tap()
-            waitForExistence(app.buttons["DefaultBrowserCard.goToSettingsButton"], timeout: 15)
+            waitForExistence(app.buttons[homeTabBannerA11y.ctaButton], timeout: 15)
+            app.buttons[homeTabBannerA11y.ctaButton].tap()
+            waitForExistence(app.buttons["HomeTabBanner.goToSettingsButton"], timeout: 15)
             snapshot("HomeDefaultBrowserLearnMore")
         }
     }
