@@ -346,6 +346,9 @@
    Title for default search engine settings section. */
 "Default Search Engine" = "Công cụ tìm kiếm mặc định";
 
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "Đóng";
+
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "Cài đặt hiển thị";
 
