@@ -346,6 +346,9 @@
    Title for default search engine settings section. */
 "Default Search Engine" = "Domyślna wyszukiwarka";
 
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "Zamknij";
+
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "Ustawienia wyświetlania";
 
@@ -2102,7 +2105,7 @@
 "Sync.FirstTimeMessage.Label" = "Pierwsza synchronizacja może zająć trochę czasu…";
 
 /* String displayed on Sign In to Sync page that allows the user to create a new account. */
-"Sync.NoAccount.Description" = "Nie masz konta? Utwórz je, aby synchronizować Firefoksa między urządzeniami.";
+"Sync.NoAccount.Description" = "Nie masz konta? Utwórz je, by synchronizować Firefoksa między urządzeniami.";
 
 /* Message displayed when the user's account is syncing with no ellipsis */
 "Sync.Syncing.Label" = "Synchronizowanie";
