@@ -346,6 +346,9 @@
    Title for default search engine settings section. */
 "Default Search Engine" = "Mesin Pamaluruh Baku";
 
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "Tutup";
+
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "Setélan Pidangan";
 

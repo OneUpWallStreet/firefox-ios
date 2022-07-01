@@ -343,6 +343,9 @@
    Title for default search engine settings section. */
 "Default Search Engine" = "מנוע חיפוש ברירת מחדל";
 
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "סגירה";
+
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "הצגת הגדרות";
 
