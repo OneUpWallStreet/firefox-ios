@@ -343,6 +343,9 @@
    Title for default search engine settings section. */
 "Default Search Engine" = "מנוע חיפוש ברירת מחדל";
 
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "סגירה";
+
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "הצגת הגדרות";
 
@@ -566,7 +569,7 @@
 "FxHomepage.Wallpaper.ButtonLabel.v99" = "הלוגו של Firefox, החלפת תמונת הרקע.";
 
 /* A re-worded offer about Sync, displayed when the Sync home panel is empty, that emphasizes one-way data transfer, not syncing. */
-"Get your open tabs, bookmarks, and passwords from your other devices." = "קבלת הלשוניות הפתוחות, הסימניות והססמאות שלך מההתקנים האחרים שלך.";
+"Get your open tabs, bookmarks, and passwords from your other devices." = "קבלת הלשוניות הפתוחות, הסימניות והססמאות שלך משאר המכשירים שלך.";
 
 /* Show the SUMO support page from the Support section in the settings. see http://mzl.la/1dmM8tZ */
 "Help" = "עזרה";
@@ -596,19 +599,19 @@
 "HistoryPanel.EmptyState.Title" = "אתרים בהם ביקרת יופיעו כאן.";
 
 /* Description for the empty synced tabs null state in the History Panel */
-"HistoryPanel.EmptySyncedTabsNullState.Description" = "הלשוניות שלך ממכשירים אחרים יופיעו כאן.";
+"HistoryPanel.EmptySyncedTabsNullState.Description" = "הלשוניות שלך משאר המכשירים יופיעו כאן.";
 
 /* Description for the empty synced tabs 'not signed in' state in the History Panel */
-"HistoryPanel.EmptySyncedTabsPanelNotSignedInState.Description" = "יש להיכנס כדי לצפות ברשימת הלשוניות שלך ממכשירים אחרים.";
+"HistoryPanel.EmptySyncedTabsPanelNotSignedInState.Description" = "יש להיכנס כדי לצפות ברשימת לשוניות משאר המכשירים שלך.";
 
 /* Description for the empty synced tabs 'not yet verified' state in the History Panel */
 "HistoryPanel.EmptySyncedTabsPanelNotYetVerifiedState.Description" = "יש לאמת את החשבון שלך.";
 
 /* Description for the empty synced tabs 'single device Sync' state in the History Panel */
-"HistoryPanel.EmptySyncedTabsPanelSingleDeviceSyncState.Description" = "להציג כאן את הלשוניות שלך ממכשירים אחרים?";
+"HistoryPanel.EmptySyncedTabsPanelSingleDeviceSyncState.Description" = "להציג כאן את הלשוניות שלך משאר המכשירים?";
 
 /* Description for the empty synced tabs 'tab sync disabled' state in the History Panel */
-"HistoryPanel.EmptySyncedTabsPanelTabSyncDisabledState.Description" = "יש להפעיל סנכרון לשוניות כדי לצפות ברשימת הלשוניות שלך ממכשירים אחרים.";
+"HistoryPanel.EmptySyncedTabsPanelTabSyncDisabledState.Description" = "יש להפעיל סנכרון לשוניות כדי לצפות ברשימת לשוניות משאר המכשירים שלך.";
 
 /* Title for the empty synced tabs state in the History Panel */
 "HistoryPanel.EmptySyncedTabsState.Title" = "Firefox Sync";
