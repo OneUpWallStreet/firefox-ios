@@ -346,6 +346,9 @@
    Title for default search engine settings section. */
 "Default Search Engine" = "Mecanismo de pesquisa padrão";
 
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "Fechar";
+
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "Configurações de exibição";
 
@@ -1391,7 +1394,7 @@
 "Search or enter address" = "Pesquise ou digite um endereço";
 
 /* Search suggestion cell label that allows user to switch to tab which they searched for in url bar */
-"Search.Awesomebar.SwitchToTab" = "Alternar para aba";
+"Search.Awesomebar.SwitchToTab" = "Mudar para aba";
 
 /* The message that asks the user to Add the search provider explaining where the search engine will appear */
 "Search.ThirdPartyEngines.AddMessage" = "O novo mecanismo de pesquisa aparecerá na barra de pesquisa rápida.";
