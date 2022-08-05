@@ -346,6 +346,9 @@
    Title for default search engine settings section. */
 "Default Search Engine" = "ᱢᱩᱞ ᱥᱮᱸᱫᱽᱨᱟ ᱤᱸᱡᱤᱱ";
 
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "ᱵᱚᱸᱫᱚᱭ ᱢᱮ";
+
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "ᱩᱫᱩᱠ ᱥᱟᱡᱟᱣ ᱠᱚ";
 
@@ -515,7 +518,7 @@
 "fxa.signin.camera-signin" = "ᱟᱢᱟᱜ ᱠᱮᱢᱮᱨᱟ ᱛᱮ ᱵᱚᱞᱚᱱ ᱥᱩᱦᱤ ᱢᱮ";
 
 /* FxA sign in create account label. */
-"fxa.signin.create-account-pt-1" = "ᱢᱤᱫᱽᱴᱟᱹᱝ ᱠᱷᱟᱛᱟ ᱛᱮ ᱥᱟᱫᱽᱷᱚᱱ ᱵᱷᱤᱛᱨᱭ ᱨᱮ Firefox ᱥᱭᱝᱠ ᱢᱮ ᱾ ";
+"fxa.signin.create-account-pt-1" = "ᱢᱤᱫᱽᱴᱟᱹᱝ ᱠᱷᱟᱛᱟ ᱛᱮ ᱥᱟᱫᱽᱷᱚᱱ ᱵᱷᱤᱛᱨᱤ ᱨᱮ Firefox ᱥᱭᱝᱠ ᱢᱮ ᱾ ";
 
 /* FxA sign in create account label. This will be linked to the site to create an account. */
 "fxa.signin.create-account-pt-2" = "Firefox ᱠᱷᱟᱛᱟ ᱛᱮᱭᱟᱨ ᱢᱮ ᱾";
@@ -2102,7 +2105,7 @@
 "Sync.FirstTimeMessage.Label" = "ᱟᱢᱟᱠ ᱯᱟᱦᱤᱞ ᱛᱚᱞ ᱡᱚᱠᱷᱟ ᱠᱤᱪᱷᱩ ᱥᱚᱢᱚᱭ ᱦᱟᱛᱟᱣᱟᱭ";
 
 /* String displayed on Sign In to Sync page that allows the user to create a new account. */
-"Sync.NoAccount.Description" = "ᱚᱠᱟ ᱠᱷᱟᱛᱟ ᱵᱟᱹᱱᱩᱜᱼᱟ? ᱥᱟᱫᱷᱚᱱ ᱵᱷᱤᱛᱨᱭ ᱨᱮ Firefox ᱥᱭᱝᱠ ᱞᱟᱹᱜᱤᱫᱽ ᱱᱟᱶᱟ ᱛᱮᱭᱟᱨ ᱢᱮ ᱾";
+"Sync.NoAccount.Description" = "ᱚᱠᱟ ᱠᱷᱟᱛᱟ ᱵᱟᱹᱱᱩᱜᱼᱟ? ᱥᱟᱫᱷᱚᱱ ᱵᱷᱤᱛᱨᱤ ᱨᱮ Firefox ᱥᱭᱝᱠ ᱞᱟᱹᱜᱤᱫᱽ ᱱᱟᱶᱟ ᱛᱮᱭᱟᱨ ᱢᱮ ᱾";
 
 /* Message displayed when the user's account is syncing with no ellipsis */
 "Sync.Syncing.Label" = "ᱛᱚᱞ ᱡᱚᱠᱷᱟ ᱦᱩᱭᱩᱜ ᱠᱟᱱᱟ";
