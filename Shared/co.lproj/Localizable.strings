@@ -346,6 +346,9 @@
    Title for default search engine settings section. */
 "Default Search Engine" = "Mutore di ricerca predefinitu";
 
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "Chjode";
+
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "Preferenze per affissà";
 

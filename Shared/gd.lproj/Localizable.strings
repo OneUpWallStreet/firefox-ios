@@ -113,6 +113,9 @@
 /* Accessibility label for address and search field, both words (Address, Search) are therefore nouns. */
 "Address and Search" = "Seòladh is lorg";
 
+/* Accessibility label for the Address Bar, where a user can enter the search they wish to make */
+"Address.Bar.v99" = "Bàr an t-seòlaidh";
+
 /* Used as a button label for crash dialog prompt */
 "Always Send" = "Cuir an-còmhnaidh";
 
@@ -149,6 +152,15 @@
 /* Toggle bookmarks syncing setting */
 "Bookmarks" = "Comharran-lìn";
 
+/* A label indicating the action of adding a web page as a bookmark. */
+"Bookmarks.Actions.Add" = "Cuir ris";
+
+/* A label indicating the action of bookmarking all currently open non private tabs. */
+"Bookmarks.Actions.BookmarkAllTabs" = "Dèan comharra-lìn de gach taba";
+
+/* A label indicating the action of bookmarking the current tab. */
+"Bookmarks.Actions.BookmarkCurrentTab" = "Dèan comharra-lìn dhen taba làithreach";
+
 /* The button on the snackbar to edit a bookmark after adding it. */
 "Bookmarks.Edit.Button" = "Deasaich";
 
@@ -167,6 +179,12 @@
 /* The label for the title of the new folder */
 "Bookmarks.FolderName.Label" = "Ainm aʼ phasgain";
 
+/* A label indicating all bookmarks grouped under the category 'Desktop Bookmarks'. */
+"Bookmarks.Menu.DesktopBookmarks" = "Comharran-lìn an desktop";
+
+/* A label indicating all bookmarks that were recently added. */
+"Bookmarks.Menu.RecentlyBookmarked" = "Comharran-lìn ùra";
+
 /* The button to create a new bookmark */
 "Bookmarks.NewBookmark.Label" = "Comharra-lìn ùr";
 
@@ -175,6 +193,9 @@
 
 /* The button to create a new separator */
 "Bookmarks.NewSeparator.Label" = "Sgaradair ùr";
+
+/* A label serving as a placeholder text in the search bar that's embedded in the Bookmarks menu. The placeholder text indicates that a user can search and filter bookmarks. */
+"Bookmarks.Search.SearchBookmarks" = "Lorg sna comharran-lìn";
 
 /* The label for the title of a bookmark */
 "Bookmarks.Title.Label" = "Tiotal";
@@ -658,6 +679,9 @@
 /* Relative time for a tab that was visited within the last few moments. */
 "just now" = "an-dràsta fhèin";
 
+/* A label indicating the keyboard shortcut of showing all history. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.ShowHistory" = "Seall an eachdraidh";
+
 /* History tableview section header */
 "Last month" = "Am mìos seo chaidh";
 
@@ -875,6 +899,9 @@
 
 /* Toast displayed to the user after removing the item from the Top Sites. */
 "Menu.RemovePin.Confirm" = "Air a thoirt air falbh o bhrod nan làrach";
+
+/* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
+"Menu.SignInToSync.Label.v99" = "Clàraich a-steach a shioncronachadh";
 
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "Chaidh an taba a chur";

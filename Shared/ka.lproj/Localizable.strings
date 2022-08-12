@@ -346,6 +346,9 @@
    Title for default search engine settings section. */
 "Default Search Engine" = "ნაგულისხმევი საძიებო სისტემა";
 
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "დახურვა";
+
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "ეკრანის პარამეტრები";
 
@@ -1075,13 +1078,13 @@
 "Menu.RemovePin.Confirm" = "მოცილება რჩეული საიტებიდან";
 
 /* Toast displayed to the user after removing the item to the Shortcuts. */
-"Menu.RemovePin.Confirm2.v99" = "მოცილდა მალსახმობებიდან";
+"Menu.RemovePin.Confirm2.v99" = "მოცილებულია მალსახმობებიდან";
 
 /* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
 "Menu.RemoveReadingList.AlternateLabel.v99" = "წასაკითხებიდან მოცილება";
 
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
-"Menu.RemoveReadingList.Confirm.v99" = "მოცილდა წასაკითხებიდან";
+"Menu.RemoveReadingList.Confirm.v99" = "მოცილებულია წასაკითხებიდან";
 
 /* Label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. Please keep the text as short as possible for this label. */
 "Menu.RemoveReadingList.Label.v99" = "მოცილება";
