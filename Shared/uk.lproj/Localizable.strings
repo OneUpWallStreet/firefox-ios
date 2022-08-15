@@ -35,13 +35,13 @@
 "ActivityStream.ContextMenu.UnpinTopsite" = "Відкріпити";
 
 /* The description of a highlight if it is a site the user has bookmarked */
-"ActivityStream.Highlights.Bookmark" = "Закладено";
+"ActivityStream.Highlights.Bookmark" = "Додано до закладок";
 
 /* The description of a highlight if it is a site the user has visited */
 "ActivityStream.Highlights.Visited" = "Відвідано";
 
 /* Title for the Jump Back In section. This section allows users to jump back in to a recently viewed tab */
-"ActivityStream.JumpBackIn.SectionTitle" = "Назад до";
+"ActivityStream.JumpBackIn.SectionTitle" = "Відкрити знову";
 
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "Вкладки: %d";
@@ -156,10 +156,10 @@
 "Bookmarks.Actions.Add" = "Додати";
 
 /* A label indicating the action of bookmarking all currently open non private tabs. */
-"Bookmarks.Actions.BookmarkAllTabs" = "Закласти всі вкладки";
+"Bookmarks.Actions.BookmarkAllTabs" = "Додати до закладок усі вкладки";
 
 /* A label indicating the action of bookmarking the current tab. */
-"Bookmarks.Actions.BookmarkCurrentTab" = "Закласти поточну вкладку";
+"Bookmarks.Actions.BookmarkCurrentTab" = "Додати цю вкладку до закладок";
 
 /* The button on the snackbar to edit a bookmark after adding it. */
 "Bookmarks.Edit.Button" = "Змінити";
@@ -294,7 +294,7 @@
 "ContextualHint.SearchBarPlacement.ExistingUsers" = "Тепер ви можете перемістити панель інструментів донизу для зручнішого введення даних";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Щоб зручніше вводити дані, тепер панель інструментів знаходиться внизу.";
+"ContextualHint.SearchBarPlacement.NewUsers" = "Щоб зручніше вводити дані, тепер панель інструментів розташовано внизу.";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
 "ContextualHints.Homepage.PersonalizedHome" = "Відтепер ваша персоналізована сторінка домівки Firefox полегшує продовження роботи з місця, де ви зупинилися. Знайдіть останні вкладки, закладки та результати пошуку.";
@@ -346,6 +346,9 @@
    Title for default search engine settings section. */
 "Default Search Engine" = "Типовий засіб пошуку";
 
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "Закрити";
+
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "Параметри вигляду";
 
@@ -359,7 +362,7 @@
 "Downloads" = "Завантаження";
 
 /* The label of the button the user will press to start downloading a file */
-"Downloads.Alert.DownloadNow" = "Завантажити зараз";
+"Downloads.Alert.DownloadNow" = "Завантажити";
 
 /* Button confirming the cancellation of the download. */
 "Downloads.CancelDialog.Cancel" = "Скасувати";
@@ -743,7 +746,7 @@
 "Keyboard.Shortcuts.OpenLinkInBackground" = "Відкрити посилання у фоновому режимі";
 
 /* A label indicating the keyboard shortcut of opening a link in a new tab and switching to that tab at the same time. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
-"Keyboard.Shortcuts.OpenLinkInNewTab" = "Відкрити посилання в новій вкладці";
+"Keyboard.Shortcuts.OpenLinkInNewTab" = "Відкрити у новій вкладці";
 
 /* A label indicating the keyboard shortcut of saving the current web page in a format of the user's choice. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
 "Keyboard.Shortcuts.SavePageAs" = "Зберегти сторінку як…";
@@ -770,7 +773,7 @@
 "Keyboard.Shortcuts.Section.Window" = "Вікно";
 
 /* A label indicating the keyboard shortcut of opening the application's settings menu. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
-"Keyboard.Shortcuts.Settings" = "Налаштування";
+"Keyboard.Shortcuts.Settings" = "Параметри";
 
 /* A label indicating the keyboard shortcut of showing all bookmarks. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
 "Keyboard.Shortcuts.ShowBookmarks" = "Показати закладки";
@@ -836,7 +839,7 @@
 "LibraryPanel.History.SyncedHistory.v100" = "Синхронізована історія";
 
 /* This label is meant to signify the section containing a group of items that are older than thirty days. */
-"LibraryPanel.Section.Older" = "Старіші";
+"LibraryPanel.Section.Older" = "Давніші";
 
 /* Settings item that opens a tab containing the licenses. See http://mzl.la/1NSAWCG */
 "Licenses" = "Ліцензії";
@@ -1645,7 +1648,7 @@
 "Settings.Home.Option.Description.v101" = "Виберіть, що включатиме домівка Firefox.";
 
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle the Jump Back In section on homepage on or off */
-"Settings.Home.Option.JumpBackIn" = "Назад до";
+"Settings.Home.Option.JumpBackIn" = "Відкрити знову";
 
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Recommendations section on the Firefox homepage on or off */
 "Settings.Home.Option.Pocket" = "Рекомендації від Pocket";
@@ -1792,10 +1795,10 @@
 "Settings.NewTab.Option.FirefoxHome" = "Домівка Firefox";
 
 /* Option in the settings to turn off recent bookmarks in the Highlights section */
-"Settings.NewTab.Option.HighlightsBookmarks" = "Недавні закладки";
+"Settings.NewTab.Option.HighlightsBookmarks" = "Останні закладки";
 
 /* Option in settings to turn off history in the highlights section */
-"Settings.NewTab.Option.HighlightsHistory" = "Обране";
+"Settings.NewTab.Option.HighlightsHistory" = "Відвідано";
 
 /* Option in settings to show history when you open a new tab */
 "Settings.NewTab.Option.History" = "Історія";
@@ -1858,7 +1861,7 @@
 "Settings.SendUsage.Link" = "Докладніше.";
 
 /* A short description that explains why mozilla collects usage data. */
-"Settings.SendUsage.Message" = "Mozilla намагається збирати лише дані, що необхідні для роботи і вдосконалення Firefox.";
+"Settings.SendUsage.Message" = "Mozilla намагається збирати лише дані, необхідні для роботи й вдосконалення Firefox.";
 
 /* The title for the setting to send usage data. */
 "Settings.SendUsage.Title" = "Надсилати дані про використання";
@@ -1873,7 +1876,7 @@
 "Settings.ShowLoginsInAppMenu.Title" = "Показувати в меню";
 
 /* The description of the open new tab siri shortcut */
-"Settings.Siri.OpenTabShortcut" = "Відкрити нову вкладку";
+"Settings.Siri.OpenTabShortcut" = "Нова вкладка";
 
 /* The description that describes what siri shortcuts are */
 "Settings.Siri.SectionDescription" = "Використовуйте команди Siri, щоб швидко відкривати Firefox через Siri";
@@ -1945,7 +1948,7 @@
 "Settings.TrackingProtection.Alert.Title" = "Увага!";
 
 /* Header description for tracking protection options section where Basic/Strict block list can be selected */
-"Settings.TrackingProtection.BlockListsHeader" = "Ви можете вибрати список, який буде використовувати Firefox для блокування вебелементів, що можуть відстежувати вашу діяльність в Інтернеті.";
+"Settings.TrackingProtection.BlockListsHeader" = "Ви можете вибрати список, який Firefox використовуватиме для блокування вебелементів, які можуть стежити за вашою діяльністю в Інтернеті.";
 
 /* Explanation of basic mode. */
 "Settings.TrackingProtection.Info.BasicTitle" = "Збалансований рівень захисту і швидкодії.";
@@ -2050,7 +2053,7 @@
 "ShareExtension.BookmarkThisPageAction.Title" = "Додати закладку";
 
 /* Share extension label shown after user has performed 'Bookmark this Page' action. */
-"ShareExtension.BookmarkThisPageActionDone.Title" = "Закладено";
+"ShareExtension.BookmarkThisPageActionDone.Title" = "Додано до закладок";
 
 /* Action label on share extension to load the page in Firefox when user switches apps to bring it to foreground. */
 "ShareExtension.LoadInBackgroundAction.Title" = "Завантажити на задньому плані";
@@ -2189,7 +2192,7 @@
 "TabTray.Older.Header" = "Давніші";
 
 /* Hardware shortcut to open a new tab from the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"TabTray.OpenNewTab.KeyCodeTitle" = "Відкрити нову вкладку";
+"TabTray.OpenNewTab.KeyCodeTitle" = "Нова вкладка";
 
 /* Hardware shortcut open the selected tab from the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
 "TabTray.OpenSelectedTab.KeyCodeTitle" = "Відкрити вибрану вкладку";
