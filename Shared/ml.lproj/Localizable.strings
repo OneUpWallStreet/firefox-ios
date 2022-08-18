@@ -735,9 +735,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "ഈ സൈറ്റിനായി പ്രാപ്തമാക്കുക";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "പുതിയതെന്തെല്ലാം";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "മോബൈല്‍ ഡിവൈസ്";
 
@@ -883,7 +880,7 @@
 /* Accessibility Label for the tab toolbar Search button
    Navigation title for search settings.
    Open search section of settings */
-"Search" = "തിരയുക";
+"Search" = "തെരയുക";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "തെരയൂ അല്ലെങ്കില്‍ വിലാസം നല്‍കൂ";
@@ -1080,9 +1077,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "തെളിച്ചമുള്ളത്";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "സ്ക്രീനിന്റെ തെളിച്ചം അടിസ്ഥാനമാക്കി, പ്രമേയങ്ങള്‍ തനിയെ മാറും. പ്രമേയം മാറാന്നുള്ള പരിധി നിങ്ങൾക്ക് നിശ്ചയിയ്ക്കാം. വട്ടം നിലവിലെ സ്ക്രീന്‍ തെളിച്ചം സൂചിപ്പിക്കുന്നു.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "സ്വിച്ച് മോഡ്";

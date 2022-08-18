@@ -46,9 +46,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "ট্যাব: %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "\"%@\" এর জন্য আপনার অনুসন্ধান";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "সম্প্রতি সংরক্ষিত";
 
@@ -112,6 +109,9 @@
 
 /* Accessibility label for address and search field, both words (Address, Search) are therefore nouns. */
 "Address and Search" = "ঠিকানা এবং অনুসন্ধান";
+
+/* Accessibility label for the Address Bar, where a user can enter the search they wish to make */
+"Address.Bar.v99" = "এড্রেস বার";
 
 /* Used as a button label for crash dialog prompt */
 "Always Send" = "সর্বদা পাঠানো হবে";
@@ -286,6 +286,12 @@
 
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "লিঙ্ক শেয়ার করুন";
+
+/* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
+"ContextualHints.SearchBarPlacement.CallToAction" = "টুলবার সেটিংস";
+
+/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the inactive tabs feature. */
+"ContextualHints.TabTray.InactiveTabs" = "আপনি যেসকল ট্যাব গত দুই সপ্তাহে দেখেননি, সেগুলো এখানে সরিয়ে আনা হয়েছে।";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is the call to action for the inactive tabs contextual popup. */
 "ContextualHints.TabTray.InactiveTabs.CallToAction" = "সেটিংসে বন্ধ করুন";
@@ -658,6 +664,9 @@
 /* In the Tabs Tray, in the Inactive Tabs section, a prompt may come up about auto-closing tabs. This string is for the button the user must tap in order to turn on the Auto close feature */
 "InactiveTabs.TabTray.AutoClosePrompt.ButtonTitle" = "Auto Close চালু করুন";
 
+/* In the Tabs Tray, in the Inactive Tabs section, a prompt may come up about auto-closing tabs. This string describes what happens if you elect to turn on this option. */
+"InactiveTabs.TabTray.AutoClosePrompt.Content" = "Firefox ট্যাবগুলি বন্ধ করবে, যা আপনি গত মাসে দেখেননি।";
+
 /* In the Tabs Tray, in the Inactive Tabs section, a prompt may come up about auto-closing tabs. This is the title of that Auto Close prompt */
 "InactiveTabs.TabTray.AutoClosePrompt.Title" = "এক মাস পর স্বয়ংক্রিয়ভাবে বন্ধ?";
 
@@ -684,6 +693,9 @@
 
 /* A label indicating the keyboard shortcut of finding text a user desires within a page again. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
 "Keyboard.Shortcuts.FindAgain" = "আবার খুঁজুন";
+
+/* A label indicating the keyboard shortcut of opening a new non-private tab, switching the user to that tab and Normal Browsing Mode. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.NewNormalTab" = "নতুন সাধারণ ট্যাব";
 
 /* A label indicating the keyboard shortcut of opening a link in a new tab while staying on the currently selected tab. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
 "Keyboard.Shortcuts.OpenLinkInBackground" = "ব্যাকগ্রাউন্ডে লিঙ্ক খুলুন";
@@ -771,6 +783,9 @@
 
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "আরও জানুন";
+
+/* Message shown when you enter Logins & Passwords without having a device passcode set. */
+"Logins.DevicePasscodeRequired.Message" = "লগইন এবং পাসওয়ার্ড সংরক্ষণ এবং স্বয়ংক্রিয়ভাবে পূরণ করতে, ফেস আইডি, টাচ আইডি বা একটি ডিভাইস পাসকোড সক্রিয় করুন।";
 
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "চালিয়ে যান";
@@ -1047,9 +1062,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "এই সাইটের জন্য সক্রিয় করুন";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "নতুন কি আছে";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "মোবাইল ডিভাইস";
 
@@ -1220,7 +1232,7 @@
 /* Accessibility Label for the tab toolbar Search button
    Navigation title for search settings.
    Open search section of settings */
-"Search" = "অনুসন্ধান";
+"Search" = "অনুসন্ধান করুন";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "অনুসন্ধান করুন অথবা ঠিকানা প্রবেশ করুন";
@@ -1423,9 +1435,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "হালকা";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "থিমটি স্বয়ংক্রিয়ভাবে আপনার ডিসপ্লের উজ্জ্বলতায় নির্ভর করে পরিবর্তন হবে। থিম কোথায় পরিবর্তন হবে আপনি সেই পরিসীমা নির্ধারণ করতে পারেন। বৃত্তটি আপনার ডিসপ্লের বর্তমান উজ্জ্বলতা নির্দেশ করে।";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "মোড পরিবর্তন করুন";
@@ -2024,7 +2033,7 @@
 "Use stage servers" = "স্টেজ সার্ভার ব্যবহার করুন";
 
 /* Username textbox in Authentication prompt */
-"Username" = "উজারনেম";
+"Username" = "ব্যবহারকারীর নাম";
 
 /* Text message in the settings table view */
 "Verify your email address" = "আপনার ইমেল যাচাই করুন।";

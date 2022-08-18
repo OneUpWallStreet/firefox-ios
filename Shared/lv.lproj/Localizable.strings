@@ -889,9 +889,6 @@
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Gaišā";
 
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Tēma automātiski mainīsies atkarībā no ekrāna spilgtuma. Jūs varat norādīt slieksni pie kura tēmas mainīsies. Aplis norāda ekrāna pašreizējo spilgtumu.";
-
 /* Display (theme) settings switch subtitle, explaining the title 'Automatically'. */
 "Settings.DisplayTheme.SwitchSubtitle" = "Pārslēgt automātiski atkarībā no ekrāna spilgtuma";
 

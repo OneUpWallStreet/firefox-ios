@@ -46,9 +46,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "Panely: %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "Vaše vyhledávání „%@“";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "Naposledy uložené";
 
@@ -290,9 +287,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Sdílet odkaz";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "Na své osobní domovské stránce Firefoxu vždy najdete, co jste dělali naposledy, ať už nedávno otevřené panely, záložky nebo výsledky vyhledávání.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Nastavení lišty";
 
@@ -333,12 +327,15 @@
 "Dark" = "Tmavé";
 
 /* Accessibility label for button decreasing font size in display settings of reader mode */
-"Decrease text size" = "Zmenšit velikost písma";
+"Decrease text size" = "Zmenšit písmo";
 
 /* Accessibility label for default search engine setting.
    Title for default search engine picker.
    Title for default search engine settings section. */
 "Default Search Engine" = "Výchozí vyhledávač";
+
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "Zavřít";
 
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "Nastavení zobrazení";
@@ -710,7 +707,7 @@
 "InactiveTabs.TabTray.CloseButtonTitle" = "Zavřít všechny neaktivní panely";
 
 /* Accessibility label for button increasing font size in display settings of reader mode */
-"Increase text size" = "Zvětšit velikost písma";
+"Increase text size" = "Zvětšit písmo";
 
 /* Relative time for a tab that was visited within the last few moments. */
 "just now" = "právě teď";
@@ -1074,9 +1071,6 @@
 /* Label for the share button in the menu page. Pressing this button open the share menu to share the current website. */
 "Menu.Share.v99" = "Sdílet";
 
-/* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
-"Menu.SignInToSync.Label.v99" = "Přihlásit se ke službě Sync";
-
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "Panel odeslán";
 
@@ -1178,9 +1172,6 @@
 
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "Povolit pro tento web";
-
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Co je nového";
 
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "mobilní zařízení";
@@ -1367,7 +1358,7 @@
 /* Accessibility Label for the tab toolbar Search button
    Navigation title for search settings.
    Open search section of settings */
-"Search" = "Vyhledávání";
+"Search" = "Hledat";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "Zadejte hledání nebo adresu";
@@ -1573,9 +1564,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Světlý";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Vzhled se bude automaticky měnit podle jasu vašeho displeje. Můžete nastavit hranici, kdy má ke změně dojít. Kroužek ukazuje aktuální jas vašeho displeje.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "Režim přepínání";

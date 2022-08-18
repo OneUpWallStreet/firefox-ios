@@ -46,9 +46,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "ٹیبز: %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "آپ نے\"%@\" کی تلاش کی";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "حال ہی میں محفوظ شدہ";
 
@@ -336,6 +333,9 @@
    Title for default search engine picker.
    Title for default search engine settings section. */
 "Default Search Engine" = "طےشدہ تلاش انجن";
+
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "بند کریں";
 
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "نمائش کی سیٹکگیں";
@@ -1038,9 +1038,6 @@
 /* Label for the share button in the menu page. Pressing this button open the share menu to share the current website. */
 "Menu.Share.v99" = "شیئر کریں";
 
-/* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
-"Menu.SignInToSync.Label.v99" = "ہم سازی کے لئے سائن ان کریں";
-
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "ٹیب بھیج دیا گیا";
 
@@ -1139,9 +1136,6 @@
 
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "اس سائٹ کے لیئے اہل بنائیں";
-
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "نیا کیا ہے";
 
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "موبائل آلہ";
@@ -1522,9 +1516,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "ہلکا";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "تھیم آپ کی ڈسپلے کی چمک کی بنیاد پر خود بخود تبدیل ہوجائے گی. آپ اس حد کو مقرر کرسکتے ہیں جہاں تھیم تبدیل ہوسکتی ہے. حلقہ آپ کی ڈسپلے کی موجودہ چمک کی نشاندہی کرتا ہے۔";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "موڈ تبدیل کریں";

@@ -789,9 +789,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "இந்த தளத்தில் இயக்கு";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "புதியன எவை";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "செல்பேசி சாதனம்";
 
@@ -845,7 +842,7 @@
 "Panel Chooser" = "பலகம் தேர்வி";
 
 /* Password textbox in Authentication prompt */
-"Password" = "கடவுச்சொல்";
+"Password" = "கடவுச்சொல்";
 
 /* Error message shown in the remote tabs panel */
 "PasswordAutoFill.NoPasswordsFoundTitle" = "உங்கள் ஃபயர்பாக்ஸ் கணக்கிலிருந்து ஒத்திசைவான எந்த சான்றுகளும் உங்களிடம் இல்லை";
@@ -937,7 +934,7 @@
 /* Accessibility Label for the tab toolbar Search button
    Navigation title for search settings.
    Open search section of settings */
-"Search" = "தேடல்";
+"Search" = "தேடு";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "தேடு (அ) தள முகவரியுடன் உலாவு";
@@ -1134,9 +1131,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "வெளிச்சம்";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "திரையின் தோற்றம் அதன் ஒளிர்வுதன்மையைக் கொண்டு தானாக மாறும். தோற்றம் எப்போது மாற வேண்டும என்பதை நீங்களும் அமைக்கலாம். இவ்வட்டம் தற்போதைய திரையின் ஒளிர்வுதன்மையைக் குறிக்கிறது.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "முறையை மாற்று";

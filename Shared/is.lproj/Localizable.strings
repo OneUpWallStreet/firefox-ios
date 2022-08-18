@@ -46,9 +46,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "Flipar: %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "Leitin þín að \"%@\"";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "Nýlega vistað";
 
@@ -207,7 +204,7 @@
 "BookmarksPanel.EmptyState.Title" = "Bókamerkin sem þú vistar verða sýnd hér.";
 
 /* Describes the date on which the breach occurred */
-"BreachAlerts.BreachDate" = "Þetta innbrot átti sér stað þann";
+"BreachAlerts.BreachDate" = "Þetta gagnarán átti sér stað þann";
 
 /* Description of what a breach is */
 "BreachAlerts.Description" = "Lykilorðum var lekið eða þeim stolið síðan þú breyttir lykilorðinu þínu síðast. Til að vernda þennan reikning skaltu skrá þig inn á vefsvæðið og breyta lykilorðinu þínu.";
@@ -296,9 +293,6 @@
 /* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
 "ContextualHint.SearchBarPlacement.NewUsers" = "Til að auðvelda innslátt upplýsinga er verkfærasláin nú sjálfgefið neðst.";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "Sérsniðin Firefox-upphafssíða þín gerir það nú auðveldara að halda áfram þar sem frá var horfið. Finndu nýlega flipa, bókamerki og leitarniðurstöður.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Stillingar verkfæraslár";
 
@@ -345,6 +339,9 @@
    Title for default search engine picker.
    Title for default search engine settings section. */
 "Default Search Engine" = "Sjálfgefin leitarvél";
+
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "Loka";
 
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "Stillingar skjás";
@@ -629,7 +626,7 @@
 "HistoryPanel.SyncedTabsCell.Title" = "Samstillt tæki";
 
 /* Accessibility label for the tab toolbar indicating the Home button. */
-"Home" = "Upphafssíða";
+"Home" = "Heim";
 
 /* Button cancelling changes setting the home page for the first time. */
 "HomePage.Set.Dialog.Cancel" = "Hætta við";
@@ -1089,9 +1086,6 @@
 /* Label for the share button in the menu page. Pressing this button open the share menu to share the current website. */
 "Menu.Share.v99" = "Deila";
 
-/* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
-"Menu.SignInToSync.Label.v99" = "Skráðu þig inn til að samstilla";
-
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "Flipi sendur";
 
@@ -1099,7 +1093,7 @@
 "Menu.Toolbar.Bookmarks.AccessibilityLabel.v99" = "Bókamerki";
 
 /* Accessibility label for the Home button on the toolbar. Pressing this button brings the user to the home page. */
-"Menu.Toolbar.Home.AccessibilityLabel.v99" = "Upphafssíða";
+"Menu.Toolbar.Home.AccessibilityLabel.v99" = "Heim";
 
 /* Title on tracking protection menu for blocked items. */
 "Menu.TrackingProtection.BlockedTitle" = "Lokað á";
@@ -1193,9 +1187,6 @@
 
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "Virkja fyrir þetta vefsvæði";
-
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Hvað er nýtt";
 
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "handhægt tæki";
@@ -1385,7 +1376,7 @@
 /* Accessibility Label for the tab toolbar Search button
    Navigation title for search settings.
    Open search section of settings */
-"Search" = "Leitarvélar";
+"Search" = "Leita";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "Leit eða skrifaðu vistfang";
@@ -1591,9 +1582,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Ljóst";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Þemað skiptir yfir á sjálfvirkun hátt miðast við birtustig skjásins. Þú getur valið mörk til að skipta yfir þema. Hringurinn sýnir núverandi birtustig.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "Skipta um ham";
@@ -2294,7 +2282,7 @@
 "Use stage servers" = "Nota forskoðunarnetþjóna";
 
 /* Username textbox in Authentication prompt */
-"Username" = "Notandanafn";
+"Username" = "Notendanafn";
 
 /* Text message in the settings table view */
 "Verify your email address" = "Staðfestu tölvupóstfangið þitt";
