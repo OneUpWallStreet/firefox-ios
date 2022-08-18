@@ -46,9 +46,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "टैब: %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "\"%@\" के लिए आपकी खोज";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "हाल ही में सहेजा गया";
 
@@ -1032,9 +1029,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "इस साइट के लिए सक्रिय करें";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "नया क्या है";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "मोबाइल उपकरण";
 
@@ -1205,7 +1199,7 @@
 /* Accessibility Label for the tab toolbar Search button
    Navigation title for search settings.
    Open search section of settings */
-"Search" = "खोजें";
+"Search" = "ढूंढें";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "खोजें या पता दर्ज करें";
@@ -1411,9 +1405,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "लाइट";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "थीम स्वचालित रूप से आपकी प्रदर्शन चमक के आधार पर परिवर्तित हो जाएगी। आप वह सीमा सेट कर सकते हैं जहां थीम परिवर्तित होती है। वृत्त आपके प्रदर्शन की वर्तमान चमक को इंगित करता है।";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "स्विच मोड";

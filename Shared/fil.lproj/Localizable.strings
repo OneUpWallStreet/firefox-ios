@@ -141,7 +141,7 @@
 "Brightness" = "Tinkad";
 
 /* Label for Cancel button */
-"Cancel" = "Ikansela";
+"Cancel" = "Kanselahin";
 
 /* Accessibility hint for the color theme setting buttons in reader mode display settings */
 "Changes color theme." = "Papalit ng color theme.";
@@ -741,9 +741,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "Paganahin para sa site na ito";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Ano ang Bago";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "Mobile Device";
 
@@ -1086,9 +1083,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Light";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Awtomatikong magbabago ang tema batay sa iyong liwanag ng display. Maaari mong itakda ang threshold kung saan nagbabago ang tema. Ipinapahiwatig ng lupon ang kasalukuyang liwanag ng iyong display.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "Switch Mode";

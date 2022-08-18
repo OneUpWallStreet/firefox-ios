@@ -46,9 +46,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "Καρτέλες: %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "Η αναζήτησή σας για «%@»";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "Πρόσφατα αποθηκευμένα";
 
@@ -296,9 +293,6 @@
 /* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
 "ContextualHint.SearchBarPlacement.NewUsers" = "Για την ευκολότερη εισαγωγή πληροφοριών, η γραμμή εργαλείων βρίσκεται πλέον στο κάτω μέρος από προεπιλογή.";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "Η εξατομικευμένη αρχική σελίδα του Firefox διευκολύνει την επιστροφή στο σημείο που σταματήσατε. Βρείτε τις πρόσφατες καρτέλες, τους σελιδοδείκτες και τα αποτελέσματα αναζήτησής σας.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Ρυθμίσεις γραμμής εργαλείων";
 
@@ -345,6 +339,9 @@
    Title for default search engine picker.
    Title for default search engine settings section. */
 "Default Search Engine" = "Προεπιλεγμένη μηχανή αναζήτησης";
+
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "Κλείσιμο";
 
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "Ρυθμίσεις εμφάνισης";
@@ -1089,9 +1086,6 @@
 /* Label for the share button in the menu page. Pressing this button open the share menu to share the current website. */
 "Menu.Share.v99" = "Κοινή χρήση";
 
-/* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
-"Menu.SignInToSync.Label.v99" = "Σύνδεση στο Sync";
-
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "Η καρτέλα απεστάλη";
 
@@ -1193,9 +1187,6 @@
 
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "Ενεργοποίηση για αυτή την ιστοσελίδα";
-
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Τι νέο υπάρχει";
 
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "κινητή συσκευή";
@@ -1591,9 +1582,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Φωτεινό";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Το θέμα θα αλλάξει αυτόματα βάσει της φωτεινότητας της οθόνης σας. Μπορείτε να ορίσετε το όριο εναλλαγής του θέματος. Ο κύκλος υποδεικνύει την τρέχουσα φωτεινότητα οθόνης.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "Εναλλαγή λειτουργίας";

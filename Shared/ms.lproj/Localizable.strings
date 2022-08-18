@@ -835,9 +835,6 @@
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Cerah";
 
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Tema akan berubah secara automatik mengikut kecerahan paparan. Anda boleh tetapkan batas perubahan tema. Tanda bulatan menunjukkan kecerahan semasa paparan anda.";
-
 /* Display (theme) settings switch subtitle, explaining the title 'Automatically'. */
 "Settings.DisplayTheme.SwitchSubtitle" = "Tukar secara automatik berdasarkan kecerahan skrin";
 

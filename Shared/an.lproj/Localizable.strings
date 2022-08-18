@@ -807,9 +807,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "Activar en este puesto";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Novedatz";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "dispositivo mobil";
 
@@ -958,7 +955,7 @@
 /* Accessibility Label for the tab toolbar Search button
    Navigation title for search settings.
    Open search section of settings */
-"Search" = "Busqueda";
+"Search" = "Buscar";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "Termin de busqueda u adreza";
@@ -1155,9 +1152,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Claro";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Lo tema cambiará automaticament en función d'a brilor d'a pantalla. Puetz definir lo branquil a partir d'o qual lo tema cambia. Lo cerclo indica la brilor actual.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "Cambiar modo";
