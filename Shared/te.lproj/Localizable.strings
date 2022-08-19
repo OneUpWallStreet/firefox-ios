@@ -912,9 +912,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "ఈ సైట్ కోసం చేతనపరచు";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "కొత్తవి ఏమిటి";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "మొబైల్ పరికరం";
 
@@ -975,7 +972,7 @@
 "Panel Chooser" = "ప్యానెల్ ఎంపిక";
 
 /* Password textbox in Authentication prompt */
-"Password" = "పాస్వర్డ్";
+"Password" = "సంకేతపదం";
 
 /* Error message shown in the remote tabs panel */
 "PasswordAutoFill.NoPasswordsFoundTitle" = "మీ Firefox ఖాతా నుండి సింక్రనించిన ప్రవేశ వివరాలు ఏమీ లేవు";
@@ -1258,9 +1255,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "తెల్లని";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "అలంకారం మీ తెర వెలుతురుని బట్టి స్వయంచాలకంగా మారుతుంది. మీరు అలంకారం ఎప్పుడు మారాలో హద్దులు పెట్టుకోవచ్చు. ఈ వృత్తం మీ తెర ప్రస్తుత వెలుతురును సూచిస్తుంది.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "మార్పిడి రీతి";
@@ -1802,7 +1796,7 @@
 "Upgrade Firefox to connect" = "Firefoxతో కనెక్ట్ చేయడానికి అప్గ్రేడ్ చేయండి";
 
 /* Username textbox in Authentication prompt */
-"Username" = "యూజర్‌పేరు";
+"Username" = "వాడుకరి పేరు";
 
 /* Text message in the settings table view */
 "Verify your email address" = "మీ ఇమెయిల్ చిరునామాను ధృవీకరించండి";

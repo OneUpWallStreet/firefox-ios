@@ -40,9 +40,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "زبانه‌ها: %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "جستجو شما برای «%@»";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "اخیرا ذخیره شده";
 
@@ -963,9 +960,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "فعالسازی برای این پایگاه اطلاع رسانی";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "چه چیز جدیدی اومده";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "دستگاه همراه";
 
@@ -1019,7 +1013,7 @@
 "Panel Chooser" = "انتخاب کننده پنل";
 
 /* Password textbox in Authentication prompt */
-"Password" = "گذرواژه";
+"Password" = "کلمه عبور";
 
 /* Error message shown in the remote tabs panel */
 "PasswordAutoFill.NoPasswordsFoundTitle" = "شما هیچ‌گونه مجوزی برای همگام‌ سازی با حساب فایرفاکس خود ندارید";
@@ -1314,9 +1308,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "روشن";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "تم بطور خودکار بر اساس میزان روشنی صفحه‌نمایش شما تغییر خواهد کرد. شما می‌توانید آستانهٔ تغییر تم را مشخص کنید. دایره سطح فعلیِ روشنایی صفحه شما را مشخص کرده است.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "حالت تغییر";
@@ -1822,7 +1813,7 @@
 "Use stage servers" = "استفاده از سرورهای مرحله";
 
 /* Username textbox in Authentication prompt */
-"Username" = "نام‌کاربری";
+"Username" = "نام کاربری";
 
 /* Text message in the settings table view */
 "Verify your email address" = "تایید آدرس پست الکترونیکی";

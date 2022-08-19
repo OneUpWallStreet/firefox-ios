@@ -835,9 +835,6 @@
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Claro";
 
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "O tema cambiará automaticamente en función do brillo da súa pantalla. Pode definir o límite no que o tema cambia. O círculo indica o brillo actual da súa pantalla.";
-
 /* Display (theme) settings switch subtitle, explaining the title 'Automatically'. */
 "Settings.DisplayTheme.SwitchSubtitle" = "Cambiar automaticamente en función do brillo da pantalla";
 

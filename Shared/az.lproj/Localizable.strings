@@ -807,9 +807,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "Bu sayt üçün aktivləşdir";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Yeniliklər";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "mobil cihaz";
 
@@ -958,7 +955,7 @@
 /* Accessibility Label for the tab toolbar Search button
    Navigation title for search settings.
    Open search section of settings */
-"Search" = "Axtarış";
+"Search" = "Axtar";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "Ünvanı daxil et və ya axtar";
@@ -1155,9 +1152,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Açıq";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Mövzu ekran parlaqlığınıza görə avtomatik olarak dəyişəcək. Mövzunun hansı səviyyədə dəyişəcəyini qura bilərsiz. Dairə ekranınızın hazırki parlaqlığını göstərir.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "Rejimi dəyişdir";

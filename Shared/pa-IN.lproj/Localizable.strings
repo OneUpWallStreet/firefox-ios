@@ -46,9 +46,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "ਟੈਬਾਂ: %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "\"%@\" ਲਈ ਤੁਹਾਡੀ ਖੋਜ";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "ਤਾਜ਼ਾ ਸੰਭਾਲੇ";
 
@@ -296,9 +293,6 @@
 /* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
 "ContextualHint.SearchBarPlacement.NewUsers" = "ਜਾਣਕਾਰੀ ਭਰਨ ਨੂੰ ਸੌਖਾ ਕਰਨ ਲਈ ਟੂਲਬਾਰ ਹੁਣ ਮੂਲ ਰੂਪ ਵਿੱਚ ਹੇਠਾਂ ਹੁੰਦੀ ਹੈ।";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "ਤੁਹਾਡੇ ਆਪਣੇ ਬਣਾਏ Firefox ਮੁੱਖ-ਸਫ਼ੇ ਨੇ ਹੁਣ ਜਿੱਥੇ ਤੁਸੀਂ ਛੱਡ ਕੇ ਗਏ ਸੀ, ਉਥੋਂ ਹੀ ਸ਼ੁਰੂ ਕਰਨਾ ਸੌਖਾ ਬਣਾ ਦਿੱਤਾ ਹੈ। ਆਪਣੀਆਂ ਸੱਜਰੀਆਂ ਟੈਬਾਂ, ਬੁੱਕਮਾਰਕ ਅਤੇ ਖੋਜ ਨਤੀਜੇ ਲੱਭੋ।";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "ਟੂਲਬਾਰ ਸੈਟਿੰਗਾਂ";
 
@@ -345,6 +339,9 @@
    Title for default search engine picker.
    Title for default search engine settings section. */
 "Default Search Engine" = "ਡਿਫਾਲਟ ਖੋਜ ਇੰਜਣ";
+
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "ਬੰਦ ਕਰੋ";
 
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "ਡਿਸਪਲੇਅ ਸੈਟਿੰਗਾਂ";
@@ -1089,9 +1086,6 @@
 /* Label for the share button in the menu page. Pressing this button open the share menu to share the current website. */
 "Menu.Share.v99" = "ਸਾਂਝਾ ਕਰੋ";
 
-/* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
-"Menu.SignInToSync.Label.v99" = "ਸਿੰਕ ਲਈ ਸਾਈਨ ਇਨ ਕਰੋ";
-
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "ਟੈਬ ਭੇਜੋ";
 
@@ -1193,9 +1187,6 @@
 
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "ਇਸ ਸਾਈਟ ਲਈ ਸਮਰੱਥ ਕਰੋ";
-
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "ਨਵਾਂ ਕੀ ਹੈ";
 
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "ਮੋਬਾਈਲ ਡਿਵਾਈਸ";
@@ -1385,7 +1376,7 @@
 /* Accessibility Label for the tab toolbar Search button
    Navigation title for search settings.
    Open search section of settings */
-"Search" = "ਖੋਜ";
+"Search" = "ਖੋਜੋ";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "ਖੋਜੋ ਜਾਂ ਸਿਰਨਾਵਾਂ ਦਿਓ";
@@ -1591,9 +1582,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "ਹਲਕਾ";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "ਤੁਹਾਡੀ ਲਿਸ਼ਕੋਰ ਵਿਖਾਲੇ ਦੇ ਹਿਸਾਬ ਨਾਲ ਥੀਮ ਆਪਣੇ ਆਪ ਹੀ ਬਦਲ ਜਾਵੇਗਾ। ਥੀਮ ਕਿੱਥੇ ਬਦਲੇ, ਇਹ ਹੱਦ ਤੁਸੀਂ ਮਿੱਥ ਸਕਦੇ ਹੋ। ਇਹ ਘੇਰਾ ਤੁਹਾਡੇ ਵਿਖਾਲੇ ਦੀ ਮੌਜੂਦਾ ਲਿਸ਼ਕੋਰ ਨੂੰ ਦਰਸਾਉੰਦਾ ਹੈ।";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "ਢੰਗ ਬਦਲੋ";

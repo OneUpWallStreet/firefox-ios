@@ -573,9 +573,6 @@
 /* Toast displayed to the user after a bookmark has been removed. */
 "Menu.RemoveBookmark.Confirm" = "ଚିହ୍ନ କାଢ଼ିଦିଆ ଯାଇଛି";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "ନୂଆ କଣ ରହିଛି";
-
 /* Accessibility label for the navigation toolbar displayed at the bottom of the screen. */
 "Navigation Toolbar" = "ସାଧନପଟି ପଥପ୍ରଦର୍ଶନ";
 
