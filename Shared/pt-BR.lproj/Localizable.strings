@@ -46,9 +46,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "Abas: %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "Sua pesquisa de \"%@\"";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "Salvo recentemente";
 
@@ -68,7 +65,7 @@
 "ActivityStream.Pocket.Trending" = "Em alta";
 
 /* Section title label for recently visited websites */
-"ActivityStream.RecentHistory.Title" = "Visitados recentemente";
+"ActivityStream.RecentHistory.Title" = "Visitado recentemente";
 
 /* Section title for the Recently Saved section. This shows websites that have had a save action. Right now it is just bookmarks but it could be used for other things like the reading list in the future. */
 "ActivityStream.RecentlySaved.SectionTitle" = "Salvo recentemente";
@@ -296,9 +293,6 @@
 /* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
 "ContextualHint.SearchBarPlacement.NewUsers" = "Para facilitar digitar informações, agora por padrão a barra de ferramentas fica embaixo.";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "A tela inicial personalizada do Firefox agora facilita continuar de onde você parou. Encontre suas abas, favoritos e resultados de pesquisa recentes.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Configurações da barra de ferramentas";
 
@@ -345,6 +339,9 @@
    Title for default search engine picker.
    Title for default search engine settings section. */
 "Default Search Engine" = "Mecanismo de pesquisa padrão";
+
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "Fechar";
 
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "Configurações de exibição";
@@ -1089,9 +1086,6 @@
 /* Label for the share button in the menu page. Pressing this button open the share menu to share the current website. */
 "Menu.Share.v99" = "Compartilhar";
 
-/* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
-"Menu.SignInToSync.Label.v99" = "Entrar no Sync";
-
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "Aba enviada";
 
@@ -1193,9 +1187,6 @@
 
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "Ativar neste site";
-
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Novidades";
 
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "dispositivo móvel";
@@ -1385,13 +1376,13 @@
 /* Accessibility Label for the tab toolbar Search button
    Navigation title for search settings.
    Open search section of settings */
-"Search" = "Pesquisa";
+"Search" = "Pesquisar";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "Pesquise ou digite um endereço";
 
 /* Search suggestion cell label that allows user to switch to tab which they searched for in url bar */
-"Search.Awesomebar.SwitchToTab" = "Alternar para aba";
+"Search.Awesomebar.SwitchToTab" = "Mudar para aba";
 
 /* The message that asks the user to Add the search provider explaining where the search engine will appear */
 "Search.ThirdPartyEngines.AddMessage" = "O novo mecanismo de pesquisa aparecerá na barra de pesquisa rápida.";
@@ -1591,9 +1582,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Claro";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "O tema será alterado automaticamente com base no brilho da sua tela. Você pode definir o limiar de alteração do tema. O círculo indica o brilho atual da sua tela.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "Modo de alternar";
@@ -2294,7 +2282,7 @@
 "Use stage servers" = "Usar servidores de teste";
 
 /* Username textbox in Authentication prompt */
-"Username" = "Nome de usuário";
+"Username" = "Usuário";
 
 /* Text message in the settings table view */
 "Verify your email address" = "Verifique o seu endereço de email";

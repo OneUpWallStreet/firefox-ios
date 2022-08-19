@@ -645,9 +645,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "Cctivar per aqueste site";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Qué de nòu ?";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "periferic mobil";
 
@@ -766,7 +763,7 @@
 /* Accessibility Label for the tab toolbar Search button
    Navigation title for search settings.
    Open search section of settings */
-"Search" = "Recèrca";
+"Search" = "Recercar";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "Picar un tèrme de recercar o una adreça";
@@ -1207,7 +1204,7 @@
 "Upgrade Firefox to connect" = "Metètz a jorn Firefox per vos connectar";
 
 /* Username textbox in Authentication prompt */
-"Username" = "Nom d'utilizaire";
+"Username" = "Nom d’utilizaire";
 
 /* Version number of Firefox shown in settings */
 "Version %@ (%@)" = "Version %1$@ (%2$@)";
