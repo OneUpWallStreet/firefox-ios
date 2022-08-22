@@ -814,9 +814,6 @@
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Svijetlo";
 
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Tema će se automatski promijeniti ovisno o svjetlini vašeg ekrana. Možete postaviti prag kada će se tema promijeniti. Krug označava trenutnu svjetlinu vašeg ekrana.";
-
 /* Display (theme) settings switch subtitle, explaining the title 'Automatically'. */
 "Settings.DisplayTheme.SwitchSubtitle" = "Prebaci automatski ovisno o svjetlini ekrana";
 

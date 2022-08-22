@@ -46,9 +46,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "タブ数: %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "\"%@\" についての検索";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "最近保存";
 
@@ -296,9 +293,6 @@
 /* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
 "ContextualHint.SearchBarPlacement.NewUsers" = "情報を入力しやすくするため、ツールバーがデフォルトで画面下部に配置されます。";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "個人に合わせた Firefox ホームページにより、前回のページから簡単に再開できるようになりました。最近のタブ、ブックマーク、検索結果を見つけられます。";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "ツールバー設定";
 
@@ -345,6 +339,9 @@
    Title for default search engine picker.
    Title for default search engine settings section. */
 "Default Search Engine" = "デフォルト検索エンジン";
+
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "閉じる";
 
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "ディスプレイ設定";
@@ -1089,9 +1086,6 @@
 /* Label for the share button in the menu page. Pressing this button open the share menu to share the current website. */
 "Menu.Share.v99" = "共有";
 
-/* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
-"Menu.SignInToSync.Label.v99" = "Sync にログイン";
-
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "タブを送信しました";
 
@@ -1194,9 +1188,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "このサイトでは有効化";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "新着情報";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "モバイル端末";
 
@@ -1238,7 +1229,7 @@
 "Onboarding.WhatsNew.RecentSearches.Description" = "ホームページから最近の検索を確認できます。";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the Recent Searches bullet point on the card */
-"Onboarding.WhatsNew.RecentSearches.Title" = "最近の検索";
+"Onboarding.WhatsNew.RecentSearches.Title" = "最近検索したサイト";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the description for the Tab Group bullet point on the card */
 "Onboarding.WhatsNew.TabGroups.Description" = "同じ検索からのページがグループ化されます。";
@@ -1591,9 +1582,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "ライト";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "テーマを画面の明るさに合わせて自動的に変更します。テーマをどの時点で切り替えるか、しきい値を設定することができます。丸印は画面の今の明るさを示しています。";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "切り替えモード";

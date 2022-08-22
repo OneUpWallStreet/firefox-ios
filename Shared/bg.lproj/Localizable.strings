@@ -571,8 +571,14 @@
 /* Toggle logins syncing setting */
 "Logins" = "Входящи данни";
 
+/* Title of the Learn More button that links to a support page about device passcode requirements. */
+"Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Научете повече";
+
 /* Message shown when you enter Logins & Passwords without having a device passcode set. */
 "Logins.DevicePasscodeRequired.Message" = "За да бъдат запазвани и за да разрешите автоматичното попълване на регистрации, включете Face ID, Touch ID или паролата на устройството.";
+
+/* Title of the Learn More button that links to a support page about device passcode requirements. */
+"Logins.Onboarding.LearnMoreButtonTitle" = "Научете повече";
 
 /* Message shown when you enter Logins & Passwords for the first time. */
 "Logins.Onboarding.Message" = "Вашите регистрациите вече са защитени с Face ID, Touch ID или паролата на устройството.";
@@ -710,9 +716,6 @@
 
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "Разрешаване за този сайт";
-
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Новото в това издание";
 
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "мобилно устройство";
@@ -1021,9 +1024,6 @@
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Светла";
 
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Темите автоматично ще бъдат променяни въз основа на яркостта на екрана. Може да зададете друг праг за превключване. Кръгчето показва текущата яркост на дисплея.";
-
 /* Display (theme) settings switch subtitle, explaining the title 'Automatically'. */
 "Settings.DisplayTheme.SwitchSubtitle" = "Превключване въз основа яркостта на екрана";
 
@@ -1171,6 +1171,9 @@
 
 /* The option that takes you to the siri shortcuts settings page */
 "Settings.Siri.SectionName" = "Действия чрез Siri";
+
+/* Title for a link that explains what Mozilla means by Studies */
+"Settings.Studies.Toggle.Link" = "Научете повече.";
 
 /* This is the description for the setting that toggles the Inactive Tabs feature in the settings menu under the Tabs customization section. Inactive tabs are a separate section of tabs that appears in the Tab Tray, which can be enabled or not */
 "Settings.Tabs.CustomizeTabsSection.InactiveTabs" = "Неактивни раздели";

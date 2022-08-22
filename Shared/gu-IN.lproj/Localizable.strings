@@ -750,9 +750,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "આ સાઇટ માટે સક્ષમ કરો";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "નવું શું છે";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "મોબાઇલ ઉપકરણ";
 
@@ -1095,9 +1092,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "પ્રકાશ";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "થીમ પ્રદર્શન તમારી તેજ પર આધારિત આપોઆપ બદલાશે. તમે થ્રેશોલ્ડ સેટ કરી શકો છો જ્યાં થીમ બદલાય છે. વર્તુળ તમારા પ્રદર્શનની વર્તમાન તેજ દર્શાવે છે.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "મોડ બદલો";

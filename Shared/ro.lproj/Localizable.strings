@@ -583,6 +583,12 @@
 /* Relative time for a tab that was visited within the last few moments. */
 "just now" = "chiar acum";
 
+/* A label indicating the keyboard shortcut of saving the current web page in a format of the user's choice. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.SavePageAs" = "Salvează pagina ca…";
+
+/* A label indicating a grouping of related keyboard shortcuts describing actions a user can do with locally saved items. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.Section.Tools" = "Instrumente";
+
 /* History tableview section header */
 "Last month" = "Luna trecută";
 
@@ -819,9 +825,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "Activează pentru acest site";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Ce este nou";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "dispozitiv mobil";
 
@@ -970,7 +973,7 @@
 /* Accessibility Label for the tab toolbar Search button
    Navigation title for search settings.
    Open search section of settings */
-"Search" = "Căutare";
+"Search" = "Caută";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "Caută sau introdu adresa";
@@ -1170,9 +1173,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Deschisă";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Tema se va schimba automat în funcție de luminozitatea ecranului. Poți seta pragul în care se schimbă tema. Cercul indică luminozitatea actuală a afișajului.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "Comutare mod";

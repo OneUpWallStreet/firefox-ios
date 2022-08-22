@@ -46,9 +46,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "الألسنة: %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "نتائج البحث عن ”%@“";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "المحفوظة حديثًا";
 
@@ -286,9 +283,6 @@
 
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "شارِك الرابط";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "تُسهّل الآن صفحة بداية Firefox مواصلة ما كنتَ تركته سابقًا. ستجد فيها أحدث الألسنة والعلامات ونتائج البحث.";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the inactive tabs feature. */
 "ContextualHints.TabTray.InactiveTabs" = "ستُنقل الألسنة التي لم تعرضها منذ أسبوعين إلى هنا.";
@@ -1074,9 +1068,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "فعِّله لهذا الموقع";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "ما الجديد";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "جهاز محمول";
 
@@ -1262,7 +1253,7 @@
 /* Accessibility Label for the tab toolbar Search button
    Navigation title for search settings.
    Open search section of settings */
-"Search" = "البحث";
+"Search" = "ابحث";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "ابحث أو أدخِل عنوانا";
@@ -1468,9 +1459,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "فاتحة";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "ستتغيّر السمة تلقائيا حسب سطوع الشاشة لديك. يمكنك ضبط عتبة قصوى حيث تتغير السمة عندها. تُشير الدائرة إلى سطوع الشاشة الحالي.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "تبديل الوضع";
