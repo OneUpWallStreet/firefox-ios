@@ -46,9 +46,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "Skeda: %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "Kërkimi juaj për “%@”";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "Ruajtur Së Fundi";
 
@@ -295,9 +292,6 @@
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
 "ContextualHint.SearchBarPlacement.NewUsers" = "Për ta bërë më të lehtë futjen e të dhënave, paneli tani, si parazgjedhje, gjendet në fund.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "Faqja juaj hyrëse në Firefox, e personalizuar, tani e bën më të lehtë të riktheheni atje ku e latë. Gjeni skedat, faqerojtësit dhe përfundime kërkimi tuajat më të freskëta.";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Rregullime Paneli";
@@ -1077,9 +1071,6 @@
 /* Label for the share button in the menu page. Pressing this button open the share menu to share the current website. */
 "Menu.Share.v99" = "Ndajeni me të tjerët";
 
-/* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
-"Menu.SignInToSync.Label.v99" = "Që të Njëkohësoni, bëni hyrjen";
-
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "Skeda u Dërgua";
 
@@ -1181,9 +1172,6 @@
 
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "Aktivizoje për këtë sajt";
-
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Ç’ka të Re";
 
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "pajisje celulare";
@@ -1579,9 +1567,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "E çelët";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Tema do të ndryshojë vetvetiu bazuar në ndriçimin e ekranit tuaj. Mund të caktoni pragun se kur ndryshon tema. Rrethi tregon ndriçimin e tanishëm të ekranit tuaj.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "Mënyrë Këmbimi";

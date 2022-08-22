@@ -46,9 +46,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "ផ្ទាំង៖ %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "ការស្វែងរក​របស់អ្នក​សម្រាប់ \"%@\"";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "បានរក្សាទុក​ថ្មីៗ";
 
@@ -204,7 +201,7 @@
 "Brightness" = "ពន្លឺ";
 
 /* Label for Cancel button */
-"Cancel" = "បោះបង់ចោល";
+"Cancel" = "បោះបង់";
 
 /* Accessibility hint for the color theme setting buttons in reader mode display settings */
 "Changes color theme." = "ប្ដូរ​ពណ៌​រូបរាង។";
@@ -268,9 +265,6 @@
 
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "ចែករំលែក​តំណ";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "ឥឡូវនេះ គេហទំព័រ Firefox ដែលស្របតាមបុគ្គល​របស់អ្នក​ ងាយស្រួល​ជាងមុន​ក្នុងការជ្រើសរើស​កន្លែង​ដែលអ្នកបានចាកចេញ។ រក​ផ្ទាំង​ ចំណាំ និង​លទ្ធផល​ស្វែងរក​ថ្មីៗ​របស់អ្នក។";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the inactive tabs feature. */
 "ContextualHints.TabTray.InactiveTabs" = "ផ្ទាំង​ដែល​អ្នក​មិន​បាន​មើល​រយៈពេល​ពីរសប្ដាហ៍​បានផ្លាស់ទី​នៅទីនេះ។";
@@ -903,9 +897,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "បើកសម្រាប់គេហទំព័រនេះ";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "មានអ្វី​​ថ្មី";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "ឧបករណ៍​ចល័ត";
 
@@ -1257,9 +1248,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "ភ្លឺ";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "រចនាប័ទ្ម​នឹងផ្លាស់ប្តូរដោយស្វ័យប្រវត្តិតាម​ពន្លឺបង្ហាញរបស់អ្នក។ អ្នកអាចកំណត់ចំណុច​ដែលរចនាប័ទ្ម​ផ្លាស់ប្តូរ។ រង្វង់បង្ហាញពីពន្លឺបច្ចុប្បន្ននៃអេក្រង់របស់អ្នក។";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "ប្ដូរមុខងារ";
@@ -1756,7 +1744,7 @@
 "Upgrade Firefox to connect" = "ដំឡើងកំណែ Firefox ដើម្បីតភ្ជាប់";
 
 /* Username textbox in Authentication prompt */
-"Username" = "ឈ្មោះ​អ្នក​ប្រើ";
+"Username" = "ឈ្មោះ​អ្នក​ប្រើប្រាស់";
 
 /* Text message in the settings table view */
 "Verify your email address" = "ផ្ទៀងផ្ទាត់អាសយដ្ឋាន​អ៊ីមែល​របស់​អ្នក";

@@ -835,9 +835,6 @@
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Kaaray";
 
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Leetoo ga bere nga boŋ se war dijoo gaayaa sahãa bande. War ga hin ka dimma dam leeti barmayyan se. Windiraa ga war dijoo sohõda gaayaa sahãa šilbay.";
-
 /* Display (theme) settings switch subtitle, explaining the title 'Automatically'. */
 "Settings.DisplayTheme.SwitchSubtitle" = "Bere nga boŋ se dijoo gaayaa sahãa bande";
 

@@ -735,9 +735,6 @@
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "या संकेतस्थळासाठी सक्रिय करा";
 
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "नवीन काय आहे";
-
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "मोबाईल डिव्हाइस";
 
@@ -1080,9 +1077,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "फिकट";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "आपल्या डिस्पले प्रखरतेनुसार थीम स्वयंचलितपणे बदलेल. थीम जेथे बदलेल त्यासाठीआपण थ्रेशहोल्ड सेट करू शकता. वर्तुळ आपल्या डिस्पलेच्या वर्तमान प्रखरता दर्शवते.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "मोड बदला";
@@ -1525,7 +1519,7 @@
 "Upgrade Firefox to connect" = "कनेक्ट करण्यासाठी Firefox श्रेणीसुधारित करा";
 
 /* Username textbox in Authentication prompt */
-"Username" = "वापरकर्त्याचे नाव";
+"Username" = "वापरकर्ता नाव";
 
 /* Text message in the settings table view */
 "Verify your email address" = "आपला ईमेल पत्ता सत्यापित करा";

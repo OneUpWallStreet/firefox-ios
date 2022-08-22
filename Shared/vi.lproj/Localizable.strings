@@ -46,9 +46,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "Thẻ: %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "Tìm kiếm của bạn cho \"%@\"";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "Đã lưu gần đây";
 
@@ -296,9 +293,6 @@
 /* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
 "ContextualHint.SearchBarPlacement.NewUsers" = "Để giúp nhập thông tin dễ dàng hơn, thanh công cụ hiện sẽ ở dưới cùng theo mặc định.";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "Trang chủ Firefox được cá nhân hóa của bạn giờ đây giúp bạn tiếp tục lại nơi bạn đã dừng lại dễ dàng hơn. Tìm các thẻ, dấu trang và kết quả tìm kiếm gần đây của bạn.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Cài đặt thanh công cụ";
 
@@ -345,6 +339,9 @@
    Title for default search engine picker.
    Title for default search engine settings section. */
 "Default Search Engine" = "Công cụ tìm kiếm mặc định";
+
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "Đóng";
 
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "Cài đặt hiển thị";
@@ -1089,9 +1086,6 @@
 /* Label for the share button in the menu page. Pressing this button open the share menu to share the current website. */
 "Menu.Share.v99" = "Chia sẻ";
 
-/* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
-"Menu.SignInToSync.Label.v99" = "Đăng nhập vào đồng bộ hóa";
-
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "Đã gửi thẻ";
 
@@ -1193,9 +1187,6 @@
 
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "Kích hoạt cho trang này";
-
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Có gì mới";
 
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "thiết bị di động";
@@ -1592,9 +1583,6 @@
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Sáng";
 
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Chủ đề sẽ tự động thay đổi dựa trên độ sáng màn hình của bạn. Bạn có thể đặt ngưỡng nơi chủ đề thay đổi. Vòng tròn biểu thị độ sáng hiện tại của màn hình.";
-
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "Chế độ chuyển đổi";
 
@@ -1735,7 +1723,7 @@
 "Settings.Homepage.Shortcuts.ShortcutsToggle.v100" = "Lối tắt";
 
 /* This string is the title of the toggle to disable the sponsored shortcuts functionnality which can be enabled in the shortcut sections. This toggle is in the settings page. */
-"Settings.Homepage.Shortcuts.SponsoredShortcutsToggle.v100" = "Các lối tắt được tài trợ";
+"Settings.Homepage.Shortcuts.SponsoredShortcutsToggle.v100" = "Lối tắt được tài trợ";
 
 /* Toggled OFF to hide the shortcuts section */
 "Settings.Homepage.Shortcuts.ToggleOff.v100" = "Tắt";
@@ -2111,7 +2099,7 @@
 "Sync.SyncingEllipsis.Label" = "Đang đồng bộ hóa…";
 
 /* Panel accessibility label */
-"Synced Tabs" = "Các thẻ đã đồng bộ";
+"Synced Tabs" = "Thẻ đã đồng bộ hóa";
 
 /* The Bookmark sync component, used in SyncState.Partial.Title */
 "SyncState.Bookmark.Title" = "Dấu trang";

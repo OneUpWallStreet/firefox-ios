@@ -46,9 +46,6 @@
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "Tabiau: %d";
 
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "Eich chwilio am \"%@\"";
-
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "Cadwyd yn ddiweddar";
 
@@ -296,9 +293,6 @@
 /* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
 "ContextualHint.SearchBarPlacement.NewUsers" = "Er mwyn ei gwneud hi'n haws cyflwyno gwybodaeth, mae'r bar offer nawr wedi ei ragosod ar y gwaelod.";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "Mae eich cartref Firefox personoledig bellach yn ei gwneud hi’n haws i fynd nôl i le roeddech chi o'r blaen. Dewch o hyd i’ch tabiau, nodau tudalen a’ch canlyniadau chwilio diweddar.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Gosodiadau Bar Offer";
 
@@ -345,6 +339,9 @@
    Title for default search engine picker.
    Title for default search engine settings section. */
 "Default Search Engine" = "Y Peiriant Chwilio Rhagosodedig";
+
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "Cau";
 
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "Gosodiadau'r Dangosydd";
@@ -1089,9 +1086,6 @@
 /* Label for the share button in the menu page. Pressing this button open the share menu to share the current website. */
 "Menu.Share.v99" = "Rhannu";
 
-/* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
-"Menu.SignInToSync.Label.v99" = "Mewngofnodwch i Sync";
-
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "Anfonwyd Tab";
 
@@ -1193,9 +1187,6 @@
 
 /* label for the menu item that lets you remove a website from the tracking protection whitelist */
 "Menu.TrackingProtectionWhitelistRemove.Title" = "Galluogi ar gyfer y wefan hon";
-
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Be sy'n Newydd";
 
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "dyfais symudol";
@@ -1591,9 +1582,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Golau";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Bydd y thema'n newid yn awtomatig ar sail disgleirdeb eich dangosydd. Gallwch osod y trothwy pryd mae'r thema'n newid. Mae'r cylch yn dangos disgleirdeb cyfredol eich dangosydd.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "Newid Modd";
@@ -2294,7 +2282,7 @@
 "Use stage servers" = "Defnyddio weinyddion llwyfan";
 
 /* Username textbox in Authentication prompt */
-"Username" = "Enw defnyddiwr";
+"Username" = "Enw Defnyddiwr";
 
 /* Text message in the settings table view */
 "Verify your email address" = "Dilyswch eich cyfeiriad e-bost";
