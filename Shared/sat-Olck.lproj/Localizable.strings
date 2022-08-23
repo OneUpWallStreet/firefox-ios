@@ -20,34 +20,19 @@
 "ActivityStream.ContextMenu.AddToShortcuts" = "ᱠᱷᱟᱴᱚᱢᱟᱪᱷᱟ ᱥᱮᱞᱮᱫᱽ ᱢᱮ";
 
 /* The title for the pinning a topsite action */
-"ActivityStream.ContextMenu.PinTopsite" = "ᱪᱮᱛᱟᱱ ᱨᱤᱱ ᱥᱟᱭᱤᱴ ᱠᱚ ᱯᱤᱱ ᱢᱮ";
-
-/* The title for the pinning a topsite action */
 "ActivityStream.ContextMenu.PinTopsite2" = "ᱞᱟᱴᱷᱟ";
 
 /* The title for removing a shortcut action */
 "ActivityStream.ContextMenu.RemoveFromShortcuts" = "ᱠᱷᱟᱴᱚᱢᱟᱪᱷᱟ ᱠᱷᱚᱱ ᱚᱪᱚᱜᱽ ᱢᱮ";
 
-/* The title for removing a pinned topsite action */
-"ActivityStream.ContextMenu.RemovePinTopsite" = "ᱯᱤᱱ ᱟᱠᱟᱱ ᱥᱟᱭᱤᱴ ᱠᱚ ᱚᱰᱚᱠ ᱢᱮ";
-
 /* The title for the unpinning a topsite action */
 "ActivityStream.ContextMenu.UnpinTopsite" = "ᱚᱪᱚᱜᱽ";
-
-/* The description of a highlight if it is a site the user has bookmarked */
-"ActivityStream.Highlights.Bookmark" = "ᱵᱩᱩᱠᱢᱟᱨᱠ ᱦᱩᱭᱮᱱᱟ";
-
-/* The description of a highlight if it is a site the user has visited */
-"ActivityStream.Highlights.Visited" = "ᱧᱮᱞᱟᱠ";
 
 /* Title for the Jump Back In section. This section allows users to jump back in to a recently viewed tab */
 "ActivityStream.JumpBackIn.SectionTitle" = "ᱦᱮᱡ ᱨᱩᱟᱹᱲᱚᱜ ᱢᱮ";
 
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "ᱴᱮᱵᱽ ᱠᱚ:%d";
-
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "\"%@\" ᱞᱟᱹᱜᱤᱜ ᱟᱢᱟᱜ ᱥᱮᱸᱫᱽᱨᱟ";
 
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "ᱦᱟᱞᱮᱜᱮ ᱨᱩᱠᱷᱭᱟᱹ ᱟᱠᱟᱱᱟ";
@@ -63,9 +48,6 @@
 
 /* Section title label for Recommended by Pocket section */
 "ActivityStream.Pocket.SectionTitle2" = "ᱯᱚᱠᱮᱴ ᱵᱟᱛᱟᱣ ᱟᱠᱟᱫ ᱡᱤᱱᱤᱥ";
-
-/* The description of a Pocket Story */
-"ActivityStream.Pocket.Trending" = "ᱴᱨᱮᱱᱰᱤᱝ";
 
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "ᱦᱟᱹᱞᱤ ᱨᱮ ᱦᱤᱨᱤᱭᱟᱠᱟᱱᱟ";
@@ -87,9 +69,6 @@
 
 /* The title for the setting page which lets you select the number of top site rows */
 "ActivityStream.TopSites.RowSettingFooter" = "ᱛᱷᱟᱨ ᱫᱚᱦᱚᱭ ᱢᱮ";
-
-/* Section title label for Top Sites */
-"ActivityStream.TopSites.SectionTitle" = "ᱪᱮᱛᱟᱱ ᱨᱤᱱ ᱥᱟᱭᱤᱴ";
 
 /* Accessibility label for the Add Tab button in the Tab Tray. */
 "Add Tab" = "ᱴᱮᱵ ᱥᱮᱞᱮᱫ ᱢᱮ";
@@ -125,23 +104,11 @@
 /* Authentication prompt title */
 "Authentication required" = "ᱯᱚᱨᱢᱟᱱ ᱞᱟᱹᱠᱛᱤ";
 
-/* Description for button to suggest searching with a search engine. First argument is the name of the search engine to select */
-"Awesomebar.SearchWithEngine.Description" = "ᱴᱷᱤᱠᱱᱟᱹ ᱵᱟᱨ ᱠᱷᱚᱱ ᱥᱚᱡᱷᱮ %@ ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱟ";
-
-/* Title for button to suggest searching with a search engine. First argument is the name of the search engine to select */
-"Awesomebar.SearchWithEngine.Title" = "%@ ᱥᱟᱞᱟᱜ ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ";
-
 /* Accessibility label for the Back button in the tab toolbar. */
 "Back" = "ᱛᱟᱭᱚᱢ";
 
 /* Block pop-up windows setting */
 "Block Pop-up Windows" = "ᱴᱟᱴᱠᱟ ᱚᱰᱚᱠ ᱧᱮᱧᱮᱞᱚᱢ ᱠᱚ ᱟᱴᱠᱟᱣ";
-
-/* The header title for the fields when editing a Bookmark */
-"Bookmark.BookmarkDetail.FieldsHeader.Bookmark.Title" = "ᱵᱩᱠᱢᱟᱨᱠ";
-
-/* The header title for the fields when editing a Folder */
-"Bookmark.BookmarkDetail.FieldsHeader.Folder.Title" = "ᱯᱚᱴᱚᱢ";
 
 /* The label for the Title field when editing a bookmark */
 "Bookmark.DetailFieldTitle.Label" = "ᱧᱩᱛᱩᱢ";
@@ -173,12 +140,6 @@
 /* The label to show the location of the folder where the bookmark is located */
 "Bookmarks.Folder.Label" = "ᱯᱚᱴᱚᱢ";
 
-/* The label for the location of the new folder */
-"Bookmarks.FolderLocation.Label" = "ᱡᱟᱭᱜᱟ";
-
-/* The label for the title of the new folder */
-"Bookmarks.FolderName.Label" = "ᱯᱚᱴᱚᱢ ᱧᱩᱛᱩᱢ";
-
 /* A label indicating all bookmarks grouped under the category 'Desktop Bookmarks'. */
 "Bookmarks.Menu.DesktopBookmarks" = "ᱰᱮᱥᱠᱴᱚᱯ ᱵᱩᱠᱢᱟᱨᱠ ᱠᱚ";
 
@@ -199,12 +160,6 @@
 
 /* The label for the title of a bookmark */
 "Bookmarks.Title.Label" = "ᱧᱩᱛᱩᱢ";
-
-/* The label for the URL of a bookmark */
-"Bookmarks.URL.Label" = "URL";
-
-/* Status label for the empty Bookmarks state. */
-"BookmarksPanel.EmptyState.Title" = "ᱟᱢ ᱡᱟ ᱵᱩᱠᱢᱟᱨᱠ ᱥᱟᱧᱪᱟᱣᱟᱢ ᱚᱱᱟ ᱫᱚ ᱱᱚᱸᱲᱮ ᱩᱫᱩᱜᱚᱣᱟ᱾";
 
 /* Describes the date on which the breach occurred */
 "BreachAlerts.BreachDate" = "ᱱᱚᱶᱟ ᱨᱚᱯᱩᱫ ᱦᱚᱭ ᱠᱟᱱᱟ";
@@ -251,9 +206,6 @@
 /* Context menu item for bookmarking a link URL */
 "ContextMenu.BookmarkLinkButtonTitle" = "ᱵᱩᱠᱢᱟᱨᱠ ᱞᱤᱸᱠ";
 
-/* The button text in the Button Toast for switching to a fresh New Private Tab. */
-"ContextMenu.ButtonToast.NewPrivateTabOpened.ButtonText" = "ᱵᱚᱫᱚᱞ ᱢᱮ";
-
 /* The label text in the Button Toast for switching to a fresh New Private Tab. */
 "ContextMenu.ButtonToast.NewPrivateTabOpened.LabelText" = "ᱱᱟᱶᱟ ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵ ᱠᱷᱩᱞᱟᱹᱭᱱᱟ";
 
@@ -278,12 +230,6 @@
 /* Context menu item for opening a link in a new tab */
 "ContextMenu.OpenInNewTabButtonTitle" = "ᱱᱟᱶᱟ ᱴᱮᱵ ᱨᱮ ᱠᱷᱩᱞᱟᱹᱭ ᱢᱮ";
 
-/* Context menu item for opening a link in a new private tab */
-"ContextMenu.OpenLinkInNewPrivateTabButtonTitle" = "ᱱᱟᱶᱟ ᱱᱤᱡᱮᱨᱟᱜ ᱴᱮᱵ ᱨᱮ ᱡᱷᱤᱡᱽ ᱢᱮ";
-
-/* Context menu item for opening a link in a new tab */
-"ContextMenu.OpenLinkInNewTabButtonTitle" = "ᱱᱟᱶᱟ ᱴᱮᱵ ᱨᱮ ᱡᱷᱤᱡᱽ ᱢᱮ";
-
 /* Context menu item for saving an image */
 "ContextMenu.SaveImageButtonTitle" = "ᱪᱤᱛᱟᱹᱨ ᱥᱟᱧᱪᱟᱣ ᱢᱮ";
 
@@ -295,9 +241,6 @@
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
 "ContextualHint.SearchBarPlacement.NewUsers" = "ᱡᱤᱱᱤᱥ ᱟᱫᱮᱨ ᱟᱞᱜᱟ ᱛᱮᱭᱟᱨ ᱞᱟᱹᱜᱤᱫ, ᱦᱟᱹᱛᱤᱭᱟᱹᱨ ᱵᱟᱨ ᱫᱚ ᱢᱩᱞ ᱦᱤᱥᱟᱹᱵᱽ ᱛᱮ ᱞᱟᱛᱟᱨ ᱨᱮ ᱢᱮᱱᱟᱜᱼᱟ ᱾";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "ᱟᱢᱟᱜ ᱢᱚᱱᱮᱛᱮᱭᱟᱜ Firefox ᱚᱲᱟᱜᱥᱟᱦᱴᱟ ᱫᱚ ᱱᱤᱛᱚᱜ ᱡᱟᱦᱟᱸ ᱨᱮ ᱟᱲᱟᱜ ᱠᱟᱜᱼᱟᱢ ᱚᱱᱰᱮ ᱜᱮ ᱤᱫᱤ ᱢᱮᱭᱟᱭ ᱾ ᱟᱢᱟᱜ ᱱᱤᱛᱚᱜᱟᱜ ᱴᱮᱵᱽ ᱠᱚ, ᱵᱩᱠᱢᱟᱨᱠ ᱠᱚ ᱟᱨ ᱥᱮᱸᱫᱽᱨᱟ ᱠᱚ ᱯᱟᱱᱛᱮ ᱛᱟᱢ ᱾";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "ᱦᱟᱹᱛᱤᱭᱟᱹᱨ ᱵᱟᱨ ᱨᱮᱭᱟᱜ ᱥᱟᱡᱟᱣ ᱠᱚ";
@@ -346,6 +289,9 @@
    Title for default search engine settings section. */
 "Default Search Engine" = "ᱢᱩᱞ ᱥᱮᱸᱫᱽᱨᱟ ᱤᱸᱡᱤᱱ";
 
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "ᱵᱚᱸᱫᱚᱭ ᱢᱮ";
+
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "ᱩᱫᱩᱠ ᱥᱟᱡᱟᱣ ᱠᱚ";
 
@@ -372,9 +318,6 @@
 
 /* Alert dialog title when the user taps the cancel download icon. */
 "Downloads.CancelDialog.Title" = "ᱚᱛᱩᱨ ᱟᱲᱜᱩ ᱵᱟᱹᱰᱨᱟᱹᱭ ᱢᱮ";
-
-/* The message displayed to a user when they try and perform the download of an asset that Firefox cannot currently handle. */
-"Downloads.Error.Message" = "Firefox ᱨᱮ ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱛᱮ ᱟᱹᱛᱩᱨ ᱟᱬᱜᱚ ᱵᱟᱭ ᱥᱟᱯᱚᱴ ᱟ ᱾";
 
 /* The label text in the Download Cancelled toast for showing confirmation that the download was cancelled. */
 "Downloads.Toast.Cancelled.LabelText" = "ᱚᱛᱩᱨ ᱟᱲᱜᱩ ᱵᱟᱹᱰᱨᱟᱹᱭᱮᱱᱟ";
@@ -496,9 +439,6 @@
 /* Button label to open Sync preferences */
 "FxA.OpenSyncPreferences" = "ᱟᱹᱭᱩᱨ ᱢᱤᱫ ᱠᱩᱥᱤᱠᱚ ᱠᱷᱩᱞᱟᱹᱭ ᱢᱮ";
 
-/* Instructions shown on qr code scanning view */
-"fxa.qr-scanning-view.instructions" = "firefox.com/pair ᱨᱮ ᱡᱟ QR ᱠᱳᱰ ᱩᱫᱩᱠ ᱠᱟᱫᱟᱠᱩ ᱚᱱᱟ ᱥᱠᱮᱱ ᱢᱮ";
-
 /* Remove button is displayed on firefox account page under certain scenarios where user would like to remove their account. */
 "FxA.RemoveAccount" = "ᱚᱪᱚᱜ ᱢᱮ";
 
@@ -515,7 +455,7 @@
 "fxa.signin.camera-signin" = "ᱟᱢᱟᱜ ᱠᱮᱢᱮᱨᱟ ᱛᱮ ᱵᱚᱞᱚᱱ ᱥᱩᱦᱤ ᱢᱮ";
 
 /* FxA sign in create account label. */
-"fxa.signin.create-account-pt-1" = "ᱢᱤᱫᱽᱴᱟᱹᱝ ᱠᱷᱟᱛᱟ ᱛᱮ ᱥᱟᱫᱽᱷᱚᱱ ᱵᱷᱤᱛᱨᱭ ᱨᱮ Firefox ᱥᱭᱝᱠ ᱢᱮ ᱾ ";
+"fxa.signin.create-account-pt-1" = "ᱢᱤᱫᱽᱴᱟᱹᱝ ᱠᱷᱟᱛᱟ ᱛᱮ ᱥᱟᱫᱽᱷᱚᱱ ᱵᱷᱤᱛᱨᱤ ᱨᱮ Firefox ᱥᱭᱝᱠ ᱢᱮ ᱾ ";
 
 /* FxA sign in create account label. This will be linked to the site to create an account. */
 "fxa.signin.create-account-pt-2" = "Firefox ᱠᱷᱟᱛᱟ ᱛᱮᱭᱟᱨ ᱢᱮ ᱾";
@@ -526,17 +466,8 @@
 /* FxA sign in view qr code scan button */
 "fxa.signin.ready-to-scan" = "ᱥᱠᱮᱱ ᱞᱚᱜᱤᱛ ᱛᱮ ᱛᱮᱭᱟᱨ ᱢᱮᱱᱟᱢ-ᱟ";
 
-/* FxA sign in view title */
-"fxa.signin.turn-on-sync" = "ᱛᱚᱞ ᱡᱚᱠᱷᱟ ᱚᱱ ᱢᱮ";
-
 /* FxA sign in view email login button */
 "fxa.signin.use-email-instead" = "ᱵᱟᱹᱫᱟᱹᱞ ᱛᱮ ᱮᱢᱮᱞ ᱵᱮᱵᱷᱟᱨ ᱢᱮ";
-
-/* Button label to sign into Sync */
-"FxA.SignIntoSync" = "ᱛᱷᱟᱨ ᱞᱟᱹᱜᱤᱛ ᱵᱚᱞᱚᱱ ᱥᱩᱦᱤ ᱢᱮ";
-
-/* Label explaining what sync does */
-"FxA.SyncExplain" = "ᱟᱢᱟᱜ ᱴᱮᱵ ᱠᱚ, ᱵᱩᱠᱢᱟᱨᱠ ᱠᱚ, ᱟᱨ ᱫᱟᱱᱟᱲ ᱥᱟᱵᱟᱫᱽ ᱠᱚ ᱟᱢᱟᱜ ᱮᱴᱟᱠ ᱥᱟᱫᱷᱚᱱ ᱠᱷᱚᱱ ᱧᱟᱢ ᱢᱮ᱾";
 
 /* Button label to Sync your Firefox Account */
 "FxA.SyncNow" = "ᱱᱤᱛᱚᱠ ᱛᱚᱞ ᱡᱚᱠᱷᱟᱭ ᱢᱮ";
@@ -567,9 +498,6 @@
 
 /* On the firefox homepage, the string read by the voice over prompt for accessibility, for the button which changes the wallpaper */
 "FxHomepage.Wallpaper.ButtonLabel.v99" = "Firefox ᱪᱤᱱᱦᱟᱹᱯ, ᱠᱟᱸᱛᱷᱥᱟᱦᱴᱟ ᱾";
-
-/* A re-worded offer about Sync, displayed when the Sync home panel is empty, that emphasizes one-way data transfer, not syncing. */
-"Get your open tabs, bookmarks, and passwords from your other devices." = "ᱟᱢᱟᱜ ᱡᱷᱤᱡ ᱟᱠᱟᱱ ᱴᱮᱵ ᱠᱚ, ᱵᱩᱠᱢᱟᱨᱠ ᱠᱚ, ᱟᱨ ᱫᱟᱱᱟᱲ ᱥᱟᱵᱟᱫᱽ ᱠᱚ ᱟᱢᱟᱜ ᱮᱴᱟᱠ ᱥᱟᱫᱷᱚᱱ ᱠᱷᱚᱱ ᱧᱟᱢ ᱢᱮ ᱾";
 
 /* Show the SUMO support page from the Support section in the settings. see http://mzl.la/1dmM8tZ */
 "Help" = "ᱜᱚᱲᱚ";
@@ -607,9 +535,6 @@
 /* Description for the empty synced tabs 'not yet verified' state in the History Panel */
 "HistoryPanel.EmptySyncedTabsPanelNotYetVerifiedState.Description" = "ᱟᱢᱟᱠ ᱠᱷᱟᱛᱟ ᱧᱮᱞ ᱢᱤᱞᱟᱹᱣ ᱞᱟᱹᱜᱛᱤ-ᱟ᱾";
 
-/* Description for the empty synced tabs 'single device Sync' state in the History Panel */
-"HistoryPanel.EmptySyncedTabsPanelSingleDeviceSyncState.Description" = "ᱟᱢᱟᱠ ᱴᱮᱵ ᱮᱴᱟᱠ ᱥᱟᱫᱷᱚᱱ ᱠᱷᱚᱱ ᱱᱚᱸᱲᱮ ᱧᱮᱞ ᱪᱚᱭᱳ ᱠᱟᱱᱟᱢ?";
-
 /* Description for the empty synced tabs 'tab sync disabled' state in the History Panel */
 "HistoryPanel.EmptySyncedTabsPanelTabSyncDisabledState.Description" = "ᱚᱞᱜᱟ ᱥᱟᱫᱷᱚᱱ ᱨᱮ ᱴᱮᱵ ᱨᱮᱭᱟᱜ ᱞᱤᱥᱴᱤ ᱧᱮᱞ ᱞᱟᱹᱜᱤᱫ ᱴᱮᱵ ᱟᱹᱛᱩᱨ ᱟᱬᱜᱚ ᱚᱱ ᱛᱟᱢ ᱾";
 
@@ -622,35 +547,14 @@
 /* Title for the Recently Closed button in the History Panel */
 "HistoryPanel.RecentlyClosedTabsButton.Title" = "ᱱᱤᱛᱚᱜ ᱵᱚᱸᱫᱚᱼᱟᱜ";
 
-/* Description that corresponds with a number of devices connected for the Synced Tabs Cell in the History Panel */
-"HistoryPanel.SyncedTabsCell.Description.Pluralized" = "%d ᱥᱟᱫᱷᱚᱱ ᱠᱚ ᱡᱚᱲᱟᱣ ᱢᱮᱱᱟ-ᱟ";
-
-/* Title for the Synced Tabs Cell in the History Panel */
-"HistoryPanel.SyncedTabsCell.Title" = "ᱛᱷᱟᱨᱮᱱᱟ ᱥᱟᱫᱷᱚᱱ ᱠᱚ";
-
 /* Accessibility label for the tab toolbar indicating the Home button. */
 "Home" = "ᱚᱲᱟᱜ";
-
-/* Button cancelling changes setting the home page for the first time. */
-"HomePage.Set.Dialog.Cancel" = "ᱵᱟᱹᱰᱨᱟᱹ";
-
-/* Alert dialog body when the user opens the home page for the first time. */
-"HomePage.Set.Dialog.Message" = "ᱟᱢ ᱡᱟᱦᱟᱸ ᱛᱤᱱ ᱨᱤᱜᱤ ᱵᱚᱫᱚᱞ ᱫᱟᱲᱤᱭᱟᱠ ᱟᱢ ᱥᱟᱡᱟᱣ ᱠᱚ ᱨᱮ";
-
-/* Button accepting changes setting the home page for the first time. */
-"HomePage.Set.Dialog.OK" = "ᱚᱲᱟᱜ ᱥᱟᱦᱟᱴᱟ ᱥᱟᱡᱟᱣ";
-
-/* Alert dialog title when the user opens the home page for the first time. */
-"HomePage.Set.Dialog.Title" = "ᱟᱢ ᱱᱚᱶᱟ ᱣᱮᱵ ᱥᱟᱦᱴᱟ ᱚᱲᱟᱜ ᱥᱟᱦᱴᱟ ᱞᱮᱠᱟ ᱵᱮᱵᱷᱟᱨ ᱪᱚᱭᱳ ᱠᱟᱱᱟᱢ?";
 
 /* The title for the Bookmark context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.Bookmark" = "ᱵᱩᱠᱢᱟᱨᱠ";
 
 /* The title for the Delete from History context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.DeleteFromHistory" = "ᱦᱤᱛᱟᱹᱞ ᱠᱷᱚᱱ ᱢᱮᱴᱟᱣ ᱢᱮ";
-
-/* The title for the Open in New Private Tab context menu action for sites in Home Panels */
-"HomePanel.ContextMenu.OpenInNewPrivateTab" = "ᱱᱟᱶᱟ ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵ ᱨᱮ ᱡᱷᱤᱜ ᱢᱮ";
 
 /* The title for the Open in New Private Tab context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.OpenInNewPrivateTab.v101" = "ᱱᱟᱶᱟ ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵᱽ ᱨᱮ ᱡᱷᱤᱡᱽ ᱢᱮ";
@@ -883,12 +787,6 @@
 /* Title of the big blue button to enable AutoFill */
 "Logins.WelcomeView.TurnOnAutoFill" = "AutoFill ᱮᱢ ᱪᱷᱚᱭ ᱢᱮ";
 
-/* Login detail view field name for the last modified date */
-"LoginsDetailView.LoginModified" = "ᱵᱚᱫᱚᱞᱟᱠ";
-
-/* Title for the login detail view */
-"LoginsDetailView.LoginTitle" = "ᱵᱚᱞᱚ ᱢᱮ";
-
 /* Button to not save the user's password */
 "LoginsHelper.DontSave.Button" = "ᱟᱞᱚᱢ ᱥᱟᱧᱪᱟᱣ-ᱟ";
 
@@ -912,15 +810,6 @@
 
 /* Button to update the user's password */
 "LoginsHelper.Update.Button" = "ᱦᱟᱹᱞᱤᱭᱟᱹᱠ";
-
-/* For filtering the login list, search only the login names */
-"LoginsList.LoginsListFilterLogin" = "ᱵᱚᱞᱚ ᱢᱮ";
-
-/* For filtering the login list, search both website and login names. */
-"LoginsList.LoginsListFilterSearchAll" = "ᱡᱷᱚᱛᱚ";
-
-/* For filtering the login list, search only the website names */
-"LoginsList.LoginsListFilterWebsite" = "ᱣᱮᱵᱥᱟᱭᱤᱴ";
 
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "ᱪᱷᱟᱹᱱᱤ";
@@ -968,9 +857,6 @@
 
 /* Label for the add bookmark button in the menu. Pressing this button bookmarks the current page. Please keep the text as short as possible for this label. */
 "Menu.AddBookmark.Label.v99" = "ᱥᱮᱞᱮᱫᱽ ᱢᱮ";
-
-/* Toast displayed to the user after adding the item to the Top Sites. */
-"Menu.AddPin.Confirm" = "ᱪᱮᱛᱟᱱ ᱨᱤᱱ ᱥᱟᱭᱤᱴ ᱛᱮ ᱯᱤᱱ ᱮᱱᱟ ᱠᱚ";
 
 /* Toast displayed to the user after adding the item to the Shortcuts. */
 "Menu.AddPin.Confirm2" = "ᱠᱷᱟᱴᱚᱢᱟᱪᱷᱟ ᱛᱮ ᱥᱮᱞᱮᱫᱽ ᱮᱱᱟ";
@@ -1020,9 +906,6 @@
 /* Label for the button displayed in the menu used to stop the reload of the webpage */
 "Menu.Library.StopReload" = "ᱛᱤᱸᱜᱩᱤ ᱢᱮ";
 
-/* Label for the button, displayed in the menu, takes you to screen to manage account when pressed. First argument is the display name for the current account */
-"Menu.ManageAccount.Label" = "%@ ᱠᱷᱟᱛᱟ ᱢᱮᱱᱮᱡᱽ ᱢᱮ";
-
 /* Label for the new tab button in the menu page. Pressing this button opens a new tab. */
 "Menu.NewTab.v99" = "ᱱᱟᱶᱟ ᱴᱮᱵᱽ";
 
@@ -1030,19 +913,10 @@
 "Menu.NightModeTurnOff.Label2" = "ᱧᱩᱛ ᱢᱳᱰ ᱵᱚᱱᱫᱚᱭ ᱢᱮ";
 
 /* Label for the button, displayed in the menu, turns on night mode. */
-"Menu.NightModeTurnOn.Label" = "ᱱᱤᱸᱫᱚ ᱚᱵᱥᱛᱟ ᱦᱩᱭ ᱦᱚᱪᱚᱜ ᱢᱮ";
-
-/* Label for the button, displayed in the menu, turns on night mode. */
 "Menu.NightModeTurnOn.Label2" = "ᱧᱩᱛ ᱢᱳᱰ ᱮᱢ ᱪᱷᱚᱭ ᱢᱮ";
-
-/* Label for the button, displayed in the menu, hides images on the webpage when pressed. */
-"Menu.NoImageModeBlockImages.Label" = "ᱪᱤᱛᱟᱹᱨ ᱠᱚ ᱟᱴᱠᱟᱣ ᱢᱮ";
 
 /* Label for the button, displayed in the menu, shows images on the webpage when pressed. */
 "Menu.NoImageModeShowImages.Label" = "ᱪᱤᱛᱟᱹᱨ ᱫᱮᱠᱷᱟᱣ ᱢᱮ";
-
-/* Label for title in page action menu. */
-"Menu.PageActions.Title" = "ᱥᱟᱦᱟᱴᱟ ᱠᱚᱢᱤ ᱠᱚ";
 
 /* Label for the button, displayed in the menu, takes you to to passwords screen when pressed. */
 "Menu.Passwords.Label" = "ᱫᱟᱱᱟᱝ ᱥᱟᱵᱟᱫᱽ ᱠᱚ";
@@ -1071,9 +945,6 @@
 /* Label for the remove from shortcuts button in the menu. Pressing this button removes the current website from the shortcut pins on the home page. */
 "Menu.RemovedFromShortcuts.v99" = "ᱠᱷᱟᱴᱚᱢᱟᱪᱷᱟ ᱠᱷᱚᱱ ᱚᱪᱚᱜᱽ ᱢᱮ";
 
-/* Toast displayed to the user after removing the item from the Top Sites. */
-"Menu.RemovePin.Confirm" = "ᱪᱮᱛᱟᱱ ᱨᱤᱱ ᱥᱟᱭᱤᱴ ᱠᱷᱚᱱ ᱚᱰᱚᱠ ᱠᱮᱫ ᱠᱚᱣᱟ";
-
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "ᱠᱷᱟᱴᱚᱢᱟᱪᱷᱟ ᱠᱷᱚᱱ ᱚᱪᱚᱜᱽ ᱢᱮ";
 
@@ -1088,9 +959,6 @@
 
 /* Label for the share button in the menu page. Pressing this button open the share menu to share the current website. */
 "Menu.Share.v99" = "ᱦᱟᱹᱴᱤᱧ ᱢᱮ";
-
-/* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
-"Menu.SignInToSync.Label.v99" = "ᱛᱷᱟᱨ ᱞᱟᱹᱜᱤᱛ ᱵᱚᱞᱚᱱ ᱥᱩᱦᱤ ᱢᱮ";
 
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "ᱴᱮᱵ ᱠᱩᱞ ᱦᱩᱭᱮᱱᱟ";
@@ -1122,12 +990,6 @@
 /* The title that shows the number of social URLs blocked */
 "Menu.TrackingProtectionBlockedSocial.Title" = "ᱥᱟᱸᱣᱛᱟ ᱯᱟᱸᱡᱟ ᱠᱚ";
 
-/* Description of the Tracking protection menu when TP is blocking parts of the page */
-"Menu.TrackingProtectionBlocking.Description" = "Firefox ᱥᱟᱦᱴᱟ ᱨᱮᱭᱟᱜ ᱚᱱᱟ ᱡᱟᱭᱜᱟ ᱠᱚ ᱟᱴᱠᱟᱣ ᱮᱫᱟ ᱚᱠᱟ ᱫᱚ ᱟᱢ ᱡᱟᱦᱟᱱᱟᱜ ᱯᱟᱱᱛᱮ ᱡᱷᱚᱜ ᱟᱢ ᱠᱚ ᱜᱷᱮᱨ ᱮᱥᱮᱫᱮᱫ ᱫᱟᱲᱮ ᱢᱮᱭᱟ ᱾";
-
-/* The description of the Tracking Protection menu item when tracking is enabled */
-"Menu.TrackingProtectionBlockingDisabled.Description" = "ᱚᱱᱞᱟᱤᱱ ᱯᱟᱸᱡᱟ ᱠᱚ ᱟᱴᱠᱟᱣ ᱢᱮ";
-
 /* The title that shows the number of cross-site cookies blocked */
 "Menu.TrackingProtectionCrossSiteCookies.Title" = "ᱠᱨᱚᱥᱼᱥᱟᱭᱤᱴ ᱜᱷᱮᱨ ᱮᱥᱮᱫ ᱠᱩᱠᱤ";
 
@@ -1152,50 +1014,8 @@
 /* Description of social network trackers. */
 "Menu.TrackingProtectionDescription.SocialNetworksNew" = "ᱥᱚᱥᱤᱭᱟᱞ ᱱᱮᱴᱣᱟᱨᱠ ᱡᱟᱭᱜᱟ ᱯᱟᱧᱡᱟ ᱫᱟᱱᱟᱲ ᱠᱚ ᱣᱮᱵᱥᱟᱭᱤᱴ ᱠᱚᱨᱮ ᱫᱚᱦᱚᱭᱟ ᱠᱚ ᱚᱱᱠᱟ ᱛᱮ ᱩᱱᱠᱩ ᱟᱢ ᱞᱟᱹᱜᱤᱫ ᱴᱟᱨᱜᱮᱴ ᱯᱨᱚᱯᱷᱟᱭᱤᱞ ᱠᱚ ᱛᱮᱭᱟᱨᱟ ᱾ ᱱᱩᱠᱩ ᱯᱟᱧᱡᱟ ᱫᱟᱱᱟᱲ ᱠᱚ ᱟᱴᱠᱟᱣ ᱞᱮᱠᱷᱟᱱ ᱥᱚᱥᱤᱭᱟᱞ ᱢᱤᱰᱤᱭᱟ ᱠᱚᱢᱯᱟᱱᱤ ᱠᱚᱢ ᱠᱚ ᱧᱮᱞ ᱫᱟᱲᱮᱟᱼᱟ ᱟᱢ ᱚᱱᱞᱟᱭᱤᱱ ᱪᱮᱫ ᱮᱢ ᱪᱤᱠᱟᱹᱭᱮᱫᱟ ᱾";
 
-/* The button that disabled TP for a site. */
-"Menu.TrackingProtectionDisable1.Title" = "ᱱᱚᱶᱟ ᱥᱟᱭᱤᱴ ᱞᱟᱹᱜᱤᱛ ᱵᱟᱝ ᱦᱩᱭ ᱦᱚᱪᱚᱜ ᱢᱮᱱᱟ-ᱟ";
-
-/* The confirmation toast once tracking protection has been disabled */
-"Menu.TrackingProtectionDisabled.Title" = "ᱯᱟᱸᱡᱟ ᱨᱚᱯᱷᱟ ᱱᱤᱛᱠ ᱫᱚ ᱱᱚᱶᱟ ᱥᱟᱤᱴ ᱞᱟᱹᱜᱤᱛ ᱵᱚᱸᱫᱚᱭᱮᱱᱟ᱾";
-
-/* A button to enable tracking protection inside the menu. */
-"Menu.TrackingProtectionEnable.Title" = "ᱯᱟᱸᱡᱟ ᱨᱚᱯᱷᱟ ᱦᱩᱭ ᱦᱚᱪᱚᱜ ᱢᱮ";
-
-/* A button to enable tracking protection inside the menu. */
-"Menu.TrackingProtectionEnable1.Title" = "ᱱᱚᱶᱟ ᱥᱟᱭᱤᱴ ᱞᱟᱹᱜᱤᱛ ᱦᱩᱭ ᱦᱚᱪᱚᱜ ᱢᱮᱱᱟ-ᱟ";
-
-/* The confirmation toast once tracking protection has been enabled */
-"Menu.TrackingProtectionEnabled.Title" = "ᱯᱟᱸᱡᱟ ᱨᱚᱯᱷᱟ ᱱᱤᱛᱠ ᱫᱚ ᱱᱚᱶᱟ ᱥᱟᱤᱴ ᱞᱟᱹᱜᱤᱛ ᱪᱦᱚᱞᱩᱮᱱᱟ᱾";
-
 /* The title that shows the number of fingerprinting scripts blocked */
 "Menu.TrackingProtectionFingerprintersBlocked.Title" = "ᱠᱟᱹᱴᱩᱵᱪᱷᱟᱯᱟ ᱟᱜ";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.CrossSiteCookies" = "ᱠᱨᱚᱥ ᱼᱥᱟᱭᱤᱴ ᱜᱷᱮᱨ ᱮᱥᱮᱫ ᱠᱩᱠᱤ ᱠᱚ ᱟᱴᱠᱟᱣ ᱮᱱᱟ";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.Cryptominers" = "ᱟᱴᱠᱟᱣ ᱠᱨᱤᱯᱴᱳᱢᱟᱤᱱᱮᱨ ᱠᱚ";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.Fingerprinters" = "ᱠᱟᱹᱴᱩᱵᱪᱷᱟᱯᱟ ᱟᱜ ᱟᱴᱠᱟᱣᱮᱱᱟ";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.Social" = "ᱥᱟᱸᱣᱛᱟ ᱯᱟᱸᱡᱟ ᱠᱚ ᱟᱴᱠᱟᱣᱮᱱᱟ";
-
-/* more info about what tracking protection is about */
-"Menu.TrackingProtectionMoreInfo.Description" = "ᱪᱮᱫ ᱢᱮ ᱚᱠᱟᱞᱠᱟ ᱛᱮ ᱯᱟᱧᱡᱟ ᱫᱟᱱᱟᱲ ᱟᱰ ᱟᱴᱠᱟᱣ ᱚᱱᱞᱟᱭᱤᱱ ᱜᱷᱮᱨ ᱮᱥᱮᱫ ᱠᱚ ᱟᱢᱜᱟ ᱧᱮᱞ ᱠᱩ ᱥᱟᱹᱠᱷᱤᱭᱟᱹᱛ ᱚᱞᱜᱟ ᱣᱮᱵᱥᱟᱭᱤᱴ ᱥᱟᱫᱷᱚᱱ ᱡᱚᱢᱟᱭᱮᱫ ᱟᱠᱚ ᱾";
-
-/* The description of the Tracking Protection menu item when no scripts are blocked but tracking protection is enabled. */
-"Menu.TrackingProtectionNoBlocking.Description" = "ᱱᱚᱶᱟ ᱥᱟᱦᱴᱟ ᱨᱮ ᱯᱟᱸᱡᱟ ᱡᱤᱱᱤᱥ ᱵᱟᱝ ᱧᱟᱢ ᱞᱮᱱᱟ᱾";
-
-/* label for the menu item to show when the website is whitelisted from blocking trackers. */
-"Menu.TrackingProtectionOption.WhiteListOnDescription" = "ᱱᱚᱶᱟ ᱥᱟᱭᱤᱴ ᱨᱮ ᱡᱤᱱᱤᱥ ᱠᱚ ᱢᱮᱱᱟ-ᱟ ᱡᱟ ᱟᱢᱟᱠ ᱯᱟᱱᱛᱮᱭᱟᱠ ᱯᱟᱸᱡᱟ ᱫᱟᱲᱤ ᱟᱭ. ᱟᱢ ᱨᱚᱯᱷᱟ ᱵᱟᱝ ᱦᱩᱭ ᱦᱚᱪᱚᱜ ᱠᱟᱫᱟᱢ᱾";
-
-/* label for the menu item that lets you remove a website from the tracking protection whitelist */
-"Menu.TrackingProtectionWhitelistRemove.Title" = "ᱱᱚᱶᱟ ᱥᱟᱤᱴ ᱞᱟᱹᱜᱤᱛ ᱦᱩᱭ ᱦᱚᱪᱚᱜ ᱢᱮ";
-
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "ᱪᱦᱤ ᱱᱟᱶᱟ ᱢᱮᱱᱟᱼᱟ";
 
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "ᱢᱚᱵᱟᱤᱞ ᱥᱟᱫᱷᱚᱱ";
@@ -1228,28 +1048,6 @@
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "ᱯᱟᱱᱛᱮᱭᱟᱜ ᱮᱦᱚᱵ ᱢᱮ";
 
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is a general description that appears under the title for what the card is about. */
-"Onboarding.WhatsNew.Description" = "ᱱᱤᱛᱚᱜ ᱫᱚ ᱡᱟᱦᱟᱸ ᱨᱮ ᱢᱟᱲᱟᱝ ᱛᱟᱦᱮᱸ ᱠᱟᱱᱟᱢ ᱱᱚᱰᱮ ᱠᱷᱚᱱ ᱥᱟᱵ ᱫᱟᱲᱮᱭᱟᱜᱼᱟᱢ ᱾";
-
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is the description for the Jump Back In bullet point */
-"Onboarding.WhatsNew.PersonalizedHome.Description" = "ᱠᱷᱩᱞᱟᱹ ᱠᱟᱱ ᱴᱮᱵᱽ, ᱵᱩᱠᱢᱟᱨᱠ ᱠᱚ, ᱟᱨ ᱦᱤᱛᱟᱹᱞ ᱵᱨᱟᱩᱡᱽ ᱛᱮ ᱪᱟᱞᱟᱜ ᱢᱮ ᱾";
-
-/* On the onboarding card letting users know what's new in this version of Firefox, this is the descripion of the Recent Searches bullet point on the card */
-"Onboarding.WhatsNew.RecentSearches.Description" = "ᱟᱢᱟᱜ ᱚᱲᱟᱜ ᱥᱟᱦᱴᱟ ᱱᱤᱛᱚᱜᱟᱜ ᱥᱮᱸᱫᱽᱨᱟ ᱛᱮ ᱫᱩᱦᱲᱟᱹ ᱪᱟᱞᱟᱜ ᱞᱟᱹᱜᱤᱫ ᱾";
-
-/* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the Recent Searches bullet point on the card */
-"Onboarding.WhatsNew.RecentSearches.Title" = "ᱱᱤᱛᱚᱜᱟᱜ ᱥᱮᱸᱫᱽᱨᱟ ᱠᱚ";
-
-/* On the onboarding card letting users know what's new in this version of Firefox, this is the description for the Tab Group bullet point on the card */
-"Onboarding.WhatsNew.TabGroups.Description" = "ᱚᱱᱟ ᱠᱚ ᱥᱟᱦᱴᱟ ᱠᱷᱚᱱ ᱜᱮ ᱥᱮᱸᱫᱽᱨᱟ ᱠᱚ ᱫᱳᱞᱚᱜᱼᱟ ᱾";
-
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is the title for the Tab Group bullet point on the card */
-"Onboarding.WhatsNew.TabGroups.Title" = "ᱪᱚᱨᱚᱠ ᱴᱮᱵᱽ ᱫᱳᱞ ᱠᱚ";
-
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is the title for the Jump Back In bullet point on the card
-   The title for the new onboarding card letting users know what is new in Firefox iOS */
-"Onboarding.WhatsNew.Title" = "%s ᱨᱮ ᱪᱮᱫ ᱱᱟᱶᱟ ᱢᱮᱱᱟᱜ-ᱟ";
-
 /* Title for prompt displayed to user after the app crashes */
 "Oops! Firefox crashed" = "ᱚᱦᱟᱭ! Firefox ᱨᱚᱯᱩᱫᱮᱱᱟ";
 
@@ -1270,9 +1068,6 @@
 
 /* Accessibility label for the Page Options menu button */
 "Page Options Menu" = "ᱥᱟᱠᱟᱢ ᱟᱯᱱᱟᱨ ᱢᱚᱱᱮᱛᱮᱭᱟᱜ ᱢᱮᱱᱩ";
-
-/* Accessibility label for the Library panel's bottom toolbar containing a list of the home panels (top sites, bookmarks, history, remote tabs, reading list). */
-"Panel Chooser" = "ᱪᱳᱣᱠᱟᱴ ᱵᱟᱪᱷᱟᱣ";
 
 /* Password textbox in Authentication prompt */
 "Password" = "ᱫᱟᱱᱟᱲ ᱥᱟᱵᱟᱫᱽ";
@@ -1352,9 +1147,6 @@
 /* Reopen alert title shown at home page. */
 "ReopenAlert.Title" = "ᱢᱟᱲᱟᱝ ᱵᱚᱸᱫ ᱟᱠᱟᱱ ᱴᱮᱵ ᱠᱚ ᱫᱩᱦᱰᱟ ᱠᱷᱩᱞᱟᱹᱭ ᱢᱮ";
 
-/* Hardware shortcut to reopen the last closed tab, from the tab or the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"ReopenClosedTab.KeyCodeTitle" = "ᱵᱚᱸᱫ ᱟᱠᱟᱱ ᱴᱮᱵ ᱠᱚ ᱫᱩᱦᱰᱟ ᱠᱷᱩᱞᱟᱹᱭ ᱢᱮ";
-
 /* Accessibility label for button resetting font size in display settings of reader mode */
 "Reset text size" = "ᱚᱱᱚᱞ ᱢᱟᱨᱟᱝ ᱛᱮᱛ ᱥᱟᱡᱟᱣ ᱫᱚᱦᱲᱟ ᱢᱮ";
 
@@ -1372,9 +1164,6 @@
 
 /* Text of the prompt that is shown to the user when the data is invalid */
 "ScanQRCode.InvalidDataError.Message" = "ᱥᱟᱠᱷᱤᱭᱟᱛ ᱫᱚ ᱵᱟᱲ ᱵᱟᱛᱟᱣ ᱢᱮᱱᱟ-ᱟ";
-
-/* Text of the prompt user to setup the camera authorization. */
-"ScanQRCode.PermissionError.Message" = "ᱫᱚᱭᱟᱠᱟᱛᱮ Firefox ᱥᱟᱫᱷᱚᱱ ᱨᱮᱭᱟᱜ ᱠᱮᱢᱨᱟ ᱵᱮᱵᱷᱟᱨ ᱪᱷᱚᱭ ᱮᱢ ‘ᱥᱟᱡᱟᱣ’ -> ‘ᱫᱟᱱᱟᱲ’ -> ‘ᱠᱮᱢᱨᱟ’ ᱾";
 
 /* Text of the prompt to setup the camera authorization for the Scan QR Code feature. */
 "ScanQRCode.PermissionError.Message.v100" = "ᱥᱟᱫᱷᱚᱱ ‘ᱥᱟᱡᱟᱣ ᱠᱚ’> ‘Firefox’ ᱾ Firefox ᱫᱚ ᱠᱮᱢᱨᱟ ᱟᱫᱮᱨ ᱪᱷᱚᱟᱭᱮᱢ ᱾";
@@ -1487,12 +1276,6 @@
 /* Title of notification shown when the device is sent one or more tabs from the named device. %@ is the placeholder for the device name. This device name will be localized by that device. */
 "SentTab_TabArrivingNotification_WithDevice_title" = "%@ ᱠᱷᱚᱱ ᱴᱮᱵ ᱭᱟᱢᱮᱱᱟ";
 
-/* Label for an action used to add one or more tabs recieved from a notification to the reading list. */
-"SentTab.AddToReadingListAction.Title" = "ᱯᱟᱰᱦᱟᱣ ᱞᱤᱥᱴᱤ ᱨᱮ ᱥᱮᱞᱮᱫ ᱢᱮ";
-
-/* Label for an action used to bookmark one or more tabs from a notification. */
-"SentTab.BookmarkAction.title" = "ᱵᱩᱩᱠᱢᱟᱨᱠ";
-
 /* Body of notification received after a spurious message from FxA has been received. */
 "SentTab.NoTabArrivingNotification.body" = "ᱮᱦᱚᱵ ᱞᱟᱹᱜᱤᱛ ᱛᱮ ᱚᱛᱟᱭ ᱢᱮ";
 
@@ -1591,9 +1374,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "ᱯᱩᱸᱲ";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "ᱰᱤᱥᱯᱞᱟᱭ ᱡᱷᱟᱞᱠᱟᱣ ᱨᱮ ᱟᱢᱟᱜ ᱛᱷᱮᱢ ᱟᱡ ᱛᱮᱜᱮ ᱵᱚᱫᱚᱞᱚᱜᱼᱟ ᱾ ᱟᱢ ᱛᱷᱨᱤᱥᱚᱞᱰ ᱥᱮᱴ ᱫᱟᱲᱮᱟᱜᱟᱢ ᱡᱟᱦᱟᱸ ᱨᱮ ᱟᱢ ᱛᱷᱮᱢ ᱵᱚᱫᱚᱞ ᱫᱟᱲᱮᱟᱜᱼᱟᱢ ᱾ ᱜᱩᱞ ᱨᱮ ᱫᱚ ᱟᱢᱟᱜ ᱱᱤᱛᱚᱜ ᱨᱮᱭᱟᱜ ᱡᱷᱟᱞᱠᱟᱣ ᱫᱮᱠᱷᱟᱣᱟᱭ ᱾";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "ᱚᱵᱥᱛᱟ ᱵᱚᱫᱚᱞ";
@@ -1716,9 +1496,6 @@
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the title of the button found on the toast that comes up once the user changes wallpaper, and allows users to dismiss the settings page. In this case, consider View as a verb - the action of dismissing settings and seeing the wallpaper. */
 "Settings.Home.Option.Wallpaper.UpdatedToastButton" = "ᱧᱮᱞ";
 
-/* Button in settings to clear the home page. */
-"Settings.HomePage.Clear.Button" = "ᱯᱷᱟᱨᱪᱟ";
-
 /* Label used as an item in Settings. When touched it will open a dialog to configure the home page and its uses. */
 "Settings.HomePage.SectionName" = "ᱚᱲᱟᱜ ᱥᱟᱦᱴᱟ";
 
@@ -1743,23 +1520,11 @@
 /* Toggled ON to show the shortcuts section */
 "Settings.Homepage.Shortcuts.ToggleOn.v100" = "ᱪᱟᱹᱞᱩ";
 
-/* Title displayed in header of the setting panel. */
-"Settings.HomePage.Title" = "ᱚᱲᱟᱜ ᱥᱟᱦᱴᱟ ᱥᱟᱡᱟᱣ ᱠᱚ";
-
-/* Placeholder text in the homepage setting when no homepage has been set. */
-"Settings.HomePage.URL.Placeholder" = "ᱢᱤᱫᱴᱟᱹᱝ ᱣᱮᱵ ᱥᱟᱦᱴᱟ ᱟᱫᱮᱨ ᱢᱮ";
-
 /* Title of the setting section containing the URL of the current home page. */
 "Settings.HomePage.URL.Title" = "ᱱᱤᱛᱚᱜᱟ ᱚᱲᱟᱜ ᱥᱟᱦᱴᱟ";
 
-/* Button in settings to use the current link on the clipboard as home page. */
-"Settings.HomePage.UseCopiedLink.Button" = "ᱱᱚᱠᱚᱞ ᱟᱠᱱᱟ ᱵᱮᱵᱷᱟᱨ ᱢᱮ";
-
 /* Button in settings to use the current page as home page. */
 "Settings.HomePage.UseCurrent.Button" = "ᱱᱤᱛᱚᱜᱟᱠ ᱥᱟᱦᱴᱟ ᱵᱮᱵᱷᱟᱨ ᱢᱮ";
-
-/* Button in settings to use the default home page. If no default is set, then this button isn't shown. */
-"Settings.HomePage.UseDefault.Button" = "ᱢᱩᱞ ᱯᱷᱮᱲᱟᱛ ᱵᱮᱵᱷᱟᱨ ᱢᱮ";
 
 /* Title for the logins and passwords screen. Translation could just use 'Logins' if the title is too long */
 "Settings.LoginsAndPasswordsTitle" = "ᱵᱚᱞᱚᱱ ᱠᱚ ᱟᱨ ᱫᱟᱱᱟᱲ ᱥᱟᱵᱟᱫᱽ ᱠᱚ";
@@ -1767,56 +1532,14 @@
 /* Label used to set a custom url as the new tab option (homepage). */
 "Settings.NewTab.CustomURL" = "ᱠᱩᱥᱤᱭᱟᱠ URL";
 
-/* A description in settings of what the new tab choice means */
-"Settings.NewTab.Description" = "ᱡᱚᱠᱷᱚᱱ ᱟᱢ ᱱᱟᱶᱟ ᱴᱮᱵ ᱡᱷᱤᱜ ᱟᱢ:";
-
-/* The title of the section in newtab that lets you modify the topsites panel */
-"Settings.NewTab.Option.ASTitle" = "ᱪᱮᱛᱟᱱ ᱥᱟᱭᱤᱴ ᱠᱚᱥᱴᱚᱢᱟᱭᱤᱡ";
-
 /* Option in settings to show a blank page when you open a new tab */
 "Settings.NewTab.Option.BlankPage" = "ᱮᱠᱷᱮᱱᱟ ᱥᱟᱦᱴᱟ";
-
-/* Option in settings to show bookmarks when you open a new tab */
-"Settings.NewTab.Option.Bookmarks" = "ᱵᱩᱠᱢᱟᱨᱠ";
-
-/* The footer for the section to customize top sites in the new tab settings page. */
-"Settings.NewTab.Option.CustomizeFooter" = "ᱡᱟᱹᱥᱛᱤ ᱦᱤᱨᱤᱟᱠᱟᱱ ᱥᱟᱭᱤᱴ";
-
-/* The footer for the section to customize top sites in the new tab settings page. */
-"Settings.NewTab.Option.CustomizeFooter2" = "ᱟᱢ ᱥᱟᱺᱪᱟᱣ ᱠᱟᱫ ᱟᱨ ᱵᱟᱝ ᱪᱟᱞᱟᱜ ᱠᱟᱱ ᱥᱟᱭᱤᱴ ᱠᱚ";
-
-/* The title for the section to customize top sites in the new tab settings page. */
-"Settings.NewTab.Option.CustomizeTitle" = "Firefox ᱚᱲᱟᱜ ᱠᱩᱥᱤᱭᱟᱠ ᱛᱮᱭᱟᱨ ᱢᱮ";
 
 /* Option in settings to show Firefox Home when you open a new tab */
 "Settings.NewTab.Option.FirefoxHome" = "Firefox ᱚᱲᱟᱜ";
 
-/* Option in the settings to turn off recent bookmarks in the Highlights section */
-"Settings.NewTab.Option.HighlightsBookmarks" = "ᱱᱤᱛᱚᱜᱟᱠ ᱵᱩᱠᱢᱟᱨᱠ ᱠᱚ";
-
-/* Option in settings to turn off history in the highlights section */
-"Settings.NewTab.Option.HighlightsHistory" = "ᱧᱮᱞᱟᱠ";
-
-/* Option in settings to show history when you open a new tab */
-"Settings.NewTab.Option.History" = "ᱦᱤᱛᱟᱹᱞ";
-
 /* Option in settings to show your homepage when you open a new tab */
 "Settings.NewTab.Option.HomePage" = "ᱚᱲᱟᱜ ᱥᱟᱦᱴᱟ";
-
-/* Option in settings to turn on off pocket recommendations */
-"Settings.NewTab.Option.Pocket" = "ᱯᱚᱠᱮᱴ ᱨᱮ ᱴᱨᱮᱱᱰᱤᱝ ᱚ ᱠᱟᱱᱟ";
-
-/* Footer caption for pocket settings */
-"Settings.NewTab.Option.PocketFooter" = "ᱚᱲᱤ ᱵᱷᱟᱞᱤ ᱵᱤᱥᱳᱭ ᱣᱮᱵ ᱫᱷᱟᱨᱮ ᱠᱷᱚᱱ ᱾";
-
-/* Option in settings to show reading list when you open a new tab */
-"Settings.NewTab.Option.ReadingList" = "ᱟᱢᱟᱜ ᱯᱟᱰᱦᱟᱣ ᱞᱤᱥᱴᱤ ᱩᱫᱩᱜ ᱢᱮ";
-
-/* Option in settings to turn on off pocket recommendations First argument is the pocket brand name */
-"Settings.NewTab.Option.RecommendedByPocket" = "%@ ᱵᱟᱛᱟᱣ ᱮᱢ ᱪᱷᱚ ᱠᱟᱹᱫᱮᱭᱟᱭ";
-
-/* Descriptoin for the option in settings to turn on off pocket recommendations. First argument is the pocket brand name, second argument is the pocket product name. */
-"Settings.NewTab.Option.RecommendedByPocketDescription" = "%1$@ ᱛᱮ ᱚᱥᱟᱫᱷᱟᱨᱚᱬ ᱡᱤᱱᱥ ᱠᱭᱩᱨᱮᱴ ᱟᱠᱟᱫᱼᱟᱭ, %2$@ ᱜᱷᱟᱨᱚᱧᱡᱽᱟᱜ ᱢᱤᱫᱴᱟᱹᱝ ᱦᱟᱹᱴᱤᱧ";
 
 /* Label used as an item in Settings. When touched it will open a dialog to configure the new tab behavior. */
 "Settings.NewTab.SectionName" = "ᱱᱟᱶᱟ ᱴᱮᱵ";
@@ -1944,23 +1667,11 @@
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "ᱵᱚᱦᱚ ᱪᱦᱚᱴ ᱥᱮ!";
 
-/* Header description for tracking protection options section where Basic/Strict block list can be selected */
-"Settings.TrackingProtection.BlockListsHeader" = "ᱟᱢ ᱣᱮᱵ ᱮᱞᱤᱢᱮᱴᱥ ᱟᱴᱠᱟᱣ ᱠᱚ ᱞᱟᱹᱜᱤᱫ ᱵᱟᱪᱷᱟᱣ ᱫᱟᱲᱮᱟᱜᱼᱟᱢ, ᱚᱠᱚᱭ ᱫᱚ ᱟᱢᱟᱜ ᱵᱨᱟᱣᱡᱤᱝ ᱠᱟᱹᱢᱤ ᱠᱚ ᱧᱮᱞ ᱛᱟᱢᱟ ᱾";
-
-/* Explanation of basic mode. */
-"Settings.TrackingProtection.Info.BasicTitle" = "ᱥᱩᱨᱟᱠᱷᱤᱭᱟᱹ ᱨᱮ ᱮᱵᱥ ᱠᱟᱹᱢᱤ ᱞᱟᱹᱜᱤᱫ ᱥᱟᱹᱛᱩᱞᱟᱹᱱ";
-
 /* The Title on info view which shows a list of all blocked websites */
 "Settings.TrackingProtection.Info.BlocksTitle" = "ᱟᱴᱠᱟᱹᱣ";
 
-/* Explanation of strict mode. */
-"Settings.TrackingProtection.Info.StrictTitle" = "ᱡᱟᱹᱥᱛᱤ ᱥᱩᱨᱟᱹᱠᱷᱤᱭᱟᱹ ᱮᱢᱚᱜᱼᱟᱭ, ᱦᱮᱞᱮ ᱠᱤᱪᱷᱤ ᱥᱟᱭᱤᱴ ᱨᱟᱹᱯᱩᱫ ᱫᱟᱲᱮᱟᱜᱼᱟ ᱠᱚ ᱾";
-
 /* 'Learn more' info link on the Tracking Protection settings screen. */
 "Settings.TrackingProtection.LearnMore" = "ᱰᱷᱮᱨ ᱥᱮᱲᱟᱭ ᱢᱮ";
-
-/* 'More Info' link on the Tracking Protection settings screen. */
-"Settings.TrackingProtection.MoreInfo" = "ᱵᱚᱲᱛᱤ ᱞᱚᱭ ᱥᱚᱫᱚᱨ…";
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "ᱴᱟᱨᱜᱮᱴ ᱰᱷᱟᱣᱨᱟᱹ ᱠᱚᱢ ᱟᱭ ᱟᱨ ᱰᱷᱟᱣᱨᱟᱸ ᱠᱚ ᱜᱷᱮᱨ ᱮᱥᱮᱫ ᱠᱷᱚᱱ ᱵᱚᱸᱫᱚ ᱞᱟᱹᱜᱤᱫ ᱜᱚᱲᱚ ᱮᱢᱟᱭ ᱾";
@@ -1980,23 +1691,11 @@
 /* Row in top-level of settings that gets tapped to show the tracking protection settings detail view. */
 "Settings.TrackingProtection.SectionName" = "ᱯᱟᱸᱡᱟ ᱨᱚᱯᱷᱟ";
 
-/* Additional information about the strict level setting */
-"Settings.TrackingProtection.StrictLevelInfoFooter" = "ᱯᱟᱧᱡᱟ ᱫᱟᱱᱟᱲ ᱠᱚ ᱟᱴᱠᱟᱣ ᱞᱮᱠᱷᱟᱱ ᱣᱮᱵᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱠᱟᱹᱤ ᱠᱮ ᱨᱮ ᱯᱨᱚᱵᱷᱟᱣ ᱯᱟᱲᱟᱣᱜ ᱟ ᱾";
-
 /* Tracking protection settings option for using the basic blocklist. */
 "Settings.TrackingProtectionOption.BasicBlockList" = "ᱱᱟᱯ ( ᱢᱩᱞ ᱯᱷᱮᱲᱟᱛ)";
 
-/* Tracking protection settings option description for using the basic blocklist. */
-"Settings.TrackingProtectionOption.BlockListBasicDescription" = "ᱯᱟᱧᱡᱟ ᱫᱟᱱᱟᱲ ᱠᱚ ᱦᱮᱸᱥᱤᱭᱟᱨ ᱠᱚᱢ ᱚᱝᱠᱟ ᱞᱮᱠᱷᱟᱱ ᱣᱮᱵᱥᱟᱭᱤᱴ ᱵᱮᱥ ᱠᱟᱹᱢᱤᱟᱭ ᱾";
-
 /* Tracking protection settings option for using the strict blocklist. */
 "Settings.TrackingProtectionOption.BlockListStrict" = "ᱱᱤᱦᱟᱛ";
-
-/* Tracking protection settings option description for using the strict blocklist. */
-"Settings.TrackingProtectionOption.BlockListStrictDescription" = "ᱵᱥᱟᱭᱟᱠᱟᱱ ᱯᱟᱧᱡᱟ ᱫᱟᱱᱟᱲ ᱠᱚ ᱟᱴᱠᱟᱣ ᱠᱚᱟᱭ ᱾ ᱠᱤᱪᱷᱤ ᱣᱮᱵᱥᱟᱭᱤᱴ ᱴᱷᱤᱠ ᱥᱮ ᱵᱟᱭ ᱠᱟᱹᱢᱤ ᱫᱟᱲᱮᱟᱭᱜᱼᱟᱭ ᱾";
-
-/* Description label shown on tracking protection options screen. */
-"Settings.TrackingProtectionOption.EnabledStateFooterLabel" = "ᱜᱷᱮᱨ ᱮᱥᱮᱫ ᱫᱚ ᱟᱢᱟᱜ ᱢᱟᱹᱞᱴᱤᱯᱟᱹᱞ ᱣᱮᱵᱥᱟᱭᱤᱴ ᱠᱷᱚᱱ ᱵᱨᱟᱩᱡᱤᱝ ᱥᱟᱹᱠᱷᱤᱭᱟᱹᱛ ᱨᱮᱭᱟᱜ ᱴᱩᱢᱟᱹᱞ ᱾";
 
 /* Settings option to specify that Tracking Protection is on */
 "Settings.TrackingProtectionOption.NormalBrowsingLabelOn" = "ᱵᱟᱲᱦᱟᱣᱟᱠᱟᱱ ᱯᱟᱸᱡᱟ ᱨᱚᱯᱷᱟ";
@@ -2018,15 +1717,6 @@
 
 /* Title of link to help page to find out how to solve Sync issues */
 "Settings.TroubleShootSync.Title" = "ᱴᱨᱟᱹᱵᱟᱹᱞᱥᱩᱴ";
-
-/* Button to delete website in search results */
-"Settings.WebsiteData.ButtonDelete" = "ᱢᱮᱴᱟᱣ ᱢᱮ";
-
-/* Button to exit edit website search results */
-"Settings.WebsiteData.ButtonDone" = "ᱦᱩᱭᱮᱱᱟ";
-
-/* Button to edit website search results */
-"Settings.WebsiteData.ButtonEdit" = "ᱥᱟᱯᱲᱟᱣ";
 
 /* Button shows all websites on website data tableview */
 "Settings.WebsiteData.ButtonShowMore" = "ᱵᱚᱲᱛᱤ ᱩᱫᱩᱜ";
@@ -2086,32 +1776,17 @@
 /* Accessibility hint for tab tray's displayed tab. */
 "Swipe right or left with three fingers to close the tab." = "ᱴᱮᱵ ᱵᱚᱱᱸᱫᱚᱭ ᱞᱟᱹᱜᱤᱫ ᱡᱚᱡᱚᱢ ᱟᱨ ᱞᱮᱝᱜᱟ ᱯᱮᱭᱟ ᱠᱟᱹᱴᱩᱵ ᱛᱮ ᱥᱣᱟᱭᱤᱯ ᱢᱮ ᱾";
 
-/* Hardware shortcut for non-private tab or tab. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"SwitchToNonPBM.KeyCodeTitle" = "ᱥᱟᱫᱷᱟᱨᱚᱱ ᱯᱟᱱᱛᱮᱭᱟᱠ ᱚᱵᱚᱥᱛᱟ";
-
-/* Hardware shortcut switch to the private browsing tab or tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"SwitchToPBM.KeyCodeTitle" = "ᱱᱤᱡᱮᱨᱟᱠ ᱯᱟᱱᱛᱮ ᱚᱵᱚᱥᱛᱟ";
-
-/* Text displayed when the Sync home panel is empty, describing the features provided by Sync to invite the user to log in. */
-"Sync your tabs, bookmarks, passwords and more." = "ᱟᱢᱟᱜ ᱴᱮᱵ ᱠᱚ, ᱵᱩᱠᱢᱟᱨᱠ ᱠᱚ, ᱫᱟᱱᱟᱲ ᱥᱟᱵᱟᱫᱽ ᱠᱚ ᱟᱨ ᱵᱚᱲᱛᱤ ᱠᱚ ᱛᱚᱞ ᱡᱚᱠᱷᱟᱭ ᱢᱮ ᱾";
-
-/* Text displayed when the Sync home panel is empty, describing the features provided by Sync to invite the user to log in. */
-"Sync your tabs, passwords and more." = "ᱟᱢᱟᱠ ᱴᱮᱵ ᱠᱚ, ᱫᱟᱱᱟᱲ ᱥᱟᱵᱟᱫᱽ ᱠᱚ ᱟᱨ ᱵᱚᱲᱛᱤ ᱠᱚ ᱛᱚᱞ ᱡᱚᱠᱷᱟᱭ ᱢᱮ ᱾";
-
 /* Message displayed when the user syncs for the first time */
 "Sync.FirstTimeMessage.Label" = "ᱟᱢᱟᱠ ᱯᱟᱦᱤᱞ ᱛᱚᱞ ᱡᱚᱠᱷᱟ ᱠᱤᱪᱷᱩ ᱥᱚᱢᱚᱭ ᱦᱟᱛᱟᱣᱟᱭ";
 
 /* String displayed on Sign In to Sync page that allows the user to create a new account. */
-"Sync.NoAccount.Description" = "ᱚᱠᱟ ᱠᱷᱟᱛᱟ ᱵᱟᱹᱱᱩᱜᱼᱟ? ᱥᱟᱫᱷᱚᱱ ᱵᱷᱤᱛᱨᱭ ᱨᱮ Firefox ᱥᱭᱝᱠ ᱞᱟᱹᱜᱤᱫᱽ ᱱᱟᱶᱟ ᱛᱮᱭᱟᱨ ᱢᱮ ᱾";
+"Sync.NoAccount.Description" = "ᱚᱠᱟ ᱠᱷᱟᱛᱟ ᱵᱟᱹᱱᱩᱜᱼᱟ? ᱥᱟᱫᱷᱚᱱ ᱵᱷᱤᱛᱨᱤ ᱨᱮ Firefox ᱥᱭᱝᱠ ᱞᱟᱹᱜᱤᱫᱽ ᱱᱟᱶᱟ ᱛᱮᱭᱟᱨ ᱢᱮ ᱾";
 
 /* Message displayed when the user's account is syncing with no ellipsis */
 "Sync.Syncing.Label" = "ᱛᱚᱞ ᱡᱚᱠᱷᱟ ᱦᱩᱭᱩᱜ ᱠᱟᱱᱟ";
 
 /* Message displayed when the user's account is syncing with ellipsis at the end */
 "Sync.SyncingEllipsis.Label" = "ᱛᱚᱞ ᱡᱚᱠᱷᱟ ᱦᱩᱭᱩᱜ ᱠᱟᱱᱟ…";
-
-/* Panel accessibility label */
-"Synced Tabs" = "ᱛᱷᱟᱨ ᱦᱚᱪᱚ ᱴᱮᱵ";
 
 /* The Bookmark sync component, used in SyncState.Partial.Title */
 "SyncState.Bookmark.Title" = "ᱵᱩᱠᱢᱟᱨᱠ";
@@ -2158,9 +1833,6 @@
 /* The label indicating that all the tabs were closed */
 "Tabs.DeleteAllUndo.Title" = "%d ᱴᱮᱵ ᱠᱚ ᱵᱚᱸᱫᱚ ᱟᱠᱟᱫᱟ";
 
-/* The placeholder text for the tab search bar */
-"Tabs.Search.PlaceholderText" = "ᱴᱮᱵ ᱠᱚ ᱥᱮᱸᱫᱽᱨᱟᱤ ᱢᱮ";
-
 /* Accessibility label for the Add Tab button in the Tab Tray. */
 "TabTray.AddTab.Button" = "ᱴᱮᱵ ᱥᱮᱞᱮᱫ ᱢᱮ";
 
@@ -2179,20 +1851,8 @@
 /* Title for the inactive tabs section. This section groups all tabs that haven't been used in a while. */
 "TabTray.InactiveTabs.SectionTitle" = "ᱵᱟᱝ ᱩᱥᱨᱟᱹᱣ ᱴᱮᱵᱽᱥ";
 
-/* The section header for tabs opened last week */
-"TabTray.LastWeek.Header" = "ᱢᱟᱲᱟᱝ ᱦᱟᱴ";
-
-/* The title on the button to copy the tab address. */
-"TabTray.MoreMenu.Copy" = "ᱱᱚᱠᱚᱞ";
-
-/* The section header for tabs opened before last week */
-"TabTray.Older.Header" = "ᱢᱟᱨᱮᱭᱟᱜ";
-
 /* Hardware shortcut to open a new tab from the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
 "TabTray.OpenNewTab.KeyCodeTitle" = "ᱱᱟᱶᱟ ᱴᱮᱵ ᱠᱷᱩᱞᱟᱹᱭ ᱢᱮ";
-
-/* Hardware shortcut open the selected tab from the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"TabTray.OpenSelectedTab.KeyCodeTitle" = "ᱵᱟᱪᱷᱟᱣᱟᱠ ᱴᱮᱵ ᱠᱷᱩᱞᱟᱹᱭ ᱢᱮ";
 
 /* In the Tabs Tray, summoned from the homepage, the title for the section containing non-grouped tabs, which will appear below grouped tabs */
 "TabTray.OtherTabs.Title" = "ᱵᱷᱮᱜᱟᱨ ᱴᱮᱵᱽ ᱠᱚ";
@@ -2212,17 +1872,8 @@
 /* The title on the button to look at regular tabs. */
 "TabTray.SegmentedControlTitles.Tabs" = "ᱴᱮᱵᱽ ᱠᱚ";
 
-/* The button title to see more options to perform on the tab. */
-"TabTray.SwipeMenu.More" = "ᱟᱨᱦᱚᱸ";
-
 /* The title for the tab tray */
 "TabTray.Title" = "ᱴᱮᱵ ᱠᱚ ᱡᱷᱤᱡᱽ ᱢᱮ";
-
-/* The section header for tabs opened today */
-"TabTray.Today.Header" = "ᱛᱮᱦᱮᱸᱧ";
-
-/* The section header for tabs opened yesterday */
-"TabTray.Yesterday.Header" = "ᱦᱚᱞᱟ";
 
 /* Message displayed when the reader mode page could not be loaded. This message will appear only when sharing to Firefox reader mode from another app. */
 "The page could not be displayed in Reader View." = "ᱨᱤᱰᱟᱹᱨ ᱵᱷᱤᱣ ᱨᱮ ᱥᱟᱠᱟᱢ ᱵᱟᱭ ᱫᱮᱠᱷᱟᱣᱼᱜ ᱠᱟᱱᱟ ᱾";
@@ -2256,12 +1907,6 @@
 
 /* Accessibility label for the Close All Tabs menu button. */
 "Toolbar.Menu.CloseAllTabs" = "ᱡᱚᱛᱚ ᱴᱮᱵ ᱠᱚ ᱵᱚᱸᱫᱚ";
-
-/* Description label for the empty Top Sites state. */
-"TopSites.EmptyState.Description" = "ᱡᱟᱹᱥᱛᱤ ᱦᱤᱨᱤᱟᱠᱟᱱ ᱥᱟᱭᱤᱴ ᱠᱚ ᱱᱚᱰᱮ ᱫᱮᱠᱷᱟᱣᱼᱜ ᱟ ᱾";
-
-/* The title for the empty Top Sites state */
-"TopSites.EmptyState.Title" = "ᱪᱮᱛᱟᱱ ᱥᱟᱭᱤᱴ ᱨᱮ ᱥᱟᱹᱜᱩᱱ ᱫᱟᱨᱟᱢ";
 
 /* Button shown in editing mode to remove this site from the top sites panel. */
 "TopSites.RemovePage.Button" = "%@ — ᱥᱟᱠᱟᱢ ᱚᱰᱚᱠ ᱢᱮ";
@@ -2298,9 +1943,6 @@
 
 /* Text message in the settings table view */
 "Verify your email address" = "ᱟᱢᱟᱠ ᱮᱢᱮᱞ ᱴᱷᱤᱠᱚᱱᱟ ᱧᱮᱞ ᱢᱤᱞᱟᱹᱣ ᱢᱮ";
-
-/* Version number of Firefox shown in settings */
-"Version %@ (%@)" = "ᱦᱟᱹᱞᱤᱭᱟᱠ %1$@ (%2$@)";
 
 /* Accessibility label for the main web content view */
 "Web content" = "ᱣᱮᱵ ᱵᱤᱥᱳᱭ";
