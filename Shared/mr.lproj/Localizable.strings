@@ -16,18 +16,6 @@
 /* About settings section title */
 "About" = "याबद्दल";
 
-/* The title for the pinning a topsite action */
-"ActivityStream.ContextMenu.PinTopsite" = "शीर्षस्थानी असलेल्या साइटवर पिन करा";
-
-/* The title for removing a pinned topsite action */
-"ActivityStream.ContextMenu.RemovePinTopsite" = "पिन केलेली साइट काढा";
-
-/* The description of a highlight if it is a site the user has bookmarked */
-"ActivityStream.Highlights.Bookmark" = "वाचनखुण लावलेले";
-
-/* The description of a highlight if it is a site the user has visited */
-"ActivityStream.Highlights.Visited" = "भेट दिलेले";
-
 /* Section title label for recently bookmarked websites */
 "ActivityStream.NewRecentBookmarks.Title" = "अलीकडील वाचनखुणा";
 
@@ -37,9 +25,6 @@
 /* Section title label for Recommended by Pocket section */
 "ActivityStream.Pocket.SectionTitle" = "पॉकेटवर ट्रेन्डिंग";
 
-/* The description of a Pocket Story */
-"ActivityStream.Pocket.Trending" = "नवीन प्रवाह";
-
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "अलीकडे भेट दिलेले";
 
@@ -48,9 +33,6 @@
 
 /* The title for the setting page which lets you select the number of top site rows */
 "ActivityStream.TopSites.RowSettingFooter" = "ओळी निवडा";
-
-/* Section title label for Top Sites */
-"ActivityStream.TopSites.SectionTitle" = "खास साईट्स";
 
 /* Accessibility label for the Add Tab button in the Tab Tray. */
 "Add Tab" = "टॅब जोडा";
@@ -89,12 +71,6 @@
 /* Block pop-up windows setting */
 "Block Pop-up Windows" = "पॉपअप पटल अडवा";
 
-/* The header title for the fields when editing a Bookmark */
-"Bookmark.BookmarkDetail.FieldsHeader.Bookmark.Title" = "वाचनखूण";
-
-/* The header title for the fields when editing a Folder */
-"Bookmark.BookmarkDetail.FieldsHeader.Folder.Title" = "फोल्डर";
-
 /* The label for the Title field when editing a bookmark */
 "Bookmark.DetailFieldTitle.Label" = "शीर्षक";
 
@@ -113,12 +89,6 @@
 /* The label to show the location of the folder where the bookmark is located */
 "Bookmarks.Folder.Label" = "संचयीका";
 
-/* The label for the location of the new folder */
-"Bookmarks.FolderLocation.Label" = "स्थान";
-
-/* The label for the title of the new folder */
-"Bookmarks.FolderName.Label" = "संचयीकेचे नाव";
-
 /* The button to create a new bookmark */
 "Bookmarks.NewBookmark.Label" = "नवीन वाचनखूण";
 
@@ -130,12 +100,6 @@
 
 /* The label for the title of a bookmark */
 "Bookmarks.Title.Label" = "शीर्षक";
-
-/* The label for the URL of a bookmark */
-"Bookmarks.URL.Label" = "URL";
-
-/* Status label for the empty Bookmarks state. */
-"BookmarksPanel.EmptyState.Title" = "आपण जतन केलेल्या वाचनखुणा येथे दिसतील.";
 
 /* Accessibility label for brightness adjustment slider in Reader Mode display settings */
 "Brightness" = "प्रखरता";
@@ -166,9 +130,6 @@
 
 /* Context menu item for bookmarking a link URL */
 "ContextMenu.BookmarkLinkButtonTitle" = "दुव्याला वाचनखूण लावा";
-
-/* The button text in the Button Toast for switching to a fresh New Private Tab. */
-"ContextMenu.ButtonToast.NewPrivateTabOpened.ButtonText" = "बदला";
 
 /* The label text in the Button Toast for switching to a fresh New Private Tab. */
 "ContextMenu.ButtonToast.NewPrivateTabOpened.LabelText" = "नवीन खाजगी टॅब उघडला";
@@ -252,9 +213,6 @@
 
 /* Alert dialog title when the user taps the cancel download icon. */
 "Downloads.CancelDialog.Title" = "डाऊनलोड रद्द करा";
-
-/* The message displayed to a user when they try and perform the download of an asset that Firefox cannot currently handle. */
-"Downloads.Error.Message" = "Firefox मध्ये अद्याप डाउनलोड समर्थित नाहीत.";
 
 /* The label text in the Download Cancelled toast for showing confirmation that the download was cancelled. */
 "Downloads.Toast.Cancelled.LabelText" = "डाउनलोड रद्द केले";
@@ -361,12 +319,6 @@
 /* Button label to resend email */
 "FxA.ResendEmail" = "ईमेल पुन्हा पाठवा";
 
-/* Button label to sign into Sync */
-"FxA.SignIntoSync" = "संकलन करण्यासाठी साइन इन करा";
-
-/* Label explaining what sync does */
-"FxA.SyncExplain" = "आपल्या अन्य उपकरणांवरील टॅब, बुकमार्क आणि पासवर्ड मिळवा.";
-
 /* Button label to Sync your Firefox Account */
 "FxA.SyncNow" = "आत्ता ताळमेळ करा";
 
@@ -393,9 +345,6 @@
 
 /* Body of a notification displayed when unnamed device has been disconnected from FxA. */
 "FxAPush_DeviceDisconnected_UnknownDevice_body" = "उपकरण Firefox Sync मधुन डिस्कनेक्ट केले आहे";
-
-/* A re-worded offer about Sync, displayed when the Sync home panel is empty, that emphasizes one-way data transfer, not syncing. */
-"Get your open tabs, bookmarks, and passwords from your other devices." = "आपल्या अन्य उपकरणांवरील उघडलेले टॅब, बुकमार्क आणि पासवर्ड मिळवा.";
 
 /* Show the SUMO support page from the Support section in the settings. see http://mzl.la/1dmM8tZ */
 "Help" = "मदत";
@@ -433,9 +382,6 @@
 /* Description for the empty synced tabs 'not yet verified' state in the History Panel */
 "HistoryPanel.EmptySyncedTabsPanelNotYetVerifiedState.Description" = "आपले खाते सत्यापित करणे आवश्यक आहे.";
 
-/* Description for the empty synced tabs 'single device Sync' state in the History Panel */
-"HistoryPanel.EmptySyncedTabsPanelSingleDeviceSyncState.Description" = "आपल्या इतर उपकरणांवरील आपले टॅब्स् येथे पाहू इच्छिता?";
-
 /* Description for the empty synced tabs 'tab sync disabled' state in the History Panel */
 "HistoryPanel.EmptySyncedTabsPanelTabSyncDisabledState.Description" = "आपल्या इतर उपकरणावरुन या उपकरणावर टॅब्स पाहण्यासाठी टॅब ताळमेळ सक्रीय करा.";
 
@@ -448,32 +394,11 @@
 /* Title for the Recently Closed button in the History Panel */
 "HistoryPanel.RecentlyClosedTabsButton.Title" = "नुकतेच बंद केलेले";
 
-/* Description that corresponds with a number of devices connected for the Synced Tabs Cell in the History Panel */
-"HistoryPanel.SyncedTabsCell.Description.Pluralized" = "%d जोडलेली उपकरण(णे)";
-
-/* Title for the Synced Tabs Cell in the History Panel */
-"HistoryPanel.SyncedTabsCell.Title" = "जोडलेली उपकरणे";
-
-/* Button cancelling changes setting the home page for the first time. */
-"HomePage.Set.Dialog.Cancel" = "रद्द करा";
-
-/* Alert dialog body when the user opens the home page for the first time. */
-"HomePage.Set.Dialog.Message" = "सेटिंग्समधुन आपण हे नंतर बदलु शकता";
-
-/* Button accepting changes setting the home page for the first time. */
-"HomePage.Set.Dialog.OK" = "मुखपृष्ठ लावा";
-
-/* Alert dialog title when the user opens the home page for the first time. */
-"HomePage.Set.Dialog.Title" = "हे संकेतस्थळ आपले मुखपृष्ठ म्हणून वापरायचे आहे का?";
-
 /* The title for the Bookmark context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.Bookmark" = "वाचनखूण";
 
 /* The title for the Delete from History context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.DeleteFromHistory" = "इतिहासातून नष्ट करा";
-
-/* The title for the Open in New Private Tab context menu action for sites in Home Panels */
-"HomePanel.ContextMenu.OpenInNewPrivateTab" = "नवीन खाजगी टॅबमध्ये उघडा";
 
 /* The title for the Open in New Tab context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.OpenInNewTab" = "नवीन टॅबमध्ये उघडा";
@@ -556,12 +481,6 @@
 /* Toggle logins syncing setting */
 "Logins" = "लॉगिन्स";
 
-/* Login detail view field name for the last modified date */
-"LoginsDetailView.LoginModified" = "बदलले";
-
-/* Title for the login detail view */
-"LoginsDetailView.LoginTitle" = "लॉगिन";
-
 /* Button to not save the user's password */
 "LoginsHelper.DontSave.Button" = "साठवू नका";
 
@@ -579,15 +498,6 @@
 
 /* Button to update the user's password */
 "LoginsHelper.Update.Button" = "अद्ययावत करा";
-
-/* For filtering the login list, search only the login names */
-"LoginsList.LoginsListFilterLogin" = "लॉगिन";
-
-/* For filtering the login list, search both website and login names. */
-"LoginsList.LoginsListFilterSearchAll" = "सर्व";
-
-/* For filtering the login list, search only the website names */
-"LoginsList.LoginsListFilterWebsite" = "संकेतस्थळ";
 
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "वर्गक";
@@ -617,15 +527,6 @@
 
 /* Toast displayed to user after copy url pressed. */
 "Menu.CopyURL.Confirm" = "क्लिपबोर्डवर URL प्रत बनवली";
-
-/* Label for the button, displayed in the menu, turns on night mode. */
-"Menu.NightModeTurnOn.Label" = "रात्र मोड चालू करा";
-
-/* Label for the button, displayed in the menu, hides images on the webpage when pressed. */
-"Menu.NoImageModeBlockImages.Label" = "प्रतिमा अवरोधित करा";
-
-/* Label for title in page action menu. */
-"Menu.PageActions.Title" = "पृष्ठाच्या कृती";
 
 /* The title for the button that lets you paste into the location bar */
 "Menu.Paste.Title" = "चिकटवा";
@@ -663,12 +564,6 @@
 /* The title that shows the number of social URLs blocked */
 "Menu.TrackingProtectionBlockedSocial.Title" = "सोशल ट्रॅकर";
 
-/* Description of the Tracking protection menu when TP is blocking parts of the page */
-"Menu.TrackingProtectionBlocking.Description" = "जे आपल्या आॅनलाइन कार्याचा मागोवा घेऊ शकतात त्यांना Firefox प्रतीरोधीत करीत आहे.";
-
-/* The description of the Tracking Protection menu item when tracking is enabled */
-"Menu.TrackingProtectionBlockingDisabled.Description" = "ऑनलाईन ट्रॅकर अवरोधित करा";
-
 /* The title that shows the number of cross-site cookies blocked */
 "Menu.TrackingProtectionCrossSiteCookies.Title" = "क्रॉस-साईट ट्रॅकिंग कुकी";
 
@@ -693,50 +588,8 @@
 /* Description of social network trackers. */
 "Menu.TrackingProtectionDescription.SocialNetworksNew" = "इतर संकेतस्थळांवर ट्रॅकर ठेऊन, सोशल नेटवर्क आपली परिपूर्ण आणि केंद्रित रूपरेखा बनवतात. असे ट्रॅकर अडवल्याने आपण ऑनलाईन काय करता हे सोशल मीडिया कंपन्यांना कळायचे कमी होते.";
 
-/* The button that disabled TP for a site. */
-"Menu.TrackingProtectionDisable1.Title" = "या संकेतस्थळासाठी बंद";
-
-/* The confirmation toast once tracking protection has been disabled */
-"Menu.TrackingProtectionDisabled.Title" = "मागोवा सुरक्षा या संकेतस्थळासाठी बंद आहे.";
-
-/* A button to enable tracking protection inside the menu. */
-"Menu.TrackingProtectionEnable.Title" = "मागोवा सुरक्षा सक्रिय करा";
-
-/* A button to enable tracking protection inside the menu. */
-"Menu.TrackingProtectionEnable1.Title" = "या संकेतस्थळासाठी सक्रिय";
-
-/* The confirmation toast once tracking protection has been enabled */
-"Menu.TrackingProtectionEnabled.Title" = "मागोवा सुरक्षा या संकेतस्थळासाठी सक्रिय आहे.";
-
 /* The title that shows the number of fingerprinting scripts blocked */
 "Menu.TrackingProtectionFingerprintersBlocked.Title" = "ठसा";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.CrossSiteCookies" = "अवरोधित क्रॉस-साइट ट्रॅकिंग कुकीज";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.Cryptominers" = "अवरोधित क्रिप्टोमिनर्स";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.Fingerprinters" = "अवरोधित फिंगरप्रिंटर्स";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.Social" = "अवरोधित सामाजिक ट्रॅकर्स";
-
-/* more info about what tracking protection is about */
-"Menu.TrackingProtectionMoreInfo.Description" = "अनेक संकेतस्थळांवरून आपली माहिती संकलित करून ऑनलाईन मागोवा घेणाऱ्यांना मागोवा सुरक्षा यंत्रणा कशी अडवते ते जाणून घ्या.";
-
-/* The description of the Tracking Protection menu item when no scripts are blocked but tracking protection is enabled. */
-"Menu.TrackingProtectionNoBlocking.Description" = "या पृष्ठावर कोणताही मागोवा घेणारा घटक सापडला नाही.";
-
-/* label for the menu item to show when the website is whitelisted from blocking trackers. */
-"Menu.TrackingProtectionOption.WhiteListOnDescription" = "आपल्या आॅनलाइन कार्याचा मागोवा घेऊ शकणारे घटक पृष्ठामध्ये आहेत. आपण सुरक्षा बंद केली आहे.";
-
-/* label for the menu item that lets you remove a website from the tracking protection whitelist */
-"Menu.TrackingProtectionWhitelistRemove.Title" = "या संकेतस्थळासाठी सक्रिय करा";
-
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "नवीन काय आहे";
 
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "मोबाईल डिव्हाइस";
@@ -786,9 +639,6 @@
 
 /* Accessibility label for the Page Options menu button */
 "Page Options Menu" = "पृष्ठ पर्याय मेनू";
-
-/* Accessibility label for the Library panel's bottom toolbar containing a list of the home panels (top sites, bookmarks, history, remote tabs, reading list). */
-"Panel Chooser" = "पटल चयक";
 
 /* Password textbox in Authentication prompt */
 "Password" = "पासवर्ड";
@@ -853,9 +703,6 @@
 /* Reopen alert title shown at home page. */
 "ReopenAlert.Title" = "शेवटी बंद केलेला टॅब पुन्हा उघडा";
 
-/* Hardware shortcut to reopen the last closed tab, from the tab or the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"ReopenClosedTab.KeyCodeTitle" = "बंद केलेले टॅब पुन्हा उघडा";
-
 /* Accessibility label for button resetting font size in display settings of reader mode */
 "Reset text size" = "मजकुराचा आकार पूर्ववत करा";
 
@@ -873,9 +720,6 @@
 
 /* Text of the prompt that is shown to the user when the data is invalid */
 "ScanQRCode.InvalidDataError.Message" = "ही माहिती वैध नाही";
-
-/* Text of the prompt user to setup the camera authorization. */
-"ScanQRCode.PermissionError.Message" = "आपल्या डिव्हाइसचा कॅमेरा अॅक्सेस करण्यासाठी ‘सेटिंग' -> ‘गोपनीयता' -> ‘कॅमेरा' यामधून कृपया Firefox ला अनुमती द्या.";
 
 /* Title for the QR code scanner view. */
 "ScanQRCode.View.Title" = "QR कोड स्कॅन करा";
@@ -979,12 +823,6 @@
 /* Title of notification shown when the device is sent one or more tabs from the named device. %@ is the placeholder for the device name. This device name will be localized by that device. */
 "SentTab_TabArrivingNotification_WithDevice_title" = "%@ कडून नवीन टॅब प्राप्त झाला";
 
-/* Label for an action used to add one or more tabs recieved from a notification to the reading list. */
-"SentTab.AddToReadingListAction.Title" = "वाचनयादित समाविष्ट करा";
-
-/* Label for an action used to bookmark one or more tabs from a notification. */
-"SentTab.BookmarkAction.title" = "वाचनखूण";
-
 /* Body of notification received after a spurious message from FxA has been received. */
 "SentTab.NoTabArrivingNotification.body" = "सुरु करण्यासाठी टॅप करा";
 
@@ -1081,9 +919,6 @@
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "फिकट";
 
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "आपल्या डिस्पले प्रखरतेनुसार थीम स्वयंचलितपणे बदलेल. थीम जेथे बदलेल त्यासाठीआपण थ्रेशहोल्ड सेट करू शकता. वर्तुळ आपल्या डिस्पलेच्या वर्तमान प्रखरता दर्शवते.";
-
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "मोड बदला";
 
@@ -1127,29 +962,14 @@
 /* General settings section title */
 "Settings.General.SectionName" = "सर्वसाधारण";
 
-/* Button in settings to clear the home page. */
-"Settings.HomePage.Clear.Button" = "नष्ट करा";
-
 /* Label used as an item in Settings. When touched it will open a dialog to configure the home page and its uses. */
 "Settings.HomePage.SectionName" = "मुख्यपृष्ठ";
-
-/* Title displayed in header of the setting panel. */
-"Settings.HomePage.Title" = "मुख्यपृष्ठ सेटिंग";
-
-/* Placeholder text in the homepage setting when no homepage has been set. */
-"Settings.HomePage.URL.Placeholder" = "संकेतस्थळ प्रविष्ट करा";
 
 /* Title of the setting section containing the URL of the current home page. */
 "Settings.HomePage.URL.Title" = "सध्याचे मुख्यपृष्ठ";
 
-/* Button in settings to use the current link on the clipboard as home page. */
-"Settings.HomePage.UseCopiedLink.Button" = "प्रत बनवलेली दुवा वापरा";
-
 /* Button in settings to use the current page as home page. */
 "Settings.HomePage.UseCurrent.Button" = "सध्याच्या पृष्ठाचा वापर करा";
-
-/* Button in settings to use the default home page. If no default is set, then this button isn't shown. */
-"Settings.HomePage.UseDefault.Button" = "पूर्वनिर्धारित वापरा";
 
 /* Title for the logins and passwords screen. Translation could just use 'Logins' if the title is too long */
 "Settings.LoginsAndPasswordsTitle" = "लॉगिन आणि पासवर्ड";
@@ -1157,47 +977,14 @@
 /* Label used to set a custom url as the new tab option (homepage). */
 "Settings.NewTab.CustomURL" = "सानुकूल URL";
 
-/* A description in settings of what the new tab choice means */
-"Settings.NewTab.Description" = "जेव्हा तुम्ही नवीन टॅब मध्ये उघडता:";
-
-/* The title of the section in newtab that lets you modify the topsites panel */
-"Settings.NewTab.Option.ASTitle" = "टॉप साइट सानुकूलित करा";
-
 /* Option in settings to show a blank page when you open a new tab */
 "Settings.NewTab.Option.BlankPage" = "रिक्त पृष्ठ";
-
-/* Option in settings to show bookmarks when you open a new tab */
-"Settings.NewTab.Option.Bookmarks" = "वाचनखूणा";
-
-/* The footer for the section to customize top sites in the new tab settings page. */
-"Settings.NewTab.Option.CustomizeFooter" = "सर्वाधिक भेट दिलेल्या साइट";
-
-/* The title for the section to customize top sites in the new tab settings page. */
-"Settings.NewTab.Option.CustomizeTitle" = "FIrefox मुख्यपृष्ठ सानुकूलित करा";
 
 /* Option in settings to show Firefox Home when you open a new tab */
 "Settings.NewTab.Option.FirefoxHome" = "Firefox मुख्यपृष्ठ";
 
-/* Option in the settings to turn off recent bookmarks in the Highlights section */
-"Settings.NewTab.Option.HighlightsBookmarks" = "अलिकडील वाचनखूणा";
-
-/* Option in settings to turn off history in the highlights section */
-"Settings.NewTab.Option.HighlightsHistory" = "भेट दिलेले";
-
-/* Option in settings to show history when you open a new tab */
-"Settings.NewTab.Option.History" = "इतिहास";
-
 /* Option in settings to show your homepage when you open a new tab */
 "Settings.NewTab.Option.HomePage" = "मुख्यपृष्ठ";
-
-/* Option in settings to turn on off pocket recommendations */
-"Settings.NewTab.Option.Pocket" = "पॉकेटवर ट्रेन्डिंग";
-
-/* Footer caption for pocket settings */
-"Settings.NewTab.Option.PocketFooter" = "वेबवरील उत्कृष्ट सामग्री.";
-
-/* Option in settings to show reading list when you open a new tab */
-"Settings.NewTab.Option.ReadingList" = "आपली वाचनयादि दाखवा";
 
 /* Label used as an item in Settings. When touched it will open a dialog to configure the new tab behavior. */
 "Settings.NewTab.SectionName" = "नवीन टॅब";
@@ -1253,20 +1040,8 @@
 /* The option that takes you to the siri shortcuts settings page */
 "Settings.Siri.SectionName" = "Siri शॉर्टकट";
 
-/* Header description for tracking protection options section where Basic/Strict block list can be selected */
-"Settings.TrackingProtection.BlockListsHeader" = "आपली ब्राउझिंग माहिती ट्रॅक करणारे वेब घटक अवरोधित करण्यासाठी Firefox द्वारे वापरली जाणारी यादी आपण निवडू शकता.";
-
-/* Explanation of basic mode. */
-"Settings.TrackingProtection.Info.BasicTitle" = "संरक्षण आणि कार्यप्रदर्शनासाठी संतुलित.";
-
 /* The Title on info view which shows a list of all blocked websites */
 "Settings.TrackingProtection.Info.BlocksTitle" = "BLOCKS";
-
-/* Explanation of strict mode. */
-"Settings.TrackingProtection.Info.StrictTitle" = "मजबूत संरक्षण करते, परंतु काही साइट्स खंडित होऊ शकतात.";
-
-/* 'More Info' link on the Tracking Protection settings screen. */
-"Settings.TrackingProtection.MoreInfo" = "अधिक माहिती…";
 
 /* Title for tracking protection options section where level can be selected. */
 "Settings.TrackingProtection.ProtectionLevelTitle" = "संरक्षण पातळी";
@@ -1274,23 +1049,11 @@
 /* Row in top-level of settings that gets tapped to show the tracking protection settings detail view. */
 "Settings.TrackingProtection.SectionName" = "मागोवा सुरक्षा";
 
-/* Additional information about the strict level setting */
-"Settings.TrackingProtection.StrictLevelInfoFooter" = "ट्रॅकर्स अवरोधित करणे काही वेबसाइटच्या कार्यक्षमतेवर परिणाम करू शकते.";
-
 /* Tracking protection settings option for using the basic blocklist. */
 "Settings.TrackingProtectionOption.BasicBlockList" = "मानक (डीफॉल्ट)";
 
-/* Tracking protection settings option description for using the basic blocklist. */
-"Settings.TrackingProtectionOption.BlockListBasicDescription" = "संकेतस्थळ योग्य रितीने कार्य करू शकेल, यासाठी काही ट्रॅकर्सला परवानगी द्या.";
-
 /* Tracking protection settings option for using the strict blocklist. */
 "Settings.TrackingProtectionOption.BlockListStrict" = "काटेकोर";
-
-/* Tracking protection settings option description for using the strict blocklist. */
-"Settings.TrackingProtectionOption.BlockListStrictDescription" = "माहिती असलेल्या ट्रॅकर्सला अवरोधित करा. काही संकेतस्थळ व्यवस्थीत कार्य करणार नाहीत.";
-
-/* Description label shown on tracking protection options screen. */
-"Settings.TrackingProtectionOption.EnabledStateFooterLabel" = "मागोवा हा आपल्या ब्राऊझिंग डेटाचा विविध वेबसाइटवरचा संग्रह आहे.";
 
 /* Settings option to specify that Tracking Protection is on */
 "Settings.TrackingProtectionOption.NormalBrowsingLabelOn" = "वर्धित ट्रॅकिंग संरक्षण";
@@ -1312,15 +1075,6 @@
 
 /* Title of link to help page to find out how to solve Sync issues */
 "Settings.TroubleShootSync.Title" = "समस्यानिवारण";
-
-/* Button to delete website in search results */
-"Settings.WebsiteData.ButtonDelete" = "नष्ट करा";
-
-/* Button to exit edit website search results */
-"Settings.WebsiteData.ButtonDone" = "झाले";
-
-/* Button to edit website search results */
-"Settings.WebsiteData.ButtonEdit" = "संपादित करा";
 
 /* Button shows all websites on website data tableview */
 "Settings.WebsiteData.ButtonShowMore" = "आणखी पहा";
@@ -1377,18 +1131,6 @@
 /* Accessibility hint for tab tray's displayed tab. */
 "Swipe right or left with three fingers to close the tab." = "टॅब बंद करण्यासाठी तीन बोटांनी उजवीकडे किंवा डावीकडे स्वाईप करा.";
 
-/* Hardware shortcut for non-private tab or tab. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"SwitchToNonPBM.KeyCodeTitle" = "सर्वसाधारण ब्राऊझिंग मोड";
-
-/* Hardware shortcut switch to the private browsing tab or tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"SwitchToPBM.KeyCodeTitle" = "खाजगी ब्राउझिंग मोड";
-
-/* Text displayed when the Sync home panel is empty, describing the features provided by Sync to invite the user to log in. */
-"Sync your tabs, bookmarks, passwords and more." = "आपले टॅब, वाचनखूणा, पासवर्ड आणि इतर काही सिंक करा.";
-
-/* Text displayed when the Sync home panel is empty, describing the features provided by Sync to invite the user to log in. */
-"Sync your tabs, passwords and more." = "आपले टॅब, पासवर्ड आणि इतर काही सिंक करा.";
-
 /* Message displayed when the user syncs for the first time */
 "Sync.FirstTimeMessage.Label" = "प्रथम सिंकला वेळ लागेल";
 
@@ -1397,9 +1139,6 @@
 
 /* Message displayed when the user's account is syncing with ellipsis at the end */
 "Sync.SyncingEllipsis.Label" = "ताळमेळ करीत आहोत…";
-
-/* Panel accessibility label */
-"Synced Tabs" = "सिंक केलेले टॅब";
 
 /* The Bookmark sync component, used in SyncState.Partial.Title */
 "SyncState.Bookmark.Title" = "वाचनखूणा";
@@ -1446,9 +1185,6 @@
 /* The label indicating that all the tabs were closed */
 "Tabs.DeleteAllUndo.Title" = "%d टॅब बंद केले";
 
-/* The placeholder text for the tab search bar */
-"Tabs.Search.PlaceholderText" = "टॅब शोधा";
-
 /* Hardware shortcut to close all tabs from the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
 "TabTray.CloseAllTabs.KeyCodeTitle" = "सर्व टॅब बंद करा";
 
@@ -1457,9 +1193,6 @@
 
 /* Hardware shortcut to open a new tab from the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
 "TabTray.OpenNewTab.KeyCodeTitle" = "नवीन टॅब उघडा";
-
-/* Hardware shortcut open the selected tab from the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"TabTray.OpenSelectedTab.KeyCodeTitle" = "निवडलेले टॅब उघडा";
 
 /* Message displayed when the reader mode page could not be loaded. This message will appear only when sharing to Firefox reader mode from another app. */
 "The page could not be displayed in Reader View." = "हे पृष्ठ वाचक दृश्यामध्ये दाखवू शकले नाही.";
@@ -1491,12 +1224,6 @@
 /* Accessibility label for the Close All Tabs menu button. */
 "Toolbar.Menu.CloseAllTabs" = "सर्व टॅब बंद करा";
 
-/* Description label for the empty Top Sites state. */
-"TopSites.EmptyState.Description" = "आपण सार्वधिक भेट दिलेल्या वेबसाइट येथे दिसतील.";
-
-/* The title for the empty Top Sites state */
-"TopSites.EmptyState.Title" = "टॉप साइट वर स्वागत";
-
 /* Button shown in editing mode to remove this site from the top sites panel. */
 "TopSites.RemovePage.Button" = "पृष्ठ काढा — %@";
 
@@ -1525,13 +1252,10 @@
 "Upgrade Firefox to connect" = "कनेक्ट करण्यासाठी Firefox श्रेणीसुधारित करा";
 
 /* Username textbox in Authentication prompt */
-"Username" = "वापरकर्त्याचे नाव";
+"Username" = "वापरकर्ता नाव";
 
 /* Text message in the settings table view */
 "Verify your email address" = "आपला ईमेल पत्ता सत्यापित करा";
-
-/* Version number of Firefox shown in settings */
-"Version %@ (%@)" = "आवृत्ती %1$@ (%2$@)";
 
 /* Accessibility label for the main web content view */
 "Web content" = "वेब मजकूर";

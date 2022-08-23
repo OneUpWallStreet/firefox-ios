@@ -1,9 +1,6 @@
 /* Label for the button, displayed in the menu, used to create a bookmark for the current website. */
 "Menu.AddBookmarkAction.Title" = "या पृष्ठाला वाचणखूण लावा";
 
-/* Label for the button, displayed in the menu, used to add a page to the reading list. */
-"Menu.AddToReadingList.Title" = "वाचनयादित समाविष्ट करा";
-
 /* Label for the button, displayed in the menu, used to close all tabs currently open. */
 "Menu.CloseAllTabsAction.Title" = "सर्व टॅब बंद करा";
 
@@ -12,9 +9,6 @@
 
 /* Label for the button, displayed in the menu, used to open the toolbar to search for text within the current page. */
 "Menu.FindInPageAction.Title" = "पृष्ठामध्ये शोधा";
-
-/* Label for the button, displayed in the menu, used to open the Library */
-"Menu.Library.Title" = "आपले ग्रंथालय";
 
 /* Label for the button, displayed in the menu, used to open a new private tab. */
 "Menu.NewPrivateTabAction.Title" = "नवीन खाजगी टॅब उघडा";
@@ -31,9 +25,6 @@
 /* Accessibility label for the button, displayed in the menu, used to open the History home panel. Please keep as short as possible, <15 chars of space available. */
 "Menu.OpenHistoryAction.AccessibilityLabel.v2" = "इतिहास";
 
-/* Label for the button, displayed in the menu, used to navigate to the home page. */
-"Menu.OpenHomePageAction.Title" = "मुखपृष्ठ";
-
 /* Accessibility label for the button, displayed in the menu, used to open the Reading list home panel. Please keep as short as possible, <15 chars of space available. */
 "Menu.OpenReadingListAction.AccessibilityLabel.v2" = "वाचन यादी";
 
@@ -48,9 +39,6 @@
 
 /* Label for the button, displayed in the menu, used to show the html page source */
 "Menu.PageSourceAction.Title" = "पृष्ठाचे स्रोत पहा";
-
-/* Label for the button, displayed in the menu, used to delete an existing bookmark for the current website. */
-"Menu.RemoveBookmarkAction.Title" = "वाचनखूण काढा";
 
 /* Label for the button, displayed in the menu, used to open the QR code scanner. */
 "Menu.ScanQRCodeAction.Title" = "QR कोड स्कॅन करा";

@@ -4,9 +4,6 @@
 /* Long label for the button displayed in the menu, used to add a page to the reading list. */
 "Menu.AddToReadingList.AlternateLabel.v99" = "Okuma listesine ekle";
 
-/* Label for the button, displayed in the menu, used to add a page to the reading list. */
-"Menu.AddToReadingList.Title" = "Okuma listesine ekle";
-
 /* Label for the button, displayed in the menu, used to close all tabs currently open. */
 "Menu.CloseAllTabsAction.Title" = "Tüm sekmeleri kapat";
 
@@ -22,9 +19,6 @@
 /* Label for the button, displayed in the menu, used to Reload the webpage */
 "Menu.Library.Reload" = "Tazele";
 
-/* Label for the button, displayed in the menu, used to open the Library */
-"Menu.Library.Title" = "Arşiviniz";
-
 /* Label for the button, displayed in the menu, used to open a new private tab. */
 "Menu.NewPrivateTabAction.Title" = "Yeni gizli sekme aç";
 
@@ -39,9 +33,6 @@
 
 /* Accessibility label for the button, displayed in the menu, used to open the History home panel. Please keep as short as possible, <15 chars of space available. */
 "Menu.OpenHistoryAction.AccessibilityLabel.v2" = "Geçmiş";
-
-/* Label for the button, displayed in the menu, used to navigate to the home page. */
-"Menu.OpenHomePageAction.Title" = "Başlangıç";
 
 /* Accessibility label for the button, displayed in the menu, used to open the Reading list home panel. Please keep as short as possible, <15 chars of space available. */
 "Menu.OpenReadingListAction.AccessibilityLabel.v2" = "Okuma listesi";
@@ -63,9 +54,6 @@
 
 /* Long label for the remove bookmark button displayed in the menu. Pressing this button remove the current page from the bookmarks. */
 "Menu.RemoveBookmark.AlternateLabel.v99" = "Yer imini kaldır";
-
-/* Label for the button, displayed in the menu, used to delete an existing bookmark for the current website. */
-"Menu.RemoveBookmarkAction.Title" = "Yer imini sil";
 
 /* Label for the button, displayed in the menu, used to report a compatibility issue with the current page. */
 "Menu.ReportSiteIssueAction.Title" = "Site sorununu bildir";

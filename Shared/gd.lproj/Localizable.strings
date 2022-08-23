@@ -20,34 +20,19 @@
 "ActivityStream.ContextMenu.AddToShortcuts" = "Cuir ris na h-ath-ghoiridean";
 
 /* The title for the pinning a topsite action */
-"ActivityStream.ContextMenu.PinTopsite" = "Prìnich ri brod nan làrach";
-
-/* The title for the pinning a topsite action */
 "ActivityStream.ContextMenu.PinTopsite2" = "Prìnich";
 
 /* The title for removing a shortcut action */
 "ActivityStream.ContextMenu.RemoveFromShortcuts" = "Thoir air falbh on na h-ath-ghoiridean";
 
-/* The title for removing a pinned topsite action */
-"ActivityStream.ContextMenu.RemovePinTopsite" = "Thoir air falbh an làrach phrìnichte";
-
 /* The title for the unpinning a topsite action */
 "ActivityStream.ContextMenu.UnpinTopsite" = "Dì-phrìnich";
-
-/* The description of a highlight if it is a site the user has bookmarked */
-"ActivityStream.Highlights.Bookmark" = "Na chomharra-lìn";
-
-/* The description of a highlight if it is a site the user has visited */
-"ActivityStream.Highlights.Visited" = "Air tadhal air";
 
 /* Title for the Jump Back In section. This section allows users to jump back in to a recently viewed tab */
 "ActivityStream.JumpBackIn.SectionTitle" = "Till gu far an robh thu";
 
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "Tabaichean: %d";
-
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "Lorg a rinn thu airson “%@”";
 
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "Air a shàbhaladh o chionn goirid";
@@ -63,9 +48,6 @@
 
 /* Section title label for Recommended by Pocket section */
 "ActivityStream.Pocket.SectionTitle2" = "Air a mholadh le Pocket";
-
-/* The description of a Pocket Story */
-"ActivityStream.Pocket.Trending" = "A’ treandadh";
 
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "Air tadhal orra o chionn goirid";
@@ -87,9 +69,6 @@
 
 /* The title for the setting page which lets you select the number of top site rows */
 "ActivityStream.TopSites.RowSettingFooter" = "Suidhich na ràghan";
-
-/* Section title label for Top Sites */
-"ActivityStream.TopSites.SectionTitle" = "Brod nan làrach";
 
 /* Accessibility label for the Add Tab button in the Tab Tray. */
 "Add Tab" = "Cuir taba ris";
@@ -113,6 +92,9 @@
 /* Accessibility label for address and search field, both words (Address, Search) are therefore nouns. */
 "Address and Search" = "Seòladh is lorg";
 
+/* Accessibility label for the Address Bar, where a user can enter the search they wish to make */
+"Address.Bar.v99" = "Bàr an t-seòlaidh";
+
 /* Used as a button label for crash dialog prompt */
 "Always Send" = "Cuir an-còmhnaidh";
 
@@ -122,23 +104,11 @@
 /* Authentication prompt title */
 "Authentication required" = "Feum air dearbhadh";
 
-/* Description for button to suggest searching with a search engine. First argument is the name of the search engine to select */
-"Awesomebar.SearchWithEngine.Description" = "Lorg le %@ sa bhad on bhàr-sheòlaidh";
-
-/* Title for button to suggest searching with a search engine. First argument is the name of the search engine to select */
-"Awesomebar.SearchWithEngine.Title" = "Lorg le %@";
-
 /* Accessibility label for the Back button in the tab toolbar. */
 "Back" = "Air ais";
 
 /* Block pop-up windows setting */
 "Block Pop-up Windows" = "Bac priob-uinneagan";
-
-/* The header title for the fields when editing a Bookmark */
-"Bookmark.BookmarkDetail.FieldsHeader.Bookmark.Title" = "Comharra-lìn";
-
-/* The header title for the fields when editing a Folder */
-"Bookmark.BookmarkDetail.FieldsHeader.Folder.Title" = "Pasgan";
 
 /* The label for the Title field when editing a bookmark */
 "Bookmark.DetailFieldTitle.Label" = "Tiotal";
@@ -148,6 +118,15 @@
 
 /* Toggle bookmarks syncing setting */
 "Bookmarks" = "Comharran-lìn";
+
+/* A label indicating the action of adding a web page as a bookmark. */
+"Bookmarks.Actions.Add" = "Cuir ris";
+
+/* A label indicating the action of bookmarking all currently open non private tabs. */
+"Bookmarks.Actions.BookmarkAllTabs" = "Dèan comharra-lìn de gach taba";
+
+/* A label indicating the action of bookmarking the current tab. */
+"Bookmarks.Actions.BookmarkCurrentTab" = "Dèan comharra-lìn dhen taba làithreach";
 
 /* The button on the snackbar to edit a bookmark after adding it. */
 "Bookmarks.Edit.Button" = "Deasaich";
@@ -161,11 +140,11 @@
 /* The label to show the location of the folder where the bookmark is located */
 "Bookmarks.Folder.Label" = "Pasgan";
 
-/* The label for the location of the new folder */
-"Bookmarks.FolderLocation.Label" = "Ionad";
+/* A label indicating all bookmarks grouped under the category 'Desktop Bookmarks'. */
+"Bookmarks.Menu.DesktopBookmarks" = "Comharran-lìn an desktop";
 
-/* The label for the title of the new folder */
-"Bookmarks.FolderName.Label" = "Ainm aʼ phasgain";
+/* A label indicating all bookmarks that were recently added. */
+"Bookmarks.Menu.RecentlyBookmarked" = "Comharran-lìn ùra";
 
 /* The button to create a new bookmark */
 "Bookmarks.NewBookmark.Label" = "Comharra-lìn ùr";
@@ -176,14 +155,11 @@
 /* The button to create a new separator */
 "Bookmarks.NewSeparator.Label" = "Sgaradair ùr";
 
+/* A label serving as a placeholder text in the search bar that's embedded in the Bookmarks menu. The placeholder text indicates that a user can search and filter bookmarks. */
+"Bookmarks.Search.SearchBookmarks" = "Lorg sna comharran-lìn";
+
 /* The label for the title of a bookmark */
 "Bookmarks.Title.Label" = "Tiotal";
-
-/* The label for the URL of a bookmark */
-"Bookmarks.URL.Label" = "URL";
-
-/* Status label for the empty Bookmarks state. */
-"BookmarksPanel.EmptyState.Title" = "Nochdaidh na comharran-lìn a shàbhaileas tu an-seo.";
 
 /* Describes the date on which the breach occurred */
 "BreachAlerts.BreachDate" = "Bhriseadh a-steach air";
@@ -230,9 +206,6 @@
 /* Context menu item for bookmarking a link URL */
 "ContextMenu.BookmarkLinkButtonTitle" = "Dèan comharra-lìn dhen cheangal";
 
-/* The button text in the Button Toast for switching to a fresh New Private Tab. */
-"ContextMenu.ButtonToast.NewPrivateTabOpened.ButtonText" = "Dèan suids";
-
 /* The label text in the Button Toast for switching to a fresh New Private Tab. */
 "ContextMenu.ButtonToast.NewPrivateTabOpened.LabelText" = "Chaidh taba prìobhaideach ùr fhosgladh";
 
@@ -257,23 +230,26 @@
 /* Context menu item for opening a link in a new tab */
 "ContextMenu.OpenInNewTabButtonTitle" = "Fosgail ann an taba ùr";
 
-/* Context menu item for opening a link in a new private tab */
-"ContextMenu.OpenLinkInNewPrivateTabButtonTitle" = "Fosgail an ceangal le taba prìobhaideach ùr";
-
-/* Context menu item for opening a link in a new tab */
-"ContextMenu.OpenLinkInNewTabButtonTitle" = "Fosgail an ceangal ann an taba ùr";
-
 /* Context menu item for saving an image */
 "ContextMenu.SaveImageButtonTitle" = "Sàbhail an dealbh";
 
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Co-roinn an ceangal";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "Leis gu bheil duilleag-dhachaigh phearsantaichte agad ann am Firefox a-nis, tha e nas fhasa cumail a’ dol far an do stad thu roimhe. Faigh greim air na tabaichean, comharran-lìn is toraidhean-luirg a bh’ agad o chionn goirid.";
+/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
+"ContextualHint.SearchBarPlacement.ExistingUsers" = "’S urrainn dhut am bàr-inneal a ghluasad gun bhonn a-nis airson ’s gum bi e nas fhasa fiosrachadh a chur a-steach";
+
+/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
+"ContextualHint.SearchBarPlacement.NewUsers" = "Tha am bàr-inneal aig a’ bhonn a-nis a ghnàth airson ’s gum bi e nas fhasa fiosrachadh a chur a-steach.";
+
+/* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
+"ContextualHints.SearchBarPlacement.CallToAction" = "Roghainnean a’ bhàr-inneal";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the inactive tabs feature. */
 "ContextualHints.TabTray.InactiveTabs" = "Thèid tabaichean nach tug thu sùil orra fad cola-deug a ghluasad an-seo.";
+
+/* Contextual hints are little popups that appear for the users informing them of new features. This one is the call to action for the inactive tabs contextual popup. */
+"ContextualHints.TabTray.InactiveTabs.CallToAction" = "Cuir dheth sna roghainnean";
 
 /* Accessibility message e.g. spoken by VoiceOver after adding current webpage to the Reading List failed. */
 "Could not add page to Reading list" = "Cha b’ urrainn dhuinn an duilleag a chur ris an liosta-leughaidh";
@@ -313,6 +289,9 @@
    Title for default search engine settings section. */
 "Default Search Engine" = "An t-einnsean-luirg bunaiteach";
 
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "Dùin";
+
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "Roghainnean taisbeanaidh";
 
@@ -339,9 +318,6 @@
 
 /* Alert dialog title when the user taps the cancel download icon. */
 "Downloads.CancelDialog.Title" = "Sguir dhen luchdadh a-nuas";
-
-/* The message displayed to a user when they try and perform the download of an asset that Firefox cannot currently handle. */
-"Downloads.Error.Message" = "Chan urrainnear luchdadh a-nuas ann am Firefox fhathast.";
 
 /* The label text in the Download Cancelled toast for showing confirmation that the download was cancelled. */
 "Downloads.Toast.Cancelled.LabelText" = "Sguireadh dhen luchdadh a-nuas";
@@ -412,6 +388,30 @@
 /* A button at bottom of the Firefox homepage that, when clicked, takes users straight to the settings options, where they can customize the Firefox Home page */
 "FirefoxHome.CustomizeHomeButton.Title" = "Gnàthaich an duilleag-dhachaigh";
 
+/* At the end of the Pocket section on the Firefox Homepage, this button appears and indicates tapping it will navigate the user to more Pocket Stories. */
+"FirefoxHome.Pocket.DiscoverMore" = "Fidir barrachd";
+
+/* On each Pocket Stories on the Firefox Homepage, this label appears and indicates the number of minutes to read an article. Minutes should be abbreviated due to space constraints. %d represents the number of minutes */
+"FirefoxHome.Pocket.Minutes.v99" = "%dm";
+
+/* This is the title of the Pocket section on Firefox Homepage. */
+"FirefoxHome.Pocket.SectionTitle" = "Sgeulachdan smuainteachail";
+
+/* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
+"FirefoxHome.RecentHistory.Remove" = "Thoir air falbh";
+
+/* Label showing how many sites there is in a search group. %d represents a number */
+"FirefoxHomepage.Common.SitesCount.v101" = "Làraichean: %d";
+
+/* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
+"FirefoxHomepage.ContextualMenu.Settings.v101" = "Roghainnean";
+
+/* The title for the Sponsored Content context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to a support page where users can learn more about Sponsored content and how it works. */
+"FirefoxHomepage.ContextualMenu.SponsoredContent.v101" = "Na sponsairean againn ⁊ do phrìobhaideachd";
+
+/* This string will show under a shortcuts tile on the firefox home page, indicating that the tile is a sponsored tile. Space is limited, please keep as short as possible. */
+"FirefoxHomepage.Shortcuts.Sponsored.v100" = "Sponsairichte";
+
 /* Accessibility Label for the tab toolbar Forward button */
 "Forward" = "Air adhart";
 
@@ -438,9 +438,6 @@
 
 /* Button label to open Sync preferences */
 "FxA.OpenSyncPreferences" = "Fosgail na roghainnean sioncronachaidh";
-
-/* Instructions shown on qr code scanning view */
-"fxa.qr-scanning-view.instructions" = "Sganaich an còd QR a chì thu aig firefox.com/pair";
 
 /* Remove button is displayed on firefox account page under certain scenarios where user would like to remove their account. */
 "FxA.RemoveAccount" = "Thoir air falbh";
@@ -469,17 +466,8 @@
 /* FxA sign in view qr code scan button */
 "fxa.signin.ready-to-scan" = "Deiseil airson sganadh";
 
-/* FxA sign in view title */
-"fxa.signin.turn-on-sync" = "Cuir an sioncronachadh air";
-
 /* FxA sign in view email login button */
 "fxa.signin.use-email-instead" = "Cleachd post-d na àite";
-
-/* Button label to sign into Sync */
-"FxA.SignIntoSync" = "Clàraich a-steach gu gleus an t-sioncronachaidh";
-
-/* Label explaining what sync does */
-"FxA.SyncExplain" = "Faigh na tabaichean, comharran-lìn is faclan-faire o na h-uidheaman eile agad.";
 
 /* Button label to Sync your Firefox Account */
 "FxA.SyncNow" = "Sioncronaich an-dràsta";
@@ -508,8 +496,8 @@
 /* Body of a notification displayed when unnamed device has been disconnected from FxA. */
 "FxAPush_DeviceDisconnected_UnknownDevice_body" = "Dhì-cheangail uidheam o ghleus sioncronachadh Firefox";
 
-/* A re-worded offer about Sync, displayed when the Sync home panel is empty, that emphasizes one-way data transfer, not syncing. */
-"Get your open tabs, bookmarks, and passwords from your other devices." = "Faigh tabaichean fosgailte, comharran-lìn is faclan-faire o uidheaman eile agad.";
+/* On the firefox homepage, the string read by the voice over prompt for accessibility, for the button which changes the wallpaper */
+"FxHomepage.Wallpaper.ButtonLabel.v99" = "Suaicheantas Firefox, atharraich am pàipear-balla";
 
 /* Show the SUMO support page from the Support section in the settings. see http://mzl.la/1dmM8tZ */
 "Help" = "Cobhair";
@@ -547,9 +535,6 @@
 /* Description for the empty synced tabs 'not yet verified' state in the History Panel */
 "HistoryPanel.EmptySyncedTabsPanelNotYetVerifiedState.Description" = "Tha an cunntas agad feumach air dearbhadh.";
 
-/* Description for the empty synced tabs 'single device Sync' state in the History Panel */
-"HistoryPanel.EmptySyncedTabsPanelSingleDeviceSyncState.Description" = "A bheil thu airson na tabaichean a tha agad air uidheaman eile fhaicinn an-seo?";
-
 /* Description for the empty synced tabs 'tab sync disabled' state in the History Panel */
 "HistoryPanel.EmptySyncedTabsPanelTabSyncDisabledState.Description" = "Cuir air sioncronachadh nan tabaichean airson cothrom fhaighinn air na tabaichean agad o uidheaman eile.";
 
@@ -562,26 +547,8 @@
 /* Title for the Recently Closed button in the History Panel */
 "HistoryPanel.RecentlyClosedTabsButton.Title" = "Air a dhùnadh o chionn goirid";
 
-/* Description that corresponds with a number of devices connected for the Synced Tabs Cell in the History Panel */
-"HistoryPanel.SyncedTabsCell.Description.Pluralized" = "%d uidheam(an) ceangailte";
-
-/* Title for the Synced Tabs Cell in the History Panel */
-"HistoryPanel.SyncedTabsCell.Title" = "Uidheaman sioncronaichte";
-
 /* Accessibility label for the tab toolbar indicating the Home button. */
 "Home" = "Dhachaigh";
-
-/* Button cancelling changes setting the home page for the first time. */
-"HomePage.Set.Dialog.Cancel" = "Sguir dheth";
-
-/* Alert dialog body when the user opens the home page for the first time. */
-"HomePage.Set.Dialog.Message" = "ʼS urrainn dhut seo atharrachadh uair sam bith sna roghainnean";
-
-/* Button accepting changes setting the home page for the first time. */
-"HomePage.Set.Dialog.OK" = "Suidhich an duilleag mhòr";
-
-/* Alert dialog title when the user opens the home page for the first time. */
-"HomePage.Set.Dialog.Title" = "A bheil thu airson an duilleag seo a chleachdadh mar an duilleag-dhachaidh agad?";
 
 /* The title for the Bookmark context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.Bookmark" = "Comharra-lìn";
@@ -590,7 +557,7 @@
 "HomePanel.ContextMenu.DeleteFromHistory" = "Sguab às an eachdraidh";
 
 /* The title for the Open in New Private Tab context menu action for sites in Home Panels */
-"HomePanel.ContextMenu.OpenInNewPrivateTab" = "Fosgail ann an taba prìobhaideach ùr";
+"HomePanel.ContextMenu.OpenInNewPrivateTab.v101" = "Fosgail ann an taba prìobhaideach";
 
 /* The title for the Open in New Tab context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.OpenInNewTab" = "Fosgail ann an taba ùr";
@@ -658,6 +625,84 @@
 /* Relative time for a tab that was visited within the last few moments. */
 "just now" = "an-dràsta fhèin";
 
+/* A label indicating the keyboard shortcut of resetting a web page's view to the standard viewing size. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.ActualSize" = "Am fìor-mheud";
+
+/* A label indicating the keyboard shortcut of adding the currently viewing web page as a bookmark. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.AddBookmark" = "Cuir comharra-lìn ris";
+
+/* A label indicating the keyboard shortcut of clearing recent history. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.ClearRecentHistory" = "Falamhaich an eachdraidh faisg ort";
+
+/* A label indicating the keyboard shortcut of downloading a link the user taps on. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.DownloadLink" = "Luchdaich a-nuas an ceangal";
+
+/* A label indicating the keyboard shortcut of finding text a user desires within a page again. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.FindAgain" = "Lorg a-rithist";
+
+/* A label indicating the keyboard shortcut of opening a new non-private tab, switching the user to that tab and Normal Browsing Mode. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.NewNormalTab" = "Taba àbhaisteach ùr";
+
+/* A label indicating the keyboard shortcut of opening a link in a new tab while staying on the currently selected tab. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.OpenLinkInBackground" = "Fosgail an ceangal sa chùlaibh";
+
+/* A label indicating the keyboard shortcut of opening a link in a new tab and switching to that tab at the same time. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.OpenLinkInNewTab" = "Fosgail an ceangal ann an taba ùr";
+
+/* A label indicating the keyboard shortcut of saving the current web page in a format of the user's choice. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.SavePageAs" = "Sàbhail an duilleag mar…";
+
+/* A label indicating a grouping of related keyboard shortcuts describing actions a user can do with Bookmarks. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.Section.Bookmark" = "Comharran-lìn";
+
+/* A label indicating a grouping of related keyboard shortcuts describing actions a user can do within a web page. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.Section.Edit" = "Deasaich";
+
+/* A label indicating a grouping of related keyboard shortcuts describing actions a user can take on, and within, a Tab. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.Section.File" = "Faidhle";
+
+/* A label indicating a grouping of related keyboard shortcuts describing actions a user can do with History. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.Section.History" = "An eachdraidh";
+
+/* A label indicating a grouping of related keyboard shortcuts describing actions a user can do with locally saved items. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.Section.Tools" = "Innealan";
+
+/* A label indicating a grouping of related keyboard shortcuts describing actions a user can do regarding the viewing experience of a webpage. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.Section.View" = "Seall";
+
+/* A label indicating a grouping of related keyboard shortcuts describing actions a user can take when navigating between their availale set of tabs. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.Section.Window" = "Uinneag";
+
+/* A label indicating the keyboard shortcut of opening the application's settings menu. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.Settings" = "Roghainnean";
+
+/* A label indicating the keyboard shortcut of showing all bookmarks. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.ShowBookmarks" = "Seall na comharran-lìn";
+
+/* A label indcating the keyboard shortcut of showing all downloads. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.ShowDownloads" = "Seall na luchdaich mi a-nuas";
+
+/* A label indicating the keyboard shortcut to switch from the current tab to the first tab. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.ShowFirstTab" = "Seall a’ chiad taba";
+
+/* A label indicating the keyboard shortcut of showing all history. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.ShowHistory" = "Seall an eachdraidh";
+
+/* A label indicating the keyboard shortcut switch from your current tab to the last tab. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.ShowLastTab" = "Seall an taba mu dheireadh";
+
+/* A label indicating the keyboard shortcut of switching between the first nine tabs. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.ShowTabNumber" = "Seall taba 1 gu 9";
+
+/* A label indicating the keyboard shortcut of reopening the last closed tab. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.UndoCloseTab" = "Neo-dhèan dùnadh an taba";
+
+/* A label indicating the keyboard shortcut of enlarging the view of the current web page. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.ZoomIn" = "Sùm a-steach";
+
+/* A label indicating the keyboard shortcut of shrinking the view of the current web page. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
+"Keyboard.Shortcuts.ZoomOut" = "Sùm a-mach";
+
 /* History tableview section header */
 "Last month" = "Am mìos seo chaidh";
 
@@ -666,6 +711,36 @@
 
 /* History tableview section header */
 "Last week" = "An t-seachdain seo chaidh";
+
+/* Within the History Panel, users can delete search group sites history. They can cancel this action by pressing a cancel button. */
+"LibraryPanel.History.ClearGroupedTabsCancel.v100" = "Sguir dheth";
+
+/* Within the History Panel, users can delete search group sites history. They need to confirm the action by pressing the delete button. */
+"LibraryPanel.History.ClearGroupedTabsDelete.v100" = "Sguab às";
+
+/* Within the History Panel, users can delete search group sites history. %@ represents the search group name. */
+"LibraryPanel.History.ClearGroupedTabsTitle.v100" = "A bheil thu airson gach làrach ann an “%@” a sguabadh às?";
+
+/* Within the History Panel, users can open an action menu to clear recent history. */
+"LibraryPanel.History.ClearHistoryMenuTitle.v100" = "Bheir seo air falbh an eachdraidh (a’ gabhail a-staigh eachdraidh a chaidh a shioncronachadh o uidheaman eile), briosgaidean is dàta brabhsaidh eile.";
+
+/* In the history panel, users will be able to search terms in their browsing history. This label is shown when there is no results after querying the search terms in the user's history. */
+"LibraryPanel.History.NoHistoryFound.v99" = "Cha deach eachdraidh a lorg";
+
+/* In the history panel, this is the title on the button that navigates the user to a screen showing their recently closed tabs. */
+"LibraryPanel.History.RecentlyClosedTabs.v99" = "Tabaichean a dhùin thu o chionn goirid";
+
+/* In the history panel, users will be able to search terms in their browsing history. This placeholder text inside the search component will indicate that a user can search through their browsing history. */
+"LibraryPanel.History.SearchHistoryPlaceholder.v99" = "Cuir a-steach briathran-luirg";
+
+/* In the history panel, this is the title on the button that navigates the user to a screen showing only browser history from other devices that are synced with the user's Firefox account. */
+"LibraryPanel.History.SyncedFromOtherDevices.v99" = "Sioncronaichte o uidheaman eile";
+
+/* Within the History Panel, users can see the option of viewing their history from synced tabs. */
+"LibraryPanel.History.SyncedHistory.v100" = "Eachdraidh shioncronaichte";
+
+/* This label is meant to signify the section containing a group of items that are older than thirty days. */
+"LibraryPanel.Section.Older" = "Nas sine";
 
 /* Settings item that opens a tab containing the licenses. See http://mzl.la/1NSAWCG */
 "Licenses" = "Ceadachasan";
@@ -712,12 +787,6 @@
 /* Title of the big blue button to enable AutoFill */
 "Logins.WelcomeView.TurnOnAutoFill" = "Cuir gleus an fhèin-lìonaidh air";
 
-/* Login detail view field name for the last modified date */
-"LoginsDetailView.LoginModified" = "Air atharrachadh";
-
-/* Title for the login detail view */
-"LoginsDetailView.LoginTitle" = "Clàradh a-steach";
-
 /* Button to not save the user's password */
 "LoginsHelper.DontSave.Button" = "Na sàbhail";
 
@@ -741,15 +810,6 @@
 
 /* Button to update the user's password */
 "LoginsHelper.Update.Button" = "Ùraich";
-
-/* For filtering the login list, search only the login names */
-"LoginsList.LoginsListFilterLogin" = "Clàradh a-steach";
-
-/* For filtering the login list, search both website and login names. */
-"LoginsList.LoginsListFilterSearchAll" = "Na h-uile";
-
-/* For filtering the login list, search only the website names */
-"LoginsList.LoginsListFilterWebsite" = "Làrach-lìn";
 
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Criathrag";
@@ -789,17 +849,26 @@
    Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "Comharraich nach deach a leughadh";
 
+/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
+"Menu.AddBookmark.AlternateLabel.v99" = "Cuir comharra-lìn ris";
+
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "Chaidh an comharra-lìn a chur ris";
 
-/* Toast displayed to the user after adding the item to the Top Sites. */
-"Menu.AddPin.Confirm" = "Prìnichte ri brod nan làrach";
+/* Label for the add bookmark button in the menu. Pressing this button bookmarks the current page. Please keep the text as short as possible for this label. */
+"Menu.AddBookmark.Label.v99" = "Cuir ris";
 
 /* Toast displayed to the user after adding the item to the Shortcuts. */
 "Menu.AddPin.Confirm2" = "Chaidh a chur ris na h-ath-ghoiridean";
 
+/* Label for the add to reading list button in the menu. Pressing this button adds the current page to the reading list. Please keep the text as short as possible for this label. */
+"Menu.AddReadingList.Label.v99" = "Cuir ris";
+
 /* Toast displayed to the user after adding the item to their reading list. */
 "Menu.AddToReadingList.Confirm" = "Air a chur ris an liosta-leughaidh";
+
+/* Label for the add to shortcuts button in the menu. Pressing this button pins the current website as a shortcut on the home page. */
+"Menu.AddToShortcuts.v99" = "Cuir ris na h-ath-ghoiridean";
 
 /* Label for the button, displayed in the menu, takes you to to bookmarks screen when pressed. */
 "Menu.Bookmarks.Label" = "Comharran-lìn";
@@ -809,6 +878,9 @@
 
 /* Toast displayed to user after copy url pressed. */
 "Menu.CopyURL.Confirm" = "Chaidh lethbhreac dhen URL a chur air an stòr-bhòrd";
+
+/* Label for the customize homepage button in the menu page. Pressing this button takes users to the settings options, where they can customize the Firefox Home page */
+"Menu.CustomizeHomePage.v99" = "Gnàthaich an duilleag-dhachaigh";
 
 /* Label for the button, displayed in the menu, takes you to to Downloads screen when pressed. */
 "Menu.Downloads.Label" = "Luchdaidhean a-nuas";
@@ -825,32 +897,26 @@
 /* Description for having strict ETP protection with ITP offered in iOS14+ */
 "Menu.EnhancedTrackingProtectionStrictWithITP.Title" = "Bacaidh Firefox tracaichean thar-làraich, tracaichean sòisealta, criopto-mhèinneadairean, lorgaichean-meòir agus susbaint tracaidh.";
 
+/* Label for the help button in the menu page. Pressing this button opens the support page https://support.mozilla.org/en-US/products/ios */
+"Menu.Help.v99" = "Cobhair";
+
 /* Label for the button, displayed in the menu, takes you to to History screen when pressed. */
 "Menu.History.Label" = "An eachdraidh";
 
 /* Label for the button displayed in the menu used to stop the reload of the webpage */
 "Menu.Library.StopReload" = "Sguir dheth";
 
-/* Label for the button, displayed in the menu, takes you to screen to manage account when pressed. First argument is the display name for the current account */
-"Menu.ManageAccount.Label" = "Stiùirich cunntas %@";
+/* Label for the new tab button in the menu page. Pressing this button opens a new tab. */
+"Menu.NewTab.v99" = "Taba ùr";
 
 /* Label for the button, displayed in the menu, turns off night mode. */
 "Menu.NightModeTurnOff.Label2" = "Cuir am modh oidhche dheth";
 
 /* Label for the button, displayed in the menu, turns on night mode. */
-"Menu.NightModeTurnOn.Label" = "Cuir modh na h-oidhche an comas";
-
-/* Label for the button, displayed in the menu, turns on night mode. */
 "Menu.NightModeTurnOn.Label2" = "Cuir am modh oidhche air";
-
-/* Label for the button, displayed in the menu, hides images on the webpage when pressed. */
-"Menu.NoImageModeBlockImages.Label" = "Bac dealbhan";
 
 /* Label for the button, displayed in the menu, shows images on the webpage when pressed. */
 "Menu.NoImageModeShowImages.Label" = "Seall dealbhan";
-
-/* Label for title in page action menu. */
-"Menu.PageActions.Title" = "Gnìomhan na duilleige";
 
 /* Label for the button, displayed in the menu, takes you to to passwords screen when pressed. */
 "Menu.Passwords.Label" = "Faclan-faire";
@@ -873,11 +939,35 @@
 /* Toast displayed to the user after a bookmark has been removed. */
 "Menu.RemoveBookmark.Confirm" = "Chaidh an comharra-lìn a thoirt air falbh";
 
-/* Toast displayed to the user after removing the item from the Top Sites. */
-"Menu.RemovePin.Confirm" = "Air a thoirt air falbh o bhrod nan làrach";
+/* Label for the remove bookmark button in the menu. Pressing this button remove the current page from the bookmarks. Please keep the text as short as possible for this label. */
+"Menu.RemoveBookmark.Label.v99" = "Thoir air falbh";
+
+/* Label for the remove from shortcuts button in the menu. Pressing this button removes the current website from the shortcut pins on the home page. */
+"Menu.RemovedFromShortcuts.v99" = "Thoir air falbh on na h-ath-ghoiridean";
+
+/* Toast displayed to the user after removing the item to the Shortcuts. */
+"Menu.RemovePin.Confirm2.v99" = "Chaidh a thoirt air falbh on na h-ath-ghoiridean";
+
+/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
+"Menu.RemoveReadingList.AlternateLabel.v99" = "Thoir air falbh on liosta-leughaidh";
+
+/* Toast displayed to confirm to the user that his reading list item was correctly removed. */
+"Menu.RemoveReadingList.Confirm.v99" = "Air a thoirt air falbh on liosta-leughaidh";
+
+/* Label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. Please keep the text as short as possible for this label. */
+"Menu.RemoveReadingList.Label.v99" = "Thoir air falbh";
+
+/* Label for the share button in the menu page. Pressing this button open the share menu to share the current website. */
+"Menu.Share.v99" = "Co-roinn";
 
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "Chaidh an taba a chur";
+
+/* Accessibility label for the Bookmark button on the toolbar. Pressing this button opens the bookmarks menu */
+"Menu.Toolbar.Bookmarks.AccessibilityLabel.v99" = "Comharran-lìn";
+
+/* Accessibility label for the Home button on the toolbar. Pressing this button brings the user to the home page. */
+"Menu.Toolbar.Home.AccessibilityLabel.v99" = "Dhachaigh";
 
 /* Title on tracking protection menu for blocked items. */
 "Menu.TrackingProtection.BlockedTitle" = "Air a bhacadh";
@@ -899,12 +989,6 @@
 
 /* The title that shows the number of social URLs blocked */
 "Menu.TrackingProtectionBlockedSocial.Title" = "Tracaichean sòisealta";
-
-/* Description of the Tracking protection menu when TP is blocking parts of the page */
-"Menu.TrackingProtectionBlocking.Description" = "Tha Firefox a’ bacadh nan rudan air an duilleag a dhèanadh tracadh ort.";
-
-/* The description of the Tracking Protection menu item when tracking is enabled */
-"Menu.TrackingProtectionBlockingDisabled.Description" = "Bac tracaichean air loidhne";
 
 /* The title that shows the number of cross-site cookies blocked */
 "Menu.TrackingProtectionCrossSiteCookies.Title" = "Briosgaidean tracaidh thar làraichean";
@@ -930,50 +1014,8 @@
 /* Description of social network trackers. */
 "Menu.TrackingProtectionDescription.SocialNetworksNew" = "Cuiridh lìonraidhean sòisealta tracaichean air làraichean-lìn eile airson pròifil nas iomlaine dhìot a chruthachadh. Ma bhacas tu na tracaichean seo, chì companaidhean nam meadhan sòisealta nas lugha dhe na nì thu air loidhne.";
 
-/* The button that disabled TP for a site. */
-"Menu.TrackingProtectionDisable1.Title" = "À comas air an làrach seo";
-
-/* The confirmation toast once tracking protection has been disabled */
-"Menu.TrackingProtectionDisabled.Title" = "Tha an dìon o thracadh dheth air an làrach seo a-nis.";
-
-/* A button to enable tracking protection inside the menu. */
-"Menu.TrackingProtectionEnable.Title" = "Cuir an dìon o thracadh an comas";
-
-/* A button to enable tracking protection inside the menu. */
-"Menu.TrackingProtectionEnable1.Title" = "An comas air an làrach seo";
-
-/* The confirmation toast once tracking protection has been enabled */
-"Menu.TrackingProtectionEnabled.Title" = "Tha an dìon o thracadh air air an làrach seo a-nis.";
-
 /* The title that shows the number of fingerprinting scripts blocked */
 "Menu.TrackingProtectionFingerprintersBlocked.Title" = "Lorgaichean-meur";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.CrossSiteCookies" = "Briosgaidean tracaidh thar làraichean bacte";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.Cryptominers" = "Criopto-mhèinneadairean bacte";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.Fingerprinters" = "Lorgaichean-meur bacte";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.Social" = "Tracaichean sòisealta bacte";
-
-/* more info about what tracking protection is about */
-"Menu.TrackingProtectionMoreInfo.Description" = "Faigh barrachd fiosrachaidh mar a bhacas an dìon o thracadh thu o thracaichean air loidhne a chruinnicheas an dàta brabhsaidh agad air feadh diofar làraichean-lìn.";
-
-/* The description of the Tracking Protection menu item when no scripts are blocked but tracking protection is enabled. */
-"Menu.TrackingProtectionNoBlocking.Description" = "Cha do lorg sinn dad air an duilleag a nì tracadh.";
-
-/* label for the menu item to show when the website is whitelisted from blocking trackers. */
-"Menu.TrackingProtectionOption.WhiteListOnDescription" = "Tha rudan air an làrach seo a nì tracadh ort ma dh’fhaoidte. Chuir thu an dìon à comas.";
-
-/* label for the menu item that lets you remove a website from the tracking protection whitelist */
-"Menu.TrackingProtectionWhitelistRemove.Title" = "Cuir an comas air an làrach seo";
-
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Na tha ùr";
 
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "uidheam mobile";
@@ -1006,28 +1048,6 @@
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "Tòisich air brabhsadh";
 
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is a general description that appears under the title for what the card is about. */
-"Onboarding.WhatsNew.Description" = "Tha e nas fhasa a-nis leantainn ort far an robh thu roimhe.";
-
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is the description for the Jump Back In bullet point */
-"Onboarding.WhatsNew.PersonalizedHome.Description" = "Leum gu na tabaichean fosgailte, comharran-lìn is eachdraidh a’ bhrabhsaidh agad.";
-
-/* On the onboarding card letting users know what's new in this version of Firefox, this is the descripion of the Recent Searches bullet point on the card */
-"Onboarding.WhatsNew.RecentSearches.Description" = "Ath-thadhail air na luirg a rinn thu o chionn goirid air an duilleag-dhachaigh agad.";
-
-/* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the Recent Searches bullet point on the card */
-"Onboarding.WhatsNew.RecentSearches.Title" = "Luirg o chionn goirid";
-
-/* On the onboarding card letting users know what's new in this version of Firefox, this is the description for the Tab Group bullet point on the card */
-"Onboarding.WhatsNew.TabGroups.Description" = "Duilleagan on aon lorg còmhla ann am buidheann.";
-
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is the title for the Tab Group bullet point on the card */
-"Onboarding.WhatsNew.TabGroups.Title" = "Buidhnean thabaichean nas sgiobalta";
-
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is the title for the Jump Back In bullet point on the card
-   The title for the new onboarding card letting users know what is new in Firefox iOS */
-"Onboarding.WhatsNew.Title" = "Na tha ùr ann am Firefox";
-
 /* Title for prompt displayed to user after the app crashes */
 "Oops! Firefox crashed" = "Ìoc! Thuislich Firefox";
 
@@ -1048,9 +1068,6 @@
 
 /* Accessibility label for the Page Options menu button */
 "Page Options Menu" = "Clàr-taice roghainnean na duilleige";
-
-/* Accessibility label for the Library panel's bottom toolbar containing a list of the home panels (top sites, bookmarks, history, remote tabs, reading list). */
-"Panel Chooser" = "Roghnaichear nam panail";
 
 /* Password textbox in Authentication prompt */
 "Password" = "Facal-faire";
@@ -1087,6 +1104,9 @@
 
 /* Title for quick-search engines settings section. */
 "Quick-Search Engines" = "Einnseanan grad-luirg";
+
+/* A label indicating the action that a user can rate the Firefox app in the App store. */
+"Ratings.Settings.RateOnAppStore" = "Rangaich san App Store";
 
 /* Accessibility label for read article in reading list. It's a past participle - functions as an adjective. */
 "read" = "air a leughadh";
@@ -1127,9 +1147,6 @@
 /* Reopen alert title shown at home page. */
 "ReopenAlert.Title" = "Ath-fhosgail an taba mu dheireadh a chaidh a dhùnadh";
 
-/* Hardware shortcut to reopen the last closed tab, from the tab or the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"ReopenClosedTab.KeyCodeTitle" = "Ath-fhosgail an taba a chaidh a dhùnadh";
-
 /* Accessibility label for button resetting font size in display settings of reader mode */
 "Reset text size" = "Ath-shuidhich meud an teacsa";
 
@@ -1148,8 +1165,8 @@
 /* Text of the prompt that is shown to the user when the data is invalid */
 "ScanQRCode.InvalidDataError.Message" = "Tha an dàta mì-dhligheach";
 
-/* Text of the prompt user to setup the camera authorization. */
-"ScanQRCode.PermissionError.Message" = "Thoir inntrigeadh do chamara an uidheim agad dha Firefox ann an “Roghainnean” » “Prìobhaideachd” » “Camara”.";
+/* Text of the prompt to setup the camera authorization for the Scan QR Code feature. */
+"ScanQRCode.PermissionError.Message.v100" = "Tadhail air “Roghainnean” > “Firefox” is thoir cead-inntrigidh dha Firefox dhan chamara.";
 
 /* Title for the QR code scanner view. */
 "ScanQRCode.View.Title" = "Sganaich an còd QR";
@@ -1259,12 +1276,6 @@
 /* Title of notification shown when the device is sent one or more tabs from the named device. %@ is the placeholder for the device name. This device name will be localized by that device. */
 "SentTab_TabArrivingNotification_WithDevice_title" = "Fhuair thu taba o %@";
 
-/* Label for an action used to add one or more tabs recieved from a notification to the reading list. */
-"SentTab.AddToReadingListAction.Title" = "Cuir ris an liosta-leughaidh";
-
-/* Label for an action used to bookmark one or more tabs from a notification. */
-"SentTab.BookmarkAction.title" = "Comharra-lìn";
-
 /* Body of notification received after a spurious message from FxA has been received. */
 "SentTab.NoTabArrivingNotification.body" = "Thoir gnogag airson tòiseachadh";
 
@@ -1364,9 +1375,6 @@
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Soilleir";
 
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Thèid an t-ùrlar atharrachadh gu fèin-obrachail a-rèir soilleireachd na sgrìn agad. ’S urrainn dhut stairsneach a shuidheachadh aig an atharraich an t-ùrlar. Tha an cearcall ag innse dè cho soilleir ’s a tha an sgrìn agad an-dràsta.";
-
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "Leum gu modh eile";
 
@@ -1410,6 +1418,12 @@
 /* General settings section title */
 "Settings.General.SectionName" = "Coitcheann";
 
+/* This is the description below the settings section located in the menu under customize current homepage. It describes what the options in the section are for. */
+"Settings.Home.Current.Description.v101" = "Tagh na chì thu air an duilleag-dhachaigh.";
+
+/* In the settings menu, on the Firefox homepage customization section, this is the description below the section, describing what the options in the section are for. */
+"Settings.Home.Option.Description.v101" = "Tagh na chì thu air duilleag-dhachaigh Firefox.";
+
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle the Jump Back In section on homepage on or off */
 "Settings.Home.Option.JumpBackIn" = "Till gu far an robh thu";
 
@@ -1440,29 +1454,77 @@
 /* Title for the section in the settings menu where users can configure the behaviour of the Start at Home feature on the Firefox Homepage. */
 "Settings.Home.Option.StartAtHome.Title" = "An sgrìn fosglaidh";
 
-/* Button in settings to clear the home page. */
-"Settings.HomePage.Clear.Button" = "Falamhaich";
+/* In the settings menu, this is the title of the Firefox Homepage customization settings section */
+"Settings.Home.Option.Title.v101" = "Gabh a-staigh air an duilleag-dhachaigh";
+
+/* In the settings menu, on the Firefox homepage customization section, this is the title for the option that allows users to access the wallpaper settings for the application. */
+"Settings.Home.Option.Wallpaper" = "Pàipear-balla";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the accessibility string for the amethyst firefox wallpaper. */
+"Settings.Home.Option.Wallpaper.Accessibility.AmethystWallpaper.v99" = "Pàipear-balla Firefox, pàtran amaitist.";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the title accessibility string for the beach hills firefox wallpaper. */
+"Settings.Home.Option.Wallpaper.Accessibility.BeachHillsWallpaper.v100" = "Pàipear-balla Firefox, pàtran chnoc ri taobh na mara.";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the title accessibility string for the cerulean firefox wallpaper. */
+"Settings.Home.Option.Wallpaper.Accessibility.CeruleanWallpaper.v99" = "Pàipear-balla Firefox, pàtran nan speuran.";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the accessibility string for the default wallpaper. */
+"Settings.Home.Option.Wallpaper.Accessibility.DefaultWallpaper.v99" = "Pàipear-balla soilleir bunaiteach.";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the title accessibility string for the sunrise firefox wallpaper. */
+"Settings.Home.Option.Wallpaper.Accessibility.SunriseWallpaper.v99" = "Pàipear-balla Firefox, pàtran èirigh na grèine.";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the accessibility string of the toggle for turning wallpaper cycling shortcut on or off on the homepage. */
+"Settings.Home.Option.Wallpaper.Accessibility.ToggleButton" = "Toglachadh cuairt pàipear-balla na duilleige-dachaigh";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the title accessibility string for the twilight hills firefox wallpaper. */
+"Settings.Home.Option.Wallpaper.Accessibility.TwilightHillsWallpaper.v100" = "Pàipear-balla Firefox, pàtran chnoc sa chamhanaich.";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the title of the section that allows users to change the wallpaper settings for the application. */
+"Settings.Home.Option.Wallpaper.CollectionTitle" = "AN SGRÌN FOSGLAIDH";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the string titling the switch button's function, which allows a user to toggle wallpaper switching from the homepage logo on or off. */
+"Settings.Home.Option.Wallpaper.SwitchTitle.v99" = "Atharraich am pàipear-balla le bhith a’ toirt gnogag air suaicheantas duilleag-dhachaigh Firefox";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the title of that screen, which allows users to change the wallpaper settings for the application. */
+"Settings.Home.Option.Wallpaper.Title" = "Pàipear-balla";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the title of toast that comes up when the user changes wallpaper, which lets them know that the wallpaper has been updated. */
+"Settings.Home.Option.Wallpaper.UpdatedToast" = "Chaidh am pàipear-balla ùrachadh!";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the title of the button found on the toast that comes up once the user changes wallpaper, and allows users to dismiss the settings page. In this case, consider View as a verb - the action of dismissing settings and seeing the wallpaper. */
+"Settings.Home.Option.Wallpaper.UpdatedToastButton" = "Seall";
 
 /* Label used as an item in Settings. When touched it will open a dialog to configure the home page and its uses. */
 "Settings.HomePage.SectionName" = "An duilleag mhòr";
 
-/* Title displayed in header of the setting panel. */
-"Settings.HomePage.Title" = "Roghainnean na duilleige mhòr";
+/* This string is the title of the setting button which can be clicked to open a page to customize the number of rows in the shortcuts section */
+"Settings.Homepage.Shortcuts.Rows.v100" = "Ràghan";
 
-/* Placeholder text in the homepage setting when no homepage has been set. */
-"Settings.HomePage.URL.Placeholder" = "Cuir a-steach duilleag-lìn";
+/* This string is the title of the page to customize the number of rows in the shortcuts section */
+"Settings.Homepage.Shortcuts.RowsPageTitle.v100" = "Ràghan";
+
+/* Users can disable or enable shortcuts related settings. This string is the title of the page to change your shortcuts settings. */
+"Settings.Homepage.Shortcuts.ShortcutsPageTitle.v100" = "Ath-ghoiridean";
+
+/* This string is the title of the toggle to disable the shortcuts section in the settings page. */
+"Settings.Homepage.Shortcuts.ShortcutsToggle.v100" = "Ath-ghoiridean";
+
+/* This string is the title of the toggle to disable the sponsored shortcuts functionnality which can be enabled in the shortcut sections. This toggle is in the settings page. */
+"Settings.Homepage.Shortcuts.SponsoredShortcutsToggle.v100" = "Ath-ghoiridean sponsairichte";
+
+/* Toggled OFF to hide the shortcuts section */
+"Settings.Homepage.Shortcuts.ToggleOff.v100" = "Dheth";
+
+/* Toggled ON to show the shortcuts section */
+"Settings.Homepage.Shortcuts.ToggleOn.v100" = "Air";
 
 /* Title of the setting section containing the URL of the current home page. */
 "Settings.HomePage.URL.Title" = "An duilleag mhòr làithreach";
 
-/* Button in settings to use the current link on the clipboard as home page. */
-"Settings.HomePage.UseCopiedLink.Button" = "Cleachd lethbhreac aʼ cheangail";
-
 /* Button in settings to use the current page as home page. */
 "Settings.HomePage.UseCurrent.Button" = "Cleachd an duilleag làithreach";
-
-/* Button in settings to use the default home page. If no default is set, then this button isn't shown. */
-"Settings.HomePage.UseDefault.Button" = "Cleachd aʼ bhun-roghainn";
 
 /* Title for the logins and passwords screen. Translation could just use 'Logins' if the title is too long */
 "Settings.LoginsAndPasswordsTitle" = "Clàraidhean a-steach ⁊ faclan-faire";
@@ -1470,56 +1532,14 @@
 /* Label used to set a custom url as the new tab option (homepage). */
 "Settings.NewTab.CustomURL" = "URL gnàthaichte";
 
-/* A description in settings of what the new tab choice means */
-"Settings.NewTab.Description" = "Nuair a dh’fhosglas tu taba ùr:";
-
-/* The title of the section in newtab that lets you modify the topsites panel */
-"Settings.NewTab.Option.ASTitle" = "Gnàthaich brod nan làrach";
-
 /* Option in settings to show a blank page when you open a new tab */
 "Settings.NewTab.Option.BlankPage" = "Duilleag bhàn";
-
-/* Option in settings to show bookmarks when you open a new tab */
-"Settings.NewTab.Option.Bookmarks" = "Comharran-lìn";
-
-/* The footer for the section to customize top sites in the new tab settings page. */
-"Settings.NewTab.Option.CustomizeFooter" = "Na làraichean air an tadhail thu as trice";
-
-/* The footer for the section to customize top sites in the new tab settings page. */
-"Settings.NewTab.Option.CustomizeFooter2" = "Làraichean a shàbhail thu no a thadhail thu orra";
-
-/* The title for the section to customize top sites in the new tab settings page. */
-"Settings.NewTab.Option.CustomizeTitle" = "Gnàthaich dachaigh Firefox";
 
 /* Option in settings to show Firefox Home when you open a new tab */
 "Settings.NewTab.Option.FirefoxHome" = "Dachaigh Firefox";
 
-/* Option in the settings to turn off recent bookmarks in the Highlights section */
-"Settings.NewTab.Option.HighlightsBookmarks" = "Comharran-lìn ùra";
-
-/* Option in settings to turn off history in the highlights section */
-"Settings.NewTab.Option.HighlightsHistory" = "Air tadhal air";
-
-/* Option in settings to show history when you open a new tab */
-"Settings.NewTab.Option.History" = "An eachdraidh";
-
 /* Option in settings to show your homepage when you open a new tab */
 "Settings.NewTab.Option.HomePage" = "Duilleag-dhachaigh";
-
-/* Option in settings to turn on off pocket recommendations */
-"Settings.NewTab.Option.Pocket" = "A’ treandadh air Pocket";
-
-/* Footer caption for pocket settings */
-"Settings.NewTab.Option.PocketFooter" = "Brod na susbaint o fheadh an lìn.";
-
-/* Option in settings to show reading list when you open a new tab */
-"Settings.NewTab.Option.ReadingList" = "Seall an liosta-leughaidh agad";
-
-/* Option in settings to turn on off pocket recommendations First argument is the pocket brand name */
-"Settings.NewTab.Option.RecommendedByPocket" = "Air a mholadh le %@";
-
-/* Descriptoin for the option in settings to turn on off pocket recommendations. First argument is the pocket brand name, second argument is the pocket product name. */
-"Settings.NewTab.Option.RecommendedByPocketDescription" = "Sàr-shusbaint ’ga thasgadh le %1$@ ’na phàirt de theaghlach %2$@";
 
 /* Label used as an item in Settings. When touched it will open a dialog to configure the new tab behavior. */
 "Settings.NewTab.SectionName" = "Taba ùr";
@@ -1532,6 +1552,9 @@
 
 /* Footer at the bottom of the New Tab screen after entering New Tab in settings */
 "Settings.NewTab.TopSectionNameFooter" = "Tagh na thèid fhosgladh nuair a dh’fhosglas tu taba ùr";
+
+/* Label for the block images toggle displayed in the settings menu. Enabling this toggle will hide images on any webpage the user visits. */
+"Settings.NoImageModeBlockImages.Label.v99" = "Bac dealbhan";
 
 /* Description displayed under the ”Offer to Open Copied Link” option. See https://bug1223660.bmoattachments.org/attachment.cgi?id=8898349 */
 "Settings.OfferClipboardBar.Status" = "Nuair a dh’fhosglas mi Firefox";
@@ -1614,6 +1637,9 @@
 /* This is the description for the setting that toggles the Inactive Tabs feature in the settings menu under the Tabs customization section. Inactive tabs are a separate section of tabs that appears in the Tab Tray, which can be enabled or not */
 "Settings.Tabs.CustomizeTabsSection.InactiveTabs" = "Tabaichean neo-ghnìomhach";
 
+/* This is the description for the setting that toggles the Inactive Tabs feature in the settings menu under the Tabs customization section. Inactive tabs are a separate section of tabs that appears in the Tab Tray, which can be enabled or not */
+"Settings.Tabs.CustomizeTabsSection.InactiveTabsDescription.v101" = "Thèid tabaichean nach tug thu sùil orra fad cola-deug a ghluasad gun earrann neo-ghnìomhach.";
+
 /* In the settings menu, in the Tabs customization section, this is the title for the setting that toggles the Tab Groups feature - where tabs from related searches are grouped - on or off */
 "Settings.Tabs.CustomizeTabsSection.TabGroups" = "Buidhnean thabaichean";
 
@@ -1622,6 +1648,15 @@
 
 /* In the settings menu, this is the title for the Tabs customization section option */
 "Settings.Tabs.Title" = "Tabaichean";
+
+/* In the settings menu, in the Toolbar customization section, this label indicates that selecting this will make the toolbar appear at the bottom of the screen. */
+"Settings.Toolbar.Bottom" = "Bonn";
+
+/* In the settings menu, this label indicates that there is an option of customizing the Toolbar appearance. */
+"Settings.Toolbar.SettingsTitle" = "Bàr-inneal";
+
+/* In the settings menu, in the Toolbar customization section, this label indicates that selecting this will make the toolbar appear at the top of the screen. */
+"Settings.Toolbar.Top" = "Bàrr";
 
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "Ceart, tha mi agaibh";
@@ -1632,23 +1667,11 @@
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "An aire!";
 
-/* Header description for tracking protection options section where Basic/Strict block list can be selected */
-"Settings.TrackingProtection.BlockListsHeader" = "’S urrainn dhut fhèin taghadh dè an liosta a chleachdadh Firefox gus eileamaidean-lìn a bhacadh a thracaicheas na nì thu air loidhne ma dh’fhaoidte.";
-
-/* Explanation of basic mode. */
-"Settings.TrackingProtection.Info.BasicTitle" = "Cothromachadh eadar dìon is dèanadas.";
-
 /* The Title on info view which shows a list of all blocked websites */
 "Settings.TrackingProtection.Info.BlocksTitle" = "AIR AM BACADH";
 
-/* Explanation of strict mode. */
-"Settings.TrackingProtection.Info.StrictTitle" = "Bheir seo dhut dìon nas làidire ach dh’fhaoidte gum bris seo cuid a làraichean.";
-
 /* 'Learn more' info link on the Tracking Protection settings screen. */
 "Settings.TrackingProtection.LearnMore" = "Barrachd fiosrachaidh";
-
-/* 'More Info' link on the Tracking Protection settings screen. */
-"Settings.TrackingProtection.MoreInfo" = "Barrachd fiosrachaidh…";
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Lùghdaichidh seo an t-sanasachd thargaidichte agus cuiridh e bacadh air luchd-sanasachd o bhith a’ tracadh na nì thu air an lìon.";
@@ -1668,23 +1691,11 @@
 /* Row in top-level of settings that gets tapped to show the tracking protection settings detail view. */
 "Settings.TrackingProtection.SectionName" = "Dìon o thracadh";
 
-/* Additional information about the strict level setting */
-"Settings.TrackingProtection.StrictLevelInfoFooter" = "Ma bhacas tu tracaichean, dh’fhaoidte gum bi droch-bhuaidh air a’ chomas obrachaidh aig cuid a làraichean-lìn.";
-
 /* Tracking protection settings option for using the basic blocklist. */
 "Settings.TrackingProtectionOption.BasicBlockList" = "Stannardach (bun-roghainn)";
 
-/* Tracking protection settings option description for using the basic blocklist. */
-"Settings.TrackingProtectionOption.BlockListBasicDescription" = "Bheir seo cead do chuid a thracairean ach an obraich làraichean-lìn mar bu chòir.";
-
 /* Tracking protection settings option for using the strict blocklist. */
 "Settings.TrackingProtectionOption.BlockListStrict" = "Teann";
-
-/* Tracking protection settings option description for using the strict blocklist. */
-"Settings.TrackingProtectionOption.BlockListStrictDescription" = "Bacaidh seo tracairean air a bheil daoine eòlach. Dh’fhaoidte nach obraich gach làrach-lìn mar bu chòir.";
-
-/* Description label shown on tracking protection options screen. */
-"Settings.TrackingProtectionOption.EnabledStateFooterLabel" = "Tha “tracadh” a’ ciallachadh gun cruinnichear an dàta brabhsaidh agad air feadh iomadh làrach-lìn.";
 
 /* Settings option to specify that Tracking Protection is on */
 "Settings.TrackingProtectionOption.NormalBrowsingLabelOn" = "Dìon adhartach o thracadh";
@@ -1706,15 +1717,6 @@
 
 /* Title of link to help page to find out how to solve Sync issues */
 "Settings.TroubleShootSync.Title" = "Fuasgail duilgheadasan";
-
-/* Button to delete website in search results */
-"Settings.WebsiteData.ButtonDelete" = "Sguab às";
-
-/* Button to exit edit website search results */
-"Settings.WebsiteData.ButtonDone" = "Deiseil";
-
-/* Button to edit website search results */
-"Settings.WebsiteData.ButtonEdit" = "Deasaich";
 
 /* Button shows all websites on website data tableview */
 "Settings.WebsiteData.ButtonShowMore" = "Seall an corr";
@@ -1774,18 +1776,6 @@
 /* Accessibility hint for tab tray's displayed tab. */
 "Swipe right or left with three fingers to close the tab." = "Grad-shlaighd gun taobh deas no clì le trì corragan gus an taba a dhùnadh.";
 
-/* Hardware shortcut for non-private tab or tab. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"SwitchToNonPBM.KeyCodeTitle" = "Am modh brabhsaidh àbhaisteach";
-
-/* Hardware shortcut switch to the private browsing tab or tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"SwitchToPBM.KeyCodeTitle" = "Am modh brabhsaidh prìobhaideach";
-
-/* Text displayed when the Sync home panel is empty, describing the features provided by Sync to invite the user to log in. */
-"Sync your tabs, bookmarks, passwords and more." = "Sioncronaich na tabaichean, comharran-lìn, faclan-faire is mòran a bharrachd.";
-
-/* Text displayed when the Sync home panel is empty, describing the features provided by Sync to invite the user to log in. */
-"Sync your tabs, passwords and more." = "Sioncronaich na tabaichean, faclan-faire is mòran a bharrachd.";
-
 /* Message displayed when the user syncs for the first time */
 "Sync.FirstTimeMessage.Label" = "Dhʼfhaoidte gun doir aʼ chiad sionsronachadh greiseig mhath.";
 
@@ -1797,9 +1787,6 @@
 
 /* Message displayed when the user's account is syncing with ellipsis at the end */
 "Sync.SyncingEllipsis.Label" = "ʼGa shioncronachadh…";
-
-/* Panel accessibility label */
-"Synced Tabs" = "Tabaichean sioncronaichte";
 
 /* The Bookmark sync component, used in SyncState.Partial.Title */
 "SyncState.Bookmark.Title" = "Comharran-lìn";
@@ -1846,9 +1833,6 @@
 /* The label indicating that all the tabs were closed */
 "Tabs.DeleteAllUndo.Title" = "%d taba(ichean) air an dùnadh";
 
-/* The placeholder text for the tab search bar */
-"Tabs.Search.PlaceholderText" = "Lorg sna tabaichean";
-
 /* Accessibility label for the Add Tab button in the Tab Tray. */
 "TabTray.AddTab.Button" = "Cuir taba ris";
 
@@ -1867,20 +1851,8 @@
 /* Title for the inactive tabs section. This section groups all tabs that haven't been used in a while. */
 "TabTray.InactiveTabs.SectionTitle" = "Tabaichean neo-ghnìomhach";
 
-/* The section header for tabs opened last week */
-"TabTray.LastWeek.Header" = "An t-seachdain seo chaidh";
-
-/* The title on the button to copy the tab address. */
-"TabTray.MoreMenu.Copy" = "Dèan lethbhreac";
-
-/* The section header for tabs opened before last week */
-"TabTray.Older.Header" = "Nas sine";
-
 /* Hardware shortcut to open a new tab from the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
 "TabTray.OpenNewTab.KeyCodeTitle" = "Fosgail taba ùr";
-
-/* Hardware shortcut open the selected tab from the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"TabTray.OpenSelectedTab.KeyCodeTitle" = "Fosgail an taba a thagh thu";
 
 /* In the Tabs Tray, summoned from the homepage, the title for the section containing non-grouped tabs, which will appear below grouped tabs */
 "TabTray.OtherTabs.Title" = "Tabaichean eile";
@@ -1900,17 +1872,8 @@
 /* The title on the button to look at regular tabs. */
 "TabTray.SegmentedControlTitles.Tabs" = "Tabaichean";
 
-/* The button title to see more options to perform on the tab. */
-"TabTray.SwipeMenu.More" = "Barrachd";
-
 /* The title for the tab tray */
 "TabTray.Title" = "Tabaichean fosgailte";
-
-/* The section header for tabs opened today */
-"TabTray.Today.Header" = "An-diugh";
-
-/* The section header for tabs opened yesterday */
-"TabTray.Yesterday.Header" = "An-dè";
 
 /* Message displayed when the reader mode page could not be loaded. This message will appear only when sharing to Firefox reader mode from another app. */
 "The page could not be displayed in Reader View." = "Cha b’ urrainn dhuinn an duilleag a thaisbeanadh ann an sealladh an leughadair.";
@@ -1944,12 +1907,6 @@
 
 /* Accessibility label for the Close All Tabs menu button. */
 "Toolbar.Menu.CloseAllTabs" = "Dùin a h-uile taba";
-
-/* Description label for the empty Top Sites state. */
-"TopSites.EmptyState.Description" = "Nochdaidh na làraichean air an tadhail thu gu tric an-seo.";
-
-/* The title for the empty Top Sites state */
-"TopSites.EmptyState.Title" = "Fàilte gu brod nan làrach";
 
 /* Button shown in editing mode to remove this site from the top sites panel. */
 "TopSites.RemovePage.Button" = "Thoir an duilleag air falbh - %@";
@@ -1986,9 +1943,6 @@
 
 /* Text message in the settings table view */
 "Verify your email address" = "Dealbh am post-d agad";
-
-/* Version number of Firefox shown in settings */
-"Version %@ (%@)" = "Tionndadh %1$@ (%2$@)";
 
 /* Accessibility label for the main web content view */
 "Web content" = "Susbaint-lìn";

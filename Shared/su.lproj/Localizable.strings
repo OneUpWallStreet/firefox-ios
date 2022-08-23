@@ -20,34 +20,19 @@
 "ActivityStream.ContextMenu.AddToShortcuts" = "Tambah ka Takulan";
 
 /* The title for the pinning a topsite action */
-"ActivityStream.ContextMenu.PinTopsite" = "Gantélkeun ka Loka Pangluhurna";
-
-/* The title for the pinning a topsite action */
 "ActivityStream.ContextMenu.PinTopsite2" = "Pin";
 
 /* The title for removing a shortcut action */
 "ActivityStream.ContextMenu.RemoveFromShortcuts" = "Piceun tina Takulan";
 
-/* The title for removing a pinned topsite action */
-"ActivityStream.ContextMenu.RemovePinTopsite" = "Piceun Loka Ngagantél";
-
 /* The title for the unpinning a topsite action */
 "ActivityStream.ContextMenu.UnpinTopsite" = "Cabut pin";
-
-/* The description of a highlight if it is a site the user has bookmarked */
-"ActivityStream.Highlights.Bookmark" = "Dimarkahkeun";
-
-/* The description of a highlight if it is a site the user has visited */
-"ActivityStream.Highlights.Visited" = "Disorang";
 
 /* Title for the Jump Back In section. This section allows users to jump back in to a recently viewed tab */
 "ActivityStream.JumpBackIn.SectionTitle" = "Asup Deui";
 
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "Tab: %d";
-
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "Sungsian anjeun ngeunaan \"%@\"";
 
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "Anyar Diteundeun";
@@ -63,9 +48,6 @@
 
 /* Section title label for Recommended by Pocket section */
 "ActivityStream.Pocket.SectionTitle2" = "Disarankeun ku Pocket";
-
-/* The description of a Pocket Story */
-"ActivityStream.Pocket.Trending" = "Sabiwir hiji";
 
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "Anyar Dianjangan";
@@ -87,9 +69,6 @@
 
 /* The title for the setting page which lets you select the number of top site rows */
 "ActivityStream.TopSites.RowSettingFooter" = "Atur Baris";
-
-/* Section title label for Top Sites */
-"ActivityStream.TopSites.SectionTitle" = "Loka Pangluhurna";
 
 /* Accessibility label for the Add Tab button in the Tab Tray. */
 "Add Tab" = "Tambah Tab";
@@ -125,23 +104,11 @@
 /* Authentication prompt title */
 "Authentication required" = "Diperlukeun oténtikasi";
 
-/* Description for button to suggest searching with a search engine. First argument is the name of the search engine to select */
-"Awesomebar.SearchWithEngine.Description" = "Paluruh %@ langsung tina palang alamat";
-
-/* Title for button to suggest searching with a search engine. First argument is the name of the search engine to select */
-"Awesomebar.SearchWithEngine.Title" = "Paluruh maké %@";
-
 /* Accessibility label for the Back button in the tab toolbar. */
 "Back" = "Mundur";
 
 /* Block pop-up windows setting */
 "Block Pop-up Windows" = "Peungpeuk Jandéla Pucunghul";
-
-/* The header title for the fields when editing a Bookmark */
-"Bookmark.BookmarkDetail.FieldsHeader.Bookmark.Title" = "Markah";
-
-/* The header title for the fields when editing a Folder */
-"Bookmark.BookmarkDetail.FieldsHeader.Folder.Title" = "Carangka";
 
 /* The label for the Title field when editing a bookmark */
 "Bookmark.DetailFieldTitle.Label" = "Judul";
@@ -173,12 +140,6 @@
 /* The label to show the location of the folder where the bookmark is located */
 "Bookmarks.Folder.Label" = "Carangka";
 
-/* The label for the location of the new folder */
-"Bookmarks.FolderLocation.Label" = "Lokasi";
-
-/* The label for the title of the new folder */
-"Bookmarks.FolderName.Label" = "Ngaran Carangka";
-
 /* A label indicating all bookmarks grouped under the category 'Desktop Bookmarks'. */
 "Bookmarks.Menu.DesktopBookmarks" = "Markah Déstop";
 
@@ -199,12 +160,6 @@
 
 /* The label for the title of a bookmark */
 "Bookmarks.Title.Label" = "Judul";
-
-/* The label for the URL of a bookmark */
-"Bookmarks.URL.Label" = "URL";
-
-/* Status label for the empty Bookmarks state. */
-"BookmarksPanel.EmptyState.Title" = "Markah anu diteundeun bakal némbongan di dieu.";
 
 /* Describes the date on which the breach occurred */
 "BreachAlerts.BreachDate" = "Rumpakan ieu lumangsung ping";
@@ -251,9 +206,6 @@
 /* Context menu item for bookmarking a link URL */
 "ContextMenu.BookmarkLinkButtonTitle" = "Cirian Tutumbu";
 
-/* The button text in the Button Toast for switching to a fresh New Private Tab. */
-"ContextMenu.ButtonToast.NewPrivateTabOpened.ButtonText" = "Gilir";
-
 /* The label text in the Button Toast for switching to a fresh New Private Tab. */
 "ContextMenu.ButtonToast.NewPrivateTabOpened.LabelText" = "Tab Salindungan anyar dibuka";
 
@@ -278,12 +230,6 @@
 /* Context menu item for opening a link in a new tab */
 "ContextMenu.OpenInNewTabButtonTitle" = "Buka dina Tab Anyar";
 
-/* Context menu item for opening a link in a new private tab */
-"ContextMenu.OpenLinkInNewPrivateTabButtonTitle" = "Buka Tutumbu dina Tab Nyamuni Anyar";
-
-/* Context menu item for opening a link in a new tab */
-"ContextMenu.OpenLinkInNewTabButtonTitle" = "Buka Tutumbu dina Tab Anyar";
-
 /* Context menu item for saving an image */
 "ContextMenu.SaveImageButtonTitle" = "Teundeun Gambar";
 
@@ -295,9 +241,6 @@
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
 "ContextualHint.SearchBarPlacement.NewUsers" = "Ngarah ngasupkeun émbaran leuwih babari, sacara baku tulbar dipasang di handap.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "Tepas Firefox pribadi kiwari mantuan anjeun nyokot ti anu ditinggalkeun. Néangan tab anu can lila, markah, jeung hasil nyungsi.";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Setélan Tulbar";
@@ -346,6 +289,9 @@
    Title for default search engine settings section. */
 "Default Search Engine" = "Mesin Pamaluruh Baku";
 
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "Tutup";
+
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "Setélan Pidangan";
 
@@ -372,9 +318,6 @@
 
 /* Alert dialog title when the user taps the cancel download icon. */
 "Downloads.CancelDialog.Title" = "Bolaykeun Ngundeur";
-
-/* The message displayed to a user when they try and perform the download of an asset that Firefox cannot currently handle. */
-"Downloads.Error.Message" = "Undeuran acan dirojong na Firefox.";
 
 /* The label text in the Download Cancelled toast for showing confirmation that the download was cancelled. */
 "Downloads.Toast.Cancelled.LabelText" = "Undeuran Dibolaykeun";
@@ -496,9 +439,6 @@
 /* Button label to open Sync preferences */
 "FxA.OpenSyncPreferences" = "Buka Préférénsi Singkron";
 
-/* Instructions shown on qr code scanning view */
-"fxa.qr-scanning-view.instructions" = "Pindai kode QR anu dipidangkeun dina firefox.com/pair";
-
 /* Remove button is displayed on firefox account page under certain scenarios where user would like to remove their account. */
 "FxA.RemoveAccount" = "Cabut";
 
@@ -526,17 +466,8 @@
 /* FxA sign in view qr code scan button */
 "fxa.signin.ready-to-scan" = "Siap Mindai";
 
-/* FxA sign in view title */
-"fxa.signin.turn-on-sync" = "Hurungkeun Singk";
-
 /* FxA sign in view email login button */
 "fxa.signin.use-email-instead" = "Maké Surél Wéh";
-
-/* Button label to sign into Sync */
-"FxA.SignIntoSync" = "Asup log pikeun Singkron";
-
-/* Label explaining what sync does */
-"FxA.SyncExplain" = "Cokot tab anjeun, markah sarta kecap sandina ti akun anjeun anu séjén nu keur muka.";
 
 /* Button label to Sync your Firefox Account */
 "FxA.SyncNow" = "Singkronkeun Ayeuna";
@@ -567,9 +498,6 @@
 
 /* On the firefox homepage, the string read by the voice over prompt for accessibility, for the button which changes the wallpaper */
 "FxHomepage.Wallpaper.ButtonLabel.v99" = "Logo Firefox, ganti latar.";
-
-/* A re-worded offer about Sync, displayed when the Sync home panel is empty, that emphasizes one-way data transfer, not syncing. */
-"Get your open tabs, bookmarks, and passwords from your other devices." = "Cokot tab anjeun, markah sarta kecap sandina ti akun anjeun nu séjén.";
 
 /* Show the SUMO support page from the Support section in the settings. see http://mzl.la/1dmM8tZ */
 "Help" = "Pitulung";
@@ -607,9 +535,6 @@
 /* Description for the empty synced tabs 'not yet verified' state in the History Panel */
 "HistoryPanel.EmptySyncedTabsPanelNotYetVerifiedState.Description" = "Akun anjeun perlu divérifikasi.";
 
-/* Description for the empty synced tabs 'single device Sync' state in the History Panel */
-"HistoryPanel.EmptySyncedTabsPanelSingleDeviceSyncState.Description" = "Hayang nénjo tab anjeun tina parangkan séjén ieu lin?";
-
 /* Description for the empty synced tabs 'tab sync disabled' state in the History Panel */
 "HistoryPanel.EmptySyncedTabsPanelTabSyncDisabledState.Description" = "Hurungkeun singkronan tab pikeun nénjo daptar tab ti parangkat anjeun nu séjén.";
 
@@ -622,35 +547,14 @@
 /* Title for the Recently Closed button in the History Panel */
 "HistoryPanel.RecentlyClosedTabsButton.Title" = "Cik Kénéh Ditutup";
 
-/* Description that corresponds with a number of devices connected for the Synced Tabs Cell in the History Panel */
-"HistoryPanel.SyncedTabsCell.Description.Pluralized" = "%d parangkat geus nyambung";
-
-/* Title for the Synced Tabs Cell in the History Panel */
-"HistoryPanel.SyncedTabsCell.Title" = "Parangkat Kasingkron";
-
 /* Accessibility label for the tab toolbar indicating the Home button. */
 "Home" = "Tepas";
-
-/* Button cancelling changes setting the home page for the first time. */
-"HomePage.Set.Dialog.Cancel" = "Bolay";
-
-/* Alert dialog body when the user opens the home page for the first time. */
-"HomePage.Set.Dialog.Message" = "Anjeun bisa ngarobah ieu iraha waé dina Setélan";
-
-/* Button accepting changes setting the home page for the first time. */
-"HomePage.Set.Dialog.OK" = "Setél Tepas";
-
-/* Alert dialog title when the user opens the home page for the first time. */
-"HomePage.Set.Dialog.Title" = "Anjeun hayang maké ieu kaca raramat minangka tepas anjeun?";
 
 /* The title for the Bookmark context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.Bookmark" = "Markah";
 
 /* The title for the Delete from History context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.DeleteFromHistory" = "Pupus tina Jujutan";
-
-/* The title for the Open in New Private Tab context menu action for sites in Home Panels */
-"HomePanel.ContextMenu.OpenInNewPrivateTab" = "Buka dina Tab Salindungan Anyar";
 
 /* The title for the Open in New Private Tab context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.OpenInNewPrivateTab.v101" = "Buka dina Tab Nyamuni";
@@ -883,12 +787,6 @@
 /* Title of the big blue button to enable AutoFill */
 "Logins.WelcomeView.TurnOnAutoFill" = "Aktipkeun AutoFill";
 
-/* Login detail view field name for the last modified date */
-"LoginsDetailView.LoginModified" = "Dirobah";
-
-/* Title for the login detail view */
-"LoginsDetailView.LoginTitle" = "Asup Log";
-
 /* Button to not save the user's password */
 "LoginsHelper.DontSave.Button" = "Ulah neundeun";
 
@@ -912,15 +810,6 @@
 
 /* Button to update the user's password */
 "LoginsHelper.Update.Button" = "Apdét";
-
-/* For filtering the login list, search only the login names */
-"LoginsList.LoginsListFilterLogin" = "Asup Log";
-
-/* For filtering the login list, search both website and login names. */
-"LoginsList.LoginsListFilterSearchAll" = "Kabéh";
-
-/* For filtering the login list, search only the website names */
-"LoginsList.LoginsListFilterWebsite" = "Raramatloka";
 
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Ayak";
@@ -968,9 +857,6 @@
 
 /* Label for the add bookmark button in the menu. Pressing this button bookmarks the current page. Please keep the text as short as possible for this label. */
 "Menu.AddBookmark.Label.v99" = "Tambah";
-
-/* Toast displayed to the user after adding the item to the Top Sites. */
-"Menu.AddPin.Confirm" = "Diseumat ka Loka Top";
 
 /* Toast displayed to the user after adding the item to the Shortcuts. */
 "Menu.AddPin.Confirm2" = "Ditambahkeun ka Takulan";
@@ -1020,9 +906,6 @@
 /* Label for the button displayed in the menu used to stop the reload of the webpage */
 "Menu.Library.StopReload" = "Eureun";
 
-/* Label for the button, displayed in the menu, takes you to screen to manage account when pressed. First argument is the display name for the current account */
-"Menu.ManageAccount.Label" = "Kokolakeun Akun %@";
-
 /* Label for the new tab button in the menu page. Pressing this button opens a new tab. */
 "Menu.NewTab.v99" = "Tab Anyar";
 
@@ -1030,19 +913,10 @@
 "Menu.NightModeTurnOff.Label2" = "Pareuman Modeu Peuting";
 
 /* Label for the button, displayed in the menu, turns on night mode. */
-"Menu.NightModeTurnOn.Label" = "Hurungkeun Modeu Peuting";
-
-/* Label for the button, displayed in the menu, turns on night mode. */
 "Menu.NightModeTurnOn.Label2" = "Hurungkeun Mode Peuting";
-
-/* Label for the button, displayed in the menu, hides images on the webpage when pressed. */
-"Menu.NoImageModeBlockImages.Label" = "Peungpeuk Gambar";
 
 /* Label for the button, displayed in the menu, shows images on the webpage when pressed. */
 "Menu.NoImageModeShowImages.Label" = "Témbongkeun Gambar";
-
-/* Label for title in page action menu. */
-"Menu.PageActions.Title" = "Peta Kaca";
 
 /* Label for the button, displayed in the menu, takes you to to passwords screen when pressed. */
 "Menu.Passwords.Label" = "Kecap Sandi";
@@ -1071,9 +945,6 @@
 /* Label for the remove from shortcuts button in the menu. Pressing this button removes the current website from the shortcut pins on the home page. */
 "Menu.RemovedFromShortcuts.v99" = "Piceun tina Takulan";
 
-/* Toast displayed to the user after removing the item from the Top Sites. */
-"Menu.RemovePin.Confirm" = "Dipiceun ti Loka Top";
-
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "Dipiceun tina Takulan";
 
@@ -1088,9 +959,6 @@
 
 /* Label for the share button in the menu page. Pressing this button open the share menu to share the current website. */
 "Menu.Share.v99" = "Bagikeun";
-
-/* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
-"Menu.SignInToSync.Label.v99" = "Asup pikeun Nyingkronkeun";
 
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "Tab Dikirim";
@@ -1122,12 +990,6 @@
 /* The title that shows the number of social URLs blocked */
 "Menu.TrackingProtectionBlockedSocial.Title" = "Palacak Sosial";
 
-/* Description of the Tracking protection menu when TP is blocking parts of the page */
-"Menu.TrackingProtectionBlocking.Description" = "Firefox meungpeuk bagéan tina kaca nu sigana lalacak kana langlangan anjeun.";
-
-/* The description of the Tracking Protection menu item when tracking is enabled */
-"Menu.TrackingProtectionBlockingDisabled.Description" = "Peungpeuk palacak onlén";
-
 /* The title that shows the number of cross-site cookies blocked */
 "Menu.TrackingProtectionCrossSiteCookies.Title" = "Réréméh Palacak Meuntas-Loka";
 
@@ -1152,50 +1014,8 @@
 /* Description of social network trackers. */
 "Menu.TrackingProtectionDescription.SocialNetworksNew" = "Jajaring sosial masang palacak di raramatloka séjén pikeun ngawangun profil anjeun anu leuwih lengkep. Meungpeuk palacak siga kieu bisa ngurangan pangawasan maskapé média sosial kana naon anu dipigawé ku anjeun dina jaringan.";
 
-/* The button that disabled TP for a site. */
-"Menu.TrackingProtectionDisable1.Title" = "Pareuman pikeun ieu loka";
-
-/* The confirmation toast once tracking protection has been disabled */
-"Menu.TrackingProtectionDisabled.Title" = "Ayeuna Kilung Palacakan pareum pikeun ieu loka.";
-
-/* A button to enable tracking protection inside the menu. */
-"Menu.TrackingProtectionEnable.Title" = "Hurungkeun Kilung Palacakan";
-
-/* A button to enable tracking protection inside the menu. */
-"Menu.TrackingProtectionEnable1.Title" = "Hurungkeun pikeun ieu loka";
-
-/* The confirmation toast once tracking protection has been enabled */
-"Menu.TrackingProtectionEnabled.Title" = "Ayeuna Kilung Palacakan hurung pikeun ieu loka.";
-
 /* The title that shows the number of fingerprinting scripts blocked */
 "Menu.TrackingProtectionFingerprintersBlocked.Title" = "Fingerprinter";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.CrossSiteCookies" = "Réréméh Palacak Meuntas-Loka anu Dipeungpeuk";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.Cryptominers" = "Palacak Sidik anu Dipeungpeuk";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.Fingerprinters" = "Palacak Sidik anu Dipeungpeuk";
-
-/* Title for list of domains blocked by category type. eg.  Blocked `CryptoMiners` */
-"Menu.TrackingProtectionListTitle.Social" = "Palacak Sosial anu Dipeungpeuk";
-
-/* more info about what tracking protection is about */
-"Menu.TrackingProtectionMoreInfo.Description" = "Lenyepan kumaha carana Kilung Palacakan meungpeuk palacak online nalika kukumpul data langlangan anjeun ti antar bebedan raramatloka.";
-
-/* The description of the Tracking Protection menu item when no scripts are blocked but tracking protection is enabled. */
-"Menu.TrackingProtectionNoBlocking.Description" = "Euwuh élemén palacak nu kadéték di ieu kaca.";
-
-/* label for the menu item to show when the website is whitelisted from blocking trackers. */
-"Menu.TrackingProtectionOption.WhiteListOnDescription" = "Ieu loka kaasup éleménna sigana mah ngalacak langlangan anjeun. Anjeun geus mareuman kilung.";
-
-/* label for the menu item that lets you remove a website from the tracking protection whitelist */
-"Menu.TrackingProtectionWhitelistRemove.Title" = "Hurungkeun jang ieu loka";
-
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "Anu Anyar";
 
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "parangkat ider";
@@ -1228,28 +1048,6 @@
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "Mitembeyan Ngalanglang";
 
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is a general description that appears under the title for what the card is about. */
-"Onboarding.WhatsNew.Description" = "Ayeuna mah leuwih babari balik deui ka anu ditinggalkeun.";
-
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is the description for the Jump Back In bullet point */
-"Onboarding.WhatsNew.PersonalizedHome.Description" = "Luncat ka tab muka, markah, jeung jujutan ngalanglang.";
-
-/* On the onboarding card letting users know what's new in this version of Firefox, this is the descripion of the Recent Searches bullet point on the card */
-"Onboarding.WhatsNew.RecentSearches.Description" = "Anjangan deui sungsian panungtung ti kaca tepas.";
-
-/* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the Recent Searches bullet point on the card */
-"Onboarding.WhatsNew.RecentSearches.Title" = "Anyar Nyungsi";
-
-/* On the onboarding card letting users know what's new in this version of Firefox, this is the description for the Tab Group bullet point on the card */
-"Onboarding.WhatsNew.TabGroups.Description" = "Kaca-kaca ti sungsian anu sarua dikumpulkeun.";
-
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is the title for the Tab Group bullet point on the card */
-"Onboarding.WhatsNew.TabGroups.Title" = "Rapihkeun Grup Tab";
-
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is the title for the Jump Back In bullet point on the card
-   The title for the new onboarding card letting users know what is new in Firefox iOS */
-"Onboarding.WhatsNew.Title" = "Anu anyar di Firefox";
-
 /* Title for prompt displayed to user after the app crashes */
 "Oops! Firefox crashed" = "Euleuh! Firefoxna ruksak ning";
 
@@ -1270,9 +1068,6 @@
 
 /* Accessibility label for the Page Options menu button */
 "Page Options Menu" = "Menu Pilihan Kaca";
-
-/* Accessibility label for the Library panel's bottom toolbar containing a list of the home panels (top sites, bookmarks, history, remote tabs, reading list). */
-"Panel Chooser" = "Pamilih Padung";
 
 /* Password textbox in Authentication prompt */
 "Password" = "Kecap sandi";
@@ -1352,9 +1147,6 @@
 /* Reopen alert title shown at home page. */
 "ReopenAlert.Title" = "Buka Deui Tab Katutup Panungtung";
 
-/* Hardware shortcut to reopen the last closed tab, from the tab or the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"ReopenClosedTab.KeyCodeTitle" = "Buka Deui Tab Nu Ditutup";
-
 /* Accessibility label for button resetting font size in display settings of reader mode */
 "Reset text size" = "Setél deui ukuran téks";
 
@@ -1372,9 +1164,6 @@
 
 /* Text of the prompt that is shown to the user when the data is invalid */
 "ScanQRCode.InvalidDataError.Message" = "Data henteu sohéh";
-
-/* Text of the prompt user to setup the camera authorization. */
-"ScanQRCode.PermissionError.Message" = "Mangga heugbaékeun Firefox pikeun ngaksés kaméra parangkat anjeun dina ‘Setélan’ -> ‘Salindungan’ -> ‘Kaméra’.";
 
 /* Text of the prompt to setup the camera authorization for the Scan QR Code feature. */
 "ScanQRCode.PermissionError.Message.v100" = "Buka ‘Setélan’ > ‘Firefox’. Idinan Firefox ngaksés kaméra.";
@@ -1487,12 +1276,6 @@
 /* Title of notification shown when the device is sent one or more tabs from the named device. %@ is the placeholder for the device name. This device name will be localized by that device. */
 "SentTab_TabArrivingNotification_WithDevice_title" = "Tab katampa ti %@";
 
-/* Label for an action used to add one or more tabs recieved from a notification to the reading list. */
-"SentTab.AddToReadingListAction.Title" = "Tambah ka Daptar Bacaeun";
-
-/* Label for an action used to bookmark one or more tabs from a notification. */
-"SentTab.BookmarkAction.title" = "Markah";
-
 /* Body of notification received after a spurious message from FxA has been received. */
 "SentTab.NoTabArrivingNotification.body" = "Toél jang ngamimitian";
 
@@ -1591,9 +1374,6 @@
 
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "Caang";
-
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "Téma bakal otomatis robah dumasar caangna pidangan anjeun. Anjeun bisa setél wates parobahanana. Buleudanna téh ciri caangna pidangan anjeun kiwari.";
 
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "Pindah Modeu";
@@ -1716,9 +1496,6 @@
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the title of the button found on the toast that comes up once the user changes wallpaper, and allows users to dismiss the settings page. In this case, consider View as a verb - the action of dismissing settings and seeing the wallpaper. */
 "Settings.Home.Option.Wallpaper.UpdatedToastButton" = "Témbongkeun";
 
-/* Button in settings to clear the home page. */
-"Settings.HomePage.Clear.Button" = "Beresihan";
-
 /* Label used as an item in Settings. When touched it will open a dialog to configure the home page and its uses. */
 "Settings.HomePage.SectionName" = "Tepas";
 
@@ -1743,23 +1520,11 @@
 /* Toggled ON to show the shortcuts section */
 "Settings.Homepage.Shortcuts.ToggleOn.v100" = "Hurung";
 
-/* Title displayed in header of the setting panel. */
-"Settings.HomePage.Title" = "Setélan Tepas";
-
-/* Placeholder text in the homepage setting when no homepage has been set. */
-"Settings.HomePage.URL.Placeholder" = "Asupkeun kaca raramat";
-
 /* Title of the setting section containing the URL of the current home page. */
 "Settings.HomePage.URL.Title" = "Tepas Kiwari";
 
-/* Button in settings to use the current link on the clipboard as home page. */
-"Settings.HomePage.UseCopiedLink.Button" = "Paké Tutumbu Tironan";
-
 /* Button in settings to use the current page as home page. */
 "Settings.HomePage.UseCurrent.Button" = "Paké Kaca Kiwari";
-
-/* Button in settings to use the default home page. If no default is set, then this button isn't shown. */
-"Settings.HomePage.UseDefault.Button" = "Paké bawaanna";
 
 /* Title for the logins and passwords screen. Translation could just use 'Logins' if the title is too long */
 "Settings.LoginsAndPasswordsTitle" = "Login & Sandi";
@@ -1767,56 +1532,14 @@
 /* Label used to set a custom url as the new tab option (homepage). */
 "Settings.NewTab.CustomURL" = "URL Sakahayang";
 
-/* A description in settings of what the new tab choice means */
-"Settings.NewTab.Description" = "Nalika anjeun muka Tab Anyar:";
-
-/* The title of the section in newtab that lets you modify the topsites panel */
-"Settings.NewTab.Option.ASTitle" = "Loka Pangluhurna Sakahayang";
-
 /* Option in settings to show a blank page when you open a new tab */
 "Settings.NewTab.Option.BlankPage" = "Kaca Kosong";
-
-/* Option in settings to show bookmarks when you open a new tab */
-"Settings.NewTab.Option.Bookmarks" = "Markah";
-
-/* The footer for the section to customize top sites in the new tab settings page. */
-"Settings.NewTab.Option.CustomizeFooter" = "Loka anu pangmindengna dianjangan";
-
-/* The footer for the section to customize top sites in the new tab settings page. */
-"Settings.NewTab.Option.CustomizeFooter2" = "Loka teuteundeunan atawa kaanjangan";
-
-/* The title for the section to customize top sites in the new tab settings page. */
-"Settings.NewTab.Option.CustomizeTitle" = "Ropéa Tepas Firefox";
 
 /* Option in settings to show Firefox Home when you open a new tab */
 "Settings.NewTab.Option.FirefoxHome" = "Tepas Firefox";
 
-/* Option in the settings to turn off recent bookmarks in the Highlights section */
-"Settings.NewTab.Option.HighlightsBookmarks" = "Markah Cik Kénéh";
-
-/* Option in settings to turn off history in the highlights section */
-"Settings.NewTab.Option.HighlightsHistory" = "Disorang";
-
-/* Option in settings to show history when you open a new tab */
-"Settings.NewTab.Option.History" = "Jujutan";
-
 /* Option in settings to show your homepage when you open a new tab */
 "Settings.NewTab.Option.HomePage" = "Tepas";
-
-/* Option in settings to turn on off pocket recommendations */
-"Settings.NewTab.Option.Pocket" = "Keur usum di Pocket";
-
-/* Footer caption for pocket settings */
-"Settings.NewTab.Option.PocketFooter" = "Kontén hébring ti sakuliah raramat.";
-
-/* Option in settings to show reading list when you open a new tab */
-"Settings.NewTab.Option.ReadingList" = "Témbongkeun Daptar Bacaeun anjeun";
-
-/* Option in settings to turn on off pocket recommendations First argument is the pocket brand name */
-"Settings.NewTab.Option.RecommendedByPocket" = "Disarankeun ku %@";
-
-/* Descriptoin for the option in settings to turn on off pocket recommendations. First argument is the pocket brand name, second argument is the pocket product name. */
-"Settings.NewTab.Option.RecommendedByPocketDescription" = "Kontén anu diiwalkeun dikurasi ku %1$@, bagian ti kulawarga %2$@";
 
 /* Label used as an item in Settings. When touched it will open a dialog to configure the new tab behavior. */
 "Settings.NewTab.SectionName" = "Tab Anyar";
@@ -1944,23 +1667,11 @@
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Awas!";
 
-/* Header description for tracking protection options section where Basic/Strict block list can be selected */
-"Settings.TrackingProtection.BlockListsHeader" = "Anjeun bisa milih mana waé daptar Firefox nu bisa meungpeuk élemén Loka nu meureun ngalacak kagiatan langlangan anjeun.";
-
-/* Explanation of basic mode. */
-"Settings.TrackingProtection.Info.BasicTitle" = "Saimbang pikeun perlindungan jeung kinerja.";
-
 /* The Title on info view which shows a list of all blocked websites */
 "Settings.TrackingProtection.Info.BlocksTitle" = "PEUNGPEUK";
 
-/* Explanation of strict mode. */
-"Settings.TrackingProtection.Info.StrictTitle" = "Nawarkeun perlindungan anu leuwih kuat, ngan bisa ngabalukarkeun sababaraha loka jadi ruksak.";
-
 /* 'Learn more' info link on the Tracking Protection settings screen. */
 "Settings.TrackingProtection.LearnMore" = "Lenyepan";
-
-/* 'More Info' link on the Tracking Protection settings screen. */
-"Settings.TrackingProtection.MoreInfo" = "Émbaran salengkepna…";
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Ngurangan iklan ditargét sarta mantuan ngeureunan pangiklan ngalacak pamaluruhan anjeun.";
@@ -1980,23 +1691,11 @@
 /* Row in top-level of settings that gets tapped to show the tracking protection settings detail view. */
 "Settings.TrackingProtection.SectionName" = "Kilung Palacakan";
 
-/* Additional information about the strict level setting */
-"Settings.TrackingProtection.StrictLevelInfoFooter" = "Meungpeuk palacak bisa mangaruhan pungsionalitas sababaraha raramatloka.";
-
 /* Tracking protection settings option for using the basic blocklist. */
 "Settings.TrackingProtectionOption.BasicBlockList" = "Baku (bawaan)";
 
-/* Tracking protection settings option description for using the basic blocklist. */
-"Settings.TrackingProtectionOption.BlockListBasicDescription" = "Heugbaékeun sawatara palacak sangkan pungsi raramatloka merenah.";
-
 /* Tracking protection settings option for using the strict blocklist. */
 "Settings.TrackingProtectionOption.BlockListStrict" = "Pereketkeun";
-
-/* Tracking protection settings option description for using the strict blocklist. */
-"Settings.TrackingProtectionOption.BlockListStrictDescription" = "Peungpeuk palacak nu kanyahoan. Sawatara raramatloka meureun teu pungsi merenah.";
-
-/* Description label shown on tracking protection options screen. */
-"Settings.TrackingProtectionOption.EnabledStateFooterLabel" = "Palacakan téh ngumpukeun data langlangan anjeun ti antar bebedan raramatloka.";
 
 /* Settings option to specify that Tracking Protection is on */
 "Settings.TrackingProtectionOption.NormalBrowsingLabelOn" = "Protéksi Palacakan Tingkat Lanjut";
@@ -2018,15 +1717,6 @@
 
 /* Title of link to help page to find out how to solve Sync issues */
 "Settings.TroubleShootSync.Title" = "Bongbolongan";
-
-/* Button to delete website in search results */
-"Settings.WebsiteData.ButtonDelete" = "Pupus";
-
-/* Button to exit edit website search results */
-"Settings.WebsiteData.ButtonDone" = "Anggeus";
-
-/* Button to edit website search results */
-"Settings.WebsiteData.ButtonEdit" = "Édit";
 
 /* Button shows all websites on website data tableview */
 "Settings.WebsiteData.ButtonShowMore" = "Pidangkeun Leuwih Loba";
@@ -2086,18 +1776,6 @@
 /* Accessibility hint for tab tray's displayed tab. */
 "Swipe right or left with three fingers to close the tab." = "Ésér ka katuhu atawa kénca maké tilu ramo pikeun nutup tab.";
 
-/* Hardware shortcut for non-private tab or tab. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"SwitchToNonPBM.KeyCodeTitle" = "Modeu Langlangan Normal";
-
-/* Hardware shortcut switch to the private browsing tab or tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"SwitchToPBM.KeyCodeTitle" = "Modeu Langlangan Nyalindung";
-
-/* Text displayed when the Sync home panel is empty, describing the features provided by Sync to invite the user to log in. */
-"Sync your tabs, bookmarks, passwords and more." = "Singkronkeun tab anjeun, markah, kecap sandi jeung lianna.";
-
-/* Text displayed when the Sync home panel is empty, describing the features provided by Sync to invite the user to log in. */
-"Sync your tabs, passwords and more." = "Singkronkeun tab anjeun, kecap sandi jeung sajabana.";
-
 /* Message displayed when the user syncs for the first time */
 "Sync.FirstTimeMessage.Label" = "Singkronan munggaran anjeun meureun méakkeun waktu.";
 
@@ -2109,9 +1787,6 @@
 
 /* Message displayed when the user's account is syncing with ellipsis at the end */
 "Sync.SyncingEllipsis.Label" = "Nyingkronkeun…";
-
-/* Panel accessibility label */
-"Synced Tabs" = "Tab Singkron";
 
 /* The Bookmark sync component, used in SyncState.Partial.Title */
 "SyncState.Bookmark.Title" = "Markah";
@@ -2158,9 +1833,6 @@
 /* The label indicating that all the tabs were closed */
 "Tabs.DeleteAllUndo.Title" = "%d tab ditutup";
 
-/* The placeholder text for the tab search bar */
-"Tabs.Search.PlaceholderText" = "Paluruh Tab";
-
 /* Accessibility label for the Add Tab button in the Tab Tray. */
 "TabTray.AddTab.Button" = "Tambah Tab";
 
@@ -2179,20 +1851,8 @@
 /* Title for the inactive tabs section. This section groups all tabs that haven't been used in a while. */
 "TabTray.InactiveTabs.SectionTitle" = "Tab Teu Aktip";
 
-/* The section header for tabs opened last week */
-"TabTray.LastWeek.Header" = "Minggu Kamari";
-
-/* The title on the button to copy the tab address. */
-"TabTray.MoreMenu.Copy" = "Tiron";
-
-/* The section header for tabs opened before last week */
-"TabTray.Older.Header" = "Lawas";
-
 /* Hardware shortcut to open a new tab from the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
 "TabTray.OpenNewTab.KeyCodeTitle" = "Buka Tab Anyar";
-
-/* Hardware shortcut open the selected tab from the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"TabTray.OpenSelectedTab.KeyCodeTitle" = "Buka Tab Pinilih";
 
 /* In the Tabs Tray, summoned from the homepage, the title for the section containing non-grouped tabs, which will appear below grouped tabs */
 "TabTray.OtherTabs.Title" = "Tab lianna";
@@ -2212,17 +1872,8 @@
 /* The title on the button to look at regular tabs. */
 "TabTray.SegmentedControlTitles.Tabs" = "Tab";
 
-/* The button title to see more options to perform on the tab. */
-"TabTray.SwipeMenu.More" = "Lobaan";
-
 /* The title for the tab tray */
 "TabTray.Title" = "Buka Tab";
-
-/* The section header for tabs opened today */
-"TabTray.Today.Header" = "Poé ieu";
-
-/* The section header for tabs opened yesterday */
-"TabTray.Yesterday.Header" = "Kamari";
 
 /* Message displayed when the reader mode page could not be loaded. This message will appear only when sharing to Firefox reader mode from another app. */
 "The page could not be displayed in Reader View." = "Kaca teu bisa dipidangkeun dina Modeu Baca";
@@ -2256,12 +1907,6 @@
 
 /* Accessibility label for the Close All Tabs menu button. */
 "Toolbar.Menu.CloseAllTabs" = "Tutup Kabéh Tab";
-
-/* Description label for the empty Top Sites state. */
-"TopSites.EmptyState.Description" = "Loka anjeun nu pangmindengna disorang bakal némbongan di dieu.";
-
-/* The title for the empty Top Sites state */
-"TopSites.EmptyState.Title" = "Wilujeng Sumping di Loka Pangluhurna";
 
 /* Button shown in editing mode to remove this site from the top sites panel. */
 "TopSites.RemovePage.Button" = "Piceun kaca — %@";
@@ -2298,9 +1943,6 @@
 
 /* Text message in the settings table view */
 "Verify your email address" = "Vérifikasi alamat surélék anjeun";
-
-/* Version number of Firefox shown in settings */
-"Version %@ (%@)" = "Vérsi %1$@ (%2$@)";
 
 /* Accessibility label for the main web content view */
 "Web content" = "Kontén raramat";
