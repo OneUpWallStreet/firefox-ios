@@ -1,17 +1,17 @@
 /* Close Private Tabs button label */
-"TodayWidget.ClosePrivateTabsButton" = "ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵ ᱠᱚ ᱵᱚᱸᱫᱚ";
+"TodayWidget.ClosePrivateTabsButton" = "ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵᱽ ᱠᱚ ᱵᱚᱸᱫᱚ";
 
 /* Close Private Tabs */
-"TodayWidget.ClosePrivateTabsLabelV2" = "ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵ ᱠᱚ ᱵᱚᱸᱫᱚ";
+"TodayWidget.ClosePrivateTabsLabelV2" = "ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵᱽ ᱠᱚ ᱵᱚᱸᱫᱚ";
 
 /* Close Private Tabs */
-"TodayWidget.ClosePrivateTabsLabelV3" = "ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵ ᱠᱚ ᱵᱚᱸᱫᱚ";
+"TodayWidget.ClosePrivateTabsLabelV3" = "ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵᱽ ᱠᱚ ᱵᱚᱸᱫᱚ";
 
 /* Copied Link from clipboard displayed */
 "TodayWidget.CopiedLinkLabelFromPasteBoardV1" = "ᱨᱮᱴᱚᱯᱵᱚᱰ ᱠᱷᱚᱱ ᱞᱤᱸᱠ ᱱᱚᱠᱚᱞ ᱮᱱᱟ";
 
 /* Quick Actions drop down menu item for lear Private Tabs when widget enters edit mode and drop down menu expands */
-"TodayWidget.DropDownMenuItemClearPrivateTabs" = "ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵ ᱚᱪᱚᱜ ᱢᱮ";
+"TodayWidget.DropDownMenuItemClearPrivateTabs" = "ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵᱽ ᱚᱪᱚᱜ ᱢᱮ";
 
 /* Quick Actions drop down menu item for Go to Copied Link when widget enters edit mode and drop down menu expands */
 "TodayWidget.DropDownMenuItemGoToCopiedLink" = "ᱱᱚᱠᱚᱞ ᱟᱠᱟᱱ ᱞᱮᱸᱠ ᱛᱮ ᱪᱟᱞᱟᱜᱢᱮ";
@@ -41,7 +41,7 @@
 "TodayWidget.MoreTabsLabel" = "+%d ᱵᱚᱲᱛᱤ…";
 
 /* Open New Private Tab button label for medium size action */
-"TodayWidget.NewPrivateTabButtonLabelV2" = "ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵ ᱨᱮ ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ";
+"TodayWidget.NewPrivateTabButtonLabelV2" = "ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵᱽ ᱨᱮ ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ";
 
 /* Open New Tab button label */
 "TodayWidget.NewSearchButtonLabelV1" = "Firefox ᱨᱮ ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ";
@@ -50,10 +50,10 @@
 "TodayWidget.NewTabButtonLabelV1" = "ᱱᱟᱶᱟ ᱥᱮᱸᱫᱽᱨᱟ";
 
 /* Label that is shown when there are no tabs opened in tab tray i.e. Empty State */
-"TodayWidget.NoOpenTabsLabel" = "ᱴᱮᱵ ᱠᱚ ᱡᱷᱤ ᱵᱚᱱᱩ-ᱟ.";
+"TodayWidget.NoOpenTabsLabel" = "ᱴᱮᱵᱽ ᱠᱚ ᱡᱷᱤ ᱵᱚᱱᱩ-ᱟ.";
 
 /* Label that is shown when there are no tabs opened in tab tray i.e. Empty State */
-"TodayWidget.NoOpenTabsLabelV2" = "ᱴᱮᱵ ᱠᱚ ᱡᱷᱤ ᱵᱚᱱᱩ-ᱟ.";
+"TodayWidget.NoOpenTabsLabelV2" = "ᱴᱮᱵᱽ ᱠᱚ ᱡᱷᱤ ᱵᱚᱱᱩ-ᱟ.";
 
 /* Open Firefox when there are no tabs opened in tab tray i.e. Empty State */
 "TodayWidget.OpenFirefoxLabel" = "Firefox ᱡᱷᱤᱜ ᱢᱮ";
@@ -89,19 +89,19 @@
 "TodayWidget.QuickActionsSubLabel" = "Firefox - ᱞᱚᱜᱚᱱ ᱛᱮᱭᱟ ᱠᱚᱢᱤ";
 
 /* Description for Quick View widget in Gallery View where user can add it to home screen */
-"TodayWidget.QuickViewGalleryDescription" = "ᱟᱢᱟᱜ ᱠᱷᱩᱞᱟᱹ ᱟᱠᱟᱱ ᱴᱮᱵ ᱠᱚ ᱥᱚᱡᱷᱮ ᱟᱹᱛᱩᱨ ᱢᱮ ᱟᱢᱟᱜ ᱚᱲᱟᱜ ᱤᱥᱠᱨᱤᱱ ᱨᱮ.";
+"TodayWidget.QuickViewGalleryDescription" = "ᱟᱢᱟᱜ ᱠᱷᱩᱞᱟᱹ ᱟᱠᱟᱱ ᱴᱮᱵᱽ ᱠᱚ ᱥᱚᱡᱷᱮ ᱟᱹᱛᱩᱨ ᱢᱮ ᱟᱢᱟᱜ ᱚᱲᱟᱜ ᱤᱥᱠᱨᱤᱱ ᱨᱮ.";
 
 /* Description for Quick View widget in Gallery View where user can add it to home screen */
-"TodayWidget.QuickViewGalleryDescriptionV2" = "ᱟᱢᱟᱜ ᱠᱷᱩᱞᱟᱹ ᱟᱠᱟᱱ ᱴᱮᱵ ᱠᱚ ᱨᱮᱭᱟᱜ ᱥᱚᱴᱠᱚᱴ ᱠᱚ ᱥᱮᱞᱮᱫ ᱢᱮ ᱾";
+"TodayWidget.QuickViewGalleryDescriptionV2" = "ᱟᱢᱟᱜ ᱠᱷᱩᱞᱟᱹ ᱟᱠᱟᱱ ᱴᱮᱵᱽ ᱠᱚ ᱨᱮᱭᱟᱜ ᱥᱚᱴᱠᱚᱴ ᱠᱚ ᱥᱮᱞᱮᱫ ᱢᱮ ᱾";
 
 /* Title for Quick View widget in Gallery View where user can add it to home screen */
 "TodayWidget.QuickViewGalleryTitle" = "ᱞᱚᱜᱚᱱ ᱛᱮ ᱧᱮᱞ";
 
 /* Description for Quick View widget in Gallery View where user can add it to home screen */
-"TodayWidget.QuickViewLargeGalleryDescription" = "ᱟᱢᱟᱜ ᱠᱷᱩᱞᱟᱹ ᱟᱠᱟᱱ ᱴᱮᱵ ᱠᱚ ᱨᱮᱭᱟᱜ ᱥᱚᱴᱠᱚᱴ ᱠᱚ ᱥᱮᱞᱮᱫ ᱢᱮ ᱾";
+"TodayWidget.QuickViewLargeGalleryDescription" = "ᱟᱢᱟᱜ ᱠᱷᱩᱞᱟᱹ ᱟᱠᱟᱱ ᱴᱮᱵᱽ ᱠᱚ ᱨᱮᱭᱟᱜ ᱥᱚᱴᱠᱚᱴ ᱠᱚ ᱥᱮᱞᱮᱫ ᱢᱮ ᱾";
 
 /* Sub label for Top Sites widget */
-"TodayWidget.QuickViewOpenTabsSubLabel" = "Firefox - ᱴᱮᱵ ᱠᱚ ᱠᱷᱩᱞᱟᱹᱭ ᱢᱮ";
+"TodayWidget.QuickViewOpenTabsSubLabel" = "Firefox - ᱴᱮᱵᱽ ᱠᱚ ᱠᱷᱩᱞᱟᱹᱭ ᱢᱮ";
 
 /* Title for small size widget which allows users to search in Firefox. Do not translate the word Firefox. */
 "TodayWidget.SearchInFirefoxTitle" = "Firefox ᱨᱮ ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ";
@@ -110,7 +110,7 @@
 "TodayWidget.SearchInFirefoxV2" = "Firefox ᱨᱮ ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ";
 
 /* Search in private tab */
-"TodayWidget.SearchInPrivateTabLabelV2" = "ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵ ᱨᱮ ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ";
+"TodayWidget.SearchInPrivateTabLabelV2" = "ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵᱽ ᱨᱮ ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ";
 
 /* Description for top sites widget to add Firefox top sites shotcuts to home screen */
 "TodayWidget.TopSitesGalleryDescription" = "ᱠᱷᱟᱴᱚᱢᱟᱪᱷᱟ ᱥᱮᱞᱮᱫ ᱢᱮ ᱵᱚᱨᱟᱵᱚᱨ ᱟᱨ ᱱᱤᱛᱚᱜ-ᱟ ᱥᱟᱭᱤᱴ ᱧᱮᱞᱟᱠ ᱨᱮ.";
