@@ -20,34 +20,19 @@
 "ActivityStream.ContextMenu.AddToShortcuts" = "הוספה לקיצורי הדרך";
 
 /* The title for the pinning a topsite action */
-"ActivityStream.ContextMenu.PinTopsite" = "הצמדה לאתרים המובילים";
-
-/* The title for the pinning a topsite action */
 "ActivityStream.ContextMenu.PinTopsite2" = "נעיצה";
 
 /* The title for removing a shortcut action */
 "ActivityStream.ContextMenu.RemoveFromShortcuts" = "הסרה מקיצורי הדרך";
 
-/* The title for removing a pinned topsite action */
-"ActivityStream.ContextMenu.RemovePinTopsite" = "הסרת אתר מוצמד";
-
 /* The title for the unpinning a topsite action */
 "ActivityStream.ContextMenu.UnpinTopsite" = "ביטול נעיצה";
-
-/* The description of a highlight if it is a site the user has bookmarked */
-"ActivityStream.Highlights.Bookmark" = "נוסף למועדפים";
-
-/* The description of a highlight if it is a site the user has visited */
-"ActivityStream.Highlights.Visited" = "כבר ביקרת";
 
 /* Title for the Jump Back In section. This section allows users to jump back in to a recently viewed tab */
 "ActivityStream.JumpBackIn.SectionTitle" = "המשך גלישה";
 
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "לשוניות: %d";
-
-/* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists, the Tab Group item title will be 'Your search for \"video games\"'. The %@ sign is a placeholder for the actual search the user did. */
-"ActivityStream.JumpBackIn.TabGroup.Title" = "החיפוש שלך עבור ״%@״";
 
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
 "ActivityStream.Library.Title" = "נשמרו לאחרונה";
@@ -63,9 +48,6 @@
 
 /* Section title label for Recommended by Pocket section */
 "ActivityStream.Pocket.SectionTitle2" = "מומלץ על־ידי Pocket";
-
-/* The description of a Pocket Story */
-"ActivityStream.Pocket.Trending" = "פופולרי";
 
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "נצפה לאחרונה";
@@ -87,9 +69,6 @@
 
 /* The title for the setting page which lets you select the number of top site rows */
 "ActivityStream.TopSites.RowSettingFooter" = "הגדרת שורות";
-
-/* Section title label for Top Sites */
-"ActivityStream.TopSites.SectionTitle" = "אתרים מובילים";
 
 /* Accessibility label for the Add Tab button in the Tab Tray. */
 "Add Tab" = "הוספת לשונית";
@@ -125,23 +104,11 @@
 /* Authentication prompt title */
 "Authentication required" = "נדרש אימות";
 
-/* Description for button to suggest searching with a search engine. First argument is the name of the search engine to select */
-"Awesomebar.SearchWithEngine.Description" = "חיפוש ב־%@ ישירות משורת הכתובת";
-
-/* Title for button to suggest searching with a search engine. First argument is the name of the search engine to select */
-"Awesomebar.SearchWithEngine.Title" = "חיפוש באמצעות %@";
-
 /* Accessibility label for the Back button in the tab toolbar. */
 "Back" = "חזרה";
 
 /* Block pop-up windows setting */
 "Block Pop-up Windows" = "חסימת חלונות קופצים";
-
-/* The header title for the fields when editing a Bookmark */
-"Bookmark.BookmarkDetail.FieldsHeader.Bookmark.Title" = "סימניה";
-
-/* The header title for the fields when editing a Folder */
-"Bookmark.BookmarkDetail.FieldsHeader.Folder.Title" = "תיקייה";
 
 /* The label for the Title field when editing a bookmark */
 "Bookmark.DetailFieldTitle.Label" = "כותרת";
@@ -173,12 +140,6 @@
 /* The label to show the location of the folder where the bookmark is located */
 "Bookmarks.Folder.Label" = "תיקייה";
 
-/* The label for the location of the new folder */
-"Bookmarks.FolderLocation.Label" = "מיקום";
-
-/* The label for the title of the new folder */
-"Bookmarks.FolderName.Label" = "‏‏שם תיקייה";
-
 /* A label indicating all bookmarks grouped under the category 'Desktop Bookmarks'. */
 "Bookmarks.Menu.DesktopBookmarks" = "סימניות מהמחשב";
 
@@ -199,12 +160,6 @@
 
 /* The label for the title of a bookmark */
 "Bookmarks.Title.Label" = "כותרת";
-
-/* The label for the URL of a bookmark */
-"Bookmarks.URL.Label" = "כתובת";
-
-/* Status label for the empty Bookmarks state. */
-"BookmarksPanel.EmptyState.Title" = "סימניות שישמרו יופיעו ממש כאן.";
 
 /* Describes the date on which the breach occurred */
 "BreachAlerts.BreachDate" = "דליפה זו אירעה בתאריך";
@@ -251,9 +206,6 @@
 /* Context menu item for bookmarking a link URL */
 "ContextMenu.BookmarkLinkButtonTitle" = "יצירת סימנייה לקישור";
 
-/* The button text in the Button Toast for switching to a fresh New Private Tab. */
-"ContextMenu.ButtonToast.NewPrivateTabOpened.ButtonText" = "החלפה";
-
 /* The label text in the Button Toast for switching to a fresh New Private Tab. */
 "ContextMenu.ButtonToast.NewPrivateTabOpened.LabelText" = "לשונית פרטית חדשה נפתחה";
 
@@ -278,12 +230,6 @@
 /* Context menu item for opening a link in a new tab */
 "ContextMenu.OpenInNewTabButtonTitle" = "פתיחה בלשונית חדשה";
 
-/* Context menu item for opening a link in a new private tab */
-"ContextMenu.OpenLinkInNewPrivateTabButtonTitle" = "פתיחת קישור בלשונית פרטית חדשה";
-
-/* Context menu item for opening a link in a new tab */
-"ContextMenu.OpenLinkInNewTabButtonTitle" = "פתיחת קישור בלשונית חדשה";
-
 /* Context menu item for saving an image */
 "ContextMenu.SaveImageButtonTitle" = "שמירת תמונה";
 
@@ -295,9 +241,6 @@
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
 "ContextualHint.SearchBarPlacement.NewUsers" = "כדי להקל על הזנת המידע, סרגל הכלים נמצא כעת בתחתית כברירת מחדל.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "כעת קל יותר להמשיך מהמקום שבו הפסקת, במסך הבית של Firefox המותאם אישית שלך. ניתן למצוא את הלשוניות האחרונות, הסימניות ותוצאות החיפוש שלך.";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "הגדרות סרגל הכלים";
@@ -343,6 +286,9 @@
    Title for default search engine settings section. */
 "Default Search Engine" = "מנוע חיפוש ברירת מחדל";
 
+/* Accessibility label for action denoting closing default browser home tab banner. */
+"DefaultBrowserCloseButtonAccessibility.v102" = "סגירה";
+
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
 "Display Settings" = "הצגת הגדרות";
 
@@ -369,9 +315,6 @@
 
 /* Alert dialog title when the user taps the cancel download icon. */
 "Downloads.CancelDialog.Title" = "ביטול הורדה";
-
-/* The message displayed to a user when they try and perform the download of an asset that Firefox cannot currently handle. */
-"Downloads.Error.Message" = "הורדות אינן נתמכות בשלב זה ב־Firefox.";
 
 /* The label text in the Download Cancelled toast for showing confirmation that the download was cancelled. */
 "Downloads.Toast.Cancelled.LabelText" = "ההורדה בוטלה";
@@ -469,18 +412,6 @@
 /* Accessibility Label for the tab toolbar Forward button */
 "Forward" = "קדימה";
 
-/* Label stating how to disconnect account */
-"FxA.AccountVerificationDetails" = "כתובת דוא״ל שגויה? יש להתנתק להלן כדי להתחיל מחדש.";
-
-/* Label stating your account is not verified */
-"FxA.AccountVerificationRequired" = "נדרש אימות חשבון";
-
-/* Message explaining that user needs to check email for Firefox Account verfication link. */
-"FxA.AccountVerificationRequiredSurface" = "עליך לאמת את %@. נא לבדוק אם הגיעו אליך הודעות דוא״ל חדשות לצורך איתור קישור האימות מ־Firefox.";
-
-/* Button label to connect another device to Sync */
-"FxA.ConnectAnotherDevice" = "חיבור מכשיר נוסף";
-
 /* Settings section title for Firefox Account */
 "FxA.FirefoxAccount" = "חשבון Firefox";
 
@@ -490,32 +421,8 @@
 /* Label when no internet is present */
 "FxA.NoInternetConnection" = "אין חיבור לרשת";
 
-/* Button label to open Sync preferences */
-"FxA.OpenSyncPreferences" = "פתיחת העדפות Sync";
-
-/* Instructions shown on qr code scanning view */
-"fxa.qr-scanning-view.instructions" = "יש לסרוק את קוד ה־QR המוצג ב־firefox.com/pair";
-
-/* Remove button is displayed on firefox account page under certain scenarios where user would like to remove their account. */
-"FxA.RemoveAccount" = "הסרה";
-
-/* Description string for alert view that gets presented when user tries to remove an account. */
-"FxA.RemoveAccountAlertMessage" = "יש להסיר את חשבון ה־Firefox שלך המשוייך למכשיר זה כדי להתחבר כמשתמש אחר.";
-
-/* Remove account alert is the final confirmation before user removes their firefox account */
-"FxA.RemoveAccountAlertTitle" = "הסרת חשבון";
-
-/* Button label to resend email */
-"FxA.ResendEmail" = "שליחת דוא״ל מחדש";
-
 /* FxA sign in view subtitle */
 "fxa.signin.camera-signin" = "התחברות באמצעות המצלמה שלך";
-
-/* FxA sign in create account label. */
-"fxa.signin.create-account-pt-1" = "סנכרון Firefox בין מכשירים באמצעות חשבון.";
-
-/* FxA sign in create account label. This will be linked to the site to create an account. */
-"fxa.signin.create-account-pt-2" = "יצירת חשבון Firefox.";
 
 /* FxA sign in view qr code instructions */
 "fxa.signin.qr-link-instruction" = "במחשב שלך יש לפתוח את Firefox ולעבור לכתובת firefox.com/pair";
@@ -523,23 +430,11 @@
 /* FxA sign in view qr code scan button */
 "fxa.signin.ready-to-scan" = "מוכן לסריקה";
 
-/* FxA sign in view title */
-"fxa.signin.turn-on-sync" = "הפעלת Sync";
-
 /* FxA sign in view email login button */
 "fxa.signin.use-email-instead" = "שימוש בדוא״ל במקום";
 
-/* Button label to sign into Sync */
-"FxA.SignIntoSync" = "התחברות אל Sync";
-
-/* Label explaining what sync does */
-"FxA.SyncExplain" = "קבלת הלשוניות, הסימניות והססמאות שלך משאר המכשירים שלך.";
-
 /* Button label to Sync your Firefox Account */
 "FxA.SyncNow" = "סנכרון כעת";
-
-/* Call to action for sign into sync button */
-"FxA.TakeYourWebWithYou" = "קחו את הרשת עמכם";
 
 /* Title of a notification displayed when another device has connected to FxA. %@ refers to the name of the newly connected device. */
 "FxAPush_DeviceConnected_body" = "‏Firefox Sync התחבר ל־%@";
@@ -565,9 +460,6 @@
 /* On the firefox homepage, the string read by the voice over prompt for accessibility, for the button which changes the wallpaper */
 "FxHomepage.Wallpaper.ButtonLabel.v99" = "הלוגו של Firefox, החלפת תמונת הרקע.";
 
-/* A re-worded offer about Sync, displayed when the Sync home panel is empty, that emphasizes one-way data transfer, not syncing. */
-"Get your open tabs, bookmarks, and passwords from your other devices." = "קבלת הלשוניות הפתוחות, הסימניות והססמאות שלך מההתקנים האחרים שלך.";
-
 /* Show the SUMO support page from the Support section in the settings. see http://mzl.la/1dmM8tZ */
 "Help" = "עזרה";
 
@@ -589,26 +481,20 @@
 /* Button to perform action to clear history for yesterday and today */
 "HistoryPanel.ClearHistoryMenuOptionTodayAndYesterday" = "היום ואתמול";
 
-/* Title for popup action menu to clear recent history. */
-"HistoryPanel.ClearHistoryMenuTitle" = "ניקוי ההיסטוריה האחרונה תסיר את ההיסטוריה, עוגיות ונתוני דפדפן אחרים.";
-
 /* Title for the History Panel empty state. */
 "HistoryPanel.EmptyState.Title" = "אתרים בהם ביקרת יופיעו כאן.";
 
 /* Description for the empty synced tabs null state in the History Panel */
-"HistoryPanel.EmptySyncedTabsNullState.Description" = "הלשוניות שלך ממכשירים אחרים יופיעו כאן.";
+"HistoryPanel.EmptySyncedTabsNullState.Description" = "הלשוניות שלך משאר המכשירים יופיעו כאן.";
 
 /* Description for the empty synced tabs 'not signed in' state in the History Panel */
-"HistoryPanel.EmptySyncedTabsPanelNotSignedInState.Description" = "יש להיכנס כדי לצפות ברשימת הלשוניות שלך ממכשירים אחרים.";
+"HistoryPanel.EmptySyncedTabsPanelNotSignedInState.Description" = "יש להיכנס כדי לצפות ברשימת לשוניות משאר המכשירים שלך.";
 
 /* Description for the empty synced tabs 'not yet verified' state in the History Panel */
 "HistoryPanel.EmptySyncedTabsPanelNotYetVerifiedState.Description" = "יש לאמת את החשבון שלך.";
 
-/* Description for the empty synced tabs 'single device Sync' state in the History Panel */
-"HistoryPanel.EmptySyncedTabsPanelSingleDeviceSyncState.Description" = "להציג כאן את הלשוניות שלך ממכשירים אחרים?";
-
 /* Description for the empty synced tabs 'tab sync disabled' state in the History Panel */
-"HistoryPanel.EmptySyncedTabsPanelTabSyncDisabledState.Description" = "יש להפעיל סנכרון לשוניות כדי לצפות ברשימת הלשוניות שלך ממכשירים אחרים.";
+"HistoryPanel.EmptySyncedTabsPanelTabSyncDisabledState.Description" = "יש להפעיל סנכרון לשוניות כדי לצפות ברשימת לשוניות משאר המכשירים שלך.";
 
 /* Title for the empty synced tabs state in the History Panel */
 "HistoryPanel.EmptySyncedTabsState.Title" = "Firefox Sync";
@@ -619,35 +505,14 @@
 /* Title for the Recently Closed button in the History Panel */
 "HistoryPanel.RecentlyClosedTabsButton.Title" = "נסגרו לאחרונה";
 
-/* Description that corresponds with a number of devices connected for the Synced Tabs Cell in the History Panel */
-"HistoryPanel.SyncedTabsCell.Description.Pluralized" = "%d מכשירים מחוברים";
-
-/* Title for the Synced Tabs Cell in the History Panel */
-"HistoryPanel.SyncedTabsCell.Title" = "מכשירים מסונכרנים";
-
 /* Accessibility label for the tab toolbar indicating the Home button. */
 "Home" = "בית";
-
-/* Button cancelling changes setting the home page for the first time. */
-"HomePage.Set.Dialog.Cancel" = "ביטול";
-
-/* Alert dialog body when the user opens the home page for the first time. */
-"HomePage.Set.Dialog.Message" = "ניתן לשנות זאת בכל עת בהגדרות";
-
-/* Button accepting changes setting the home page for the first time. */
-"HomePage.Set.Dialog.OK" = "קביעת דף בית";
-
-/* Alert dialog title when the user opens the home page for the first time. */
-"HomePage.Set.Dialog.Title" = "האם להשתמש בדף זה כדף הבית?";
 
 /* The title for the Bookmark context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.Bookmark" = "הוספה למועדפים";
 
 /* The title for the Delete from History context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.DeleteFromHistory" = "מחיקה מההיסטוריה";
-
-/* The title for the Open in New Private Tab context menu action for sites in Home Panels */
-"HomePanel.ContextMenu.OpenInNewPrivateTab" = "פתיחה בלשונית פרטית חדשה";
 
 /* The title for the Open in New Private Tab context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.OpenInNewPrivateTab.v101" = "פתיחה בלשונית פרטית";
@@ -880,12 +745,6 @@
 /* Title of the big blue button to enable AutoFill */
 "Logins.WelcomeView.TurnOnAutoFill" = "הפעלת מילוי אוטומטי";
 
-/* Login detail view field name for the last modified date */
-"LoginsDetailView.LoginModified" = "השתנה";
-
-/* Title for the login detail view */
-"LoginsDetailView.LoginTitle" = "התחברות";
-
 /* Button to not save the user's password */
 "LoginsHelper.DontSave.Button" = "לא לשמור";
 
@@ -909,15 +768,6 @@
 
 /* Button to update the user's password */
 "LoginsHelper.Update.Button" = "עדכון";
-
-/* For filtering the login list, search only the login names */
-"LoginsList.LoginsListFilterLogin" = "כניסות";
-
-/* For filtering the login list, search both website and login names. */
-"LoginsList.LoginsListFilterSearchAll" = "הכל";
-
-/* For filtering the login list, search only the website names */
-"LoginsList.LoginsListFilterWebsite" = "אתר";
 
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "סינון";
@@ -966,9 +816,6 @@
 /* Label for the add bookmark button in the menu. Pressing this button bookmarks the current page. Please keep the text as short as possible for this label. */
 "Menu.AddBookmark.Label.v99" = "הוספה";
 
-/* Toast displayed to the user after adding the item to the Top Sites. */
-"Menu.AddPin.Confirm" = "הוצמד לאתרים המובילים";
-
 /* Toast displayed to the user after adding the item to the Shortcuts. */
 "Menu.AddPin.Confirm2" = "נוסף לקיצורי הדרך";
 
@@ -1008,12 +855,6 @@
 /* Label for the button, displayed in the menu, takes you to to History screen when pressed. */
 "Menu.History.Label" = "היסטוריה";
 
-/* Label for the button displayed in the menu used to stop the reload of the webpage */
-"Menu.Library.StopReload" = "עצירה";
-
-/* Label for the button, displayed in the menu, takes you to screen to manage account when pressed. First argument is the display name for the current account */
-"Menu.ManageAccount.Label" = "ניהול החשבון %@";
-
 /* Label for the new tab button in the menu page. Pressing this button opens a new tab. */
 "Menu.NewTab.v99" = "לשונית חדשה";
 
@@ -1021,19 +862,7 @@
 "Menu.NightModeTurnOff.Label2" = "כיבוי מצב לילה";
 
 /* Label for the button, displayed in the menu, turns on night mode. */
-"Menu.NightModeTurnOn.Label" = "הפעלת מצב לילה";
-
-/* Label for the button, displayed in the menu, turns on night mode. */
 "Menu.NightModeTurnOn.Label2" = "הפעלת מצב לילה";
-
-/* Label for the button, displayed in the menu, hides images on the webpage when pressed. */
-"Menu.NoImageModeBlockImages.Label" = "חסימת תמונות";
-
-/* Label for the button, displayed in the menu, shows images on the webpage when pressed. */
-"Menu.NoImageModeShowImages.Label" = "הצגת תמונות";
-
-/* Label for title in page action menu. */
-"Menu.PageActions.Title" = "פעולות דף";
 
 /* Label for the button, displayed in the menu, takes you to to passwords screen when pressed. */
 "Menu.Passwords.Label" = "ססמאות";
@@ -1062,9 +891,6 @@
 /* Label for the remove from shortcuts button in the menu. Pressing this button removes the current website from the shortcut pins on the home page. */
 "Menu.RemovedFromShortcuts.v99" = "הסרה מקיצורי הדרך";
 
-/* Toast displayed to the user after removing the item from the Top Sites. */
-"Menu.RemovePin.Confirm" = "הוסר מהאתרים המובילים";
-
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "הוסר מקיצורי הדרך";
 
@@ -1079,9 +905,6 @@
 
 /* Label for the share button in the menu page. Pressing this button open the share menu to share the current website. */
 "Menu.Share.v99" = "שיתוף";
-
-/* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
-"Menu.SignInToSync.Label.v99" = "התחברות אל Sync";
 
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "הלשונית נשלחה";
@@ -1113,12 +936,6 @@
 /* The title that shows the number of social URLs blocked */
 "Menu.TrackingProtectionBlockedSocial.Title" = "רכיבי מעקב של מדיה חברתית";
 
-/* Description of the Tracking protection menu when TP is blocking parts of the page */
-"Menu.TrackingProtectionBlocking.Description" = "‏Firefox חוסם חלקים מהדף שעשויים לעקוב אחר הגלישה שלך.";
-
-/* The description of the Tracking Protection menu item when tracking is enabled */
-"Menu.TrackingProtectionBlockingDisabled.Description" = "חסימת רכיבי מעקב מקוונים";
-
 /* The title that shows the number of cross-site cookies blocked */
 "Menu.TrackingProtectionCrossSiteCookies.Title" = "עוגיות מעקב חוצות אתרים";
 
@@ -1140,38 +957,8 @@
 /* Description of fingerprinters. */
 "Menu.TrackingProtectionDescription.Fingerprinters" = "ההגדרות בדפדפן ובמחשב שלך הן ייחודיות. מתעדי רכיבי הזהות הדיגיטליים האלה אוספים את מגוון ההגדרות הייחודיות כדי ללמוד את דפוס השימוש שלך, ניתן להשתמש בזה כדי לעקוב אחר הגלישה שלך.";
 
-/* The button that disabled TP for a site. */
-"Menu.TrackingProtectionDisable1.Title" = "מושבת עבור אתר זה";
-
-/* The confirmation toast once tracking protection has been disabled */
-"Menu.TrackingProtectionDisabled.Title" = "הגנת מעקב כעת כבויה עבור אתר זה.";
-
-/* A button to enable tracking protection inside the menu. */
-"Menu.TrackingProtectionEnable.Title" = "הפעלת הגנת מעקב";
-
-/* A button to enable tracking protection inside the menu. */
-"Menu.TrackingProtectionEnable1.Title" = "מופעל עבור אתר זה";
-
-/* The confirmation toast once tracking protection has been enabled */
-"Menu.TrackingProtectionEnabled.Title" = "הגנת מעקב כעת פעילה עבור אתר זה.";
-
 /* The title that shows the number of fingerprinting scripts blocked */
 "Menu.TrackingProtectionFingerprintersBlocked.Title" = "רכיבי זהות דיגיטלית";
-
-/* more info about what tracking protection is about */
-"Menu.TrackingProtectionMoreInfo.Description" = "מידע נוסף על האופן שבו הגנת מעקב חוסמת רכיבי מעקב מקוונים שאוספים את נתוני הגלישה שלך ממגוון אתרים.";
-
-/* The description of the Tracking Protection menu item when no scripts are blocked but tracking protection is enabled. */
-"Menu.TrackingProtectionNoBlocking.Description" = "לא זוהו פריטים שעוקבים אחריך בדף זה.";
-
-/* label for the menu item to show when the website is whitelisted from blocking trackers. */
-"Menu.TrackingProtectionOption.WhiteListOnDescription" = "האתר כולל רכיבים שעשויים לעקוב אחר הגלישה שלך. נטרלת את ההגנה.";
-
-/* label for the menu item that lets you remove a website from the tracking protection whitelist */
-"Menu.TrackingProtectionWhitelistRemove.Title" = "הפעלה עבור אתר זה";
-
-/* The title for the option to view the What's new page. */
-"Menu.WhatsNew.Title" = "מה חדש";
 
 /* Accessibility label for Mobile Device image in remote tabs list */
 "mobile device" = "מכשיר נייד";
@@ -1204,28 +991,6 @@
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "התחלת גלישה";
 
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is a general description that appears under the title for what the card is about. */
-"Onboarding.WhatsNew.Description" = "עכשיו קל יותר להמשיך מהמקום שבו הפסקת.";
-
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is the description for the Jump Back In bullet point */
-"Onboarding.WhatsNew.PersonalizedHome.Description" = "ניתן לעבור ללשוניות הפתוחות שלך, לסימניות ולהיסטוריית הגלישה שלך.";
-
-/* On the onboarding card letting users know what's new in this version of Firefox, this is the descripion of the Recent Searches bullet point on the card */
-"Onboarding.WhatsNew.RecentSearches.Description" = "ניתן לבקר שוב בחיפושים האחרונים שלך ממסך הבית שלך.";
-
-/* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the Recent Searches bullet point on the card */
-"Onboarding.WhatsNew.RecentSearches.Title" = "חיפושים אחרונים";
-
-/* On the onboarding card letting users know what's new in this version of Firefox, this is the description for the Tab Group bullet point on the card */
-"Onboarding.WhatsNew.TabGroups.Description" = "דפים מאותו חיפוש מקובצים יחד.";
-
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is the title for the Tab Group bullet point on the card */
-"Onboarding.WhatsNew.TabGroups.Title" = "קבוצות לשוניות מסודרות יותר";
-
-/* On the onboarding card, letting users know what's new in this version of Firefox, this is the title for the Jump Back In bullet point on the card
-   The title for the new onboarding card letting users know what is new in Firefox iOS */
-"Onboarding.WhatsNew.Title" = "מה חדש ב־Firefox";
-
 /* Title for prompt displayed to user after the app crashes */
 "Oops! Firefox crashed" = "אבוי! Firefox קרס";
 
@@ -1246,9 +1011,6 @@
 
 /* Accessibility label for the Page Options menu button */
 "Page Options Menu" = "תפריט אפשרויות הדף";
-
-/* Accessibility label for the Library panel's bottom toolbar containing a list of the home panels (top sites, bookmarks, history, remote tabs, reading list). */
-"Panel Chooser" = "בחירת חלוניות";
 
 /* Password textbox in Authentication prompt */
 "Password" = "ססמה";
@@ -1328,9 +1090,6 @@
 /* Reopen alert title shown at home page. */
 "ReopenAlert.Title" = "פתיחת הלשונית האחרונה שנסגרה מחדש";
 
-/* Hardware shortcut to reopen the last closed tab, from the tab or the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"ReopenClosedTab.KeyCodeTitle" = "פתיחת לשוניות שנסגרו מחדש";
-
 /* Accessibility label for button resetting font size in display settings of reader mode */
 "Reset text size" = "איפוס גודל טקסט";
 
@@ -1348,9 +1107,6 @@
 
 /* Text of the prompt that is shown to the user when the data is invalid */
 "ScanQRCode.InvalidDataError.Message" = "הנתונים שגויים";
-
-/* Text of the prompt user to setup the camera authorization. */
-"ScanQRCode.PermissionError.Message" = "נא לאפשר ל־Firefox לקבל גישה למצלמת המכשיר שלך בהגדרות -> פרטיות -> מצלמה.";
 
 /* Text of the prompt to setup the camera authorization for the Scan QR Code feature. */
 "ScanQRCode.PermissionError.Message.v100" = "יש לעבור להגדרות במכשיר, לבחור ב־Firefox, ולאפשר ל־Firefox לגשת למצלמה.";
@@ -1463,12 +1219,6 @@
 /* Title of notification shown when the device is sent one or more tabs from the named device. %@ is the placeholder for the device name. This device name will be localized by that device. */
 "SentTab_TabArrivingNotification_WithDevice_title" = "התקבלה לשונית מ־%@";
 
-/* Label for an action used to add one or more tabs recieved from a notification to the reading list. */
-"SentTab.AddToReadingListAction.Title" = "הוספה לרשימת הקריאה";
-
-/* Label for an action used to bookmark one or more tabs from a notification. */
-"SentTab.BookmarkAction.title" = "הוספת סימניה";
-
 /* Body of notification received after a spurious message from FxA has been received. */
 "SentTab.NoTabArrivingNotification.body" = "יש לגעת כדי להתחיל";
 
@@ -1516,9 +1266,6 @@
 
 /* Label used as an item in Settings. When touched it will open a dialog prompting the user to make sure they want to clear all of their private data. */
 "Settings.ClearPrivateData.SectionName" = "ניקוי נתונים פרטיים";
-
-/* Title displayed in header of the setting panel. */
-"Settings.ClearPrivateData.Title" = "ניקוי נתונים פרטיים";
 
 /* Button in Data Management that clears private data for the selected items. Parameter is the number of items to be cleared */
 "Settings.ClearSelectedWebsiteData.ClearSelected.Button" = "ניקוי פריטים: %1$@";
@@ -1568,9 +1315,6 @@
 /* Option choice in display theme settings for light theme */
 "Settings.DisplayTheme.OptionLight" = "בהיר";
 
-/* Display (theme) settings footer describing how the brightness slider works. */
-"Settings.DisplayTheme.SectionFooter" = "ערכת הנושא תשתנה על סמך בהירות התצוגה שלך. ניתן להגדיר את סף החלפת ערכת הנושא. העיגול מציין את הבהירות הנוכחית של התצוגה שלך.";
-
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "החלפת מצב";
 
@@ -1592,15 +1336,6 @@
 
 /* Title in main app settings for Theme settings */
 "Settings.DisplayTheme.Title.v2" = "ערכת נושא";
-
-/* DNT Settings option for always on */
-"Settings.DNT.OptionAlwaysOn" = "תמיד";
-
-/* DNT Settings option for only turning on when Tracking Protection is also on */
-"Settings.DNT.OptionOnWithTP" = "רק בעת שימוש בהגנת מעקב";
-
-/* DNT Settings title */
-"Settings.DNT.Title" = "שליחת חיווי ”נא לא לעקוב” לאתרים שאין ברצונך שיעקבו אחריך";
 
 /* Label used for the device name settings section. */
 "Settings.FxA.DeviceName" = "שם המכשיר";
@@ -1692,9 +1427,6 @@
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the title of the button found on the toast that comes up once the user changes wallpaper, and allows users to dismiss the settings page. In this case, consider View as a verb - the action of dismissing settings and seeing the wallpaper. */
 "Settings.Home.Option.Wallpaper.UpdatedToastButton" = "הצגה";
 
-/* Button in settings to clear the home page. */
-"Settings.HomePage.Clear.Button" = "ניקוי";
-
 /* Label used as an item in Settings. When touched it will open a dialog to configure the home page and its uses. */
 "Settings.HomePage.SectionName" = "דף בית";
 
@@ -1719,23 +1451,11 @@
 /* Toggled ON to show the shortcuts section */
 "Settings.Homepage.Shortcuts.ToggleOn.v100" = "פעיל";
 
-/* Title displayed in header of the setting panel. */
-"Settings.HomePage.Title" = "הגדרות דף בית";
-
-/* Placeholder text in the homepage setting when no homepage has been set. */
-"Settings.HomePage.URL.Placeholder" = "הכנסת כתובת";
-
 /* Title of the setting section containing the URL of the current home page. */
 "Settings.HomePage.URL.Title" = "דף בית נוכחי";
 
-/* Button in settings to use the current link on the clipboard as home page. */
-"Settings.HomePage.UseCopiedLink.Button" = "שימוש בקישור שהועתק";
-
 /* Button in settings to use the current page as home page. */
 "Settings.HomePage.UseCurrent.Button" = "שימוש בדף הנוכחי";
-
-/* Button in settings to use the default home page. If no default is set, then this button isn't shown. */
-"Settings.HomePage.UseDefault.Button" = "שימוש בברירת מחדל";
 
 /* Title for the logins and passwords screen. Translation could just use 'Logins' if the title is too long */
 "Settings.LoginsAndPasswordsTitle" = "כניסות וססמאות";
@@ -1743,56 +1463,14 @@
 /* Label used to set a custom url as the new tab option (homepage). */
 "Settings.NewTab.CustomURL" = "כתובת מותאמת אישית";
 
-/* A description in settings of what the new tab choice means */
-"Settings.NewTab.Description" = "כאשר פותחים לשונית חדשה:";
-
-/* The title of the section in newtab that lets you modify the topsites panel */
-"Settings.NewTab.Option.ASTitle" = "התאמה אישית של האתרים המובילים";
-
 /* Option in settings to show a blank page when you open a new tab */
 "Settings.NewTab.Option.BlankPage" = "דף ריק";
-
-/* Option in settings to show bookmarks when you open a new tab */
-"Settings.NewTab.Option.Bookmarks" = "סימניות";
-
-/* The footer for the section to customize top sites in the new tab settings page. */
-"Settings.NewTab.Option.CustomizeFooter" = "האתרים בהם ביקרת הכי הרבה";
-
-/* The footer for the section to customize top sites in the new tab settings page. */
-"Settings.NewTab.Option.CustomizeFooter2" = "אתרים ששמרת או ביקרת בהם";
-
-/* The title for the section to customize top sites in the new tab settings page. */
-"Settings.NewTab.Option.CustomizeTitle" = "התאמה אישית למסך הבית של Firefox";
 
 /* Option in settings to show Firefox Home when you open a new tab */
 "Settings.NewTab.Option.FirefoxHome" = "מסך הבית של Firefox";
 
-/* Option in the settings to turn off recent bookmarks in the Highlights section */
-"Settings.NewTab.Option.HighlightsBookmarks" = "סימניות אחרונות";
-
-/* Option in settings to turn off history in the highlights section */
-"Settings.NewTab.Option.HighlightsHistory" = "ביקורים קודמים";
-
-/* Option in settings to show history when you open a new tab */
-"Settings.NewTab.Option.History" = "היסטוריה";
-
 /* Option in settings to show your homepage when you open a new tab */
 "Settings.NewTab.Option.HomePage" = "דף הבית";
-
-/* Option in settings to turn on off pocket recommendations */
-"Settings.NewTab.Option.Pocket" = "פופולרי ב־Pocket";
-
-/* Footer caption for pocket settings */
-"Settings.NewTab.Option.PocketFooter" = "תוכן נהדר מרחבי הרשת.";
-
-/* Option in settings to show reading list when you open a new tab */
-"Settings.NewTab.Option.ReadingList" = "תוצג רשימת הקריאה";
-
-/* Option in settings to turn on off pocket recommendations First argument is the pocket brand name */
-"Settings.NewTab.Option.RecommendedByPocket" = "מומלץ על־ידי %@";
-
-/* Descriptoin for the option in settings to turn on off pocket recommendations. First argument is the pocket brand name, second argument is the pocket product name. */
-"Settings.NewTab.Option.RecommendedByPocketDescription" = "תוכן מהמם שנאסף על־ידי %1$@, חלק ממשפחת %2$@";
 
 /* Label used as an item in Settings. When touched it will open a dialog to configure the new tab behavior. */
 "Settings.NewTab.SectionName" = "לשונית חדשה";
@@ -1857,32 +1535,11 @@
 /* The option that takes you to the siri shortcuts settings page */
 "Settings.Siri.SectionName" = "קיצורי דרך של Siri";
 
-/* Section title for all studies that are currently active */
-"Settings.Studies.Active.SectionName" = "פעיל";
-
-/* Section title for all studies that are completed */
-"Settings.Studies.Completed.SectionName" = "הושלם";
-
-/* Button title displayed next to each study allowing the user to opt-out of the study */
-"Settings.Studies.Remove.Button" = "הסרה";
-
-/* Title displayed in header of the Studies panel */
-"Settings.Studies.SectionName" = "מחקרים";
-
-/* Label used as an item in Settings. Tapping on this item takes you to the Studies panel */
-"Settings.Studies.Title" = "מחקרים";
-
 /* Title for a link that explains what Mozilla means by Studies */
 "Settings.Studies.Toggle.Link" = "מידע נוסף.";
 
 /* A short description that explains that Mozilla is running studies */
 "Settings.Studies.Toggle.Message" = "‏Firefox עשוי להתקין ולהריץ מחקרים מדי פעם בפעם.";
-
-/* Toggled OFF to opt-out of studies */
-"Settings.Studies.Toggle.Off" = "כבוי";
-
-/* Toggled ON to participate in studies */
-"Settings.Studies.Toggle.On" = "פעיל";
 
 /* Label used as a toggle item in Settings. When this is off, the user is opting out of all studies. */
 "Settings.Studies.Toggle.Title" = "מחקרים";
@@ -1920,23 +1577,11 @@
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "לתשומת לבך!";
 
-/* Header description for tracking protection options section where Basic/Strict block list can be selected */
-"Settings.TrackingProtection.BlockListsHeader" = "באפשרותך לבחור באיזו רשימה Firefox ישתמש כדי לחסום רכיבים העשויים לעקוב אחר פעילות הגלישה שלך.";
-
-/* Explanation of basic mode. */
-"Settings.TrackingProtection.Info.BasicTitle" = "מאוזן בין הגנה לביצועים.";
-
 /* The Title on info view which shows a list of all blocked websites */
 "Settings.TrackingProtection.Info.BlocksTitle" = "חסימות";
 
-/* Explanation of strict mode. */
-"Settings.TrackingProtection.Info.StrictTitle" = "מספק הגנה חזקה יותר, אך עשוי לשבש פעילות של אתרים.";
-
 /* 'Learn more' info link on the Tracking Protection settings screen. */
 "Settings.TrackingProtection.LearnMore" = "מידע נוסף";
-
-/* 'More Info' link on the Tracking Protection settings screen. */
-"Settings.TrackingProtection.MoreInfo" = "מידע נוסף…";
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "ההגנה מפחיתה פרסומות ממוקדות ועוזרת למנוע מחברות פרסום לעקוב אחר הגלישה שלך.";
@@ -1956,53 +1601,17 @@
 /* Row in top-level of settings that gets tapped to show the tracking protection settings detail view. */
 "Settings.TrackingProtection.SectionName" = "הגנת מעקב";
 
-/* Additional information about the strict level setting */
-"Settings.TrackingProtection.StrictLevelInfoFooter" = "חסימת רכיבי מעקב עשויה להשפיע על הפונקציונליות של אתרים מסוימים.";
-
 /* Tracking protection settings option for using the basic blocklist. */
 "Settings.TrackingProtectionOption.BasicBlockList" = "רגיל (ברירת מחדל)";
-
-/* Tracking protection settings option description for using the basic blocklist. */
-"Settings.TrackingProtectionOption.BlockListBasicDescription" = "מאפשר את פעולתם של חלק מרכיבי המעקב כדי שהאתרים יפעלו כראוי.";
 
 /* Tracking protection settings option for using the strict blocklist. */
 "Settings.TrackingProtectionOption.BlockListStrict" = "מחמיר";
 
-/* Tracking protection settings option description for using the strict blocklist. */
-"Settings.TrackingProtectionOption.BlockListStrictDescription" = "חסימת רכיבי מעקב מוכרים. חלק מהאתרים עשויים שלא לתפקד כראוי.";
-
-/* Description label shown on tracking protection options screen. */
-"Settings.TrackingProtectionOption.EnabledStateFooterLabel" = "מעקב הוא איסוף נתוני הגלישה שלך ממגוון אתרים.";
-
 /* Settings option to specify that Tracking Protection is on */
 "Settings.TrackingProtectionOption.NormalBrowsingLabelOn" = "הגנת מעקב מתקדמת";
 
-/* Translation settings footer describing how language detection and translation happens. */
-"Settings.TranslateSnackBar.SectionFooter" = "שפת האתר מזוהה במכשיר, ומוצע תרגום משירות מרוחק.";
-
-/* Translation settings section title */
-"Settings.TranslateSnackBar.SectionHeader" = "שירותים";
-
-/* Switch to choose if the language of a page is detected and offer to translate. */
-"Settings.TranslateSnackBar.SwitchSubtitle" = "הצגת הצעה לתרגום כל אתר שנכתב בשפה שונה משפת ברירת המחדל שלך.";
-
-/* Switch to choose if the language of a page is detected and offer to translate. */
-"Settings.TranslateSnackBar.SwitchTitle" = "הצעת תרגום";
-
-/* Title in main app settings for Translation toast settings */
-"Settings.TranslateSnackBar.Title" = "תרגום";
-
 /* Title of link to help page to find out how to solve Sync issues */
 "Settings.TroubleShootSync.Title" = "פתרון בעיות";
-
-/* Button to delete website in search results */
-"Settings.WebsiteData.ButtonDelete" = "מחיקה";
-
-/* Button to exit edit website search results */
-"Settings.WebsiteData.ButtonDone" = "סיום";
-
-/* Button to edit website search results */
-"Settings.WebsiteData.ButtonEdit" = "עריכה";
 
 /* Button shows all websites on website data tableview */
 "Settings.WebsiteData.ButtonShowMore" = "הצגת עוד";
@@ -2062,18 +1671,6 @@
 /* Accessibility hint for tab tray's displayed tab. */
 "Swipe right or left with three fingers to close the tab." = "יש לגרור ימינה או שמאלה עם שלוש אצבעות כדי לסגור את הלשונית.";
 
-/* Hardware shortcut for non-private tab or tab. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"SwitchToNonPBM.KeyCodeTitle" = "מצב גלישה רגילה";
-
-/* Hardware shortcut switch to the private browsing tab or tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"SwitchToPBM.KeyCodeTitle" = "מצב גלישה פרטית";
-
-/* Text displayed when the Sync home panel is empty, describing the features provided by Sync to invite the user to log in. */
-"Sync your tabs, bookmarks, passwords and more." = "סנכרון הלשוניות שלך, הסימניות, הססמאות ועוד.";
-
-/* Text displayed when the Sync home panel is empty, describing the features provided by Sync to invite the user to log in. */
-"Sync your tabs, passwords and more." = "סנכרון הלשוניות שלך, ססמאות ועוד.";
-
 /* Message displayed when the user syncs for the first time */
 "Sync.FirstTimeMessage.Label" = "הסנכרון הראשון שלך עשוי לקחת זמן מה";
 
@@ -2085,9 +1682,6 @@
 
 /* Message displayed when the user's account is syncing with ellipsis at the end */
 "Sync.SyncingEllipsis.Label" = "בתהליך סנכרון…";
-
-/* Panel accessibility label */
-"Synced Tabs" = "לשוניות מסונכרנות";
 
 /* The Bookmark sync component, used in SyncState.Partial.Title */
 "SyncState.Bookmark.Title" = "סימניות";
@@ -2134,9 +1728,6 @@
 /* The label indicating that all the tabs were closed */
 "Tabs.DeleteAllUndo.Title" = "%d לשוניות נסגרו";
 
-/* The placeholder text for the tab search bar */
-"Tabs.Search.PlaceholderText" = "חיפוש לשוניות";
-
 /* Accessibility label for the Add Tab button in the Tab Tray. */
 "TabTray.AddTab.Button" = "הוספת לשונית";
 
@@ -2155,20 +1746,8 @@
 /* Title for the inactive tabs section. This section groups all tabs that haven't been used in a while. */
 "TabTray.InactiveTabs.SectionTitle" = "לשוניות לא פעילות";
 
-/* The section header for tabs opened last week */
-"TabTray.LastWeek.Header" = "שבוע שעבר";
-
-/* The title on the button to copy the tab address. */
-"TabTray.MoreMenu.Copy" = "העתקה";
-
-/* The section header for tabs opened before last week */
-"TabTray.Older.Header" = "ישן יותר";
-
 /* Hardware shortcut to open a new tab from the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
 "TabTray.OpenNewTab.KeyCodeTitle" = "פתיחת לשונית חדשה";
-
-/* Hardware shortcut open the selected tab from the tab tray. Shown in the Discoverability overlay when the hardware Command Key is held down. */
-"TabTray.OpenSelectedTab.KeyCodeTitle" = "פתיחת הלשונית שנבחרה";
 
 /* In the Tabs Tray, summoned from the homepage, the title for the section containing non-grouped tabs, which will appear below grouped tabs */
 "TabTray.OtherTabs.Title" = "לשוניות אחרות";
@@ -2188,17 +1767,8 @@
 /* The title on the button to look at regular tabs. */
 "TabTray.SegmentedControlTitles.Tabs" = "לשוניות";
 
-/* The button title to see more options to perform on the tab. */
-"TabTray.SwipeMenu.More" = "עוד";
-
 /* The title for the tab tray */
 "TabTray.Title" = "לשוניות פתוחות";
-
-/* The section header for tabs opened today */
-"TabTray.Today.Header" = "היום";
-
-/* The section header for tabs opened yesterday */
-"TabTray.Yesterday.Header" = "אתמול";
 
 /* Message displayed when the reader mode page could not be loaded. This message will appear only when sharing to Firefox reader mode from another app. */
 "The page could not be displayed in Reader View." = "לא ניתן להציג דף זה בתצוגת קריאה.";
@@ -2233,12 +1803,6 @@
 /* Accessibility label for the Close All Tabs menu button. */
 "Toolbar.Menu.CloseAllTabs" = "סגירת כל הלשוניות";
 
-/* Description label for the empty Top Sites state. */
-"TopSites.EmptyState.Description" = "האתרים בהם ביקרת מספר רב של פעמים יופיעו כאן.";
-
-/* The title for the empty Top Sites state */
-"TopSites.EmptyState.Title" = "ברוכים הבאים לאתרים המובילים";
-
 /* Button shown in editing mode to remove this site from the top sites panel. */
 "TopSites.RemovePage.Button" = "הסרת דף - %@";
 
@@ -2263,20 +1827,11 @@
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "לא נקרא";
 
-/* Text message in the settings table view */
-"Upgrade Firefox to connect" = "עליך לשדרג את Firefox כדי להתחבר";
-
 /* Debug option */
 "Use stage servers" = "שימוש בשרתי בדיקות";
 
 /* Username textbox in Authentication prompt */
 "Username" = "שם משתמש";
-
-/* Text message in the settings table view */
-"Verify your email address" = "עליך לאמת את כתובת הדואר האלקטרוני";
-
-/* Version number of Firefox shown in settings */
-"Version %@ (%@)" = "גרסה %1$@ (%2$@)";
 
 /* Accessibility label for the main web content view */
 "Web content" = "תוכן רשת";
