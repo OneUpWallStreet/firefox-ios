@@ -13,12 +13,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "Dette gjør det mulig å lagre bilder.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "Ny privat fane";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "Ny fane";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "Skann QR-kode";
-
