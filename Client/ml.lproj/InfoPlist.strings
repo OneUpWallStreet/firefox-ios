@@ -10,12 +10,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "ഇത് നിങ്ങൾക്ക് ഫോട്ടോകൾ സംരക്ഷിക്കാൻ അനുവദിക്കുന്നു.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "പുതിയ സ്വകാര്യ ടാബ്";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "പുതിയ ടാബ്";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "QR കോഡ് പരിശോധിക്കുക";
-

@@ -1,5 +1,5 @@
 /* Privacy - Camera Usage Description */
-"NSCameraUsageDescription" = "ᱱᱚᱶᱟ ᱛᱮ ᱟᱢ ᱪᱤᱛᱟᱹᱨ ᱨᱟᱠᱟᱵ ᱟᱨ ᱞᱟᱫᱮ ᱫᱟᱰᱮᱭᱟᱜᱼᱟᱢ᱾";
+"NSCameraUsageDescription" = "ᱱᱚᱶᱟ ᱛᱮ ᱟᱢ ᱪᱤᱛᱟᱹᱨ ᱨᱟᱠᱟᱵ ᱟᱨ ᱞᱟᱫᱮ ᱫᱟᱰᱮᱭᱟᱜᱼᱟᱢ ᱾";
 
 /* Privacy - Face ID Usage Description */
 "NSFaceIDUsageDescription" = "ᱟᱢᱟᱜ ᱥᱟᱺᱪᱟᱣ ᱠᱟᱱ ᱵᱚᱞᱚ ᱠᱚ ᱟᱫᱮᱨ ᱞᱟᱹᱜᱤᱫ Firefox ᱟᱢᱟᱜ ᱢᱚᱦᱲᱟ ID ᱫᱚᱨᱠᱟᱨ ᱾";
@@ -12,13 +12,4 @@
 
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "ᱱᱚᱶᱟ ᱛᱮ ᱟᱢ ᱪᱤᱛᱟᱹᱨᱠᱚ ᱥᱟᱧᱪᱟᱣ ᱫᱟᱰᱮᱭᱟᱜᱼᱟᱢ ᱾";
-
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "ᱱᱟᱶᱟ ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵ";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "ᱱᱟᱶᱟ ᱴᱮᱵ";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "Scan QR ᱠᱚᱰ ᱥᱠᱟᱱ ᱢᱮ";
 
