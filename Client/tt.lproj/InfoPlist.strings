@@ -13,12 +13,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "Фотоларны саклау өчен сез моны куллана аласыз.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "Яңа хосусый таб";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "Яңа таб";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "QR кодны сканерлау";
-
