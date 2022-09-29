@@ -10,12 +10,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "Pinapayagan ka nito na i-save ang mga larawan.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "Bagong Private Tab";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "Bagong Tab";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "I-scan ang QR Code";
-
