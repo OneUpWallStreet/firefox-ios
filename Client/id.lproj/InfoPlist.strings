@@ -13,12 +13,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "Ini memungkinkan Anda menyimpan foto.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "Tab Pribadi Baru";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "Tab Baru";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "Pindai Kode QR";
-
