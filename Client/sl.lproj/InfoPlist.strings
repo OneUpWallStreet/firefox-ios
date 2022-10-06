@@ -13,12 +13,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "To vam omogoča shranjevati fotografije.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "Nov zasebni zavihek";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "Nov zavihek";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "Skeniraj QR-kodo";
-
