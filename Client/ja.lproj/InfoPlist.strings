@@ -13,12 +13,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "これにより写真を保存できます。";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "新規プライベートタブ";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "新規タブ";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "QR コードをスキャン";
-
