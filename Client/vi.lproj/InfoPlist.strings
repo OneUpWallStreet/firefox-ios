@@ -13,12 +13,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "Điều này cho phép bạn lưu ảnh.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "Thẻ riêng tư mới";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "Thẻ mới";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "Quét mã QR";
-
