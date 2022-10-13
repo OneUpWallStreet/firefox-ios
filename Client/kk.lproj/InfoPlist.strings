@@ -13,12 +13,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "Бұл көмегімен фотоларды сақтауға болады.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "Жаңа жекелік беті";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "Жаңа бет";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "QR кодын сканерлеу";
-
