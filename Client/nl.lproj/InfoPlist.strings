@@ -13,12 +13,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "Hiermee kunt u foto’s opslaan.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "Nieuw privétabblad";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "Nieuw tabblad";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "QR-code scannen";
-
