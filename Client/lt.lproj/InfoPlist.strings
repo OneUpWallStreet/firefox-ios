@@ -13,12 +13,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "Tai jums leis įrašyti nuotraukas.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "Nauja privačioji kortelė";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "Nauja kortelė";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "Skenuoti QR kodą";
-
