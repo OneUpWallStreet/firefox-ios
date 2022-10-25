@@ -13,12 +13,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "Toto vám umožňuje ukladať fotky.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "Nová súkromná karta";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "Nová karta";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "Skenovanie QR kódu";
-
