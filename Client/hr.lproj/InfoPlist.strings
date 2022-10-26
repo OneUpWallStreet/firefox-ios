@@ -13,12 +13,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "Ovo vam omogućava spremanje fotografija.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "Nova privatna kartica";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "Nova kartica";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "Skeniraj QR kod";
-
