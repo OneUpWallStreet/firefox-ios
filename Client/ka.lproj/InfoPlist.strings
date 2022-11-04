@@ -13,12 +13,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "სურათების შენახვის საშუალებას იძლევა.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "ახალი პირადი ჩანართი";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "ახალი ჩანართი";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "QR კოდის წაკითხვა";
-
