@@ -13,12 +13,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "Pozwoli to zachowywać zdjęcia.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "Nowa karta prywatna";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "Nowa karta";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "Skanuj kod QR";
-
