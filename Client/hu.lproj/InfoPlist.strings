@@ -13,12 +13,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "Ezzel lementheti a képeket.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "Új privát lap";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "Új lap";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "QR-kód leolvasása";
-
