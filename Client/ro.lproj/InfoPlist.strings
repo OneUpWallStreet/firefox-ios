@@ -13,12 +13,3 @@
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "Acest lucru îți permite să salvezi fotografii.";
 
-/* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "Filă privată nouă";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "Filă nouă";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "Scanează codul QR";
-
