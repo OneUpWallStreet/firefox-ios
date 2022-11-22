@@ -43,16 +43,19 @@ class DownloadContentScript: TabContentScript {
     }
 
     func userContentController(_ userContentController: WKUserContentController, didReceiveScriptMessage message: WKScriptMessage) {
-        guard let browserViewController = tab?.browserViewController,
-            let dictionary = message.body as? [String: Any?],
-            let _url = dictionary["url"] as? String,
-            let url = URL(string: _url),
-            let mimeType = dictionary["mimeType"] as? String,
-            let size = dictionary["size"] as? Int64,
-            let base64String = dictionary["base64String"] as? String,
-            let data = Bytes.decodeBase64(base64String) else {
-            return
-        }
+        guard let dictionary = message.body as? [String: Any?],
+              let _url = dictionary["url"] as? String,
+              let url = URL(string: _url),
+              let mimeType = dictionary["mimeType"] as? String,
+              let size = dictionary["size"] as? Int64,
+              let base64String = dictionary["base64String"] as? String,
+              let data = Bytes.decodeBase64(base64String)
+        else { return }
+
+        // TODO: Could we have a download queue per tab instead of resolving from foregroundBVC?
+        // Or one that is independent of BVC at least?
+        let browserViewController = BrowserViewController.foregroundBVC()
+
         defer {
             browserViewController.pendingDownloadWebView = nil
             DownloadContentScript.blobUrlForDownload = nil
@@ -81,6 +84,6 @@ class DownloadContentScript: TabContentScript {
         }
 
         let download = BlobDownload(filename: filename, mimeType: mimeType, size: size, data: data)
-        tab?.browserViewController?.downloadQueue.enqueue(download)
+        browserViewController.downloadQueue.enqueue(download)
     }
 }

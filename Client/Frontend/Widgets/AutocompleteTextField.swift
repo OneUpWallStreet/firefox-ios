@@ -19,7 +19,7 @@ protocol AutocompleteTextFieldDelegate: AnyObject {
 
 class AutocompleteTextField: UITextField, UITextFieldDelegate {
     var autocompleteDelegate: AutocompleteTextFieldDelegate?
-    // AutocompleteTextLabel repersents the actual autocomplete text.
+    // AutocompleteTextLabel represents the actual autocomplete text.
     // The textfields "text" property only contains the entered text, while this label holds the autocomplete text
     // This makes sure that the autocomplete doesnt mess with keyboard suggestions provided by third party keyboards.
     private var autocompleteTextLabel: UILabel?
@@ -98,9 +98,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     }
 
     @objc func handleKeyCommand(sender: UIKeyCommand) {
-        guard let input = sender.input else {
-            return
-        }
+        guard let input = sender.input else { return }
         switch input {
         case UIKeyCommand.inputLeftArrow:
             TelemetryWrapper.recordEvent(category: .action, method: .press, object: .keyCommand, extras: ["action": "autocomplete-left-arrow"])
@@ -225,8 +223,8 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
 
         autocompleteTextLabel?.removeFromSuperview() // should be nil. But just in case
         autocompleteTextLabel = createAutocompleteLabelWith(autocompleteText)
-        if let l = autocompleteTextLabel {
-            addSubview(l)
+        if let label = autocompleteTextLabel {
+            addSubview(label)
             // Only call forceResetCursor() if `hideCursor` changes.
             // Because forceResetCursor() auto accept iOS user's text replacement
             // (e.g. mu->μ) which makes user unable to type "mu".
@@ -333,7 +331,7 @@ extension AutocompleteTextField: MenuHelperInterface {
         return super.canPerformAction(action, withSender: sender)
     }
 
-    @objc func menuHelperPasteAndGo() {
+    func menuHelperPasteAndGo() {
         autocompleteDelegate?.autocompletePasteAndGo(self)
     }
 }

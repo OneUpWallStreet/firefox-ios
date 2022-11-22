@@ -50,9 +50,11 @@ class CredentialListViewController: UIViewController, CredentialListViewProtocol
     }
 
     var searchIsActive: Bool {
-        guard let searchCtr = searchController, searchCtr.isActive && searchCtr.searchBar.text != ""  else {
-            return false
-        }
+        guard let searchCtr = searchController,
+              let searchBarText = searchCtr.searchBar.text,
+              searchCtr.isActive && !searchBarText.isEmpty
+        else { return false }
+
         return true
     }
 
@@ -120,7 +122,11 @@ class CredentialListViewController: UIViewController, CredentialListViewProtocol
                 backgroundview.clipsToBounds = true
             }
         }
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: .LoginsListSearchPlaceholderCredential, attributes: [:]) // Set the placeholder text and color
+        UITextField
+            .appearance(
+                whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(
+                    string: .LoginsListSearchPlaceholderCredential,
+                    attributes: [:]) // Set the placeholder text and color
         return searchController
 
     }

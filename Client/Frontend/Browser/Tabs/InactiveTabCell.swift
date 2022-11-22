@@ -3,7 +3,6 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0
 
 import Foundation
-import SnapKit
 import UIKit
 import Shared
 import SwiftUI
@@ -26,14 +25,13 @@ class InactiveTabCell: UICollectionViewCell, ReusableCell {
 
     struct UX {
         static let HeaderAndRowHeight: CGFloat = 48
-        static let CloseAllTabRowHeight: CGFloat = 100
+        static let CloseAllTabRowHeight: CGFloat = 88
         static let RoundedContainerPaddingClosed: CGFloat = 30
         static let RoundedContainerAdditionalPaddingOpened: CGFloat  = 40
         static let InactiveTabTrayWidthPadding: CGFloat = 30
     }
 
     // MARK: - Properties
-    var notificationCenter = NotificationCenter.default
     var inactiveTabsViewModel: InactiveTabViewModel?
     var hasExpanded = false
     weak var delegate: InactiveTabsDelegate?
@@ -41,7 +39,7 @@ class InactiveTabCell: UICollectionViewCell, ReusableCell {
     // Views
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(OneLineTableViewCell.self, forCellReuseIdentifier: OneLineTableViewCell.cellIdentifier)
+        tableView.register(InactiveTabItemCell.self, forCellReuseIdentifier: InactiveTabItemCell.cellIdentifier)
         tableView.register(CellWithRoundedButton.self, forCellReuseIdentifier: CellWithRoundedButton.cellIdentifier)
         tableView.register(InactiveTabHeader.self, forHeaderFooterViewReuseIdentifier: InactiveTabHeader.cellIdentifier)
         tableView.allowsMultipleSelectionDuringEditing = false
@@ -74,9 +72,6 @@ class InactiveTabCell: UICollectionViewCell, ReusableCell {
         containerView.addSubviews(tableView)
         addSubviews(containerView)
         setupConstraints()
-        applyTheme()
-
-        setupNotifications(forObserver: self, observing: [.DisplayThemeChanged])
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -122,37 +117,46 @@ extension InactiveTabCell: UITableViewDataSource, UITableViewDelegate {
         case .inactive, .none:
             return InactiveTabCell.UX.HeaderAndRowHeight
         case .closeAllTabsButton:
-            return InactiveTabCell.UX.CloseAllTabRowHeight
+            return UITableView.automaticDimension
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch InactiveTabSection(rawValue: indexPath.section) {
         case .inactive:
-            let cell = tableView.dequeueReusableCell(withIdentifier: OneLineTableViewCell.cellIdentifier, for: indexPath) as! OneLineTableViewCell
-            cell.customization = .inactiveCell
-            cell.backgroundColor = .clear
-            cell.accessoryView = nil
-            cell.bottomSeparatorView.isHidden = false
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: InactiveTabItemCell.cellIdentifier,
+                                                           for: indexPath) as? InactiveTabItemCell
+            else {
+                return UITableViewCell()
+            }
 
             guard let tab = inactiveTabsViewModel?.inactiveTabs[indexPath.item] else { return cell }
-            cell.titleLabel.text = tab.getTabTrayTitle()
-            cell.leftImageView.setImageAndBackground(forIcon: tab.displayFavicon, website: getTabDomainUrl(tab: tab)) {}
-            cell.shouldLeftAlignTitle = false
-            cell.updateMidConstraint()
-            cell.accessoryType = .none
+
+            let viewModel = InactiveTabItemCellModel(title: tab.getTabTrayTitle(),
+                                                     icon: tab.displayFavicon,
+                                                     website: getTabDomainUrl(tab: tab))
+            cell.configureCell(viewModel: viewModel)
             return cell
 
         case .closeAllTabsButton:
-            if let closeAllButtonCell = tableView.dequeueReusableCell(withIdentifier: CellWithRoundedButton.cellIdentifier, for: indexPath) as? CellWithRoundedButton {
-                closeAllButtonCell.buttonClosure = {
-                    self.delegate?.didTapCloseAllTabs()
-                }
-                return closeAllButtonCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellWithRoundedButton.cellIdentifier,
+                                                           for: indexPath) as? CellWithRoundedButton
+            else {
+                return UITableViewCell()
             }
-            return tableView.dequeueReusableCell(withIdentifier: OneLineTableViewCell.cellIdentifier, for: indexPath) as! OneLineTableViewCell
+
+            cell.buttonClosure = {
+                self.delegate?.didTapCloseAllTabs()
+            }
+
+            return cell
         case .none:
-            return tableView.dequeueReusableCell(withIdentifier: OneLineTableViewCell.cellIdentifier, for: indexPath) as! OneLineTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: OneLineTableViewCell.cellIdentifier,
+                                                           for: indexPath) as? OneLineTableViewCell
+            else {
+                return UITableViewCell()
+            }
+            return cell
         }
     }
 
@@ -191,11 +195,17 @@ extension InactiveTabCell: UITableViewDataSource, UITableViewDelegate {
             guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: InactiveTabHeader.cellIdentifier) as? InactiveTabHeader else { return nil }
             headerView.state = hasExpanded ? .down : .right
             headerView.title = String.TabsTrayInactiveTabsSectionTitle
+            headerView.accessibilityLabel = hasExpanded ?
+                .TabsTray.InactiveTabs.TabsTrayInactiveTabsSectionOpenedAccessibilityTitle :
+                .TabsTray.InactiveTabs.TabsTrayInactiveTabsSectionClosedAccessibilityTitle
             headerView.moreButton.isHidden = false
             headerView.moreButton.addTarget(self,
                                             action: #selector(toggleInactiveTabSection),
                                             for: .touchUpInside)
             headerView.contentView.backgroundColor = .clear
+
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleInactiveTabSection))
+            headerView.addGestureRecognizer(tapGesture)
 
             delegate?.setupCFR(with: headerView.titleLabel)
 
@@ -233,16 +243,14 @@ extension InactiveTabCell: UITableViewDataSource, UITableViewDelegate {
         tableView.reloadData()
         delegate?.toggleInactiveTabSection(hasExpanded: hasExpanded)
 
+        // Post accessibility notification when the section was opened/closed
+        UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged, argument: nil)
+
         if hasExpanded { delegate?.presentCFR() }
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch InactiveTabSection(rawValue: section) {
-        case .inactive, .none:
-            return InactiveTabCell.UX.HeaderAndRowHeight
-        case .closeAllTabsButton:
-            return CGFloat.leastNormalMagnitude
-        }
+        return UITableView.automaticDimension
     }
 
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
@@ -255,28 +263,15 @@ extension InactiveTabCell: UITableViewDataSource, UITableViewDelegate {
     }
 
     func getTabDomainUrl(tab: Tab) -> URL? {
-        guard tab.url != nil else {
-            return tab.sessionData?.urls.last?.domainURL
-        }
+        guard tab.url != nil else { return tab.sessionData?.urls.last?.domainURL }
+
         return tab.url?.domainURL
     }
-}
 
-extension InactiveTabCell: NotificationThemeable {
-    @objc func applyTheme() {
-        self.backgroundColor = .clear
-        self.tableView.backgroundColor = .clear
+    func applyTheme(_ theme: Theme) {
+        backgroundColor = .clear
+        tableView.backgroundColor = .clear
+        containerView.backgroundColor = theme.colors.layer5
         tableView.reloadData()
-        let theme = BuiltinThemeName(rawValue: LegacyThemeManager.instance.current.name) ?? .normal
-        containerView.backgroundColor = theme == .normal ? .white : .Photon.DarkGrey50
-    }
-}
-
-extension InactiveTabCell: Notifiable {
-    func handleNotifications(_ notification: Notification) {
-        switch notification.name {
-        case .DisplayThemeChanged: applyTheme()
-        default: break
-        }
     }
 }

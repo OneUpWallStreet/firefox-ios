@@ -9,13 +9,18 @@ protocol HomePanelDelegate: AnyObject {
     func homePanelDidRequestToOpenInNewTab(_ url: URL, isPrivate: Bool, selectNewTab: Bool)
     func homePanel(didSelectURL url: URL, visitType: VisitType, isGoogleTopSite: Bool)
     func homePanelDidRequestToOpenLibrary(panel: LibraryPanelType)
-    func homePanelDidRequestToOpenTabTray(withFocusedTab tabToFocus: Tab?)
+    func homePanelDidRequestToOpenTabTray(withFocusedTab tabToFocus: Tab?, focusedSegment: TabTrayViewModel.Segment?)
     func homePanelDidRequestToOpenSettings(at settingsPage: AppSettingsDeeplinkOption)
-    func homePanelDidPresentContextualHintOf(type: ContextualHintViewType)
+    func homePanelDidPresentContextualHintOf(type: ContextualHintType)
 }
 
 extension HomePanelDelegate {
     func homePanelDidRequestToOpenInNewTab(_ url: URL, isPrivate: Bool, selectNewTab: Bool = false) {
         homePanelDidRequestToOpenInNewTab(url, isPrivate: isPrivate, selectNewTab: selectNewTab)
+    }
+
+    func homePanelDidRequestToOpenTabTray(withFocusedTab tabToFocus: Tab? = nil,
+                                          focusedSegment: TabTrayViewModel.Segment? = nil) {
+        homePanelDidRequestToOpenTabTray(withFocusedTab: tabToFocus, focusedSegment: focusedSegment)
     }
 }

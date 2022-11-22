@@ -11,21 +11,32 @@ import UIKit
 /// Please add new features alphabetically.
 enum NimbusFeatureFlagID: String, CaseIterable {
     case bottomSearchBar
+    case copyForJumpBackIn
+    case copyForToolbar
+    case contextualHintForJumpBackInSyncedTab
     case historyHighlights
     case historyGroups
     case inactiveTabs
     case jumpBackIn
+    case jumpBackInSyncedTab
+    case onboardingUpgrade
+    case onboardingFreshInstall
     case pocket
     case pullToRefresh
     case recentlySaved
     case reportSiteIssue
     case searchHighlights
     case shakeToRestore
+    case shareSheetChanges
+    case shareToolbarChanges
+    case sponsoredPocket
     case sponsoredTiles
     case startAtHome
     case tabTrayGroups
     case topSites
     case wallpapers
+    case wallpaperOnboardingSheet
+    case wallpaperVersion
 }
 
 /// This enum is a constraint for any feature flag options that have more than
@@ -33,6 +44,7 @@ enum NimbusFeatureFlagID: String, CaseIterable {
 enum NimbusFeatureFlagWithCustomOptionsID {
     case startAtHome
     case searchBarPosition
+    case wallpaperVersion
 }
 
 struct NimbusFlaggableFeature: HasNimbusSearchBar {
@@ -61,6 +73,8 @@ struct NimbusFlaggableFeature: HasNimbusSearchBar {
             return FlagKeys.PullToRefresh
         case .recentlySaved:
             return FlagKeys.RecentlySavedSection
+        case .sponsoredPocket:
+            return FlagKeys.ASSponsoredPocketStories
         case .sponsoredTiles:
             return FlagKeys.SponsoredShortcuts
         case .startAtHome:
@@ -73,9 +87,19 @@ struct NimbusFlaggableFeature: HasNimbusSearchBar {
             return FlagKeys.CustomWallpaper
 
         // Cases where users do not have the option to manipulate a setting.
-        case .reportSiteIssue,
+        case .contextualHintForJumpBackInSyncedTab,
+                .copyForJumpBackIn,
+                .copyForToolbar,
+                .jumpBackInSyncedTab,
+                .onboardingUpgrade,
+                .onboardingFreshInstall,
+                .reportSiteIssue,
+                .searchHighlights,
                 .shakeToRestore,
-                .searchHighlights:
+                .shareSheetChanges,
+                .shareToolbarChanges,
+                .wallpaperOnboardingSheet,
+                .wallpaperVersion:
             return nil
         }
     }
@@ -91,8 +115,8 @@ struct NimbusFlaggableFeature: HasNimbusSearchBar {
         let nimbusValue = nimbusLayer.checkNimbusConfigFor(featureID)
 
         switch featureID {
-        case .pocket:
-            return nimbusValue && Pocket.IslocaleSupported(Locale.current.identifier)
+        case .pocket, .sponsoredPocket:
+            return nimbusValue && PocketProvider.islocaleSupported(Locale.current.identifier)
         default:
             return nimbusValue
         }
@@ -127,14 +151,16 @@ struct NimbusFlaggableFeature: HasNimbusSearchBar {
         }
 
         switch featureID {
-        case .startAtHome:
-            return nimbusLayer.checkNimbusConfigForStartAtHome().rawValue
-
         case .bottomSearchBar:
             return nimbusSearchBar.getDefaultPosition().rawValue
 
-        default:
-            return nil
+        case .startAtHome:
+            return nimbusLayer.checkNimbusConfigForStartAtHome().rawValue
+
+        case .wallpaperVersion:
+            return nimbusLayer.checkNimbusForWallpapersVersion()
+
+        default: return nil
         }
     }
 

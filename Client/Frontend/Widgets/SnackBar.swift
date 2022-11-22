@@ -112,7 +112,7 @@ class SnackBar: UIView {
     init(text: String, img: UIImage?, snackbarClassIdentifier: String? = nil) {
         self.snackbarClassIdentifier = snackbarClassIdentifier ?? text
         super.init(frame: .zero)
-        imageView.image = img ?? UIImage(named: "defaultFavicon")?.withRenderingMode(.alwaysOriginal)
+        imageView.image = img ?? UIImage(named: ImageIdentifiers.defaultFavicon)?.withRenderingMode(.alwaysOriginal)
         textLabel.text = text
         setup()
     }
@@ -175,7 +175,7 @@ class SnackBar: UIView {
             make.top.equalTo(titleView.snp.bottom).offset(UIConstants.DefaultPadding)
             make.bottom.equalTo(self.snp.bottom)
             make.leading.trailing.equalTo(self)
-            if self.buttonsView.subviews.count > 0 {
+            if !self.buttonsView.subviews.isEmpty {
                 make.height.equalTo(UIConstants.SnackbarButtonHeight)
             } else {
                 make.height.equalTo(0)
@@ -222,7 +222,9 @@ class TimerSnackBar: SnackBar {
     }
 
     static func showAppStoreConfirmationBar(forTab tab: Tab, appStoreURL: URL, completion: @escaping (Bool) -> Void) {
-        let bar = TimerSnackBar(text: .ExternalLinkAppStoreConfirmationTitle, img: UIImage(named: "defaultFavicon")?.withRenderingMode(.alwaysOriginal))
+        let bar = TimerSnackBar(
+            text: .ExternalLinkAppStoreConfirmationTitle,
+            img: UIImage(named: ImageIdentifiers.defaultFavicon)?.withRenderingMode(.alwaysOriginal))
         let openAppStore = SnackButton(title: .AppStoreString, accessibilityIdentifier: "ConfirmOpenInAppStore", bold: true) { bar in
             tab.removeSnackbar(bar)
             UIApplication.shared.open(appStoreURL, options: [:])

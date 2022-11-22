@@ -48,7 +48,7 @@ class SearchTermGroupsUtility {
     ///   - ordering: Order in which we want to return groups, `.orderedAscending` or
     ///   `.orderedDescending`. `.orderedSame` is also possible, but will return the exact
     ///   order of the group that was provided. Note: this does not affect the groups' items,
-    ///   which will alway return in ascending order.
+    ///   which will always return in ascending order.
     ///   - completion: completion handler that contains `[ASGroup<T>]`  dictionary and a
     ///   filteredItems list, `[T]`, which is comprised of items from the original input
     ///   that are not part of a group.
@@ -58,10 +58,10 @@ class SearchTermGroupsUtility {
         using ordering: ComparisonResult,
         completion: @escaping ([ASGroup<T>]?, _ filteredItems: [T]) -> Void
     ) {
-        guard (items is [Tab] || items is [Site] || items is [HistoryHighlight]) else { return completion(nil, [T]()) }
+        guard items is [Tab] || items is [Site] || items is [HistoryHighlight] else { return completion(nil, [T]()) }
 
         let lastTwoWeek = Int64(Date().lastTwoWeek.timeIntervalSince1970)
-        profile.places.getHistoryMetadataSince(since: lastTwoWeek).uponQueue(.global(qos: .userInteractive)) { result in
+        profile.places.getHistoryMetadataSince(since: lastTwoWeek).uponQueue(.global(qos: .userInitiated)) { result in
             guard let historyMetadata = result.successValue else { return completion(nil, [T]()) }
 
             let searchTermMetaDataGroup = buildMetadataGroups(from: historyMetadata)
@@ -92,12 +92,12 @@ class SearchTermGroupsUtility {
         return searchTermMetaDataGroup
     }
 
-    /// Creates filtered dicionary of items from an array of provided items, grouped by
+    /// Creates filtered dictionary of items from an array of provided items, grouped by
     /// relevant search term, based on the provided search term metadata.
     ///
     /// - Parameters:
-    ///   - items: The original list of items contaning metadata upon which to sort
-    ///   - searchTermMetadata: Application Serivces provided metadata
+    ///   - items: The original list of items containing metadata upon which to sort
+    ///   - searchTermMetadata: Application Services provided metadata
     /// - Returns: A tuple with a filtered dictionary of groups and a tracking array
     private static func createGroupDictionaryAndSoloItems<T: Equatable>(from items: [T], and searchTermMetadata: [String: [HistoryMetadata]]) -> (itemGroupData: [String: [T]], itemsInGroups: [T]) {
 
@@ -173,11 +173,12 @@ class SearchTermGroupsUtility {
 
         // 3. Tab groups should have at least 2 tabs per search term so we remove smaller groups
         let filteredGroupData = itemGroups.filter { itemGroup in
-            let t = itemGroup.value
-            if t.count > 1 {
+            let temp = itemGroup.value
+            if temp.count > 1 {
                 return true
             } else {
-                if let onlyItem = t.first, let index = itemsInGroups.firstIndex(of: onlyItem) {
+                if let onlyItem = temp.first,
+                   let index = itemsInGroups.firstIndex(of: onlyItem) {
                     itemsInGroups.remove(at: index)
                 }
                 return false
@@ -209,22 +210,22 @@ class SearchTermGroupsUtility {
     /// - Returns: An array of `ASGroup<T>`
     private static func createGroups<T: Equatable>(from groupDictionary: [String: [T]]) -> [ASGroup<T>] {
         return groupDictionary.map {
-                let orderedItems = orderItemsIn(group: $0.value)
-                var timestamp: Timestamp = 0
-                if let firstItem = orderedItems.first, let tab = firstItem as? Tab {
-                    timestamp = tab.firstCreatedTime ?? 0
-                }
+            let orderedItems = orderItemsIn(group: $0.value)
+            var timestamp: Timestamp = 0
+            if let firstItem = orderedItems.first, let tab = firstItem as? Tab {
+                timestamp = tab.firstCreatedTime ?? 0
+            }
 
-                // Base timestamp on score to order historyHighlight properly
-                if let firstItem = orderedItems.first, let highlight = firstItem as? HistoryHighlight {
-                    timestamp = Date.now() - Timestamp(highlight.score)
-                }
+            // Base timestamp on score to order historyHighlight properly
+            if let firstItem = orderedItems.first, let highlight = firstItem as? HistoryHighlight {
+                timestamp = Date.now() - Timestamp(highlight.score)
+            }
 
-                return ASGroup<T>(searchTerm: $0.key.capitalized, groupedItems: orderedItems, timestamp: timestamp)
+            return ASGroup<T>(searchTerm: $0.key.capitalized, groupedItems: orderedItems, timestamp: timestamp)
         }
     }
 
-    /// Orders items in a group, chronologically, in an asecending order
+    /// Orders items in a group, chronologically, in an ascending order
     ///
     /// - Parameter group: A group in which items must be sorted
     /// - Returns: The items in the group, sorted chronologically, in ascending order
@@ -258,7 +259,8 @@ class SearchTermGroupsUtility {
     ///   with no changes.
     /// - Returns: The passed in group, sorted according to its `ASGroup<T>.timestamp` property
     private static func order<T: Equatable>(groups: [ASGroup<T>], using order: ComparisonResult) -> [ASGroup<T>] {
-        switch order { case .orderedAscending:
+        switch order {
+        case .orderedAscending:
             return groups.sorted { $0.timestamp < $1.timestamp }
         case .orderedDescending:
             return groups.sorted { $0.timestamp > $1.timestamp }

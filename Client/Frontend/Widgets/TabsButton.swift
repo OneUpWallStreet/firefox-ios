@@ -6,13 +6,13 @@ import Foundation
 import SnapKit
 import Shared
 
-struct TabsButtonUX {
-    static let CornerRadius: CGFloat = 2
-    static let TitleFont: UIFont = UIConstants.DefaultChromeSmallFontBold
-    static let BorderStrokeWidth: CGFloat = 1.5
-}
-
 class TabsButton: UIButton {
+
+    struct UX {
+        static let cornerRadius: CGFloat = 2
+        static let titleFont: UIFont = UIConstants.DefaultChromeSmallFontBold
+    }
+
     var textColor = UIColor.Photon.Blue40 {
         didSet {
             countLabel.textColor = textColor
@@ -42,8 +42,8 @@ class TabsButton: UIButton {
 
     lazy var countLabel: UILabel = {
         let label = UILabel()
-        label.font = TabsButtonUX.TitleFont
-        label.layer.cornerRadius = TabsButtonUX.CornerRadius
+        label.font = UX.titleFont
+        label.layer.cornerRadius = UX.cornerRadius
         label.textAlignment = .center
         label.isUserInteractionEnabled = false
         return label
@@ -58,13 +58,13 @@ class TabsButton: UIButton {
 
     fileprivate lazy var labelBackground: UIView = {
         let background = UIView()
-        background.layer.cornerRadius = TabsButtonUX.CornerRadius
+        background.layer.cornerRadius = UX.cornerRadius
         background.isUserInteractionEnabled = false
         return background
     }()
 
     fileprivate lazy var borderView: UIImageView = {
-        let border = UIImageView(image: UIImage(named: "nav-tabcounter")?.withRenderingMode(.alwaysTemplate))
+        let border = UIImageView(image: UIImage(named: ImageIdentifiers.navTabCounter)?.withRenderingMode(.alwaysTemplate))
         border.tintColor = UIColor.theme.browser.tint
         return border
     }()
@@ -103,7 +103,7 @@ class TabsButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
 
-    @objc override func clone() -> UIView {
+    func createTabsButton() -> TabsButton {
         let button = TabsButton()
 
         button.accessibilityLabel = accessibilityLabel
@@ -127,9 +127,7 @@ class TabsButton: UIButton {
         countToBe = (count < 100) ? count.description : infinity
 
         // only animate a tab count change if the tab count has actually changed
-        guard currentCount != count.description || (clonedTabsButton?.countLabel.text ?? count.description) != count.description else {
-            return
-        }
+        guard currentCount != count.description || (clonedTabsButton?.countLabel.text ?? count.description) != count.description else { return }
 
         // Re-entrancy guard: if this code is running just update the tab count value without starting another animation.
         if isUpdatingTabCount {
@@ -141,14 +139,13 @@ class TabsButton: UIButton {
         }
         isUpdatingTabCount = true
 
-        if let _ = self.clonedTabsButton {
+        if self.clonedTabsButton != nil {
             self.clonedTabsButton?.layer.removeAllAnimations()
             self.clonedTabsButton?.removeFromSuperview()
             insideButton.layer.removeAllAnimations()
         }
 
-        // make a 'clone' of the tabs button
-        let newTabsButton = clone() as! TabsButton
+        let newTabsButton = createTabsButton()
 
         self.clonedTabsButton = newTabsButton
         newTabsButton.frame = self.bounds

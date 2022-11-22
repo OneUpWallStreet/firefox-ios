@@ -18,6 +18,7 @@ final class LoginListViewModel {
     private(set) var profile: Profile
     private(set) var isDuringSearchControllerDismiss = false
     private(set) var count = 0
+    private(set) var hasData: Bool = false
     weak var searchController: UISearchController?
     weak var delegate: LoginViewModelDelegate?
     private(set) var activeLoginQuery: Deferred<Maybe<[LoginRecord]>>?
@@ -39,9 +40,12 @@ final class LoginListViewModel {
         }
     }
     var hasLoadedBreaches: Bool = false
-    init(profile: Profile, searchController: UISearchController) {
+    var theme: Theme
+
+    init(profile: Profile, searchController: UISearchController, theme: Theme) {
         self.profile = profile
         self.searchController = searchController
+        self.theme = theme
     }
 
     func loadLogins(_ query: String? = nil, loginDataSource: LoginDataSource) {
@@ -109,9 +113,10 @@ final class LoginListViewModel {
 
     func indexPathForLogin(_ login: LoginRecord) -> IndexPath? {
         let title = self.helper.titleForLogin(login)
-        guard let section = self.titles.firstIndex(of: title), let row = self.loginRecordSections[title]?.firstIndex(of: login) else {
-            return nil
-        }
+        guard let section = self.titles.firstIndex(of: title),
+              let row = self.loginRecordSections[title]?.firstIndex(of: login)
+        else { return nil }
+
         return IndexPath(row: row, section: section+1)
     }
 
@@ -128,13 +133,18 @@ final class LoginListViewModel {
         // NB: Make sure we call the callback on the main thread so it can be synced up with a reloadData to
         //     prevent race conditions between data/UI indexing.
         return self.helper.computeSectionsFromLogins(logins).uponQueue(.main) { result in
-            guard let (titles, sections) = result.successValue, logins.count > 0 else {
+            guard let (titles, sections) = result.successValue,
+                  !logins.isEmpty
+            else {
                 self.count = 0
+                self.hasData = false
                 self.titles = []
                 self.loginRecordSections = [:]
                 return
             }
+
             self.count = logins.count
+            self.hasData = !logins.isEmpty
             self.titles = titles
             self.loginRecordSections = sections
 
@@ -160,11 +170,10 @@ final class LoginListViewModel {
 
     // MARK: - UX Constants
     struct LoginListUX {
-        static let RowHeight: CGFloat = 58
-        static let SearchHeight: CGFloat = 58
+        static let rowHeight: CGFloat = 58
+        static let searchHeight: CGFloat = 58
         static let selectionButtonFont = UIFont.systemFont(ofSize: 16)
-        static let NoResultsFont = UIFont.systemFont(ofSize: 16)
-        static let NoResultsTextColor = UIColor.Photon.Grey40
+        static let noResultsFont = UIFont.systemFont(ofSize: 16)
     }
 }
 

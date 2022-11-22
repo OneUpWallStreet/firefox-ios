@@ -48,7 +48,18 @@ protocol URLBarDelegate: AnyObject {
     func urlBarDidBeginDragInteraction(_ urlBar: URLBarView)
 }
 
-class URLBarView: UIView, AlphaDimmable, TopBottomInterchangeable {
+protocol URLBarViewProtocol {
+    var inOverlayMode: Bool { get }
+    func leaveOverlayMode(didCancel cancel: Bool)
+}
+
+extension URLBarViewProtocol {
+    func leaveOverlayMode(didCancel cancel: Bool = false) {
+        self.leaveOverlayMode(didCancel: cancel)
+    }
+}
+
+class URLBarView: UIView, URLBarViewProtocol, AlphaDimmable, TopBottomInterchangeable {
     // Additional UIAppearance-configurable properties
     @objc dynamic var locationBorderColor: UIColor = URLBarViewUX.TextFieldBorderColor {
         didSet {
@@ -174,7 +185,15 @@ class URLBarView: UIView, AlphaDimmable, TopBottomInterchangeable {
         return backButton
     }()
 
-    lazy var actionButtons: [NotificationThemeable & UIButton] = [self.tabsButton, self.homeButton, self.bookmarksButton, self.appMenuButton, self.addNewTabButton, self.forwardButton, self.backButton, self.multiStateButton]
+    lazy var actionButtons: [NotificationThemeable & UIButton] = [
+        self.tabsButton,
+        self.homeButton,
+        self.bookmarksButton,
+        self.appMenuButton,
+        self.addNewTabButton,
+        self.forwardButton,
+        self.backButton,
+        self.multiStateButton]
 
     var currentURL: URL? {
         get {
@@ -191,10 +210,7 @@ class URLBarView: UIView, AlphaDimmable, TopBottomInterchangeable {
         }
     }
 
-    var profile: Profile?
-    private var isBottomSearchBar: Bool {
-        BrowserViewController.foregroundBVC().isBottomSearchBar
-    }
+    var profile: Profile
 
     fileprivate let privateModeBadge = BadgeWithBackdrop(imageName: "privateModeBadge", backdropCircleColor: UIColor.Defaults.MobilePrivatePurple)
     fileprivate let appMenuBadge = BadgeWithBackdrop(imageName: "menuBadge")
@@ -207,14 +223,17 @@ class URLBarView: UIView, AlphaDimmable, TopBottomInterchangeable {
         commonInit()
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     func updateSearchEngineImage() {
-        guard let profile = profile else { return }
         self.searchIconImageView.image = profile.searchEngines.defaultEngine.image
+    }
+
+    private func isBottomSearchBar() -> Bool {
+        guard SearchBarSettingsViewModel.isEnabled else { return false }
+        return SearchBarSettingsViewModel(prefs: profile.prefs).searchBarPosition == .bottom
     }
 
     fileprivate func commonInit() {
@@ -327,7 +346,7 @@ class URLBarView: UIView, AlphaDimmable, TopBottomInterchangeable {
         super.updateConstraints()
 
         line.snp.remakeConstraints { make in
-            if isBottomSearchBar {
+            if isBottomSearchBar() {
                 make.top.equalTo(self).offset(0)
             } else {
                 make.bottom.equalTo(self)
@@ -338,7 +357,7 @@ class URLBarView: UIView, AlphaDimmable, TopBottomInterchangeable {
         }
 
         progressBar.snp.remakeConstraints { make in
-            if isBottomSearchBar {
+            if isBottomSearchBar() {
                 make.bottom.equalTo(snp.top).inset(URLBarViewUX.ProgressBarHeight / 2)
             } else {
                 make.top.equalTo(snp.bottom).inset(URLBarViewUX.ProgressBarHeight / 2)
@@ -530,7 +549,7 @@ class URLBarView: UIView, AlphaDimmable, TopBottomInterchangeable {
         }
     }
 
-    func leaveOverlayMode(didCancel cancel: Bool = false) {
+    func leaveOverlayMode(didCancel cancel: Bool) {
         locationTextField?.resignFirstResponder()
         animateToOverlayState(overlayMode: false, didCancel: cancel)
         delegate?.urlBarDidLeaveOverlayMode(self)
@@ -604,7 +623,7 @@ class URLBarView: UIView, AlphaDimmable, TopBottomInterchangeable {
         // badge isHidden is tied to private mode on/off, use alpha to hide in this case
         [privateModeBadge, appMenuBadge, warningMenuBadge].forEach {
             $0.badge.alpha = (!toolbarIsShowing || inOverlayMode) ? 0 : 1
-            $0.backdrop.alpha = (!toolbarIsShowing || inOverlayMode) ? 0 : BadgeWithBackdrop.backdropAlpha
+            $0.backdrop.alpha = (!toolbarIsShowing || inOverlayMode) ? 0 : BadgeWithBackdrop.UX.backdropAlpha
         }
 
     }
@@ -619,13 +638,19 @@ class URLBarView: UIView, AlphaDimmable, TopBottomInterchangeable {
             removeLocationTextField()
         }
 
-        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.0, options: [], animations: {
-            self.transitionToOverlay(cancel)
-            self.setNeedsUpdateConstraints()
-            self.layoutIfNeeded()
-        }, completion: { _ in
-            self.updateViewsForOverlayModeAndToolbarChanges()
-        })
+        UIView.animate(
+            withDuration: 0.3,
+            delay: 0.0,
+            usingSpringWithDamping: 0.85,
+            initialSpringVelocity: 0.0,
+            options: [],
+            animations: {
+                self.transitionToOverlay(cancel)
+                self.setNeedsUpdateConstraints()
+                self.layoutIfNeeded()
+            }, completion: { _ in
+                self.updateViewsForOverlayModeAndToolbarChanges()
+            })
     }
 
     func didClickAddTab() {
@@ -650,9 +675,7 @@ extension URLBarView: TabToolbarProtocol {
 
     func appMenuBadge(setVisible: Bool) {
         // Warning badges should take priority over the standard badge
-        guard warningMenuBadge.badge.isHidden else {
-            return
-        }
+        guard warningMenuBadge.badge.isHidden else { return }
 
         appMenuBadge.show(setVisible)
     }
@@ -843,7 +866,9 @@ extension URLBarView: PrivateModeUI {
         }
 
         locationActiveBorderColor = UIColor.theme.urlbar.activeBorder(isPrivate)
-        progressBar.setGradientColors(startColor: UIColor.theme.loadingBar.start(isPrivate), endColor: UIColor.theme.loadingBar.end(isPrivate))
+        progressBar.setGradientColors(startColor: UIColor.theme.loadingBar.start(isPrivate),
+                                      middleColor: UIColor.theme.loadingBar.middle(isPrivate),
+                                      endColor: UIColor.theme.loadingBar.end(isPrivate))
         ToolbarTextField.applyUIMode(isPrivate: isPrivate)
 
         applyTheme()

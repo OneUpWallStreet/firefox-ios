@@ -25,47 +25,60 @@ struct LoginDetailUX {
     static let SeparatorHeight: CGFloat = 84
 }
 
-fileprivate class CenteredDetailCell: ThemedTableViewCell {
+private class CenteredDetailCell: ThemedTableViewCell, ReusableCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         var f = detailTextLabel?.frame ?? CGRect()
         f.center = CGPoint(x: frame.center.x - safeAreaInsets.right, y: frame.center.y)
         detailTextLabel?.frame = f
     }
+
+    override func applyTheme(theme: Theme) {
+        super.applyTheme(theme: theme)
+        backgroundColor = theme.colors.layer1
+    }
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
-class LoginDetailViewController: SensitiveViewController {
-    fileprivate let profile: Profile
+class LoginDetailViewController: SensitiveViewController, Themeable {
 
-    fileprivate lazy var tableView: UITableView = .build { [weak self] tableView in
+    var themeManager: ThemeManager
+    var themeObserver: NSObjectProtocol?
+    var notificationCenter: NotificationProtocol
+
+    private let profile: Profile
+
+    private lazy var tableView: UITableView = .build { [weak self] tableView in
         guard let self = self else { return }
-
-        tableView.separatorColor = UIColor.theme.tableView.separator
-        tableView.backgroundColor = UIColor.theme.tableView.headerBackground
         tableView.accessibilityIdentifier = "Login Detail List"
         tableView.delegate = self
         tableView.dataSource = self
 
-        // Add empty footer view to prevent seperators from being drawn past the last item.
+        // Add empty footer view to prevent separators from being drawn past the last item.
         tableView.tableFooterView = UIView()
     }
 
-    fileprivate weak var websiteField: UITextField?
-    fileprivate weak var usernameField: UITextField?
-    fileprivate weak var passwordField: UITextField?
-    // Used to temporarily store a reference to the cell the user is showing the menu controller for
-    fileprivate var menuControllerCell: LoginDetailTableViewCell?
-    fileprivate var deleteAlert: UIAlertController?
+    private weak var websiteField: UITextField?
+    private weak var usernameField: UITextField?
+    private weak var passwordField: UITextField?
+    private var deleteAlert: UIAlertController?
     weak var settingsDelegate: SettingsDelegate?
-    fileprivate var breach: BreachRecord?
-    fileprivate var login: LoginRecord {
+    private var breach: BreachRecord?
+    private var login: LoginRecord {
         didSet {
             tableView.reloadData()
         }
     }
     var webpageNavigationHandler: ((_ url: URL?) -> Void)?
 
-    fileprivate var isEditingFieldData: Bool = false {
+    private var isEditingFieldData: Bool = false {
         didSet {
             if isEditingFieldData != oldValue {
                 tableView.reloadData()
@@ -73,10 +86,16 @@ class LoginDetailViewController: SensitiveViewController {
         }
     }
 
-    init(profile: Profile, login: LoginRecord, webpageNavigationHandler: ((_ url: URL?) -> Void)?) {
+    init(profile: Profile,
+         login: LoginRecord,
+         webpageNavigationHandler: ((_ url: URL?) -> Void)?,
+         themeManager: ThemeManager = AppContainer.shared.resolve(),
+         notificationCenter: NotificationCenter = NotificationCenter.default) {
         self.login = login
         self.profile = profile
         self.webpageNavigationHandler = webpageNavigationHandler
+        self.themeManager = themeManager
+        self.notificationCenter = notificationCenter
         super.init(nibName: nil, bundle: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(dismissAlertController), name: UIApplication.didEnterBackgroundNotification, object: nil)
@@ -95,6 +114,8 @@ class LoginDetailViewController: SensitiveViewController {
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(edit))
 
+        tableView.register(cellType: LoginDetailTableViewCell.self)
+        tableView.register(cellType: CenteredDetailCell.self)
         view.addSubview(tableView)
 
         NSLayoutConstraint.activate([
@@ -104,6 +125,10 @@ class LoginDetailViewController: SensitiveViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         tableView.estimatedRowHeight = 44.0
+        tableView.separatorInset = .zero
+
+        applyTheme()
+        listenForThemeChange()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -114,28 +139,10 @@ class LoginDetailViewController: SensitiveViewController {
         KeyboardHelper.defaultHelper.addDelegate(self)
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        // The following hacks are to prevent the default cell separators from displaying. We want to
-        // hide the default separator for the website/last modified cells since the last modified cell
-        // draws its own separators. The last item in the list draws its separator full width.
-
-        // Prevent separators from showing by pushing them off screen by the width of the cell
-        let itemsToHideSeparators: [InfoItem] = [.passwordItem, .lastModifiedSeparator]
-        itemsToHideSeparators.forEach { item in
-            let cell = tableView.cellForRow(at: IndexPath(row: item.rawValue, section: 0))
-            cell?.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: cell?.bounds.width ?? 0)
-        }
-
-        // Rows to display full width separator
-        let itemsToShowFullWidthSeparator: [InfoItem] = [.deleteItem]
-        itemsToShowFullWidthSeparator.forEach { item in
-            let cell = tableView.cellForRow(at: IndexPath(row: item.rawValue, section: 0))
-            cell?.separatorInset = .zero
-            cell?.layoutMargins = .zero
-            cell?.preservesSuperviewLayoutMargins = false
-        }
+    func applyTheme() {
+        let theme = themeManager.currentTheme
+        tableView.separatorColor = theme.colors.borderPrimary
+        tableView.backgroundColor = theme.colors.layer1
     }
 }
 
@@ -145,7 +152,9 @@ extension LoginDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch InfoItem(rawValue: indexPath.row)! {
         case .breachItem:
-            let breachCell = cell(forIndexPath: indexPath)
+            guard let breachCell = cell(tableView: tableView, forIndexPath: indexPath) else {
+                return UITableViewCell()
+            }
             guard let breach = breach else { return breachCell }
             breachCell.isHidden = false
             let breachDetailView = BreachAlertsDetailView()
@@ -166,11 +175,14 @@ extension LoginDetailViewController: UITableViewDataSource {
             breachCell.isAccessibilityElement = false
             breachCell.contentView.accessibilityElementsHidden = true
             breachCell.accessibilityElements = [breachDetailView]
+            breachCell.applyTheme(theme: themeManager.currentTheme)
 
             return breachCell
 
         case .usernameItem:
-            let loginCell = cell(forIndexPath: indexPath)
+            guard let loginCell = cell(tableView: tableView, forIndexPath: indexPath) else {
+                return UITableViewCell()
+            }
             loginCell.highlightedLabelTitle = .LoginDetailUsername
             loginCell.descriptionLabel.text = login.decryptedUsername
             loginCell.descriptionLabel.keyboardType = .emailAddress
@@ -178,21 +190,28 @@ extension LoginDetailViewController: UITableViewDataSource {
             loginCell.isEditingFieldData = isEditingFieldData
             usernameField = loginCell.descriptionLabel
             usernameField?.accessibilityIdentifier = "usernameField"
+            loginCell.applyTheme(theme: themeManager.currentTheme)
             return loginCell
 
         case .passwordItem:
-            let loginCell = cell(forIndexPath: indexPath)
+            guard let loginCell = cell(tableView: tableView, forIndexPath: indexPath) else {
+                return UITableViewCell()
+            }
             loginCell.highlightedLabelTitle = .LoginDetailPassword
             loginCell.descriptionLabel.text = login.decryptedPassword
             loginCell.descriptionLabel.returnKeyType = .default
             loginCell.displayDescriptionAsPassword = true
             loginCell.isEditingFieldData = isEditingFieldData
+            setCellSeparatorHidden(loginCell)
             passwordField = loginCell.descriptionLabel
             passwordField?.accessibilityIdentifier = "passwordField"
+            loginCell.applyTheme(theme: themeManager.currentTheme)
             return loginCell
 
         case .websiteItem:
-            let loginCell = cell(forIndexPath: indexPath)
+            guard let loginCell = cell(tableView: tableView, forIndexPath: indexPath) else {
+                return UITableViewCell()
+            }
             loginCell.highlightedLabelTitle = .LoginDetailWebsite
             loginCell.descriptionLabel.text = login.hostname
             websiteField = loginCell.descriptionLabel
@@ -201,10 +220,15 @@ extension LoginDetailViewController: UITableViewDataSource {
             if isEditingFieldData {
                 loginCell.contentView.alpha = 0.5
             }
+            loginCell.applyTheme(theme: themeManager.currentTheme)
             return loginCell
 
         case .lastModifiedSeparator:
-            let cell = CenteredDetailCell(style: .subtitle, reuseIdentifier: nil)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CenteredDetailCell.cellIdentifier,
+                                                           for: indexPath) as? CenteredDetailCell else {
+                return UITableViewCell()
+            }
+
             let created: String = .LoginDetailCreatedAt
             let lastModified: String = .LoginDetailModifiedAt
 
@@ -214,25 +238,47 @@ extension LoginDetailViewController: UITableViewDataSource {
             cell.detailTextLabel?.text = createdFormatted + "\n" + lastModifiedFormatted
             cell.detailTextLabel?.numberOfLines = 2
             cell.detailTextLabel?.textAlignment = .center
-            cell.backgroundColor = view.backgroundColor
+            setCellSeparatorHidden(cell)
+            cell.applyTheme(theme: themeManager.currentTheme)
             return cell
 
         case .deleteItem:
-            let deleteCell = cell(forIndexPath: indexPath)
+            guard let deleteCell = cell(tableView: tableView, forIndexPath: indexPath) else {
+                return UITableViewCell()
+            }
             deleteCell.textLabel?.text = .LoginDetailDelete
             deleteCell.textLabel?.textAlignment = .center
-            deleteCell.textLabel?.textColor = UIColor.theme.general.destructiveRed
             deleteCell.accessibilityTraits = UIAccessibilityTraits.button
-            deleteCell.backgroundColor = UIColor.theme.tableView.rowBackground
+            deleteCell.configure(type: .delete)
+            deleteCell.applyTheme(theme: themeManager.currentTheme)
+
+            setCellSeparatorFullWidth(deleteCell)
             return deleteCell
         }
     }
 
-    fileprivate func cell(forIndexPath indexPath: IndexPath) -> LoginDetailTableViewCell {
-        let loginCell = LoginDetailTableViewCell()
-        loginCell.selectionStyle = .none
-        loginCell.delegate = self
-        return loginCell
+    private func cell(tableView: UITableView, forIndexPath indexPath: IndexPath) -> LoginDetailTableViewCell? {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: LoginDetailTableViewCell.cellIdentifier,
+                                                       for: indexPath) as? LoginDetailTableViewCell else {
+            return nil
+        }
+        cell.selectionStyle = .none
+        cell.delegate = self
+        return cell
+    }
+
+    private func setCellSeparatorHidden(_ cell: UITableViewCell) {
+        // Prevent seperator from showing by pushing it off screen by the width of the cell
+        cell.separatorInset = UIEdgeInsets(top: 0,
+                                           left: 0,
+                                           bottom: 0,
+                                           right: view.frame.width)
+    }
+
+    private func setCellSeparatorFullWidth(_ cell: UITableViewCell) {
+        cell.separatorInset = .zero
+        cell.layoutMargins = .zero
+        cell.preservesSuperviewLayoutMargins = false
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -268,7 +314,7 @@ extension LoginDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch InfoItem(rawValue: indexPath.row)! {
         case .breachItem:
-            guard let _ = breach else { return 0 }
+            guard breach != nil else { return 0 }
             return UITableView.automaticDimension
         case .usernameItem, .passwordItem, .websiteItem:
             return LoginDetailUX.InfoRowHeight
@@ -313,7 +359,7 @@ extension LoginDetailViewController {
     }
 
     func deleteLogin() {
-        profile.logins.hasSyncedLogins().uponQueue(.main) { yes in
+        profile.hasSyncedLogins().uponQueue(.main) { yes in
             self.deleteAlert = UIAlertController.deleteLoginAlertWithDeleteCallback({ [unowned self] _ in
                 self.profile.logins.deleteLogin(id: self.login.id).uponQueue(.main) { _ in
                     _ = self.navigationController?.popViewController(animated: true)
@@ -344,11 +390,6 @@ extension LoginDetailViewController {
         isEditingFieldData = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(edit))
 
-        defer {
-            // Required to get UI to reload with changed state
-            tableView.reloadData()
-        }
-
         // Only update if user made changes
         guard let username = usernameField?.text, let password = passwordField?.text else { return }
 
@@ -368,7 +409,11 @@ extension LoginDetailViewController {
         )
 
         if updatedLogin.isValid.isSuccess {
-            _ = profile.logins.updateLogin(id: login.id, login: updatedLogin)
+            profile.logins.updateLogin(id: login.id, login: updatedLogin).uponQueue(.main) { _ in
+                self.onProfileDidFinishSyncing()
+                // Required to get UI to reload with changed state
+                self.tableView.reloadData()
+            }
         }
     }
 }
@@ -397,14 +442,12 @@ extension LoginDetailViewController: LoginDetailTableViewCellDelegate {
         }
     }
 
-    fileprivate func cellForItem(_ item: InfoItem) -> LoginDetailTableViewCell? {
+    private func cellForItem(_ item: InfoItem) -> LoginDetailTableViewCell? {
         return tableView.cellForRow(at: item.indexPath) as? LoginDetailTableViewCell
     }
 
     func didSelectOpenAndFillForCell(_ cell: LoginDetailTableViewCell) {
-        guard let url = (login.formSubmitUrl?.asURL ?? login.hostname.asURL) else {
-            return
-        }
+        guard let url = (login.formSubmitUrl?.asURL ?? login.hostname.asURL) else { return }
 
         navigationController?.dismiss(animated: true, completion: {
             self.settingsDelegate?.settingsOpenURLInNewTab(url)

@@ -6,9 +6,6 @@ import UIKit
 import Shared
 import SnapKit
 import Storage
-import SDWebImage
-
-private let log = Logger.browserLogger
 
 class CustomSearchError: MaybeErrorType {
 
@@ -33,7 +30,7 @@ class CustomSearchViewController: SettingsTableViewController {
     fileprivate var engineTitle = ""
     fileprivate lazy var spinnerView: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .medium)
-        spinner.color = .systemGray
+        spinner.color = themeManager.currentTheme.colors.iconSpinner
         spinner.hidesWhenStopped = true
         return spinner
     }()
@@ -127,32 +124,35 @@ class CustomSearchViewController: SettingsTableViewController {
     override func generateSettings() -> [SettingSection] {
 
         func URLFromString(_ string: String?) -> URL? {
-            guard let string = string else {
-                return nil
-            }
+            guard let string = string else { return nil }
             return URL(string: string)
         }
 
-        let titleField = CustomSearchEngineTextView(placeholder: .SettingsAddCustomEngineTitlePlaceholder, settingIsValid: { text in
-            return text != nil && text != ""
-        }, settingDidChange: {fieldText in
-            guard let title = fieldText else {
-                return
-            }
-            self.engineTitle = title
-            self.updateSaveButton()
-        })
+        let titleField = CustomSearchEngineTextView(
+            placeholder: .SettingsAddCustomEngineTitlePlaceholder,
+            settingIsValid: { text in
+                if let text = text { return !text.isEmpty }
+
+                return false
+            }, settingDidChange: {fieldText in
+                guard let title = fieldText else { return }
+                self.engineTitle = title
+                self.updateSaveButton()
+            })
         titleField.textField.text = engineTitle
         titleField.textField.accessibilityIdentifier = "customEngineTitle"
 
-        let urlField = CustomSearchEngineTextView(placeholder: .SettingsAddCustomEngineURLPlaceholder, height: 133,
-            keyboardType: .URL, settingIsValid: { text in
-            // Can check url text text validity here.
-            return true
-        }, settingDidChange: {fieldText in
-            self.urlString = fieldText
-            self.updateSaveButton()
-        })
+        let urlField = CustomSearchEngineTextView(
+            placeholder: .SettingsAddCustomEngineURLPlaceholder,
+            height: 133,
+            keyboardType: .URL,
+            settingIsValid: { text in
+                // Can check url text text validity here.
+                return true
+            }, settingDidChange: {fieldText in
+                self.urlString = fieldText
+                self.updateSaveButton()
+            })
 
         urlField.textField.autocapitalizationType = .none
         urlField.textField.text = urlString
@@ -198,7 +198,14 @@ class CustomSearchEngineTextView: Setting, UITextViewDelegate {
     let placeholderLabel = UILabel()
     var keyboardType: UIKeyboardType = .default
 
-    init(defaultValue: String? = nil, placeholder: String, height: CGFloat = 44, keyboardType: UIKeyboardType = .default, settingIsValid isValueValid: ((String?) -> Bool)? = nil, settingDidChange: ((String?) -> Void)? = nil) {
+    init(
+        defaultValue: String? = nil,
+        placeholder: String,
+        height: CGFloat = 44,
+        keyboardType: UIKeyboardType = .default,
+        settingIsValid isValueValid: ((String?) -> Bool)? = nil,
+        settingDidChange: ((String?) -> Void)? = nil
+    ) {
         self.defaultValue = defaultValue
         self.TextFieldHeight = height
         self.settingDidChange = settingDidChange
@@ -209,14 +216,14 @@ class CustomSearchEngineTextView: Setting, UITextViewDelegate {
         super.init(cellHeight: TextFieldHeight)
     }
 
-    override func onConfigureCell(_ cell: UITableViewCell) {
-        super.onConfigureCell(cell)
+    override func onConfigureCell(_ cell: UITableViewCell, theme: Theme) {
+        super.onConfigureCell(cell, theme: theme)
         if let id = accessibilityIdentifier {
             textField.accessibilityIdentifier = id + "TextField"
         }
 
         placeholderLabel.adjustsFontSizeToFitWidth = true
-        placeholderLabel.textColor = UIColor.theme.general.settingsTextPlaceholder
+        placeholderLabel.textColor = theme.colors.textSecondary
         placeholderLabel.text = placeholder
         placeholderLabel.isHidden = !textField.text.isEmpty
         placeholderLabel.frame = CGRect(width: TextLabelWidth, height: TextLabelHeight)
@@ -224,13 +231,13 @@ class CustomSearchEngineTextView: Setting, UITextViewDelegate {
 
         textField.textContainer.lineFragmentPadding = 0
         textField.keyboardType = keyboardType
-        if (keyboardType == .default) {
+        if keyboardType == .default {
             textField.autocapitalizationType = .words
         }
         textField.autocorrectionType = .no
         textField.delegate = self
-        textField.backgroundColor = UIColor.theme.tableView.rowBackground
-        textField.textColor = UIColor.theme.tableView.rowText
+        textField.backgroundColor = theme.colors.layer2
+        textField.textColor = theme.colors.textPrimary
         cell.isUserInteractionEnabled = true
         cell.accessibilityTraits = UIAccessibilityTraits.none
         cell.contentView.addSubview(textField)
@@ -258,18 +265,18 @@ class CustomSearchEngineTextView: Setting, UITextViewDelegate {
     }
 
     func textViewDidBeginEditing(_ textView: UITextView) {
-        placeholderLabel.isHidden = textField.text != ""
+        placeholderLabel.isHidden = !textField.text.isEmpty
     }
 
     func textViewDidChange(_ textView: UITextView) {
-        placeholderLabel.isHidden = textField.text != ""
+        placeholderLabel.isHidden = !textField.text.isEmpty
         settingDidChange?(textView.text)
-        let color = isValid(textField.text) ? UIColor.theme.tableView.rowText : UIColor.theme.general.destructiveRed
+        let color = isValid(textField.text) ? theme.colors.textPrimary : theme.colors.textWarning
         textField.textColor = color
     }
 
     func textViewDidEndEditing(_ textView: UITextView) {
-        placeholderLabel.isHidden = textField.text != ""
+        placeholderLabel.isHidden = !textField.text.isEmpty
         settingDidChange?(textView.text)
     }
 }

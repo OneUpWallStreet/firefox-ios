@@ -3,7 +3,6 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0
 
 import Shared
-import XCGLogger
 
 private let log = Logger.browserLogger
 
@@ -13,7 +12,11 @@ public typealias IdentifierString = String
 public extension IdentifierString {
     func validate() -> Bool {
         let regex = try! NSRegularExpression(pattern: "^[a-zA-Z][a-zA-Z0-9_.]*[a-zA-Z0-9]$", options: [])
-        return regex.matches(in: self, options: [], range: NSRange(location: 0, length: self.count)).count > 0
+        return !regex.matches(
+            in: self,
+            options: [],
+            range: NSRange(location: 0, length: self.count)
+        ).isEmpty
     }
 }
 

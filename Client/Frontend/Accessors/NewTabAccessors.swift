@@ -4,7 +4,6 @@
 
 import Foundation
 import Shared
-import XCGLogger
 
 /// Accessors to find what a new tab should do when created without a URL.
 struct NewTabAccessors {
@@ -13,9 +12,8 @@ struct NewTabAccessors {
     static let Default = NewTabPage.topSites
 
     static func getNewTabPage(_ prefs: Prefs) -> NewTabPage {
-        guard let raw = prefs.stringForKey(NewTabPrefKey) else {
-            return Default
-        }
+        guard let raw = prefs.stringForKey(NewTabPrefKey) else { return Default }
+
         let option = NewTabPage(rawValue: raw) ?? Default
         // Check if the user has chosen to open a homepage, but no homepage is set,
         // then use the default.
@@ -26,9 +24,8 @@ struct NewTabAccessors {
     }
 
     static func getHomePage(_ prefs: Prefs) -> NewTabPage {
-        guard let raw = prefs.stringForKey(HomePrefKey) else {
-            return Default
-        }
+        guard let raw = prefs.stringForKey(HomePrefKey) else { return Default }
+
         let option = NewTabPage(rawValue: raw) ?? Default
         // Check if the user has chosen to open a homepage, but no homepage is set,
         // then use the default.
@@ -67,15 +64,16 @@ enum NewTabPage: String {
     }
 
     var url: URL? {
-        guard let homePanel = self.homePanelType else {
-            return nil
-        }
+        guard let homePanel = self.homePanelType else { return nil }
         return homePanel.internalUrl as URL
     }
 
     static func fromAboutHomeURL(url: URL) -> NewTabPage? {
-        guard let internalUrl = InternalURL(url), internalUrl.isAboutHomeURL else { return nil}
-        guard let panelNumber = url.fragment?.split(separator: "=").last else { return nil }
+        guard let internalUrl = InternalURL(url),
+              internalUrl.isAboutHomeURL,
+              let panelNumber = url.fragment?.split(separator: "=").last
+        else { return nil }
+
         switch panelNumber {
         case "0":
             return NewTabPage.topSites

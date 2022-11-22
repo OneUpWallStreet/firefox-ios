@@ -27,8 +27,8 @@ class DevicePasscodeRequiredViewController: SettingsViewController {
         return button
     }()
 
-    init(profile: Profile? = nil, tabManager: TabManager? = nil, shownFromAppMenu: Bool = false) {
-        super.init(profile: profile, tabManager: tabManager)
+    init(shownFromAppMenu: Bool = false) {
+        super.init()
         self.shownFromAppMenu = shownFromAppMenu
     }
 
@@ -43,7 +43,7 @@ class DevicePasscodeRequiredViewController: SettingsViewController {
             navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(doneButtonTapped))
         }
 
-        self.title = .LoginsAndPasswordsTitle
+        self.title = .Settings.Passwords.Title
 
         self.view.addSubviews(warningLabel, learnMoreButton)
 

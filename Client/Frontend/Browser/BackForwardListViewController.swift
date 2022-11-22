@@ -47,10 +47,8 @@ class BackForwardListViewController: UIViewController, UITableViewDataSource, UI
     var listData = [WKBackForwardListItem]()
 
     var tableHeight: CGFloat {
-        get {
-            assert(Thread.isMainThread, "tableHeight interacts with UIKit components - cannot call from background thread.")
-            return min(BackForwardViewUX.RowHeight * CGFloat(listData.count), self.view.frame.height/2)
-        }
+        assert(Thread.isMainThread, "tableHeight interacts with UIKit components - cannot call from background thread.")
+        return min(BackForwardViewUX.RowHeight * CGFloat(listData.count), self.view.frame.height/2)
     }
 
     var backForwardTransitionDelegate: UIViewControllerTransitioningDelegate? {
@@ -94,17 +92,13 @@ class BackForwardListViewController: UIViewController, UITableViewDataSource, UI
     func loadSitesFromProfile() {
         let sql = profile.favicons as! SQLiteHistory
         let urls: [String] = listData.compactMap {
-            guard let internalUrl = InternalURL($0.url) else {
-                return $0.url.absoluteString
-            }
+            guard let internalUrl = InternalURL($0.url) else { return $0.url.absoluteString }
 
             return internalUrl.extractedUrlParam?.absoluteString
         }
 
         sql.getSites(forURLs: urls).uponQueue(.main) { result in
-            guard let results = result.successValue else {
-                return
-            }
+            guard let results = result.successValue else { return }
             // Add all results into the sites dictionary
             results.compactMap({$0}).forEach({site in
                 if let url = site?.url {
@@ -138,9 +132,7 @@ class BackForwardListViewController: UIViewController, UITableViewDataSource, UI
     }
 
     func scrollTableViewToIndex(_ index: Int) {
-        guard index > 1 else {
-            return
-        }
+        guard index > 1 else { return }
         let moveToIndexPath = IndexPath(row: index-2, section: 0)
         tableView.reloadRows(at: [moveToIndexPath], with: .none)
         tableView.scrollToRow(at: moveToIndexPath, at: .middle, animated: false)
@@ -148,9 +140,7 @@ class BackForwardListViewController: UIViewController, UITableViewDataSource, UI
 
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransition(to: newCollection, with: coordinator)
-        guard let bvc = self.bvc else {
-            return
-        }
+        guard let bvc = self.bvc else { return }
         if bvc.shouldShowToolbarForTraitCollection(newCollection) != snappedToBottom, !bvc.isBottomSearchBar {
             if snappedToBottom {
                 tableViewBottomAnchor.constant = 0
@@ -174,9 +164,7 @@ class BackForwardListViewController: UIViewController, UITableViewDataSource, UI
     }
 
     func remakeVerticalConstraints() {
-        guard let bvc = self.bvc else {
-            return
-        }
+        guard let bvc = self.bvc else { return }
         for constraint in self.verticalConstraints {
             constraint.isActive = false
         }
@@ -241,9 +229,10 @@ class BackForwardListViewController: UIViewController, UITableViewDataSource, UI
         let cell = self.tableView.dequeueReusableCell(withIdentifier: BackForwardListCellIdentifier, for: indexPath) as! BackForwardTableViewCell
         let item = listData[indexPath.item]
         let urlString = { () -> String in
-            guard let url = InternalURL(item.url), let extracted = url.extractedUrlParam else {
-                return item.url.absoluteString
-            }
+            guard let url = InternalURL(item.url),
+                  let extracted = url.extractedUrlParam
+            else { return item.url.absoluteString }
+
             return extracted.absoluteString
         }()
 

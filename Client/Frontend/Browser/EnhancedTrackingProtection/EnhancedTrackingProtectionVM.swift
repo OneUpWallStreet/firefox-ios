@@ -9,9 +9,9 @@ class EnhancedTrackingProtectionMenuVM {
 
     // MARK: - Variables
     var tab: Tab
-    var tabManager: TabManager
     var profile: Profile
     var onOpenSettingsTapped: (() -> Void)?
+    var heroImage: UIImage?
 
     var websiteTitle: String {
         return tab.url?.baseDomain ?? ""
@@ -26,10 +26,13 @@ class EnhancedTrackingProtectionMenuVM {
         return connectionSecure ? .ProtectionStatusSecure : .ProtectionStatusNotSecure
     }
 
-    var connectionStatusImage: UIImage {
-        let insecureImageString = LegacyThemeManager.instance.currentName == .dark ? "lock_blocked_dark" : "lock_blocked"
-        let image = connectionSecure ? UIImage(imageLiteralResourceName: "lock_verified").withRenderingMode(.alwaysTemplate) : UIImage(imageLiteralResourceName: insecureImageString)
-        return image
+    func getConnectionStatusImage(themeType: ThemeType) -> UIImage {
+        let insecureImageName = themeType.getThemedImageName(name: ImageIdentifiers.lockBlocked)
+        if connectionSecure {
+            return UIImage(imageLiteralResourceName: ImageIdentifiers.lockVerifed).withRenderingMode(.alwaysTemplate)
+        } else {
+            return UIImage(imageLiteralResourceName: insecureImageName)
+        }
     }
 
     var connectionSecure: Bool {
@@ -51,24 +54,20 @@ class EnhancedTrackingProtectionMenuVM {
 
     // MARK: - Initializers
 
-    init(tab: Tab, profile: Profile, tabManager: TabManager) {
+    init(tab: Tab, profile: Profile) {
         self.tab = tab
         self.profile = profile
-        self.tabManager = tabManager
-
     }
 
     // MARK: - Functions
 
     func getDetailsViewModel(withCachedImage cachedImage: UIImage?) -> EnhancedTrackingProtectionDetailsVM {
-        let verifier = String(format: .TPDetailsVerifiedBy, "EXAMPLE VERIFIER")
         return EnhancedTrackingProtectionDetailsVM(topLevelDomain: websiteTitle,
                                                    title: tab.displayTitle,
-                                                   image: cachedImage ?? UIImage(imageLiteralResourceName: "defaulFavicon"),
+                                                   image: cachedImage,
                                                    URL: tab.url?.absoluteDisplayString ?? websiteTitle,
-                                                   lockIcon: connectionStatusImage,
+                                                   getLockIcon: getConnectionStatusImage(themeType:),
                                                    connectionStatusMessage: connectionStatusString,
-                                                   connectionVerifier: verifier,
                                                    connectionSecure: connectionSecure)
     }
 

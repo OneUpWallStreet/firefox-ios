@@ -7,6 +7,7 @@ import WidgetKit
 import UIKit
 import Combine
 
+// Tab provider for Widgets
 struct TabProvider: TimelineProvider {
     public typealias Entry = OpenTabsEntry
     var tabsDict: [String: SimpleTab] = [:]
@@ -16,7 +17,7 @@ struct TabProvider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (OpenTabsEntry) -> Void) {
-        let allOpenTabs = SiteArchiver.tabsToRestore(tabsStateArchivePath: tabsStateArchivePath()).1
+        let allOpenTabs = SimpleTab.getSimpleTabs()
 
         let openTabs = allOpenTabs.values.filter {
             !$0.isPrivate
@@ -49,13 +50,6 @@ struct TabProvider: TimelineProvider {
             let timeline = Timeline(entries: [openTabsEntry], policy: .atEnd)
             completion(timeline)
         })
-    }
-
-    fileprivate func tabsStateArchivePath() -> String? {
-        let profilePath: String?
-        profilePath = FileManager.default.containerURL( forSecurityApplicationGroupIdentifier: AppInfo.sharedContainerIdentifier)?.appendingPathComponent("profile.profile").path
-        guard let path = profilePath else { return nil }
-        return URL(fileURLWithPath: path).appendingPathComponent("tabsState.archive").path
     }
 }
 

@@ -5,8 +5,8 @@
 import Foundation
 import Shared
 import WebKit
-import SDWebImage
 import CoreSpotlight
+import Kingfisher
 
 private let log = Logger.browserLogger
 
@@ -41,20 +41,33 @@ class HistoryClearable: Clearable {
 
         // Treat desktop sites as part of browsing history.
         Tab.ChangeUserAgent.clear()
-
-        return profile.history.clearHistory().bindQueue(.main) { success in
-            SDImageCache.shared.clearDisk()
-            SDImageCache.shared.clearMemory()
-            self.profile.recentlyClosedTabs.clearTabs()
-            self.profile.places.deleteHistoryMetadataOlderThan(olderThan: INT64_MAX).uponQueue(.global(qos: .userInteractive)) { _ in }
-            CSSearchableIndex.default().deleteAllSearchableItems()
-            NotificationCenter.default.post(name: .PrivateDataClearedHistory, object: nil)
-            log.debug("HistoryClearable succeeded: \(success).")
-
-            self.tabManager.clearAllTabsHistory()
-
-            return Deferred(value: success)
+        switch profile.historyApiConfiguration {
+        case .old:
+            return profile.history.clearHistory().bindQueue(.main) { success in
+                return self.clearAfterHistory(success: success)
+            }
+        case .new:
+            _ = profile.history.clearHistory()
+            return profile.places.deleteEverythingHistory().bindQueue(.main) { success in
+                return self.clearAfterHistory(success: success)
+            }
         }
+    }
+
+    func clearAfterHistory(success: Maybe<Void>) -> Success {
+        // Clear image cache - Kingfisher
+        KingfisherManager.shared.cache.clearMemoryCache()
+        KingfisherManager.shared.cache.clearDiskCache()
+
+        self.profile.recentlyClosedTabs.clearTabs()
+        self.profile.places.deleteHistoryMetadataOlderThan(olderThan: INT64_MAX).uponQueue(.global(qos: .userInteractive)) { _ in }
+        CSSearchableIndex.default().deleteAllSearchableItems()
+        NotificationCenter.default.post(name: .PrivateDataClearedHistory, object: nil)
+        log.debug("HistoryClearable succeeded: \(success).")
+
+        self.tabManager.clearAllTabsHistory()
+
+        return Deferred(value: success)
     }
 }
 
@@ -73,11 +86,6 @@ struct ClearableErrorType: MaybeErrorType {
 // Clear the web cache. Note, this has to close all open tabs in order to ensure the data
 // cached in them isn't flushed to disk.
 class CacheClearable: Clearable {
-    let tabManager: TabManager
-    init(tabManager: TabManager) {
-        self.tabManager = tabManager
-    }
-
     var label: String { .ClearableCache }
 
     func clear() -> Success {
@@ -128,10 +136,6 @@ private func deleteLibraryFolder(_ folder: String) throws {
 
 // Removes all app cache storage.
 class SiteDataClearable: Clearable {
-    let tabManager: TabManager
-    init(tabManager: TabManager) {
-        self.tabManager = tabManager
-    }
 
     var label: String { .ClearableOfflineData }
 
@@ -146,10 +150,6 @@ class SiteDataClearable: Clearable {
 
 // Remove all cookies stored by the site. This includes localStorage, sessionStorage, and WebSQL/IndexedDB.
 class CookiesClearable: Clearable {
-    let tabManager: TabManager
-    init(tabManager: TabManager) {
-        self.tabManager = tabManager
-    }
 
     var label: String { .ClearableCookies }
 
@@ -183,7 +183,12 @@ class DownloadedFilesClearable: Clearable {
 
     func clear() -> Success {
         if let downloadsPath = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("Downloads"),
-            let files = try? FileManager.default.contentsOfDirectory(at: downloadsPath, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants]) {
+            let files = try? FileManager.default.contentsOfDirectory(
+                at: downloadsPath,
+                includingPropertiesForKeys: nil,
+                options: [.skipsHiddenFiles,
+                          .skipsPackageDescendants,
+                          .skipsSubdirectoryDescendants]) {
             for file in files {
                 try? FileManager.default.removeItem(at: file)
             }

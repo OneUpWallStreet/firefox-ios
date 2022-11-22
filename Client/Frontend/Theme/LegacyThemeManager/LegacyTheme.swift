@@ -23,28 +23,28 @@ enum BuiltinThemeName: String {
 }
 
 // Convenience reference to these normal mode colors which are used in a few color classes.
-fileprivate let defaultBackground = UIColor.Photon.Grey10
-fileprivate let defaultSeparator = UIColor.Photon.Grey30
-fileprivate let defaultTextAndTint = UIColor.Photon.Grey80
+private let defaultBackground = UIColor.Photon.Grey10 // layer1 in new system
+private let defaultSeparator = UIColor.Photon.Grey30 // layerLightGray30
+private let defaultTextAndTint = UIColor.Photon.Grey80 // textPrimary in new system
 
 class TableViewColor {
-    var rowBackground: UIColor { return UIColor.Photon.White100 }
-    var rowText: UIColor { return UIColor.Photon.Grey90 }
-    var rowDetailText: UIColor { return UIColor.Photon.Grey60 }
-    var disabledRowText: UIColor { return UIColor.Photon.Grey40 }
-    var separator: UIColor { return defaultSeparator }
-    var headerBackground: UIColor { return defaultBackground }
+    var rowBackground: UIColor { return UIColor.Photon.White100 } // layer5
+    var rowText: UIColor { return UIColor.Photon.Grey90 } // textPrimary
+    var rowDetailText: UIColor { return UIColor.Photon.Grey60 } // textSecondary
+    var disabledRowText: UIColor { return UIColor.Photon.Grey40 } // textDisabled
+    var separator: UIColor { return defaultSeparator } // layer4
+    var headerBackground: UIColor { return defaultBackground } // layer1
     // Used for table headers in Settings and Photon menus
-    var headerTextLight: UIColor { return UIColor.Photon.Grey50 }
+    var headerTextLight: UIColor { return UIColor.Photon.Grey50 } // textSecondary
     // Used for table headers in home panel tables
     var headerTextDark: UIColor { return UIColor.Photon.Grey90 }
-    var rowActionAccessory: UIColor { return UIColor.Photon.Blue40 }
-    var controlTint: UIColor { return rowActionAccessory }
-    var syncText: UIColor { return defaultTextAndTint }
-    var errorText: UIColor { return UIColor.Photon.Red50 }
-    var warningText: UIColor { return UIColor.Photon.Orange50 }
-    var accessoryViewTint: UIColor { return UIColor.Photon.Grey40 }
-    var selectedBackground: UIColor { return UIColor.Custom.selectedHighlightLight }
+    var rowActionAccessory: UIColor { return UIColor.Photon.Blue40 } // actionPrimary
+    var controlTint: UIColor { return rowActionAccessory } // actionPrimary
+    var syncText: UIColor { return defaultTextAndTint } // textPrimary
+    var errorText: UIColor { return UIColor.Photon.Red50 } // textWarning
+    var warningText: UIColor { return UIColor.Photon.Orange50 } // textWarning
+    var accessoryViewTint: UIColor { return UIColor.Photon.Grey40 } // iconSecondary
+    var selectedBackground: UIColor { return UIColor.Custom.selectedHighlightLight } // layer5Hover
 }
 
 class ActionMenuColor {
@@ -63,7 +63,9 @@ class URLBarColor {
 
     // This text selection color is used in two ways:
     // 1) <UILabel>.background = textSelectionHighlight.withAlphaComponent(textSelectionHighlightAlpha)
-    // To simulate text highlighting when the URL bar is tapped once, this is a background color to create a simulated selected text effect. The color will have an alpha applied when assigning it to the background.
+    // To simulate text highlighting when the URL bar is tapped once, this is a background
+    // color to create a simulated selected text effect. The color will have an alpha
+    // applied when assigning it to the background.
     // 2) <UITextField>.tintColor = textSelectionHighlight.
     // When the text is in edit mode (tapping URL bar second time), this is assigned to the to set the selection (and cursor) color. The color is assigned directly to the tintColor.
     typealias TextSelectionHighlight = (labelMode: UIColor, textFieldMode: UIColor?)
@@ -96,11 +98,15 @@ class ToolbarButtonColor {
 
 class LoadingBarColor {
     func start(_ isPrivate: Bool) -> UIColor {
-        return !isPrivate ? UIColor.Photon.Blue40A30 : UIColor.Photon.Magenta60A30
+        return !isPrivate ? UIColor.Photon.Violet50 : UIColor.Photon.Magenta60A30
+    }
+    // Adds middle color for loadingBar only in public browsing
+    func middle(_ isPrivate: Bool) -> UIColor? {
+        return !isPrivate ? UIColor.Photon.Pink40 : nil
     }
 
     func end(_ isPrivate: Bool) -> UIColor {
-        return !isPrivate ? UIColor.Photon.Teal60 : UIColor.Photon.Purple60
+        return !isPrivate ? UIColor.Photon.Yellow40 : UIColor.Photon.Purple60
     }
 }
 
@@ -129,6 +135,7 @@ class EnhancedTrackingProtectionMenuColor {
     var sectionColor: UIColor { return .white }
     var switchAndButtonTint: UIColor { return UIColor.Photon.Blue50 }
     var subtextColor: UIColor { return UIColor.Photon.Grey75A60}
+    var closeButtonColor: UIColor { return UIColor.Photon.LightGrey30 }
 }
 
 class TopTabsColor {
@@ -175,15 +182,18 @@ class HomePanelColor {
 
     var siteTableHeaderBorder: UIColor { return UIColor.Photon.Grey30.withAlphaComponent(0.8) }
 
+    var topSitesBackground: UIColor { return UIColor.Photon.LightGrey10 }  // layer2
     var topSiteDomain: UIColor { return UIColor.Photon.DarkGrey90 }
     var topSitePin: UIColor { return UIColor.Photon.DarkGrey05 }
-    var topSitesBackground: UIColor { return UIColor.Photon.LightGrey10 }
+    var topSitesContainerView: UIColor { return .white }
+    var emptyTopSitesBorder: UIColor { return UIColor.Photon.DarkGrey40 }
 
     var shortcutBackground: UIColor { return .white }
     var shortcutShadowColor: CGColor { return UIColor(red: 0.23, green: 0.22, blue: 0.27, alpha: 1.0).cgColor }
-    var shortcutShadowOpacity: Float { return 0.2 }
 
-    var recentlySavedBookmarkCellBackground: UIColor { return .white}
+    var recentlySavedBookmarkCellBackground: UIColor { return .white }
+    var recentlySavedBookmarkImageBackground: UIColor { return UIColor.Photon.LightGrey10 }
+    var recentlySavedBookmarkTitle: UIColor { return UIColor.Photon.DarkGrey90 }
 
     var recentlyVisitedCellGroupImage: UIColor { return UIColor.Photon.DarkGrey90 }
     var recentlyVisitedCellBottomLine: UIColor { return UIColor.Photon.LightGrey40 }
@@ -205,6 +215,8 @@ class HomePanelColor {
 
     var customizeHomepageButtonBackground: UIColor { return UIColor.Photon.LightGrey30 }
     var customizeHomepageButtonText: UIColor { return UIColor.Photon.DarkGrey90 }
+
+    var sponsored: UIColor { return UIColor.Photon.DarkGrey05 }
 }
 
 class SnackBarColor {
@@ -217,16 +229,16 @@ class SnackBarColor {
 class GeneralColor {
     var faviconBackground: UIColor { return UIColor.clear }
     var passcodeDot: UIColor { return UIColor.Photon.Grey60 }
-    var highlightBlue: UIColor { return UIColor.Photon.Blue40 }
-    var destructiveRed: UIColor { return UIColor.Photon.Red50 }
+    var highlightBlue: UIColor { return UIColor.Photon.Blue40 } // actionPrimary
+    var destructiveRed: UIColor { return UIColor.Photon.Red50 } // textWarning
     var separator: UIColor { return defaultSeparator }
-    var settingsTextPlaceholder: UIColor { return UIColor.Photon.Grey40 }
-    var controlTint: UIColor { return UIColor.Photon.Blue40 }
+    var settingsTextPlaceholder: UIColor { return UIColor.Photon.Grey40 } // textDisabled? asked Crystal
+    var controlTint: UIColor { return UIColor.Photon.Blue40 } // actionPrimary
     var switchToggle: UIColor { return UIColor.Photon.Grey90A40 }
 }
 
 class HomeTabBannerColor {
-    var backgroundColor: UIColor { return UIColor.Photon.Grey30 }
+    var backgroundColor: UIColor { return UIColor.white }
     var textColor: UIColor { return UIColor.black }
     var closeButtonBackground: UIColor { return UIColor.Photon.Grey20 }
     var closeButton: UIColor { return UIColor.Photon.Grey80 }
@@ -234,6 +246,9 @@ class HomeTabBannerColor {
 
 class OnboardingColor {
     var backgroundColor: UIColor { return UIColor.white }
+    var etpBackgroundColor: UIColor { return UIColor.white }
+    var etpTextColor: UIColor { return UIColor.black }
+    var etpButtonColor: UIColor { return UIColor.Photon.Blue50 }
 }
 
 class RemoteTabTrayColor {
@@ -261,7 +276,7 @@ protocol LegacyTheme {
     var remotePanel: RemoteTabTrayColor { get }
 }
 
-class NormalTheme: LegacyTheme {
+class LegacyNormalTheme: LegacyTheme {
     var name: String { return BuiltinThemeName.normal.rawValue }
     var tableView: TableViewColor { return TableViewColor() }
     var urlbar: URLBarColor { return URLBarColor() }

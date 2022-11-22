@@ -5,16 +5,23 @@
 import UIKit
 import Shared
 import Storage
+import SwiftUI
 
-class SendToDevice: DevicePickerViewControllerDelegate, InstructionsViewControllerDelegate {
+class SendToDevice: DevicePickerViewControllerDelegate, InstructionsViewDelegate {
+
     var sharedItem: ShareItem?
     weak var delegate: ShareControllerDelegate?
 
     func initialViewController() -> UIViewController {
         if !hasAccount() {
-            let instructionsViewController = InstructionsViewController()
-            instructionsViewController.delegate = self
-            return instructionsViewController
+            let instructionsView = InstructionsView(backgroundColor: ShareTheme.defaultBackground.color,
+                                                    textColor: ShareTheme.textColor.color,
+                                                    imageColor: ShareTheme.iconColor.color,
+                                                    dismissAction: { [weak self] in
+                self?.dismissInstructionsView()
+            })
+            let hostingViewController = UIHostingController(rootView: instructionsView)
+            return hostingViewController
         }
         let devicePickerViewController = DevicePickerViewController()
         devicePickerViewController.pickerDelegate = self
@@ -33,7 +40,7 @@ class SendToDevice: DevicePickerViewControllerDelegate, InstructionsViewControll
 
         let profile = BrowserProfile(localName: "profile")
         profile.sendItem(item, toDevices: devices).uponQueue(.main) { _ in
-            profile._shutdown()
+            profile.shutdown()
             self.finish()
 
             addAppExtensionTelemetryEvent(forMethod: "send-to-device")
@@ -44,14 +51,14 @@ class SendToDevice: DevicePickerViewControllerDelegate, InstructionsViewControll
         finish()
     }
 
-    func instructionsViewControllerDidClose(_ instructionsViewController: InstructionsViewController) {
+    func dismissInstructionsView() {
         finish()
     }
 
     private func hasAccount() -> Bool {
         let profile = BrowserProfile(localName: "profile")
         defer {
-            profile._shutdown()
+            profile.shutdown()
         }
         return profile.hasAccount()
     }

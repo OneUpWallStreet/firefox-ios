@@ -4,10 +4,11 @@
 
 import Foundation
 
-class EnhancedTrackingProtectionDetailsVC: UIViewController {
+class EnhancedTrackingProtectionDetailsVC: UIViewController, Themeable {
 
     // MARK: - UI
-
+    private let scrollView: UIScrollView = .build { scrollView in }
+    private let baseView: UIView = .build { view in }
     private let siteTitleLabel: UILabel = .build { label in
         label.font = ETPMenuUX.Fonts.websiteTitle
     }
@@ -17,7 +18,6 @@ class EnhancedTrackingProtectionDetailsVC: UIViewController {
         button.clipsToBounds = true
         button.setTitle(.AppSettingsDone, for: .normal)
         button.titleLabel?.font = ETPMenuUX.Fonts.viewTitleLabels
-        button.setTitleColor(.systemBlue, for: .normal)
     }
 
     private let siteInfoSection = ETPSectionView(frame: .zero)
@@ -52,21 +52,20 @@ class EnhancedTrackingProtectionDetailsVC: UIViewController {
         label.font = ETPMenuUX.Fonts.viewTitleLabels
     }
 
-    private let connectionVerifierLabel: UILabel = .build { label in
-        label.font = ETPMenuUX.Fonts.minorInfoLabel
-        label.isHidden = true
-    }
-
     // MARK: - Variables
     var viewModel: EnhancedTrackingProtectionDetailsVM
-    var notificationCenter: NotificationCenter
+    var notificationCenter: NotificationProtocol
+    var themeManager: ThemeManager
+    var themeObserver: NSObjectProtocol?
 
     // MARK: - View Lifecycle
 
     init(with viewModel: EnhancedTrackingProtectionDetailsVM,
-         and notificationCenter: NotificationCenter = NotificationCenter.default) {
+         and notificationCenter: NotificationProtocol = NotificationCenter.default,
+         themeManager: ThemeManager = AppContainer.shared.resolve()) {
         self.viewModel = viewModel
         self.notificationCenter = notificationCenter
+        self.themeManager = themeManager
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -82,31 +81,41 @@ class EnhancedTrackingProtectionDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupNotifications(forObserver: self, observing: [.DisplayThemeChanged])
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateViewDetails()
+        listenForThemeChange()
         applyTheme()
     }
 
     private func setupView() {
-        view.addSubviews(siteTitleLabel, closeButton)
+        view.addSubview(scrollView)
+        scrollView.addSubview(baseView)
+        baseView.addSubviews(siteTitleLabel, closeButton)
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
 
         siteInfoSection.addSubviews(siteInfoImage, siteInfoTitleLabel, siteInfoURLLabel)
-        view.addSubview(siteInfoSection)
+        baseView.addSubview(siteInfoSection)
 
-        connectionView.addSubviews(connectionImage, connectionStatusLabel, connectionVerifierLabel)
-        view.addSubview(connectionView)
+        connectionView.addSubviews(connectionImage, connectionStatusLabel)
+        baseView.addSubview(connectionView)
 
         NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            baseView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            baseView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            baseView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            baseView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             siteTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             siteTitleLabel.centerYAnchor.constraint(equalTo: closeButton.centerYAnchor),
 
             closeButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -ETPMenuUX.UX.gutterDistance),
-            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: ETPMenuUX.UX.gutterDistance),
+            closeButton.topAnchor.constraint(equalTo: baseView.topAnchor, constant: ETPMenuUX.UX.gutterDistance),
 
             siteInfoSection.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: ETPMenuUX.UX.gutterDistance),
             siteInfoSection.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 33),
@@ -128,6 +137,7 @@ class EnhancedTrackingProtectionDetailsVC: UIViewController {
 
             connectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: ETPMenuUX.UX.gutterDistance),
             connectionView.topAnchor.constraint(equalTo: siteInfoSection.bottomAnchor, constant: 36),
+            connectionView.bottomAnchor.constraint(equalTo: baseView.bottomAnchor),
             connectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -ETPMenuUX.UX.gutterDistance),
             connectionView.heightAnchor.constraint(equalToConstant: 60),
 
@@ -137,26 +147,17 @@ class EnhancedTrackingProtectionDetailsVC: UIViewController {
             connectionImage.widthAnchor.constraint(equalToConstant: 20),
 
             connectionStatusLabel.leadingAnchor.constraint(equalTo: connectionImage.trailingAnchor, constant: 28),
-//            connectionStatusLabel.topAnchor.constraint(equalTo: connectionView.topAnchor, constant: 8),
             connectionStatusLabel.trailingAnchor.constraint(equalTo: connectionView.trailingAnchor, constant: -21),
             connectionStatusLabel.heightAnchor.constraint(equalToConstant: 22),
             connectionStatusLabel.centerYAnchor.constraint(equalTo: connectionView.centerYAnchor)
-
-//            connectionVerifierLabel.leadingAnchor.constraint(equalTo: connectionStatusLabel.leadingAnchor),
-//            connectionVerifierLabel.bottomAnchor.constraint(equalTo: connectionView.bottomAnchor, constant: -8),
-//            connectionVerifierLabel.trailingAnchor.constraint(equalTo: connectionView.trailingAnchor, constant: -21),
-//            connectionVerifierLabel.heightAnchor.constraint(equalToConstant: 20),
         ])
     }
 
     private func updateViewDetails() {
         siteTitleLabel.text = viewModel.topLevelDomain
-        siteInfoImage.image = viewModel.image
         siteInfoTitleLabel.text = viewModel.title
         siteInfoURLLabel.text = viewModel.URL
         connectionStatusLabel.text = viewModel.connectionStatusMessage
-        connectionVerifierLabel.text = viewModel.connectionVerifier
-        connectionImage.image = viewModel.lockIcon
     }
 
     // MARK: - Actions
@@ -167,28 +168,24 @@ class EnhancedTrackingProtectionDetailsVC: UIViewController {
 }
 
 // MARK: - Themable
-extension EnhancedTrackingProtectionDetailsVC: NotificationThemeable {
-    @objc func applyTheme() {
-        overrideUserInterfaceStyle =  LegacyThemeManager.instance.userInterfaceStyle
-        view.backgroundColor = UIColor.theme.etpMenu.background
-        siteInfoSection.backgroundColor = UIColor.theme.etpMenu.sectionColor
-        siteInfoURLLabel.textColor = UIColor.theme.etpMenu.subtextColor
-        connectionView.backgroundColor = UIColor.theme.etpMenu.sectionColor
+extension EnhancedTrackingProtectionDetailsVC {
+    func applyTheme() {
+        let theme = themeManager.currentTheme
+        overrideUserInterfaceStyle = theme.type.getInterfaceStyle()
+        view.backgroundColor =  theme.colors.layer1
+        siteTitleLabel.textColor = theme.colors.textPrimary
+        siteInfoTitleLabel.textColor = theme.colors.textPrimary
+        connectionStatusLabel.textColor = theme.colors.textPrimary
+        siteInfoSection.backgroundColor = theme.colors.layer2
+        siteInfoURLLabel.textColor = theme.colors.textSecondary
+        connectionView.backgroundColor = theme.colors.layer2
         if viewModel.connectionSecure {
-            connectionImage.tintColor = UIColor.theme.etpMenu.defaultImageTints
+            connectionImage.tintColor = theme.colors.iconPrimary
         }
-        connectionVerifierLabel.textColor = UIColor.theme.etpMenu.subtextColor
-        setNeedsStatusBarAppearanceUpdate()
-    }
-}
+        closeButton.setTitleColor(theme.colors.actionPrimary, for: .normal)
+        connectionImage.image = viewModel.getLockIcon(theme.type)
+        siteInfoImage.image = viewModel.image ?? UIImage(imageLiteralResourceName: ImageIdentifiers.defaultFavicon).withTintColor(theme.colors.iconPrimary)
 
-// MARK: - Notifiable
-extension EnhancedTrackingProtectionDetailsVC: Notifiable {
-    func handleNotifications(_ notification: Notification) {
-        switch notification.name {
-        case .DisplayThemeChanged:
-            applyTheme()
-        default: break
-        }
+        setNeedsStatusBarAppearanceUpdate()
     }
 }

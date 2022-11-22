@@ -86,7 +86,7 @@ open class DefaultSuggestedSites {
                 title: "火狐社区"
             ),
             SuggestedSiteData(
-                url: "https://m.baidu.com/?from=1000969b",
+                url: "https://m.baidu.com/?from=1000969c",
                 bgColor: "0x00479d",
                 imageUrl: "asset://suggestedsites_baidu",
                 faviconUrl: "asset://baiduLogo",
@@ -118,7 +118,12 @@ open class DefaultSuggestedSites {
                 title: "淘宝"
             ),
             SuggestedSiteData(
-                url: "http://union.click.jd.com/jdc?e=0&p=AyIHVCtaJQMiQwpDBUoyS0IQWlALHE4YDk5ER1xONwdJKVxASgI%2BeDkWfGJ6HEAOUmkbcjUXVyUBEQZRG1IXARQ3VhhaEQETBVweayVkbzcedVolBxIEUBxdFAoQN1UeXRQLGwFXHlsUABs3UisnS0lKWghLWBQCFzdlK2s%3D&t=W1dCFBBFC14NXAAECUte",
+                url: """
+                https://union-click.jd.com/jdc?e=618%7Cpc%7C&p=JF8BAKgJK1olXDYDZBoCUBV\
+                IMzZNXhpXVhgcCEEGXVRFXTMWFQtAM1hXWFttFkhAaihBfRN1XE5ZMipYVQ1uYwxAa1cZb\
+                QIHUV9bCUkQAF8LGFoRXgcAXVttOEsSMyRmGmsXXAcAXFdaAEwVM28PH10TVAMHVVpbDE8\
+                nBG8BKydLFl5fCQ5eCUsSM184GGsSXQ8WUiwcWl8RcV84G1slXTZdEAMAOEkWAmsBK2s
+                """,
                 bgColor: "0xc71622",
                 imageUrl: "asset://suggestedsites_jd",
                 faviconUrl: "asset://jdLogo",

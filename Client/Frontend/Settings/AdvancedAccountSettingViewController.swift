@@ -8,28 +8,40 @@ import SnapKit
 
 import Account
 
-fileprivate class CustomFxAContentServerEnableSetting: BoolSetting {
+private class CustomFxAContentServerEnableSetting: BoolSetting {
       init(prefs: Prefs, settingDidChange: ((Bool?) -> Void)? = nil) {
           super.init(
-              prefs: prefs, prefKey: PrefsKeys.KeyUseCustomFxAContentServer, defaultValue: false,
+              prefs: prefs,
+              prefKey: PrefsKeys.KeyUseCustomFxAContentServer,
+              defaultValue: false,
               attributedTitleText: NSAttributedString(string: .SettingsAdvancedAccountUseCustomFxAContentServerURITitle),
               settingDidChange: settingDidChange
           )
       }
   }
 
-  fileprivate class CustomSyncTokenServerEnableSetting: BoolSetting {
+  private class CustomSyncTokenServerEnableSetting: BoolSetting {
       init(prefs: Prefs, settingDidChange: ((Bool?) -> Void)? = nil) {
           super.init(
-              prefs: prefs, prefKey: PrefsKeys.KeyUseCustomSyncTokenServerOverride, defaultValue: false,
+              prefs: prefs,
+              prefKey: PrefsKeys.KeyUseCustomSyncTokenServerOverride,
+              defaultValue: false,
               attributedTitleText: NSAttributedString(string: .SettingsAdvancedAccountUseCustomSyncTokenServerTitle),
               settingDidChange: settingDidChange
           )
       }
   }
 
-  fileprivate class CustomURLSetting: WebPageSetting {
-      override init(prefs: Prefs, prefKey: String, defaultValue: String? = nil, placeholder: String, accessibilityIdentifier: String, isChecked: @escaping () -> Bool = { return false }, settingDidChange: ((String?) -> Void)? = nil) {
+  private class CustomURLSetting: WebPageSetting {
+      override init(
+        prefs: Prefs,
+        prefKey: String,
+        defaultValue: String? = nil,
+        placeholder: String,
+        accessibilityIdentifier: String,
+        isChecked: @escaping () -> Bool = { return false },
+        settingDidChange: ((String?) -> Void)? = nil
+      ) {
           super.init(prefs: prefs,
                      prefKey: prefKey,
                      defaultValue: defaultValue,
@@ -41,7 +53,6 @@ fileprivate class CustomFxAContentServerEnableSetting: BoolSetting {
   }
 
 class AdvancedAccountSettingViewController: SettingsTableViewController {
-    fileprivate let SectionHeaderIdentifier = "SectionHeaderIdentifier"
     fileprivate var customFxAContentURI: String?
     fileprivate var customSyncTokenServerURI: String?
 
@@ -60,7 +71,14 @@ class AdvancedAccountSettingViewController: SettingsTableViewController {
     override func generateSettings() -> [SettingSection] {
         let prefs = profile.prefs
 
-        let useStage = BoolSetting(prefs: prefs, prefKey: PrefsKeys.UseStageServer, defaultValue: false, attributedTitleText: NSAttributedString(string: .AdvancedAccountUseStageServer, attributes: [NSAttributedString.Key.foregroundColor: UIColor.theme.tableView.rowText])) { isOn in
+        let attributes = [NSAttributedString.Key.foregroundColor: themeManager.currentTheme.colors.textPrimary]
+        let useStage = BoolSetting(
+            prefs: prefs,
+            prefKey: PrefsKeys.UseStageServer,
+            defaultValue: false,
+            attributedTitleText: NSAttributedString(
+                string: .AdvancedAccountUseStageServer,
+                attributes: attributes)) { isOn in
             self.settings = self.generateSettings()
             self.tableView.reloadData()
         }
@@ -98,7 +116,8 @@ class AdvancedAccountSettingViewController: SettingsTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: SectionHeaderIdentifier) as! ThemedTableSectionHeaderFooterView
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ThemedTableSectionHeaderFooterView.cellIdentifier) as? ThemedTableSectionHeaderFooterView else { return nil }
+
         let sectionSetting = settings[section]
         headerView.titleLabel.text = sectionSetting.title?.string
 

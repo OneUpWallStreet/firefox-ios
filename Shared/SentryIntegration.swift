@@ -10,6 +10,7 @@ public enum SentryTag: String {
     case browserDB = "BrowserDB"
     case rustPlaces = "RustPlaces"
     case rustLogins = "RustLogins"
+    case rustRemoteTabs = "RustRemoteTabs"
     case rustLog = "RustLog"
     case notificationService = "NotificationService"
     case unifiedTelemetry = "UnifiedTelemetry"
@@ -18,6 +19,7 @@ public enum SentryTag: String {
     case bookmarks = "Bookmarks"
     case nimbus = "Nimbus"
     case tabDisplayManager = "TabDisplayManager"
+    case clientSynchronizer = "clientSynchronizer"
 }
 
 public protocol SentryProtocol {
@@ -87,6 +89,12 @@ public class SentryIntegration: SentryProtocol {
                 event.extra = attributes
 
                 return event
+            }
+            options.beforeBreadcrumb = { crumb in
+                if crumb.type == "http" || crumb.category == "http" {
+                    return nil
+                }
+                return crumb
             }
         }
         enabled = true
@@ -188,7 +196,7 @@ public class SentryIntegration: SentryProtocol {
      */
     private func shouldSendEventFor(_ severity: SentryLevel) -> Bool {
         let shouldSendRelease = AppConstants.BuildChannel == .release && severity.rawValue >= SentryLevel.fatal.rawValue
-        let shouldSendBeta = AppConstants.BuildChannel == .beta && severity.rawValue >= SentryLevel.info.rawValue
+        let shouldSendBeta = AppConstants.BuildChannel == .beta && severity.rawValue >= SentryLevel.fatal.rawValue
 
         return shouldSendBeta || shouldSendRelease
     }

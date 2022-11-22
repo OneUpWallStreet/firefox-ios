@@ -5,7 +5,6 @@
 import Foundation
 import Shared
 import Storage
-import XCGLogger
 
 private let log = Logger.syncLogger
 
@@ -13,7 +12,7 @@ private let log = Logger.syncLogger
  * This exists to pass in external context: e.g., the UIApplication can
  * expose notification functionality in this way.
  */
-public protocol SyncDelegate {
+public protocol SyncDelegate: AnyObject {
     func displaySentTab(for url: URL, title: String, from deviceName: String?)
     // TODO: storage.
 }
@@ -33,15 +32,6 @@ public protocol SyncDelegate {
  */
 public protocol ResettableSynchronizer {
     static func resetSynchronizerWithStorage(_ storage: ResettableSyncStorage, basePrefs: Prefs, collection: String) -> Success
-}
-
-/**
- * This is a delegate that allows synchronizers to notify other devices in the Sync account
- * that a collection changed.
- */
-public protocol CollectionChangedNotifier {
-    func notify(deviceIDs: [GUID], collectionsChanged collections: [String], reason: String) -> Success
-    func notifyAll(collectionsChanged collections: [String], reason: String) -> Success
 }
 
 // TODO: return values?
@@ -260,18 +250,18 @@ open class BaseCollectionSynchronizer {
 open class TimestampedSingleCollectionSynchronizer: BaseCollectionSynchronizer, SingleCollectionSynchronizer {
 
     var lastFetched: Timestamp {
-        set(value) {
-            self.prefs.setLong(value, forKey: "lastFetched")
+        get {
+            return prefs.unsignedLongForKey("lastFetched") ?? 0
         }
 
-        get {
-            return self.prefs.unsignedLongForKey("lastFetched") ?? 0
+        set {
+            prefs.setLong(newValue, forKey: "lastFetched")
         }
     }
 
     func setTimestamp(_ timestamp: Timestamp) {
         log.debug("Setting post-upload lastFetched to \(timestamp).")
-        self.lastFetched = timestamp
+        lastFetched = timestamp
     }
 
     open func remoteHasChanges(_ info: InfoCollections) -> Bool {

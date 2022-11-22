@@ -51,9 +51,7 @@ class Authenticator {
 
     static func findMatchingCredentialsForChallenge(_ challenge: URLAuthenticationChallenge, fromLoginsProvider loginsProvider: RustLogins) -> Deferred<Maybe<URLCredential?>> {
         return loginsProvider.getLoginsForProtectionSpace(challenge.protectionSpace) >>== { cursor in
-            guard cursor.count >= 1 else {
-                return deferMaybe(nil)
-            }
+            guard cursor.count >= 1 else { return deferMaybe(nil) }
 
             let logins = cursor.compactMap {
                 // HTTP Auth must have nil formSubmitUrl and a non-nil httpRealm.
@@ -89,15 +87,22 @@ class Authenticator {
             }
 
             // Found a single entry that matches the scheme and host - good to go.
-            else {
+            else if logins.count == 1 {
                 credentials = logins[0].credentials
+            } else {
+                SentryIntegration.shared.send(message: "No logins found for Authenticator", severity: .warning)
             }
 
             return deferMaybe(credentials)
         }
     }
 
-    fileprivate static func promptForUsernamePassword(_ viewController: UIViewController, credentials: URLCredential?, protectionSpace: URLProtectionSpace, loginsHelper: LoginsHelper?) -> Deferred<Maybe<LoginEntry>> {
+    fileprivate static func promptForUsernamePassword(
+        _ viewController: UIViewController,
+        credentials: URLCredential?,
+        protectionSpace: URLProtectionSpace,
+        loginsHelper: LoginsHelper?
+    ) -> Deferred<Maybe<LoginEntry>> {
         if protectionSpace.host.isEmpty {
             print("Unable to show a password prompt without a hostname")
             return deferMaybe(LoginRecordError(description: "Unable to show a password prompt without a hostname"))
@@ -119,7 +124,12 @@ class Authenticator {
         // Add a button to log in.
         let action = UIAlertAction(title: .AuthenticatorLogin,
             style: .default) { (action) -> Void in
-                guard let user = alert.textFields?[0].text, let pass = alert.textFields?[1].text else { deferred.fill(Maybe(failure: LoginRecordError(description: "Username and Password required"))); return }
+            guard let user = alert.textFields?[0].text,
+                  let pass = alert.textFields?[1].text
+            else {
+                deferred.fill(Maybe(failure: LoginRecordError(description: "Username and Password required")))
+                return
+            }
 
                 let login = LoginEntry(credentials: URLCredential(user: user, password: pass, persistence: .forSession), protectionSpace: protectionSpace)
                 deferred.fill(Maybe(success: login))

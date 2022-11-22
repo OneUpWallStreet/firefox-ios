@@ -139,7 +139,7 @@ class DownloadToast: Toast {
 
         horizontalStackView.addArrangedSubview(labelStackView)
 
-        let cancel = UIImageView(image: UIImage.templateImageNamed("close-medium"))
+        let cancel = UIImageView(image: UIImage.templateImageNamed(ImageIdentifiers.closeMediumButton))
         cancel.tintColor = UIColor.Photon.White100
         cancel.isUserInteractionEnabled = true
         cancel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonPressed)))
@@ -178,7 +178,7 @@ class DownloadToast: Toast {
         viewController?.present(alert, animated: true, completion: nil)
     }
 
-    @objc override func handleTap(_ gestureRecognizer: UIGestureRecognizer) {
+    override func handleTap(_ gestureRecognizer: UIGestureRecognizer) {
         // Intentional NOOP to override superclass behavior for dismissing the toast.
     }
 }

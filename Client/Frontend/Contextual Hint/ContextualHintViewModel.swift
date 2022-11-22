@@ -12,86 +12,61 @@ enum CFRTelemetryEvent {
     case performAction
 }
 
-enum ContextualHintViewType: String {
+enum ContextualHintType: String {
     case jumpBackIn = "JumpBackIn"
+    case jumpBackInSyncedTab = "JumpBackInSyncedTab"
     case inactiveTabs = "InactiveTabs"
     case toolbarLocation = "ToolbarLocation"
-
-    var hintExtraForToolbarLocation: String {
-        BrowserViewController.foregroundBVC().isBottomSearchBar ? "ToolbarLocationBottom" : "ToolbarLocationTop"
-    }
 }
 
-class ContextualHintViewModel {
-    typealias CFRStrings = String.ContextualHints
+class ContextualHintViewModel: ContextualHintPrefsKeysProvider {
     typealias CFRPrefsKeys = PrefsKeys.ContextualHints
+    typealias CFRStrings = String.ContextualHints
 
     // MARK: - Properties
-    var hintType: ContextualHintViewType
+    var hintType: ContextualHintType
     var timer: Timer?
     var presentFromTimer: (() -> Void)?
     private var profile: Profile
     private var hasSentTelemetryEvent = false
-
     var arrowDirection = UIPopoverArrowDirection.down
-    private var hasAlreadyBeenPresented: Bool {
-        guard let contextualHintData = profile.prefs.boolForKey(prefsKey) else {
-            return false
-        }
-
-        return contextualHintData
-    }
-
-    // Prevent JumpBackIn CFR from being presented if the onboarding
-    // CFR has not yet been presented. On iPad we don't present the onboarding CFR
-    private var canJumpBackInBePresented: Bool {
-        guard UIDevice.current.userInterfaceIdiom != .pad else { return true }
-
-        if let hasShownOnboardingCFR = profile.prefs.boolForKey(CFRPrefsKeys.ToolbarOnboardingKey.rawValue),
-           hasShownOnboardingCFR {
-            return true
-        }
-
-        return false
-    }
-
-    // Do not present contextual hint in landscape on iPhone
-    private var isDeviceHintReady: Bool {
-        !UIWindow.isLandscape || UIDevice.current.userInterfaceIdiom == .pad
-    }
-
-    private var prefsKey: String {
-        switch hintType {
-        case .inactiveTabs: return CFRPrefsKeys.InactiveTabsKey.rawValue
-        case .jumpBackIn: return CFRPrefsKeys.JumpBackinKey.rawValue
-        case .toolbarLocation: return CFRPrefsKeys.ToolbarOnboardingKey.rawValue
-        }
-    }
 
     // MARK: - Initializers
-    init(forHintType hintType: ContextualHintViewType, with profile: Profile) {
+
+    init(forHintType hintType: ContextualHintType, with profile: Profile) {
         self.hintType = hintType
         self.profile = profile
     }
 
     // MARK: - Interface
+
     func shouldPresentContextualHint() -> Bool {
-        guard isDeviceHintReady else { return false }
+        let hintEligibilityUtility = ContextualHintEligibilityUtility(with: profile)
 
-        switch hintType {
-        case .jumpBackIn:
-            return canJumpBackInBePresented && !hasAlreadyBeenPresented
-
-        case .toolbarLocation:
-            return SearchBarSettingsViewModel.isEnabled && !hasAlreadyBeenPresented
-
-        default:
-            return !hasAlreadyBeenPresented
-        }
+        return hintEligibilityUtility.canPresent(hintType)
     }
 
     func markContextualHintPresented() {
-        profile.prefs.setBool(true, forKey: prefsKey)
+        switch hintType {
+        // If JumpBackInSyncedTab CFR was shown, don't present JumpBackIn CFR (both convey similar info)
+        case .jumpBackInSyncedTab:
+            profile.prefs.setBool(true, forKey: CFRPrefsKeys.jumpBackInSyncedTabKey.rawValue)
+            profile.prefs.setBool(true, forKey: CFRPrefsKeys.jumpBackinKey.rawValue)
+        default:
+            profile.prefs.setBool(true, forKey: prefsKey(for: hintType))
+        }
+    }
+
+    // Utility for this method explained in ContextualHintEligibilityUtility with hasHintBeenConfigured function
+    func markContextualHintConfiguration(configured: Bool) {
+        switch hintType {
+        case .jumpBackIn:
+            profile.prefs.setBool(configured, forKey: CFRPrefsKeys.jumpBackInConfiguredKey.rawValue)
+        case .jumpBackInSyncedTab:
+            profile.prefs.setBool(configured, forKey: CFRPrefsKeys.jumpBackInSyncedTabConfiguredKey.rawValue)
+        default:
+            break
+        }
     }
 
     func startTimer() {
@@ -105,11 +80,12 @@ class ContextualHintViewModel {
 
         timer?.invalidate()
 
-        timer = Timer.scheduledTimer(timeInterval: timeInterval,
-                                     target: self,
-                                     selector: #selector(presentHint),
-                                     userInfo: nil,
-                                     repeats: false)
+        timer = Timer.scheduledTimer(
+            timeInterval: timeInterval,
+            target: self,
+            selector: #selector(presentHint),
+            userInfo: nil,
+            repeats: false)
     }
 
     func stopTimer() {
@@ -119,27 +95,15 @@ class ContextualHintViewModel {
 
     // MARK: Text
 
-    func descriptionText(arrowDirection: UIPopoverArrowDirection) -> String {
-        switch hintType {
-        case .inactiveTabs: return CFRStrings.TabsTray.InactiveTabs.Body
-        case .jumpBackIn: return CFRStrings.FirefoxHomepage.JumpBackIn.PersonalizedHome
+    func getCopyFor(_ copyType: ContextualHintCopyType) -> String {
+        let copyProvider: ContextualHintCopyProvider
 
-        case .toolbarLocation:
-            switch arrowDirection {
-            case .up:
-                return CFRStrings.Toolbar.SearchBarPlacementForExistingUsers
-            default:
-                return CFRStrings.Toolbar.SearchBarPlacementForNewUsers
-            }
-        }
-    }
-
-    func buttonActionText() -> String {
         switch hintType {
-        case .inactiveTabs: return CFRStrings.TabsTray.InactiveTabs.Action
-        case .toolbarLocation: return CFRStrings.Toolbar.SearchBarPlacementButtonText
-        default: return ""
+        case .toolbarLocation: copyProvider = ContextualHintCopyProvider(arrowDirecton: arrowDirection)
+        default: copyProvider = ContextualHintCopyProvider()
         }
+
+        return copyProvider.getCopyFor(copyType, of: hintType)
     }
 
     func isActionType() -> Bool {
@@ -154,7 +118,7 @@ class ContextualHintViewModel {
 
     // MARK: - Telemetry
     func sendTelemetryEvent(for eventType: CFRTelemetryEvent) {
-        let hintTypeExtra = hintType == .toolbarLocation ? hintType.hintExtraForToolbarLocation : hintType.rawValue
+        let hintTypeExtra = hintType == .toolbarLocation ? getToolbarLocation() : hintType.rawValue
         let extra = [TelemetryWrapper.EventExtraKey.cfrType.rawValue: hintTypeExtra]
 
         switch eventType {
@@ -182,6 +146,14 @@ class ContextualHintViewModel {
                                          extras: extra)
             hasSentTelemetryEvent = true
         }
+    }
+
+    private func getToolbarLocation() -> String {
+        guard SearchBarSettingsViewModel.isEnabled,
+              SearchBarSettingsViewModel(prefs: profile.prefs).searchBarPosition == .bottom
+        else { return "ToolbarLocationTop" }
+
+        return "ToolbarLocationBottom"
     }
 
     // MARK: - Present

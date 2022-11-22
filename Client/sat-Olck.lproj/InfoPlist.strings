@@ -1,5 +1,11 @@
+/* (No Comment) */
+"New Private Tab" = "ᱱᱟᱶᱟ ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵ";
+
+/* (No Comment) */
+"New Tab" = "ᱱᱟᱶᱟ ᱴᱮᱵ";
+
 /* Privacy - Camera Usage Description */
-"NSCameraUsageDescription" = "ᱱᱚᱶᱟ ᱛᱮ ᱟᱢ ᱪᱤᱛᱟᱹᱨ ᱨᱟᱠᱟᱵ ᱟᱨ ᱞᱟᱫᱮ ᱫᱟᱰᱮᱭᱟᱜᱼᱟᱢ᱾";
+"NSCameraUsageDescription" = "ᱱᱚᱶᱟ ᱛᱮ ᱟᱢ ᱪᱤᱛᱟᱹᱨ ᱨᱟᱠᱟᱵ ᱟᱨ ᱞᱟᱫᱮ ᱫᱟᱰᱮᱭᱟᱜᱼᱟᱢ ᱾";
 
 /* Privacy - Face ID Usage Description */
 "NSFaceIDUsageDescription" = "ᱟᱢᱟᱜ ᱥᱟᱺᱪᱟᱣ ᱠᱟᱱ ᱵᱚᱞᱚ ᱠᱚ ᱟᱫᱮᱨ ᱞᱟᱹᱜᱤᱫ Firefox ᱟᱢᱟᱜ ᱢᱚᱦᱲᱟ ID ᱫᱚᱨᱠᱟᱨ ᱾";
@@ -14,11 +20,5 @@
 "NSPhotoLibraryAddUsageDescription" = "ᱱᱚᱶᱟ ᱛᱮ ᱟᱢ ᱪᱤᱛᱟᱹᱨᱠᱚ ᱥᱟᱧᱪᱟᱣ ᱫᱟᱰᱮᱭᱟᱜᱼᱟᱢ ᱾";
 
 /* (No Comment) */
-"ShortcutItemTitleNewPrivateTab" = "ᱱᱟᱶᱟ ᱱᱤᱡᱮᱨᱟᱠ ᱴᱮᱵ";
-
-/* (No Comment) */
-"ShortcutItemTitleNewTab" = "ᱱᱟᱶᱟ ᱴᱮᱵ";
-
-/* (No Comment) */
-"ShortcutItemTitleQRCode" = "Scan QR ᱠᱚᱰ ᱥᱠᱟᱱ ᱢᱮ";
+"Scan QR Code" = "Scan QR ᱠᱚᱰ ᱥᱠᱟᱱ ᱢᱮ";
 

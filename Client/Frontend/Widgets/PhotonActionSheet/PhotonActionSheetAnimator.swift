@@ -18,9 +18,7 @@ class PhotonActionSheetAnimator: NSObject, UIViewControllerAnimatedTransitioning
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let screens = (from: transitionContext.viewController(forKey: .from)!, to: transitionContext.viewController(forKey: .to)!)
 
-        guard let actionSheet = (self.presenting ? screens.to : screens.from) as? PhotonActionSheet else {
-            return
-        }
+        guard let actionSheet = (self.presenting ? screens.to : screens.from) as? PhotonActionSheet else { return }
 
         let bottomViewController = (self.presenting ? screens.from : screens.to) as UIViewController
         animateWitVC(actionSheet, presentingVC: bottomViewController, transitionContext: transitionContext)
@@ -55,24 +53,36 @@ extension PhotonActionSheetAnimator {
             containerView.addSubview(actionSheet.view)
             actionSheet.view.layoutIfNeeded()
 
-            UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.3, options: [], animations: { () -> Void in
-                self.shadow.alpha = 1
-                actionSheet.view.frame = containerView.bounds
-                actionSheet.view.layoutIfNeeded()
-            }, completion: { (completed) -> Void in
-                transitionContext.completeTransition(completed)
-            })
+            UIView.animate(
+                withDuration: transitionDuration(using: transitionContext),
+                delay: 0,
+                usingSpringWithDamping: 0.8,
+                initialSpringVelocity: 0.3,
+                options: [],
+                animations: { () -> Void in
+                    self.shadow.alpha = 1
+                    actionSheet.view.frame = containerView.bounds
+                    actionSheet.view.layoutIfNeeded()
+                }, completion: { (completed) -> Void in
+                    transitionContext.completeTransition(completed)
+                })
 
         } else {
-            UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, usingSpringWithDamping: 1.2, initialSpringVelocity: 0.0, options: [], animations: { () -> Void in
-                self.shadow.alpha = 0
-                actionSheet.view.frame = CGRect(origin: CGPoint(x: 0, y: containerView.frame.size.height), size: containerView.frame.size)
-                actionSheet.view.layoutIfNeeded()
-            }, completion: { (completed) -> Void in
-                actionSheet.view.removeFromSuperview()
-                self.shadow.removeFromSuperview()
-                transitionContext.completeTransition(completed)
-            })
+            UIView.animate(
+                withDuration: transitionDuration(using: transitionContext),
+                delay: 0,
+                usingSpringWithDamping: 1.2,
+                initialSpringVelocity: 0.0,
+                options: [],
+                animations: { () -> Void in
+                    self.shadow.alpha = 0
+                    actionSheet.view.frame = CGRect(origin: CGPoint(x: 0, y: containerView.frame.size.height), size: containerView.frame.size)
+                    actionSheet.view.layoutIfNeeded()
+                }, completion: { (completed) -> Void in
+                    actionSheet.view.removeFromSuperview()
+                    self.shadow.removeFromSuperview()
+                    transitionContext.completeTransition(completed)
+                })
         }
     }
 }

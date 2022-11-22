@@ -11,7 +11,7 @@ class LoginOnboardingViewController: SettingsViewController {
     private var onboardingMessageLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = .LoginsOnboardingMessage
+        label.text = .Settings.Passwords.OnboardingMessage
         label.font = DynamicFontHelper().DeviceFontExtraLarge
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -30,7 +30,6 @@ class LoginOnboardingViewController: SettingsViewController {
     private lazy var continueButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor.Photon.Blue50
         button.layer.cornerRadius = 8
         button.setTitle(.LoginsOnboardingContinueButtonTitle, for: .normal)
         button.titleLabel?.font = DynamicFontHelper().MediumSizeBoldFontAS
@@ -58,7 +57,7 @@ class LoginOnboardingViewController: SettingsViewController {
             navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(doneButtonTapped))
         }
 
-        self.title = .LoginsAndPasswordsTitle
+        self.title = .Settings.Passwords.Title
 
         self.view.addSubviews(onboardingMessageLabel, learnMoreButton, continueButton)
 
@@ -92,5 +91,10 @@ class LoginOnboardingViewController: SettingsViewController {
 
     @objc func proceedButtonTapped(_ sender: UIButton) {
         self.proceedHandler()
+    }
+
+    override func applyTheme() {
+        super.applyTheme()
+        continueButton.backgroundColor = themeManager.currentTheme.colors.actionPrimary
     }
 }

@@ -29,11 +29,7 @@ class TabPeekViewController: UIViewController, WKNavigationDelegate {
     fileprivate var webView: WKWebView?
 
     // Preview action items.
-    override var previewActionItems: [UIPreviewActionItem] {
-        get {
-            return previewActions
-        }
-    }
+    override var previewActionItems: [UIPreviewActionItem] { return previewActions }
 
     lazy var previewActions: [UIPreviewActionItem] = {
         var actions = [UIPreviewActionItem]()
@@ -95,7 +91,9 @@ class TabPeekViewController: UIViewController, WKNavigationDelegate {
                 SimpleToast().showAlertWithText(.AppMenu.AppMenuCopyURLConfirmMessage, bottomContainer: wself.view)
             })
         }
-        actions.append(UIAction(title: .TabPeekCloseTab, image: UIImage.templateImageNamed("menu-CloseTabs"), identifier: nil) { [weak self] _ in
+        actions.append(UIAction(title: .TabPeekCloseTab,
+                                image: UIImage.templateImageNamed(ImageIdentifiers.closeTap),
+                                identifier: nil) { [weak self] _ in
             guard let wself = self, let tab = wself.tab else { return }
             wself.delegate?.tabPeekDidCloseTab(tab)
         })
@@ -146,7 +144,11 @@ class TabPeekViewController: UIViewController, WKNavigationDelegate {
     }
 
     fileprivate func setupWebView(_ webView: WKWebView?) {
-        guard let webView = webView, let url = webView.url, !isIgnoredURL(url) else { return }
+        guard let webView = webView,
+              let url = webView.url,
+              !isIgnoredURL(url)
+        else { return }
+
         let clonedWebView = WKWebView(frame: webView.frame, configuration: webView.configuration)
         clonedWebView.allowsLinkPreview = false
         clonedWebView.accessibilityLabel = previewAccessibilityLabel
@@ -164,22 +166,16 @@ class TabPeekViewController: UIViewController, WKNavigationDelegate {
     func setState(withProfile browserProfile: BrowserProfile, clientPickerDelegate: DevicePickerViewControllerDelegate) {
         assert(Thread.current.isMainThread)
 
-        guard let tab = self.tab else {
-            return
-        }
+        guard let tab = self.tab else { return }
 
-        guard let displayURL = tab.url?.absoluteString, !displayURL.isEmpty else {
-            return
-        }
+        guard let displayURL = tab.url?.absoluteString, !displayURL.isEmpty else { return }
 
         browserProfile.places.isBookmarked(url: displayURL) >>== { isBookmarked in
             self.isBookmarked = isBookmarked
         }
 
         browserProfile.remoteClientsAndTabs.getClientGUIDs().uponQueue(.main) {
-            guard let clientGUIDs = $0.successValue else {
-                return
-            }
+            guard let clientGUIDs = $0.successValue else { return }
 
             self.hasRemoteClients = !clientGUIDs.isEmpty
             let clientPickerController = DevicePickerViewController()

@@ -41,8 +41,8 @@ enum ReaderModeTheme: String {
         // Theme: Dark - app-wide dark overrides all
         if appWideTheme == .dark {
             return .dark
-        // Theme: Sepia - special case for when the theme is sepia.
-        // For this we only check the them supplied and not the app wide theme
+            // Theme: Sepia - special case for when the theme is sepia.
+            // For this we only check the them supplied and not the app wide theme
         } else if readerTheme == .sepia {
             return .sepia
         }
@@ -69,10 +69,10 @@ enum ReaderModeFontType: String {
 
         switch font {
         case .serif,
-             .serifBold:
+                .serifBold:
             self = isBoldFontEnabled ? .serifBold : .serif
         case .sansSerif,
-             .sansSerifBold:
+                .sansSerifBold:
             self = isBoldFontEnabled ? .sansSerifBold : .sansSerif
         case .none:
             self = .sansSerif
@@ -80,7 +80,7 @@ enum ReaderModeFontType: String {
     }
 
     func isSameFamily(_ font: ReaderModeFontType) -> Bool {
-        return !FontFamily.families.filter { $0.contains(font) && $0.contains(self) }.isEmpty
+        return FontFamily.families.contains(where: { $0.contains(font) && $0.contains(self) })
     }
 }
 
@@ -302,46 +302,45 @@ class ReaderMode: TabContentScript {
 
     fileprivate func handleReaderPageEvent(_ readerPageEvent: ReaderPageEvent) {
         switch readerPageEvent {
-            case .pageShow:
-                if let tab = tab {
-                    delegate?.readerMode(self, didDisplayReaderizedContentForTab: tab)
-                }
+        case .pageShow:
+            if let tab = tab {
+                delegate?.readerMode(self, didDisplayReaderizedContentForTab: tab)
+            }
         }
     }
 
     fileprivate func handleReaderModeStateChange(_ state: ReaderModeState) {
         self.state = state
-        guard let tab = tab else {
-            return
-        }
+        guard let tab = tab else { return }
         delegate?.readerMode(self, didChangeReaderModeState: state, forTab: tab)
     }
 
     fileprivate func handleReaderContentParsed(_ readabilityResult: ReadabilityResult) {
-        guard let tab = tab else {
-            return
-        }
+        guard let tab = tab else { return }
         log.info("ReaderMode: Readability result available!")
         tab.readabilityResult = readabilityResult
         delegate?.readerMode(self, didParseReadabilityResult: readabilityResult, forTab: tab)
     }
 
     func userContentController(_ userContentController: WKUserContentController, didReceiveScriptMessage message: WKScriptMessage) {
-        guard let msg = message.body as? [String: Any], let type = msg["Type"] as? String, let messageType = ReaderModeMessageType(rawValue: type) else { return }
+        guard let msg = message.body as? [String: Any],
+              let type = msg["Type"] as? String,
+              let messageType = ReaderModeMessageType(rawValue: type)
+        else { return }
 
         switch messageType {
-            case .pageEvent:
-                if let readerPageEvent = ReaderPageEvent(rawValue: msg["Value"] as? String ?? "Invalid") {
-                    handleReaderPageEvent(readerPageEvent)
-                }
-            case .stateChange:
-                if let readerModeState = ReaderModeState(rawValue: msg["Value"] as? String ?? "Invalid") {
-                    handleReaderModeStateChange(readerModeState)
-                }
-            case .contentParsed:
-                if let readabilityResult = ReadabilityResult(object: msg["Value"] as AnyObject?) {
-                    handleReaderContentParsed(readabilityResult)
-                }
+        case .pageEvent:
+            if let readerPageEvent = ReaderPageEvent(rawValue: msg["Value"] as? String ?? "Invalid") {
+                handleReaderPageEvent(readerPageEvent)
+            }
+        case .stateChange:
+            if let readerModeState = ReaderModeState(rawValue: msg["Value"] as? String ?? "Invalid") {
+                handleReaderModeStateChange(readerModeState)
+            }
+        case .contentParsed:
+            if let readabilityResult = ReadabilityResult(object: msg["Value"] as AnyObject?) {
+                handleReaderContentParsed(readabilityResult)
+            }
         }
     }
 

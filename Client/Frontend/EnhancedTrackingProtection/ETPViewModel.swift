@@ -15,15 +15,30 @@ class ETPViewModel {
     // we would like to show the coversheet for.
     static let etpCoverSheetSupportedAppVersion = ["24.0"]
 
+    static func isCleanInstall(userPrefs: Prefs) -> Bool {
+        if userPrefs.stringForKey(LatestAppVersionProfileKey)?.components(separatedBy: ".").first == nil {
+            return true
+        }
+        return false
+    }
+
     init() {
         setupUpdateModel()
     }
 
     private func setupUpdateModel() {
-        etpCoverSheetmodel = ETPCoverSheetModel(titleImage: #imageLiteral(resourceName: "shield"), titleText: .CoverSheetETPTitle, descriptionText: .CoverSheetETPDescription)
+        etpCoverSheetmodel = ETPCoverSheetModel(
+            titleImage: #imageLiteral(resourceName: "shield"),
+            titleText: .CoverSheetETPTitle,
+            descriptionText: .CoverSheetETPDescription)
     }
 
-    static func shouldShowETPCoverSheet(userPrefs: Prefs, currentAppVersion: String = AppInfo.appVersion, isCleanInstall: Bool, supportedAppVersions: [String] = etpCoverSheetSupportedAppVersion) -> Bool {
+    static func shouldShowETPCoverSheet(
+        userPrefs: Prefs,
+        currentAppVersion: String = AppInfo.appVersion,
+        isCleanInstall: Bool,
+        supportedAppVersions: [String] = etpCoverSheetSupportedAppVersion
+    ) -> Bool {
         // 0,1,2 so we show on 3rd session as a requirement on Github #6012
         let maxSessionCount = 2
         var shouldShow = false

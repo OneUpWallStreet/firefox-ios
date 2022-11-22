@@ -20,13 +20,8 @@ class ThemeSettingsController: ThemedTableViewController {
         case lightDarkPicker
     }
 
-    fileprivate let SectionHeaderIdentifier = "SectionHeaderIdentifier"
-
     // A non-interactable slider is underlaid to show the current screen brightness indicator
     private var slider: (control: UISlider, deviceBrightnessIndicator: UISlider)?
-
-    // TODO decide if this is themeable, or if it is being replaced by a different style of slider
-    private let deviceBrightnessIndicatorColor = UIColor(white: 182/255, alpha: 1.0)
 
     var isAutoBrightnessOn: Bool {
         return LegacyThemeManager.instance.automaticBrightnessIsOn
@@ -50,9 +45,9 @@ class ThemeSettingsController: ThemedTableViewController {
         super.viewDidLoad()
         title = .SettingsDisplayThemeTitle
         tableView.accessibilityIdentifier = "DisplayTheme.Setting.Options"
-        tableView.backgroundColor = UIColor.theme.tableView.headerBackground
 
-        tableView.register(ThemedTableSectionHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: SectionHeaderIdentifier)
+        tableView.register(ThemedTableSectionHeaderFooterView.self,
+                           forHeaderFooterViewReuseIdentifier: ThemedTableSectionHeaderFooterView.cellIdentifier)
 
         NotificationCenter.default.addObserver(self, selector: #selector(brightnessChanged), name: UIScreen.brightnessDidChangeNotification, object: nil)
     }
@@ -63,8 +58,14 @@ class ThemeSettingsController: ThemedTableViewController {
         applyTheme()
     }
 
+    override func applyTheme() {
+        super.applyTheme()
+
+    }
+
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: SectionHeaderIdentifier) as! ThemedTableSectionHeaderFooterView
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ThemedTableSectionHeaderFooterView.cellIdentifier) as? ThemedTableSectionHeaderFooterView else { return nil }
+
         let section = Section(rawValue: section) ?? .automaticBrightness
         headerView.titleLabel.text = {
             switch section {
@@ -76,6 +77,7 @@ class ThemeSettingsController: ThemedTableViewController {
                 return isAutoBrightnessOn ? .DisplayThemeBrightnessThresholdSectionHeader : .ThemePickerSectionHeader
             }
         }()
+
         headerView.titleLabel.text = headerView.titleLabel.text?.uppercased()
 
         return headerView
@@ -89,7 +91,7 @@ class ThemeSettingsController: ThemedTableViewController {
             label.text = .DisplayThemeSectionFooter
             label.numberOfLines = 0
             label.font = UIFont.systemFont(ofSize: UX.footerFontSize)
-            label.textColor = UIColor.theme.tableView.headerTextLight
+            label.textColor = self.themeManager.currentTheme.colors.textSecondary
         }
         footer.addSubview(label)
         NSLayoutConstraint.activate([
@@ -122,28 +124,30 @@ class ThemeSettingsController: ThemedTableViewController {
 
     @objc func systemThemeSwitchValueChanged(control: UISwitch) {
         LegacyThemeManager.instance.systemThemeIsOn = control.isOn
+        themeManager.setSystemTheme(isOn: control.isOn)
 
         if control.isOn {
             // Reset the user interface style to the default before choosing our theme
             UIApplication.shared.delegate?.window??.overrideUserInterfaceStyle = .unspecified
             let userInterfaceStyle = traitCollection.userInterfaceStyle
-            LegacyThemeManager.instance.current = userInterfaceStyle == .dark ? DarkTheme() : NormalTheme()
+            LegacyThemeManager.instance.current = userInterfaceStyle == .dark ? LegacyDarkTheme() : LegacyNormalTheme()
         } else if LegacyThemeManager.instance.automaticBrightnessIsOn {
             LegacyThemeManager.instance.updateCurrentThemeBasedOnScreenBrightness()
         }
         TelemetryWrapper.recordEvent(category: .action, method: .press, object: .setting, value: .systemThemeSwitch, extras: ["to": control.isOn])
 
-        // Switch animation must begin prior to scheduling table view update animation (or the switch will be auto-synchronized to the slower tableview animation and makes the switch behaviour feel slow and non-standard).
+        // Switch animation must begin prior to scheduling table view update animation
+        // (or the switch will be auto-synchronized to the slower tableview animation
+        // and makes the switch behaviour feel slow and non-standard).
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             UIView.transition(with: self.tableView, duration: 0.2, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()  })
         }
     }
 
     @objc func sliderValueChanged(control: UISlider, event: UIEvent) {
-        guard let touch = event.allTouches?.first, touch.phase == .ended else {
-            return
-        }
+        guard let touch = event.allTouches?.first, touch.phase == .ended else { return }
 
+        themeManager.setAutomaticBrightnessValue(control.value)
         LegacyThemeManager.instance.automaticBrightnessValue = control.value
         brightnessChanged()
     }
@@ -151,7 +155,7 @@ class ThemeSettingsController: ThemedTableViewController {
     private func makeSlider(parent: UIView) -> UISlider {
         let size = CGSize(width: UX.moonSunIconSize, height: UX.moonSunIconSize)
         let images = [ImageIdentifiers.nightMode, "themeBrightness"].map { name in
-            UIImage(imageLiteralResourceName: name).createScaled(size).tinted(withColor: UIColor.theme.browser.tint)
+            UIImage(imageLiteralResourceName: name).createScaled(size).tinted(withColor: themeManager.currentTheme.colors.layerLightGrey30)
         }
 
         let slider: UISlider = .build { slider in
@@ -179,12 +183,12 @@ class ThemeSettingsController: ThemedTableViewController {
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.lineBreakMode = .byWordWrapping
 
-            let control = UISwitchThemed()
-
+            let control = UISwitch()
             control.accessibilityIdentifier = "SystemThemeSwitchValue"
-            control.onTintColor = UIColor.theme.tableView.controlTint
+            control.onTintColor = themeManager.currentTheme.colors.actionPrimary
             control.addTarget(self, action: #selector(systemThemeSwitchValueChanged), for: .valueChanged)
             control.isOn = LegacyThemeManager.instance.systemThemeIsOn
+
             cell.accessoryView = control
         case .automaticBrightness:
             if indexPath.row == 0 {
@@ -215,7 +219,7 @@ class ThemeSettingsController: ThemedTableViewController {
                 deviceBrightnessIndicator.isUserInteractionEnabled = false
                 deviceBrightnessIndicator.minimumTrackTintColor = .clear
                 deviceBrightnessIndicator.maximumTrackTintColor = .clear
-                deviceBrightnessIndicator.thumbTintColor = deviceBrightnessIndicatorColor
+                deviceBrightnessIndicator.thumbTintColor = themeManager.currentTheme.colors.formKnob
                 self.slider = (slider, deviceBrightnessIndicator)
             } else {
                 if indexPath.row == 0 {
@@ -234,6 +238,7 @@ class ThemeSettingsController: ThemedTableViewController {
                 }
             }
         }
+        cell.applyTheme(theme: themeManager.currentTheme)
 
         return cell
     }
@@ -263,12 +268,14 @@ class ThemeSettingsController: ThemedTableViewController {
         if indexPath.section == Section.automaticBrightness.rawValue {
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
             LegacyThemeManager.instance.automaticBrightnessIsOn = indexPath.row != 0
+            themeManager.setAutomaticBrightness(isOn: indexPath.row != 0)
             tableView.reloadSections(IndexSet(integer: Section.lightDarkPicker.rawValue), with: .automatic)
             tableView.reloadSections(IndexSet(integer: Section.automaticBrightness.rawValue), with: .none)
             TelemetryWrapper.recordEvent(category: .action, method: .press, object: .setting, value: indexPath.row == 0 ? .themeModeManually : .themeModeAutomatically)
         } else if indexPath.section == Section.lightDarkPicker.rawValue {
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-            LegacyThemeManager.instance.current = indexPath.row == 0 ? NormalTheme() : DarkTheme()
+            LegacyThemeManager.instance.current = indexPath.row == 0 ? LegacyNormalTheme() : LegacyDarkTheme()
+            themeManager.changeCurrentTheme(indexPath.row == 0 ? .light : .dark)
             TelemetryWrapper.recordEvent(category: .action, method: .press, object: .setting, value: indexPath.row == 0 ? .themeLight : .themeDark)
         }
         applyTheme()

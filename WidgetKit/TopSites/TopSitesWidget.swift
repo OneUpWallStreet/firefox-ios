@@ -27,7 +27,7 @@ struct TopSitesView: View {
         let url = site.url
 
         Link(destination: linkToContainingApp("?url=\(url)", query: "widget-medium-topsites-open-url")) {
-            if (entry.favicons[site.imageKey] != nil) {
+            if entry.favicons[site.imageKey] != nil {
                 (entry.favicons[site.imageKey])!.resizable().frame(width: 60, height: 60).mask(maskShape)
             } else {
                 Rectangle()
@@ -51,7 +51,7 @@ struct TopSitesView: View {
     var body: some View {
         VStack {
             HStack {
-                if entry.sites.count == 0 {
+                if entry.sites.isEmpty {
                     ForEach(0..<4, id: \.self) { _ in
                         emptySquare
                     }

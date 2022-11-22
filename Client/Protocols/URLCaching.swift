@@ -5,7 +5,7 @@
 import Foundation
 import Shared
 
-/// Protocol to provide a caching functionnality for network calls
+/// Protocol to provide a caching functionality for network calls
 protocol URLCaching {
     var urlCache: URLCache { get }
 
@@ -15,13 +15,14 @@ protocol URLCaching {
 }
 
 extension URLCaching {
-    // The default maximum cache age, 1 hour in milliseconds, can be overriden
+    // The default maximum cache age, 1 hour in milliseconds, can be overridden
     var maxCacheAge: Timestamp { OneMinuteInMilliseconds * 60 }
     private var cacheAgeKey: String { "cache-time" }
 
     func findCachedData(for request: URLRequest, timestamp: Timestamp) -> Data? {
         let cachedResponse = urlCache.cachedResponse(for: request)
         guard let cachedAtTime = cachedResponse?.userInfo?[cacheAgeKey] as? Timestamp,
+              timestamp >= cachedAtTime, // crash fix: make sure timestamp is greater or equal time of cache
               (timestamp - cachedAtTime) < maxCacheAge,
               let data = cachedResponse?.data else {
             return nil
@@ -31,18 +32,18 @@ extension URLCaching {
     }
 
     func findCachedResponse(for request: URLRequest) -> [String: Any]? {
-        guard (findCachedData(for: request, timestamp: Date.now()) != nil) else { return nil }
+        guard findCachedData(for: request, timestamp: Date.now()) != nil else { return nil }
 
         let cachedResponse = urlCache.cachedResponse(for: request)
-        guard let data = cachedResponse?.data, let json = try? JSONSerialization.jsonObject(with: data, options: []) else {
-            return nil
-        }
+        guard let data = cachedResponse?.data,
+              let json = try? JSONSerialization.jsonObject(with: data, options: [])
+        else { return nil }
 
         return json as? [String: Any]
     }
 
     func cache(response: HTTPURLResponse?, for request: URLRequest, with data: Data?) {
-        guard let response = response, let data  = data else { return }
+        guard let response = response, let data = data else { return }
 
         let metadata = [cacheAgeKey: Date.now()]
         let cachedResp = CachedURLResponse(response: response, data: data, userInfo: metadata, storagePolicy: .allowed)

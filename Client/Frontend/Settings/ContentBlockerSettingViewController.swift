@@ -44,11 +44,11 @@ class TPAccessoryInfo: ThemedTableViewController {
         tableView.estimatedRowHeight = 130
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
-        tableView.tableHeaderView = headerView()
 
         tableView.sectionHeaderHeight = 0
         tableView.sectionFooterHeight = 0
         applyTheme()
+        listenForThemeChange()
     }
 
     func headerView() -> UIView {
@@ -58,7 +58,7 @@ class TPAccessoryInfo: ThemedTableViewController {
         let header = UILabel()
         header.text = .TPAccessoryInfoBlocksTitle
         header.font = DynamicFontHelper.defaultHelper.DefaultMediumBoldFont
-        header.textColor = UIColor.theme.tableView.headerTextLight
+        header.textColor = themeManager.currentTheme.colors.textSecondary
 
         stack.addArrangedSubview(UIView())
         stack.addArrangedSubview(header)
@@ -76,12 +76,17 @@ class TPAccessoryInfo: ThemedTableViewController {
         topStack.layoutMargins = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
         topStack.isLayoutMarginsRelativeArrangement = true
 
-        sep.backgroundColor = UIColor.theme.tableView.separator
+        sep.backgroundColor = themeManager.currentTheme.colors.borderPrimary
         sep.snp.makeConstraints { make in
             make.height.equalTo(0.5)
             make.width.equalToSuperview()
         }
         return topStack
+    }
+
+    override func applyTheme() {
+        super.applyTheme()
+        tableView.tableHeaderView = headerView()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,6 +99,7 @@ class TPAccessoryInfo: ThemedTableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ThemedTableViewCell(style: .subtitle, reuseIdentifier: nil)
+        cell.applyTheme(theme: themeManager.currentTheme)
         if indexPath.section == 0 {
             if indexPath.row == 0 {
                 cell.textLabel?.text = .TPSocialBlocked
@@ -125,20 +131,21 @@ class TPAccessoryInfo: ThemedTableViewController {
                 cell.textLabel?.text = .TPCategoryDescriptionContentTrackers
             }
         }
-        cell.imageView?.tintColor = UIColor.theme.tableView.rowText
+        cell.imageView?.tintColor = themeManager.currentTheme.colors.iconPrimary
         if indexPath.row == 1 {
             cell.textLabel?.font = DynamicFontHelper.defaultHelper.DefaultMediumFont
         }
         cell.textLabel?.numberOfLines = 0
         cell.detailTextLabel?.numberOfLines = 0
         cell.backgroundColor = .clear
-        cell.textLabel?.textColor = UIColor.theme.tableView.rowDetailText
+        cell.textLabel?.textColor = themeManager.currentTheme.colors.textPrimary
         cell.selectionStyle = .none
         return cell
     }
 }
 
 class ContentBlockerSettingViewController: SettingsTableViewController {
+    private let button = UIButton()
     let prefs: Prefs
     var currentBlockingStrength: BlockingStrength
 
@@ -159,23 +166,36 @@ class ContentBlockerSettingViewController: SettingsTableViewController {
     override func generateSettings() -> [SettingSection] {
         let strengthSetting: [CheckmarkSetting] = BlockingStrength.allOptions.map { option in
             let id = BlockingStrength.accessibilityId(for: option)
-            let setting = CheckmarkSetting(title: NSAttributedString(string: option.settingTitle), style: .leftSide, subtitle: NSAttributedString(string: option.settingSubtitle), accessibilityIdentifier: id, isChecked: {
-                return option == self.currentBlockingStrength
-            }, onChecked: {
-                self.currentBlockingStrength = option
-                self.prefs.setString(self.currentBlockingStrength.rawValue, forKey: ContentBlockingConfig.Prefs.StrengthKey)
-                TabContentBlocker.prefsChanged()
-                self.tableView.reloadData()
+            let setting = CheckmarkSetting(
+                title: NSAttributedString(string: option.settingTitle),
+                style: .leftSide,
+                subtitle: NSAttributedString(string: option.settingSubtitle),
+                accessibilityIdentifier: id,
+                isChecked: { return option == self.currentBlockingStrength },
+                onChecked: {
+                    self.currentBlockingStrength = option
+                    self.prefs.setString(self.currentBlockingStrength.rawValue,
+                                         forKey: ContentBlockingConfig.Prefs.StrengthKey)
+                    TabContentBlocker.prefsChanged()
+                    self.tableView.reloadData()
 
-                let extras = [TelemetryWrapper.EventExtraKey.preference.rawValue: "ETP-strength",
-                              TelemetryWrapper.EventExtraKey.preferenceChanged.rawValue: option.rawValue]
-                TelemetryWrapper.recordEvent(category: .action, method: .change, object: .setting, extras: extras)
+                    let extras = [TelemetryWrapper.EventExtraKey.preference.rawValue: "ETP-strength",
+                                  TelemetryWrapper.EventExtraKey.preferenceChanged.rawValue: option.rawValue]
+                    TelemetryWrapper.recordEvent(category: .action,
+                                                 method: .change,
+                                                 object: .setting,
+                                                 extras: extras)
 
-                if option == .strict {
-                    let alert = UIAlertController(title: .TrackerProtectionAlertTitle, message: .TrackerProtectionAlertDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: .TrackerProtectionAlertButton, style: .default, handler: nil))
-                    self.present(alert, animated: true)
-                }
+                    if option == .strict {
+                        self.button.isHidden = true
+                        let alert = UIAlertController(title: .TrackerProtectionAlertTitle,
+                                                      message: .TrackerProtectionAlertDescription,
+                                                      preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: .TrackerProtectionAlertButton,
+                                                      style: .default,
+                                                      handler: nil))
+                        self.present(alert, animated: true)
+                    }
             })
 
             setting.onAccessoryButtonTapped = {
@@ -187,12 +207,16 @@ class ContentBlockerSettingViewController: SettingsTableViewController {
             return setting
         }
 
-        let enabledSetting = BoolSetting(prefs: profile.prefs, prefKey: ContentBlockingConfig.Prefs.EnabledKey, defaultValue: ContentBlockingConfig.Defaults.NormalBrowsing, attributedTitleText: NSAttributedString(string: .TrackingProtectionEnableTitle)) { [weak self] enabled in
-            TabContentBlocker.prefsChanged()
-            strengthSetting.forEach { item in
-                item.enabled = enabled
-            }
-            self?.tableView.reloadData()
+        let enabledSetting = BoolSetting(
+            prefs: profile.prefs,
+            prefKey: ContentBlockingConfig.Prefs.EnabledKey,
+            defaultValue: ContentBlockingConfig.Defaults.NormalBrowsing,
+            attributedTitleText: NSAttributedString(string: .TrackingProtectionEnableTitle)) { [weak self] enabled in
+                TabContentBlocker.prefsChanged()
+                strengthSetting.forEach { item in
+                    item.enabled = enabled
+                }
+                self?.tableView.reloadData()
         }
 
         let firstSection = SettingSection(title: nil, footerTitle: NSAttributedString(string: .TrackingProtectionCellFooter), children: [enabledSetting])
@@ -209,33 +233,39 @@ class ContentBlockerSettingViewController: SettingsTableViewController {
     // The first section header gets a More Info link
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let _defaultFooter = super.tableView(tableView, viewForFooterInSection: section) as? ThemedTableSectionHeaderFooterView
-        guard let defaultFooter = _defaultFooter, section > 0 else {
-            return _defaultFooter
+        guard let defaultFooter = _defaultFooter else { return nil }
+
+        if section == 0 {
+            // TODO: Get a dedicated string for this.
+            let title: String = .TrackerProtectionLearnMore
+
+            let font = DynamicFontHelper.defaultHelper.preferredFont(withTextStyle: .subheadline, size: 12.0)
+            var attributes = [NSAttributedString.Key: AnyObject]()
+            attributes[NSAttributedString.Key.foregroundColor] = themeManager.currentTheme.colors.actionPrimary
+            attributes[NSAttributedString.Key.font] = font
+
+            button.setAttributedTitle(NSAttributedString(string: title, attributes: attributes), for: .normal)
+            button.addTarget(self, action: #selector(moreInfoTapped), for: .touchUpInside)
+            button.isHidden = false
+
+            defaultFooter.addSubview(button)
+
+            button.snp.makeConstraints { (make) in
+                make.top.equalTo(defaultFooter.titleLabel.snp.bottom)
+                make.leading.equalTo(defaultFooter.titleLabel)
+            }
+            return defaultFooter
         }
 
         if currentBlockingStrength == .basic {
             return nil
         }
 
-        // TODO: Get a dedicated string for this.
-        let title: String = .TrackerProtectionLearnMore
-
-        var attributes = [NSAttributedString.Key: AnyObject]()
-        attributes[NSAttributedString.Key.font] = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.regular)
-        attributes[NSAttributedString.Key.foregroundColor] = UIColor.theme.general.highlightBlue
-
-        let button = UIButton()
-        button.setAttributedTitle(NSAttributedString(string: title, attributes: attributes), for: .normal)
-        button.addTarget(self, action: #selector(moreInfoTapped), for: .touchUpInside)
-
-        defaultFooter.addSubview(button)
-
-        button.snp.makeConstraints { (make) in
-            make.top.equalTo(defaultFooter.titleLabel.snp.bottom)
-            make.leading.equalTo(defaultFooter.titleLabel)
-        }
-
         return defaultFooter
+    }
+
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
     }
 
     @objc func moreInfoTapped() {

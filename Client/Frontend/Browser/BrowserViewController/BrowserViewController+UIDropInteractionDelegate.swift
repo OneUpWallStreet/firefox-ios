@@ -8,7 +8,9 @@ import Storage
 extension BrowserViewController: UIDropInteractionDelegate {
     func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
         // Prevent tabs from being dragged and dropped into the address bar.
-        if let localDragSession = session.localDragSession, let item = localDragSession.items.first, let _ = item.localObject {
+        if let localDragSession = session.localDragSession,
+           let item = localDragSession.items.first,
+           item.localObject != nil {
             return false
         }
 
@@ -25,9 +27,7 @@ extension BrowserViewController: UIDropInteractionDelegate {
         TelemetryWrapper.recordEvent(category: .action, method: .drop, object: .url, value: .browser)
 
         _ = session.loadObjects(ofClass: URL.self) { urls in
-            guard let url = urls.first else {
-                return
-            }
+            guard let url = urls.first else { return }
 
             self.finishEditingAndSubmit(url, visitType: VisitType.typed, forTab: tab)
         }

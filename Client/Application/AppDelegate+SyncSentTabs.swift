@@ -5,7 +5,6 @@
 import Shared
 import Storage
 import Sync
-import XCGLogger
 import UserNotifications
 import Account
 
@@ -24,7 +23,7 @@ extension UIApplication {
  when the app performs a sync.
  */
 class AppSyncDelegate: SyncDelegate {
-    let app: UIApplication
+    private let app: UIApplication
 
     init(app: UIApplication) {
         self.app = app

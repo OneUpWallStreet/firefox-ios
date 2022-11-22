@@ -1,6 +1,6 @@
-/* This Source Code Form is subject to the terms of the Mozilla Public
-* License, v. 2.0. If a copy of the MPL was not distributed with this
-* file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import UIKit
 import Shared
@@ -79,7 +79,7 @@ open class RustFirefoxAccounts {
 
             RustFirefoxAccounts.shared.accountManager.fill(manager)
 
-            // After everthing is setup, register for push notifications
+            // After everything is setup, register for push notifications
             if manager.hasAccount() {
                 NotificationCenter.default.post(name: .RegisterForPushNotifications, object: nil)
             }
@@ -159,7 +159,7 @@ open class RustFirefoxAccounts {
         syncAuthState = FirefoxAccountSyncAuthState(
             cache: KeychainCache.fromBranch("rustAccounts.syncAuthState",
                                             withLabel: RustFirefoxAccounts.syncAuthStateUniqueId(prefs: prefs),
-                factory: syncAuthStateCachefromJSON))
+                                            factory: syncAuthStateCachefromJSON))
 
         // Called when account is logged in for the first time, on every app start when the account is found (even if offline), and when migration of an account is completed.
         NotificationCenter.default.addObserver(forName: .accountAuthenticated, object: nil, queue: .main) { [weak self] notification in
@@ -187,8 +187,14 @@ open class RustFirefoxAccounts {
         }
     }
 
+    struct MigrationTokens {
+        let session: String
+        let ksync: String
+        let kxcs: String
+    }
+
     /// When migrating to new rust FxA, grab the old session tokens and try to re-use them.
-    private class func migrationTokens() -> (session: String, ksync: String, kxcs: String)? {
+    private class func migrationTokens() -> MigrationTokens? {
         // Keychain forKey("profile.account"), return dictionary, from there
         // forKey("account.state.<guid>"), guid is dictionary["stateKeyLabel"]
         // that returns JSON string.
@@ -199,25 +205,22 @@ open class RustFirefoxAccounts {
         // Ignore this class when de-archiving, it isn't needed.
         NSKeyedUnarchiver.setClass(Unknown.self, forClassName: "Account.FxADeviceRegistration")
 
-        guard let dict = keychain.object(forKey: key) as? [String: AnyObject], let guid = dict["stateKeyLabel"] else {
-            return nil
-        }
+        guard let dict = keychain.object(forKey: key) as? [String: AnyObject],
+              let guid = dict["stateKeyLabel"]
+        else { return nil }
 
         let key2 = "account.state.\(guid)"
         keychain.ensureObjectItemAccessibility(.afterFirstUnlock, forKey: key2)
-        guard let jsonData = keychain.data(forKey: key2) else {
-            return nil
-        }
+        guard let jsonData = keychain.data(forKey: key2) else { return nil }
 
-        guard let json = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String: Any] else {
-            return nil
-        }
+        guard let json = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String: Any] else { return nil }
 
-        guard let sessionToken = json["sessionToken"] as? String, let ksync = json["kSync"] as? String, let kxcs = json["kXCS"] as? String else {
-            return nil
-        }
+        guard let sessionToken = json["sessionToken"] as? String,
+              let ksync = json["kSync"] as? String,
+              let kxcs = json["kXCS"] as? String
+        else { return nil }
 
-        return (session: sessionToken, ksync: ksync, kxcs: kxcs)
+        return MigrationTokens(session: sessionToken, ksync: ksync, kxcs: kxcs)
     }
 
     /// This is typically used to add a UI indicator that FxA needs attention (usually re-login manually).
@@ -255,26 +258,24 @@ open class RustFirefoxAccounts {
     private let prefKeyCachedUserProfile = "prefKeyCachedUserProfile"
     private var cachedUserProfile: FxAUserProfile?
     public var userProfile: FxAUserProfile? {
-        get {
-            let prefs = RustFirefoxAccounts.prefs
+        let prefs = RustFirefoxAccounts.prefs
 
-            if let accountManager = accountManager.peek(), let profile = accountManager.accountProfile() {
-                if let p = cachedUserProfile, FxAUserProfile(profile: profile) == p {
-                    return cachedUserProfile
-                }
-
-                cachedUserProfile = FxAUserProfile(profile: profile)
-                if let data = try? JSONEncoder().encode(cachedUserProfile!) {
-                    prefs?.setObject(data, forKey: prefKeyCachedUserProfile)
-                }
-            } else if cachedUserProfile == nil {
-                if let data: Data = prefs?.objectForKey(prefKeyCachedUserProfile) {
-                    cachedUserProfile = try? JSONDecoder().decode(FxAUserProfile.self, from: data)
-                }
+        if let accountManager = accountManager.peek(), let profile = accountManager.accountProfile() {
+            if let p = cachedUserProfile, FxAUserProfile(profile: profile) == p {
+                return cachedUserProfile
             }
 
-            return cachedUserProfile
+            cachedUserProfile = FxAUserProfile(profile: profile)
+            if let data = try? JSONEncoder().encode(cachedUserProfile!) {
+                prefs?.setObject(data, forKey: prefKeyCachedUserProfile)
+            }
+        } else if cachedUserProfile == nil {
+            if let data: Data = prefs?.objectForKey(prefKeyCachedUserProfile) {
+                cachedUserProfile = try? JSONDecoder().decode(FxAUserProfile.self, from: data)
+            }
         }
+
+        return cachedUserProfile
     }
 
     public func disconnect() {
@@ -284,9 +285,16 @@ open class RustFirefoxAccounts {
         prefs?.removeObjectForKey(RustFirefoxAccounts.prefKeySyncAuthStateUniqueID)
         prefs?.removeObjectForKey(prefKeyCachedUserProfile)
         prefs?.removeObjectForKey(PendingAccountDisconnectedKey)
+        self.syncAuthState.invalidate()
         cachedUserProfile = nil
         pushNotifications.unregister()
         MZKeychainWrapper.sharedClientAppContainerKeychain.removeObject(forKey: KeychainKey.apnsToken, withAccessibility: .afterFirstUnlock)
+    }
+
+    public func hasAccount(completion: @escaping (Bool) -> Void) {
+        accountManager.uponQueue(.global(qos: .userInitiated)) { manager in
+            completion(manager.hasAccount())
+        }
     }
 
     public func hasAccount() -> Bool {

@@ -3,11 +3,8 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0
 
 import Foundation
-import XCGLogger
 import SwiftyJSON
 import MozillaAppServices
-
-private let log = Logger.keychainLogger
 
 public class KeychainStore {
     public static let shared = KeychainStore()
@@ -39,9 +36,7 @@ public class KeychainStore {
     }
 
     public func dictionary(forKey key: String, withAccessibility accessibility: MZKeychainItemAccessibility = .afterFirstUnlock) -> [String: Any]? {
-        guard let stringValue = string(forKey: key, withAccessibility: accessibility) else {
-            return nil
-        }
+        guard let stringValue = string(forKey: key, withAccessibility: accessibility) else { return nil }
 
         let json = JSON(parseJSON: stringValue)
         let dictionary = json.dictionaryObject

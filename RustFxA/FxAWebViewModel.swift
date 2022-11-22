@@ -1,6 +1,6 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
-* License, v. 2.0. If a copy of the MPL was not distributed with this
-* file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import WebKit
 import Foundation
@@ -16,7 +16,7 @@ enum FxAPageType {
 
 // See https://mozilla.github.io/ecosystem-platform/docs/fxa-engineering/fxa-webchannel-protocol
 // For details on message types.
-fileprivate enum RemoteCommand: String {
+private enum RemoteCommand: String {
     // case canLinkAccount = "can_link_account"
     // case loaded = "fxaccounts:loaded"
     case status = "fxaccounts:fxa_status"
@@ -38,20 +38,23 @@ class FxAWebViewModel {
     static let mobileUserAgent = UserAgent.mobileUserAgent()
 
     func setupUserScript(for controller: WKUserContentController) {
-        guard let path = Bundle.main.path(forResource: "FxASignIn", ofType: "js"), let source = try? String(contentsOfFile: path, encoding: .utf8) else {
+        guard let path = Bundle.main.path(forResource: "FxASignIn", ofType: "js"),
+              let source = try? String(contentsOfFile: path, encoding: .utf8)
+        else {
             assert(false)
             return
         }
+
         let userScript = WKUserScript(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: true)
         controller.addUserScript(userScript)
     }
 
     /**
-    init() FxAWebViewModel.
-    - parameter pageType: Specify login flow or settings page if already logged in.
-    - parameter profile: a Profile.
-    - parameter deepLinkParams: url parameters that originate from a deep link
-    */
+     init() FxAWebViewModel.
+     - parameter pageType: Specify login flow or settings page if already logged in.
+     - parameter profile: a Profile.
+     - parameter deepLinkParams: url parameters that originate from a deep link
+     */
     required init(pageType: FxAPageType, profile: Profile, deepLinkParams: FxALaunchParams?) {
         self.pageType = pageType
         self.profile = profile
@@ -68,7 +71,7 @@ class FxAWebViewModel {
         return (hasOnlySecureContent ? "🔒 " : "") + (url?.host ?? "")
     }
 
-    func setupFirstPage(completion: @escaping ((URLRequest, TelemetryWrapper.EventMethod?) -> Void)) {
+    func setupFirstPage(completion: @escaping (URLRequest, TelemetryWrapper.EventMethod?) -> Void) {
         profile.rustFxA.accountManager.uponQueue(.main) { accountManager in
             accountManager.getManageAccountURL(entrypoint: "ios_settings_manage") { [weak self] result in
                 guard let self = self else { return }
@@ -123,7 +126,9 @@ class FxAWebViewModel {
 // MARK: - Commands
 extension FxAWebViewModel {
     func handle(scriptMessage message: WKScriptMessage) {
-        guard let url = baseURL, let webView = message.webView else { return }
+        guard let url = baseURL,
+              let webView = message.webView
+        else { return }
 
         let origin = message.frameInfo.securityOrigin
         guard origin.`protocol` == url.scheme && origin.host == url.host && origin.port == (url.port ?? 0) else {
@@ -132,10 +137,11 @@ extension FxAWebViewModel {
         }
 
         guard message.name == "accountsCommandHandler" else { return }
-        guard let body = message.body as? [String: Any], let detail = body["detail"] as? [String: Any],
-            let msg = detail["message"] as? [String: Any], let cmd = msg["command"] as? String else {
-                return
-        }
+        guard let body = message.body as? [String: Any],
+              let detail = body["detail"] as? [String: Any],
+              let msg = detail["message"] as? [String: Any],
+              let cmd = msg["command"] as? String
+        else { return }
 
         let id = Int(msg["messageId"] as? String ?? "")
         handleRemote(command: cmd, id: id, data: msg["data"], webView: webView)
@@ -185,19 +191,21 @@ extension FxAWebViewModel {
         webView.evaluateJavascriptInDefaultContentWorld(msg)
     }
 
-    /// Respond to the webpage session status notification by either passing signed in user info (for settings), or by passing CWTS setup info (in case the user is signing up for an account). This latter case is also used for the sign-in state.
+    /// Respond to the webpage session status notification by either passing signed in
+    /// user info (for settings), or by passing CWTS setup info (in case the user is
+    /// signing up for an account). This latter case is also used for the sign-in state.
     private func onSessionStatus(id: Int, webView: WKWebView) {
         guard let fxa = profile.rustFxA.accountManager.peek() else { return }
         let cmd = "fxaccounts:fxa_status"
         let typeId = "account_updates"
         let data: String
         switch pageType {
-            case .settingsPage:
-                // Both email and uid are required at this time to properly link the FxA settings session
-                let email = fxa.accountProfile()?.email ?? ""
-                let uid = fxa.accountProfile()?.uid ?? ""
-                let token = (try? fxa.getSessionToken().get()) ?? ""
-                data = """
+        case .settingsPage:
+            // Both email and uid are required at this time to properly link the FxA settings session
+            let email = fxa.accountProfile()?.email ?? ""
+            let uid = fxa.accountProfile()?.uid ?? ""
+            let token = (try? fxa.getSessionToken().get()) ?? ""
+            data = """
                 {
                     capabilities: {},
                     signedInUser: {
@@ -208,8 +216,8 @@ extension FxAWebViewModel {
                     }
                 }
                 """
-            case .emailLoginFlow, .qrCode:
-                data = """
+        case .emailLoginFlow, .qrCode:
+            data = """
                     { capabilities:
                         { choose_what_to_sync: true, engines: ["bookmarks", "history", "tabs", "passwords"] },
                     }
@@ -220,9 +228,10 @@ extension FxAWebViewModel {
     }
 
     private func onLogin(data: Any, webView: WKWebView) {
-        guard let data = data as? [String: Any], let code = data["code"] as? String, let state = data["state"] as? String else {
-            return
-        }
+        guard let data = data as? [String: Any],
+              let code = data["code"] as? String,
+              let state = data["state"] as? String
+        else { return }
 
         if let declinedSyncEngines = data["declinedSyncEngines"] as? [String] {
             // Stash the declined engines so on first sync we can disable them!
@@ -237,9 +246,7 @@ extension FxAWebViewModel {
             MZKeychainWrapper.sharedClientAppContainerKeychain.removeObject(forKey: KeychainKey.apnsToken, withAccessibility: MZKeychainItemAccessibility.afterFirstUnlock)
             let center = UNUserNotificationCenter.current()
             center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
-                guard error == nil else {
-                    return
-                }
+                guard error == nil else { return }
                 if granted {
                     NotificationCenter.default.post(name: .RegisterForPushNotifications, object: nil)
                 }
@@ -251,9 +258,9 @@ extension FxAWebViewModel {
     }
 
     private func onPasswordChange(data: Any, webView: WKWebView) {
-        guard let data = data as? [String: Any], let sessionToken = data["sessionToken"] as? String else {
-            return
-        }
+        guard let data = data as? [String: Any],
+              let sessionToken = data["sessionToken"] as? String
+        else { return }
 
         profile.rustFxA.accountManager.peek()?.handlePasswordChanged(newSessionToken: sessionToken) {
             NotificationCenter.default.post(name: .RegisterForPushNotifications, object: nil)

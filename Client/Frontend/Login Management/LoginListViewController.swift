@@ -6,21 +6,13 @@ import UIKit
 import Storage
 import Shared
 
-private extension UITableView {
-    var allLoginIndexPaths: [IndexPath] {
-        return ((LoginsSettingsSection + 1)..<self.numberOfSections).flatMap { sectionNum in
-            (0..<self.numberOfRows(inSection: sectionNum)).map {
-                IndexPath(row: $0, section: sectionNum)
-            }
-        }
-    }
-}
+class LoginListViewController: SensitiveViewController, Themeable {
 
-let CellReuseIdentifier = "cell-reuse-id"
-let SectionHeaderId = "section-header-id"
-let LoginsSettingsSection = 0
+    static let loginsSettingsSection = 0
 
-class LoginListViewController: SensitiveViewController {
+    var themeManager: ThemeManager
+    var themeObserver: NSObjectProtocol?
+    var notificationCenter: NotificationProtocol
 
     private let viewModel: LoginListViewModel
 
@@ -50,12 +42,18 @@ class LoginListViewController: SensitiveViewController {
         return prefs.boolForKey(PrefsKeys.LoginsShowShortcutMenuItem) ?? true
     }
 
-    static func create(authenticateInNavigationController navigationController: UINavigationController, profile: Profile, settingsDelegate: SettingsDelegate, webpageNavigationHandler: ((_ url: URL?) -> Void)?) -> Deferred<LoginListViewController?> {
+    static func create(
+        authenticateInNavigationController navigationController: UINavigationController,
+        profile: Profile,
+        settingsDelegate: SettingsDelegate,
+        webpageNavigationHandler: ((_ url: URL?) -> Void)?
+    ) -> Deferred<LoginListViewController?> {
         let deferred = Deferred<LoginListViewController?>()
 
         func fillDeferred(ok: Bool) {
             if ok {
-                let viewController = LoginListViewController(profile: profile, webpageNavigationHandler: webpageNavigationHandler)
+                let viewController = LoginListViewController(profile: profile,
+                                                             webpageNavigationHandler: webpageNavigationHandler)
                 viewController.settingsDelegate = settingsDelegate
                 deferred.fill(viewController)
             } else {
@@ -65,21 +63,29 @@ class LoginListViewController: SensitiveViewController {
 
         AppAuthenticator.authenticateWithDeviceOwnerAuthentication { result in
             switch result {
-                case .success:
-                    fillDeferred(ok: true)
-                case .failure:
-                    fillDeferred(ok: false)
+            case .success:
+                fillDeferred(ok: true)
+            case .failure:
+                fillDeferred(ok: false)
             }
         }
 
         return deferred
     }
 
-    private init(profile: Profile, webpageNavigationHandler: ((_ url: URL?) -> Void)?) {
-        self.viewModel = LoginListViewModel(profile: profile, searchController: searchController)
-        self.loginDataSource = LoginDataSource(viewModel: self.viewModel)
+    private init(profile: Profile,
+                 webpageNavigationHandler: ((_ url: URL?) -> Void)?,
+                 themeManager: ThemeManager = AppContainer.shared.resolve(),
+                 notificationCenter: NotificationCenter = NotificationCenter.default) {
+        self.viewModel = LoginListViewModel(profile: profile,
+                                            searchController: searchController,
+                                            theme: themeManager.currentTheme)
+        self.loginDataSource = LoginDataSource(viewModel: viewModel)
         self.webpageNavigationHandler = webpageNavigationHandler
+        self.themeManager = themeManager
+        self.notificationCenter = notificationCenter
         super.init(nibName: nil, bundle: nil)
+        listenForThemeChange()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -88,10 +94,11 @@ class LoginListViewController: SensitiveViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = .LoginsAndPasswordsTitle
+        self.title = .Settings.Passwords.Title
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
-        tableView.register(ThemedTableViewCell.self, forCellReuseIdentifier: CellReuseIdentifier)
-        tableView.register(ThemedTableSectionHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: SectionHeaderId)
+        tableView.register(cellType: LoginListTableViewSettingsCell.self)
+        tableView.register(cellType: LoginListTableViewCell.self)
+        tableView.registerHeaderFooter(cellType: ThemedTableSectionHeaderFooterView.self)
 
         tableView.accessibilityIdentifier = "Login List"
         tableView.dataSource = loginDataSource
@@ -100,8 +107,8 @@ class LoginListViewController: SensitiveViewController {
         tableView.tableFooterView = UIView()
 
         if #available(iOS 15.0, *) {
-             tableView.sectionHeaderTopPadding = 0
-         }
+            tableView.sectionHeaderTopPadding = 0
+        }
 
         // Setup the Search Controller
         searchController.searchBar.autocapitalizationType = .none
@@ -116,8 +123,14 @@ class LoginListViewController: SensitiveViewController {
         searchController.hidesNavigationBarDuringPresentation = UIDevice.current.userInterfaceIdiom != .pad
 
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(remoteLoginsDidChange), name: .DataRemoteLoginChangesWereApplied, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(dismissAlertController), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(remoteLoginsDidChange),
+                                       name: .DataRemoteLoginChangesWereApplied,
+                                       object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(dismissAlertController),
+                                       name: UIApplication.didEnterBackgroundNotification,
+                                       object: nil)
 
         setupDefaultNavButtons()
         view.addSubview(tableView)
@@ -158,51 +171,64 @@ class LoginListViewController: SensitiveViewController {
     }
 
     func applyTheme() {
-        view.backgroundColor = UIColor.theme.tableView.headerBackground
+        let theme = themeManager.currentTheme
+        viewModel.theme = theme
+        loginDataSource.viewModel = viewModel
 
-        tableView.separatorColor = UIColor.theme.tableView.separator
-        tableView.backgroundColor = UIColor.theme.tableView.headerBackground
-        tableView.reloadData()
+        view.backgroundColor = theme.colors.layer1
+        tableView.separatorColor = theme.colors.borderPrimary
+        tableView.backgroundColor = theme.colors.layer1
 
-        (tableView.tableHeaderView as? NotificationThemeable)?.applyTheme()
+        selectionButton.setTitleColor(theme.colors.textInverted, for: [])
+        selectionButton.backgroundColor = theme.colors.actionPrimary
+        deleteButton.tintColor = theme.colors.textWarning
 
-        selectionButton.setTitleColor(UIColor.theme.tableView.rowBackground, for: [])
-        selectionButton.backgroundColor = UIColor.theme.general.highlightBlue
-
-        let isDarkTheme = LegacyThemeManager.instance.currentName == .dark
+        // Search bar text and placeholder color
         let searchTextField = searchController.searchBar.searchTextField
+        searchTextField.defaultTextAttributes[NSAttributedString.Key.foregroundColor] = theme.colors.textPrimary
+        let placeholderAttribute = [NSAttributedString.Key.foregroundColor: theme.colors.textSecondary]
+        searchTextField.attributedPlaceholder = NSAttributedString(string: searchTextField.placeholder ?? "",
+                                                                   attributes: placeholderAttribute)
 
-        // Theme the search text field (Dark / Light)
-        if isDarkTheme {
-            searchTextField.defaultTextAttributes[NSAttributedString.Key.foregroundColor] = UIColor.white
-        } else {
-            searchTextField.defaultTextAttributes[NSAttributedString.Key.foregroundColor] = UIColor.black
-        }
         // Theme the glass icon next to the search text field
         if let glassIconView = searchTextField.leftView as? UIImageView {
             // Magnifying glass
             glassIconView.image = glassIconView.image?.withRenderingMode(.alwaysTemplate)
-            glassIconView.tintColor = UIColor.theme.tableView.headerTextLight
+            glassIconView.tintColor = theme.colors.iconSecondary
         }
     }
 
     @objc func dismissLogins() {
         dismiss(animated: true)
     }
-    lazy var editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(beginEditing))
-    lazy var addCredentialButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentAddCredential))
+
+    lazy var editButton = UIBarButtonItem(barButtonSystemItem: .edit,
+                                          target: self,
+                                          action: #selector(beginEditing))
+
+    lazy var addCredentialButton = UIBarButtonItem(barButtonSystemItem: .add,
+                                                   target: self,
+                                                   action: #selector(presentAddCredential))
+
     lazy var deleteButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: .LoginListDelete, style: .plain, target: self, action: #selector(tappedDelete))
-        button.tintColor = UIColor.Photon.Red50
+        let button = UIBarButtonItem(title: .LoginListDelete,
+                                     style: .plain,
+                                     target: self,
+                                     action: #selector(tappedDelete))
         return button
     }()
-    lazy var cancelSelectionButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelSelection))
+
+    lazy var cancelSelectionButton = UIBarButtonItem(barButtonSystemItem: .cancel,
+                                                     target: self,
+                                                     action: #selector(cancelSelection))
 
     fileprivate func setupDefaultNavButtons() {
-         navigationItem.rightBarButtonItems = [editButton, addCredentialButton]
+        navigationItem.rightBarButtonItems = [editButton, addCredentialButton]
 
         if shownFromAppMenu {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissLogins))
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
+                                                               target: self,
+                                                               action: #selector(dismissLogins))
         } else {
             navigationItem.leftBarButtonItem = nil
         }
@@ -257,6 +283,7 @@ private extension LoginListViewController {
 
     func loadLogins(_ query: String? = nil) {
         loadingView.isHidden = false
+        loadingView.applyTheme(theme: themeManager.currentTheme)
         viewModel.loadLogins(query, loginDataSource: self.loginDataSource)
     }
 
@@ -304,7 +331,7 @@ private extension LoginListViewController {
     }
 
     @objc func tappedDelete() {
-        viewModel.profile.logins.hasSyncedLogins().uponQueue(.main) { yes in
+        viewModel.profile.hasSyncedLogins().uponQueue(.main) { yes in
             self.deleteAlert = UIAlertController.deleteLoginAlertWithDeleteCallback({ [unowned self] _ in
                 // Delete here
                 let guidsToDelete = self.loginSelectionController.selectedIndexPaths.compactMap { indexPath in
@@ -359,20 +386,18 @@ extension LoginListViewController: UITableViewDelegate {
         if section != 1 {
             return nil
         }
-        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: SectionHeaderId) as? ThemedTableSectionHeaderFooterView else {
-            return nil
-        }
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ThemedTableSectionHeaderFooterView.cellIdentifier) as? ThemedTableSectionHeaderFooterView else { return nil }
         headerView.titleLabel.text = .LoginsListTitle
-        headerView.titleLabel.font = DynamicFontHelper.defaultHelper.DeviceFontSmall
         // not using a grouped table: show header borders
         headerView.showBorder(for: .top, true)
         headerView.showBorder(for: .bottom, true)
-        headerView.applyTheme()
+        headerView.applyTheme(theme: themeManager.currentTheme)
         return headerView
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == LoginsSettingsSection, searchController.isActive || tableView.isEditing {
+        if indexPath.section == LoginListViewController.loginsSettingsSection,
+           searchController.isActive || tableView.isEditing {
             return 0
         }
         return UITableView.automaticDimension
@@ -425,11 +450,11 @@ extension LoginListViewController: KeyboardHelperDelegate {
 // MARK: - SearchInputViewDelegate
 extension LoginListViewController: SearchInputViewDelegate {
 
-    @objc func searchInputView(_ searchView: SearchInputView, didChangeTextTo text: String) {
+    func searchInputView(_ searchView: SearchInputView, didChangeTextTo text: String) {
         loadLogins(text)
     }
 
-    @objc func searchInputViewBeganEditing(_ searchView: SearchInputView) {
+    func searchInputViewBeganEditing(_ searchView: SearchInputView) {
         // Trigger a cancel for editing
         cancelSelection()
 
@@ -438,7 +463,7 @@ extension LoginListViewController: SearchInputViewDelegate {
         loadLogins()
     }
 
-    @objc func searchInputViewFinishedEditing(_ searchView: SearchInputView) {
+    func searchInputViewFinishedEditing(_ searchView: SearchInputView) {
         setupDefaultNavButtons()
         loadLogins()
     }
@@ -460,13 +485,24 @@ extension LoginListViewController: LoginViewModelDelegate {
     func loginSectionsDidUpdate() {
         loadingView.isHidden = true
         tableView.reloadData()
-        navigationItem.rightBarButtonItem?.isEnabled = viewModel.count > 0
+        navigationItem.rightBarButtonItem?.isEnabled = viewModel.hasData
         restoreSelectedRows()
     }
 
     func restoreSelectedRows() {
         for path in self.loginSelectionController.selectedIndexPaths {
             tableView.selectRow(at: path, animated: false, scrollPosition: .none)
+        }
+    }
+}
+
+// MARK: - UITableView extension
+private extension UITableView {
+    var allLoginIndexPaths: [IndexPath] {
+        return ((LoginListViewController.loginsSettingsSection + 1)..<self.numberOfSections).flatMap { sectionNum in
+            (0..<self.numberOfRows(inSection: sectionNum)).map {
+                IndexPath(row: $0, section: sectionNum)
+            }
         }
     }
 }

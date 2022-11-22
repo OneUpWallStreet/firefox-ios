@@ -39,9 +39,20 @@ public struct PrefsKeys {
     public static let KeyCurrentInstallVersion = "KeyCurrentInstallVersion"
     public static let KeySecondRun = "SecondRun"
 
+    public struct Wallpapers {
+        public static let MetadataLastCheckedDate = "WallpaperMetadataLastCheckedUserPrefsKey"
+        public static let CurrentWallpaper = "CurrentWallpaperUserPrefsKey"
+        public static let ThumbnailsAvailable = "ThumbnailsAvailableUserPrefsKey"
+        public static let OnboardingSeenKey = "WallpaperOnboardingSeenKeyUserPrefsKey"
+
+        public static let legacyAssetMigrationCheck = "legacyAssetMigrationCheckUserPrefsKey"
+        public static let v1MigrationCheck = "v1MigrationCheckUserPrefsKey"
+    }
+
     // For ease of use, please list keys alphabetically.
     public struct FeatureFlags {
         public static let ASPocketStories = "ASPocketStoriesUserPrefsKey"
+        public static let ASSponsoredPocketStories = "ASSponsoredPocketStoriesUserPrefsKey"
         public static let CustomWallpaper = "CustomWallpaperUserPrefsKey"
         public static let HistoryHighlightsSection = "HistoryHighlightsSectionUserPrefsKey"
         public static let HistoryGroups = "HistoryGroupsUserPrefsKey"
@@ -72,13 +83,17 @@ public struct PrefsKeys {
         public static let TopSiteSection = "topSitesKey"
 
         public static let MigrationCheck = "MigrationCheck"
+        public static let WallpaperDirectoryMigrationCheck = "WallpaperDirectoryMigrationCheck"
     }
 
     // Firefox contextual hint
     public enum ContextualHints: String, CaseIterable {
-        case JumpBackinKey = "ContextualHintJumpBackin"
-        case InactiveTabsKey = "ContextualHintInactiveTabs"
-        case ToolbarOnboardingKey = "ContextualHintToolbarOnboardingKey"
+        case jumpBackinKey = "ContextualHintJumpBackin"
+        case jumpBackInConfiguredKey = "JumpBackInConfigured"
+        case jumpBackInSyncedTabKey = "ContextualHintJumpBackInSyncedTab"
+        case jumpBackInSyncedTabConfiguredKey = "JumpBackInSyncedTabConfigured"
+        case inactiveTabsKey = "ContextualHintInactiveTabs"
+        case toolbarOnboardingKey = "ContextualHintToolbarOnboardingKey"
     }
 
     // Activity Stream
@@ -106,15 +121,15 @@ public struct PrefsKeys {
     public static let WidgetKitSimpleTabKey = "WidgetKitSimpleTabKey"
     public static let WidgetKitSimpleTopTab = "WidgetKitSimpleTopTab"
 
-    // ThemeManager key
-    public static let ThemeManagerCustomizationKey = "ThemeManagerCustomizationKey"
-
-    // WallpaperManager Key
+    // WallpaperManager Keys - Legacy
     public static let WallpaperManagerCurrentWallpaperObject = "WallpaperManagerCurrentWallpaperObject"
     public static let WallpaperManagerCurrentWallpaperImage = "WallpaperManagerCurrentWallpaperImage"
     public static let WallpaperManagerCurrentWallpaperImageLandscape = "WallpaperManagerCurrentWallpaperImageLandscape"
     public static let WallpaperManagerLogoSwitchPreference = "WallpaperManagerLogoSwitchPreference"
-    public static let WallpaperLogoHasShownAnimation = "WallpaperLogoHasShownAnimation"
+
+    // Application Services Migration to Places DB
+    public static let NewPlacesAPIDefaultKey = "NewPlacesAPI"
+
 }
 
 public struct PrefsDefaults {

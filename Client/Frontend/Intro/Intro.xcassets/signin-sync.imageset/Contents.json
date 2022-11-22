@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "signin-sync-glow.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

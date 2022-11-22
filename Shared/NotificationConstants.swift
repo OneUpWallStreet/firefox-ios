@@ -3,7 +3,6 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0
 
 extension Notification.Name {
-    public static let DataLoginDidChange = Notification.Name("DataLoginDidChange")
 
     // add a property to allow the observation of firefox accounts
     public static let FirefoxAccountChanged = Notification.Name("FirefoxAccountChanged")
@@ -38,6 +37,8 @@ extension Notification.Name {
     public static let DatabaseWasClosed = Notification.Name("DatabaseWasClosed")
     public static let DatabaseWasReopened = Notification.Name("DatabaseWasReopened")
 
+    public static let RustPlacesOpened = Notification.Name("RustPlacesOpened")
+
     public static let PasscodeDidChange = Notification.Name("PasscodeDidChange")
 
     public static let PasscodeDidCreate = Notification.Name("PasscodeDidCreate")
@@ -58,6 +59,9 @@ extension Notification.Name {
 
     public static let DisplayThemeChanged = Notification.Name("DisplayThemeChanged")
 
+    // This will eventually replace DisplayThemeChanged
+    public static let ThemeDidChange = Notification.Name("ThemeDidChange")
+
     public static let SearchBarPositionDidChange = Notification.Name("SearchBarPositionDidChange")
 
     public static let WallpaperDidChange = Notification.Name("WallpaperDidChange")
@@ -65,6 +69,8 @@ extension Notification.Name {
     public static let UpdateLabelOnTabClosed = Notification.Name("UpdateLabelOnTabClosed")
 
     public static let TopTabsTabClosed = Notification.Name("TopTabsTabClosed")
+
+    public static let ShowHomepage = Notification.Name("ShowHomepage")
 
     public static let TabsTrayDidClose = Notification.Name("TabsTrayDidClose")
 
@@ -74,9 +80,20 @@ extension Notification.Name {
 
     public static let OpenClearRecentHistory = Notification.Name("OpenClearRecentHistory")
 
+    public static let LibraryPanelStateDidChange = Notification.Name("LibraryPanelStateDidChange")
+
+    public static let SearchSettingsChanged = Notification.Name("SearchSettingsChanged")
+
     // MARK: Tab manager
 
     // Tab manager creates a toast for undo recently closed tabs and a notification is
     // fired when user taps on undo button on Toast
     public static let DidTapUndoCloseAllTabToast = Notification.Name("DidTapUndoCloseAllTabToast")
+
+    // MARK: Settings
+
+    public static let BookmarksUpdated = Notification.Name("BookmarksUpdated")
+    public static let ReadingListUpdated = Notification.Name("ReadingListUpdated")
+    public static let TopSitesUpdated = Notification.Name("TopSitesUpdated")
+    public static let HistoryUpdated = Notification.Name("HistoryUpdated")
 }

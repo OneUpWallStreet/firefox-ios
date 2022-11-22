@@ -26,6 +26,7 @@ struct BreachRecord: Codable, Equatable, Hashable {
 /// A manager for the user's breached login information, if any.
 final public class BreachAlertsManager {
     static let icon = UIImage(named: "Breached Website")?.withRenderingMode(.alwaysTemplate)
+    // TODO: FXIOS-4995 - BreachAlertsManager theming
     static let lightMode = UIColor(red: 0.77, green: 0.00, blue: 0.26, alpha: 1.00)
     static let darkMode = UIColor(red: 1.00, green: 0.02, blue: 0.35, alpha: 1.00)
     static let monitorAboutUrl = URL(string: "https://monitor.firefox.com/about")
@@ -33,9 +34,7 @@ final public class BreachAlertsManager {
     var client: BreachAlertsClientProtocol
     var profile: Profile!
     private lazy var cacheURL: URL? = {
-        guard let path = try? self.profile.files.getAndEnsureDirectory() else {
-            return nil
-        }
+        guard let path = try? self.profile.files.getAndEnsureDirectory() else { return nil }
         return URL(fileURLWithPath: path, isDirectory: true).appendingPathComponent("breaches.json")
     }()
     private let dateFormatter = DateFormatter()
@@ -112,9 +111,9 @@ final public class BreachAlertsManager {
     func findUserBreaches(_ logins: [LoginRecord]) -> Maybe<Set<LoginRecord>> {
         var result = Set<LoginRecord>()
 
-        if self.breaches.count <= 0 {
+        if self.breaches.isEmpty {
             return Maybe(failure: BreachAlertsError(description: "cannot compare to an empty list of breaches"))
-        } else if logins.count <= 0 {
+        } else if logins.isEmpty {
             return Maybe(failure: BreachAlertsError(description: "cannot compare to an empty list of logins"))
         }
 
@@ -178,9 +177,7 @@ final public class BreachAlertsManager {
     }
 
     private func fetchAndSaveBreaches(_ completion: @escaping (Maybe<Set<BreachRecord>>) -> Void) {
-        guard let cacheURL = self.cacheURL else {
-            return
-        }
+        guard let cacheURL = self.cacheURL else { return }
         self.client.fetchData(endpoint: .breachedAccounts, profile: self.profile) { maybeData in
             guard let fetchedData = maybeData.successValue else { return }
             try? FileManager.default.removeItem(atPath: cacheURL.path)

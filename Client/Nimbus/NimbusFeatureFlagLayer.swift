@@ -26,10 +26,20 @@ final class NimbusFeatureFlagLayer {
                 .recentlySaved,
                 .historyHighlights,
                 .topSites:
-            return checkHomescreenFeature(for: featureID, from: nimbus)
+            return checkHomescreenSectionsFeature(for: featureID, from: nimbus)
 
-        case .wallpapers:
-            return checkNimbusForWallpapersFeature(using: nimbus)
+//        case .contextualHintForJumpBackInSyncedTab:
+//            return checkNimbusForContextualHintsFeature(for: featureID, from: nimbus)
+//
+//        case .copyForJumpBackIn,
+//                .copyForToolbar:
+//            return checkHintCopyFeature(for: featureID, from: nimbus)
+
+        case .jumpBackInSyncedTab:
+            return checkNimbusForJumpBackInSyncedTabFeature(using: nimbus)
+
+        case .sponsoredPocket:
+            return checkNimbusForPocketSponsoredStoriesFeature(using: nimbus)
 
         case .inactiveTabs:
             return checkTabTrayFeature(for: featureID, from: nimbus)
@@ -38,11 +48,38 @@ final class NimbusFeatureFlagLayer {
                 .tabTrayGroups:
             return checkGroupingFeature(for: featureID, from: nimbus)
 
+//        case .onboardingUpgrade,
+//                .onboardingFreshInstall:
+//            return checkNimbusForOnboardingFeature(for: featureID, from: nimbus)
+
         case .sponsoredTiles:
             return checkSponsoredTilesFeature(from: nimbus)
 
         case .startAtHome:
             return checkNimbusConfigForStartAtHome(using: nimbus) != .disabled
+
+        case .wallpapers,
+                .wallpaperVersion:
+            return checkNimbusForWallpapersFeature(using: nimbus)
+
+//        case .wallpaperOnboardingSheet:
+//            return checkNimbusForWallpaperOnboarding(using: nimbus)
+
+        // MARK: - Temp Nimbus Redirect for MR22
+        // This section overrides the other sections specifically for the MR22 experiment.
+        // TODO: Remove this section & corresponding function after experiment conculdes.
+        // https://mozilla-hub.atlassian.net/browse/FXIOS-4875
+        case .wallpaperOnboardingSheet,
+                .onboardingFreshInstall,
+                .onboardingUpgrade,
+                .contextualHintForJumpBackInSyncedTab,
+                .copyForJumpBackIn,
+                .copyForToolbar:
+            return checkNimbusForMR22Feature(for: featureID, using: nimbus)
+
+        case .shareSheetChanges,
+                .shareToolbarChanges:
+            return checkNimbusForShareSheet(for: featureID, from: nimbus)
         }
     }
 
@@ -54,6 +91,31 @@ final class NimbusFeatureFlagLayer {
         case .disabled: return .disabled
         case .afterFourHours: return .afterFourHours
         case .always: return .always
+        }
+    }
+
+    // MARK: - Temp Nimbus Redirect for MR22
+
+    private func checkNimbusForMR22Feature(for featureID: NimbusFeatureFlagID,
+                                           using nimbus: FxNimbus
+    ) -> Bool {
+        let config = nimbus.features.mr2022.value().sectionsEnabled
+        // We've already filtered on the appropriate featureID's previously,
+        // so we can saftely have a default here
+        switch featureID {
+        case .wallpaperOnboardingSheet:
+            return config.wallpaperOnboardingSheet
+        case .onboardingFreshInstall:
+            return config.onboardingFirstRunFlow
+        case .onboardingUpgrade:
+            return config.onboardingUpgradeFlow
+        case .contextualHintForJumpBackInSyncedTab:
+            return config.syncCfr
+        case .copyForJumpBackIn:
+            return config.jumpBackInCfrUpdate
+        case .copyForToolbar:
+            return config.toolbarCfrUpdate
+        default: return false
         }
     }
 
@@ -83,8 +145,8 @@ final class NimbusFeatureFlagLayer {
         }
     }
 
-    private func checkHomescreenFeature(for featureID: NimbusFeatureFlagID,
-                                        from nimbus: FxNimbus
+    private func checkHomescreenSectionsFeature(for featureID: NimbusFeatureFlagID,
+                                                from nimbus: FxNimbus
     ) -> Bool {
         let config = nimbus.features.homescreenFeature.value()
         var nimbusID: HomeScreenSection
@@ -103,15 +165,87 @@ final class NimbusFeatureFlagLayer {
         return status
     }
 
+    private func checkHintCopyFeature(
+        for featureID: NimbusFeatureFlagID,
+        from nimbus: FxNimbus
+    ) -> Bool {
+        let config = nimbus.features.contextualHintFeature.value().hintCopy
+
+        switch featureID {
+        case .copyForJumpBackIn: return config.jumpBackIn
+        case .copyForToolbar: return config.toolbar
+        default: return false
+        }
+    }
+
+    private func checkNimbusForJumpBackInSyncedTabFeature(using nimbus: FxNimbus) -> Bool {
+        return nimbus.features.homescreenFeature.value().jumpBackInSyncedTab
+    }
+
+    private func checkNimbusForContextualHintsFeature(
+        for featureID: NimbusFeatureFlagID,
+        from nimbus: FxNimbus
+    ) -> Bool {
+        let config = nimbus.features.contextualHintFeature.value()
+        var nimbusID: ContextualHint
+
+        switch featureID {
+        case .contextualHintForJumpBackInSyncedTab: nimbusID = ContextualHint.jumpBackInSyncedTabContextualHint
+        default: return false
+        }
+
+        guard let status = config.featuresEnabled[nimbusID] else { return false }
+        return status
+    }
+
     private func checkNimbusForWallpapersFeature(using nimbus: FxNimbus) -> Bool {
-        let config = nimbus.features.homescreenFeature.value()
-        return config.wallpaperFeature.status
+        let config = nimbus.features.wallpaperFeature.value()
+
+        return config.configuration.status
+    }
+
+    private func checkNimbusForWallpaperOnboarding(using nimbus: FxNimbus) -> Bool {
+        return nimbus.features.wallpaperFeature.value().onboardingSheet
+    }
+
+    public func checkNimbusForWallpapersVersion(using nimbus: FxNimbus = FxNimbus.shared) -> String {
+        let config = nimbus.features.wallpaperFeature.value()
+
+        return config.configuration.version.rawValue
+    }
+
+    private func checkNimbusForPocketSponsoredStoriesFeature(using nimbus: FxNimbus) -> Bool {
+        return nimbus.features.homescreenFeature.value().pocketSponsoredStories
     }
 
     private func checkSponsoredTilesFeature(from nimbus: FxNimbus) -> Bool {
         let config = nimbus.features.homescreenFeature.value()
-
         return config.sponsoredTiles.status
+    }
+
+    private func checkNimbusForOnboardingFeature(
+        for featureID: NimbusFeatureFlagID,
+        from nimbus: FxNimbus
+    ) -> Bool {
+        let config = nimbus.features.onboardingFeature.value()
+
+        switch featureID {
+        case .onboardingUpgrade: return config.upgradeFlow
+        case .onboardingFreshInstall: return config.firstRunFlow
+        default: return false
+        }
+    }
+
+    public func checkNimbusForShareSheet(
+        for featureID: NimbusFeatureFlagID,
+        from nimbus: FxNimbus) -> Bool {
+            let config = nimbus.features.shareSheet.value()
+
+            switch featureID {
+            case .shareSheetChanges: return config.moveActions
+            case .shareToolbarChanges: return config.toolbarChanges
+            default: return false
+            }
     }
 
     private func checkTabTrayFeature(for featureID: NimbusFeatureFlagID,

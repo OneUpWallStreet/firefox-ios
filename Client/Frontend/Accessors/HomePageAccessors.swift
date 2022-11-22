@@ -4,7 +4,6 @@
 
 import Foundation
 import Shared
-import XCGLogger
 
 /// Accessors for homepage details from the app state.
 /// These are pure functions, so it's quite ok to have them
@@ -15,9 +14,7 @@ class NewTabHomePageAccessors {
 
     static func getHomePage(_ prefs: Prefs) -> URL? {
         let string = prefs.stringForKey(HomePageConstants.NewTabCustomUrlPrefKey) ?? getDefaultHomePageString(prefs)
-        guard let urlString = string else {
-            return nil
-        }
+        guard let urlString = string else { return nil }
         return URL(string: urlString)
     }
 
@@ -30,9 +27,7 @@ class HomeButtonHomePageAccessors {
 
     static func getHomePage(_ prefs: Prefs) -> URL? {
         let string = prefs.stringForKey(PrefsKeys.HomeButtonHomePageURL)
-        guard let urlString = string else {
-            return nil
-        }
+        guard let urlString = string else { return nil }
         return URL(string: urlString)
     }
 }

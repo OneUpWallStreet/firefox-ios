@@ -3,11 +3,10 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0
 
 import Foundation
+import UIKit
 import Fuzi
-import SDWebImage
 import SwiftyJSON
 import Shared
-import XCGLogger
 
 private let log = Logger.syncLogger
 
@@ -17,7 +16,7 @@ private var urlSession: URLSession = makeURLSession(userAgent: UserAgent.desktop
 
 // If all else fails, this is the default "default" icon.
 private var defaultFavicon: UIImage = {
-    return UIImage(named: "defaultFavicon")!
+    return UIImage(named: ImageIdentifiers.defaultFavicon)!
 }()
 
 // An in-memory cache of "default" favicons keyed by the
@@ -28,8 +27,8 @@ private var defaultFaviconImageCache = [String: UIImage]()
 // region-specific TLDs. This helps us resolve them.
 private let multiRegionTopSitesDomains = ["craigslist", "google", "amazon"]
 
-private let topSitesIcons: [String : (color: UIColor, fileURL: URL)] = {
-    var icons: [String : (color: UIColor, fileURL: URL)] = [:]
+private let topSitesIcons: [String: (color: UIColor, fileURL: URL)] = {
+    var icons: [String: (color: UIColor, fileURL: URL)] = [:]
 
     let filePath = Bundle.main.path(forResource: "top_sites", ofType: "json")
     let file = try! Data(contentsOf: URL(fileURLWithPath: filePath!))
@@ -73,106 +72,22 @@ class FaviconDownloadError: MaybeErrorType {
 }
 
 extension SQLiteHistory: Favicons {
-    func getFaviconsForURL(_ url: String) -> Deferred<Maybe<Cursor<Favicon?>>> {
-        let sql = """
-            SELECT iconID, iconURL, iconDate
-            FROM (
-                SELECT iconID, iconURL, iconDate
-                FROM view_favicons_widest, history
-                WHERE history.id = siteID AND history.url = ?
-                UNION ALL
-                SELECT favicons.id AS iconID, url as iconURL, date as iconDate
-                FROM favicons, favicon_site_urls
-                WHERE favicons.id = favicon_site_urls.faviconID AND favicon_site_urls.site_url = ?
-            ) LIMIT 1
-            """
-
-        let args: Args = [url, url]
-        return db.runQueryConcurrently(sql, args: args, factory: SQLiteHistory.iconColumnFactory)
-    }
-
-    public func addFavicon(_ icon: Favicon) -> Deferred<Maybe<Int>> {
-        return self.favicons.insertOrUpdateFavicon(icon)
-    }
-
-    /**
-     * This method assumes that the site has already been recorded
-     * in the history table.
-     */
-    public func addFavicon(_ icon: Favicon, forSite site: Site) -> Deferred<Maybe<Int>> {
-        func doChange(_ query: String, args: Args?) -> Deferred<Maybe<Int>> {
-            return db.withConnection { conn -> Int in
-                // Blind! We don't see failure here.
-                let id = self.favicons.insertOrUpdateFaviconInTransaction(icon, conn: conn)
-
-                // Now set up the mapping.
-                try conn.executeChange(query, withArgs: args)
-
-                guard let faviconID = id else {
-                    let err = DatabaseError(description: "Error adding favicon. ID = 0")
-                    log.error("addFavicon(_:, forSite:) encountered an error: \(err.localizedDescription)")
-                    throw err
-                }
-
-                return faviconID
-            }
-        }
-
-        let siteSubselect = "(SELECT id FROM history WHERE url = ?)"
-        let iconSubselect = "(SELECT id FROM favicons WHERE url = ?)"
-        let insertOrIgnore = "INSERT OR IGNORE INTO favicon_sites (siteID, faviconID) VALUES "
-        if let iconID = icon.id {
-            // Easy!
-            if let siteID = site.id {
-                // So easy!
-                let args: Args? = [siteID, iconID]
-                return doChange("\(insertOrIgnore) (?, ?)", args: args)
-            }
-
-            // Nearly easy.
-            let args: Args? = [site.url, iconID]
-            return doChange("\(insertOrIgnore) (\(siteSubselect), ?)", args: args)
-
-        }
-
-        // Sigh.
-        if let siteID = site.id {
-            let args: Args? = [siteID, icon.url]
-            return doChange("\(insertOrIgnore) (?, \(iconSubselect))", args: args)
-        }
-
-        // The worst.
-        let args: Args? = [site.url, icon.url]
-        return doChange("\(insertOrIgnore) (\(siteSubselect), \(iconSubselect))", args: args)
-    }
 
     public func getFaviconImage(forSite site: Site) -> Deferred<Maybe<UIImage>> {
         // First, attempt to lookup the favicon from our bundled top sites.
         return getTopSitesFaviconImage(forSite: site).bind { result in
             guard let image = result.successValue else {
-                // Second, attempt to lookup the favicon URL from the database.
-                return self.lookupFaviconURLFromDatabase(forSite: site).bind { result in
+                // Note: "Attempt to lookup the favicon URL from the database" was removed as part of FXIOS-5164 and
+                // FXIOS-5294. This means at the moment we don't save nor retrieve favicon URLs from the database.
+
+                // Attempt to scrape its URL from the web page.
+                return self.lookupFaviconURLFromWebPage(forSite: site).bind { result in
                     guard let faviconURL = result.successValue else {
-                        // If it isn't in the DB, attempt to scrape its URL from the web page.
-                        return self.lookupFaviconURLFromWebPage(forSite: site).bind { result in
-                            guard let faviconURL = result.successValue else {
-                                // Otherwise, get the default favicon image.
-                                return self.generateDefaultFaviconImage(forSite: site)
-                            }
-                            // Try to get the favicon from the URL scraped from the web page.
-                            return self.downloadFaviconImage(faviconURL: faviconURL).bind { result in
-                                // If the favicon could not be downloaded, use the generated "default" favicon.
-                                guard let image = result.successValue else {
-                                    return self.generateDefaultFaviconImage(forSite: site)
-                                }
-
-                                return deferMaybe(image)
-                            }
-                        }
+                        // Otherwise, get the default favicon image.
+                        return self.generateDefaultFaviconImage(forSite: site)
                     }
-
-                    // Attempt to download the favicon from the URL found in the database.
-                    return self.downloadFaviconImage(faviconURL: faviconURL).bind { result in
+                    // Try to get the favicon from the URL scraped from the web page.
+                    return self.retrieveTopSiteSQLiteHistoryFaviconImage(faviconURL: faviconURL).bind { result in
                         // If the favicon could not be downloaded, use the generated "default" favicon.
                         guard let image = result.successValue else {
                             return self.generateDefaultFaviconImage(forSite: site)
@@ -188,15 +103,17 @@ extension SQLiteHistory: Favicons {
     }
 
     // Downloads a favicon image from the web or retrieves it from the cache.
-    fileprivate func downloadFaviconImage(faviconURL: URL) -> Deferred<Maybe<UIImage>> {
+    fileprivate func retrieveTopSiteSQLiteHistoryFaviconImage(faviconURL: URL) -> Deferred<Maybe<UIImage>> {
         let deferred = CancellableDeferred<Maybe<UIImage>>()
 
-        SDWebImageManager.shared.loadImage(with: faviconURL, options: .continueInBackground, progress: nil) { (image, _, _, _, _, _) in
-            if let image = image {
-                deferred.fill(Maybe(success: image))
-            } else {
+        ImageLoadingHandler.shared.getImageFromCacheOrDownload(with: faviconURL,
+                                                               limit: ImageLoadingConstants.MaximumFaviconSize) { image, error in
+            guard error == nil, let image = image else {
                 deferred.fill(Maybe(failure: FaviconDownloadError(faviconURL: faviconURL.absoluteString)))
+                return
             }
+
+            deferred.fill(Maybe(success: image))
         }
 
         return deferred
@@ -246,25 +163,6 @@ extension SQLiteHistory: Favicons {
         return deferMaybe(FaviconLookupError(siteURL: site.url))
     }
 
-    // Retrieves a site's previously-known favicon URL from the database.
-    fileprivate func lookupFaviconURLFromDatabase(forSite site: Site) -> Deferred<Maybe<URL>> {
-        let deferred = CancellableDeferred<Maybe<URL>>()
-
-        getFaviconsForURL(site.url).upon { result in
-            guard let favicons = result.successValue,
-                let favicon = favicons[0],
-                let faviconURLString = favicon?.url,
-                let faviconURL = URL(string: faviconURLString) else {
-                deferred.fill(Maybe(failure: FaviconLookupError(siteURL: site.url)))
-                return
-            }
-
-            deferred.fill(Maybe(success: faviconURL))
-        }
-
-        return deferred
-    }
-
     // Retrieve's a site's favicon URL from the web.
     fileprivate func lookupFaviconURLFromWebPage(forSite site: Site) -> Deferred<Maybe<URL>> {
         guard let url = URL(string: site.url) else {
@@ -272,25 +170,11 @@ extension SQLiteHistory: Favicons {
         }
 
         let deferred = CancellableDeferred<Maybe<URL>>()
-
         getFaviconURLsFromWebPage(url: url).upon { result in
             guard let faviconURLs = result.successValue,
                 let faviconURL = faviconURLs.first else {
                 deferred.fill(Maybe(failure: FaviconLookupError(siteURL: site.url)))
                 return
-            }
-
-            // Since we were able to scrape a favicon URL off the web page,
-            // insert it into the DB to avoid having to scrape again later.
-            let favicon = Favicon(url: faviconURL.absoluteString)
-            self.favicons.insertOrUpdateFavicon(favicon).upon { result in
-                if let faviconID = result.successValue {
-
-                    // Also, insert a row in `favicon_site_urls` so we can
-                    // look up this favicon later without requiring history.
-                    // This is primarily needed for bookmarks.
-                    _ = self.db.run("INSERT OR IGNORE INTO favicon_site_urls(site_url, faviconID) VALUES (?, ?)", withArgs: [site.url, faviconID])
-                }
             }
 
             deferred.fill(Maybe(success: faviconURL))

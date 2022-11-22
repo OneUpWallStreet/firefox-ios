@@ -9,7 +9,6 @@ private let SectionArrow = 0
 private let SectionToggles = 1
 private let SectionButton = 2
 private let NumberOfSections = 3
-private let SectionHeaderFooterIdentifier = "SectionHeaderFooterIdentifier"
 private let TogglesPrefKey = "clearprivatedata.toggles"
 
 private let log = Logger.browserLogger
@@ -30,16 +29,16 @@ class ClearPrivateDataTableViewController: ThemedTableViewController {
     // Bug 1445687 -- https://bugzilla.mozilla.org/show_bug.cgi?id=1445687
     fileprivate lazy var clearables: [(clearable: Clearable, checked: DefaultCheckedState)] = {
         var items: [(clearable: Clearable, checked: DefaultCheckedState)] = [
-            (HistoryClearable(profile: self.profile, tabManager: tabManager), true),
-            (CacheClearable(tabManager: self.tabManager), true),
-            (CookiesClearable(tabManager: self.tabManager), true),
-            (SiteDataClearable(tabManager: self.tabManager), true),
+            (HistoryClearable(profile: profile, tabManager: tabManager), true),
+            (CacheClearable(), true),
+            (CookiesClearable(), true),
+            (SiteDataClearable(), true),
             (TrackingProtectionClearable(), true),
             (DownloadedFilesClearable(), false), // Don't clear downloaded files by default
         ]
 
-        if let experimental = Experiments.shared.getVariables(featureId: .search).getVariables("spotlight"),
-           experimental.getBool("enabled") == true { // i.e. defaults to false
+        let spotlightConfig = FxNimbus.shared.features.spotlightSearch.value()
+        if spotlightConfig.enabled {
             items.append((SpotlightClearable(), false)) // On device only, so don't clear by default.)
         }
 
@@ -58,7 +57,7 @@ class ClearPrivateDataTableViewController: ThemedTableViewController {
 
     fileprivate var clearButtonEnabled = true {
         didSet {
-            clearButton?.textLabel?.textColor = clearButtonEnabled ? UIColor.theme.general.destructiveRed : UIColor.theme.tableView.disabledRowText
+            clearButton?.textLabel?.textColor = clearButtonEnabled ? themeManager.currentTheme.colors.textWarning : themeManager.currentTheme.colors.textDisabled
         }
     }
 
@@ -67,14 +66,18 @@ class ClearPrivateDataTableViewController: ThemedTableViewController {
 
         title = .SettingsDataManagementTitle
 
-        tableView.register(ThemedTableSectionHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: SectionHeaderFooterIdentifier)
+        tableView.register(ThemedTableSectionHeaderFooterView.self,
+                           forHeaderFooterViewReuseIdentifier: ThemedTableSectionHeaderFooterView.cellIdentifier)
 
-        let footer = ThemedTableSectionHeaderFooterView(frame: CGRect(width: tableView.bounds.width, height: SettingsUX.TableViewHeaderFooterHeight))
+        let footer = ThemedTableSectionHeaderFooterView(frame: CGRect(width: tableView.bounds.width,
+                                                                      height: SettingsUX.TableViewHeaderFooterHeight))
+        footer.applyTheme(theme: themeManager.currentTheme)
         tableView.tableFooterView = footer
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ThemedTableViewCell()
+        cell.applyTheme(theme: themeManager.currentTheme)
 
         if indexPath.section == SectionArrow {
             cell.accessoryType = .disclosureIndicator
@@ -83,8 +86,8 @@ class ClearPrivateDataTableViewController: ThemedTableViewController {
             clearButton = cell
         } else if indexPath.section == SectionToggles {
             cell.textLabel?.text = clearables[indexPath.item].clearable.label
-            let control = UISwitchThemed()
-            control.onTintColor = UIColor.theme.tableView.controlTint
+            let control = UISwitch()
+            control.onTintColor = themeManager.currentTheme.colors.actionPrimary
             control.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
             control.isOn = toggles[indexPath.item]
             cell.accessoryView = control
@@ -94,7 +97,7 @@ class ClearPrivateDataTableViewController: ThemedTableViewController {
             assert(indexPath.section == SectionButton)
             cell.textLabel?.text = .SettingsClearPrivateDataClearButton
             cell.textLabel?.textAlignment = .center
-            cell.textLabel?.textColor = UIColor.theme.general.destructiveRed
+            cell.textLabel?.textColor = themeManager.currentTheme.colors.textWarning
             cell.accessibilityTraits = UIAccessibilityTraits.button
             cell.accessibilityIdentifier = "ClearPrivateData"
             clearButton = cell
@@ -141,9 +144,7 @@ class ClearPrivateDataTableViewController: ThemedTableViewController {
                 self.clearables
                     .enumerated()
                     .compactMap { (i, pair) in
-                        guard toggles[i] else {
-                            return nil
-                        }
+                        guard toggles[i] else { return nil }
                         log.debug("Clearing \(pair.clearable).")
                         return pair.clearable.clear()
                     }
@@ -181,19 +182,20 @@ class ClearPrivateDataTableViewController: ThemedTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: SectionHeaderFooterIdentifier) as? ThemedTableSectionHeaderFooterView
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ThemedTableSectionHeaderFooterView.cellIdentifier) as? ThemedTableSectionHeaderFooterView else { return nil }
+
         var sectionTitle: String?
         if section == SectionToggles {
             sectionTitle = .SettingsClearPrivateDataSectionName
         } else {
             sectionTitle = nil
         }
-        headerView?.titleLabel.text = sectionTitle
+        headerView.titleLabel.text = sectionTitle
         return headerView
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return SettingsUX.TableViewHeaderFooterHeight
+        return UITableView.automaticDimension
     }
 
     @objc func switchValueChanged(_ toggle: UISwitch) {

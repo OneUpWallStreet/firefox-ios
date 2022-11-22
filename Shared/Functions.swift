@@ -151,9 +151,7 @@ public extension Sequence {
     func zip<S: Sequence>(_ elems: S) -> [(Self.Iterator.Element, S.Iterator.Element)] {
         var rights = elems.makeIterator()
         return self.compactMap { lhs in
-            guard let rhs = rights.next() else {
-                return nil
-            }
+            guard let rhs = rights.next() else { return nil }
             return (lhs, rhs)
         }
     }
@@ -195,7 +193,7 @@ public func optFilter<K, V>(_ source: [K: V?]) -> [K: V] {
 /**
  * Map a function over the values of a map.
  */
-public func mapValues<K, T, U>(_ source: [K: T], f: ((T) -> U)) -> [K: U] {
+public func mapValues<K, T, U>(_ source: [K: T], f: (T) -> U) -> [K: U] {
     var m = [K: U]()
     for (k, v) in source {
         m[k] = f(v)
@@ -222,9 +220,9 @@ public func jsonsToStrings(_ arr: [JSON]?) -> [String]? {
 
 // Encapsulate a callback in a way that we can use it with NSTimer.
 private class Callback {
-    private let handler:() -> Void
+    private let handler: () -> Void
 
-    init(handler:@escaping () -> Void) {
+    init(handler: @escaping () -> Void) {
         self.handler = handler
     }
 
@@ -238,7 +236,7 @@ private class Callback {
  * Taken from http://stackoverflow.com/questions/27116684/how-can-i-debounce-a-method-call
  * Allows creating a block that will fire after a delay. Resets the timer if called again before the delay expires.
  **/
-public func debounce(_ delay: TimeInterval, action:@escaping () -> Void) -> () -> Void {
+public func debounce(_ delay: TimeInterval, action: @escaping () -> Void) -> () -> Void {
     let callback = Callback(handler: action)
     var timer: Timer?
 

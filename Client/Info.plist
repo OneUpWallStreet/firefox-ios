@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AdjustAppToken</key>
+	<string>$(ADJUST_APP_TOKEN)</string>
 	<key>AppIdentifierPrefix</key>
 	<string>$(APP_IDENTIFIER_PREFIX)</string>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
@@ -24,7 +26,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>101.0</string>
+	<string>108.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -97,15 +99,12 @@
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>QuickActionIntent</string>
-		<string>QuickLinkSelectionIntent</string>
 		<string>org.mozilla.ios.firefox.browsing</string>
 	</array>
-	<key>PocketEnvironmentAPIKey</key>
-	<string>$(POCKET_API_KEY)</string>
-	<key>AdjustAppToken</key>
-	<string>$(ADJUST_APP_TOKEN)</string>
 	<key>NimbusURL</key>
 	<string>$(NIMBUS_URL)</string>
+	<key>PocketEnvironmentAPIKey</key>
+	<string>$(POCKET_API_KEY)</string>
 	<key>SentryCloudDSN</key>
 	<string>$(SENTRY_CLOUD_DSN)</string>
 	<key>UIAppFonts</key>
@@ -114,23 +113,33 @@
 		<string>NewYorkMedium-BoldItalic.otf</string>
 		<string>NewYorkMedium-Regular.otf</string>
 		<string>NewYorkMedium-RegularItalic.otf</string>
-		<string>FiraSans-Bold.ttf</string>
-		<string>FiraSans-BoldItalic.ttf</string>
-		<string>FiraSans-Book.ttf</string>
-		<string>FiraSans-Italic.ttf</string>
-		<string>FiraSans-Light.ttf</string>
-		<string>FiraSans-Medium.ttf</string>
-		<string>FiraSans-Regular.ttf</string>
-		<string>FiraSans-SemiBold.ttf</string>
-		<string>FiraSans-UltraLight.ttf</string>
 	</array>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneClassName</key>
+					<string>UIWindowScene</string>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>quick_action_new_tab</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>ShortcutItemTitleNewTab</string>
+			<string>New Tab</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).NewTab</string>
 		</dict>
@@ -138,7 +147,7 @@
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>quick_action_new_private_tab</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>ShortcutItemTitleNewPrivateTab</string>
+			<string>New Private Tab</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).NewPrivateTab</string>
 		</dict>
@@ -146,11 +155,13 @@
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>menu-ScanQRCode</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>ShortcutItemTitleQRCode</string>
+			<string>Scan QR Code</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).QRCode</string>
 		</dict>
 	</array>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>processing</string>
@@ -181,8 +192,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<true/>
-	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UTImportedTypeDeclarations</key>
 	<array>

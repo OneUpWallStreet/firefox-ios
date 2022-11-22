@@ -1,9 +1,29 @@
 ---
+about:
+  description: The root level Feature Manifest for Firefox for iOS
+  ios:
+    class: FxNimbus
+    module: Client
 channels:
   - developer
   - beta
   - release
 features:
+  mr2022:
+    description: Features for MR 2022.
+    variables:
+      sections-enabled:
+        description: "This property provides a lookup table of whether or not the given section should be enabled."
+        type: MR2022Section
+        default:
+        {
+          "onboarding-first-run-flow": true,
+          "onboarding-upgrade-flow": true,
+          "sync-cfr": true,
+          "jump-back-in-cfr-update": true,
+          "toolbar-cfr-update": true,
+          "wallpaper-onboarding-sheet": true,
+        }
   general-app-features:
     description: The feature that contains feature flags for the entire application
     variables:
@@ -69,76 +89,101 @@ features:
         value: {
           "setting": after-four-hours
         }
-  search:
-    description: The search feature
+  onboarding-feature:
+    description: The feature that controls whether to show or not Upgrade onboarding
     variables:
-      awesome-bar:
-        description: "This property is covers the properties related to the awesome-bar"
-        type: AwesomeBar
-        default:
-          {
-            "use-page-content": false,
-            "search-highlights": false,
-            "position": {
-              "is-position-feature-enabled": true,
-              "is-bottom": true
-            }
-          }
-      spotlight:
-        description: "This property is covers the properties related to the spotlight"
-        type: Spotlight
-        default:
-          {
-            "enabled": false,
-            "description": "",
-            "use-html-content": true,
-            "icon": "letter",
-            "keep-for-days": null
-          }
+      upgrade-flow:
+        description: >
+          If true, we show the Upgrade onboarding screen when the user upgrades the version.
+        type: Boolean
+        default: false
+      first-run-flow:
+        description: >
+          If true, we show the new Onboarding screen when the user for v106 version.
+        type: Boolean
+        default: false
     defaults:
       - channel: beta
         value: {
-          "awesome-bar": {
-            "search-highlights": true,
-            "position": {
-              "is-position-feature-enabled": true,
-              "is-bottom": true
-            }
-          }
+          "upgrade-flow": true,
+          "first-run-flow": true
         }
       - channel: developer
         value: {
-          "awesome-bar": {
-            "search-highlights": true,
-            "position": {
-              "is-position-feature-enabled": true,
-              "is-bottom": true
-            }
-          }
+          "upgrade-flow": true,
+          "first-run-flow": true
         }
-  nimbus-validation:
-    description: "A feature that does not correspond to an application feature suitable for showing
-      that Nimbus is working."
+  spotlight-search:
+    description: Add pages as items findable with Spotlight.
     variables:
-      settings-title:
-        description: The title of displayed in the Settings screen and app menu.
-        type: String
-        default: "app_menu_settings_title"
-      settings-title-punctuation:
-        description: The emoji displayed in the Settings screen title.
-        type: String
-        default: ""
-      settings-icon:
-        description: The drawable displayed in the app menu for Settings
-        type: String
-        default: "menu-Settings"
+      enabled:
+        description: If this is true, then on each page load adds a new item to Spotlight.
+        type: Boolean
+        default: false
+      searchable-content:
+        type: Option<PageContent>
+        default: text-excerpt
+        description: >
+          The text content that is made searchable.
+          If this is `null` then no additional content is used, and only the title and URL will be used.
+      icon-type:
+        type: Option<IconType>
+        default: letter
+        description: >
+          The icon that is displayed next to the item in the search results.
+          If this is `null`, then no icon is displayed.
+      keep-for-days:
+        type: Option<Int>
+        default: null
+        description: >
+          Number of days to keep the item before automatic deletion.
+          If this is left `null`, then it is left to iOS's default.
+    defaults:
+      - value:
+          enabled: false
+      - channel: developer
+        value:
+          enabled: true
+          icon-type: screenshot
 
+  search:
+    description: >
+      Configuring the functionality to do with search.
+      This will be separated into smaller sub-features in later releases.
+    variables:
+      awesome-bar:
+        type: AwesomeBar
+        description: Configuring the awesome bar.
+        default: {}
+    defaults:
+      - value:
+          awesome-bar:
+            use-page-content: false
+            search-highlights: false
+            position:
+                is-position-feature-enabled: true
+                is-bottom: true
+      - channel: developer
+        value:
+          awesome-bar:
+            search-highlights: true
+            position:
+              is-position-feature-enabled: true
+              is-bottom: false
+      - channel: beta
+        value:
+          awesome-bar:
+            search-highlights: true
+            position:
+              is-position-feature-enabled: true
+              is-bottom: false
   homescreenFeature:
     description: The homescreen that the user goes to when they press home or new tab.
     variables:
       sections-enabled:
-        description: "This property provides a lookup table of whether or not the given section should be enabled.
-          If the section is enabled, it should be toggleable in the settings screen, and on by default."
+        description: >
+          This property provides a lookup table of whether or not the given section should be enabled.
+          If the section is enabled, it should be toggleable in the settings screen, and on by default.
         type: Map<HomeScreenSection, Boolean>
         default:
           {
@@ -149,22 +194,27 @@ features:
             "pocket": true
           }
       sponsored-tiles:
-        description: "This property defines the sponsored tile feature on the
-        homepage, which is not a section therein."
+        description: >
+          This property defines the sponsored tile feature on the
+          homepage, which is not a section therein.
         type: SponsoredTiles
         default:
           {
-            "status": false,
+            "status": true,
             "max-number-of-tiles": 2
           }
-      wallpaper-feature:
-        description: "This property defines the wallpaper feature on the
-        homepage, which is not a section therein."
-        type: GeneralFeature
-        default:
-          {
-            "status": true,
-          }
+      pocket-sponsored-stories:
+        description: >
+          This property defines whether pocket sponsored
+          stories appear on the homepage.
+        type: Boolean
+        default: false
+      jump-back-in-synced-tab:
+        description: >
+          This property defines whether the synced tab card
+          appears on the homepage in the jump back in section.
+        type: Boolean
+        default: true
     defaults:
       - channel: developer
         value: {
@@ -181,7 +231,9 @@ features:
           },
           "wallpaper-feature": {
             "status": true
-          }
+          },
+          "pocket-sponsored-stories": true,
+          "jump-back-in-synced-tab": true
         }
       - channel: beta
         value: {
@@ -198,7 +250,9 @@ features:
           },
           "wallpaper-feature": {
             "status": true
-          }
+          },
+          "pocket-sponsored-stories": false,
+          "jump-back-in-synced-tab": true
         }
   search-term-groups-feature:
     description: The feature that controls whether or not search term groups are enabled.
@@ -235,23 +289,49 @@ features:
         type: Map<TabTraySection, Boolean>
         default:
           {
-            "inactive-tabs": false,
+            "inactive-tabs": true,
           }
-    defaults:
-      - channel: beta
-        value: {
-          "sections-enabled": {
-            "inactive-tabs": true
-          }
+  contextual-hint-feature:
+    description: This set holds all features pertaining to contextual hints.
+    variables:
+      features-enabled:
+        description: This property provides a lookup table of whether specific contextual hints are enabled.
+        type: Map<ContextualHint, Boolean>
+        default:
+        {
+          "jump-back-in-synced-tab-contextual-hint": false
         }
+      hint-copy:
+        description: This set allows us to experiment with changing hint descriptions.
+        type: HintCopy
+        default: {
+          "jump-back-in": false,
+          "toolbar": false
+        }
+    defaults:
       - channel: developer
         value: {
-          "sections-enabled": {
-            "inactive-tabs": true
+          "features-enabled": {
+            "jump-back-in-synced-tab-contextual-hint": true
+          },
+          "hint-copy": {
+            "jump-back-in": true,
+            "toolbar": true
           }
         }
+      - channel: beta
+        value: {
+          "features-enabled": {
+            "jump-back-in-synced-tab-contextual-hint": true
+          },
+          "hint-copy": {
+            "jump-back-in": true,
+            "toolbar": true
+          }
+        }
+
   messaging:
-    description: |
+    description: >
       Configuration for the messaging system.
 
       In practice this is a set of growable lookup tables for the
@@ -301,26 +381,33 @@ features:
             USER_FR_SPEAKER:          "'fr' in locale"
             DEVICE_ANDROID:           os == 'Android'
             DEVICE_IOS:               os == 'iOS'
+            I_AM_DEFAULT_BROWSER:     "is_default_browser"
+            I_AM_NOT_DEFAULT_BROWSER: "is_default_browser == false"
+            SUPPORTS_DEFAULT_BROWSER: os_version|versionCompare('14.!') >= 0
             ALWAYS:                   "true"
             NEVER:                    "false"
           actions:
-            OPEN_SETTINGS:               ://deep-link?url=settings/general
-            OPEN_SETTINGS_NEW_TAB:       ://deep-link?url=settings/newtab
-            OPEN_SETTINGS_HOMESCREEN:    ://deep-link?url=settings/homepage
-            OPEN_SETTINGS_WALLPAPERS:    ://deep-link?url=settings/wallpaper
-            OPEN_SETTINGS_EMAIL:         ://deep-link?url=settings/mailto
-            OPEN_SETTINGS_SEARCH_ENGINE: ://deep-link?url=settings/search
-            OPEN_SETTINGS_PRIVACY:       ://deep-link?url=settings/clear-private-data
-            OPEN_SETTINGS_FXA:           ://deep-link?url=settings/fxa
-            OPEN_SETTINGS_THEME:         ://deep-link?url=settings/theme
-            VIEW_BOOKMARKS:              ://deep-link?url=homepanel/bookmarks
-            VIEW_TOP_SITES:              ://deep-link?url=homepanel/top-sites
-            VIEW_READING_LIST:           ://deep-link?url=homepanel/reading-list
-            VIEW_HISTORY:                ://deep-link?url=homepanel/history
-            VIEW_DOWNLOADS:              ://deep-link?url=homepanel/downloads
-            ENABLE_PRIVATE_BROWSING:     ://deep-link?url=homepanel/new-private-tab
-            MAKE_DEFAULT_BROWSER:        ://deep-link?url=default-browser/system-settings
+            OPEN_SETTINGS:                      ://deep-link?url=settings/general
+            OPEN_SETTINGS_NEW_TAB:              ://deep-link?url=settings/newtab
+            OPEN_SETTINGS_HOMESCREEN:           ://deep-link?url=settings/homepage
+            OPEN_SETTINGS_WALLPAPERS:           ://deep-link?url=settings/wallpaper
+            OPEN_SETTINGS_EMAIL:                ://deep-link?url=settings/mailto
+            OPEN_SETTINGS_SEARCH_ENGINE:        ://deep-link?url=settings/search
+            OPEN_SETTINGS_PRIVACY:              ://deep-link?url=settings/clear-private-data
+            OPEN_SETTINGS_FXA:                  ://deep-link?url=settings/fxa
+            OPEN_SETTINGS_THEME:                ://deep-link?url=settings/theme
+            VIEW_BOOKMARKS:                     ://deep-link?url=homepanel/bookmarks
+            VIEW_TOP_SITES:                     ://deep-link?url=homepanel/top-sites
+            VIEW_READING_LIST:                  ://deep-link?url=homepanel/reading-list
+            VIEW_HISTORY:                       ://deep-link?url=homepanel/history
+            VIEW_DOWNLOADS:                     ://deep-link?url=homepanel/downloads
+            ENABLE_PRIVATE_BROWSING:            ://deep-link?url=homepanel/new-private-tab
+            MAKE_DEFAULT_BROWSER:               ://deep-link?url=default-browser/system-settings
+            MAKE_DEFAULT_BROWSER_WITH_TUTORIAL: ://deep-link?url=default-browser/tutorial
           styles:
+            FALLBACK:
+              priority: 40
+              max-display-count: 20
             DEFAULT:
               priority: 50
               max-display-count: 5
@@ -336,9 +423,111 @@ features:
             URGENT:
               priority: 100
               max-display-count: 10
+          messages:
+            default-browser:
+              title: Default Browser/DefaultBrowserCard.Title
+              text: Default Browser/DefaultBrowserCard.Description
+              action: "MAKE_DEFAULT_BROWSER_WITH_TUTORIAL"
+              trigger: ["I_AM_NOT_DEFAULT_BROWSER", "SUPPORTS_DEFAULT_BROWSER"]
+              style: "FALLBACK"
+              button-label: Default Browser/DefaultBrowserCard.Button.v2
+
+  wallpaper-feature:
+    description: This property defines the configuration for the wallpaper feature
+    variables:
+      configuration:
+        description: This property defines the configuration for the wallpaper feature
+        type: WallpaperConfiguration
+        default:
+          {
+            "status": true,
+            "version": v1,
+          }
+      onboarding-sheet:
+        description: This property defines whether the wallpaper onboarding is shown or not
+        type: Boolean
+        default: false
+    defaults:
+      - channel: beta
+        value: {
+          "configuration": {
+            "status": true,
+            "version": v1,
+          },
+          "onboarding-sheet": false
+        }
+      - channel: developer
+        value: {
+          "configuration": {
+            "status": true,
+            "version": v1,
+          },
+          "onboarding-sheet": true
+        }
+  places-history:
+    description: |
+            This feature defines the migration to using application services places history
+            for history in iOS
+    variables:
+        migration:
+            description: |
+                The migration configuration. This is either a dry-run, a real migration or
+                disabled
+            type: PlacesMigrationConfiguration
+            default: disabled
+        api:
+            description: |
+                The api configuration, determines whether we use the new api or the old one
+            type: PlacesAPIConfiguration
+            default: old
+  share-sheet:
+    description: This feature define the redesign of the share sheet
+    variables:
+      move-actions:
+        description: If true copy and send to device are moved to share sheet
+        type: Boolean
+        default: false
+      toolbar-changes:
+        description: If true share option is shown on the toolbar
+        type: Boolean
+        default: false
+    defaults:
+      - channel: developer
+        value: {
+            "move-actions": false,
+            "toolbar-changes": false
+        }
 
 types:
   objects:
+    MR2022Section:
+      description: "The configuration for the MR 2022 feature"
+      fields:
+        onboarding-first-run-flow:
+          type: Boolean
+          description: Whether or not the feature is enabled
+          default: false
+        onboarding-upgrade-flow:
+          type: Boolean
+          description: Whether or not the feature is enabled
+          default: false
+        sync-cfr:
+          type: Boolean
+          description: Whether or not the feature is enabled
+          default: false
+        jump-back-in-cfr-update:
+          type: Boolean
+          description: Whether or not the feature is enabled
+          default: false
+        toolbar-cfr-update:
+          type: Boolean
+          description: Whether or not the feature is enabled
+          default: false
+        wallpaper-onboarding-sheet:
+          type: Boolean
+          description: Whether or not the feature is enabled
+          default: false
+
     GeneralFeature:
       description: "The configuration for the a feature that can be enabled or disabled"
       fields:
@@ -347,28 +536,41 @@ types:
           description: Whether or not the feature is enabled
           default: false
 
-    AwesomeBar:
-      description: "Represents the awesome bar object"
+    HintCopy:
+      description: The hint and its associated description text.
       fields:
-        use-page-content:
-          description: "Whether or not to use page content"
+        jump-back-in:
+          description: If true, we show the new copy for the hint description.
           type: Boolean
           default: false
-          required: true
+        toolbar:
+          description: If true, we show the new copy for the hint description.
+          type: Boolean
+          default: false
+
+    AwesomeBar:
+      description: A configuration option for the awesome bar. Part of the `search` feature.
+      fields:
+        min-search-term:
+          description: The minimum number of characters that the user types before searching in the page.
+          type: Int
+          default: 3
+        use-page-content:
+          description: Search in the open tab's text content when typing.
+          type: Boolean
+          default: false
         search-highlights:
           description: "Whether or not search highlights are enabled"
           type: Boolean
           default: false
         position:
-          description: "This property defines whether or not the feature is
-          enabled, and the position of the search bar"
+          description: >
+            This property defines whether or not the feature is
+            enabled, and the position of the search bar
           type: SearchBarPositionFeature
           default:
-            {
-              "is-position-feature-enabled": true,
-              "is-bottom": true
-            }
-
+            is-position-feature-enabled: true
+            is-bottom: true
     SearchBarPositionFeature:
       description: "The configuration for the bottom search bar on the homescreen"
       fields:
@@ -408,11 +610,11 @@ types:
           # This should never be defaulted.
           default: ""
         title:
-          type: Option<String>
+          type: Option<Text>
           description: "The title text displayed to the user"
           default: null
         text:
-          type: String
+          type: Text
           description: "The message text displayed to the user"
           # This should never be defaulted.
           default: ""
@@ -421,7 +623,7 @@ types:
           description: "Indicates if this message is the control message, if true shouldn't be displayed"
           default: false
         button-label:
-          type: Option<String>
+          type: Option<Text>
           description: >
             The text on the button. If no text
             is present, the whole message is clickable.
@@ -448,7 +650,7 @@ types:
     StyleData:
       description: >
         A group of properities (predominantly visual) to
-        describe the style of the message.
+        the describe style of the message.
       fields:
         priority:
           type: Int
@@ -463,44 +665,38 @@ types:
             before it is expired.
           default: 5
 
-    Spotlight:
-      description: "An object representing the spotlight"
+    WallpaperConfiguration:
+      description: "The configuration for the a feature that can be enabled or disabled"
       fields:
-        enabled:
+        status:
           type: Boolean
-          description: "Describes whether spotlight is enabled"
+          description: Whether or not the feature is enabled
           default: false
-          required: true
-        description:
-          type: String
-          default: ""
-          description: "Is the description of spotlight"
-          required: true
-        use-html-content:
-          type: Boolean
-          default: true
-          description: "Describes whether spotlight should use html content"
-          required: true
-        icon:
-          type: IconType
-          default: letter
-          description: "Describes the icon of spotlight"
-        keep-for-days:
-          type: Option<Int>
-          default: null
-          description: "Number of days to keep"
-          required: true
+        version:
+          type: WallpaperVariantVersion
+          description: Which version of the wallpaper sytem to use
+          default: legacy
 
   enums:
     IconType:
-      description: The different types of icons
+      description: The icon that will be added to the item in the device's search engine.
       variants:
         screenshot:
-          description: A screenshot icon
+          description: A screenshot of the page at load time.
         favicon:
-          description: A favicon icon
+          description: The favicon of the page
         letter:
-          description: A letter icon
+          description: An icon generated from the first letter of the base domain.
+
+    PageContent:
+      description: The page content that will be added as an item in the device's search engine.
+      variants:
+        text-excerpt:
+          description: Only use the first paragraph
+        text-content:
+          description: Use all the page as text
+        html-content:
+          description: Use all the page as HTML
 
     MessageSurfaceId:
       description: >
@@ -542,6 +738,12 @@ types:
         inactive-tabs:
           description: Tabs that have been automatically closed for the user.
 
+    ContextualHint:
+      description: The identifiers for a individual contextual hints.
+      variants:
+        jump-back-in-synced-tab-contextual-hint:
+          description: The contextual hint bubble that appears to indicate a synced tab has appeared within the Jump Back In section.
+
     SearchTermGroups:
       description: The identifiers for the different types of search term groups.
       variants:
@@ -557,3 +759,27 @@ types:
           description: The next eligible message should be shown.
         show-none:
           description: The surface should show no message.
+
+    WallpaperVariantVersion:
+      description: An enum to identify which version of the wallpaper system to use
+      variants:
+        legacy:
+          description: The legacy wallpaper version
+        v1:
+          description: The 2022 MR version
+    PlacesMigrationConfiguration:
+      description: An enum representing the migration configuration for places history
+      variants:
+        dry-run:
+            description: A dry run. This will migrate the database to a fake database and collect metrics
+        real:
+            description: A real migration. This will migrate the database to the real places.db
+        disabled:
+            description: The migration is disabled. migration is a no-op.
+    PlacesAPIConfiguration:
+      description: An enum representing the API configuration for places history
+      variants:
+        old:
+            description: Use the old API reading/writing to Browser.db
+        new:
+            description: Use the new API reading/writing to/from places.db, once the migration is complete.

@@ -7,12 +7,59 @@ import Storage
 
 class TabTrayViewModel {
 
+    enum Segment: Int, CaseIterable {
+        case tabs
+        case privateTabs
+        case syncedTabs
+
+        var navTitle: String {
+            switch self {
+            case .tabs:
+                return .TabTrayV2Title
+            case .privateTabs:
+                return .TabTrayPrivateBrowsingTitle
+            case .syncedTabs:
+                return .AppMenu.AppMenuSyncedTabsTitleString
+            }
+        }
+
+        var label: String {
+            switch self {
+            case .tabs:
+                return String.TabTraySegmentedControlTitlesTabs
+            case .privateTabs:
+                return String.TabTraySegmentedControlTitlesPrivateTabs
+            case .syncedTabs:
+                return String.TabTraySegmentedControlTitlesSyncedTabs
+            }
+        }
+
+        var image: UIImage? {
+            switch self {
+            case .tabs:
+                return UIImage(named: ImageIdentifiers.navTabCounter)
+            case .privateTabs:
+                return UIImage(named: ImageIdentifiers.privateMaskSmall)
+            case .syncedTabs:
+                return UIImage(named: ImageIdentifiers.syncedDevicesIcon)
+            }
+        }
+    }
+
+    enum Layout: Equatable {
+        case regular // iPad
+        case compact // iPhone
+    }
+
     let profile: Profile
     let tabManager: TabManager
 
     // Tab Tray Views
     let tabTrayView: TabTrayViewDelegate
     let syncedTabsController: RemoteTabsPanel
+
+    var segmentToFocus: TabTrayViewModel.Segment?
+    var layout: Layout = .compact
 
     var normalTabsCount: String {
         (tabManager.normalTabs.count < 100) ? tabManager.normalTabs.count.description : "\u{221E}"
@@ -21,26 +68,23 @@ class TabTrayViewModel {
     init(tabTrayDelegate: TabTrayDelegate? = nil,
          profile: Profile,
          tabToFocus: Tab? = nil,
-         tabManager: TabManager) {
+         tabManager: TabManager,
+         segmentToFocus: TabTrayViewModel.Segment? = nil) {
         self.profile = profile
         self.tabManager = tabManager
 
-        self.tabTrayView = GridTabViewController(tabManager: self.tabManager, profile: profile, tabTrayDelegate: tabTrayDelegate, tabToFocus: tabToFocus)
+        self.tabTrayView = GridTabViewController(tabManager: self.tabManager,
+                                                 profile: profile,
+                                                 tabTrayDelegate: tabTrayDelegate,
+                                                 tabToFocus: tabToFocus)
         self.syncedTabsController = RemoteTabsPanel(profile: self.profile)
+        self.segmentToFocus = segmentToFocus
     }
 
-    func navTitle(for segmentIndex: Int, foriPhone: Bool) -> String? {
-        if foriPhone {
-            switch segmentIndex {
-            case 0:
-                return .TabTrayV2Title
-            case 1:
-                return .TabTrayPrivateBrowsingTitle
-            case 2:
-                return .AppMenu.AppMenuSyncedTabsTitleString
-            default:
-                return nil
-            }
+    func navTitle(for segmentIndex: Int) -> String? {
+        if layout == .compact {
+            let segment = TabTrayViewModel.Segment(rawValue: segmentIndex)
+            return segment?.navTitle
         }
         return nil
     }

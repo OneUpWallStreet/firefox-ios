@@ -164,9 +164,7 @@ extension FxAWebViewController: WKUIDelegate {
 
     /// Blank target links (support links) will create a 2nd webview (the `helpBrowser`) to browse. This webview will have a close button in the navigation bar to go back to the main fxa webview.
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-        guard helpBrowser == nil else {
-            return nil
-        }
+        guard helpBrowser == nil else { return nil }
         let f = webView.frame
         let wv = WKWebView(frame: CGRect(width: f.width, height: f.height), configuration: configuration)
         helpBrowser?.load(navigationAction.request)
@@ -180,12 +178,14 @@ extension FxAWebViewController: WKUIDelegate {
     }
 
     @objc func closeHelpBrowser() {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.helpBrowser?.alpha = 0
-        }, completion: {_ in
-            self.helpBrowser?.removeFromSuperview()
-            self.helpBrowser = nil
-        })
+        UIView.animate(
+            withDuration: 0.2,
+            animations: {
+                self.helpBrowser?.alpha = 0
+            }, completion: {_ in
+                self.helpBrowser?.removeFromSuperview()
+                self.helpBrowser = nil
+            })
 
         navigationItem.title = nil
         self.navigationItem.leftBarButtonItem = nil
@@ -207,9 +207,7 @@ private class WKScriptMessageHandleDelegate: NSObject, WKScriptMessageHandler {
     }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        guard let delegate = delegate else {
-            return
-        }
+        guard let delegate = delegate else { return }
         delegate.userContentController(userContentController, didReceive: message)
     }
 }
@@ -220,7 +218,9 @@ extension FxAWebViewController {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?,
                                change: [NSKeyValueChangeKey: Any]?,
                                context: UnsafeMutableRawPointer?) {
-        guard let kp = keyPath, let path = KVOConstants(rawValue: kp) else {
+        guard let kp = keyPath,
+              let path = KVOConstants(rawValue: kp)
+        else {
             sendSentryObserveValueError(forKeyPath: keyPath)
             return
         }
@@ -236,7 +236,8 @@ extension FxAWebViewController {
     }
 
     private func sendSentryObserveValueError(forKeyPath keyPath: String?) {
-        SentryIntegration.shared.send(message: "FxA webpage unhandled KVO", tag: .rustLog,
+        SentryIntegration.shared.send(message: "FxA webpage unhandled KVO",
+                                      tag: .rustLog,
                                       severity: .error,
                                       description: "Unhandled KVO key: \(keyPath ?? "nil")")
     }

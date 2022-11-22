@@ -42,17 +42,16 @@ class FxAWebViewTelemetry {
     var validStartedFlow: FxAUrlPathStartedFlow?
 
     func getFlowFromUrl(fxaUrl: URL?) -> FxAUrlPathStartedFlow? {
-        guard let url = fxaUrl else { return nil }
-        guard let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
-            return nil
-        }
-        guard !urlComponents.path.isEmpty else { return nil }
+        guard let url = fxaUrl,
+              let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false),
+              !urlComponents.path.isEmpty
+        else { return nil }
+
         var pathElements = urlComponents.path.components(separatedBy: "/")
         pathElements.reverse()
-        guard let element = pathElements.first(where: { $0 != "" }),
-              let flow = FxAUrlPathStartedFlow(rawValue: element) else {
-            return nil
-        }
+        guard let element = pathElements.first(where: { !$0.isEmpty }),
+              let flow = FxAUrlPathStartedFlow(rawValue: element)
+        else { return nil }
 
         return flow
     }
@@ -61,28 +60,40 @@ class FxAWebViewTelemetry {
         switch flow {
         case .completed:
             if validStartedFlow == .signinStarted {
-                TelemetryWrapper.recordEvent(category: .firefoxAccount, method: .view,
-                                             object: .fxaLoginCompleteWebpage)
+                TelemetryWrapper.recordEvent(
+                    category: .firefoxAccount,
+                    method: .view,
+                    object: .fxaLoginCompleteWebpage)
             } else if validStartedFlow == .signupStarted {
-                TelemetryWrapper.recordEvent(category: .firefoxAccount, method: .view,
-                                             object: .fxaRegistrationCompletedWebpage)
+                TelemetryWrapper.recordEvent(
+                    category: .firefoxAccount,
+                    method: .view,
+                    object: .fxaRegistrationCompletedWebpage)
             }
         case .startedFlow(let type):
             switch type {
             case .signinStarted:
                 validStartedFlow = type
-                TelemetryWrapper.recordEvent(category: .firefoxAccount, method: .view,
-                                             object: .fxaLoginWebpage)
+                TelemetryWrapper.recordEvent(
+                    category: .firefoxAccount,
+                    method: .view,
+                    object: .fxaLoginWebpage)
             case .signupStarted:
                 validStartedFlow = type
-                TelemetryWrapper.recordEvent(category: .firefoxAccount, method: .view,
-                                             object: .fxaRegistrationWebpage)
+                TelemetryWrapper.recordEvent(
+                    category: .firefoxAccount,
+                    method: .view,
+                    object: .fxaRegistrationWebpage)
             case .confirmSignupCode:
-                TelemetryWrapper.recordEvent(category: .firefoxAccount, method: .view,
-                                             object: .fxaConfirmSignUpCode)
+                TelemetryWrapper.recordEvent(
+                    category: .firefoxAccount,
+                    method: .view,
+                    object: .fxaConfirmSignUpCode)
             case .signinTokenCode:
-                TelemetryWrapper.recordEvent(category: .firefoxAccount, method: .view,
-                                             object: .fxaConfirmSignInToken)
+                TelemetryWrapper.recordEvent(
+                    category: .firefoxAccount,
+                    method: .view,
+                    object: .fxaConfirmSignInToken)
             }
         }
     }

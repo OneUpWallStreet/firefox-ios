@@ -19,6 +19,7 @@ DerivedData
 *.xcuserstate
 *.xcscmblueprint
 
+# fastlane
 /fastlane/scripts/upload.sh
 /fastlane/README.md
 /firefox-ios-l10n
@@ -64,10 +65,10 @@ python-env/
 # IDEA
 .idea
 
-Carthage/
 # Required for Glean
 /Client/Generated
 /Sync/Generated
+/Storage/Generated
 .venv/
 
 ThirdParty/google-breakpad
@@ -105,3 +106,5 @@ export-strings.log
 
 # Nimbus
 nimbus-fml/
+
+*config.py

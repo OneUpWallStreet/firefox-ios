@@ -5,11 +5,10 @@
 import Foundation
 import Shared
 import Storage
-import XCGLogger
 import SwiftyJSON
 
 private let log = Logger.syncLogger
-private let HistoryTTLInSeconds = 5184000                   // 60 days.
+private let HistoryTTLInSeconds = 5184000 // 60 days.
 let HistoryStorageVersion = 1
 
 func makeDeletedHistoryRecord(_ guid: GUID) -> Record<HistoryPayload> {
@@ -120,7 +119,12 @@ open class HistorySynchronizer: IndependentRecordSynchronizer, Synchronizer {
         return self.applyIncomingRecords(records, apply: applyRecord)
     }
 
-    fileprivate func uploadModifiedPlaces(_ places: [(Place, [Visit])], lastTimestamp: Timestamp, fromStorage storage: SyncableHistory, withServer storageClient: Sync15CollectionClient<HistoryPayload>) -> DeferredTimestamp {
+    fileprivate func uploadModifiedPlaces(
+        _ places: [(Place, [Visit])],
+        lastTimestamp: Timestamp,
+        fromStorage storage: SyncableHistory,
+        withServer storageClient: Sync15CollectionClient<HistoryPayload>
+    ) -> DeferredTimestamp {
         log.info("Preparing upload…")
 
         // Build sequences of 1000 history items, sequence by sequence
@@ -140,7 +144,12 @@ open class HistorySynchronizer: IndependentRecordSynchronizer, Synchronizer {
         return walk(toUpload, start: start, f: perChunk)
     }
 
-    fileprivate func uploadDeletedPlaces(_ guids: [GUID], lastTimestamp: Timestamp, fromStorage storage: SyncableHistory, withServer storageClient: Sync15CollectionClient<HistoryPayload>) -> DeferredTimestamp {
+    fileprivate func uploadDeletedPlaces(
+        _ guids: [GUID],
+        lastTimestamp: Timestamp,
+        fromStorage storage: SyncableHistory,
+        withServer storageClient: Sync15CollectionClient<HistoryPayload>
+    ) -> DeferredTimestamp {
 
         let records = guids.map(makeDeletedHistoryRecord)
 

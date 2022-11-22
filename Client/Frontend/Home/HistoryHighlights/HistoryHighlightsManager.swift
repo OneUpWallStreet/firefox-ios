@@ -7,40 +7,106 @@ import Shared
 import Storage
 import MozillaAppServices
 
+private let defaultHighlightCount = 9
+private let searchLimit = 1000
+
 extension HistoryHighlight {
     var urlFromString: URL? {
         return URL(string: url)
     }
 }
 
-class HistoryHighlightsManager {
+protocol HistoryHighlightsManagerProtocol {
+    func searchHighlightsData(
+        searchQuery: String,
+        profile: Profile,
+        tabs: [Tab],
+        resultCount: Int,
+        completion: @escaping ([HighlightItem]?) -> Void)
+
+    func getHighlightsData(
+        with profile: Profile,
+        and tabs: [Tab],
+        shouldGroupHighlights: Bool,
+        resultCount: Int,
+        completion: @escaping ([HighlightItem]?) -> Void)
+}
+
+extension HistoryHighlightsManagerProtocol {
+    func getHighlightsData(
+        with profile: Profile,
+        and tabs: [Tab],
+        shouldGroupHighlights: Bool = false,
+        resultCount: Int = defaultHighlightCount,
+        completion: @escaping ([HighlightItem]?) -> Void) {
+
+        self.getHighlightsData(
+            with: profile,
+            and: tabs,
+            shouldGroupHighlights: shouldGroupHighlights,
+            resultCount: resultCount,
+            completion: completion)
+    }
+}
+
+class HistoryHighlightsManager: HistoryHighlightsManagerProtocol {
 
     // MARK: - Variables
 
     // These variables are defined by PM and Design and will be tweaked based on
     // their requirements or input.
-    private static let defaultViewTimeWeight = 10.0
-    private static let defaultFrequencyWeight = 4.0
-    private static let defaultHighlightCount = 9
+    private let defaultViewTimeWeight = 10.0
+    private let defaultFrequencyWeight = 4.0
+
+    func searchHighlightsData(
+        searchQuery: String,
+        profile: Profile,
+        tabs: [Tab],
+        resultCount: Int,
+        completion: @escaping ([HighlightItem]?) -> Void) {
+
+        getHighlightsData(with: profile,
+                          and: tabs,
+                          resultCount: searchLimit) { results in
+
+            var searchResults = [HighlightItem]()
+
+            guard let results = results else {
+                completion(searchResults)
+                return
+            }
+            for site in results {
+                let urlString = site.siteUrl?.absoluteString ?? ""
+                if site.displayTitle.lowercased().contains(searchQuery) ||
+                    urlString.lowercased().contains(searchQuery) {
+                    searchResults.append(site)
+                }
+            }
+            completion(Array(searchResults.prefix(resultCount)))
+        }
+    }
 
     // MARK: - Public interface
 
     /// Fetches HistoryHighlight from A~S, and then filters currently open
     /// tabs against history highlights in order to avoid duplicated items. Then,
     /// if `shouldGroupHighlights` is set to true, applies group logic and finally, 
-    /// collates indivdual HistoryHighlight with `ASGroup<HistoryHighlight>`
-    /// to return the top nine results alternating betwen them.
+    /// collates individual HistoryHighlight with `ASGroup<HistoryHighlight>`
+    /// to return the top nine results alternating between them.
     ///
     /// - Parameters:
     ///   - profile: The user's `Profile` info
     ///   - tabs: List of `Tab` to filter open tabs from the highlight item list
     ///   - shouldGroupHighlights: Toggle to support highlight groups in the future for now is set to false
+    ///   - resultCount: The number of results to return
     ///   - completion: completion handler than contains either a list of `HistoryHighlights` if `shouldGroupHighlights` is set to false
     ///   or a combine list of `HistoryHighlights` and `ASGroup<HistoryHighlights>`if is true
-    public static func getHighlightsData(with profile: Profile,
-                                         and tabs: [Tab],
-                                         shouldGroupHighlights: Bool = false,
-                                         completion: @escaping ([HighlightItem]?) -> Void) {
+    func getHighlightsData(
+        with profile: Profile,
+        and tabs: [Tab],
+        shouldGroupHighlights: Bool = false,
+        resultCount: Int = defaultHighlightCount,
+        completion: @escaping ([HighlightItem]?) -> Void) {
 
         fetchHighlights(with: profile) { highlights in
 
@@ -49,29 +115,32 @@ class HistoryHighlightsManager {
                 return
             }
 
-            let filterHighlights = highlights.filter { highlights in
+            var filterHighlights = highlights.filter { highlights in
                 !tabs.contains { highlights.urlFromString == $0.lastKnownUrl }
             }
 
+            filterHighlights = SponsoredContentFilterUtility().filterSponsoredHighlights(from: filterHighlights)
+
             if shouldGroupHighlights {
-                buildSearchGroups(with: profile, and: filterHighlights) { groups, filterHighlights in
-                    let collatedHighlights = collateForRecentlySaved(from: groups, and: filterHighlights)
-                    completion(Array(collatedHighlights.prefix(9)))
+                self.buildSearchGroups(with: profile, and: filterHighlights) { groups, filterHighlights in
+                    let collatedHighlights = self.collateForRecentlySaved(from: groups, and: filterHighlights)
+                    completion(Array(collatedHighlights.prefix(resultCount)))
                 }
             } else {
-                completion(Array(filterHighlights.prefix(9)))
+                completion(Array(filterHighlights.prefix(resultCount)))
             }
         }
     }
 
     // MARK: - Data fetching functions
 
-    private static func fetchHighlights(with profile: Profile,
-                                        andLimit limit: Int32 = 1000,
-                                        completion: @escaping ([HistoryHighlight]?) -> Void) {
+    private func fetchHighlights(
+        with profile: Profile,
+        andLimit limit: Int32 = Int32(searchLimit),
+        completion: @escaping ([HistoryHighlight]?) -> Void) {
 
-        profile.places.getHighlights(weights: HistoryHighlightWeights(viewTime: self.defaultViewTimeWeight,
-                                                                      frequency: self.defaultFrequencyWeight),
+        profile.places.getHighlights(weights: HistoryHighlightWeights(viewTime: defaultViewTimeWeight,
+                                                                      frequency: defaultFrequencyWeight),
                                      limit: limit).uponQueue(.main) { result in
 
             guard let ASHighlights = result.successValue, !ASHighlights.isEmpty else { return completion(nil) }
@@ -82,11 +151,10 @@ class HistoryHighlightsManager {
 
     // MARK: - Helper functions
 
-    private static func buildSearchGroups(
+    private func buildSearchGroups(
         with profile: Profile,
         and highlights: [HistoryHighlight],
-        completion: @escaping ([ASGroup<HistoryHighlight>]?, [HistoryHighlight]) -> Void
-    ) {
+        completion: @escaping ([ASGroup<HistoryHighlight>]?, [HistoryHighlight]) -> Void) {
 
         SearchTermGroupsUtility.getHighlightGroups(with: profile,
                                                    from: highlights,
@@ -105,9 +173,11 @@ class HistoryHighlightsManager {
     /// - Parameters:
     ///   - groups: Search Groups of `ASGroup<HistoryHighlight>`
     ///   - highlights: Individual `HistoryHighlight`
-    /// - Returns: A  `HighlightItem` arrray alternating `HistoryHighlight` and search `ASGroup<HistoryHighlight>`
-    private static func collateForRecentlySaved(from groups: [ASGroup<HistoryHighlight>]?,
-                                                and highlights: [HistoryHighlight]) -> [HighlightItem] {
+    /// - Returns: A  `HighlightItem` array alternating `HistoryHighlight` and search `ASGroup<HistoryHighlight>`
+    private func collateForRecentlySaved(
+        from groups: [ASGroup<HistoryHighlight>]?,
+        and highlights: [HistoryHighlight]) -> [HighlightItem] {
+
         guard let groups = groups, !groups.isEmpty else { return highlights }
 
         var highlightItems: [HighlightItem] = highlights

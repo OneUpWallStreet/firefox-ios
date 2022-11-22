@@ -14,7 +14,7 @@
 "Created %@" = "Creado: %@";
 
 /* Label for the button used to delete the current login. */
-"Delete" = "Borrar";
+"Delete" = "Eliminar";
 
 /* Label for the button used to deselect all logins. */
 "Deselect All" = "Desmarcar todo";
@@ -51,6 +51,9 @@
 
 /* Accessibility label for the search input field in the Logins list */
 "Search Input Field" = "Campo de texto de búsqueda";
+
+/* Title for the search field at the top of the Logins list screen */
+"SearchInput.Title.Search.v106" = "Buscar";
 
 /* Label for the button used to select all logins. */
 "Select All" = "Seleccionar todo";

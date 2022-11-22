@@ -87,15 +87,17 @@ class FaviconManager: TabContentScript {
         }
 
         var fetch: SDWebImageOperation?
-        fetch = manager.loadImage(with: iconUrl, options: SDWebImageOptions(options),
-                                  progress: { (receivedSize, expectedSize, _) in
-                                    if receivedSize > FaviconManager.maximumFaviconSize || expectedSize > FaviconManager.maximumFaviconSize {
-                                        fetch?.cancel()
-                                    }
-                                  },
-                                  completed: {  (img, _, _, _, _, url) in
-                                    loadImageCompleted(img, url)
-                                  })
+        fetch = manager.loadImage(
+            with: iconUrl,
+            options: SDWebImageOptions(options),
+            progress: { (receivedSize, expectedSize, _) in
+                if receivedSize > FaviconManager.maximumFaviconSize || expectedSize > FaviconManager.maximumFaviconSize {
+                    fetch?.cancel()
+                }
+            },
+            completed: {  (img, _, _, _, _, url) in
+                loadImageCompleted(img, url)
+            })
         return deferred
     }
 
@@ -105,8 +107,9 @@ class FaviconManager: TabContentScript {
             var favicons = [Favicon]()
             if let icons = message.body as? [String: Int] {
                 for icon in icons {
-                    if let _ = URL(string: icon.0), let iconType = IconType(rawValue: icon.1) {
-                        let favicon = Favicon(url: icon.0, date: Date(), type: iconType)
+                    if let iconURL = URL(string: icon.0),
+                       let iconType = IconType(rawValue: icon.1) {
+                        let favicon = Favicon(url: iconURL, date: Date(), type: iconType)
                         favicons.append(favicon)
                     }
                 }

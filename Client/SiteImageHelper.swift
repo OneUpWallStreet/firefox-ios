@@ -18,11 +18,33 @@ enum SiteImageType: Int {
     }
 }
 
+protocol SiteImageHelperProtocol {
+    func fetchImageFor(site: Site,
+                       imageType: SiteImageType,
+                       shouldFallback: Bool,
+                       metadataProvider: LPMetadataProvider,
+                       completion: @escaping (UIImage?) -> Void)
+}
+
+extension SiteImageHelperProtocol {
+    func fetchImageFor(site: Site,
+                       imageType: SiteImageType,
+                       shouldFallback: Bool,
+                       metadataProvider: LPMetadataProvider = LPMetadataProvider(),
+                       completion: @escaping (UIImage?) -> Void) {
+        self.fetchImageFor(site: site,
+                           imageType: imageType,
+                           shouldFallback: shouldFallback,
+                           metadataProvider: metadataProvider,
+                           completion: completion)
+    }
+}
+
 /// A helper that'll fetch an image, and fallback to other image options if specified.
-class SiteImageHelper {
+class SiteImageHelper: SiteImageHelperProtocol {
 
     private static let cache = NSCache<NSString, UIImage>()
-    private let throttler = Throttler(seconds: 0.5, on: .main)
+    private let throttler = Throttler(seconds: 0.5, on: DispatchQueue.main)
     private let faviconFetcher: Favicons
 
     convenience init(profile: Profile) {
@@ -35,7 +57,7 @@ class SiteImageHelper {
 
     /// Given a `Site`, this will fetch the type of image you're looking for while allowing you to fallback to the next `SiteImageType`.
     /// - Parameters:
-    ///   - url: The site to fetch an image from.
+    ///   - site: The site to fetch an image from.
     ///   - imageType: The `SiteImageType` that will work for you.
     ///   - shouldFallback: Allow a fallback image to be given in the case where the `SiteImageType` you specify is not available.
     ///   - metadataProvider: Metadata provider for hero image type. Default is normally used, replaced in case of tests
@@ -111,21 +133,27 @@ class SiteImageHelper {
                                            url: URL,
                                            metadataProvider: LPMetadataProvider,
                                            completion: @escaping (UIImage?, Bool?) -> Void) {
-
-        metadataProvider.startFetchingMetadata(for: url) { metadata, error in
-            guard let metadata = metadata, let imageProvider = metadata.imageProvider, error == nil else {
-                completion(nil, false)
-                return
-            }
-
-            imageProvider.loadObject(ofClass: UIImage.self) { image, error in
-                guard error == nil, let image = image as? UIImage else {
+        // LPMetadataProvider must be interacted with on the main thread or it can crash
+        // The closure will return on a non-main thread
+        ensureMainThread {
+            metadataProvider.startFetchingMetadata(for: url) { metadata, error in
+                guard let metadata = metadata,
+                      let imageProvider = metadata.imageProvider,
+                        error == nil
+                else {
                     completion(nil, false)
                     return
                 }
 
-                SiteImageHelper.cache.setObject(image, forKey: heroImageCacheKey)
-                completion(image, true)
+                imageProvider.loadObject(ofClass: UIImage.self) { image, error in
+                    guard error == nil, let image = image as? UIImage else {
+                        completion(nil, false)
+                        return
+                    }
+
+                    SiteImageHelper.cache.setObject(image, forKey: heroImageCacheKey)
+                    completion(image, true)
+                }
             }
         }
     }

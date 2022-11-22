@@ -67,8 +67,10 @@ class ContileProvider: ContileProviderInterface, Loggable, URLCaching, FeatureFl
                 return
             }
 
-            guard let response = validatedHTTPResponse(response, statusCode: 200..<300), let data = data, !data.isEmpty else {
-                self.browserLog.debug("Response isn't proper: \(response.debugDescription), with data \(String(describing: data))")
+            guard let response = validatedHTTPResponse(response, statusCode: 200..<300),
+                  let data = data
+            else {
+                self.browserLog.debug("Response isn't valid: \(response.debugDescription)")
                 completion(.failure(Error.failure))
                 return
             }

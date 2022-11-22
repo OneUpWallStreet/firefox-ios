@@ -5,7 +5,6 @@
 import Foundation
 import Shared
 import Account
-import XCGLogger
 
 private let log = Logger.syncLogger
 
@@ -28,7 +27,7 @@ private let DefaultEngines: [String: Int] = [
     "bookmarks": 2,
     "clients": ClientsStorageVersion,
     "history": HistoryStorageVersion,
-    "tabs": TabsStorageVersion,
+    "tabs": 1,
     // We opt-in to syncing collections we don't know about, since no client offers to sync non-enabled,
     // non-declined engines yet.  See Bug 969669.
     "passwords": 1,
@@ -824,7 +823,7 @@ open class NeedsFreshMetaGlobal: BaseSyncStateWithInfo {
                 return deferMaybe(ResolveMetaGlobalVersion.fromState(self, fetched: fetched))
             }
 
-            if let _ = result.failureValue as? NotFound<HTTPURLResponse> {
+            if result.failureValue as? NotFound<HTTPURLResponse> != nil {
                 // OK, this is easy.
                 // This state is responsible for creating the new m/g, uploading it, and
                 // restarting with a clean scratchpad.
@@ -863,8 +862,13 @@ open class HasMetaGlobal: BaseSyncStateWithInfo {
         // Check if crypto/keys is fresh in the cache already.
         if let keys = self.scratchpad.keys, keys.value.valid {
             if let cryptoModified = self.info.modified("crypto") {
-                // Both of these are server timestamps. If the record we stored was fetched after the last time the record was modified, as represented by the "crypto" entry in info/collections, and we're fetching from the
-                // same server, then the record must be identical, and we can use it directly.  If are ever additional records in the crypto collection, this will fetch keys too frequently.  In that case, we should use X-I-U-S and expect some 304 responses.
+                // Both of these are server timestamps. If the record we stored was
+                // fetched after the last time the record was modified, as represented
+                // by the "crypto" entry in info/collections, and we're fetching from the
+                // same server, then the record must be identical, and we can use it
+                // directly.  If are ever additional records in the crypto collection,
+                // this will fetch keys too frequently.  In that case, we should use
+                // X-I-U-S and expect some 304 responses.
                 if keys.timestamp >= cryptoModified {
                     log.debug("Cached keys fetched at \(keys.timestamp), newer than server modified \(cryptoModified). Using cached keys.")
                     return deferMaybe(HasFreshCryptoKeys.fromState(self, scratchpad: self.scratchpad, collectionKeys: keys.value))
@@ -922,7 +926,7 @@ open class NeedsFreshCryptoKeys: BaseSyncStateWithInfo {
                 return deferMaybe(HasFreshCryptoKeys.fromState(self, scratchpad: s, collectionKeys: collectionKeys))
             }
 
-            if let _ = result.failureValue as? NotFound<HTTPURLResponse> {
+            if result.failureValue as? NotFound<HTTPURLResponse> != nil {
                 // No crypto/keys?  We can handle this.  Wipe and upload both meta/global and crypto/keys.
                 return deferMaybe(MissingCryptoKeysError(previousState: self))
             }

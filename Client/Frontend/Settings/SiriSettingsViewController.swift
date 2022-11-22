@@ -34,12 +34,12 @@ class SiriOpenURLSetting: Setting {
     override var accessibilityIdentifier: String? { return "SiriSettings" }
 
     init(settings: SettingsTableViewController) {
-        super.init(title: NSAttributedString(string: .SettingsSiriOpenURL, attributes: [NSAttributedString.Key.foregroundColor: UIColor.theme.tableView.rowText]))
+        super.init(title: NSAttributedString(string: .SettingsSiriOpenURL, attributes: [NSAttributedString.Key.foregroundColor: settings.themeManager.currentTheme.colors.textPrimary]))
     }
 
     override func onClick(_ navigationController: UINavigationController?) {
-        if let vc = navigationController?.topViewController {
-            SiriShortcuts.manageSiri(for: SiriShortcuts.activityType.openURL, in: vc)
+        if let controller = navigationController?.topViewController {
+            SiriShortcuts.manageSiri(for: SiriShortcuts.activityType.openURL, in: controller)
         }
     }
 }

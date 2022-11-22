@@ -7,7 +7,12 @@ import SnapKit
 import Shared
 import WebKit
 
-class WebsiteDataSearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class WebsiteDataSearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, Themeable {
+
+    var themeManager: ThemeManager
+    var themeObserver: NSObjectProtocol?
+    var notificationCenter: NotificationProtocol
+
     private enum Section: Int {
         case sites = 0
         case clearButton = 1
@@ -15,20 +20,23 @@ class WebsiteDataSearchResultsViewController: UIViewController, UITableViewDataS
         static let count = 2
     }
 
-    private let SectionHeaderFooterIdentifier = "SectionHeaderFooterIdentifier"
     let viewModel: WebsiteDataManagementViewModel
     private var tableView: UITableView!
 
     private var filteredSiteRecords = [WKWebsiteDataRecord]()
     private var currentSearchText = ""
 
-    init(viewModel: WebsiteDataManagementViewModel) {
+    init(viewModel: WebsiteDataManagementViewModel,
+         themeManager: ThemeManager = AppContainer.shared.resolve(),
+         notificationCenter: NotificationProtocol = NotificationCenter.default) {
         self.viewModel = viewModel
+        self.themeManager = themeManager
+        self.notificationCenter = notificationCenter
         super.init(nibName: nil, bundle: nil)
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("Not Implemented")
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
@@ -37,15 +45,17 @@ class WebsiteDataSearchResultsViewController: UIViewController, UITableViewDataS
         tableView = UITableView()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.separatorColor = UIColor.theme.tableView.separator
-        tableView.backgroundColor = UIColor.theme.tableView.headerBackground
+
         tableView.isEditing = true
         tableView.allowsMultipleSelectionDuringEditing = true
         tableView.register(ThemedTableViewCell.self, forCellReuseIdentifier: "Cell")
-        tableView.register(ThemedTableSectionHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: SectionHeaderFooterIdentifier)
+        tableView.register(ThemedTableSectionHeaderFooterView.self,
+                           forHeaderFooterViewReuseIdentifier: ThemedTableSectionHeaderFooterView.cellIdentifier)
         view.addSubview(tableView)
 
-        let footer = ThemedTableSectionHeaderFooterView(frame: CGRect(width: tableView.bounds.width, height: SettingsUX.TableViewHeaderFooterHeight))
+        let footer = ThemedTableSectionHeaderFooterView(frame: CGRect(width: tableView.bounds.width,
+                                                                      height: SettingsUX.TableViewHeaderFooterHeight))
+        footer.applyTheme(theme: themeManager.currentTheme)
         footer.showBorder(for: .top, true)
         tableView.tableFooterView = footer
 
@@ -53,10 +63,13 @@ class WebsiteDataSearchResultsViewController: UIViewController, UITableViewDataS
             make.edges.equalTo(view)
         }
         KeyboardHelper.defaultHelper.addDelegate(self)
+
+        listenForThemeChange()
+        applyTheme()
     }
 
     func reloadData() {
-        guard let _ = tableView else { return }
+        guard tableView != nil else { return }
         // to update filteredSiteRecords before reloading the tableView
         filterContentForSearchText(currentSearchText)
     }
@@ -75,6 +88,7 @@ class WebsiteDataSearchResultsViewController: UIViewController, UITableViewDataS
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ThemedTableViewCell(style: .default, reuseIdentifier: nil)
+        cell.applyTheme(theme: themeManager.currentTheme)
         let section = Section(rawValue: indexPath.section)!
         switch section {
         case .sites:
@@ -89,7 +103,7 @@ class WebsiteDataSearchResultsViewController: UIViewController, UITableViewDataS
         case .clearButton:
             cell.textLabel?.text = viewModel.clearButtonTitle
             cell.textLabel?.textAlignment = .center
-            cell.textLabel?.textColor = UIColor.theme.general.destructiveRed
+            cell.textLabel?.textColor = themeManager.currentTheme.colors.textWarning
             cell.accessibilityTraits = UIAccessibilityTraits.button
             cell.accessibilityIdentifier = "ClearAllWebsiteData"
         }
@@ -133,21 +147,22 @@ class WebsiteDataSearchResultsViewController: UIViewController, UITableViewDataS
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: SectionHeaderFooterIdentifier) as? ThemedTableSectionHeaderFooterView
-        headerView?.titleLabel.text = section == Section.sites.rawValue ? .SettingsWebsiteDataTitle : nil
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ThemedTableSectionHeaderFooterView.cellIdentifier) as? ThemedTableSectionHeaderFooterView else { return nil }
 
-        headerView?.showBorder(for: .top, true)
-        headerView?.showBorder(for: .bottom, true)
+        headerView.titleLabel.text = section == Section.sites.rawValue ? .SettingsWebsiteDataTitle : nil
+
+        headerView.showBorder(for: .top, true)
+        headerView.showBorder(for: .bottom, true)
 
         // top section: no top border (this is a plain table)
         guard let section = Section(rawValue: section) else { return headerView }
         if section == .sites {
-            headerView?.showBorder(for: .top, false)
+            headerView.showBorder(for: .top, false)
 
             // no records: no bottom border (would make 2 with the one from the clear button)
             let emptyRecords = viewModel.siteRecords.isEmpty
             if emptyRecords {
-                headerView?.showBorder(for: .bottom, false)
+                headerView.showBorder(for: .bottom, false)
             }
         }
         return headerView
@@ -157,7 +172,7 @@ class WebsiteDataSearchResultsViewController: UIViewController, UITableViewDataS
         let section = Section(rawValue: section)!
         switch section {
         case .clearButton: return 10 // Controls the space between the site list and the button
-        case .sites: return SettingsUX.TableViewHeaderFooterHeight
+        case .sites: return UITableView.automaticDimension
         }
     }
 
@@ -167,6 +182,11 @@ class WebsiteDataSearchResultsViewController: UIViewController, UITableViewDataS
         })
 
         tableView.reloadData()
+    }
+
+    func applyTheme() {
+        tableView.separatorColor = themeManager.currentTheme.colors.borderPrimary
+        tableView.backgroundColor = themeManager.currentTheme.colors.layer1
     }
 }
 

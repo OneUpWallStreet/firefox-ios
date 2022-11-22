@@ -54,7 +54,7 @@ protocol TabEventHandler: AnyObject {
     func tab(_ tab: Tab, didLoadPageMetadata metadata: PageMetadata)
     func tabMetadataNotAvailable(_ tab: Tab)
     func tab(_ tab: Tab, didLoadReadability page: ReadabilityResult)
-    func tab(_ tab: Tab, didLoadFavicon favicon: Favicon?, with: Data?)
+    func tab(_ tab: Tab, didLoadFavicon favicon: Favicon?)
     func tabDidGainFocus(_ tab: Tab)
     func tabDidLoseFocus(_ tab: Tab)
     func tabDidClose(_ tab: Tab)
@@ -63,14 +63,14 @@ protocol TabEventHandler: AnyObject {
     func tabDidSetScreenshot(_ tab: Tab, hasHomeScreenshot: Bool)
 }
 
-// Provide default implmentations, because we don't want to litter the code with
+// Provide default implementations, because we don't want to litter the code with
 // empty methods, and `@objc optional` doesn't really work very well.
 extension TabEventHandler {
     func tab(_ tab: Tab, didChangeURL url: URL) {}
     func tab(_ tab: Tab, didLoadPageMetadata metadata: PageMetadata) {}
     func tabMetadataNotAvailable(_ tab: Tab) {}
     func tab(_ tab: Tab, didLoadReadability page: ReadabilityResult) {}
-    func tab(_ tab: Tab, didLoadFavicon favicon: Favicon?, with: Data?) {}
+    func tab(_ tab: Tab, didLoadFavicon favicon: Favicon?) {}
     func tabDidGainFocus(_ tab: Tab) {}
     func tabDidLoseFocus(_ tab: Tab) {}
     func tabDidClose(_ tab: Tab) {}
@@ -99,7 +99,7 @@ enum TabEvent {
     case didLoadPageMetadata(PageMetadata)
     case pageMetadataNotAvailable
     case didLoadReadability(ReadabilityResult)
-    case didLoadFavicon(Favicon?, with: Data?)
+    case didLoadFavicon(Favicon?)
     case didGainFocus
     case didLoseFocus
     case didClose
@@ -125,8 +125,8 @@ enum TabEvent {
             handler.tabMetadataNotAvailable(tab)
         case .didLoadReadability(let result):
             handler.tab(tab, didLoadReadability: result)
-        case .didLoadFavicon(let favicon, let data):
-            handler.tab(tab, didLoadFavicon: favicon, with: data)
+        case .didLoadFavicon(let favicon):
+            handler.tab(tab, didLoadFavicon: favicon)
         case .didGainFocus:
             handler.tabDidGainFocus(tab)
         case .didLoseFocus:

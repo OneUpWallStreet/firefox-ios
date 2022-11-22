@@ -13,6 +13,7 @@ class HomePageSettingViewController: SettingsTableViewController, FeatureFlaggab
     var currentNewTabChoice: NewTabPage!
     var currentStartAtHomeSetting: StartAtHomeSetting!
     var hasHomePage = false
+    var wallpaperManager: WallpaperManagerInterface
 
     var isJumpBackInSectionEnabled: Bool {
         return featureFlags.isFeatureEnabled(.jumpBackIn, checking: .buildOnly)
@@ -23,7 +24,16 @@ class HomePageSettingViewController: SettingsTableViewController, FeatureFlaggab
     }
 
     var isWallpaperSectionEnabled: Bool {
-        return featureFlags.isFeatureEnabled(.wallpapers, checking: .buildOnly)
+        return wallpaperManager.canSettingsBeShown &&
+            featureFlags.isFeatureEnabled(.wallpapers, checking: .buildOnly)
+    }
+
+    var isPocketSectionEnabled: Bool {
+        return featureFlags.isFeatureEnabled(.pocket, checking: .buildOnly)
+    }
+
+    var isPocketSponsoredStoriesEnabled: Bool {
+        return featureFlags.isFeatureEnabled(.sponsoredPocket, checking: .buildOnly)
     }
 
     var isHistoryHighlightsSectionEnabled: Bool {
@@ -31,12 +41,14 @@ class HomePageSettingViewController: SettingsTableViewController, FeatureFlaggab
     }
 
     // MARK: - Initializers
-    init(prefs: Prefs) {
+    init(prefs: Prefs,
+         wallpaperManager: WallpaperManagerInterface = WallpaperManager()) {
         self.prefs = prefs
+        self.wallpaperManager = wallpaperManager
         super.init(style: .grouped)
 
-        self.title = .SettingsHomePageSectionName
-        self.navigationController?.navigationBar.accessibilityIdentifier = AccessibilityIdentifiers.Settings.Homepage.homePageNavigationBar
+        title = .SettingsHomePageSectionName
+        navigationController?.navigationBar.accessibilityIdentifier = AccessibilityIdentifiers.Settings.Homepage.homePageNavigationBar
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -46,7 +58,7 @@ class HomePageSettingViewController: SettingsTableViewController, FeatureFlaggab
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.keyboardDismissMode = .onDrag
+        tableView.keyboardDismissMode = .onDrag
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -56,7 +68,6 @@ class HomePageSettingViewController: SettingsTableViewController, FeatureFlaggab
 
     // MARK: - Methods
     override func generateSettings() -> [SettingSection] {
-
         let customizeFirefoxHomeSection = customizeFirefoxSettingSection()
         let customizeHomePageSection = customizeHomeSettingSection()
 
@@ -78,14 +89,26 @@ class HomePageSettingViewController: SettingsTableViewController, FeatureFlaggab
             self.tableView.reloadData()
         }
 
-        let showTopSites = CheckmarkSetting(title: NSAttributedString(string: .SettingsNewTabTopSites), subtitle: nil, accessibilityIdentifier: "HomeAsFirefoxHome", isChecked: {return self.currentNewTabChoice == NewTabPage.topSites}, onChecked: {
-            self.currentNewTabChoice = NewTabPage.topSites
-            onFinished()
+        let showTopSites = CheckmarkSetting(
+            title: NSAttributedString(string: .SettingsNewTabTopSites),
+            subtitle: nil,
+            accessibilityIdentifier: "HomeAsFirefoxHome",
+            isChecked: { return self.currentNewTabChoice == NewTabPage.topSites },
+            onChecked: {
+                self.currentNewTabChoice = NewTabPage.topSites
+                onFinished()
         })
-        let showWebPage = WebPageSetting(prefs: prefs, prefKey: PrefsKeys.HomeButtonHomePageURL, defaultValue: nil, placeholder: .CustomNewPageURL, accessibilityIdentifier: "HomeAsCustomURL", isChecked: {return !showTopSites.isChecked()}, settingDidChange: { (string) in
-            self.currentNewTabChoice = NewTabPage.homePage
-            self.prefs.setString(self.currentNewTabChoice.rawValue, forKey: NewTabAccessors.HomePrefKey)
-            self.tableView.reloadData()
+        let showWebPage = WebPageSetting(
+            prefs: prefs,
+            prefKey: PrefsKeys.HomeButtonHomePageURL,
+            defaultValue: nil,
+            placeholder: .CustomNewPageURL,
+            accessibilityIdentifier: "HomeAsCustomURL",
+            isChecked: { return !showTopSites.isChecked() },
+            settingDidChange: { (string) in
+                self.currentNewTabChoice = NewTabPage.homePage
+                self.prefs.setString(self.currentNewTabChoice.rawValue, forKey: NewTabAccessors.HomePrefKey)
+                self.tableView.reloadData()
         })
         showWebPage.textField.textAlignment = .natural
 
@@ -99,8 +122,20 @@ class HomePageSettingViewController: SettingsTableViewController, FeatureFlaggab
         // Setup
         var sectionItems = [Setting]()
 
-        let pocketSetting = BoolSetting(with: .pocket,
-                                        titleText: NSAttributedString(string: .Settings.Homepage.CustomizeFirefoxHome.Pocket))
+        let pocketSponsoredSetting = BoolSetting(with: .sponsoredPocket,
+                                        titleText: NSAttributedString(string: .Settings.Homepage.CustomizeFirefoxHome.SponsoredPocket))
+        // This sets whether the cell is enabled or not, and not the setting itself.
+        pocketSponsoredSetting.enabled = featureFlags.isFeatureEnabled(
+            .pocket,
+            checking: .buildAndUser)
+
+        let pocketSetting = BoolSetting(
+            with: .pocket,
+            titleText: NSAttributedString(string: .Settings.Homepage.CustomizeFirefoxHome.Pocket)) { [weak self] in
+                // Disable sponsored option if pocket stories are disabled
+                pocketSponsoredSetting.enabled = $0
+                self?.tableView.reloadData()
+            }
 
         let jumpBackInSetting = BoolSetting(with: .jumpBackIn,
                                             titleText: NSAttributedString(string: .Settings.Homepage.CustomizeFirefoxHome.JumpBackIn))
@@ -110,8 +145,7 @@ class HomePageSettingViewController: SettingsTableViewController, FeatureFlaggab
 
         let historyHighlightsSetting = BoolSetting(with: .historyHighlights,
                                                    titleText: NSAttributedString(string: .Settings.Homepage.CustomizeFirefoxHome.RecentlyVisited))
-
-        let wallpaperSetting = WallpaperSettings(settings: self)
+        let wallpaperSetting = WallpaperSettings(settings: self, wallpaperManager: wallpaperManager)
 
         // Section ordering
         sectionItems.append(TopSitesSettings(settings: self))
@@ -128,7 +162,14 @@ class HomePageSettingViewController: SettingsTableViewController, FeatureFlaggab
             sectionItems.append(historyHighlightsSetting)
         }
 
-        sectionItems.append(pocketSetting)
+        if isPocketSectionEnabled {
+            sectionItems.append(pocketSetting)
+
+            // Only show the sponsored stories setting if the Pocket setting is showing
+            if isPocketSponsoredStoriesEnabled {
+                sectionItems.append(pocketSponsoredSetting)
+            }
+        }
 
         if isWallpaperSectionEnabled {
             sectionItems.append(wallpaperSetting)
@@ -146,7 +187,7 @@ class HomePageSettingViewController: SettingsTableViewController, FeatureFlaggab
 
         typealias a11y = AccessibilityIdentifiers.Settings.Homepage.StartAtHome
 
-        let onOptionSelected: ((Bool, StartAtHomeSetting) -> Void) = { state, option in
+        let onOptionSelected: (Bool, StartAtHomeSetting) -> Void = { state, option in
             self.featureFlags.set(feature: .startAtHome, to: option)
             self.tableView.reloadData()
 
@@ -223,28 +264,34 @@ extension HomePageSettingViewController {
 
 // MARK: - WallpaperSettings
 extension HomePageSettingViewController {
-    class WallpaperSettings: Setting {
+    class WallpaperSettings: Setting, FeatureFlaggable {
 
-        var profile: Profile
+        var settings: SettingsTableViewController
         var tabManager: TabManager
+        var wallpaperManager: WallpaperManagerInterface
 
         override var accessoryType: UITableViewCell.AccessoryType { return .disclosureIndicator }
         override var accessibilityIdentifier: String? { return AccessibilityIdentifiers.Settings.Homepage.CustomizeFirefox.wallpaper }
         override var style: UITableViewCell.CellStyle { return .value1 }
 
         init(settings: SettingsTableViewController,
-             and tabManager: TabManager = BrowserViewController.foregroundBVC().tabManager
+             and tabManager: TabManager = BrowserViewController.foregroundBVC().tabManager,
+             wallpaperManager: WallpaperManagerInterface = WallpaperManager()
         ) {
-            self.profile = settings.profile
+            self.settings = settings
             self.tabManager = tabManager
+            self.wallpaperManager = wallpaperManager
             super.init(title: NSAttributedString(string: .Settings.Homepage.CustomizeFirefoxHome.Wallpaper))
         }
 
         override func onClick(_ navigationController: UINavigationController?) {
-            let viewModel = WallpaperSettingsViewModel(with: tabManager,
-                                                       and: WallpaperManager())
-            let wallpaperVC = WallpaperSettingsViewController(with: viewModel)
-            navigationController?.pushViewController(wallpaperVC, animated: true)
+            if wallpaperManager.canSettingsBeShown {
+                let viewModel = WallpaperSettingsViewModel(wallpaperManager: wallpaperManager,
+                                                           tabManager: tabManager,
+                                                           theme: settings.themeManager.currentTheme)
+                let wallpaperVC = WallpaperSettingsViewController(viewModel: viewModel)
+                navigationController?.pushViewController(wallpaperVC, animated: true)
+            }
         }
     }
 }
