@@ -176,7 +176,7 @@
 "ContextMenu.CopyImageButtonTitle" = "Капіяваць відарыс";
 
 /* Context menu item for copying an image URL to the clipboard */
-"ContextMenu.CopyImageLinkButtonTitle" = "Скапіяваць спасылку на відарыс";
+"ContextMenu.CopyImageLinkButtonTitle" = "Капіяваць спасылку на відарыс";
 
 /* Context menu item for copying a link URL to the clipboard */
 "ContextMenu.CopyLinkButtonTitle" = "Капіяваць спасылку";
@@ -193,17 +193,8 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Падзяліцца спасылкай";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Цяпер вы можаце перанесці паліцу інструментаў уніз, каб было зручней уводзіць даныя";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Каб было зручней уводзіць даныя, паліца інструментаў цяпер тыпова знаходзіцца ўнізе.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "Цяпер ваша персаналізаваная хатняя старонка Firefox палягчае працяг працы адтуль, дзе вы спыніліся. Знайдзіце свае апошнія карткі, закладкі і вынікі пошуку.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
-"ContextualHints.SearchBarPlacement.CallToAction" = "Налады паліцы інструментаў";
+"ContextualHints.SearchBarPlacement.CallToAction" = "Налады паліцы прылад";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the inactive tabs feature. */
 "ContextualHints.TabTray.InactiveTabs" = "Карткі, якія вы не праглядалі на працягу двух тыдняў, будуць перанесеныя сюды.";
@@ -351,9 +342,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Выдаліць";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Сайты: %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Налады";
@@ -755,7 +743,7 @@
 "Menu.Bookmarks.Label" = "Закладкі";
 
 /* The title for the button that lets you copy the url from the location bar. */
-"Menu.Copy.Title" = "Скапіяваць адрас";
+"Menu.Copy.Title" = "Капіяваць адрас";
 
 /* Toast displayed to user after copy url pressed. */
 "Menu.CopyURL.Confirm" = "URL скапіяваны ў буфер абмену";
@@ -905,7 +893,7 @@
 "OK" = "OK";
 
 /* Restore Tabs Affirmative Action */
-"Okay" = "Добра";
+"Okay" = "Так";
 
 /* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
 "Onboarding.IntroAction.v102" = "Пачаць";
@@ -942,9 +930,6 @@
 
 /* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
 "Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "Лімітаванае выданне шпалер";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "Прагледзець больш шпалер";
 
 /* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
 "Onboarding.Wallpaper.Description.v106" = "Выберыце шпалеры, якія вам пасуюць.";
@@ -1073,7 +1058,7 @@
 "ScanQRCode.Error.OK.Button" = "OK";
 
 /* Text for the instructions label, displayed in the QR scanner view */
-"ScanQRCode.Instructions.Label" = "Размясціце QR-код унутры рамкі сканавання";
+"ScanQRCode.Instructions.Label" = "Размясціце QR-код унутры рамкі сканіравання";
 
 /* Text of the prompt that is shown to the user when the data is invalid */
 "ScanQRCode.InvalidDataError.Message" = "Несапраўдныя звесткі";
@@ -1082,7 +1067,7 @@
 "ScanQRCode.PermissionError.Message.v100" = "Прайдзіце ў ‘Налады’ прылады > ‘Firefox’. Дазвольце Firefox доступ да камеры.";
 
 /* Title for the QR code scanner view. */
-"ScanQRCode.View.Title" = "Сканаваць QR-код";
+"ScanQRCode.View.Title" = "Сканіраваць QR-код";
 
 /* Open search section of settings */
 "Search" = "Пошук";
