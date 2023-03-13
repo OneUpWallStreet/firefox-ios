@@ -193,15 +193,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Miðla tengli";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Nú geturðu fært verkfæraslána neðst, svo það sé auðveldara að setja inn upplýsingar";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Til að auðvelda innslátt upplýsinga er verkfærasláin nú sjálfgefið neðst.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "Sérsniðin Firefox-upphafssíða þín gerir það nú auðveldara að halda áfram þar sem frá var horfið. Finndu nýlega flipa, bókamerki og leitarniðurstöður.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Stillingar verkfæraslár";
 
@@ -351,9 +342,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Fjarlægja";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Vefsvæði: %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Stillingar";
@@ -758,7 +746,7 @@
 "Menu.Copy.Title" = "Afrita vistfang";
 
 /* Toast displayed to user after copy url pressed. */
-"Menu.CopyURL.Confirm" = "Afritað á klemmuspjald";
+"Menu.CopyURL.Confirm" = "Vefslóð afrituð á klippispjald";
 
 /* Label for the customize homepage button in the menu page. Pressing this button takes users to the settings options, where they can customize the Firefox Home page */
 "Menu.CustomizeHomePage.v99" = "Sérsníða upphafssíðu";
@@ -942,9 +930,6 @@
 
 /* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
 "Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "Bakgrunnsmynd í takmörkuðu upplagi";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "Skoða fleiri bakgrunnsmyndir";
 
 /* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
 "Onboarding.Wallpaper.Description.v106" = "Veldu bakgrunnsmynd sem talar til þín.";
@@ -1244,7 +1229,7 @@
 "Settings.ClearSelectedWebsiteData.ClearSelected.Button" = "Hreinsa atriði: %1$@";
 
 /* Copy app version alert shown in settings. */
-"Settings.CopyAppVersion.Title" = "Afritað texta á klemmuspjald";
+"Settings.CopyAppVersion.Title" = "Afritað á klippispjald";
 
 /* Default text in search bar for Data Management */
 "Settings.DataManagement.SearchLabel" = "Sía vefsíður";
@@ -1667,7 +1652,7 @@
 "ShareExtension.SeachInFirefoxAction.Title" = "Leita í Firefox";
 
 /* Label for show search suggestions setting. */
-"Show Search Suggestions" = "Sýna leitar tillögur";
+"Show Search Suggestions" = "Sýna leitartillögur";
 
 /* Accessibility label for the tabs button in the (top) tab toolbar */
 "Show Tabs" = "Sýna flipa";
@@ -1874,7 +1859,7 @@
 "You don’t have any tabs open in Firefox on your other devices." = "Þú ert ekki með neina Firefox flipa opna á hinum tækjunum þínum.";
 
 /* Your Rights settings section title */
-"Your Rights" = "Rétturinn þinn";
+"Your Rights" = "Réttindi þín";
 
 /* Tile title for YouTube */
 "YouTube" = "YouTube";
