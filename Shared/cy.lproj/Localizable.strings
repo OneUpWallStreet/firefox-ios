@@ -32,7 +32,7 @@
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "Tabiau: %d";
 
 /* A string used to signify the start of the Recently Saved section in Home Screen. */
-"ActivityStream.Library.Title" = "Cadwyd yn ddiweddar";
+"ActivityStream.Library.Title" = "Cadwyd yn Ddiweddar";
 
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "Ymwelwyd yn Ddiweddar";
@@ -179,7 +179,7 @@
 "ContextMenu.CopyImageLinkButtonTitle" = "Copi Dolen Delwedd";
 
 /* Context menu item for copying a link URL to the clipboard */
-"ContextMenu.CopyLinkButtonTitle" = "Copïo'r Ddolen";
+"ContextMenu.CopyLinkButtonTitle" = "Copïo Dolen";
 
 /* Context menu item for downloading a link URL */
 "ContextMenu.DownloadLinkButtonTitle" = "Dolen Llwytho i Lawr";
@@ -192,15 +192,6 @@
 
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Rhannu Dolen";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Nawr mae modd i chi symud y bar offer i'r gwaelod, felly mae'n haws cyflwyno gwybodaeth";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Er mwyn ei gwneud hi'n haws cyflwyno gwybodaeth, mae'r bar offer nawr wedi ei ragosod ar y gwaelod.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "Mae eich cartref Firefox personoledig bellach yn ei gwneud hi’n haws i fynd nôl i le roeddech chi o'r blaen. Dewch o hyd i’ch tabiau, nodau tudalen a’ch canlyniadau chwilio diweddar.";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Gosodiadau Bar Offer";
@@ -227,7 +218,7 @@
 "CoverSheet.v24.ETP.Description" = "Mae Diogelwch rhag Tracio Uwch mewnol yn helpu i atal hysbysebion rhag eich dilyn. Trowch Llym ymlaen i rwystro rhagor o dracwyr, hysbysebion a llamlenni.";
 
 /* Text for the new ETP settings button */
-"CoverSheet.v24.ETP.Settings.Button" = "Mynd i Settings";
+"CoverSheet.v24.ETP.Settings.Button" = "Mynd i'r Gosodiadau";
 
 /* Title for the new ETP mode i.e. standard vs strict */
 "CoverSheet.v24.ETP.Title" = "Diogelu Rhag Tracio Hysbysebion";
@@ -242,7 +233,7 @@
 "Decrease text size" = "Lleihau maint testun";
 
 /* Title for default search engine picker. */
-"Default Search Engine" = "Y Peiriant Chwilio Rhagosodedig";
+"Default Search Engine" = "Peiriant Chwilio Rhagosodedig";
 
 /* Accessibility label for action denoting closing default browser home tab banner. */
 "DefaultBrowserCloseButtonAccessibility.v102" = "Cau";
@@ -351,9 +342,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Tynnu";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Gwefannau: %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Gosodiadau";
@@ -943,9 +931,6 @@
 /* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
 "Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "Papur Wal Argraffiad Cyfyngedig";
 
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "Rhagor o bapurau wal";
-
 /* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
 "Onboarding.Wallpaper.Description.v106" = "Dewiswch bapur wal sy'n siarad â chi.";
 
@@ -1082,7 +1067,7 @@
 "ScanQRCode.PermissionError.Message.v100" = "Ewch i ‘Gosodiadau’ > ‘Firefox’ y ddyfais. Caniatewch i Firefox gael mynediad i’r camera.";
 
 /* Title for the QR code scanner view. */
-"ScanQRCode.View.Title" = "Sganio'r Cod QR";
+"ScanQRCode.View.Title" = "Sganiwch y Cod QR";
 
 /* Open search section of settings */
 "Search" = "Chwilio";
@@ -1588,9 +1573,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "Iawn, Wedi deall!";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Os nad yw gwefan yn gweithio yn ôl y disgwyl, tapiwch y darian yn y bar cyfeiriad a diffoddwch Diogelwch rhag Tracio Uwch ar gyfer y dudalen honno.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Rhybudd!";
 
@@ -1602,9 +1584,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Yn lleihau hysbysebion wedi'u targedu ac yn helpu i atal hysbysebwyr rhag tracio'ch pori.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Os nad yw gwefan yn gweithio yn ôl y disgwyl, tapiwch y darian yn y bar cyfeiriad a diffoddwch Diogelwch rhag Tracio Uwch ar gyfer y dudalen honno.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Caniatáu rhai tracwyr hysbysebion fel bod gwefannau'n gweithio'n iawn.";
