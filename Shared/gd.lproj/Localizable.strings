@@ -190,12 +190,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Co-roinn an ceangal";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "’S urrainn dhut am bàr-inneal a ghluasad gun bhonn a-nis airson ’s gum bi e nas fhasa fiosrachadh a chur a-steach";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Tha am bàr-inneal aig a’ bhonn a-nis a ghnàth airson ’s gum bi e nas fhasa fiosrachadh a chur a-steach.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Roghainnean a’ bhàr-inneal";
 
@@ -342,9 +336,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Thoir air falbh";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Làraichean: %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Roghainnean";
@@ -1495,9 +1486,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "Ceart, tha mi agaibh";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Mur eil làrach ag obair mar bu chòir, thoir gnogag air an sgiath ann am bàr an t-seòlaidh agus cuir dheth an dìon leasaichte o thracadh air an duilleag sin.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "An aire!";
 
@@ -1509,9 +1497,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Lùghdaichidh seo an t-sanasachd thargaidichte agus cuiridh e bacadh air luchd-sanasachd o bhith a’ tracadh na nì thu air an lìon.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Mur eil làrach ag obair mar bu chòir, thoir gnogag air an sgiath ann am bàr an t-seòlaidh agus cuir dheth an dìon leasaichte o thracadh air an duilleag sin.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Bheir seo cead do chuid a thracadh sanasachd ach an obraich làraichean-lìn mar bu chòir.";
