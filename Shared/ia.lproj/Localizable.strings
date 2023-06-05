@@ -193,15 +193,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Compartir ligamine";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Ora tu pote placiar le barra de instrumentos in basso, assi es plus facile inserer informationes";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Pro facilitar le insertion de informationes, le barra de instrumentos es ora placiate in basso per predefinition.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "Tu pagina principal personalisate in Firefox ora rende facile reprender ubi tu lassava. Retrova tu recente schedas, marcapaginas e resultatos de recerca.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Parametros del barra de instrumentos";
 
@@ -351,9 +342,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Remover";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Sitos: %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Parametros";
@@ -906,63 +894,6 @@
 
 /* Restore Tabs Affirmative Action */
 "Okay" = "OK";
-
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "Comenciar";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "Independente. Sin scopo lucrative. Pro le ben public.";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "Ingagiate a tener le promissa de un melior internet pro totes.";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "Non ora";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Description.v106" = "Recupera schedas e contrasignos ab tu altere apparatos e reprende de ubi tu lassava.";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "Saltar";
-
-/* String used to describes the title of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Title.v106" = "Passa ab le telephono al portabile e retro";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "Crear conto e aperir session";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "Synchronisa automaticamente schedas e marcapaginas inter apparatos e cambia de schermo sin interrumper tu activitate.";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "Synchronisation elimina interruption";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.Classic.v106" = "Fundo classic";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "Fundo a edition limitate";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "Explora altere fundos";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Description.v106" = "Elige un fundo que te parla.";
-
-/* Title for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Title.v106" = "Prova un tocco de color";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "Fixar un fundo de schermo";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "Elige un fundo de schermo de Firefox";
-
-/* String used to describes the description of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Description.v106" = "Firefox antepone le gente al profito, e defende tu confidentialitate.";
-
-/* String used to describes the title of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Title.v106" = "Benvenite in un internet independente";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "Comenciar a navigar";
@@ -1588,9 +1519,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "De accordo";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Si un sito non functiona como expectate, tocca le scuto in le barra de adresse e disactiva Protection antitraciamento reinfortiate pro ille pagina.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Attention!";
 
@@ -1602,9 +1530,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Reduce le annuncios personalisate e adjuta a impedir que le annunciatores seque tu navigation.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Si un sito non functiona como expectate, tocca le scuto in le barra de adresse e disactiva Protection antitraciamento reinfortiate pro ille pagina.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Permitter alcun avisos traciatores a fin que le sitos web functiona correctemente.";
@@ -1809,24 +1734,6 @@
 
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "non legite";
-
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "Aperir session";
-
-/* Description string used to to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Description.v106" = "Reprende de ubi tu exiva con le schedas de altere apparatos ora sur tu pagina principal.";
-
-/* Title string used to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Title.v106" = "Cambiar le paginas es plus facile que mais";
-
-/* Describes the action on the first upgrade page in the Upgrade screen. This string will be on a button so user can continue the Upgrade. */
-"Upgrade.Welcome.Action.v106" = "Comenciar";
-
-/* Description string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Description.v106" = "Nove colores. Nove convenientia. Mesme dedication a gente ultra le profitos.";
-
-/* Title string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Title.v106" = "Benvenite in un internet plus personal";
 
 /* Debug option */
 "Use stage servers" = "Usar servitores de test";
