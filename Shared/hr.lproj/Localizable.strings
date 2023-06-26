@@ -193,15 +193,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Dijeli poveznicu";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Sada možeš pomaknuti alatnu traku na dno, za jednostavniji unos informacija";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Za jednostavniji unos podataka, alatna traka se sada nalazi na dnu.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "Tvoja personalizirana Firefoxova početna stranica sada ti olakšava da nastaviš pretraživati. Pronađi svoje nedavne kartice, zabilješke i rezultate pretraživanja.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Postavke alatne trake";
 
@@ -352,9 +343,6 @@
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Ukloni";
 
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Broj stranica: %d";
-
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Postavke";
 
@@ -366,6 +354,9 @@
 
 /* Button title shown for tab pickup on the Firefox homepage in the Jump Back In section. */
 "FirefoxHomepage.JumpBackIn.TabPickup.ShowAll.ButtonTitle.v104" = "Pogledaj sve sinkronizirane kartice";
+
+/* If a user is signed in, and a sync has been performed to collect their recent tabs from other signed in devices, their most recent tab from another device can now appear in the Jump Back In section. This label specifically points out which cell inside the Jump Back In section shows that synced tab. */
+"FirefoxHomepage.JumpBackIn.TabPickup.v104" = "Preuzimanje kartica";
 
 /* This string will show under the description on pocket story, indicating that the story is sponsored. */
 "FirefoxHomepage.Pocket.Sponsored.v103" = "Sponzorirano";
@@ -900,24 +891,6 @@
 
 /* Restore Tabs Affirmative Action */
 "Okay" = "U redu";
-
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "Započni";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "Ne sada";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "Preskoči";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "Registriraj se i prijavi se";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "Postavi sliku pozadine";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "Odaberite sliku pozadine za Firefox";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "Započni pregledavanje";
@@ -1483,9 +1456,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "U redu, razumijem";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Ako web-stranica ne funkcionira kako treba, dodirni štit u adresnoj traci i isključi pojačanu zaštitu od praćenja za tu stranicu.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Oprez!";
 
@@ -1497,9 +1467,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Smanjuje broj ciljanih oglasa i pomaže spriječiti oglašivače da prate tvoje kretanje internetom.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Ako web-stranica ne funkcionira kako treba, dodirni štit u adresnoj traci i isključi pojačanu zaštitu od praćenja za tu stranicu.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Dopušta neke programe za praćenje, kako bi web stranice mogle ispravno funkcionirati.";
@@ -1704,9 +1671,6 @@
 
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "nepročitano";
-
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "Prijava";
 
 /* Debug option */
 "Use stage servers" = "Koristi testni poslužitelj";
