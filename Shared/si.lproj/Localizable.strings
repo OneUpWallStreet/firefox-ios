@@ -193,15 +193,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "සබැඳිය බෙදාගන්න";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "දැන් ඔබට මෙවලම් තීරුව පහළට ගෙන යා හැකිය, එබැවින් තොරතුරු යෙදීමට පහසුය";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "තොරතුරු ඇතුල් කිරීම පහසු කිරීමට, මෙවලම් තීරුව පෙරනිමි ලෙස පහළ ඇත.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "ඔබගේ පුද්ගලීකරණය කළ ෆයර්ෆොක්ස් මුල් පිටුව දැන් ඔබ නතර කළ තැනින් අතට ගැනීමට පහසු කරයි. ඔබගේ මෑත පටිති, පොත්යොමු සහ සෙවුම් ප්‍රතිඵල සොයා ගන්න.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "මෙවලම් තීරුවේ සැකසුම්";
 
@@ -351,9 +342,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "ඉවත් කරන්න";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "අඩවි: %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "සැකසුම්";
@@ -650,7 +638,7 @@
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "තව දැනගන්න";
 
 /* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "පිවිසුම් හා මුරපද සුරැකීමට සහ ස්වයං පිරවුමට, මුහුණු හැඳු., ස්පර්ශ හැඳු. හෝ උපාංග මුර කේතයක් සබල කරන්න.";
+"Logins.DevicePasscodeRequired.Message" = "පිවිසුම් හා මුරපද සුරැකීමට සහ ස්වයං පිරවුමට; මුහුණක හැඳු., ස්පර්ශ හැඳු. හෝ උපාංගයේ මුර කේතයක් සබල කරන්න.";
 
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "ඉදිරියට";
@@ -842,7 +830,7 @@
 "Menu.Toolbar.Home.AccessibilityLabel.v99" = "මුල";
 
 /* String to let users know the site verifier, where the placeholder represents the SSL certificate signer. */
-"Menu.TrackingProtection.Details.Verifier" = "තහවුරු කළේ: %@";
+"Menu.TrackingProtection.Details.Verifier" = "සත්‍යාපනය: %@";
 
 /* The title for tracking protection settings */
 "Menu.TrackingProtection.ProtectionSettings.Title" = "රැකවරණ සැකසුම්";
@@ -900,63 +888,6 @@
 
 /* Restore Tabs Affirmative Action */
 "Okay" = "හරි";
-
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "පටන් ගන්න";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "ස්වාධීනයි. ලාභ නොලබයි. ප්‍රයෝජනය සඳහාය.";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "සෑමට වඩා හොඳ අන්තර්ජාලයක පොරොන්දුවක් සඳහා කැපවී සිටියි.";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "දැන් නොවේ";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Description.v106" = "ඔබ නතර කළ තැනින් අතට ගැනීමට ඔබගේ අනෙකුත් උපාංගවලින් පටිති සහ මුරපද ගන්න.";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "මඟහරින්න";
-
-/* String used to describes the title of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Title.v106" = "දුරකථනයෙන් පරිගණකයට සහ ආපසු";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "ලියාපදිංචි වී පිවිසෙන්න";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "බාධාවකින් තොරව තිර පැනීම සඳහා උපාංග හරහා පටිති හා පොත්යොමු ස්වයංක්‍රීයව සමමුහූර්ත කරන්න.";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "කාර්යයේ රැඳීමට සමමුහූර්ත කරන්න";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.Classic.v106" = "සම්භාව්‍ය බිතුපත";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "සීමිත සංස්කරණ බිතුපත";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "තවත් බිතුපත් ගවේශනය";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Description.v106" = "ඔබට කතා කරන බිතුපතක් තෝරන්න.";
-
-/* Title for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Title.v106" = "වර්ණ කැලතීමක් බලන්න";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "බිතුපත සකසන්න";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "ෆයර්ෆොක්ස් බිතුපතක් තෝරන්න";
-
-/* String used to describes the description of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Description.v106" = "ෆයර්ෆොක්ස් ලාභයට වඩා මිනිසුන් ඉහළින් තබා මූලිකව ඔබගේ පෞද්ගලිකත්‍වය ආරක්‍ෂා කරයි.";
-
-/* String used to describes the title of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Title.v106" = "ස්වාධීන අන්තර්ජාලයකට පිළිගනිමු";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "පිරික්සීම අරඹන්න";
@@ -1086,6 +1017,9 @@
 
 /* Search suggestion cell label that allows user to switch to tab which they searched for in url bar */
 "Search.Awesomebar.SwitchToTab" = "පටිත්තට මාරුවන්න";
+
+/* When making a new search from the awesome bar, suggestions appear to the user as they write new letters in their search. Different types of suggestions can appear. This string will be used as a header to separate Firefox suggestions from normal suggestions. */
+"Search.SuggestSectionTitle.v102" = "ෆයර්ෆොක්ස් යෝජනා";
 
 /* The message that asks the user to Add the search provider explaining where the search engine will appear */
 "Search.ThirdPartyEngines.AddMessage" = "නව සෙවුම් යන්ත්‍රය ඉක්මන් සෙවුම් තීරුවේ දිස්වනු ඇත.";
@@ -1339,9 +1273,6 @@
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "කෙටිමං";
 
-/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
-"Settings.Home.Option.SponsoredPocket.v103" = "අනුග්‍රහය ලද කතා";
-
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "පැය හතරක නිෂ්ක්‍රියාවෙන් පසු මුල් පිටුව";
 
@@ -1490,7 +1421,7 @@
 "Settings.Passwords.FingerPrintReason.v103" = "දැන් මුරපද වෙත ප්‍රවේශ වීමට ඔබගේ ඇඟිලි සලකුණ යොදා ගන්න.";
 
 /* Message shown when you enter Passwords screen for the first time. It explains how password are protected in the Firefox for iOS application. */
-"Settings.Passwords.OnboardingMessage.v103" = "ඔබගේ මුරපද දැන් මුහුණු හැඳු., ස්පර්ශ හැඳු. හෝ උපාංග මුර කේතයකින් සුරක්‍ෂිතයි.";
+"Settings.Passwords.OnboardingMessage.v103" = "ඔබගේ මුරපද දැන් මුහුණේ හැඳු., ස්පර්ශ හැඳු. හෝ උපාංගයේ මුර කේතයකින් සුරක්‍ෂිතයි.";
 
 /* Setting that appears in the Passwords screen to enable the built-in password manager so users can save their passwords. */
 "Settings.Passwords.SavePasswords.v103" = "මුරපද සුරකින්න";
@@ -1579,9 +1510,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "හරි, තේරුණා";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "අඩවියක් අපේක්‍ෂිත පරිදි වැඩ නොකරයි නම්, ලිපින තීරුවේ තිබෙන පලිහ මත තට්ටු කර එම පිටුව සඳහා වැඩිදියුණු කළ ලුහුබැඳීමේ රැකවරණය අක්‍රිය කරන්න.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "අවධානය!";
 
@@ -1593,9 +1521,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "ඉලක්කගත දැන්වීම් අඩු කරන අතර දැන්වීම්කරුවන් ඔබගේ පිරික්සීම් ලුහුබැඳීම නතර කිරීමට උපකාරී වේ.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "අඩවියක් අපේක්‍ෂිත පරිදි වැඩ නොකරයි නම්, ලිපින තීරුවේ තිබෙන පලිහ මත තට්ටු කර එම පිටුව සඳහා වැඩිදියුණු කළ ලුහුබැඳීමේ රැකවරණය අක්‍රිය කරන්න.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "අඩවි නිසි ලෙස ක්‍රියාත්මක වීමට ලුහුබැඳීමේ දැන්වීම් කිහිපයකට ඉඩ දෙයි.";
@@ -1616,7 +1541,7 @@
 "Settings.TrackingProtectionOption.BlockListStrict" = "දැඩි";
 
 /* Settings option to specify that Tracking Protection is on */
-"Settings.TrackingProtectionOption.NormalBrowsingLabelOn" = "වැඩිදියුණු කළ ලුහුබැඳීමේ රැකවරණය";
+"Settings.TrackingProtectionOption.NormalBrowsingLabelOn" = "දියුණු කළ ලුහුබැඳීමේ රැකවරණය";
 
 /* Title of link to help page to find out how to solve Sync issues */
 "Settings.TroubleShootSync.Title" = "දොස් සෙවීම";
@@ -1801,24 +1726,6 @@
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "නොකියවූ";
 
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "පිවිසෙන්න";
-
-/* Description string used to to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Description.v106" = "දැන් මුල් පිටුවේ තිබෙන අන් උපාංගවල පටිති සමඟ ඔබ නතර කළ තැනින් අතට ගන්න.";
-
-/* Title string used to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Title.v106" = "තිර අතර මාරු වීම වෙනදාට වඩා පහසුය";
-
-/* Describes the action on the first upgrade page in the Upgrade screen. This string will be on a button so user can continue the Upgrade. */
-"Upgrade.Welcome.Action.v106" = "පටන් ගන්න";
-
-/* Description string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Description.v106" = "නව වර්ණ. නව පහසුකම්. එලෙසම ලාභයට වඩා මිනිසුන්ට කැපවීම.";
-
-/* Title string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Title.v106" = "වඩාත් පුද්ගලීය අන්තර්ජාලයකට පිළිගනිමු";
-
 /* Debug option */
 "Use stage servers" = "අදියර සේවාදායක භාවිතය";
 
@@ -1841,7 +1748,7 @@
 "Wallpaper.Error.Dismiss.v106" = "අවලංගු";
 
 /* Action displayed when changing wallpaper fails. */
-"Wallpaper.Error.TryAgain.v106" = "යළි උත්සාහය";
+"Wallpaper.Error.TryAgain.v106" = "නැවත";
 
 /* Accessibility label for the main web content view */
 "Web content" = "වියමන අන්තර්ගතය";
