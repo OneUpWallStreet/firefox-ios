@@ -193,15 +193,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Bağlantıyı paylaş";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Bilgileri daha kolay yazmak için araç çubuğunu en alta taşıyabilirsiniz";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Bilgi girmeyi kolaylaştırmak için araç çubuğu artık varsayılan olarak en altta.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "Kişisel Firefox giriş sayfanız, kaldığınız yerden devam etmeyi kolaylaştırıyor. Son sekmeleriniz, yer imleriniz ve arama sonuçlarınız artık giriş sayfanızda.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Araç çubuğu ayarları";
 
@@ -224,7 +215,7 @@
 "Could not load page." = "Sayfa yüklenemedi.";
 
 /* Description for the new ETP mode i.e. standard vs strict */
-"CoverSheet.v24.ETP.Description" = "Gelişmiş izlenme korumamız reklamların sizi takip etmesini önlüyor. Daha fazla takipçiyi, reklamı ve açılır pencereyi engellemek isterseniz “sıkı” korumayı seçebilirsiniz.";
+"CoverSheet.v24.ETP.Description" = "Gelişmiş izlenme korumamız reklamların sizi takip etmesini önlüyor. Daha fazla takip kodunu, reklamı ve açılır pencereyi engellemek isterseniz “sıkı” korumayı seçebilirsiniz.";
 
 /* Text for the new ETP settings button */
 "CoverSheet.v24.ETP.Settings.Button" = "Ayarlara git";
@@ -351,9 +342,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Kaldır";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Site: %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Ayarlar";
@@ -851,16 +839,16 @@
 "Menu.TrackingProtectionBlockedContent.Title" = "Takip amaçlı içerikler";
 
 /* The title that shows the number of social URLs blocked */
-"Menu.TrackingProtectionBlockedSocial.Title" = "Sosyal takipçiler";
+"Menu.TrackingProtectionBlockedSocial.Title" = "Sosyal takip kodları";
 
 /* The title that shows the number of cross-site URLs blocked */
-"Menu.TrackingProtectionCrossSiteTrackers.Title" = "Siteler arası takipçiler";
+"Menu.TrackingProtectionCrossSiteTrackers.Title" = "Siteler arası takip kodları";
 
 /* The title that shows the number of cryptomining scripts blocked */
 "Menu.TrackingProtectionCryptominersBlocked.Title" = "Kripto madencileri";
 
 /* Description of content trackers. */
-"Menu.TrackingProtectionDescription.ContentTrackers" = "Web siteleri; gizli takipçiler içeren harici reklamlar, videolar ve başka içerikler yükleyebilir. Bunları engellemek sitelerin daha hızlı yüklenmesini sağlayabilir ama bazı düğmeler, formlar ve giriş alanları çalışmayabilir.";
+"Menu.TrackingProtectionDescription.ContentTrackers" = "Web siteleri; gizli takip kodları içeren harici reklamlar, videolar ve başka içerikler yükleyebilir. Bunları engellemek sitelerin daha hızlı yüklenmesini sağlayabilir ama bazı düğmeler, formlar ve giriş alanları çalışmayabilir.";
 
 /* Description of cross-site trackers. */
 "Menu.TrackingProtectionDescription.CrossSiteNew" = "Bu çerezler çevrimiçi olarak yaptığınız şeyler hakkında veriler toplamak için sizi siteden siteye takip eder. Reklamverenler ve analiz şirketleri gibi üçüncü taraflar tarafından ayarlanmışlardır.";
@@ -872,7 +860,7 @@
 "Menu.TrackingProtectionDescription.Fingerprinters" = "Tarayıcınızdaki ve bilgisayarınızdaki ayarlar benzersizdir. Parmak izi toplayıcıları, siz internette gezinirken bu benzersiz ayarları bir araya getirerek profilinizi çıkarır ve sizi takip etmek için bu profili kullanabilir.";
 
 /* Description of social network trackers. */
-"Menu.TrackingProtectionDescription.SocialNetworksNew" = "Sosyal ağlar, eksiksiz ve hedeflenmiş bir profilinizi oluşturmak için başka web sitelerine de kendi takipçilerini yerleştirir. Bu takipçileri engellerseniz sosyal medya şirketleri internette neler yaptığınızı daha az takip edebilir.";
+"Menu.TrackingProtectionDescription.SocialNetworksNew" = "Sosyal ağlar, eksiksiz ve hedeflenmiş bir profilinizi oluşturmak için başka web sitelerine de kendi takip kodlarını yerleştirir. Bu kodları engellerseniz sosyal medya şirketleri internette neler yaptığınızı daha az takip edebilir.";
 
 /* The title that shows the number of fingerprinting scripts blocked */
 "Menu.TrackingProtectionFingerprintersBlocked.Title" = "Parmak izi toplayıcılar";
@@ -906,63 +894,6 @@
 
 /* Restore Tabs Affirmative Action */
 "Okay" = "Tamam";
-
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "Başlayın";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "Bağımsız ve kâr amacı gütmez.";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "Kendimizi herkes için daha iyi bir internet inşa etmeye adadık.";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "Daha sonra";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Description.v106" = "Diğer cihazlarınızdaki sekmeleri ve parolaları alın, kaldığınız yerden devam edin.";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "Geç";
-
-/* String used to describes the title of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Title.v106" = "Telefondan bilgisayara, bilgisayardan telefona geçin";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "Kaydol ve giriş yap";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "Cihazlarınız arasında sorunsuzca geçiş yapmak için sekmelerinizi ve yer imlerinizi otomatik olarak eşitleyin.";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "Eşitleyin, bağlı kalın";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.Classic.v106" = "Klasik duvar kâğıdı";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "Kısıtlı sürüm duvar kâğıdı";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "Daha fazla duvar kâğıdı keşfedin";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Description.v106" = "Size hitap eden bir duvar kâğıdı seçin.";
-
-/* Title for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Title.v106" = "Farklı renkleri deneyin";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "Duvar kâğıdını ayarla";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "Firefox duvar kâğıdınızı seçin";
-
-/* String used to describes the description of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Description.v106" = "Firefox için paradan önce insanlık gelir. Firefox, gizliliğinizi varsayılan olarak korur.";
-
-/* String used to describes the title of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Title.v106" = "Bağımsız bir internete hoş geldiniz";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "Gezinmeye başla";
@@ -1348,9 +1279,6 @@
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "Kısayollar";
 
-/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
-"Settings.Home.Option.SponsoredPocket.v103" = "Sponsorlu haberler";
-
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "Dört saat hareketsizlikten sonra giriş sayfası";
 
@@ -1588,9 +1516,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "Tamam";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Bir sitenin düzgün çalışmadığını fark ederseniz adres çubuğundaki kalkan simgesine dokunarak o site için gelişmiş izlenme korumasını kapatabilirsiniz.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Bilgi";
 
@@ -1603,14 +1528,11 @@
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Hedefli reklamları azaltır ve reklamcıların gezdiğiniz siteleri izlemesini engeller.";
 
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Bir sitenin düzgün çalışmadığını fark ederseniz adres çubuğundaki kalkan simgesine dokunarak o site için gelişmiş izlenme korumasını kapatabilirsiniz.";
-
 /* Description for standard level tracker protection */
-"Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Web sitelerinin düzgün çalışması için bazı takipçilere izin verir.";
+"Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Web sitelerinin düzgün çalışması için reklam takibine kısmen izin verir.";
 
 /* Description for strict level tracker protection */
-"Settings.TrackingProtection.ProtectionLevelStrict.Description" = "Daha fazla takipçiyi, reklamı ve açılır pencereyi engeller. Sayfalar daha hızlı yüklenir ama bazı işlevler çalışmayabilir.";
+"Settings.TrackingProtection.ProtectionLevelStrict.Description" = "Daha fazla takip kodunu, reklamı ve açılır pencereyi engeller. Sayfalar daha hızlı yüklenir ama bazı işlevler çalışmayabilir.";
 
 /* Title for tracking protection options section where level can be selected. */
 "Settings.TrackingProtection.ProtectionLevelTitle" = "KORUMA DÜZEYİ";
@@ -1766,7 +1688,7 @@
 "TimeConstants.Yesterday.v106" = "dün";
 
 /* label for Not Now button */
-"Toasts.NotNow" = "Daha sonra";
+"Toasts.NotNow" = "Şimdi değil";
 
 /* Open App Store button */
 "Toasts.OpenAppStore" = "App Store’u aç";
@@ -1809,24 +1731,6 @@
 
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "okunmadı";
-
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "Giriş yap";
-
-/* Description string used to to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Description.v106" = "Diğer cihazlardaki sekmeleriniz artık giriş sayfanızda.";
-
-/* Title string used to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Title.v106" = "Cihazdan cihaza geçmek artık daha kolay";
-
-/* Describes the action on the first upgrade page in the Upgrade screen. This string will be on a button so user can continue the Upgrade. */
-"Upgrade.Welcome.Action.v106" = "Başlayın";
-
-/* Description string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Description.v106" = "Yeni renkler. Yeni kolaylıklar. Para için değil, insanlık için.";
-
-/* Title string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Title.v106" = "Daha kişisel bir internete hoş geldiniz";
 
 /* Debug option */
 "Use stage servers" = "Stage sunucularını kullan";
