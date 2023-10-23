@@ -193,15 +193,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "ແບ່ງປັນລີ້ງ";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "ຕອນນີ້ທ່ານສາມາດຍ້າຍແຖບເຄື່ອງມືໄປໄວ້ຢູ່ລຸ່ມສຸດໄດ້ ດັ່ງນັ້ນມັນຈຶ່ງງ່າຍຕໍ່ການໃສ່ຂໍ້ມູນ.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "ເພື່ອເຮັດໃຫ້ການປ້ອນຂໍ້ມູນງ່າຍຂື້ນ ຕອນນີ້ໄດ້ປັບໃຫ້ແທບເຄືອງມືໄປຢູ່ດ້ານແລ້ວ.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "ຕອນນີ້ຫນ້າທໍາອິດຂອງ Firefox ທີ່ໄດ້ຮັບການປັບແຕ່ງຕາມແບບຂອງທ່ານຈະເຮັດໃຫ້ທ່ານສາມາດກັບໄປເບິງຫນ້າເວັບທີ່ໄດ້ເປີດປະໄວ້ໄດ້ງ່າຍຂື້ນແລ້ວ. ຊອກຫາແທັບ, ບຸກມາກ, ແລະ ຜົນການຄົ້ນຫາຫຼ້າສຸດຂອງທ່ານ.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "ການຕັ້ງຄ່າແທບເຄື່ອງມື";
 
@@ -351,9 +342,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "ລຶບ";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "ເວັບໄຊທ: %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "ການຕັ້ງຄ່າ";
@@ -730,9 +718,6 @@
 /* Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "ໝາຍໄວ້ວ່າຫຍັງບໍ່ທັນໄດ້ອ່ານເທື່ອ";
 
-/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
-"Menu.AddBookmark.AlternateLabel.v99" = "ເພີ່ມບຸກມາກ";
-
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "ເພີ່ມບຸກມາກແລ້ວ";
 
@@ -816,9 +801,6 @@
 
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "ລຶບອອກຈາກທາງລັດແລ້ວ";
-
-/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
-"Menu.RemoveReadingList.AlternateLabel.v99" = "ລືບອອກຈາກລາຍການອ່ານ";
 
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
 "Menu.RemoveReadingList.Confirm.v99" = "ລືບອອກຈາກລາຍການອ່ານ";
@@ -906,63 +888,6 @@
 
 /* Restore Tabs Affirmative Action */
 "Okay" = "ຕົກລົງ";
-
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "ເລີ່ມຕົ້ນໃຊ້ງານ";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "ອິນດີ້. ບໍ່ຫວັງຜົນກຳໄລ. ເພື່ອຄວາມຖືກຕ້ອງ.";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "ຄໍາຫມັ້ນສັນຍາຂອງອິນເຕີເນັດທີ່ດີກວ່າສໍາລັບທຸກຄົນ.";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "ບໍ່ແມ່ນຕອນນີ້";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Description.v106" = "ດຶງເອົາແຖບ ແລະ ລະຫັດຜ່ານຈາກອຸປະກອນອື່ນຂອງທ່ານອອກຈາກບ່ອນທີ່ເຈົ້າຄ້າງໄວ້.";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "ຂ້າມ";
-
-/* String used to describes the title of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Title.v106" = "ເລື່ອນຈາກໂທລະສັບໄປຫາແລັບທັອບ ແລະຫຼັງ";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "ລົງທະບຽນແລະເຂົ້າສູ່ລະບົບ";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "ຊິງຄ໌ແຖບ ແລະບຸກມາກອັດຕະໂນມັດໃນທົ່ວອຸປະກອນສຳລັບການເລື່ອນໜ້າຈໍແບບບໍ່ມີຮອຍຕໍ່.";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "Sync ເພື່ອຢູ່ໃນຮູບແບບຂອງທ່ານ";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.Classic.v106" = "ຮູບພື້ນຫຼັງຄລາສິກ";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "ວໍເປເປີສະບັບຈໍາກັດ";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "ສຳຫຼວດຮູບພື້ນຫຼັງເພີ່ມເຕີມ";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Description.v106" = "ເລືອກຮູບວໍເປເປີທີ່ບົ່ງບອກຄວາມເປັນໂຕຕົນຂອງທ່ານ.";
-
-/* Title for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Title.v106" = "ລອງເລືອກສີສັນທີທ່ານມັກ";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "ຕັ້ງພາບພື້ນຫຼັງ";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "ເລືອກຮູບພື້ນຫຼັງຂອງ Firefox";
-
-/* String used to describes the description of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Description.v106" = "Firefox ໃຫ້ຄວາມສຳຄັນກັບຜູ້ຄົນຫຼາຍກວ່າສະແຫວງຫາຜົນກຳໄລ ແລະ ປົກປ້ອງຄວາມເປັນສ່ວນໂຕຂອງທ່ານໂດຍອັດຕະໂນມັດ.";
-
-/* String used to describes the title of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Title.v106" = "ຍິນດີຕ້ອນຮັບສູ່ອິນເຕີເນັດທີບໍ່ມີຂອບຈຳກັດ";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "ເລີ່ມການທ່ອງເວັບ";
@@ -1348,9 +1273,6 @@
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "ທາງລັດ";
 
-/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
-"Settings.Home.Option.SponsoredPocket.v103" = "ເລື່ອງລາວທີ່ໄດ້ຮັບການສະຫນັບສະຫນູນ";
-
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "ຫນ້າທໍາອິດຫຼັງຈາກທີ່ບໍ່ມີການເຄື່ອນໄຫວເປັນເວລາສີ່ຊົ່ວໂມງ";
 
@@ -1588,9 +1510,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "ໂອເຄ, ເຂົ້າໃຈແລ້ວ";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "ຖ້າເວັບໄຊທ໌ບໍ່ສາມາດເຮັດວຽກໄດ້ຕາມທີ່ຄາດຫວັງ ໃຫ້ແຕະໄສໂລ່ໃນແຖບທີ່ຢູ່ ແລະ ປິດການປັບປຸງການປ້ອງກັນການຕິດຕາມສຳລັບໜ້ານັ້ນ.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "ລະວັງ!";
 
@@ -1602,9 +1521,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "ລຸດຜ່ອນການໂຄສະນາ ແລະ ຊ່ວຍຢຸດຜູ້ໂຄສະນາບໍ່ໃຫ້ຕິດຕາມການທ່ອງເນັດຂອງທ່ານ.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "ຖ້າເວັບໄຊທບໍ່ເຮັດວຽກຕາມທີ່ຄາດໄວ້ ໃຫ້ແຕະໃສ່ໂລ້ໃນແທັບທີ່ຢູ່ ແລະ ປິດການປ້ອງກັນການຕິດຕາມສຳລັບຫນ້ານັ້ນ.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "ອະນຸຍາດໃຫ້ມີການຕິດຕາມໂຄສະນາບາງສ່ວນ ເພື່ອເຮັດໃຫ້ເວັບໄຊທເຮັດວຽກໄດ້ຕາມປົກກະຕິ.";
@@ -1809,24 +1725,6 @@
 
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "ຍັງບໍ່ທັນອ່ານ";
-
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "ເຂົ້າ​ສູ່​ລະ​ບົບ";
-
-/* Description string used to to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Description.v106" = "ເລືອກເອົາບ່ອນທີ່ທ່ານປະໄວ້ດ້ວຍແຖບຈາກອຸປະກອນອື່ນໃນຫນ້າທໍາອິດຂອງທ່ານ.";
-
-/* Title string used to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Title.v106" = "ການສະຫຼັບໜ້າຈໍແມ່ນງ່າຍກວ່າທີ່ເຄີຍ";
-
-/* Describes the action on the first upgrade page in the Upgrade screen. This string will be on a button so user can continue the Upgrade. */
-"Upgrade.Welcome.Action.v106" = "ເລີ່ມຕົ້ນໃຊ້ງານ";
-
-/* Description string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Description.v106" = "ສີໃໝ່. ຄວາມສະດວກສະບາຍໃໝ່. ຄໍາຫມັ້ນສັນຍາດຽວກັນກັບປະຊາຊົນຫຼາຍກວ່າກໍາໄລ.";
-
-/* Title string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Title.v106" = "ຍິນດີຕ້ອນຮັບສູ່ອິນເຕີເນັດທີມີຄວາມເປັນສ່ວນຕົວສູງ";
 
 /* Debug option */
 "Use stage servers" = "ໃຊ້ stage servers";
