@@ -193,15 +193,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "リンクを共有";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "ツールバーを画面下部へ移動できるようになり、入力しやすくなりました";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "情報を入力しやすくするため、ツールバーがデフォルトで画面下部に配置されます。";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "個人に合わせた Firefox ホームページにより、前回のページから簡単に再開できるようになりました。最近のタブ、ブックマーク、検索結果を見つけられます。";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "ツールバー設定";
 
@@ -351,9 +342,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "削除";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "サイト数: %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "設定";
@@ -608,7 +596,7 @@
 "LibraryPanel.History.ClearGroupedTabsTitle.v100" = "%@ のすべてのサイトを削除しますか？";
 
 /* Within the History Panel, users can open an action menu to clear recent history. */
-"LibraryPanel.History.ClearHistoryMenuTitle.v100" = "履歴 (他の端末から同期されたものを含む)、Cookie および他のブラウジングデータを削除します。";
+"LibraryPanel.History.ClearHistoryMenuTitle.v100" = "履歴 (他の端末から同期されたものを含む)、Cookie および他の閲覧データを削除します。";
 
 /* Within the history panel, a user can navigate into a screen with only grouped history items. Within that screen, a user can now swipe to delete a single item in the list. This label informs the user of a deletion action on the item. */
 "LibraryPanel.History.DeleteGroupedItem.v104" = "削除";
@@ -730,9 +718,6 @@
 /* Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "未読にする";
 
-/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
-"Menu.AddBookmark.AlternateLabel.v99" = "ブックマークを追加";
-
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "ブックマークを追加しました";
 
@@ -817,9 +802,6 @@
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "ショートカットから削除しました";
 
-/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
-"Menu.RemoveReadingList.AlternateLabel.v99" = "リーディングリストから削除";
-
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
 "Menu.RemoveReadingList.Confirm.v99" = "リーディングリストから削除しました";
 
@@ -869,7 +851,7 @@
 "Menu.TrackingProtectionDescription.CryptominersNew" = "暗号通貨マイニングは仮想通貨の採掘のために、あなたのシステムの計算リソースを秘密裏に利用します。暗号通貨マイニングスクリプトは端末のバッテリーを消費し、コンピューターを遅くさせ、電気代を増やさせる可能性があります。";
 
 /* Description of fingerprinters. */
-"Menu.TrackingProtectionDescription.Fingerprinters" = "ユーザーのブラウザーおよびコンピューターの設定は個人特定に利用される可能性があります。フィンガープリントは、これらの個人を特定可能な様々な設定を収集してあなたのプロファイルを作成し、ブラウジングの追跡に使用されます。";
+"Menu.TrackingProtectionDescription.Fingerprinters" = "ユーザーのブラウザーおよびコンピューターの設定は個人特定に利用される可能性があります。フィンガープリントは、これらの個人を特定可能な様々な設定を収集してあなたのプロファイルを作成し、行動追跡に使用されます。";
 
 /* Description of social network trackers. */
 "Menu.TrackingProtectionDescription.SocialNetworksNew" = "ソーシャルネットワークは他のウェブサイトにトラッカーを配置して、あなたにターゲットを絞り、より完全なプロファイルを作成します。これらのトラッカーをブロックすると、ソーシャルメディア企業によるオンラインでのあなたの行動追跡を制限できます。";
@@ -906,63 +888,6 @@
 
 /* Restore Tabs Affirmative Action */
 "Okay" = "OK";
-
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "はじめよう";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "健全な独立系で非営利。";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "すべての人にとってのより良いインターネットを実現するために。";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "後で";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Description.v106" = "他の端末からタブとパスワードを取り出して、中断したところから再開できます。";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "スキップ";
-
-/* String used to describes the title of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Title.v106" = "スマートフォンとラップトップの間を行ったり来たり";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "アカウント登録してログイン";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "画面をシームレスに飛び越えて、端末間でタブとブックマークを自動的に同期します。";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "同期して作業を続けられます";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.Classic.v106" = "定番の壁紙";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "限定版の壁紙";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "他の壁紙を探す";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Description.v106" = "あなたに語りかける壁紙を選んでください。";
-
-/* Title for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Title.v106" = "鮮やかな色彩を試す";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "壁紙を設定します";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "Firefox の壁紙を選択";
-
-/* String used to describes the description of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Description.v106" = "Firefox は利益よりも人々を優先し、あなたのプライバシーを守ります。";
-
-/* String used to describes the title of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Title.v106" = "誰のものでもない自由なインターネットへようこそ";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "ブラウジングを開始";
@@ -1348,9 +1273,6 @@
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "ショートカット";
 
-/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
-"Settings.Home.Option.SponsoredPocket.v103" = "広告ストーリー";
-
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "操作せずに 4 時間経つとホームページへ戻る";
 
@@ -1588,9 +1510,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "OK";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "サイトが期待通りに動作しない場合は、アドレスバー内の盾アイコンをタップして、そのページの強化型トラッキング防止をオフにしてください。";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "注意！";
 
@@ -1601,10 +1520,7 @@
 "Settings.TrackingProtection.LearnMore" = "詳細情報";
 
 /* Additional information about your Enhanced Tracking Protection */
-"Settings.TrackingProtection.ProtectionCellFooter" = "ターゲット型広告を減らし、ユーザーのブラウジングを追跡する広告を止めるのを助けます。";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "サイトが期待通りに動作しない場合は、アドレスバー内の盾アイコンをタップして、そのページの強化型トラッキング防止をオフにしてください。";
+"Settings.TrackingProtection.ProtectionCellFooter" = "ターゲット型広告を減らし、ユーザーの行動を追跡する広告を阻止します。";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "ウェブサイトが正常に機能するよう、一部のトラッカー広告を許可します。";
@@ -1772,7 +1688,7 @@
 "Toasts.OpenAppStore" = "App Store を開く";
 
 /* Label for button to undo the action just performed */
-"Toasts.Undo" = "元に戻す";
+"Toasts.Undo" = "取り消す";
 
 /* This label is meant to signify the section containing a group of items from the current day. */
 "Today" = "今日";
@@ -1809,24 +1725,6 @@
 
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "未読";
-
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "ログイン";
-
-/* Description string used to to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Description.v106" = "ホームページ上で、他の端末のタブの中断したところから再開できます。";
-
-/* Title string used to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Title.v106" = "画面の切り替えがこれまで以上に簡単に";
-
-/* Describes the action on the first upgrade page in the Upgrade screen. This string will be on a button so user can continue the Upgrade. */
-"Upgrade.Welcome.Action.v106" = "はじめる";
-
-/* Description string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Description.v106" = "新しいカラー、さらに便利に、利益を超えて人々への平等なコミットメント。";
-
-/* Title string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Title.v106" = "あなただけのインターネットへようこそ";
 
 /* Debug option */
 "Use stage servers" = "ステージサーバーを使用";
