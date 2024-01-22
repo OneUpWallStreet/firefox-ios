@@ -193,15 +193,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Поделиться ссылкой";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Теперь вы можете переместить панель инструментов вниз для упрощения ввода информации";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Для упрощения ввода информации панель инструментов теперь по умолчанию находится внизу.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "На вашей персональной домашней странице Firefox теперь легче продолжить с того места, где вы остановились. Найдите свои недавние вкладки, закладки и результаты поиска.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Настройки панели инструментов";
 
@@ -248,7 +239,7 @@
 "DefaultBrowserCloseButtonAccessibility.v102" = "Закрыть";
 
 /* Name for display settings button in reader mode. Display in the meaning of presentation, not monitor. */
-"Display Settings" = "Параметры отображения";
+"Display Settings" = "Настройки отображения";
 
 /* Used as a button label for crash dialog prompt */
 "Don’t Send" = "Не отправлять";
@@ -351,9 +342,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Удалить";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Сайтов: %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Настройки";
@@ -548,7 +536,7 @@
 "Keyboard.Shortcuts.FindAgain" = "Найти следующее";
 
 /* A label indicating the keyboard shortcut to reload a tab without it's cache. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. */
-"Keyboard.Shortcuts.RefreshWithoutCache.v108" = "Перезагрузить, не учитывая кэш";
+"Keyboard.Shortcuts.RefreshWithoutCache.v108" = "Перезагрузить, не учитывая кеш";
 
 /* A label indicating a grouping of related keyboard shortcuts describing actions a user can do with Bookmarks. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
 "Keyboard.Shortcuts.Section.Bookmark" = "Закладки";
@@ -697,9 +685,6 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Фильтр";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "Здесь будут отображаться сохранённые логины. Если вы сохранили свои логины в Firefox на другом устройстве, войдите в свой Аккаунт Firefox.";
-
 /* Label shown when there are no logins saved */
 "LoginsList.NoLoginsFound.Title" = "Логины не найдены";
 
@@ -729,9 +714,6 @@
 
 /* Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "Отметить как непрочитанное";
-
-/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
-"Menu.AddBookmark.AlternateLabel.v99" = "Добавить закладку";
 
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "Закладка добавлена";
@@ -816,9 +798,6 @@
 
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "Удалено из ярлыков";
-
-/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
-"Menu.RemoveReadingList.AlternateLabel.v99" = "Удалить из списка для чтения";
 
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
 "Menu.RemoveReadingList.Confirm.v99" = "Удалено из списка для чтения";
@@ -907,63 +886,6 @@
 /* Restore Tabs Affirmative Action */
 "Okay" = "Хорошо";
 
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "Начать";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "Независимый. Некоммерческий. Для хороших дел.";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "Призван улучшить Интернет для всех и каждого.";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "Не сейчас";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Description.v106" = "Возьмите вкладки и пароли с других ваших устройств, чтобы продолжить с того места, на котором вы остановились.";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "Пропустить";
-
-/* String used to describes the title of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Title.v106" = "Переходите с телефона на ноутбук и обратно";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "Зарегистрируйтесь и войдите";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "Автоматически синхронизируйте вкладки и закладки между устройствами для бесперебойного веб-сёрфинга.";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "Синхронизируйте, чтобы всегда быть в курсе";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.Classic.v106" = "Классические обои";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "Обои с ограниченным тиражом";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "Просмотреть больше обоев";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Description.v106" = "Выберите обои по своему вкусу.";
-
-/* Title for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Title.v106" = "Попробуйте всплеск цвета";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "Установка обоев";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "Выберите обои Firefox";
-
-/* String used to describes the description of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Description.v106" = "Firefox ставит людей выше прибыли и по умолчанию защищает вашу приватность.";
-
-/* String used to describes the title of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Title.v106" = "Добро пожаловать в независимый интернет";
-
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "Начать веб-сёрфинг";
 
@@ -974,7 +896,7 @@
 "Open articles in Reader View by tapping the book icon when it appears in the title bar." = "Открывайте статьи в виде для чтения, нажимая на значок книги, когда он появляется в адресной строке.";
 
 /* See http://mzl.la/1G7uHo7 */
-"Open Settings" = "Открыть Параметры";
+"Open Settings" = "Открыть настройки";
 
 /* Toggle tabs syncing setting */
 "Open Tabs" = "Открытые вкладки";
@@ -1129,15 +1051,6 @@
 /* The confirmation button */
 "Search.ThirdPartyEngines.OK" = "ОК";
 
-/* Accessibility label for default search engine setting. */
-"SearchSettings.Accessibility.DefaultSearchEngine.v106" = "Поисковая система по умолчанию";
-
-/* Title for default search engine settings section. */
-"SearchSettings.Title.DefaultSearchEngine.v106" = "Поисковая система по умолчанию";
-
-/* Navigation title for search settings. */
-"SearchSettings.Title.Search.v106" = "Поиск";
-
 /* Message displayed in the crash dialog above the buttons used to select when sending reports */
 "Send a crash report so Mozilla can fix the problem?" = "Отправить сообщение о падении, чтобы Mozilla могла устранить эту проблему?";
 
@@ -1172,7 +1085,7 @@
 "SendTo.NoDevicesFound.Message" = "У вас нет ни одного устройства, подключенного к этому Аккаунту Firefox и доступного для синхронизации.";
 
 /* See http://mzl.la/1ISlXnU */
-"SendTo.NotSignedIn.Message" = "Пожалуйста, откройте Firefox, перейдите в Параметры и войдите для продолжения.";
+"SendTo.NotSignedIn.Message" = "Пожалуйста, откройте Firefox, перейдите в «Настройки» и войдите для продолжения.";
 
 /* See http://mzl.la/1ISlXnU */
 "SendTo.NotSignedIn.Title" = "Вы не вошли в свой Аккаунт Firefox.";
@@ -1208,7 +1121,7 @@
 "Serif" = "С засечками";
 
 /* Title in the settings view controller title bar */
-"Settings" = "Параметры";
+"Settings" = "Настройки";
 
 /* The button text in Search Settings that opens the Custom Search Engine view. */
 "Settings.AddCustomEngine" = "Добавить поисковую систему";
@@ -1319,7 +1232,7 @@
 "Settings.FxA.DeviceName" = "Имя устройства";
 
 /* Label used as a section title in the Firefox Accounts Settings screen. */
-"Settings.FxA.Sync.SectionName" = "Параметры синхронизации";
+"Settings.FxA.Sync.SectionName" = "Настройки синхронизации";
 
 /* Title displayed in header of the FxA settings panel. */
 "Settings.FxA.Title" = "Аккаунт Firefox";
@@ -1347,9 +1260,6 @@
 
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "Ярлыки";
-
-/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
-"Settings.Home.Option.SponsoredPocket.v103" = "Статьи спонсоров";
 
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "Домашняя страница после четырех часов бездействия";
@@ -1588,9 +1498,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "OK, понятно";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Если сайт не работает так, как ожидалось, коснитесь значка щита в адресной строке и отключите расширенную защиту от отслеживания на этой странице.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Внимание!";
 
@@ -1602,9 +1509,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Уменьшает количество целевой рекламы и помогает остановить отслеживание вашего веб-сёрфинга рекламодателями.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Если сайт не работает так, как ожидалось, коснитесь значка щита в адресной строке и отключите расширенную защиту от отслеживания на этой странице.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Разрешает некоторые рекламные трекеры для корректной работы веб-сайтов.";
@@ -1809,24 +1713,6 @@
 
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "непрочитано";
-
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "Войти";
-
-/* Description string used to to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Description.v106" = "Продолжайте с того места, где вы остановились, с вкладками с других устройств, которые теперь находятся на вашей домашней странице.";
-
-/* Title string used to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Title.v106" = "Переключение экранов стало проще, чем когда-либо";
-
-/* Describes the action on the first upgrade page in the Upgrade screen. This string will be on a button so user can continue the Upgrade. */
-"Upgrade.Welcome.Action.v106" = "Начать";
-
-/* Description string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Description.v106" = "Новые цвета. Новое удобство. Обязательство перед людьми, а не погоня за прибылью.";
-
-/* Title string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Title.v106" = "Добро пожаловать в более личный Интернет";
 
 /* Debug option */
 "Use stage servers" = "Использовать тестовые серверы";
