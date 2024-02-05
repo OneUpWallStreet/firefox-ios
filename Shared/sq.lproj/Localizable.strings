@@ -77,7 +77,7 @@
 "Amazon" = "Amazon";
 
 /* Authentication prompt title */
-"Authentication required" = "Lyp mirëfilltësim";
+"Authentication required" = "Lypset mirëfilltësim";
 
 /* Accessibility label for the Back button in the tab toolbar. */
 "Back" = "Mbrapsht";
@@ -192,15 +192,6 @@
 
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Ndajeni Lidhjen Me të Tjerët";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Tani mund ta shpini panelin në fund, që të jetë më e lehtë të jepen të dhëna";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Për ta bërë më të lehtë futjen e të dhënave, paneli tani, si parazgjedhje, gjendet në fund.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "Faqja juaj hyrëse në Firefox, e personalizuar, tani e bën më të lehtë të riktheheni atje ku e latë. Gjeni skedat, faqerojtësit dhe përfundime kërkimi tuajat më të freskëta.";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Rregullime Paneli";
@@ -351,9 +342,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Hiqe";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Sajte: %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Rregullime";
@@ -697,9 +685,6 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Filtër";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "Këtu do të duken kredenciale hyrjesh të ruajtur. Nëse i keni ruajtur në një pajisje tjetër kredencialet tuaja Firefox të hyrjeve, bëni hyrjen në Llogarinë tuaj Firefox.";
-
 /* Label shown when there are no logins saved */
 "LoginsList.NoLoginsFound.Title" = "S’u gjetën kredenciale hyrjesh";
 
@@ -729,9 +714,6 @@
 
 /* Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "Shënoje si të Palexuar";
-
-/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
-"Menu.AddBookmark.AlternateLabel.v99" = "Shto Faqerojtës";
 
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "Faqerojtësi u Shtua";
@@ -817,9 +799,6 @@
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "U hoq nga Shkurtoret";
 
-/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
-"Menu.RemoveReadingList.AlternateLabel.v99" = "Hiqe nga Listë Leximesh";
-
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
 "Menu.RemoveReadingList.Confirm.v99" = "U hoq nga Listë Leximesh";
 
@@ -830,7 +809,7 @@
 "Menu.Share.v99" = "Ndajeni me të tjerët";
 
 /* Label for the Firefox Sync button in the menu page. Pressing this button open the sign in to Firefox page service to sync and save data. */
-"Menu.SyncAndSaveData.v103" = "Njëkohëso dhe Ruaj të Dhëna";
+"Menu.SyncAndSaveData.v103" = "Njëkohësoni dhe Ruani të Dhëna";
 
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "Skeda u Dërgua";
@@ -906,63 +885,6 @@
 
 /* Restore Tabs Affirmative Action */
 "Okay" = "OK";
-
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "Fillojani";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "I pavarur. Jofitimprurës. Përgjithmonë.";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "Përkushtuar premtimit për një Internet më të mirë për këdo.";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "Jo Tani";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Description.v106" = "Merrni skeda dhe fjalëkalim nga pajisjet tuaja të tjera, për të vazhduar atje ku e latë.";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "Anashkaloje";
-
-/* String used to describes the title of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Title.v106" = "Kaloni nga telefoni në portativ, ose anasjelltas";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "Regjistrohu dhe Bëni Hyrjen";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "Njëkohësoni vetvetiu skeda dhe faqerojtës nga pajisja në pajisje, për ndërrim të pakapshëm ekrani.";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "Njëkohësojeni, Që të Mos Ndërpritet Puna Juaj";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.Classic.v106" = "Sfond Klasik";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "Sfond Edicion i Kufizuar";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "Eksploroni më tepër sfonde";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Description.v106" = "Zgjidhni një sfond që ju thotë diçka.";
-
-/* Title for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Title.v106" = "Shtoni pakëz ngjyrë";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "Caktoni Sfond";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "Zgjidhni një Sfond Firefox";
-
-/* String used to describes the description of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Description.v106" = "Firefox-i vë njerëzit mbi fitime dhe mbron, si parazgjedhje, privatësinë tuaj.";
-
-/* String used to describes the title of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Title.v106" = "Mirë se vini te një internet i pavarur";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "Filloni të Shfletoni";
@@ -1128,15 +1050,6 @@
 
 /* The confirmation button */
 "Search.ThirdPartyEngines.OK" = "OK";
-
-/* Accessibility label for default search engine setting. */
-"SearchSettings.Accessibility.DefaultSearchEngine.v106" = "Motor Parazgjedhje Kërkimesh";
-
-/* Title for default search engine settings section. */
-"SearchSettings.Title.DefaultSearchEngine.v106" = "Motor Parazgjedhje Kërkimesh";
-
-/* Navigation title for search settings. */
-"SearchSettings.Title.Search.v106" = "Kërko";
 
 /* Message displayed in the crash dialog above the buttons used to select when sending reports */
 "Send a crash report so Mozilla can fix the problem?" = "Të dërgohet një raport vithisjeje, që kështu Mozilla të mund të ndreqë problemin?";
@@ -1348,9 +1261,6 @@
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "Shkurtore";
 
-/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
-"Settings.Home.Option.SponsoredPocket.v103" = "Histori të sponsorizuara";
-
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "Faqe hyrëse pas katër orësh plogështie";
 
@@ -1556,10 +1466,10 @@
 "Settings.Sync.ButtonDescription.v103" = "Bëni hyrjen, që të njëkohësoni skeda, faqerojtës, fjalëkalime, etj.";
 
 /* Button label that appears in the settings to prompt the user to sign in to Firefox for iOS sync service to sync and save data. */
-"Settings.Sync.ButtonTitle.v103" = "Njëkohëso dhe Ruaj të Dhëna";
+"Settings.Sync.ButtonTitle.v103" = "Njëkohësoni dhe Ruani të Dhëna";
 
 /* Title for the page where the user sign in to their Firefox Sync account. */
-"Settings.Sync.SignInView.Title.v103" = "Njëkohëso dhe Ruaj të Dhëna";
+"Settings.Sync.SignInView.Title.v103" = "Njëkohësoni dhe Ruani të Dhëna";
 
 /* This is the description for the setting that toggles the Inactive Tabs feature in the settings menu under the Tabs customization section. Inactive tabs are a separate section of tabs that appears in the Tab Tray, which can be enabled or not */
 "Settings.Tabs.CustomizeTabsSection.InactiveTabs" = "Skedat Jo Aktive";
@@ -1588,9 +1498,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "OK, e mora vesh";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Nëse një sajt nuk funksionon si pritej, prekni mburojën te shtylla e adresave dhe çaktivizoni Mbrojtjen e Thelluar Nga Gjurmimet për atë faqe.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Kini mendjen!";
 
@@ -1602,9 +1509,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Ul numrin e reklamave të qepura enkas për ju dhe ndihmon të ndalen gjurmimi i shfletimeve tuaja nga reklamues.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Nëse një sajt nuk funksionon si pritej, prekni mburojën te shtylla e adresave dhe çaktivizoni Mbrojtjen e Thelluar Nga Gjurmimet për atë faqe.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Lejon disa reklama gjurmimi, kështu që sajtet punojnë si pritet.";
@@ -1809,24 +1713,6 @@
 
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "të palexuara";
-
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "Hyni";
-
-/* Description string used to to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Description.v106" = "Vazhdojeni ku e latë, me skeda nga pajisje të tjera tani në faqen tuaj hyrëse.";
-
-/* Title string used to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Title.v106" = "Ndërrimi i ekraneve është më i lehtë se kurrë";
-
-/* Describes the action on the first upgrade page in the Upgrade screen. This string will be on a button so user can continue the Upgrade. */
-"Upgrade.Welcome.Action.v106" = "Fillojani";
-
-/* Description string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Description.v106" = "Ngjyra të reja. Rehati e re. I njëjti përkushtim ndaj njerëzve, jo ndaj fitimeve.";
-
-/* Title string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Title.v106" = "Mirë se vini te një internet më personal";
 
 /* Debug option */
 "Use stage servers" = "Përdor shërbyes provash";
