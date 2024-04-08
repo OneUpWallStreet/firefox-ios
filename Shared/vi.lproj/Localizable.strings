@@ -193,15 +193,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Chia sẻ liên kết";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Giờ đây, bạn có thể di chuyển thanh công cụ xuống dưới cùng để nhập thông tin dễ dàng hơn";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Để giúp nhập thông tin dễ dàng hơn, thanh công cụ hiện sẽ ở dưới cùng theo mặc định.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "Trang chủ Firefox được cá nhân hóa của bạn giờ đây giúp bạn tiếp tục lại nơi bạn đã dừng lại dễ dàng hơn. Tìm các thẻ, dấu trang và kết quả tìm kiếm gần đây của bạn.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Cài đặt thanh công cụ";
 
@@ -352,9 +343,6 @@
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Xóa";
 
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Trang web: %d";
-
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Cài đặt";
 
@@ -476,7 +464,7 @@
 "HomePanel.ContextMenu.DeleteFromHistory" = "Xóa khỏi lịch sử";
 
 /* The title for the Open in New Private Tab context menu action for sites in Home Panels */
-"HomePanel.ContextMenu.OpenInNewPrivateTab.v101" = "Mở trong một thẻ riêng tư";
+"HomePanel.ContextMenu.OpenInNewPrivateTab.v101" = "Mở trong thẻ riêng tư";
 
 /* The title for the Open in New Tab context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.OpenInNewTab" = "Mở trong thẻ mới";
@@ -697,9 +685,6 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Bộ lọc";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "Thông tin đăng nhập đã lưu sẽ hiển thị ở đây. Nếu bạn đã lưu thông tin đăng nhập của mình vào Firefox trên một thiết bị khác, hãy đăng nhập vào tài khoản Firefox của bạn.";
-
 /* Label shown when there are no logins saved */
 "LoginsList.NoLoginsFound.Title" = "Không tìm thấy thông tin đăng nhập";
 
@@ -729,9 +714,6 @@
 
 /* Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "Đánh dấu là chưa đọc";
-
-/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
-"Menu.AddBookmark.AlternateLabel.v99" = "Thêm dấu trang";
 
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "Đã thêm đánh dấu";
@@ -816,9 +798,6 @@
 
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "Đã xóa khỏi lối tắt";
-
-/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
-"Menu.RemoveReadingList.AlternateLabel.v99" = "Xóa khỏi danh sách đọc";
 
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
 "Menu.RemoveReadingList.Confirm.v99" = "Đã xóa khỏi danh sách đọc";
@@ -906,63 +885,6 @@
 
 /* Restore Tabs Affirmative Action */
 "Okay" = "OK";
-
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "Bắt đầu";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "Indie. Phi lợi nhuận. Tốt cho bạn.";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "Cam kết với lời hứa về một Internet tốt hơn cho tất cả mọi người.";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "Không phải bây giờ";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Description.v106" = "Lấy các thẻ và mật khẩu từ các thiết bị khác của bạn để tiếp tục nơi bạn đã dừng lại.";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "Bỏ qua";
-
-/* String used to describes the title of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Title.v106" = "Chuyển từ điện thoại sang máy tính xách tay và ngược lại";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "Đăng ký hoặc đăng nhập";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "Tự động đồng bộ hóa các thẻ và dấu trang giữa các thiết bị để chuyển đổi thiết bị nhanh hơn.";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "Đồng bộ hóa để theo kịp dòng chảy của bạn";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.Classic.v106" = "Hình nền cổ điển";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "Hình nền phiên bản giới hạn";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "Khám phá các hình nền khác";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Description.v106" = "Chọn một hình nền nói lên bạn.";
-
-/* Title for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Title.v106" = "Thử một chút màu sắc";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "Cài đặt hình nền";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "Chọn Hình nền Firefox";
-
-/* String used to describes the description of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Description.v106" = "Firefox đặt mọi người hơn lợi nhuận và bảo vệ quyền riêng tư của bạn theo mặc định.";
-
-/* String used to describes the title of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Title.v106" = "Chào mừng bạn đến với internet độc lập";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "Bắt đầu duyệt web";
@@ -1129,15 +1051,6 @@
 /* The confirmation button */
 "Search.ThirdPartyEngines.OK" = "OK";
 
-/* Accessibility label for default search engine setting. */
-"SearchSettings.Accessibility.DefaultSearchEngine.v106" = "Công cụ tìm kiếm mặc định";
-
-/* Title for default search engine settings section. */
-"SearchSettings.Title.DefaultSearchEngine.v106" = "Công cụ tìm kiếm mặc định";
-
-/* Navigation title for search settings. */
-"SearchSettings.Title.Search.v106" = "Tìm kiếm";
-
 /* Message displayed in the crash dialog above the buttons used to select when sending reports */
 "Send a crash report so Mozilla can fix the problem?" = "Gửi báo cáo lỗi để Mozilla có thể khắc phục sự cố?";
 
@@ -1223,7 +1136,7 @@
 "Settings.AddCustomEngine.TitleLabel" = "Tiêu đề";
 
 /* The placeholder for Title Field when saving a custom search engine. */
-"Settings.AddCustomEngine.TitlePlaceholder" = "Máy tìm kiếm";
+"Settings.AddCustomEngine.TitlePlaceholder" = "Công cụ tìm kiếm";
 
 /* The title for URL Field */
 "Settings.AddCustomEngine.URLLabel" = "URL";
@@ -1347,9 +1260,6 @@
 
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "Lối tắt";
-
-/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
-"Settings.Home.Option.SponsoredPocket.v103" = "Câu chuyện được tài trợ";
 
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "Trang chủ sau bốn tiếng không hoạt động";
@@ -1588,9 +1498,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "OK, đã hiểu";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Nếu một trang web không hoạt động như mong đợi, hãy chạm vào hình khiên trong thanh địa chỉ và tắt trình chống theo dõi nâng cao cho trang đó.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Hãy cân nhắc!";
 
@@ -1602,9 +1509,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Giảm quảng cáo được nhắm mục tiêu và giúp ngăn nhà quảng cáo theo dõi trình duyệt của bạn.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Nếu một trang web không hoạt động như mong đợi, hãy chạm vào hình khiên trong thanh địa chỉ và tắt trình chống theo dõi nâng cao cho trang đó.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Cho phép một số theo dõi quảng cáo để các trang web hoạt động đúng.";
@@ -1809,24 +1713,6 @@
 
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "chưa đọc";
-
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "Đăng nhập";
-
-/* Description string used to to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Description.v106" = "Tiếp tục nơi bạn đã dừng lại với các thẻ từ các thiết bị khác ngay bây giờ trên trang chủ của bạn.";
-
-/* Title string used to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Title.v106" = "Chuyển đổi màn hình dễ dàng hơn bao giờ hết";
-
-/* Describes the action on the first upgrade page in the Upgrade screen. This string will be on a button so user can continue the Upgrade. */
-"Upgrade.Welcome.Action.v106" = "Bắt đầu";
-
-/* Description string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Description.v106" = "Màu sắc mới. Tiện lợi hơn. Cùng cam kết với mọi người vì lợi nhuận.";
-
-/* Title string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Title.v106" = "Chào mừng bạn đến với một Internet cá nhân hơn";
 
 /* Debug option */
 "Use stage servers" = "Sử dụng máy chủ thử nghiệm";
