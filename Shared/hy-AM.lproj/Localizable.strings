@@ -110,7 +110,7 @@
 "Bookmarks.Menu.DesktopBookmarks" = "Սեղանի էջանիշեր";
 
 /* The button to create a new bookmark */
-"Bookmarks.NewBookmark.Label" = "Նոր Էջանշան";
+"Bookmarks.NewBookmark.Label" = "Նոր էջանիշ";
 
 /* The button to create a new folder */
 "Bookmarks.NewFolder.Label" = "Նոր պանակ";
@@ -170,7 +170,7 @@
 "ContextMenu.ButtonToast.NewTabOpened.ButtonText" = "Փոխարկել";
 
 /* The label text in the Button Toast for switching to a fresh New Tab. */
-"ContextMenu.ButtonToast.NewTabOpened.LabelText" = "Նոր Ներդիր է բացվել";
+"ContextMenu.ButtonToast.NewTabOpened.LabelText" = "Նոր ներդիրը բացվեց";
 
 /* Context menu item for copying an image to the clipboard */
 "ContextMenu.CopyImageButtonTitle" = "Պատճենել պատկերը";
@@ -188,19 +188,10 @@
 "ContextMenu.OpenInNewTabButtonTitle" = "Բացել նոր ներդիրում";
 
 /* Context menu item for saving an image */
-"ContextMenu.SaveImageButtonTitle" = "Պահպանել պատկերը";
+"ContextMenu.SaveImageButtonTitle" = "Պահել պատկերը";
 
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Կիսվել հղումով";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Այժմ կարող եք գործիքագոտին տեղափոխել ներքև, որպեսզի ավելի հեշտ լինի մուտքագրել տեղեկատվություն";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Տեղեկությունների մուտքագրումը հեշտացնելու համար գործիքագոտին այժմ լռելյայնորեն ներքևում է:";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "Firefox-ի ձեր անհատականացված գլխավոր էջն այժմ ավելի հեշտ է դարձնում շարունակել այնտեղ, որտեղ թողել եք: Գտեք ձեր վերջին ներդիրները, էջանիշները և որոնման արդյունքները:";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Ներդիրի կարգավորումներ";
@@ -266,7 +257,7 @@
 "Downloads.CancelDialog.Cancel" = "Չեղարկել";
 
 /* Alert dialog body when the user taps the cancel download icon. */
-"Downloads.CancelDialog.Message" = "Ցանկանում եք չեղարկե՞լ այս ներբեռնումը։";
+"Downloads.CancelDialog.Message" = "Ցանկանո՞ւմ եք չեղարկել այս ներբեռնումը։";
 
 /* Button declining the cancellation of the download. */
 "Downloads.CancelDialog.Resume" = "Վերսկսել";
@@ -275,7 +266,7 @@
 "Downloads.CancelDialog.Title" = "Չեղարկել ներբեռնումը";
 
 /* The label text in the Download Cancelled toast for showing confirmation that the download was cancelled. */
-"Downloads.Toast.Cancelled.LabelText" = "Ներբեռնումը չեղարկվել է";
+"Downloads.Toast.Cancelled.LabelText" = "Ներբեռնումը չեղարկվեց";
 
 /* The label text in the Download Failed toast for showing confirmation that the download has failed. */
 "Downloads.Toast.Failed.LabelText" = "Ներբեռնումը ձախողվեց";
@@ -308,7 +299,7 @@
 "ErrorPages.Advanced.Button" = "Լրացուցիչ";
 
 /* Warning text when clicking the Advanced button on error pages */
-"ErrorPages.AdvancedWarning1.Text" = "Զգուշացում. մենք չենք կարող հաստատել, թե արդյոք ձեր կապակցումը այս կայքին անվտանգ է:";
+"ErrorPages.AdvancedWarning1.Text" = "Զգուշացում. մենք չենք կարող հաստատել, թե արդյոք ձեր կապակցումն այս կայքին անվտանգ է:";
 
 /* Additional warning text when clicking the Advanced button on error pages */
 "ErrorPages.AdvancedWarning2.Text" = "Դա կարող է լինել հարցակվողի կողմից սխալ կազմաձևում կամ խախտում։ Առաջ անցեք, եթե դուք ընդունում եք հնարավոր վտանգը։";
@@ -317,7 +308,7 @@
 "ErrorPages.CertWarning.Description" = "%@-ի սեփականատերը սխալ է տեղադրել իր կայքը։ Ձեր տեղեկատվությունը գողությունից պաշտպանելու համար Firefox֊ը չի միացել այս վեբ կայքին։";
 
 /* Title on the certificate error page */
-"ErrorPages.CertWarning.Title" = "Այս միացումը անվստահելի է";
+"ErrorPages.CertWarning.Title" = "Այս կապակցումն անվստահելի է";
 
 /* Label for button to go back from the error page */
 "ErrorPages.GoBack.Button" = "Վերադառնալ";
@@ -338,7 +329,7 @@
 "Firefox.HomePage.Title" = "Firefox-ի Տնային էջը";
 
 /* A button at bottom of the Firefox homepage that, when clicked, takes users straight to the settings options, where they can customize the Firefox Home page */
-"FirefoxHome.CustomizeHomeButton.Title" = "Հարմարեցնել տնային էջը";
+"FirefoxHome.CustomizeHomeButton.Title" = "Հարմարեցնել տնէջը";
 
 /* At the end of the Pocket section on the Firefox Homepage, this button appears and indicates tapping it will navigate the user to more Pocket Stories. */
 "FirefoxHome.Pocket.DiscoverMore" = "Բացահայտեք ավելին";
@@ -351,9 +342,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Հեռացնել";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Կայքեր՝ %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Կարգավորումներ";
@@ -386,10 +374,10 @@
 "FxA.ManageAccount" = "Կառավարել հաշիվը";
 
 /* Label when no internet is present */
-"FxA.NoInternetConnection" = "Չկա համացանցային կապակցում";
+"FxA.NoInternetConnection" = "Չկա կապակցում համացանցին";
 
 /* FxA sign in view subtitle */
-"fxa.signin.camera-signin" = "Մուտք գործեք ձեր խցիկի հետ";
+"fxa.signin.camera-signin" = "Մուտք գործեք Ձեր տեսախցիկով";
 
 /* FxA sign in view qr code instructions */
 "fxa.signin.qr-link-instruction" = "Ձեր համակարգչի վրա բացեք Firefox-ը և անցեք firefox.com/pair";
@@ -416,10 +404,10 @@
 "FxAPush_DeviceDisconnected_ThisDevice_body" = "ԱՅս սարքը հաջողությամբ կապախզվել է Firefox Սինքից:";
 
 /* Title of a notification displayed when this device has been disconnected by another device. */
-"FxAPush_DeviceDisconnected_ThisDevice_title" = "Սինքը կապախզված է";
+"FxAPush_DeviceDisconnected_ThisDevice_title" = "Համաժամեցումը կապախզված է";
 
 /* Title of a notification displayed when named device has been disconnected from FxA. */
-"FxAPush_DeviceDisconnected_title" = "Սինքը կապախզված է";
+"FxAPush_DeviceDisconnected_title" = "Համաժամեցումը կապախզված է";
 
 /* Body of a notification displayed when unnamed device has been disconnected from FxA. */
 "FxAPush_DeviceDisconnected_UnknownDevice_body" = "Սարքը կապախզվել է Firefox Սինքից";
@@ -479,7 +467,7 @@
 "HomePanel.ContextMenu.OpenInNewPrivateTab.v101" = "Բացել Գաղտնի դիտարկմամբ";
 
 /* The title for the Open in New Tab context menu action for sites in Home Panels */
-"HomePanel.ContextMenu.OpenInNewTab" = "Բացել Նոր Ներդիր";
+"HomePanel.ContextMenu.OpenInNewTab" = "Բացել նոր ներդիրում";
 
 /* The title for the Remove context menu action for sites in Home Panels */
 "HomePanel.ContextMenu.Remove" = "Հեռացնել";
@@ -632,7 +620,7 @@
 "Licenses" = "Արտոնագրեր";
 
 /* Light theme setting in Reading View settings */
-"Light" = "Բաց";
+"Light" = "Լուսավոր";
 
 /* Link for going to the non-reader page when the reader view could not be loaded. This message will appear only when sharing to Firefox reader mode from another app. */
 "Load original page" = "Բեռնել սկզբնական էջը";
@@ -648,9 +636,6 @@
 
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Իմանալ ավելին";
-
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "Մուտքագրումները և գաղտնաբառերը պահպանելու և ինքնալրացնելու համար միացրեք Face ID-ն, Touch ID-ն կամ սարքի անցակոդը:";
 
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "Շարունակել";
@@ -697,23 +682,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Զտիչ";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "Պահված մուտքագրումները կցուցադրվեն այստեղ: Եթե Firefox-ում մուտքագրումները պահել եք այլ սարքում, ապա մուտք գործեք ձեր Firefox հաշիվ:";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "Մուտքագրումներ չկան";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "Որոնման հետ համընկնում չկա։";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "Համապատասխան մուտքագրում չկա";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "Չեղարկել";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Որոնել մուտքագրումներ";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "Ընտրեք գաղտնաբառ լրացնելու համար";
@@ -729,9 +702,6 @@
 
 /* Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "Նշել որպես չընթերցված";
-
-/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
-"Menu.AddBookmark.AlternateLabel.v99" = "Ավելացնել Էջանիշ";
 
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "Էջանիշը ավելացվել է";
@@ -749,7 +719,7 @@
 "Menu.AddToReadingList.Confirm" = "Ավելացվել է ընթերցման ցուցակում";
 
 /* Label for the add to shortcuts button in the menu. Pressing this button pins the current website as a shortcut on the home page. */
-"Menu.AddToShortcuts.v99" = "Ավելացնել դյուրանցումներին";
+"Menu.AddToShortcuts.v99" = "Հավելել դյուրանցումներին";
 
 /* Label for the button, displayed in the menu, takes you to to bookmarks screen when pressed. */
 "Menu.Bookmarks.Label" = "Էջանիշեր";
@@ -767,10 +737,10 @@
 "Menu.Downloads.Label" = "Ներբեռնումներ";
 
 /* A switch to disable enhanced tracking protection inside the menu. */
-"Menu.EnhancedTrackingProtectionOff.Title" = "Պաշտպանությունները անջատված են այս կայքի համար";
+"Menu.EnhancedTrackingProtectionOff.Title" = "Պաշտպանություններն ԱՆՋԱՏՎԱԾ են այս կայքի համար";
 
 /* A switch to enable enhanced tracking protection inside the menu. */
-"Menu.EnhancedTrackingProtectionOn.Title" = "Պաշտպանությունը միացված է այս կայքի համար";
+"Menu.EnhancedTrackingProtectionOn.Title" = "Պաշտպանությունները ՄԻԱՑՎԱԾ են այս կայքի համար";
 
 /* Label for the help button in the menu page. Pressing this button opens the support page https://support.mozilla.org/en-US/products/ios */
 "Menu.Help.v99" = "Օգնություն";
@@ -791,10 +761,10 @@
 "Menu.Passwords.Label" = "Գաղտնաբառեր";
 
 /* The title for the button that lets you paste into the location bar */
-"Menu.Paste.Title" = "Տեղադրել";
+"Menu.Paste.Title" = "Փակցնել";
 
 /* The title for the button that lets you paste and go to a URL */
-"Menu.PasteAndGo.Title" = "Տեղադրել և Առաջ";
+"Menu.PasteAndGo.Title" = "Փակցնել և գնալ";
 
 /* Label for the button, displayed in the menu, takes you to to Reading List screen when pressed. */
 "Menu.ReadingList.Label" = "Ընթերցացուցակ";
@@ -816,9 +786,6 @@
 
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "Հեռացվել է դյուրանցումներից";
-
-/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
-"Menu.RemoveReadingList.AlternateLabel.v99" = "ՀԵռացնել ընթերցման ցուցակից";
 
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
 "Menu.RemoveReadingList.Confirm.v99" = "ՀԵռացնել ընթերցման ցուցակից";
@@ -869,7 +836,7 @@
 "Menu.TrackingProtectionDescription.CryptominersNew" = "Կրիպտո հանցագործները գաղտնի օգտագործում են ձեր համակարգի հաշվարկային ուժը թվային արժույթները ականապատելու համար։ Նման գրությունները չորացնում են ձեր մարտկոցը, դանդաղեցնում ձեր համակարգիչը և կարող են մեծացնել ձեր էներգիայի հաշիվը։";
 
 /* Description of fingerprinters. */
-"Menu.TrackingProtectionDescription.Fingerprinters" = "Ձեր զննարկիչի և համակարգչի կարգավորումները եզակի են։ Մատնահետքերի հավաքածուները օգտագործում են այս եզակի ընտրանքներից բաղկացած շարքը՝ ձեր հաշիվը ստեղծելու համար, որը կարող է օգտագործվել ձեզ ցանցին զննելու ժամանակ հետևելու համար։";
+"Menu.TrackingProtectionDescription.Fingerprinters" = "Ձեր դիտարկիչի և համակարգչի կարգավորումները եզակի են։ Մատնահետքերի հավաքածուները օգտագործում են այս եզակի ընտրանքներից բաղկացած շարքը՝ ձեր հաշիվը ստեղծելու համար, որը կարող է օգտագործվել ձեզ ցանցին զննելու ժամանակ հետևելու համար։";
 
 /* Description of social network trackers. */
 "Menu.TrackingProtectionDescription.SocialNetworksNew" = "Հասարակական ցանցերը հետքեր են տեղադրում այլ կայքերում՝ ձեր ավելի ընդգրկուն նպատակային հաշիվը ստեղծելու համար։ Այս հետքերի արգելափակումը կնվազեցնի ձեր առցանց գործունեության մասին հավաքած տեղեկությունների քանակը։";
@@ -893,7 +860,7 @@
 "Navigation Toolbar" = "Ուղղորդման գործիքագոտի";
 
 /* Accessibility label for the New Tab button in the tab toolbar. */
-"New Tab" = "Նոր Ներդիր";
+"New Tab" = "Նոր ներդիր";
 
 /* Restore Tabs Negative Action */
 "No" = "Ոչ";
@@ -906,63 +873,6 @@
 
 /* Restore Tabs Affirmative Action */
 "Okay" = "Լավ";
-
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "Սկսել";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "Ինդի. Շահույթ չհետապնդող. Լավի համար:";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "Հավատարիմ ենք բոլորի համար ավելի լավ ինտերնետի խոստմանը:";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "Ոչ հիմա";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Description.v106" = "Ձեռք բերեք ներդիրներն ու գաղտնաբառերը ձեր մյուս սարքերից՝ շարունակելու այնտեղից, որտեղ թողել եք:";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "Բաց թողնել";
-
-/* String used to describes the title of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Title.v106" = "Անցեք հեռախոսից նոութբուք և ետ";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "Գրանցվեք և մուտք գործեք";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "Ավտոմատ կերպով համաժամացրեք ներդիրներն ու էջանիշները սարքերի միջև՝ էկրանի անխափան թռիչքի համար:";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "Համաժամեցեք՝ ձեր հոսքի մեջ մնալու համար";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.Classic.v106" = "Դասական Պաստառ";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "Սահմանափակ թողարկումով պաստառ";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "Ուսումնասիրեք ավելի շատ պաստառներ";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Description.v106" = "Ընտրեք պաստառ, որը խոսում է ձեզ հետ:";
-
-/* Title for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Title.v106" = "Փորձեք գույն շաղ տալ";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "Կայել պաստառ";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "Ընտրեք Firefox Պաստառ";
-
-/* String used to describes the description of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Description.v106" = "Firefox-ը մարդկանց վեր է դասում շահույթից և պաշտպանում է ձեր գաղտնիությունը:";
-
-/* String used to describes the title of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Title.v106" = "Բարի գալուստ անկախ համացանց";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "Սկսել զննումը";
@@ -1007,7 +917,7 @@
 "ProtectionStatus.NotSecure" = "Կապակցումն անվտանգ չէ";
 
 /* This is the value for a label that indicates if a user is on a secure https connection. */
-"ProtectionStatus.Secure" = "Կապակցումը ապահով է";
+"ProtectionStatus.Secure" = "Կապակցումն ապահով է";
 
 /* Title for quick-search engines settings section. */
 "Quick-Search Engines" = "Որոգ որոնման որոնիչներ";
@@ -1079,7 +989,7 @@
 "ScanQRCode.InvalidDataError.Message" = "Տվյալը անվավեր է";
 
 /* Text of the prompt to setup the camera authorization for the Scan QR Code feature. */
-"ScanQRCode.PermissionError.Message.v100" = "Գնացեք սարքի «Կարգավորումներ» > «Firefox»: Թույլ տվեք Firefox-ին մուտք գործել տեսախցիկ:";
+"ScanQRCode.PermissionError.Message.v100" = "Գնացեք սարքի «Կարգավորումներ» > «Firefox»: Թույլ տվեք Firefox-ին մատչել տեսախցիկին:";
 
 /* Title for the QR code scanner view. */
 "ScanQRCode.View.Title" = "Սկանավորել QR կոդը";
@@ -1129,15 +1039,6 @@
 /* The confirmation button */
 "Search.ThirdPartyEngines.OK" = "Լավ";
 
-/* Accessibility label for default search engine setting. */
-"SearchSettings.Accessibility.DefaultSearchEngine.v106" = "Հիմնական որոնիչը";
-
-/* Title for default search engine settings section. */
-"SearchSettings.Title.DefaultSearchEngine.v106" = "Հիմնական որոնիչը";
-
-/* Navigation title for search settings. */
-"SearchSettings.Title.Search.v106" = "Որոնում";
-
 /* Message displayed in the crash dialog above the buttons used to select when sending reports */
 "Send a crash report so Mozilla can fix the problem?" = "Ուղարկե՞լ վթարի զեկույց Mozilla-ին, որպեսզի այն շտկվի:";
 
@@ -1163,7 +1064,7 @@
 "SendTo.Error.OK.Button" = "Լավ";
 
 /* Title of error prompt displayed when an invalid URL is shared. */
-"SendTo.Error.Title" = "Տվյալ հղումը հնարավոր չէ համօգտագործել:";
+"SendTo.Error.Title" = "Տվյալ հղումը հնարավոր չէ տարածել:";
 
 /* Title of the dialog that allows you to send a tab to a different device */
 "SendTo.NavBar.Title" = "Ուղարկել ներդիրը";
@@ -1268,7 +1169,7 @@
 "Settings.Disconnect.DestructiveButton" = "Կապախզել";
 
 /* Title of the alert when prompting the user asking to disconnect. */
-"Settings.Disconnect.Title" = "Կապախզե՞լ Սինքը";
+"Settings.Disconnect.Title" = "Անջատե՞լ հ.-ժամեցումը";
 
 /* Section header for brightness slider. */
 "Settings.DisplayTheme.BrightnessThreshold.SectionHeader" = "Շեմ";
@@ -1310,10 +1211,10 @@
 "Settings.DisplayTheme.SystemTheme.SwitchTitle" = "Օգտագործել համակարգի լուսավոր/մուգ աշխատատեսակը";
 
 /* Theme picker settings section title */
-"Settings.DisplayTheme.ThemePicker.SectionHeader" = "Հիմնապատկերի ընտրիչ";
+"Settings.DisplayTheme.ThemePicker.SectionHeader" = "Ոճի ընտրիչ";
 
 /* Title in main app settings for Theme settings */
-"Settings.DisplayTheme.Title.v2" = "Հիմնապատկեր";
+"Settings.DisplayTheme.Title.v2" = "Ոճ";
 
 /* Label used for the device name settings section. */
 "Settings.FxA.DeviceName" = "Սարքի անունը";
@@ -1348,9 +1249,6 @@
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "Դյուրանցումներ";
 
-/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
-"Settings.Home.Option.SponsoredPocket.v103" = "Հովանավորված";
-
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "Տնային էջը չորս ժամ անգործությունից հետո";
 
@@ -1382,7 +1280,7 @@
 "Settings.Home.Option.Wallpaper.Accessibility.CeruleanWallpaper.v99" = "Firefox-ի պաստառ, սերուլյան օրինակ:";
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the accessibility string for the default wallpaper. */
-"Settings.Home.Option.Wallpaper.Accessibility.DefaultWallpaper.v99" = "Կանխադրված մաքուր պաստառ:";
+"Settings.Home.Option.Wallpaper.Accessibility.DefaultWallpaper.v99" = "Սկզբնադիր մաքուր պաստառ:";
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the title accessibility string for the sunrise firefox wallpaper. */
 "Settings.Home.Option.Wallpaper.Accessibility.SunriseWallpaper.v99" = "Firefox-ի պաստառ, սերուլյան օրինակ:";
@@ -1469,7 +1367,7 @@
 "Settings.NewTab.Option.HomePage" = "Տնէջ";
 
 /* Label used as an item in Settings. When touched it will open a dialog to configure the new tab behavior. */
-"Settings.NewTab.SectionName" = "Նոր Ներդիր";
+"Settings.NewTab.SectionName" = "Նոր ներդիր";
 
 /* Title displayed in header of the setting panel. */
 "Settings.NewTab.Title" = "Նոր ներդիր";
@@ -1588,9 +1486,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "Լավ, հասկացա";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Եթե կայքը չի գործում, ինչպես սպասվում էր, հպեք վահանին հասցեի տողում և անջատեք Հետագծումների ընդլայնված պաշտպանությունը էջի համար:";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Ուշադրություն։";
 
@@ -1602,9 +1497,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Նվազեցնում է նպատակային գովազդը և օգնում է դադարեցնել գովազդատուներին ձեր զննարկումը հետևելու համար:";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Եթե կայքը չի գործում, ինչպես սպասվում էր, հպեք վահանին հասցեի տողում և անջատեք Հետագծումների ընդլայնված պաշտպանությունը էջի համար:";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Թույլատրել որոշ հետագծումներ, որպեսզի կայքը նորմալ աշխատի:";
@@ -1736,7 +1628,7 @@
 "TabTray.OpenNewTab.KeyCodeTitle" = "Բացել նոր ներդիրը";
 
 /* The title on the button to look at private tabs. */
-"TabTray.SegmentedControlTitles.PrivateTabs" = "Մասնավոր";
+"TabTray.SegmentedControlTitles.PrivateTabs" = "Գաղտնի";
 
 /* The title on the button to look at synced tabs. */
 "TabTray.SegmentedControlTitles.SyncedTabs" = "Համաժամեցված";
@@ -1802,31 +1694,13 @@
 "Twitter" = "Twitter";
 
 /* The menu item that pastes the current contents of the clipboard into the URL bar and navigates to the page */
-"UIMenuItem.PasteGo" = "Տեղադրել և Առաջ";
+"UIMenuItem.PasteGo" = "Փակցնել և գնալ";
 
 /* Search in New Tab Text selection menu item */
 "UIMenuItem.SearchWithFirefox" = "Որոնել Firefox֊-ով";
 
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "չընթերցված";
-
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "Մուտք գործել";
-
-/* Description string used to to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Description.v106" = "Շարունակեք այնտեղ, որտեղ դադարեցիք, այլ սարքերի ներդիրներով այժմ ձեր գլխավոր էջում:";
-
-/* Title string used to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Title.v106" = "Էկրանների փոխարկումն ավելի հեշտ է, քան երբևէ";
-
-/* Describes the action on the first upgrade page in the Upgrade screen. This string will be on a button so user can continue the Upgrade. */
-"Upgrade.Welcome.Action.v106" = "Սկսել";
-
-/* Description string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Description.v106" = "Նոր գույներ. Նոր հարմարավետություն. Նույն հանձնառությունը մարդկանց նկատմամբ շահույթի նկատմամբ:";
-
-/* Title string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Title.v106" = "Բարի գալուստ ավելի անձնական ինտերնետ";
 
 /* Debug option */
 "Use stage servers" = "Օգտագործել փուլային սերվերներ";
