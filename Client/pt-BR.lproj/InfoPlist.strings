@@ -7,9 +7,6 @@
 /* Privacy - Camera Usage Description */
 "NSCameraUsageDescription" = "O Firefox usa sua câmera para capturar códigos QR, tirar fotos e gravar vídeos.";
 
-/* Privacy - Face ID Usage Description */
-"NSFaceIDUsageDescription" = "O Firefox requer Face ID para acessar suas contas salvas.";
-
 /* Privacy - Location When In Use Usage Description */
 "NSLocationWhenInUseUsageDescription" = "Sites que você visita podem solicitar sua localização.";
 
