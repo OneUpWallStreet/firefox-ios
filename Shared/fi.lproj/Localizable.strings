@@ -193,15 +193,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Jaa linkki";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Nyt voit siirtää työkalupalkin alareunaan, jotta tietojen syöttäminen on helpompaa";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Tietojen syöttämisen helpottamiseksi työkalupalkki on nyt oletuksena alareunassa.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "Sinulle mukautetun Firefox-kotisivun avulla on helpompi jatkaa siitä, mihin jäit. Löydä viimeisimmät välilehdet, kirjanmerkit ja hakutulokset.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Työkalupalkin asetukset";
 
@@ -351,9 +342,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Poista";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Sivustoja: %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Asetukset";
@@ -649,9 +637,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Lue lisää";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "Tallentaaksesi ja täyttääksesi kirjautumistiedot, ota käyttöön Face ID, Touch ID tai laitteen pääsykoodi.";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "Jatka";
 
@@ -697,23 +682,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Suodata";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "Tallennetut kirjautumistiedot näkyvät täällä. Jos olet tallentanut kirjautumistietosi Firefoxiin toisella laitteella, kirjaudu sisään Firefox-tilillesi.";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "Kirjautumistietoja ei löytynyt";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "Hakuasi vastaavia tuloksia ei löytynyt.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "Ei hakua vastaavia kirjautumistietoja";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "Kumoa";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Etsi kirjautumistietoja";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "Valitse salasana täytettäväksi";
@@ -729,9 +702,6 @@
 
 /* Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "Merkitse lukemattomaksi";
-
-/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
-"Menu.AddBookmark.AlternateLabel.v99" = "Lisää kirjanmerkki";
 
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "Kirjanmerkki lisätty";
@@ -816,9 +786,6 @@
 
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "Poistettu oikoteistä";
-
-/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
-"Menu.RemoveReadingList.AlternateLabel.v99" = "Poista lukulistalta";
 
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
 "Menu.RemoveReadingList.Confirm.v99" = "Poistettu lukulistalta";
@@ -906,63 +873,6 @@
 
 /* Restore Tabs Affirmative Action */
 "Okay" = "Okei";
-
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "Aloitetaan";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "Indie. Voittoa tavoittelematon. Hyvän asialla.";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "Sitoutunut lupaukseen paremmasta Internetistä kaikille.";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "Ei nyt";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Description.v106" = "Nappaa välilehdet ja salasanat muilta laitteiltasi ja jatka siitä, mihin jäit.";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "Ohita";
-
-/* String used to describes the title of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Title.v106" = "Hyppää puhelimelta kannettavalle tietokoneelle ja takaisin";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "Rekisteröidy ja kirjaudu sisään";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "Synkronoi välilehdet ja salasanat eri laitteiden välillä, jotta laitteen vaihtaminen on saumatonta.";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "Synkronoi pysyäksesi tahdissa";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.Classic.v106" = "Klassinen taustakuva";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "Rajoitetun erän taustakuva";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "Tutustu muihin taustakuviin";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Description.v106" = "Valitse taustakuva, joka puhuttelee sinua.";
-
-/* Title for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Title.v106" = "Lisää ripaus väriä";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "Aseta taustakuva";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "Valitse Firefox-taustakuva";
-
-/* String used to describes the description of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Description.v106" = "Firefox asettaa ihmiset voittojen edelle ja suojaa yksityisyyttäsi oletuksena.";
-
-/* String used to describes the title of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Title.v106" = "Tervetuloa itsenäiseen internetiin";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "Aloita selaaminen";
@@ -1085,7 +995,7 @@
 "ScanQRCode.View.Title" = "Skannaa QR-koodi";
 
 /* Open search section of settings */
-"Search" = "Haku";
+"Search" = "Hae";
 
 /* The text shown in the URL bar on about:home */
 "Search or enter address" = "Hae tai kirjoita osoite";
@@ -1128,15 +1038,6 @@
 
 /* The confirmation button */
 "Search.ThirdPartyEngines.OK" = "OK";
-
-/* Accessibility label for default search engine setting. */
-"SearchSettings.Accessibility.DefaultSearchEngine.v106" = "Oletushakukone";
-
-/* Title for default search engine settings section. */
-"SearchSettings.Title.DefaultSearchEngine.v106" = "Oletushakukone";
-
-/* Navigation title for search settings. */
-"SearchSettings.Title.Search.v106" = "Haku";
 
 /* Message displayed in the crash dialog above the buttons used to select when sending reports */
 "Send a crash report so Mozilla can fix the problem?" = "Lähetätkö virheraportin, jotta Mozilla voi korjata ongelman?";
@@ -1348,9 +1249,6 @@
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "Oikotiet";
 
-/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
-"Settings.Home.Option.SponsoredPocket.v103" = "Sponsoroidut tarinat";
-
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "Kotisivu neljän tunnin käyttämättömyyden jälkeen";
 
@@ -1520,7 +1418,7 @@
 "Settings.SendUsage.Link" = "Lue lisää.";
 
 /* A short description that explains why mozilla collects usage data. */
-"Settings.SendUsage.Message" = "Mozilla pyrkii keräämään vain tietoja, jotka ovat tarpeellisia ja auttavat kehittämään Firefoxia.";
+"Settings.SendUsage.Message" = "Mozilla pyrkii keräämään vain tietoja, jotka ovat tarpeellisia ja auttavat Firefoxin kehittämisessä.";
 
 /* The title for the setting to send usage data. */
 "Settings.SendUsage.Title" = "Lähetä käyttötilastoja";
@@ -1588,9 +1486,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "Selvä";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Jos sivusto ei toimi odotetulla tavalla, napauta kilpeä osoiterivillä ja poista kyseisen sivun tehostettu seurannan suojaus käytöstä.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Huomio!";
 
@@ -1603,14 +1498,11 @@
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Vähentää kohdennettua mainontaa ja auttaa estämään mainostajia seuraamasta selaamistasi.";
 
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Jos sivusto ei toimi odotetulla tavalla, napauta kilpeä osoiterivillä ja poista kyseisen sivun tehostettu seurannan suojaus käytöstä.";
-
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Salli joitain seuraimia, jotta sivustot toimivat oikein.";
 
 /* Description for strict level tracker protection */
-"Settings.TrackingProtection.ProtectionLevelStrict.Description" = "Estää enemmän seuraimia, mainoksia ja ponnahdusikkunoita. Sivut latautuvat nopeammin, mutta jotkut toiminnot eivät välttämättä toimi.";
+"Settings.TrackingProtection.ProtectionLevelStrict.Description" = "Estää enemmän seuraimia, mainoksia ja ponnahdusikkunoita. Sivut latautuvat nopeammin, mutta jotkin toiminnot eivät välttämättä toimi.";
 
 /* Title for tracking protection options section where level can be selected. */
 "Settings.TrackingProtection.ProtectionLevelTitle" = "Suojaustaso";
@@ -1809,24 +1701,6 @@
 
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "lukematon";
-
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "Kirjaudu sisään";
-
-/* Description string used to to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Description.v106" = "Jatka siitä, mihin jäit muiden laitteidesi välilehdillä.";
-
-/* Title string used to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Title.v106" = "Näyttöjen vaihtaminen on helpompaa kuin koskaan";
-
-/* Describes the action on the first upgrade page in the Upgrade screen. This string will be on a button so user can continue the Upgrade. */
-"Upgrade.Welcome.Action.v106" = "Aloitetaan";
-
-/* Description string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Description.v106" = "Uusia värejä. Uutta mukavuutta. Ihmisiin sitoutumisen priorisointi liikevoittojen edelle.";
-
-/* Title string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Title.v106" = "Tervetuloa entistä henkilökohtaisempaan internetiin";
 
 /* Debug option */
 "Use stage servers" = "Käytä testipalvelimia";
