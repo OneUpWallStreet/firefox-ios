@@ -424,9 +424,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Научете повече";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "За да бъдат запазвани и за да разрешите автоматичното попълване на регистрации, включете Face ID, Touch ID или паролата на устройството.";
-
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.Onboarding.LearnMoreButtonTitle" = "Научете повече";
 
@@ -440,7 +437,7 @@
 "LoginsHelper.PromptSaveLogin.Title" = "Запазване на данните за вход за %1$@ в %2$@?";
 
 /* Prompt for saving a password with no username. The parameter is the hostname of the site. */
-"LoginsHelper.PromptSavePassword.Title" = "Запази парола за %@?";
+"LoginsHelper.PromptSavePassword.Title" = "Запазване на паролата за %@?";
 
 /* Prompt for updating a login. The first parameter is the hostname for which the password will be updated for. */
 "LoginsHelper.PromptUpdateLogin.Title.OneArg" = "Обновяване на данните за вход за %@?";
@@ -554,7 +551,7 @@
 "Privacy" = "Лични данни";
 
 /* Show Firefox Browser Privacy Policy page from the Privacy section in the settings. See https://www.mozilla.org/privacy/firefox/ */
-"Privacy Policy" = "Политика за личните данни";
+"Privacy Policy" = "Политика на поверителност";
 
 /* Title for quick-search engines settings section. */
 "Quick-Search Engines" = "Други търсещи машини";
