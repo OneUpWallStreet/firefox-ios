@@ -547,9 +547,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "اعرف المزيد";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "فعّل بصمة الوجه Face ID أو بصمة الإصبع Touch ID أو ضَع رمزًا للجهاز لحفظ جلسات الولوج وكلمات السر وملئها تلقائيا.";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "واصِل";
 
@@ -595,23 +592,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "رشِّح";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "ستظهر جلسات الولوج المحفوظة هنا. إن حفظت جلسات ولوجك إلى Firefox على جهاز آخر، عليك أن تَلج إلى حساب Firefox.";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "لا جلسات ولوج";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "لا نتائج تطابق البحث.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "لا جلسات ولوج مطابقة";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "ألغِ";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "ابحث في جلسات الولوج";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "اختر كلمة سر لملئها";
@@ -992,7 +977,7 @@
 "Settings.AddCustomEngine.URLPlaceholder" = "المسار (استخدم ‎%s بدل نص البحث)";
 
 /* Button in Data Management that clears all items. */
-"Settings.ClearAllWebsiteData.Clear.Button" = "اسمح كل بيانات المواقع";
+"Settings.ClearAllWebsiteData.Clear.Button" = "امسح كل بيانات المواقع";
 
 /* Button in settings that clears private data for the selected items. */
 "Settings.ClearPrivateData.Clear.Button" = "امسح البيانات الخاصة";
@@ -1222,9 +1207,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "حسنًا، فهمت";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "إن لم يعمل أحد المواقع كما يجب، اضغط أيقونة الدرع في شريط العنوان وعطّل الحماية الموسّعة من التعقب في الصفحة.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "انتبه!";
 
@@ -1236,9 +1218,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "تقلّل الإعلانات المستهدفة وتُساعد على منع المُعلنين من تعقب تصفحّك.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "إن لم يعمل أحد المواقع كما يجب، اضغط أيقونة الدرع في شريط العنوان وعطّل الحماية المحسّنة من التعقب في الصفحة.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "اسمح ببعض المتعقّبات الإعلانية لتعمل المواقع كما ينبغي.";

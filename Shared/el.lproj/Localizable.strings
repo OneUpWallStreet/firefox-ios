@@ -8,7 +8,7 @@
 "A username and password are being requested by %@." = "Το %@ απαιτεί όνομα χρήστη και κωδικό πρόσβασης.";
 
 /* Authentication prompt message with a realm. First parameter is the hostname. Second is the realm string */
-"A username and password are being requested by %@. The site says: %@" = "Το %1$@ απαιτεί όνομα χρήστη και κωδικό πρόσβασης. Η ιστοσελίδα λέει: %2$@";
+"A username and password are being requested by %@. The site says: %@" = "Το %1$@ απαιτεί όνομα χρήστη και κωδικό πρόσβασης. Ο ιστότοπος δηλώνει: %2$@";
 
 /* Button for reader mode font size. Keep this extremely short! This is shown in the reader mode toolbar. */
 "Aa" = "Αα";
@@ -17,7 +17,7 @@
 "About" = "Σχετικά";
 
 /* The title for the pinning a shortcut action */
-"ActivityStream.ContextMenu.AddToShortcuts" = "Προσθήκη στις συντομεύσεις";
+"ActivityStream.ContextMenu.AddToShortcuts" = "Προσθήκη συντόμευσης";
 
 /* The title for the pinning a topsite action */
 "ActivityStream.ContextMenu.PinTopsite2" = "Καρφίτσωμα";
@@ -26,7 +26,7 @@
 "ActivityStream.ContextMenu.UnpinTopsite" = "Ξεκαρφίτσωμα";
 
 /* Title for the Jump Back In section. This section allows users to jump back in to a recently viewed tab */
-"ActivityStream.JumpBackIn.SectionTitle" = "Επιστροφή";
+"ActivityStream.JumpBackIn.SectionTitle" = "Άμεση επιστροφή";
 
 /* On the Firefox homepage in the Jump Back In section, if a Tab group item - a collection of grouped tabs from a related search - exists underneath the search term for the tab group, there will be a subtitle with a number for how many tabs are in that group. The placeholder is for a number. It will read 'Tabs: 5' or similar. */
 "ActivityStream.JumpBackIn.TabGroup.SiteCount" = "Καρτέλες: %d";
@@ -134,7 +134,7 @@
 "BreachAlerts.Link" = "Μετάβαση σε";
 
 /* Title for the Breached Login Detail View. */
-"BreachAlerts.Title" = "Παραβίαση ιστοσελίδας";
+"BreachAlerts.Title" = "Παραβίαση ιστοτόπου";
 
 /* Accessibility label for brightness adjustment slider in Reader Mode display settings */
 "Brightness" = "Φωτεινότητα";
@@ -143,10 +143,10 @@
 "Cancel" = "Ακύρωση";
 
 /* Accessibility hint for the color theme setting buttons in reader mode display settings */
-"Changes color theme." = "Αλλάζει το χρώμα θέματος.";
+"Changes color theme." = "Αλλάζει το σύνολο χρωμάτων.";
 
 /* Accessibility hint for the font type buttons in reader mode display settings */
-"Changes font type." = "Αλλάζει τον τύπο της γραμματοσειράς.";
+"Changes font type." = "Αλλάζει τον τύπο γραμματοσειράς.";
 
 /* The button to open a new tab with the copied link */
 "ClipboardToast.GoToCopiedLink.Button" = "Μετάβαση";
@@ -192,15 +192,6 @@
 
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Κοινή χρήση συνδέσμου";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Μπορείτε πλέον να μετακινήσετε τη γραμμή εργαλείων στο κάτω μέρος, για ευκολότερη εισαγωγή πληροφοριών";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Για την ευκολότερη εισαγωγή πληροφοριών, η γραμμή εργαλείων βρίσκεται πλέον στο κάτω μέρος από προεπιλογή.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "Η εξατομικευμένη αρχική σελίδα του Firefox διευκολύνει την επιστροφή στο σημείο που σταματήσατε. Βρείτε τις πρόσφατες καρτέλες, τους σελιδοδείκτες και τα αποτελέσματα αναζήτησής σας.";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Ρυθμίσεις γραμμής εργαλείων";
@@ -308,13 +299,13 @@
 "ErrorPages.Advanced.Button" = "Για προχωρημένους";
 
 /* Warning text when clicking the Advanced button on error pages */
-"ErrorPages.AdvancedWarning1.Text" = "Προειδοποίηση: δεν μπορούμε να επιβεβαιώσουμε ότι η σύνδεσή σας με αυτή την ιστοσελίδα είναι ασφαλής.";
+"ErrorPages.AdvancedWarning1.Text" = "Προειδοποίηση: δεν μπορούμε να επιβεβαιώσουμε ότι η σύνδεσή σας με αυτόν τον ιστότοπο είναι ασφαλής.";
 
 /* Additional warning text when clicking the Advanced button on error pages */
 "ErrorPages.AdvancedWarning2.Text" = "Ενδέχεται να είναι μια λάθος ρύθμιση ή αλλοίωση από τρίτους. Συνεχίστε αν αποδέχεστε τον πιθανό κίνδυνο.";
 
 /* Warning text on the certificate error page */
-"ErrorPages.CertWarning.Description" = "Ο ιδιοκτήτης του %@ δεν έχει ρυθμίσει σωστά την ιστοσελίδα του. Για την προστασία των πληροφοριών σας από κλοπή, το Firefox δεν έχει συνδεθεί σε αυτή την ιστοσελίδα.";
+"ErrorPages.CertWarning.Description" = "Ο ιδιοκτήτης του %@ δεν έχει ρυθμίσει σωστά τον ιστότοπό του. Για την προστασία των πληροφοριών σας από κλοπή, το Firefox δεν έχει συνδεθεί σε αυτόν τον ιστότοπο.";
 
 /* Title on the certificate error page */
 "ErrorPages.CertWarning.Title" = "Αυτή η σύνδεση δεν είναι αξιόπιστη";
@@ -352,14 +343,11 @@
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Αφαίρεση";
 
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Ιστότοποι: %d";
-
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Ρυθμίσεις";
 
 /* The title for the Sponsored Content context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to a support page where users can learn more about Sponsored content and how it works. */
-"FirefoxHomepage.ContextualMenu.SponsoredContent.v101" = "Οι χορηγοί μας & το απόρρητό σας";
+"FirefoxHomepage.ContextualMenu.SponsoredContent.v101" = "Οι χορηγοί μας και το απόρρητό σας";
 
 /* Accessibility action title to open the synced tab for tab pickup on the Firefox homepage in the Jump Back In section. */
 "FirefoxHomepage.JumpBackIn.TabPickup.OpenTab.A11y.v106" = "Άνοιγμα συγχρονισμένης καρτέλας";
@@ -383,7 +371,7 @@
 "FxA.FirefoxAccount" = "Λογαριασμός Firefox";
 
 /* Button label to go to Firefox Account settings */
-"FxA.ManageAccount" = "Διαχείριση λογαριασμού & συσκευών";
+"FxA.ManageAccount" = "Διαχείριση λογαριασμού και συσκευών";
 
 /* Label when no internet is present */
 "FxA.NoInternetConnection" = "Χωρίς σύνδεση στο διαδίκτυο";
@@ -449,7 +437,7 @@
 "HistoryPanel.ClearHistoryMenuOptionTodayAndYesterday" = "Σήμερα και χθες";
 
 /* Title for the History Panel empty state. */
-"HistoryPanel.EmptyState.Title" = "Οι πρόσφατες ιστοσελίδες σας θα εμφανίζονται εδώ.";
+"HistoryPanel.EmptyState.Title" = "Οι ιστότοποι που επισκεφτήκατε πρόσφατα θα εμφανίζονται εδώ.";
 
 /* Description for the empty synced tabs null state in the History Panel */
 "HistoryPanel.EmptySyncedTabsNullState.Description" = "Οι καρτέλες άλλων συσκευών εμφανίζονται εδώ.";
@@ -547,6 +535,9 @@
 /* A label indicating the keyboard shortcut of finding text a user desires within a page again. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
 "Keyboard.Shortcuts.FindAgain" = "Εύρεση ξανά";
 
+/* A label indicating the keyboard shortcut to reload a tab without it's cache. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. */
+"Keyboard.Shortcuts.RefreshWithoutCache.v108" = "Ανανέωση χωρίς κρυφή μνήμη";
+
 /* A label indicating a grouping of related keyboard shortcuts describing actions a user can do with Bookmarks. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
 "Keyboard.Shortcuts.Section.Bookmark" = "Σελιδοδείκτες";
 
@@ -605,7 +596,7 @@
 "LibraryPanel.History.ClearGroupedTabsTitle.v100" = "Διαγραφή όλων των ιστοτόπων στο «%@»;";
 
 /* Within the History Panel, users can open an action menu to clear recent history. */
-"LibraryPanel.History.ClearHistoryMenuTitle.v100" = "Αφαιρεί το ιστορικό (καθώς και το συγχρονισμένο ιστορικό από άλλες συσκευές), τα cookies και άλλα δεδομένα περιήγησης.";
+"LibraryPanel.History.ClearHistoryMenuTitle.v100" = "Αφαιρεί το ιστορικό (καθώς και το συγχρονισμένο ιστορικό από άλλες συσκευές), τα cookie και άλλα δεδομένα περιήγησης.";
 
 /* Within the history panel, a user can navigate into a screen with only grouped history items. Within that screen, a user can now swipe to delete a single item in the list. This label informs the user of a deletion action on the item. */
 "LibraryPanel.History.DeleteGroupedItem.v104" = "Διαγραφή";
@@ -646,9 +637,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Μάθετε περισσότερα";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "Για αποθήκευση και αυτόματη συμπλήρωση στοιχείων σύνδεσης, ενεργοποιήστε το Face ID, το Touch ID ή ένα συνθηματικό.";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "Συνέχεια";
 
@@ -671,7 +659,7 @@
 "LoginsHelper.DontSave.Button" = "Χωρίς αποθήκευση";
 
 /* Button to not update the user's password */
-"LoginsHelper.DontUpdate.Button" = "Να μην γίνει ενημέρωση";
+"LoginsHelper.DontUpdate.Button" = "Να μη γίνει ενημέρωση";
 
 /* Prompt for saving a login. The first parameter is the username being saved. The second parameter is the hostname of the site. */
 "LoginsHelper.PromptSaveLogin.Title" = "Αποθήκευση σύνδεσης %1$@ για %2$@;";
@@ -694,23 +682,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Φίλτρο";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "Οι αποθηκευμένες συνδέσεις θα εμφανίζονται εδώ. Εάν αποθηκεύσατε τις συνδέσεις σας στο Firefox διαφορετικής συσκευής, συνδεθείτε στον λογαριασμό Firefox σας.";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "Δεν βρέθηκαν συνδέσεις";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "Δεν βρέθηκαν αποτελέσματα για την αναζήτησή σας.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "Καμία αντιστοιχία σύνδεσης";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "Ακύρωση";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Αναζήτηση συνδέσεων";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "Επιλέξτε έναν κωδικό πρόσβασης για συμπλήρωση";
@@ -726,9 +702,6 @@
 
 /* Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "Σήμανση ως μη αναγνωσμένο";
-
-/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
-"Menu.AddBookmark.AlternateLabel.v99" = "Προσθήκη σελιδοδείκτη";
 
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "Ο σελιδοδείκτης προστέθηκε";
@@ -791,7 +764,7 @@
 "Menu.Paste.Title" = "Επικόλληση";
 
 /* The title for the button that lets you paste and go to a URL */
-"Menu.PasteAndGo.Title" = "Επικόλληση & μετάβαση";
+"Menu.PasteAndGo.Title" = "Επικόλληση και μετάβαση";
 
 /* Label for the button, displayed in the menu, takes you to to Reading List screen when pressed. */
 "Menu.ReadingList.Label" = "Λίστα ανάγνωσης";
@@ -813,9 +786,6 @@
 
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "Αφαίρεση συντόμευσης";
-
-/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
-"Menu.RemoveReadingList.AlternateLabel.v99" = "Αφαίρεση από λίστα ανάγνωσης";
 
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
 "Menu.RemoveReadingList.Confirm.v99" = "Αφαιρέθηκε από τη λίστα ανάγνωσης";
@@ -851,16 +821,16 @@
 "Menu.TrackingProtectionBlockedSocial.Title" = "Ιχνηλάτες κοινωνικών δικτύων";
 
 /* The title that shows the number of cross-site URLs blocked */
-"Menu.TrackingProtectionCrossSiteTrackers.Title" = "Ιχνηλάτες μεταξύ ιστοσελίδων";
+"Menu.TrackingProtectionCrossSiteTrackers.Title" = "Ιχνηλάτες μεταξύ ιστοτόπων";
 
 /* The title that shows the number of cryptomining scripts blocked */
 "Menu.TrackingProtectionCryptominersBlocked.Title" = "Cryptominers";
 
 /* Description of content trackers. */
-"Menu.TrackingProtectionDescription.ContentTrackers" = "Οι ιστοσελίδες μπορεί να φορτώνουν εξωτερικές διαφημίσεις, βίντεο και άλλο περιεχόμενο με κρυφούς ιχνηλάτες. Η φραγή τους συμβάλλει στην ταχύτερη φόρτωση ιστοσελίδων, αλλά κάποια κουμπιά, φόρμες και πεδία σύνδεσης ίσως να μην λειτουργούν.";
+"Menu.TrackingProtectionDescription.ContentTrackers" = "Οι ιστότοποι μπορεί να φορτώνουν εξωτερικές διαφημίσεις, βίντεο και άλλο περιεχόμενο με κρυφούς ιχνηλάτες. Η φραγή τους συμβάλλει στην ταχύτερη φόρτωση ιστοτόπων, αλλά κάποια κουμπιά, φόρμες και πεδία σύνδεσης ενδέχεται να μη λειτουργούν.";
 
 /* Description of cross-site trackers. */
-"Menu.TrackingProtectionDescription.CrossSiteNew" = "Αυτά τα cookies σας ακολουθούν από ιστοσελίδα σε ιστοσελίδα για να συλλέξουν δεδομένα σχετικά με το τι κάνετε στο διαδίκτυο. Δημιουργούνται από τρίτους, όπως διαφημιστές και εταιρείες ανάλυσης.";
+"Menu.TrackingProtectionDescription.CrossSiteNew" = "Αυτά τα cookie σάς ακολουθούν από ιστότοπο σε ιστότοπο για να συλλέξουν δεδομένα σχετικά με το τι κάνετε στο διαδίκτυο. Δημιουργούνται από τρίτους, όπως διαφημιστές και εταιρείες ανάλυσης.";
 
 /* Description of cryptominers. */
 "Menu.TrackingProtectionDescription.CryptominersNew" = "Τα cryptominers χρησιμοποιούν κρυφά την υπολογιστική ισχύ του συστήματός σας για να εξορύξουν κρυπτονομίσματα. Τα σενάρια εξόρυξης κρυπτονομισμάτων εξαντλούν την μπαταρία σας, επιβραδύνουν τον υπολογιστή σας, ενώ ενδέχεται να δείτε αυξημένες χρεώσεις στο λογαριασμό τους ρεύματος.";
@@ -869,7 +839,7 @@
 "Menu.TrackingProtectionDescription.Fingerprinters" = "Οι ρυθμίσεις στο πρόγραμμα περιήγησης και στον υπολογιστή σας είναι μοναδικές. Τα fingerprinters συλλέγουν πολλές από αυτές τις μοναδικές ρυθμίσεις για να δημιουργήσουν ένα προφίλ για εσάς, το οποίο μπορεί να χρησιμοποιηθεί για να την καταγραφή της περιήγησής σας.";
 
 /* Description of social network trackers. */
-"Menu.TrackingProtectionDescription.SocialNetworksNew" = "Τα κοινωνικά δίκτυα τοποθετούν ιχνηλάτες σε άλλες ιστοσελίδες για να δημιουργήσουν ένα πιο ολοκληρωμένο και στοχευμένο προφίλ για εσάς. Η φραγή ιχνηλατών μειώνει αυτά που βλέπουν οι εταιρείες κοινωνικών μέσων.";
+"Menu.TrackingProtectionDescription.SocialNetworksNew" = "Τα μέσα κοινωνικής δικτύωσης τοποθετούν ιχνηλάτες σε άλλους ιστοτόπους για να δημιουργήσουν ένα πιο ολοκληρωμένο και στοχευμένο προφίλ για εσάς. Ο αποκλεισμός ιχνηλατών μειώνει αυτά που βλέπουν οι εταιρείες μέσω κοινωνικής δικτύωσης.";
 
 /* The title that shows the number of fingerprinting scripts blocked */
 "Menu.TrackingProtectionFingerprintersBlocked.Title" = "Fingerprinters";
@@ -903,63 +873,6 @@
 
 /* Restore Tabs Affirmative Action */
 "Okay" = "Εντάξει";
-
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "Έναρξη";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "Ανεξάρτητο. Μη κερδοσκοπικό. Για έναν καλό σκοπό.";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "Δεσμευόμαστε από την υπόσχεση για ένα καλύτερο διαδίκτυο για όλους.";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "Όχι τώρα";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Description.v106" = "Λάβετε καρτέλες και κωδικούς πρόσβασης από τις άλλες συσκευές σας για να συνεχίσετε από εκεί που σταματήσατε.";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "Παράλειψη";
-
-/* String used to describes the title of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Title.v106" = "Εναλλαγή από τηλέφωνο σε υπολογιστή και αντίστροφα";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "Εγγραφή και σύνδεση";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "Αυτόματος συγχρονισμός καρτελών και σελιδοδεικτών σε όλες τις συσκευές για απρόσκοπτη μετάβαση.";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "Συγχρονισμός για απρόσκοπτη ροή εργασίας";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.Classic.v106" = "Κλασική ταπετσαρία";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "Ταπετσαρία περιορισμένης έκδοσης";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "Εξερευνήστε περισσότερες ταπετσαρίες";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Description.v106" = "Επιλέξτε μια ταπετσαρία ιδανική για εσάς.";
-
-/* Title for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Title.v106" = "Δοκιμάστε μια πινελιά χρώματος";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "Ορισμός ταπετσαρίας";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "Επιλογή ταπετσαρίας Firefox";
-
-/* String used to describes the description of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Description.v106" = "Το Firefox βάζει τους ανθρώπους πάνω από τα κέρδη και υπερασπίζεται το απόρρητό σας εξαρχής.";
-
-/* String used to describes the title of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Title.v106" = "Καλώς ορίσατε σε ένα ανεξάρτητο διαδίκτυο";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "Έναρξη περιήγησης";
@@ -1031,7 +944,7 @@
 "Reading list" = "Λίστα ανάγνωσης";
 
 /* Title for the Recently Closed Tabs Panel */
-"RecentlyClosedTabsPanel.Title" = "Έκλεισα πρόσφατα";
+"RecentlyClosedTabsPanel.Title" = "Έκλεισαν πρόσφατα";
 
 /* More button text for Recently Saved items at the home page. */
 "RecentlySaved.Actions.More" = "Εμφάνιση όλων";
@@ -1106,7 +1019,7 @@
 "Search.ThirdPartyEngines.Cancel" = "Ακύρωση";
 
 /* A message explaining fault in custom search engine form. */
-"Search.ThirdPartyEngines.DuplicateErrorMessage" = "Μια μηχανή αναζήτησης με αυτό τον τίτλο ή το URL έχει ήδη προστεθεί.";
+"Search.ThirdPartyEngines.DuplicateErrorMessage" = "Μια μηχανή αναζήτησης με αυτόν τον τίτλο ή το URL έχει ήδη προστεθεί.";
 
 /* A title stating that we failed to add custom search engine. */
 "Search.ThirdPartyEngines.DuplicateErrorTitle" = "Αποτυχία";
@@ -1125,15 +1038,6 @@
 
 /* The confirmation button */
 "Search.ThirdPartyEngines.OK" = "OK";
-
-/* Accessibility label for default search engine setting. */
-"SearchSettings.Accessibility.DefaultSearchEngine.v106" = "Προεπιλεγμένη μηχανή αναζήτησης";
-
-/* Title for default search engine settings section. */
-"SearchSettings.Title.DefaultSearchEngine.v106" = "Προεπιλεγμένη μηχανή αναζήτησης";
-
-/* Navigation title for search settings. */
-"SearchSettings.Title.Search.v106" = "Αναζήτηση";
 
 /* Message displayed in the crash dialog above the buttons used to select when sending reports */
 "Send a crash report so Mozilla can fix the problem?" = "Αποστολή αναφοράς κατάρρευσης, ώστε να μπορέσει η Mozilla να διορθώσει το πρόβλημα;";
@@ -1244,7 +1148,7 @@
 "Settings.CopyAppVersion.Title" = "Αντιγράφτηκε στο πρόχειρο";
 
 /* Default text in search bar for Data Management */
-"Settings.DataManagement.SearchLabel" = "Φιλτράρισμα ιστοσελίδων";
+"Settings.DataManagement.SearchLabel" = "Φιλτράρισμα ιστοτόπων";
 
 /* Label used as an item in Settings. When touched it will open a dialog prompting the user to make sure they want to clear all of their private data. */
 "Settings.DataManagement.SectionName" = "Διαχείριση δεδομένων";
@@ -1253,7 +1157,7 @@
 "Settings.DataManagement.Title" = "Διαχείριση δεδομένων";
 
 /* Body of the alert when prompting the user asking to disconnect. */
-"Settings.Disconnect.Body" = "Το Firefox θα σταματήσει το συγχρονισμό με το λογαριασμό σας, αλλά δεν θα διαγράψει τα δεδομένα περιήγησής σας από αυτή τη συσκευή.";
+"Settings.Disconnect.Body" = "Το Firefox θα σταματήσει τον συγχρονισμό με τον λογαριασμό σας, αλλά δεν θα διαγράψει τα δεδομένα περιήγησής σας από αυτήν την συσκευή.";
 
 /* Button displayed at the bottom of settings page allowing users to Disconnect from FxA */
 "Settings.Disconnect.Button" = "Αποσύνδεση Sync";
@@ -1331,7 +1235,7 @@
 "Settings.Home.Option.Description.v101" = "Επιλέξτε τι περιλαμβάνεται στην αρχική σελίδα του Firefox.";
 
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle the Jump Back In section on homepage on or off */
-"Settings.Home.Option.JumpBackIn" = "Επιστροφή";
+"Settings.Home.Option.JumpBackIn" = "Άμεση επιστροφή";
 
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Recommendations section on the Firefox homepage on or off */
 "Settings.Home.Option.Pocket" = "Προτάσεις του Pocket";
@@ -1344,9 +1248,6 @@
 
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "Συντομεύσεις";
-
-/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
-"Settings.Home.Option.SponsoredPocket.v103" = "Χορηγούμενα άρθρα";
 
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "Αρχική σελίδα μετά από τέσσερις ώρες αδράνειας";
@@ -1451,7 +1352,7 @@
 "Settings.HomePage.UseCurrent.Button" = "Χρήση τρέχουσας σελίδας";
 
 /* Title for the logins and passwords screen. Translation could just use 'Logins' if the title is too long */
-"Settings.LoginsAndPasswordsTitle" = "Συνδέσεις & κωδικοί πρόσβασης";
+"Settings.LoginsAndPasswordsTitle" = "Συνδέσεις και κωδικοί πρόσβασης";
 
 /* Label used to set a custom url as the new tab option (homepage). */
 "Settings.NewTab.CustomURL" = "Προσαρμοσμένο URL";
@@ -1585,9 +1486,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "OK, το 'πιασα";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Αν μια ιστοσελίδα δεν λειτουργεί όπως πρέπει, πατήστε την ασπίδα στη γραμμή διευθύνσεων και απενεργοποιήστε την ενισχυμένη προστασία από καταγραφή για αυτή τη σελίδα.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Προσοχή!";
 
@@ -1600,11 +1498,8 @@
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Μειώνει τις στοχευμένες διαφημίσεις και εμποδίζει την καταγραφή της περιήγησής σας από διαφημιστές.";
 
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Αν μια ιστοσελίδα δεν λειτουργεί όπως πρέπει, πατήστε την ασπίδα στη γραμμή διευθύνσεων και απενεργοποιήστε την ενισχυμένη προστασία από καταγραφή για αυτή τη σελίδα.";
-
 /* Description for standard level tracker protection */
-"Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Επιτρέπει κάποια καταγραφή διαφημίσεων, ώστε να λειτουργούν σωστά οι ιστοσελίδες.";
+"Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Επιτρέπει κάποια καταγραφή διαφημίσεων, ώστε να λειτουργούν σωστά οι ιστότοποι.";
 
 /* Description for strict level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStrict.Description" = "Αποκλείει περισσότερους ιχνηλάτες, διαφημίσεις και αναδυόμενα. Οι σελίδες φορτώνονται ταχύτερα, αλλά ορισμένες λειτουργίες ενδέχεται να απουσιάζουν.";
@@ -1631,13 +1526,13 @@
 "Settings.WebsiteData.ButtonShowMore" = "Εμφάνιση περισσότερων";
 
 /* Description of the confirmation dialog shown when a user tries to clear their private data. */
-"Settings.WebsiteData.ConfirmPrompt" = "Αυτή η ενέργεια θα διαγράψει όλα τα δεδομένα ιστοσελίδων σας. Δεν μπορεί να αναιρεθεί.";
+"Settings.WebsiteData.ConfirmPrompt" = "Αυτή η ενέργεια θα διαγράψει όλα τα δεδομένα ιστοτόπων σας. Δεν είναι δυνατή η αναίρεσή της.";
 
 /* Description of the confirmation dialog shown when a user tries to clear some of their private data. */
 "Settings.WebsiteData.SelectedConfirmPrompt" = "Αυτή η ενέργεια θα διαγράψει τα επιλεγμένα στοιχεία. Δεν μπορεί να αναιρεθεί.";
 
 /* Title displayed in header of the Data Management panel. */
-"Settings.WebsiteData.Title" = "Δεδομένα ιστοσελίδων";
+"Settings.WebsiteData.Title" = "Δεδομένα ιστοτόπων";
 
 /* Action label on share extension to add page to the Firefox reading list. */
 "ShareExtension.AddToReadingListAction.Title" = "Προσθήκη στη λίστα ανάγνωσης";
@@ -1799,31 +1694,13 @@
 "Twitter" = "Twitter";
 
 /* The menu item that pastes the current contents of the clipboard into the URL bar and navigates to the page */
-"UIMenuItem.PasteGo" = "Επικόλληση & μετάβαση";
+"UIMenuItem.PasteGo" = "Επικόλληση και μετάβαση";
 
 /* Search in New Tab Text selection menu item */
 "UIMenuItem.SearchWithFirefox" = "Αναζήτηση με το Firefox";
 
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "μη αναγνωσμένο";
-
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "Σύνδεση";
-
-/* Description string used to to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Description.v106" = "Συνεχίστε από εκεί που σταματήσατε, με καρτέλες από άλλες συσκευές στην αρχική σας σελίδα.";
-
-/* Title string used to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Title.v106" = "Η εναλλαγή οθονών είναι πιο εύκολη από ποτέ";
-
-/* Describes the action on the first upgrade page in the Upgrade screen. This string will be on a button so user can continue the Upgrade. */
-"Upgrade.Welcome.Action.v106" = "Έναρξη";
-
-/* Description string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Description.v106" = "Νέα χρώματα. Νέα ευκολία. Η ίδια δέσμευση να βάζουμε τον άνθρωπο πάνω από το κέρδος.";
-
-/* Title string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Title.v106" = "Καλώς ορίσατε σε ένα πιο προσωπικό διαδίκτυο";
 
 /* Debug option */
 "Use stage servers" = "Χρήση διακομιστών δοκιμής";
