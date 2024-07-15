@@ -577,20 +577,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "फिल्टर करें";
 
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "कोई लॉगिन नहीं मिला";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "आपकी खोज के अनुरूप कोई परिणाम नहीं मिला है।";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "कोई मिलान लॉगिन नहीं";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "रद्द करें";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "लॉगिन खोजें";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "भरने के लिए एक पासवर्ड चुनें";
