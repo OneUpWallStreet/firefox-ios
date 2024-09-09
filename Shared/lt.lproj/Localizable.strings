@@ -187,12 +187,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Dalintis saitu";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Dabar priemonių juostą galite perkelti į apačią, kad būtų lengviau įvesti informaciją";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Kad būtų lengviau įvesti informaciją, priemonių juosta dabar yra apačioje.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Priemonių juostos nustatymai";
 
@@ -565,9 +559,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Sužinoti daugiau";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "Norėdami įrašyti ir automatiškai užpildyti prisijungimus ir slaptažodžius, įjunkite „Face ID“, „Touch ID“ arba įrenginio apsaugos kodą.";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "Tęsti";
 
@@ -613,23 +604,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Filtras";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "Įrašyti prisijungimai atsiras čia. Jei įrašėte prisijungimus su „Firefox“ kitame įrenginyje, prisijunkite prie savo „Firefox“ paskyros.";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "Prisijungimų nerasta";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "Nėra jūsų paiešką atitinkančių rezultatų.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "Nėra atitinkančių prisijungimų";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "Atsisakyti";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Ieškoti prisijungimų";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "Pasirinkite slaptažodį užpildymui";
@@ -1267,9 +1246,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "Gerai, supratau";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Jei svetainė neveikia tinkamai, bakstelėkite skydo piktogramą adreso juostoje, ir tam tinklalapiui išjunkite išplėstą apsaugą nuo stebėjimo.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Dėmesio!";
 
@@ -1281,9 +1257,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Sumažina tikslinių reklamų kiekį, ir padeda neleisti reklamų tiekėjams sekti jūsų naršymo.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Jei svetainė neveikia tinkamai, bakstelėkite skydo piktogramą adreso juostoje, ir tam tinklalapiui išjunkite išplėstą apsaugą nuo stebėjimo.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Leidžia dalį reklaminių stebėjimo elementų, kad svetainės galėtų tinkamai veikti.";
