@@ -2,5 +2,5 @@
 "%@ search" = "Ricerca %@";
 
 /* Label for search settings button. */
-"Search Settings" = "Preferenze di ricerca";
+"Search Settings" = "Parametri di ricerca";
 
