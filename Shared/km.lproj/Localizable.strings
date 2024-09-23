@@ -478,9 +478,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "ស្វែងយល់​បន្ថែម";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "ដើម្បីរក្សាទុក និង​បំពេញ​ការចូល និង​ពាក្យសម្ងាត់​ស្វ័យប្រវត្តិ​ សូមបើក​ដំណើរការ​ការសម្គាល់​មុខ សម្គាល់​ការបេះ ឬ​លេខ​កូដ​ចូលឧបករណ៍។";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "បន្ត";
 
