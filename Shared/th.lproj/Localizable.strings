@@ -193,15 +193,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "แบ่งปันลิงก์";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "ขณะนี้คุณสามารถย้ายแถบเครื่องมือไปไว้ด้านล่างเพื่อให้ใส่ข้อมูลได้ง่ายขึ้น";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "เพื่อให้ใส่ข้อมูลได้ง่ายขึ้น จึงได้กำหนดแถบเครื่องมือให้อยู่ด้านล่างเป็นค่าเริ่มต้นในขณะนี้";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "ขณะนี้หน้าแรกของ Firefox ที่ปรับแต่งแบบคุณได้รับการปรับปรุงให้คุณสามารถกลับมาดูหน้าเว็บที่คุณดูค้างไว้ได้ง่ายขึ้นแล้ว ค้นหาแท็บ ที่คั่นหน้า และผลการค้นหาล่าสุดของคุณ";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "การตั้งค่าแถบเครื่องมือ";
 
@@ -224,7 +215,7 @@
 "Could not load page." = "ไม่สามารถโหลดหน้า";
 
 /* Description for the new ETP mode i.e. standard vs strict */
-"CoverSheet.v24.ETP.Description" = "การป้องกันการติดตามที่มากขึ้นในตัวช่วยหยุดโฆษณาตามคุณไปในทุกที่ เปิดใช้แบบ เข้มงวด เพื่อเพิ่มการปิดกั้นจากตัวติดตาม โฆษณา และป๊อปอัป";
+"CoverSheet.v24.ETP.Description" = "การป้องกันการติดตามแบบพิเศษในตัวจะช่วยหยุดโฆษณาไม่ให้ตามคุณไปในทุกที่ เปิดใช้แบบเข้มงวดเพื่อปิดกั้นตัวติดตาม โฆษณา และป๊อปอัปได้มากขึ้น";
 
 /* Text for the new ETP settings button */
 "CoverSheet.v24.ETP.Settings.Button" = "ไปยังการตั้งค่า";
@@ -351,9 +342,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "เอาออก";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "ไซต์: %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "การตั้งค่า";
@@ -547,6 +535,9 @@
 /* A label indicating the keyboard shortcut of finding text a user desires within a page again. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
 "Keyboard.Shortcuts.FindAgain" = "ค้นหาอีกครั้ง";
 
+/* A label indicating the keyboard shortcut to reload a tab without it's cache. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. */
+"Keyboard.Shortcuts.RefreshWithoutCache.v108" = "โหลดซ้ำโดยไม่สนใจแคช";
+
 /* A label indicating a grouping of related keyboard shortcuts describing actions a user can do with Bookmarks. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
 "Keyboard.Shortcuts.Section.Bookmark" = "ที่คั่นหน้า";
 
@@ -646,9 +637,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "เรียนรู้เพิ่มเติม";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "หากต้องการบันทึกและป้อนการเข้าสู่ระบบและรหัสผ่านอัตโนมัติ ให้เปิดใช้งาน Face ID, Touch ID หรือรหัสผ่านของอุปกรณ์";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "ดำเนินการต่อ";
 
@@ -694,23 +682,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "ตัวกรอง";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "การเข้าสู่ระบบที่บันทึกไว้จะแสดงที่นี่ หากคุณบันทึกการเข้าสู่ระบบลงใน Firefox บนอุปกรณ์อื่น ให้ลงชื่อเข้าใช้บัญชี Firefox ของคุณ";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "ไม่พบการเข้าสู่ระบบ";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "ไม่มีผลลัพธ์ที่ตรงกับการค้นหาของคุณ";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "ไม่มีการเข้าสู่ระบบที่ตรงกัน";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "ยกเลิก";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "ค้นหาการเข้าสู่ระบบ";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "เลือกรหัสผ่านที่จะเติม";
@@ -726,9 +702,6 @@
 
 /* Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "ทำเครื่องหมายว่ายังไม่ได้อ่าน";
-
-/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
-"Menu.AddBookmark.AlternateLabel.v99" = "เพิ่มที่คั่นหน้า";
 
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "เพิ่มที่คั่นหน้าแล้ว";
@@ -764,10 +737,10 @@
 "Menu.Downloads.Label" = "การดาวน์โหลด";
 
 /* A switch to disable enhanced tracking protection inside the menu. */
-"Menu.EnhancedTrackingProtectionOff.Title" = "การป้องกันถูก ปิด สำหรับไซต์นี้";
+"Menu.EnhancedTrackingProtectionOff.Title" = "การป้องกันปิดอยู่สำหรับไซต์นี้";
 
 /* A switch to enable enhanced tracking protection inside the menu. */
-"Menu.EnhancedTrackingProtectionOn.Title" = "การป้องกันถูก เปิด สำหรับไซต์นี้";
+"Menu.EnhancedTrackingProtectionOn.Title" = "การป้องกันเปิดอยู่สำหรับไซต์นี้";
 
 /* Label for the help button in the menu page. Pressing this button opens the support page https://support.mozilla.org/en-US/products/ios */
 "Menu.Help.v99" = "ช่วยเหลือ";
@@ -813,9 +786,6 @@
 
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "ลบออกจากคำสั่งลัด";
-
-/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
-"Menu.RemoveReadingList.AlternateLabel.v99" = "เอาออกจากรายการอ่าน";
 
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
 "Menu.RemoveReadingList.Confirm.v99" = "เอาออกจากรายการอ่านแล้ว";
@@ -903,63 +873,6 @@
 
 /* Restore Tabs Affirmative Action */
 "Okay" = "ตกลง";
-
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "เริ่มต้นใช้งาน";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "อินดี้ ไม่แสวงหาผลกำไร เพื่อความถูกต้อง";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "มุ่งมั่นที่จะให้อินเทอร์เน็ตที่ดีกว่าสำหรับทุกคน";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "ไม่ใช่ตอนนี้";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Description.v106" = "นำแท็บและรหัสผ่านจากอุปกรณ์อื่น ๆ ของคุณเข้ามาเพื่อเรียกดูต่อจากที่คุณค้างไว้";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "ข้าม";
-
-/* String used to describes the title of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Title.v106" = "สับเปลี่ยนไปมาระหว่างโทรศัพท์กับแล็ปท็อป";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "ลงทะเบียนและเข้าสู่ระบบ";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "ซิงค์แท็บและที่คั่นหน้าในอุปกรณ์ต่าง ๆ โดยอัตโนมัติเพื่อการข้ามหน้าจออย่างราบรื่น";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "ซิงค์เพื่อเรียกดูอย่างต่อเนื่อง";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.Classic.v106" = "วอลล์เปเปอร์แบบคลาสสิก";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "วอลล์เปเปอร์แบบเวลาจำกัด";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "สำรวจวอลล์เปเปอร์เพิ่มเติม";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Description.v106" = "เลือกวอลล์เปเปอร์ที่บ่งบอกความเป็นคุณ";
-
-/* Title for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Title.v106" = "ลองเลือกสีสันที่คุณชอบ";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "ตั้งค่ารูปพื้นหลัง";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "เลือกภาพพื้นหลัง Firefox";
-
-/* String used to describes the description of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Description.v106" = "Firefox ให้ความสำคัญกับผู้คนมากกว่าผลกำไร และปกป้องความเป็นส่วนตัวของคุณโดยอัตโนมัติ";
-
-/* String used to describes the title of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Title.v106" = "ยินดีต้อนรับสู่อินเทอร์เน็ตที่เป็นอิสระ";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "เริ่มการเรียกดู";
@@ -1070,7 +983,7 @@
 "ScanQRCode.Error.OK.Button" = "ตกลง";
 
 /* Text for the instructions label, displayed in the QR scanner view */
-"ScanQRCode.Instructions.Label" = "จัดตำแหน่งรหัส QR ให้อยู่ภายในกรอบเพื่อสแกน";
+"ScanQRCode.Instructions.Label" = "จัดตำแหน่งคิวอาร์โค้ดให้อยู่ภายในกรอบเพื่อสแกน";
 
 /* Text of the prompt that is shown to the user when the data is invalid */
 "ScanQRCode.InvalidDataError.Message" = "ข้อมูลไม่ถูกต้อง";
@@ -1079,7 +992,7 @@
 "ScanQRCode.PermissionError.Message.v100" = "ไปที่ ‘การตั้งค่า’ ของอุปกรณ์ > ‘Firefox’ และอนุญาตให้ Firefox เข้าถึงกล้อง";
 
 /* Title for the QR code scanner view. */
-"ScanQRCode.View.Title" = "สแกนรหัส QR";
+"ScanQRCode.View.Title" = "สแกนคิวอาร์โค้ด";
 
 /* Open search section of settings */
 "Search" = "ค้นหา";
@@ -1125,15 +1038,6 @@
 
 /* The confirmation button */
 "Search.ThirdPartyEngines.OK" = "ตกลง";
-
-/* Accessibility label for default search engine setting. */
-"SearchSettings.Accessibility.DefaultSearchEngine.v106" = "เครื่องมือค้นหาเริ่มต้น";
-
-/* Title for default search engine settings section. */
-"SearchSettings.Title.DefaultSearchEngine.v106" = "เครื่องมือค้นหาเริ่มต้น";
-
-/* Navigation title for search settings. */
-"SearchSettings.Title.Search.v106" = "ค้นหา";
 
 /* Message displayed in the crash dialog above the buttons used to select when sending reports */
 "Send a crash report so Mozilla can fix the problem?" = "ส่งรายงานข้อขัดข้องเพื่อให้ Mozilla สามารถแก้ไขปัญหา?";
@@ -1301,7 +1205,7 @@
 "Settings.DisplayTheme.SwitchTitle" = "โดยอัตโนมัติ";
 
 /* System theme settings section title */
-"Settings.DisplayTheme.SystemTheme.SectionHeader" = "ชุดตกแต่งระบบ";
+"Settings.DisplayTheme.SystemTheme.SectionHeader" = "ชุดรูปแบบของระบบ";
 
 /* System theme settings switch to choose whether to use the same theme as the system */
 "Settings.DisplayTheme.SystemTheme.SwitchTitle" = "ใช้โหมดสว่าง/มืดของระบบ";
@@ -1344,9 +1248,6 @@
 
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "ทางลัด";
-
-/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
-"Settings.Home.Option.SponsoredPocket.v103" = "เรื่องราวที่ได้รับการสนับสนุน";
 
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "หน้าแรกหลังจากไม่มีการใช้งานเป็นเวลา 4 ชั่วโมง";
@@ -1401,6 +1302,9 @@
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the default description of the group of wallpapers that are seasonally available to the user. */
 "Settings.Home.Option.Wallpaper.LimitedEdition.Default.Description.v106" = "ลองชุดสะสมใหม่";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the description of the group of wallpapers that are seasonally available to the user. */
+"Settings.Home.Option.Wallpaper.LimitedEdition.IndependentVoices.Description.v106" = "คอลเลกชันเสียงแห่งอิสระใหม่";
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the title of the group of wallpapers that are seasonally available to the user. */
 "Settings.Home.Option.Wallpaper.LimitedEdition.Title.v106" = "เวลาจำกัด";
@@ -1582,9 +1486,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "ตกลง เข้าใจแล้ว";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "ถ้าเว็บไซต์ไม่ทำงานตามที่คาดไว้ แตะที่โล่ในแถบที่อยู่และปิด การป้องการติดตามที่มากขึ้น สำหรับหน้านั้น";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "ระวัง!";
 
@@ -1596,9 +1497,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "ลดโฆษณาที่กำหนดเป้าหมายและช่วยหยุดผู้โฆษณาไม่ให้ติดตามการเรียกดูของคุณ";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "ถ้าเว็บไซต์ไม่ทำงานตามที่คาดไว้ แตะที่โล่ในแถบที่อยู่และปิด การป้องการติดตามที่มากขึ้น สำหรับหน้านั้น";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "อนุญาตให้มีการติดตามโฆษณาบางส่วนเพื่อให้เว็บไซต์ทำงานได้ถูกต้อง";
@@ -1619,7 +1517,7 @@
 "Settings.TrackingProtectionOption.BlockListStrict" = "เข้มงวด";
 
 /* Settings option to specify that Tracking Protection is on */
-"Settings.TrackingProtectionOption.NormalBrowsingLabelOn" = "การป้องกันการติดตามที่มากขึ้น";
+"Settings.TrackingProtectionOption.NormalBrowsingLabelOn" = "การป้องกันการติดตามแบบพิเศษ";
 
 /* Title of link to help page to find out how to solve Sync issues */
 "Settings.TroubleShootSync.Title" = "แก้ไขปัญหา";
@@ -1803,21 +1701,6 @@
 
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "ยังไม่ได้อ่าน";
-
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "ลงชื่อเข้า";
-
-/* Description string used to to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Description.v106" = "เรียกดูต่อจากที่คุณค้างไว้ด้วยแท็บจากอุปกรณ์อื่นๆ บนหน้าแรกของคุณได้แล้วตอนนี้";
-
-/* Title string used to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Title.v106" = "สลับหน้าจอง่ายกว่าที่เคย";
-
-/* Describes the action on the first upgrade page in the Upgrade screen. This string will be on a button so user can continue the Upgrade. */
-"Upgrade.Welcome.Action.v106" = "เริ่มต้นใช้งาน";
-
-/* Title string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Title.v106" = "ยินดีต้อนรับสู่อินเทอร์เน็ตที่เป็นส่วนตัวมากขึ้น";
 
 /* Debug option */
 "Use stage servers" = "ใช้ stage servers";
