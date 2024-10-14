@@ -7,9 +7,6 @@
 /* Privacy - Camera Usage Description */
 "NSCameraUsageDescription" = "Firefox používa váš fotoaparát na skenovanie QR kódov a snímanie fotografií a videí.";
 
-/* Privacy - Face ID Usage Description */
-"NSFaceIDUsageDescription" = "Pre prístup k uloženým prihláseniam vyžaduje Firefox Face ID.";
-
 /* Privacy - Location When In Use Usage Description */
 "NSLocationWhenInUseUsageDescription" = "Stránky, ktoré navštevujete, môžu žiadať prezradiť vašu polohu.";
 
