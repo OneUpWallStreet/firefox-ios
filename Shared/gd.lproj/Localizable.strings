@@ -64,6 +64,9 @@
 /* Accessibility label for address and search field, both words (Address, Search) are therefore nouns. */
 "Address and Search" = "Seòladh is lorg";
 
+/* Accessibility label for action adding current page to reading list. */
+"Address.Bar.ReadingList.v106" = "Cuir ris an liosta-leughaidh";
+
 /* Accessibility label for the Address Bar, where a user can enter the search they wish to make */
 "Address.Bar.v99" = "Bàr an t-seòlaidh";
 
@@ -190,12 +193,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Co-roinn an ceangal";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "’S urrainn dhut am bàr-inneal a ghluasad gun bhonn a-nis airson ’s gum bi e nas fhasa fiosrachadh a chur a-steach";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Tha am bàr-inneal aig a’ bhonn a-nis a ghnàth airson ’s gum bi e nas fhasa fiosrachadh a chur a-steach.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Roghainnean a’ bhàr-inneal";
 
@@ -204,6 +201,9 @@
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is the call to action for the inactive tabs contextual popup. */
 "ContextualHints.TabTray.InactiveTabs.CallToAction" = "Cuir dheth sna roghainnean";
+
+/* Accessibility label for action denoting closing contextual hint. */
+"ContextualHintsCloseButtonAccessibility.v105" = "Dùin";
 
 /* Accessibility message e.g. spoken by VoiceOver after adding current webpage to the Reading List failed. */
 "Could not add page to Reading list" = "Cha b’ urrainn dhuinn an duilleag a chur ris an liosta-leughaidh";
@@ -343,14 +343,14 @@
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Thoir air falbh";
 
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Làraichean: %d";
-
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Roghainnean";
 
 /* The title for the Sponsored Content context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to a support page where users can learn more about Sponsored content and how it works. */
 "FirefoxHomepage.ContextualMenu.SponsoredContent.v101" = "Na sponsairean againn ⁊ do phrìobhaideachd";
+
+/* Accessibility action title to open the synced tab for tab pickup on the Firefox homepage in the Jump Back In section. */
+"FirefoxHomepage.JumpBackIn.TabPickup.OpenTab.A11y.v106" = "Fosgail an taba sioncronaichte";
 
 /* Button title shown for tab pickup on the Firefox homepage in the Jump Back In section. */
 "FirefoxHomepage.JumpBackIn.TabPickup.ShowAll.ButtonTitle.v104" = "Seall gach taba sioncronaichte";
@@ -535,6 +535,9 @@
 /* A label indicating the keyboard shortcut of finding text a user desires within a page again. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
 "Keyboard.Shortcuts.FindAgain" = "Lorg a-rithist";
 
+/* A label indicating the keyboard shortcut to reload a tab without it's cache. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. */
+"Keyboard.Shortcuts.RefreshWithoutCache.v108" = "Ath-luchdaich ach a’ leigeil seachad an tasgadain";
+
 /* A label indicating a grouping of related keyboard shortcuts describing actions a user can do with Bookmarks. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
 "Keyboard.Shortcuts.Section.Bookmark" = "Comharran-lìn";
 
@@ -576,6 +579,12 @@
 
 /* This label is meant to signify the section containing a group of items from the past seven days. */
 "Last week" = "An t-seachdain seo chaidh";
+
+/* Panel accessibility label */
+"LibraryPanel.Accessibility.Bookmarks.v106" = "Comharran-lìn";
+
+/* Panel accessibility label */
+"LibraryPanel.Accessibility.History.v106" = "Eachdraidh";
 
 /* Within the History Panel, users can delete search group sites history. They can cancel this action by pressing a cancel button. */
 "LibraryPanel.History.ClearGroupedTabsCancel.v100" = "Sguir dheth";
@@ -628,9 +637,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Barrachd fiosrachaidh";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "Airson clàraidhean a-steach is faclan-faire a shàbhaladh, cuir ID aodainn, ID suathaidh no còd-faire uidheim an comas.";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "Lean air adhart";
 
@@ -676,23 +682,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Criathrag";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "Nochdaidh clàraidhean a-steach a shàbhail thu an-seo. Ma shàbhail thu clàradh a-steach ann am Firefox air uidheam eile, clàraich a-steach dhan chunntas Firefox agad.";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "Cha deach clàradh a-steach a lorg";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "Chan eil toradh ann a tha a’ freagairt ris na lorg thu.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "Chan eil clàradh a-steach ann a tha a’ freagairt ris na lorg thu";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "Sguir dheth";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Lorg sna clàraidhean a-steach";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "Tagh facal-faire airson a lìonadh";
@@ -708,9 +702,6 @@
 
 /* Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "Comharraich nach deach a leughadh";
-
-/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
-"Menu.AddBookmark.AlternateLabel.v99" = "Cuir comharra-lìn ris";
 
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "Chaidh an comharra-lìn a chur ris";
@@ -744,6 +735,12 @@
 
 /* Label for the button, displayed in the menu, takes you to to Downloads screen when pressed. */
 "Menu.Downloads.Label" = "Luchdaidhean a-nuas";
+
+/* A switch to disable enhanced tracking protection inside the menu. */
+"Menu.EnhancedTrackingProtectionOff.Title" = "Tha an dìon DHETH air an làrach seo";
+
+/* A switch to enable enhanced tracking protection inside the menu. */
+"Menu.EnhancedTrackingProtectionOn.Title" = "Tha an dìon AIR air an làrach seo";
 
 /* Label for the help button in the menu page. Pressing this button opens the support page https://support.mozilla.org/en-US/products/ios */
 "Menu.Help.v99" = "Cobhair";
@@ -789,9 +786,6 @@
 
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "Chaidh a thoirt air falbh on na h-ath-ghoiridean";
-
-/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
-"Menu.RemoveReadingList.AlternateLabel.v99" = "Thoir air falbh on liosta-leughaidh";
 
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
 "Menu.RemoveReadingList.Confirm.v99" = "Air a thoirt air falbh on liosta-leughaidh";
@@ -842,13 +836,13 @@
 "Menu.TrackingProtectionDescription.CryptominersNew" = "Cleachdaidh criopto-mhèinneadairean comasan an t-siostaim agad airson airgead digiteach a chosnadh gun fhiosta. Traoghaidh criopto-mhèinneadairean am bataraidh agad, nì iad an coimpiutair agad slaodach agus faodaidh gun èirich cosgaisean dealain dhut.";
 
 /* Description of fingerprinters. */
-"Menu.TrackingProtectionDescription.Fingerprinters" = "Tha na roghainnean àraidh aig a’ bhrabhsair agus aig a’ choimpiutair agad. Tha lorgaichean-meur ann a chruinnicheas badan dhe na roghainnean àraidh seo airson pròifil a chruthachadh dhìot agus gabhaidh do thracadh air an lìon leotha.";
+"Menu.TrackingProtectionDescription.Fingerprinters" = "Tha na roghainnean àraidh aig a’ bhrabhsair agus aig a’ choimpiutair agad. Tha lorgairean-meòir ann a chruinnicheas badan dhe na roghainnean àraidh seo airson pròifil a chruthachadh dhìot agus gabhaidh do thracadh air an lìon leotha.";
 
 /* Description of social network trackers. */
 "Menu.TrackingProtectionDescription.SocialNetworksNew" = "Cuiridh lìonraidhean sòisealta tracaichean air làraichean-lìn eile airson pròifil nas iomlaine dhìot a chruthachadh. Ma bhacas tu na tracaichean seo, chì companaidhean nam meadhan sòisealta nas lugha dhe na nì thu air loidhne.";
 
 /* The title that shows the number of fingerprinting scripts blocked */
-"Menu.TrackingProtectionFingerprintersBlocked.Title" = "Lorgaichean-meur";
+"Menu.TrackingProtectionFingerprintersBlocked.Title" = "Lorgairean-meòir";
 
 /* The title for the option to view the What's new page. */
 "Menu.WhatsNew.Title" = "Na tha ùr";
@@ -879,33 +873,6 @@
 
 /* Restore Tabs Affirmative Action */
 "Okay" = "Ceart ma-thà";
-
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "Dèan toiseach-tòiseachaidh";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "Neo-eisimeileach, chan ann a chùm prothaid ach math chàch.";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "An dealas ri eadar-lìon nas fheàrr do chàch.";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "Chan ann an-dràsta";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "Clàraich is clàraich a-steach an uair sin";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "Sioncronaich na tabaichean is comharran-lìn gu fèin-obrachail air feadh uidheaman airson leum eadar uidheaman gun chnap-starra.";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "Dèan sioncronachadh is cuir às dha na cnapan-starra";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "Suidhich pàipear-balla";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "Tagh pàipear-balla Firefox";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "Tòisich air brabhsadh";
@@ -966,6 +933,12 @@
 
 /* Accessibility message e.g. spoken by VoiceOver when Reader Mode becomes available. */
 "ReaderMode.Available.VoiceOverAnnouncement" = "Tha modh leughadair ri làimh";
+
+/* Name for Mark as read button in reader mode */
+"ReaderModeBar.MarkAsRead.v106" = "Cuir comharra air gun deach a leughadh";
+
+/* Name for Mark as unread button in reader mode */
+"ReaderModeBar.MarkAsUnread.v106" = "Comharraich nach deach a leughadh";
 
 /* Panel accessibility label */
 "Reading list" = "An liosta leughaidh";
@@ -1077,6 +1050,9 @@
 
 /* Button title for cancelling share screen */
 "SendTo.Cancel.Button" = "Sguir dheth";
+
+/* Close button in top navigation bar */
+"SendTo.Close.Button" = "Dùin";
 
 /* Header for the list of devices table */
 "SendTo.DeviceList.Text" = "Uidheaman a tha ri làimh:";
@@ -1216,6 +1192,9 @@
 /* Display (theme) settings footer describing how the brightness slider works. */
 "Settings.DisplayTheme.SectionFooter" = "Thèid an t-ùrlar atharrachadh gu fèin-obrachail a-rèir soilleireachd na sgrìn agad. ’S urrainn dhut stairsneach a shuidheachadh aig an atharraich an t-ùrlar. Tha an cearcall ag innse dè cho soilleir ’s a tha an sgrìn agad an-dràsta.";
 
+/* Display (theme) settings label to show if automatically switch theme is enabled. */
+"Settings.DisplayTheme.StatusTitle" = "Fèin-obrachail";
+
 /* Switch mode settings section title */
 "Settings.DisplayTheme.SwitchMode.SectionHeader" = "Leum gu modh eile";
 
@@ -1270,9 +1249,6 @@
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "Ath-ghoiridean";
 
-/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
-"Settings.Home.Option.SponsoredPocket.v103" = "Sgeulachdan sponsairichte";
-
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "An duilleag-dhachaigh an dèidh ceithir uairean a thìde gun ghnìomhachd";
 
@@ -1315,8 +1291,23 @@
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the title accessibility string for the twilight hills firefox wallpaper. */
 "Settings.Home.Option.Wallpaper.Accessibility.TwilightHillsWallpaper.v100" = "Pàipear-balla Firefox, pàtran chnoc sa chamhanaich.";
 
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the title of the group of wallpapers that are always available to the user. The %@ will be replaced by the app name and thus doesn't need translation. */
+"Settings.Home.Option.Wallpaper.Classic.Title.v106" = "%@ clasaigeach";
+
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the title of the section that allows users to change the wallpaper settings for the application. */
 "Settings.Home.Option.Wallpaper.CollectionTitle" = "AN SGRÌN FOSGLAIDH";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the button title of the group of wallpapers that are seasonally available to the user. */
+"Settings.Home.Option.Wallpaper.LearnMore.v106" = "Barrachd fiosrachaidh";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the default description of the group of wallpapers that are seasonally available to the user. */
+"Settings.Home.Option.Wallpaper.LimitedEdition.Default.Description.v106" = "Feuch an cruinneachadh ùr.";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the description of the group of wallpapers that are seasonally available to the user. */
+"Settings.Home.Option.Wallpaper.LimitedEdition.IndependentVoices.Description.v106" = "Cruinneachadh ùr nan guthan neo-eisimeileach.";
+
+/* In the settings menu, on the Firefox wallpaper customization screen, this is the title of the group of wallpapers that are seasonally available to the user. */
+"Settings.Home.Option.Wallpaper.LimitedEdition.Title.v106" = "Tionndadh cuingichte";
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the string titling the switch button's function, which allows a user to toggle wallpaper switching from the homepage logo on or off. */
 "Settings.Home.Option.Wallpaper.SwitchTitle.v99" = "Atharraich am pàipear-balla le bhith a’ toirt gnogag air suaicheantas duilleag-dhachaigh Firefox";
@@ -1495,9 +1486,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "Ceart, tha mi agaibh";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Mur eil làrach ag obair mar bu chòir, thoir gnogag air an sgiath ann am bàr an t-seòlaidh agus cuir dheth an dìon leasaichte o thracadh air an duilleag sin.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "An aire!";
 
@@ -1509,9 +1497,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Lùghdaichidh seo an t-sanasachd thargaidichte agus cuiridh e bacadh air luchd-sanasachd o bhith a’ tracadh na nì thu air an lìon.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Mur eil làrach ag obair mar bu chòir, thoir gnogag air an sgiath ann am bàr an t-seòlaidh agus cuir dheth an dìon leasaichte o thracadh air an duilleag sin.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Bheir seo cead do chuid a thracadh sanasachd ach an obraich làraichean-lìn mar bu chòir.";
@@ -1621,6 +1606,9 @@
 /* Accessibility title for the inactive tabs section button when section is open. This section groups all tabs that haven't been used in a while. */
 "TabsTray.InactiveTabs.SectionTitle.Opened.Accessibility.v103" = "Falaich na tabaichean neo-ghnìomhach";
 
+/* Accessibility Label for the tab toolbar Search button */
+"TabToolbar.Accessibility.Search.v106" = "Lorg";
+
 /* Accessibility label for the Add Tab button in the Tab Tray. */
 "TabTray.AddTab.Button" = "Cuir taba ris";
 
@@ -1651,6 +1639,9 @@
 /* The title for the tab tray */
 "TabTray.Title" = "Tabaichean fosgailte";
 
+/* Accessibility Label for the tabs button in the tab toolbar */
+"TabTrayButtons.Accessibility.ShowTabs.v106" = "Seall na tabaichean";
+
 /* Message displayed when the reader mode page could not be loaded. This message will appear only when sharing to Firefox reader mode from another app. */
 "The page could not be displayed in Reader View." = "Cha b’ urrainn dhuinn an duilleag a thaisbeanadh ann an sealladh an leughadair.";
 
@@ -1662,6 +1653,9 @@
 
 /* Relative date for date in past week. */
 "this week" = "an t-seachdain-sa";
+
+/* Relative date for yesterday. */
+"TimeConstants.Yesterday.v106" = "an-dè";
 
 /* label for Not Now button */
 "Toasts.NotNow" = "Chan ann an-dràsta";
@@ -1713,6 +1707,24 @@
 
 /* Username textbox in Authentication prompt */
 "Username" = "Ainm-cleachdaiche";
+
+/* The message of the error displayed to a user when they trying to change a wallpaper failed. */
+"Wallpaper.Change.Error.Body.v106" = "Chaidh rud-eigin ceàrr leis a’ phàipear-bhalla seo.";
+
+/* The title of the error displayed when changing wallpaper fails. */
+"Wallpaper.Change.Error.Title.v106" = "Cha b’ urrainn dhuinn am pàipear-balla atharrachadh";
+
+/* The message of the error displayed to a user when they try change a wallpaper that failed downloading. */
+"Wallpaper.Download.Error.Body.v106" = "Chaidh rud-eigin ceàrr leis an luchdadh a-nuas.";
+
+/* The title of the error displayed if download fails when changing a wallpaper. */
+"Wallpaper.Download.Error.Title.v106" = "Cha b’ urrainn dhuinn am pàipear-balla a luchdadh a-nuas";
+
+/* An action for the error displayed to a user when they trying to change a wallpaper failed. */
+"Wallpaper.Error.Dismiss.v106" = "Sguir dheth";
+
+/* Action displayed when changing wallpaper fails. */
+"Wallpaper.Error.TryAgain.v106" = "Feuch ris a-rithist";
 
 /* Accessibility label for the main web content view */
 "Web content" = "Susbaint-lìn";
