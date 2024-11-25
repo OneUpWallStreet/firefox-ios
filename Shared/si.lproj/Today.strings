@@ -28,9 +28,6 @@
 /* Open New Private Tab button label */
 "TodayWidget.PrivateTabButtonLabelV1" = "පෞද්. සෙවුම";
 
-/* Description for small size widget to add it to home screen */
-"TodayWidget.QuickActionGalleryDescription" = "ඔබගේ මුල් තිරයට ෆයර්ෆොක්ස් කෙටිමඟක් යොදන්න. එය එකතු කළ පසුව, සංස්කරණය කිරීමට ස්පර්ශ කරගෙන සිට වෙනස් කෙටිමඟක් තෝරන්න.";
-
 /* Quick Actions title when widget enters edit mode */
 "TodayWidget.QuickActionsGalleryTitle" = "ඉක්මන් ක්‍රියාමාර්ග";
 
@@ -38,7 +35,7 @@
 "TodayWidget.QuickActionsGalleryTitleV2" = "ෆයර්ෆොක්ස් කෙටිමං";
 
 /* Description for Quick View widget in Gallery View where user can add it to home screen */
-"TodayWidget.QuickViewGalleryDescriptionV2" = "විවෘත පටිති වෙත කෙටිමං යොදන්න.";
+"TodayWidget.QuickViewGalleryDescriptionV2" = "විවෘත පටිති වෙත කෙටිමං දමන්න.";
 
 /* Title for Quick View widget in Gallery View where user can add it to home screen */
 "TodayWidget.QuickViewGalleryTitle" = "ඉක්මන් දැක්ම";
