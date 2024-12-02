@@ -5,10 +5,10 @@
 "+" = "+";
 
 /* Authentication prompt message with no realm. Parameter is the hostname of the site */
-"A username and password are being requested by %@." = "ᱢᱤᱫᱴᱟᱹᱝ ᱵᱮᱵᱷᱟᱨᱤᱭᱟ ᱟᱨ ᱫᱟᱱᱟᱝ ᱥᱟᱵᱟᱫᱽ %@ ᱮ ᱱᱮᱦᱚᱨ ᱟᱠᱟᱫᱟᱭ ᱾";
+"A username and password are being requested by %@." = "ᱢᱤᱫᱴᱟᱝ ᱵᱮᱵᱷᱟᱨᱤᱭᱟ ᱟᱨ ᱫᱟᱱᱟᱝ ᱥᱟᱵᱟᱫᱽ %@ ᱮ ᱱᱮᱦᱚᱨ ᱟᱠᱟᱫᱟᱭ ᱾";
 
 /* Authentication prompt message with a realm. First parameter is the hostname. Second is the realm string */
-"A username and password are being requested by %@. The site says: %@" = "ᱢᱤᱫᱴᱟᱹᱝ ᱵᱮᱵᱷᱟᱨᱤᱭᱟ ᱟᱨ ᱫᱟᱫᱟᱝ ᱥᱟᱵᱟᱫᱽ %1$@ ᱮ ᱱᱮᱦᱚᱨ ᱟᱠᱟᱫᱟᱭ ᱾ ᱥᱟᱭᱤᱴ ᱮ ᱢᱮᱱᱮᱫᱟᱭᱺ%2$@";
+"A username and password are being requested by %@. The site says: %@" = "ᱢᱤᱫᱴᱟᱝ ᱵᱮᱵᱷᱟᱨᱤᱭᱟ ᱟᱨ ᱫᱟᱫᱟᱝ ᱥᱟᱵᱟᱫᱽ %1$@ ᱮ ᱱᱮᱦᱚᱨ ᱟᱠᱟᱫᱟᱭ ᱾ ᱥᱟᱭᱤᱴ ᱮ ᱢᱮᱱᱮᱫᱟᱭᱺ%2$@";
 
 /* Button for reader mode font size. Keep this extremely short! This is shown in the reader mode toolbar. */
 "Aa" = "Aa";
@@ -36,9 +36,6 @@
 
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "ᱦᱟᱹᱞᱤ ᱨᱮ ᱦᱤᱨᱤᱭᱟᱠᱟᱱᱟ";
-
-/* Section title label for Shortcuts */
-"ActivityStream.Shortcuts.SectionTitle" = "ᱠᱷᱟᱴᱚᱢᱟᱪᱷᱟ";
 
 /* The title for the setting page which lets you select the number of top site rows */
 "ActivityStream.TopSites.RowSettingFooter" = "ᱛᱷᱟᱨ ᱫᱚᱦᱚᱭ ᱢᱮ";
@@ -182,7 +179,7 @@
 "ContextMenu.CopyLinkButtonTitle" = "ᱞᱤᱝᱠ ᱱᱚᱠᱚᱞ ᱢᱮ";
 
 /* Context menu item for downloading a link URL */
-"ContextMenu.DownloadLinkButtonTitle" = "ᱰᱟᱩᱱᱞᱚᱰ ᱞᱤᱝᱠ";
+"ContextMenu.DownloadLinkButtonTitle" = "ᱰᱟᱣᱱᱞᱚᱰ ᱞᱤᱝᱠ";
 
 /* Context menu item for opening a link in a new tab */
 "ContextMenu.OpenInNewTabButtonTitle" = "ᱱᱟᱶᱟ ᱴᱮᱵᱽ ᱨᱮ ᱠᱷᱩᱞᱟᱹᱭ ᱢᱮ";
@@ -192,15 +189,6 @@
 
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "ᱞᱤᱝᱠ ᱦᱟᱹᱴᱤᱧᱟᱜ ᱢᱮ";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "ᱱᱤᱛᱚᱜ ᱫᱚ ᱟᱢ ᱦᱟᱹᱛᱤᱭᱟᱨ ᱵᱟᱨ ᱞᱟᱛᱟᱨ ᱥᱮᱫ ᱩᱪᱟᱹᱲ ᱫᱟᱲᱮᱭᱟᱜᱼᱟᱢ, ᱢᱮᱱᱠᱷᱟᱱ ᱡᱤᱱᱤᱥ ᱟᱫᱮᱨ ᱟᱞᱜᱟᱜᱼᱟ ᱾";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "ᱡᱤᱱᱤᱥ ᱟᱫᱮᱨ ᱟᱞᱜᱟ ᱛᱮᱭᱟᱨ ᱞᱟᱹᱜᱤᱫ, ᱦᱟᱹᱛᱤᱭᱟᱹᱨ ᱵᱟᱨ ᱫᱚ ᱢᱩᱞ ᱦᱤᱥᱟᱹᱵᱽ ᱛᱮ ᱞᱟᱛᱟᱨ ᱨᱮ ᱢᱮᱱᱟᱜᱼᱟ ᱾";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "ᱟᱢᱟᱜ ᱢᱚᱱᱮᱛᱮᱭᱟᱜ Firefox ᱚᱲᱟᱜᱥᱟᱦᱴᱟ ᱫᱚ ᱱᱤᱛᱚᱜ ᱡᱟᱦᱟᱸ ᱨᱮ ᱟᱲᱟᱜ ᱠᱟᱜᱼᱟᱢ ᱚᱱᱰᱮ ᱜᱮ ᱤᱫᱤ ᱢᱮᱭᱟᱭ ᱾ ᱟᱢᱟᱜ ᱱᱤᱛᱚᱜᱟᱜ ᱴᱮᱵᱽ ᱠᱚ, ᱵᱩᱠᱢᱟᱨᱠ ᱠᱚ ᱟᱨ ᱥᱮᱸᱫᱽᱨᱟ ᱠᱚ ᱯᱟᱱᱛᱮ ᱛᱟᱢ ᱾";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "ᱦᱟᱹᱛᱤᱭᱟᱹᱨ ᱵᱟᱨ ᱨᱮᱭᱟᱜ ᱥᱟᱡᱟᱣ ᱠᱚ";
@@ -233,7 +221,7 @@
 "CoverSheet.v24.ETP.Title" = "Ad ᱯᱟᱸᱡᱟ ᱵᱤᱨᱩᱫᱷ ᱛᱮ ᱨᱚᱯᱷᱟ";
 
 /* See http://mzl.la/1Qtkf0j */
-"Create an account" = "ᱢᱤᱫᱴᱟᱹᱝ ᱠᱷᱟᱛᱟ ᱛᱮᱭᱟᱨ ᱢᱮ";
+"Create an account" = "ᱢᱤᱫᱴᱟᱝ ᱠᱷᱟᱛᱟ ᱛᱮᱭᱟᱨ ᱢᱮ";
 
 /* Dark theme setting in Reading View settings */
 "Dark" = "ᱦᱮᱸᱫᱮ";
@@ -257,7 +245,7 @@
 "Done" = "ᱦᱩᱭᱮᱱᱟ";
 
 /* Panel accessibility label */
-"Downloads" = "ᱰᱟᱩᱱᱞᱚᱰ ᱠᱚ";
+"Downloads" = "ᱰᱟᱣᱱᱞᱚᱰ ᱠᱚ";
 
 /* The label of the button the user will press to start downloading a file */
 "Downloads.Alert.DownloadNow" = "ᱱᱤᱛᱚᱜ ᱚᱛᱩᱨ ᱟᱲᱜᱩᱤ ᱢᱮ";
@@ -281,7 +269,7 @@
 "Downloads.Toast.Failed.LabelText" = "ᱟᱹᱛᱩᱨ ᱟᱲᱜᱚ ᱲᱤᱜᱟᱣᱮᱱᱟ";
 
 /* The button to open a new tab with the Downloads home panel */
-"Downloads.Toast.GoToDownloads.Button" = "ᱰᱟᱩᱱᱞᱳᱰ";
+"Downloads.Toast.GoToDownloads.Button" = "ᱰᱟᱣᱱᱞᱳᱰ";
 
 /* The description text in the Download progress toast for showing the number of files when multiple files are downloading. */
 "Downloads.Toast.MultipleFiles.DescriptionText" = "%d ᱨᱮᱫ ᱠᱷᱚᱱ 1";
@@ -352,9 +340,6 @@
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "ᱚᱪᱚᱜᱽ ᱢᱮ";
 
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "ᱥᱟᱭᱤᱴ : %d";
-
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "ᱥᱟᱡᱟᱣ ᱠᱚ";
 
@@ -422,7 +407,7 @@
 "FxAPush_DeviceDisconnected_title" = "ᱛᱷᱟᱨ ᱵᱟᱰ ᱡᱚᱲᱟᱣᱮᱱᱟ";
 
 /* Body of a notification displayed when unnamed device has been disconnected from FxA. */
-"FxAPush_DeviceDisconnected_UnknownDevice_body" = "ᱢᱤᱫᱴᱟᱹᱝ ᱥᱟᱫᱷᱚᱱ ᱵᱟᱰ ᱡᱚᱲᱟᱣᱮᱱᱟ Firefox ᱛᱚᱞ ᱡᱚᱠᱷᱟ ᱠᱷᱚᱱ";
+"FxAPush_DeviceDisconnected_UnknownDevice_body" = "ᱢᱤᱫᱴᱟᱝ ᱥᱟᱫᱷᱚᱱ ᱵᱟᱰ ᱡᱚᱲᱟᱣᱮᱱᱟ Firefox ᱛᱚᱞ ᱡᱚᱠᱷᱟ ᱠᱷᱚᱱ";
 
 /* On the firefox homepage, the string read by the voice over prompt for accessibility, for the button which changes the wallpaper */
 "FxHomepage.Wallpaper.ButtonLabel.v99" = "Firefox ᱪᱤᱱᱦᱟᱹᱯ, ᱠᱟᱸᱛᱷᱥᱟᱦᱴᱟ ᱾";
@@ -560,7 +545,7 @@
 "Keyboard.Shortcuts.Section.Tools" = "ᱦᱟᱹᱛᱤᱭᱟᱹᱨ ᱠᱚ";
 
 /* A label indicating a grouping of related keyboard shortcuts describing actions a user can take when navigating between their availale set of tabs. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
-"Keyboard.Shortcuts.Section.Window" = "ᱡᱷᱚᱨᱠᱟ";
+"Keyboard.Shortcuts.Section.Window" = "ᱣᱤᱱᱰᱳ";
 
 /* A label indicating the keyboard shortcut of opening the application's settings menu. This label is displayed inside the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
 "Keyboard.Shortcuts.Settings" = "ᱥᱟᱡᱟᱣ ᱠᱚ";
@@ -569,7 +554,7 @@
 "Keyboard.Shortcuts.ShowBookmarks" = "ᱵᱩᱠᱢᱟᱨᱠ ᱠᱚ ᱫᱮᱠᱷᱟᱣ ᱢᱮ";
 
 /* A label indcating the keyboard shortcut of showing all downloads. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
-"Keyboard.Shortcuts.ShowDownloads" = "ᱰᱟᱩᱱᱞᱚᱰ ᱠᱚ ᱫᱮᱠᱷᱟᱣ ᱢᱮ";
+"Keyboard.Shortcuts.ShowDownloads" = "ᱰᱟᱣᱱᱞᱚᱰ ᱠᱚ ᱫᱮᱠᱷᱟᱣ ᱢᱮ";
 
 /* A label indicating the keyboard shortcut to switch from the current tab to the first tab. This label is displayed in the Discoverability overlay when a user presses the Command key. The Discoverability overlay and shortcut become available only when a user has connected a hardware keyboard to an iPad. See https://drive.google.com/file/d/1gH3tbvDceg7yG5N67NIHS-AXgDgCzBHN/view?usp=sharing for more details. */
 "Keyboard.Shortcuts.ShowFirstTab" = "ᱯᱩᱭᱞᱩ ᱴᱮᱵᱽ ᱫᱮᱠᱷᱟᱣ ᱢᱮ";
@@ -649,9 +634,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "ᱰᱷᱮᱨ ᱥᱮᱬᱟᱭ ᱢᱮ";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "ᱵᱚᱞᱚ ᱠᱚ ᱟᱨ ᱫᱟᱱᱟᱝ ᱥᱟᱵᱟᱫᱽ ᱠᱚ ᱥᱟᱺᱪᱟᱣ ᱞᱟᱹᱜᱤᱫ, ᱢᱚᱦᱲᱟ ID, ᱴᱤᱯᱟᱹᱶ ID ᱟᱨᱵᱟᱝᱠᱷᱟᱱ ᱢᱤᱫᱴᱟᱹᱝ ᱥᱟᱫᱷᱚᱱ ᱫᱟᱱᱟᱝᱠᱳᱰ ᱥᱟᱺᱪᱟᱣ ᱢᱮ ᱾";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "ᱞᱟᱦᱟᱜ ᱢᱮ";
 
@@ -697,23 +679,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "ᱪᱷᱟᱹᱱᱤ";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "ᱥᱟᱺᱪᱟᱣ ᱠᱟᱱ ᱞᱚᱜᱤᱱ ᱠᱚ ᱱᱚᱰᱮ ᱫᱮᱠᱷᱟᱣᱜᱼᱟ ᱾ ᱡᱩᱫᱤ ᱟᱢ ᱵᱷᱮᱜᱟᱨ ᱥᱟᱫᱷᱚᱱ ᱨᱮ Firefox ᱨᱮᱭᱟᱜ ᱵᱚᱞᱚ ᱠᱚ ᱥᱟᱺᱪᱟᱣ ᱟᱠᱟᱫᱟᱢ, Firefox ᱠᱷᱟᱛᱟ ᱨᱮ ᱥᱩᱦᱤ ᱮᱢ ᱢᱮ ᱾";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "ᱵᱚᱞᱚ ᱠᱚ ᱵᱟᱭ ᱧᱟᱢ ᱞᱮᱱᱟ";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "ᱟᱢᱟᱜ ᱥᱮᱸᱫᱽᱨᱟ ᱥᱟᱞᱟᱜ ᱢᱮᱲᱟᱣᱜ ᱠᱟᱱ ᱛᱮᱞᱟ ᱵᱟᱭ ᱧᱟᱢ ᱞᱟᱱᱟ ᱾";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "ᱵᱚᱞᱚ ᱠᱚ ᱵᱟᱝ ᱢᱮᱲᱟᱣᱜ ᱠᱟᱱᱟ";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "ᱵᱟᱹᱰᱨᱟᱹ";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "ᱞᱚᱜᱤᱱ ᱠᱚ ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "ᱯᱩᱨᱟᱹᱣ ᱞᱟᱹᱜᱤᱫ ᱫᱟᱱᱟᱝ ᱥᱟᱵᱟᱫᱽ ᱵᱟᱪᱷᱟᱣ ᱢᱮ";
@@ -729,9 +699,6 @@
 
 /* Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "ᱵᱟᱲ ᱯᱟᱲᱦᱟᱣ ᱞᱮᱠᱟ ᱪᱤᱸᱦᱟᱭ ᱢᱮ";
-
-/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
-"Menu.AddBookmark.AlternateLabel.v99" = "ᱵᱩᱠᱢᱟᱨᱠ ᱥᱮᱞᱮᱫᱽ ᱢᱮ";
 
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "ᱵᱩᱩᱠᱢᱟᱨᱠ ᱡᱚᱰ.ᱟᱣᱮᱱᱟ";
@@ -764,7 +731,7 @@
 "Menu.CustomizeHomePage.v99" = "ᱚᱲᱟᱜᱥᱟᱦᱴᱟ ᱠᱩᱥᱤᱛᱮ ᱫᱚᱦᱚᱭ ᱢᱮ";
 
 /* Label for the button, displayed in the menu, takes you to to Downloads screen when pressed. */
-"Menu.Downloads.Label" = "ᱰᱟᱩᱱᱞᱚᱰᱥ";
+"Menu.Downloads.Label" = "ᱰᱟᱣᱱᱞᱚᱰᱥ";
 
 /* A switch to disable enhanced tracking protection inside the menu. */
 "Menu.EnhancedTrackingProtectionOff.Title" = "ᱱᱚᱶᱟ ᱥᱟᱭᱤᱴ ᱞᱟᱹᱜᱤᱫ ᱵᱟᱲᱦᱟᱣᱟᱠᱟᱱ ᱯᱟᱸᱡᱟ ᱨᱚᱯᱷᱟ ᱵᱚᱸᱫᱚ ᱢᱮᱱᱟᱜᱼᱟ";
@@ -817,9 +784,6 @@
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "ᱠᱷᱟᱴᱚᱢᱟᱪᱷᱟ ᱠᱷᱚᱱ ᱚᱪᱚᱜᱽ ᱢᱮ";
 
-/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
-"Menu.RemoveReadingList.AlternateLabel.v99" = "ᱯᱟᱰᱦᱟᱣ ᱞᱤᱥᱴᱤ ᱠᱷᱚᱱ ᱚᱪᱚᱜ ᱢᱮ";
-
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
 "Menu.RemoveReadingList.Confirm.v99" = "ᱯᱟᱰᱦᱟᱣ ᱞᱤᱥᱴᱤ ᱠᱷᱚᱱ ᱚᱪᱚᱜ ᱮᱱᱟ";
 
@@ -869,13 +833,13 @@
 "Menu.TrackingProtectionDescription.CryptominersNew" = "ᱠᱨᱭᱯᱴᱚᱢᱟᱭᱱ ᱠᱚ ᱦᱩᱠᱩ ᱛᱮ ᱟᱢᱟᱜ ᱥᱭᱥᱴᱚᱢ ᱨᱮᱭᱟᱜ ᱯᱟᱣᱟᱨ ᱵᱮᱵᱦᱟᱨ ᱠᱟᱛᱮ ᱰᱤᱴᱟᱞ ᱯᱩᱭᱥᱟᱹ ᱠᱚ ᱦᱟᱛᱟᱣᱮᱫᱟ ᱾ ᱠᱨᱭᱯᱴᱚᱢᱟᱭᱱᱤᱝ ᱥᱠᱨᱤᱯᱴ ᱟᱢᱟᱜ ᱵᱮᱴᱨᱭ ᱞᱚᱜᱚᱱ ᱪᱟᱵᱟᱭᱟ ᱾ ᱠᱚᱢᱯᱩᱴᱚᱨ ᱠᱚ ᱵᱟᱹᱭ ᱵᱟᱹᱭ ᱪᱷᱚᱭ ᱟ, ᱟᱨ ᱟᱢᱟᱜ ᱫᱟᱲᱮ ᱵᱤᱞ ᱠᱚ ᱨᱟᱠᱟᱵ ᱪᱷᱚ ᱫᱟᱲᱮᱜᱼᱟᱭ ᱾";
 
 /* Description of fingerprinters. */
-"Menu.TrackingProtectionDescription.Fingerprinters" = "ᱱᱚᱶᱟ ᱥᱟᱡᱟᱣ ᱫᱚ ᱵᱨᱚᱣᱡᱚᱨ ᱟᱨ ᱠᱚᱢᱯᱩᱴᱚᱨ ᱨᱮ ᱵᱷᱮᱜᱟᱨ ᱟ ᱾ ᱠᱟᱹᱴᱩᱵᱪᱷᱟᱯᱟ ᱠᱚ ᱟᱹᱰᱤᱜᱟᱱ ᱵᱷᱮᱜᱟᱨ ᱥᱟᱡᱟᱣ ᱠᱚ ᱡᱚᱢᱟ ᱠᱟᱛᱮ ᱟᱢᱟᱜ ᱢᱤᱫᱴᱟᱹᱝ ᱯᱨᱚᱯᱷᱟᱤᱞ ᱮ ᱛᱮᱭᱟᱨᱟ, ᱚᱠᱟ ᱫᱚ ᱡᱟᱦᱟᱱᱟᱜ ᱧᱮᱞ ᱡᱷᱚᱜ ᱟᱢ ᱯᱟᱧᱡᱟ ᱞᱟᱹᱜᱤᱫ ᱵᱮᱵᱷᱟᱨᱚᱜᱼᱟ ᱾";
+"Menu.TrackingProtectionDescription.Fingerprinters" = "ᱱᱚᱶᱟ ᱥᱟᱡᱟᱣ ᱫᱚ ᱵᱨᱚᱣᱡᱚᱨ ᱟᱨ ᱠᱚᱢᱯᱩᱴᱚᱨ ᱨᱮ ᱵᱷᱮᱜᱟᱨ ᱟ ᱾ ᱴᱤᱯᱟᱹᱪᱷᱟᱯᱠᱚ ᱠᱚ ᱟᱹᱰᱤᱜᱟᱱ ᱵᱷᱮᱜᱟᱨ ᱥᱟᱡᱟᱣ ᱠᱚ ᱡᱚᱢᱟ ᱠᱟᱛᱮ ᱟᱢᱟᱜ ᱢᱤᱫᱴᱟᱝ ᱯᱨᱚᱯᱷᱟᱤᱞ ᱮ ᱛᱮᱭᱟᱨᱟ, ᱚᱠᱟ ᱫᱚ ᱡᱟᱦᱟᱱᱟᱜ ᱧᱮᱞ ᱡᱷᱚᱜ ᱟᱢ ᱯᱟᱧᱡᱟ ᱞᱟᱹᱜᱤᱫ ᱵᱮᱵᱷᱟᱨᱚᱜᱼᱟ ᱾";
 
 /* Description of social network trackers. */
 "Menu.TrackingProtectionDescription.SocialNetworksNew" = "ᱥᱚᱥᱤᱭᱟᱞ ᱱᱮᱴᱣᱟᱨᱠ ᱡᱟᱭᱜᱟ ᱯᱟᱧᱡᱟ ᱫᱟᱱᱟᱲ ᱠᱚ ᱣᱮᱵᱥᱟᱭᱤᱴ ᱠᱚᱨᱮ ᱫᱚᱦᱚᱭᱟ ᱠᱚ ᱚᱱᱠᱟ ᱛᱮ ᱩᱱᱠᱩ ᱟᱢ ᱞᱟᱹᱜᱤᱫ ᱴᱟᱨᱜᱮᱴ ᱯᱨᱚᱯᱷᱟᱭᱤᱞ ᱠᱚ ᱛᱮᱭᱟᱨᱟ ᱾ ᱱᱩᱠᱩ ᱯᱟᱧᱡᱟ ᱫᱟᱱᱟᱲ ᱠᱚ ᱟᱴᱠᱟᱣ ᱞᱮᱠᱷᱟᱱ ᱥᱚᱥᱤᱭᱟᱞ ᱢᱤᱰᱤᱭᱟ ᱠᱚᱢᱯᱟᱱᱤ ᱠᱚᱢ ᱠᱚ ᱧᱮᱞ ᱫᱟᱲᱮᱟᱼᱟ ᱟᱢ ᱚᱱᱞᱟᱭᱤᱱ ᱪᱮᱫ ᱮᱢ ᱪᱤᱠᱟᱹᱭᱮᱫᱟ ᱾";
 
 /* The title that shows the number of fingerprinting scripts blocked */
-"Menu.TrackingProtectionFingerprintersBlocked.Title" = "ᱠᱟᱹᱴᱩᱵᱪᱷᱟᱯᱟ ᱟᱜ";
+"Menu.TrackingProtectionFingerprintersBlocked.Title" = "ᱴᱤᱯᱟᱹᱪᱷᱟᱯᱠᱚ ᱟᱜ";
 
 /* The title for the option to view the What's new page. */
 "Menu.WhatsNew.Title" = "ᱪᱦᱤ ᱱᱟᱶᱟ ᱢᱮᱱᱟᱼᱟ";
@@ -906,63 +870,6 @@
 
 /* Restore Tabs Affirmative Action */
 "Okay" = "ᱴᱷᱤᱠ ᱜᱮ";
-
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "ᱫᱮᱞᱟ ᱮᱛᱦᱚᱵ ᱞᱮᱜᱮ ᱵᱚᱱ";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "ᱥᱟᱹᱫᱷᱤᱱ ᱾ ᱵᱟᱝ ᱞᱟᱵᱷ ᱾ ᱵᱮᱥ ᱞᱟᱹᱜᱤᱫ ᱾";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "ᱡᱚᱛᱚ ᱦᱚᱲ ᱞᱟᱹᱜᱤᱫ ᱢᱤᱫ ᱱᱟᱯᱟᱭ ᱤᱱᱴᱟᱨᱱᱮᱴ ᱨᱮᱭᱟᱜ ᱩᱫᱩᱜ ᱞᱟ.ᱜᱤᱫ ᱴᱷᱟᱹᱣᱠᱟᱹ ᱾";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "ᱱᱤᱛᱚᱜ ᱫᱚ ᱵᱟᱝᱟ";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Description.v106" = "ᱴᱮᱵᱽ ᱟᱨ ᱫᱟᱱᱟᱝ ᱥᱟᱵᱟᱫ ᱫᱚ ᱮᱴᱟᱜ ᱥᱟᱫᱷᱚᱱ ᱠᱷᱚᱱ ᱡᱟᱦᱟᱸ ᱨᱮ ᱟᱲᱟᱜ ᱞᱮᱫᱟᱢ ᱚᱱᱰᱮ ᱠᱷᱚᱱ ᱯᱟᱧᱡᱟ ᱫᱟᱲᱮᱭᱟᱜᱼᱟᱢ ᱾";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "ᱟᱲᱟᱜ";
-
-/* String used to describes the title of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Title.v106" = "ᱯᱷᱚᱱ ᱠᱷᱚᱱ ᱞᱮᱯᱴᱚᱯ ᱛᱮ ᱩᱪᱟᱹᱲ ᱢᱮ ᱵᱟᱨ ᱯᱟᱦᱴᱮ ᱞᱮᱠᱟᱛᱮ";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "ᱥᱩᱦᱤ ᱮᱢ ᱢᱮ ᱟᱨ ᱵᱚᱞᱚᱱ ᱢᱮ";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "ᱟᱨᱟᱢ ᱥᱠᱨᱤᱱ ᱦᱚᱯᱤᱝ ᱞᱟᱹᱜᱤᱫ ᱟᱡ ᱛᱮ ᱡᱷᱚᱛᱚ ᱥᱟᱫᱷᱚᱱ ᱟᱨ ᱵᱩᱠᱢᱟᱨᱠ ᱠᱚ ᱟᱹᱭᱩᱨ ᱢᱤᱫ ᱠᱟᱜᱼᱟᱭ ᱾ ";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "ᱟᱢᱟᱜ ᱯᱨᱚᱵᱷᱟᱣ ᱨᱮ ᱛᱟᱦᱮᱸ ᱞᱟᱹᱜᱤᱫ ᱥᱭᱝᱠ ᱢᱮ";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.Classic.v106" = "ᱠᱞᱟᱥᱤᱠ ᱠᱟᱱᱛᱷᱪᱤᱛᱟᱹᱨ";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "ᱥᱤᱢᱤᱛ ᱮᱰᱤᱥᱚᱱ ᱨᱮᱭᱟᱜ ᱠᱟᱱᱛᱷᱪᱤᱛᱟᱹᱨ";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "ᱰᱷᱮᱨ ᱠᱟᱱᱛᱷᱪᱤᱛᱟᱹᱨ ᱠᱚ ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Description.v106" = "ᱟᱢᱟᱜ ᱠᱩᱥᱤᱭᱟᱜ ᱠᱟᱱᱛᱷᱪᱤᱛᱟᱹᱨ ᱵᱟᱪᱷᱟᱣ ᱢᱮ ᱾";
-
-/* Title for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Title.v106" = "ᱨᱚᱝ ᱨᱮᱭᱟᱜ ᱟᱨᱮᱡ ᱧᱮᱞ ᱵᱤᱲᱟᱹᱣ ᱢᱮ";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "ᱠᱟᱸᱛᱷᱪᱤᱛᱟᱹᱨ ᱥᱮᱴ ᱢᱮ";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "ᱢᱤᱫ Firefox ᱠᱟᱸᱛᱷᱪᱤᱛᱟᱹᱨ ᱵᱟᱪᱷᱟᱣ ᱢᱮ";
-
-/* String used to describes the description of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Description.v106" = "Firefox ᱫᱚ ᱟᱢ ᱡᱟᱹᱥᱛᱤ ᱞᱟᱵᱷ ᱨᱮ ᱫᱚᱦᱚᱭ ᱢᱮᱭᱟ ᱟᱨ ᱢᱩᱞ ᱦᱤᱥᱟᱹᱵ ᱛᱮ ᱟᱢᱟᱜ ᱱᱤᱥᱚᱱ ᱨᱩᱠᱷᱤᱭᱟᱭ ᱟ ᱾ ";
-
-/* String used to describes the title of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Title.v106" = "ᱥᱟᱹᱫᱷᱤᱱ ᱤᱱᱴᱚᱨᱱᱮᱴ ᱨᱮ ᱟᱢᱟᱜ ᱥᱟᱹᱜᱩᱱ ᱫᱟᱨᱟᱢ";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "ᱯᱟᱱᱛᱮᱭᱟᱜ ᱮᱦᱚᱵ ᱢᱮ";
@@ -1079,7 +986,7 @@
 "ScanQRCode.InvalidDataError.Message" = "ᱥᱟᱠᱷᱤᱭᱟᱛ ᱫᱚ ᱵᱟᱲ ᱵᱟᱛᱟᱣ ᱢᱮᱱᱟ-ᱟ";
 
 /* Text of the prompt to setup the camera authorization for the Scan QR Code feature. */
-"ScanQRCode.PermissionError.Message.v100" = "ᱥᱟᱫᱷᱚᱱ ‘ᱥᱟᱡᱟᱣ ᱠᱚ’> ‘Firefox’ ᱾ Firefox ᱫᱚ ᱠᱮᱢᱨᱟ ᱟᱫᱮᱨ ᱪᱷᱚᱟᱭᱮᱢ ᱾";
+"ScanQRCode.PermissionError.Message.v100" = "ᱥᱟᱫᱷᱚᱱ ‘ᱥᱟᱡᱟᱣ ᱠᱚ’> ‘Firefox’ ᱾ Firefox ᱫᱚ ᱠᱮᱢᱨᱟ ᱟᱫᱮᱨ ᱪᱷᱚᱣᱟᱭᱮᱢ ᱾";
 
 /* Title for the QR code scanner view. */
 "ScanQRCode.View.Title" = "QR ᱠᱚᱰ ᱥᱠᱟᱱ ᱢᱮ";
@@ -1128,15 +1035,6 @@
 
 /* The confirmation button */
 "Search.ThirdPartyEngines.OK" = "ᱴᱷᱤᱠ";
-
-/* Accessibility label for default search engine setting. */
-"SearchSettings.Accessibility.DefaultSearchEngine.v106" = "ᱢᱩᱞ ᱥᱮᱸᱫᱽᱨᱟ ᱤᱧᱡᱤᱱ";
-
-/* Title for default search engine settings section. */
-"SearchSettings.Title.DefaultSearchEngine.v106" = "ᱢᱩᱞ ᱥᱮᱸᱫᱽᱨᱟ ᱤᱧᱡᱤᱱ";
-
-/* Navigation title for search settings. */
-"SearchSettings.Title.Search.v106" = "ᱥᱮᱸᱫᱽᱨᱟ";
 
 /* Message displayed in the crash dialog above the buttons used to select when sending reports */
 "Send a crash report so Mozilla can fix the problem?" = "ᱨᱚᱯᱩᱫ ᱨᱤᱯᱳᱨᱴ ᱠᱩᱞ ᱢᱮ ᱛᱚᱵᱚᱠᱷᱟᱱ ᱢᱚᱡᱤᱞᱟ ᱫᱤᱜᱫᱷᱷᱟ ᱴᱟ ᱴᱷᱤᱠ ᱫᱟᱲᱤᱟᱭ?";
@@ -1348,9 +1246,6 @@
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "ᱠᱷᱟᱴᱚᱢᱟᱪᱷᱟ";
 
-/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
-"Settings.Home.Option.SponsoredPocket.v103" = "ᱜᱟᱲᱚ ᱠᱟᱱ ᱠᱟᱹᱦᱱᱤ ᱠᱚ";
-
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "ᱯᱩᱱ ᱴᱟᱲᱟᱝ ᱵᱤᱱᱟᱹ ᱠᱟᱹᱢᱤ ᱞᱟᱦᱟ ᱨᱮ ᱚᱲᱟᱜ ᱥᱟᱦᱴᱟ";
 
@@ -1499,7 +1394,7 @@
 "Settings.Passwords.FingerPrintReason.v103" = "ᱵᱷᱤᱛᱨᱤ ᱵᱚᱞᱚ ᱞᱟᱹᱜᱤᱫ ᱠᱟᱹᱴᱩᱵ ᱪᱷᱟᱯᱟ ᱵᱮᱵᱷᱟᱨ ᱢᱮ‌ ᱾";
 
 /* Message shown when you enter Passwords screen for the first time. It explains how password are protected in the Firefox for iOS application. */
-"Settings.Passwords.OnboardingMessage.v103" = "ᱟᱢᱟᱜ ᱫᱟᱱᱟᱝ ᱥᱟᱵᱟᱫᱽ ᱠᱚ ᱢᱚᱦᱲᱟ ID, ᱴᱤᱯᱟᱹᱶ ID ᱟᱨᱵᱟᱝᱠᱷᱟᱱ ᱢᱤᱫᱴᱟᱹᱝ ᱥᱟᱫᱷᱚᱱ ᱫᱟᱱᱟᱝᱠᱳᱰ ᱛᱮ ᱱᱤᱛᱚᱜ ᱨᱩᱠᱷᱤᱭᱟᱹ ᱮᱱᱟ ᱾";
+"Settings.Passwords.OnboardingMessage.v103" = "ᱟᱢᱟᱜ ᱫᱟᱱᱟᱝ ᱥᱟᱵᱟᱫᱽ ᱠᱚ ᱢᱮᱫᱦᱟᱸ ID, ᱴᱤᱯᱟᱹᱶ ID ᱟᱨᱵᱟᱝᱠᱷᱟᱱ ᱢᱤᱫᱴᱟᱝ ᱥᱟᱫᱷᱚᱱ ᱫᱟᱱᱟᱝᱠᱳᱰ ᱛᱮ ᱱᱤᱛᱚᱜ ᱨᱩᱠᱷᱤᱭᱟᱹ ᱮᱱᱟ ᱾";
 
 /* Setting that appears in the Passwords screen to enable the built-in password manager so users can save their passwords. */
 "Settings.Passwords.SavePasswords.v103" = "ᱫᱟᱱᱟᱝ ᱥᱟᱵᱟᱫᱽ ᱠᱚ ᱫᱮᱠᱷᱟᱣ ᱢᱮ";
@@ -1588,9 +1483,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "ᱴᱷᱤᱠ, ᱭᱟᱢᱮᱱᱟ";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "ᱥᱟᱭᱤᱡ ᱡᱮᱞᱡᱠᱟ ᱞᱟᱸᱢᱤ ᱠᱟᱛᱷᱟ ᱵᱟᱭ ᱠᱟᱹᱢᱤ ᱞᱮᱫᱟᱭ, ᱡᱟᱹᱱᱠᱟᱨ ᱨᱮᱭᱟᱜ ᱥᱤᱞᱰ ᱨᱮ ᱴᱤᱯᱹᱟᱣ ᱢᱮ ᱟᱨ ᱥᱟᱠᱟᱢ ᱞᱟᱹᱜᱤᱫ ᱵᱟᱲᱦᱟᱣᱟᱠᱟᱱ ᱯᱟᱧᱡᱟ ᱫᱟᱱᱟᱲ ᱪᱤᱱᱦᱟᱹ ᱟᱰ ᱵᱚᱸᱫᱚᱭ ᱢᱮ ᱾";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "ᱵᱚᱦᱚ ᱪᱦᱚᱴ ᱥᱮ!";
 
@@ -1602,9 +1494,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "ᱴᱟᱨᱜᱮᱴ ᱰᱷᱟᱣᱨᱟᱹ ᱠᱚᱢ ᱟᱭ ᱟᱨ ᱰᱷᱟᱣᱨᱟᱸ ᱠᱚ ᱜᱷᱮᱨ ᱮᱥᱮᱫ ᱠᱷᱚᱱ ᱵᱚᱸᱫᱚ ᱞᱟᱹᱜᱤᱫ ᱜᱚᱲᱚ ᱮᱢᱟᱭ ᱾";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "ᱥᱟᱭᱤᱡ ᱡᱮᱞᱡᱠᱟ ᱞᱟᱸᱢᱤ ᱠᱟᱛᱷᱟ ᱵᱟᱭ ᱠᱟᱹᱢᱤ ᱞᱮᱫᱟᱭ, ᱡᱟᱹᱱᱠᱟᱨ ᱨᱮᱭᱟᱜ ᱥᱤᱞᱰ ᱨᱮ ᱴᱤᱯᱹᱟᱣ ᱢᱮ ᱟᱨ ᱥᱟᱠᱟᱢ ᱞᱟᱹᱜᱤᱫ ᱵᱟᱲᱦᱟᱣᱟᱠᱟᱱ ᱯᱟᱧᱡᱟ ᱫᱟᱱᱟᱲ ᱪᱤᱱᱦᱟᱹ ᱟᱰ ᱵᱚᱸᱫᱚᱭ ᱢᱮ ᱾";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "ᱰᱷᱟᱣᱨᱟᱹ ᱞᱟᱹᱜᱤᱫ ᱠᱤᱪᱷᱤ ᱜᱷᱮᱨ ᱮᱥᱮᱫ ᱢᱟᱸᱡᱩᱨ ᱮᱢᱟᱭ ᱠᱤᱪᱷᱤ ᱣᱮᱵᱥᱟᱭᱤᱴ ᱠᱟᱫᱢᱤ ᱟᱭ";
@@ -1757,7 +1646,7 @@
 "There was a problem accessing tabs from your other devices. Try again in a few moments." = "ᱚᱞᱜᱟ ᱥᱟᱫᱷᱚᱱ ᱠᱷᱚᱱ ᱴᱮᱵᱽ ᱠᱚ ᱟᱹᱛᱩᱨ ᱰᱤᱜᱟᱹᱣ ᱮᱱᱟ ᱾ ᱠᱤᱪᱷᱤ ᱥᱚᱢᱚᱭ ᱯᱚᱨᱮ ᱫᱩᱦᱲᱟᱹ ᱪᱮᱥᱴᱟᱭ ᱢᱮ ᱾";
 
 /* Error displayed when reader mode cannot be enabled */
-"There was an error converting the page" = "ᱢᱤᱫᱴᱟᱹᱝ ᱵᱷᱩᱞ ᱦᱳᱭᱮᱱᱟ ᱥᱟᱦᱴᱟ ᱵᱚᱫᱚᱞ ᱜᱷᱚᱰᱤ";
+"There was an error converting the page" = "ᱢᱤᱫᱴᱟᱝ ᱵᱷᱩᱞ ᱦᱳᱭᱮᱱᱟ ᱥᱟᱦᱴᱟ ᱵᱚᱫᱚᱞ ᱜᱷᱚᱰᱤ";
 
 /* Relative date for date in past week. */
 "this week" = "ᱱᱚᱶᱟ ᱦᱟᱴ";
@@ -1810,24 +1699,6 @@
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ";
 
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "ᱵᱚᱞᱚᱱ ᱥᱩᱦᱤ";
-
-/* Description string used to to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Description.v106" = "ᱚᱲᱟᱜ ᱥᱟᱦᱴᱟ ᱨᱮ ᱱᱤᱛᱚᱜ ᱡᱟᱦᱟᱸ ᱠᱷᱚᱱ ᱮᱢ ᱟᱲᱟᱜ ᱞᱮᱜᱼᱟ ᱮᱴᱟᱜ ᱥᱟᱫᱷᱚᱱ ᱨᱮᱭᱟᱜ ᱴᱮᱵᱽ ᱠᱷᱚᱱ ᱯᱟᱧᱡᱟ ᱫᱟᱲᱮᱭᱟᱜᱼᱟᱢ ᱾ ";
-
-/* Title string used to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Title.v106" = "ᱯᱚᱨᱫᱟ ᱵᱚᱫᱚᱞ ᱫᱚ ᱱᱤᱛᱚᱜ ᱟᱹᱰᱤ ᱤᱫᱤᱜ ᱠᱟᱱᱟ";
-
-/* Describes the action on the first upgrade page in the Upgrade screen. This string will be on a button so user can continue the Upgrade. */
-"Upgrade.Welcome.Action.v106" = "ᱫᱮᱞᱟ ᱮᱛᱦᱚᱵ ᱞᱮᱜᱮ ᱵᱚᱱ";
-
-/* Description string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Description.v106" = "ᱱᱟᱶᱟ ᱨᱚᱝ ᱠᱚ ᱾ ᱱᱟᱶᱟ ᱥᱩᱵᱤᱫᱷᱟᱹ ᱾ ᱞᱟᱵᱷ ᱨᱮ ᱦᱚᱲ ᱠᱚ ᱞᱮ ᱫᱚᱦᱚ ᱠᱚᱣᱟ ᱾";
-
-/* Title string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Title.v106" = "ᱱᱤᱡᱚᱨᱟᱜ ᱞᱮᱠᱷᱟ ᱤᱱᱴᱚᱨᱱᱮᱴ ᱨᱮ ᱟᱢᱟᱜ ᱥᱟᱹᱜᱩᱱ ᱫᱟᱨᱟᱢ";
-
 /* Debug option */
 "Use stage servers" = "Stage ᱥᱚᱨᱵᱷᱚᱨ ᱠᱚ ᱵᱮᱵᱷᱟᱨ ᱢᱮ";
 
@@ -1841,10 +1712,10 @@
 "Wallpaper.Change.Error.Title.v106" = "ᱠᱟᱱᱛᱷᱪᱤᱛᱟᱹᱨ ᱵᱚᱫᱚᱞ ᱵᱟᱭ ᱜᱟᱱ ᱞᱮᱱᱟ";
 
 /* The message of the error displayed to a user when they try change a wallpaper that failed downloading. */
-"Wallpaper.Download.Error.Body.v106" = "ᱟᱢᱟᱜ ᱰᱟᱩᱱᱞᱚᱰ ᱥᱟᱞᱟᱜ ᱵᱷᱩᱞ ᱦᱩᱭᱮᱱᱟ ᱾";
+"Wallpaper.Download.Error.Body.v106" = "ᱟᱢᱟᱜ ᱰᱟᱣᱱᱞᱚᱰ ᱥᱟᱞᱟᱜ ᱵᱷᱩᱞ ᱦᱩᱭᱮᱱᱟ ᱾";
 
 /* The title of the error displayed if download fails when changing a wallpaper. */
-"Wallpaper.Download.Error.Title.v106" = "ᱠᱟᱱᱛᱷᱪᱤᱛᱟᱹᱨ ᱰᱟᱩᱱᱞᱳᱰ ᱵᱟᱭ ᱜᱟᱱ ᱞᱮᱱᱟ";
+"Wallpaper.Download.Error.Title.v106" = "ᱠᱟᱱᱛᱷᱪᱤᱛᱟᱹᱨ ᱰᱟᱣᱱᱞᱳᱰ ᱵᱟᱭ ᱜᱟᱱ ᱞᱮᱱᱟ";
 
 /* An action for the error displayed to a user when they trying to change a wallpaper failed. */
 "Wallpaper.Error.Dismiss.v106" = "ᱵᱟᱹᱰᱨᱟᱹ";

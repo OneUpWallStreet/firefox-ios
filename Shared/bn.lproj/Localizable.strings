@@ -37,9 +37,6 @@
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "সম্প্রতি পরিদর্শিত";
 
-/* Section title label for Shortcuts */
-"ActivityStream.Shortcuts.SectionTitle" = "শর্টকাট";
-
 /* The title for the setting page which lets you select the number of top site rows */
 "ActivityStream.TopSites.RowSettingFooter" = "সারি সেট কতুন";
 
@@ -550,9 +547,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "আরও জানুন";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "লগইন এবং পাসওয়ার্ড সংরক্ষণ এবং স্বয়ংক্রিয়ভাবে পূরণ করতে, ফেস আইডি, টাচ আইডি বা একটি ডিভাইস পাসকোড সক্রিয় করুন।";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "চালিয়ে যান";
 
@@ -595,23 +589,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "ফিল্টার";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "সংরক্ষিত লগইন গুলো এখানে দেখানো হবে। যদি অন্য কোনো ডিভাইস এ আপনার Firefox লগইন গুলো সংরক্ষণ করে থাকেন, তাহলে আপনার Firefox Account এ সাইন ইন করুন।";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "কোন লগইন পাওয়া যায়নি";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "আপনার অনুসন্ধানের সাথে কোনো ফলাফল মিলছে না।";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "কোন লগইন মিলেনি";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "বাতিল";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "লগইন অনুসন্ধান করুন";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "পূরণ করার জন্য একটি পাসওয়ার্ড নির্বাচন করুন";
@@ -1210,9 +1192,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "ঠিক আছে, বুঝেছি";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "যদি কোন সাইট প্রত্যাশিতভাবে কাজ না করে তবে ঠিকানা বারে শিল্ডটিতে ট্যাপ করুন এবং সেই পৃষ্ঠার জন্য বর্ধিত ট্র্যাকিং সুরক্ষা বন্ধ করুন।";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "প্রস্তুত হোন!";
 
@@ -1224,9 +1203,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "লক্ষ্যযুক্ত বিজ্ঞাপনগুলি হ্রাস করে এবং বিজ্ঞাপনদাতাদেরকে আপনার ব্রাউজিং ট্র্যাক করা থেকে বিরত রাখতে সহায়তা করে।";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "যদি কোন সাইট প্রত্যাশিতভাবে কাজ না করে তবে ঠিকানা বারে শিল্ডটিতে ট্যাপ করুন এবং সেই পৃষ্ঠার জন্য বর্ধিত ট্র্যাকিং সুরক্ষা বন্ধ করুন।";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "কিছু অ্যাড ট্র্যাকিং অনুমোদন করুন যেন ওয়েবসাইট সঠিকভাবে চলতে পারে।";

@@ -37,9 +37,6 @@
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "Недавно відвідані";
 
-/* Section title label for Shortcuts */
-"ActivityStream.Shortcuts.SectionTitle" = "Ярлики";
-
 /* The title for the setting page which lets you select the number of top site rows */
 "ActivityStream.TopSites.RowSettingFooter" = "Кількість рядків";
 
@@ -53,7 +50,7 @@
 "Added page to Reading List" = "Сторінку додано до списку читання";
 
 /* Button to dismiss the 'Add Pass Failed' alert.  See https://support.apple.com/HT204003 for context on Wallet. */
-"AddPass.Error.Dismiss" = "Гаразд";
+"AddPass.Error.Dismiss" = "OK";
 
 /* Text of the 'Add Pass Failed' alert.  See https://support.apple.com/HT204003 for context on Wallet. */
 "AddPass.Error.Message" = "При додаванні картки до Wallet сталася помилка. Спробуйте знову пізніше.";
@@ -107,7 +104,7 @@
 "Bookmarks.Folder.Label" = "Тека";
 
 /* A label indicating all bookmarks grouped under the category 'Desktop Bookmarks'. */
-"Bookmarks.Menu.DesktopBookmarks" = "Закладки комп’ютера";
+"Bookmarks.Menu.DesktopBookmarks" = "Закладки комп'ютера";
 
 /* The button to create a new bookmark */
 "Bookmarks.NewBookmark.Label" = "Нова закладка";
@@ -193,15 +190,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Поділитись посиланням";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Тепер ви можете перемістити панель інструментів донизу для зручнішого введення даних";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Щоб зручніше вводити дані, тепер панель інструментів розташовано внизу.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "Відтепер ваша персоналізована сторінка домівки Firefox полегшує продовження роботи з місця, де ви зупинилися. Знайдіть останні вкладки, закладки та результати пошуку.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Параметри панелі інструментів";
 
@@ -209,7 +197,7 @@
 "ContextualHints.TabTray.InactiveTabs" = "Сюди переміщуються вкладки, які ви не переглядали впродовж двох тижнів.";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is the call to action for the inactive tabs contextual popup. */
-"ContextualHints.TabTray.InactiveTabs.CallToAction" = "Вимкнути у налаштуваннях";
+"ContextualHints.TabTray.InactiveTabs.CallToAction" = "Вимкніть у параметрах";
 
 /* Accessibility label for action denoting closing contextual hint. */
 "ContextualHintsCloseButtonAccessibility.v105" = "Закрити";
@@ -242,7 +230,7 @@
 "Decrease text size" = "Зменшити розмір тексту";
 
 /* Title for default search engine picker. */
-"Default Search Engine" = "Типовий засіб пошуку";
+"Default Search Engine" = "Типова пошукова система";
 
 /* Accessibility label for action denoting closing default browser home tab banner. */
 "DefaultBrowserCloseButtonAccessibility.v102" = "Закрити";
@@ -317,7 +305,7 @@
 "ErrorPages.CertWarning.Description" = "Власник %@ налаштував свій вебсайт неналежним чином. Для захисту вашої інформації від викрадання, Firefox не з'єднався з цим вебсайтом.";
 
 /* Title on the certificate error page */
-"ErrorPages.CertWarning.Title" = "Це недовірене з’єднання";
+"ErrorPages.CertWarning.Title" = "Це недовірене з'єднання";
 
 /* Label for button to go back from the error page */
 "ErrorPages.GoBack.Button" = "Назад";
@@ -352,9 +340,6 @@
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Вилучити";
 
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Сайти: %d";
-
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Параметри";
 
@@ -386,7 +371,7 @@
 "FxA.ManageAccount" = "Керувати обліковим записом і пристроями";
 
 /* Label when no internet is present */
-"FxA.NoInternetConnection" = "Немає з’єднання з Інтернетом";
+"FxA.NoInternetConnection" = "Немає з'єднання з Інтернетом";
 
 /* FxA sign in view subtitle */
 "fxa.signin.camera-signin" = "Увійдіть за допомогою камери";
@@ -395,7 +380,7 @@
 "fxa.signin.qr-link-instruction" = "На своєму комп'ютері відкрийте Firefox і перейдіть до firefox.com/pair";
 
 /* FxA sign in view qr code scan button */
-"fxa.signin.ready-to-scan" = "Готові сканувати";
+"fxa.signin.ready-to-scan" = "Сканувати";
 
 /* FxA sign in view email login button */
 "fxa.signin.use-email-instead" = "Використати е-пошту";
@@ -452,7 +437,7 @@
 "HistoryPanel.EmptyState.Title" = "Тут з'являтимуться ваші останні відвідані сторінки.";
 
 /* Description for the empty synced tabs null state in the History Panel */
-"HistoryPanel.EmptySyncedTabsNullState.Description" = "Ваші вкладки з інших пристроїв з’являються тут.";
+"HistoryPanel.EmptySyncedTabsNullState.Description" = "Тут з'являтимуться ваші вкладки з інших пристроїв.";
 
 /* Description for the empty synced tabs 'not signed in' state in the History Panel */
 "HistoryPanel.EmptySyncedTabsPanelNotSignedInState.Description" = "Увійдіть, щоб переглядати список вкладок з інших ваших пристроїв.";
@@ -608,7 +593,7 @@
 "LibraryPanel.History.ClearGroupedTabsTitle.v100" = "Видалити всі сайти в %@?";
 
 /* Within the History Panel, users can open an action menu to clear recent history. */
-"LibraryPanel.History.ClearHistoryMenuTitle.v100" = "Вилучає історію (включно з історією, синхронізованою з інших пристроїв), куки та інші дані вебперегляду.";
+"LibraryPanel.History.ClearHistoryMenuTitle.v100" = "Вилучає історію (включно з історією, синхронізованою з інших пристроїв), файли cookie та інші дані вебперегляду.";
 
 /* Within the history panel, a user can navigate into a screen with only grouped history items. Within that screen, a user can now swipe to delete a single item in the list. This label informs the user of a deletion action on the item. */
 "LibraryPanel.History.DeleteGroupedItem.v104" = "Видалити";
@@ -648,9 +633,6 @@
 
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Докладніше";
-
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "Щоб зберігати й автоматично заповнювати поля паролів, увімкніть Face ID, Touch ID або пароль пристрою.";
 
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "Продовжити";
@@ -697,23 +679,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Фільтр";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "Збережені паролі з'являтимуться тут. Якщо ви зберегли свої паролі у Firefox на іншому пристрої, увійдіть у свій обліковий запис Firefox.";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "Паролів не знайдено";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "Немає результатів, які відповідають вашому пошуку.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "Немає відповідних паролів";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "Скасувати";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Шукати паролі";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "Оберіть пароль для заповнення";
@@ -729,9 +699,6 @@
 
 /* Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "Позначити непрочитаним";
-
-/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
-"Menu.AddBookmark.AlternateLabel.v99" = "Додати закладку";
 
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "Закладку додано";
@@ -817,9 +784,6 @@
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "Вилучено з ярликів";
 
-/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
-"Menu.RemoveReadingList.AlternateLabel.v99" = "Прибрати зі списку читання";
-
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
 "Menu.RemoveReadingList.Confirm.v99" = "Вилучено зі списку читання";
 
@@ -863,7 +827,7 @@
 "Menu.TrackingProtectionDescription.ContentTrackers" = "Вебсайти можуть завантажувати зовнішню рекламу, відео, а також інший вміст з прихованим кодом стеження. Блокування такого вмісту може допомогти сайтам швидше завантажуватись, але при цьому деякі кнопки, поля форм і входів можуть не працювати.";
 
 /* Description of cross-site trackers. */
-"Menu.TrackingProtectionDescription.CrossSiteNew" = "Ці куки переслідують вас від одного сайту до іншого, з метою збирання даних про вашу діяльність онлайн. Вони встановлюються сторонніми рекламними й аналітичними компаніями.";
+"Menu.TrackingProtectionDescription.CrossSiteNew" = "Ці файли cookie переслідують вас від одного сайту до іншого, щоб збирати дані про вашу діяльність онлайн. Вони встановлюються сторонніми рекламними й аналітичними компаніями.";
 
 /* Description of cryptominers. */
 "Menu.TrackingProtectionDescription.CryptominersNew" = "Криптомайнери використовують ресурси вашої системи для добування криптовалют. Скрипти для добування криптовалют споживають заряд вашого акумулятора, сповільнюють роботу комп'ютера, а також можуть збільшити ваші витрати на електроенергію.";
@@ -902,67 +866,10 @@
 "No tabs" = "Немає вкладок";
 
 /* OK button */
-"OK" = "Гаразд";
+"OK" = "OK";
 
 /* Restore Tabs Affirmative Action */
 "Okay" = "Гаразд";
-
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "Розпочнімо";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "Незалежний. Некомерційний. Для добрих справ.";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "Відданий забезпеченню кращого інтернету для всіх.";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "Не зараз";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Description.v106" = "Продовжуйте роботу зі своїми вкладками та паролями з інших пристроїв.";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "Пропустити";
-
-/* String used to describes the title of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Title.v106" = "Перемикайтеся між телефоном і комп'ютером";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "Зареєструйтеся та увійдіть";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "Автоматично синхронізуйте вкладки та закладки між пристроями для безперебійного перегляду.";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "Синхронізуйте, щоб залишатися в потоці";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.Classic.v106" = "Класичні шпалери";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "Особливі шпалери";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "Перегляньте інші шпалери";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Description.v106" = "Оберіть свій тип шпалер.";
-
-/* Title for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Title.v106" = "Спробуйте сплеск кольорів";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "Встановити шпалери";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "Оберіть шпалери Firefox";
-
-/* String used to describes the description of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Description.v106" = "Firefox цінує людей понад прибуток і завжди захищає вашу приватність.";
-
-/* String used to describes the title of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Title.v106" = "Вітаємо у незалежному інтернеті";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "Почати перегляд";
@@ -1004,13 +911,13 @@
 "Privacy Policy" = "Політика приватності";
 
 /* This is the value for a label that indicates if a user is on an unencrypted website. */
-"ProtectionStatus.NotSecure" = "Незахищене з’єднання";
+"ProtectionStatus.NotSecure" = "Незахищене з'єднання";
 
 /* This is the value for a label that indicates if a user is on a secure https connection. */
-"ProtectionStatus.Secure" = "Захищене з’єднання";
+"ProtectionStatus.Secure" = "Захищене з'єднання";
 
 /* Title for quick-search engines settings section. */
-"Quick-Search Engines" = "Швидкі засоби пошуку";
+"Quick-Search Engines" = "Системи швидкого пошуку";
 
 /* A label indicating the action that a user can rate the Firefox app in the App store. */
 "Ratings.Settings.RateOnAppStore" = "Оцінити в App Store";
@@ -1070,7 +977,7 @@
 "Save pages to your Reading List by tapping the book plus icon in the Reader View controls." = "Зберігайте статті до списку читання дотиком до піктограми книги з плюсом в керуванні режимом читання.";
 
 /* OK button to dismiss the error prompt. */
-"ScanQRCode.Error.OK.Button" = "Гаразд";
+"ScanQRCode.Error.OK.Button" = "OK";
 
 /* Text for the instructions label, displayed in the QR scanner view */
 "ScanQRCode.Instructions.Label" = "Розташуйте QR-код в межах рамки для сканування";
@@ -1094,28 +1001,28 @@
 "Search.Awesomebar.SwitchToTab" = "Перейти на вкладку";
 
 /* When making a new search from the awesome bar, suggestions appear to the user as they write new letters in their search. Different types of suggestions can appear. This string will be used as a header to separate Firefox suggestions from normal suggestions. */
-"Search.SuggestSectionTitle.v102" = "Пропозиція Firefox";
+"Search.SuggestSectionTitle.v102" = "Пропозиції Firefox";
 
 /* The message that asks the user to Add the search provider explaining where the search engine will appear */
-"Search.ThirdPartyEngines.AddMessage" = "Новий засіб пошуку з'явиться в панелі швидкого пошуку.";
+"Search.ThirdPartyEngines.AddMessage" = "Нова пошукова система з'явиться на панелі швидкого пошуку.";
 
 /* The success message that appears after a user sucessfully adds a new search engine */
-"Search.ThirdPartyEngines.AddSuccess" = "Засіб пошуку додано!";
+"Search.ThirdPartyEngines.AddSuccess" = "Пошукову систему додано!";
 
 /* The title that asks the user to Add the search provider */
-"Search.ThirdPartyEngines.AddTitle" = "Додати засіб пошуку?";
+"Search.ThirdPartyEngines.AddTitle" = "Додати пошукову систему?";
 
 /* The cancel button if you do not want to add a search engine. */
 "Search.ThirdPartyEngines.Cancel" = "Скасувати";
 
 /* A message explaining fault in custom search engine form. */
-"Search.ThirdPartyEngines.DuplicateErrorMessage" = "Засіб пошуку з такою назвою чи URL-адресою вже було додано.";
+"Search.ThirdPartyEngines.DuplicateErrorMessage" = "Пошукову систему з такою назвою чи URL-адресою вже було додано.";
 
 /* A title stating that we failed to add custom search engine. */
 "Search.ThirdPartyEngines.DuplicateErrorTitle" = "Не вдалося";
 
 /* A title explaining that we failed to add a search engine */
-"Search.ThirdPartyEngines.FailedMessage" = "Не вдалося додати засіб пошуку.";
+"Search.ThirdPartyEngines.FailedMessage" = "Не вдається додати пошукову систему.";
 
 /* A title explaining that we failed to add a search engine */
 "Search.ThirdPartyEngines.FailedTitle" = "Невдача";
@@ -1127,16 +1034,7 @@
 "Search.ThirdPartyEngines.FormErrorTitle" = "Невдача";
 
 /* The confirmation button */
-"Search.ThirdPartyEngines.OK" = "Гаразд";
-
-/* Accessibility label for default search engine setting. */
-"SearchSettings.Accessibility.DefaultSearchEngine.v106" = "Типовий засіб пошуку";
-
-/* Title for default search engine settings section. */
-"SearchSettings.Title.DefaultSearchEngine.v106" = "Типовий засіб пошуку";
-
-/* Navigation title for search settings. */
-"SearchSettings.Title.Search.v106" = "Пошук";
+"Search.ThirdPartyEngines.OK" = "OK";
 
 /* Message displayed in the crash dialog above the buttons used to select when sending reports */
 "Send a crash report so Mozilla can fix the problem?" = "Надіслати звіт про збій, щоб Mozilla змогла виправити цю проблему?";
@@ -1160,7 +1058,7 @@
 "SendTo.Error.Message" = "Можна ділитися лише посиланнями HTTP та HTTPS.";
 
 /* OK button to dismiss the error prompt. */
-"SendTo.Error.OK.Button" = "Гаразд";
+"SendTo.Error.OK.Button" = "OK";
 
 /* Title of error prompt displayed when an invalid URL is shared. */
 "SendTo.Error.Title" = "Неможливо поділитися цим посиланням.";
@@ -1211,19 +1109,19 @@
 "Settings" = "Параметри";
 
 /* The button text in Search Settings that opens the Custom Search Engine view. */
-"Settings.AddCustomEngine" = "Додати засіб пошуку";
+"Settings.AddCustomEngine" = "Додати пошукову систему";
 
 /* The text on the Save button when saving a custom search engine */
 "Settings.AddCustomEngine.SaveButtonText" = "Зберегти";
 
 /* The title of the  Custom Search Engine view. */
-"Settings.AddCustomEngine.Title" = "Додати засіб пошуку";
+"Settings.AddCustomEngine.Title" = "Додати пошукову систему";
 
 /* The title for the field which sets the title for a custom search engine. */
 "Settings.AddCustomEngine.TitleLabel" = "Назва";
 
 /* The placeholder for Title Field when saving a custom search engine. */
-"Settings.AddCustomEngine.TitlePlaceholder" = "Засіб пошуку";
+"Settings.AddCustomEngine.TitlePlaceholder" = "Пошукова система";
 
 /* The title for URL Field */
 "Settings.AddCustomEngine.URLLabel" = "Адреса URL";
@@ -1348,9 +1246,6 @@
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "Ярлики";
 
-/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
-"Settings.Home.Option.SponsoredPocket.v103" = "Матеріали від спонсорів";
-
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "Домівка через чотири години бездіяльності";
 
@@ -1406,7 +1301,7 @@
 "Settings.Home.Option.Wallpaper.LimitedEdition.Default.Description.v106" = "Спробуйте нову колекцію.";
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the description of the group of wallpapers that are seasonally available to the user. */
-"Settings.Home.Option.Wallpaper.LimitedEdition.IndependentVoices.Description.v106" = "Нова колекція Незалежні Голоси.";
+"Settings.Home.Option.Wallpaper.LimitedEdition.IndependentVoices.Description.v106" = "Нова збірка \"Незалежні голоси\".";
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the title of the group of wallpapers that are seasonally available to the user. */
 "Settings.Home.Option.Wallpaper.LimitedEdition.Title.v106" = "Обмежений випуск";
@@ -1588,9 +1483,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "Гаразд, зрозуміло";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Якщо сайт не працює належним чином, торкніться щита в панелі адреси і вимкніть розширений захист від стеження для сторінки.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Увага!";
 
@@ -1602,9 +1494,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Зменшує персоналізовану рекламу і допомагає перешкодити рекламодавцям стежити за вашим переглядом.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Якщо сайт не працює належним чином, торкніться щита в панелі адреси і вимкніть розширений захист від стеження для сторінки.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Дозволяє деяке стеження для правильної роботи вебсайтів.";
@@ -1676,7 +1565,7 @@
 "Show Tour" = "Показати знайомство";
 
 /* Accessibility Label for the tab toolbar Stop button */
-"Stop" = "Стоп";
+"Stop" = "Зупинити";
 
 /* Support section title */
 "Support" = "Підтримка";
@@ -1809,24 +1698,6 @@
 
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "непрочитане";
-
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "Увійти";
-
-/* Description string used to to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Description.v106" = "Продовжуйте з того ж місця, де зупинилися, завдяки вкладкам з інших пристроїв, які відтепер доступні на вашій домашній сторінці.";
-
-/* Title string used to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Title.v106" = "Перемикати екрани стало простіше, ніж будь-коли";
-
-/* Describes the action on the first upgrade page in the Upgrade screen. This string will be on a button so user can continue the Upgrade. */
-"Upgrade.Welcome.Action.v106" = "Розпочати";
-
-/* Description string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Description.v106" = "Нові кольори. Нові зручності. Та ж сама відданість людям, а не прибутку.";
-
-/* Title string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Title.v106" = "Вітаємо у персоналізованому інтернеті";
 
 /* Debug option */
 "Use stage servers" = "Використовувати тестові сервери";
