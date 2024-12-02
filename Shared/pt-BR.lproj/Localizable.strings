@@ -37,9 +37,6 @@
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "Visitado recentemente";
 
-/* Section title label for Shortcuts */
-"ActivityStream.Shortcuts.SectionTitle" = "Atalhos";
-
 /* The title for the setting page which lets you select the number of top site rows */
 "ActivityStream.TopSites.RowSettingFooter" = "Definir linhas";
 
@@ -83,7 +80,7 @@
 "Back" = "Voltar";
 
 /* Block pop-up windows setting */
-"Block Pop-up Windows" = "Bloquear janelas pop-up";
+"Block Pop-up Windows" = "Bloquear abertura de janelas ou abas";
 
 /* The label for the Title field when editing a bookmark */
 "Bookmark.DetailFieldTitle.Label" = "Título";
@@ -192,15 +189,6 @@
 
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Compartilhar link";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Agora você pode mover a barra de ferramentas para baixo, assim fica mais fácil digitar informações";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Para facilitar digitar informações, agora por padrão a barra de ferramentas fica embaixo.";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.FirefoxHomepage.JumpBackIn.PersonalizedHomeOldCopy.v106" = "A tela inicial personalizada do Firefox agora facilita continuar de onde você parou. Encontre suas abas, favoritos e resultados de pesquisa recentes.";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Configurações da barra de ferramentas";
@@ -351,9 +339,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Remover";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Sites: %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Configurações";
@@ -649,9 +634,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Saiba mais";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "Para salvar e preencher automaticamente contas e senhas, ative o Face ID, Touch ID ou uma senha de dispositivo.";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "Continuar";
 
@@ -659,7 +641,7 @@
 "Logins.Onboarding.LearnMoreButtonTitle" = "Saiba mais";
 
 /* Warning message shown when you try to enable or use native AutoFill without a device passcode setup */
-"Logins.PasscodeRequirement.Warning" = "Para usar o recurso de preenchimento automático do Firefox, você deve ter ativada uma senha de dispositivo.";
+"Logins.PasscodeRequirement.Warning" = "Para usar o recurso de preenchimento automático do Firefox, você deve ter ativado um código de acesso do dispositivo.";
 
 /* Label displaying welcome view tagline under the title */
 "Logins.WelcomeView.Tagline" = "Tenha suas senhas em qualquer lugar";
@@ -697,23 +679,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Filtrar";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "Contas salvas aparecem aqui. Se você salvou suas contas no Firefox em outro dispositivo, entre na sua Conta Firefox.";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "Nenhuma conta encontrada";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "Nenhum resultado corresponde à sua busca.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "Nenhuma conta corresponde";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "Cancelar";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Pesquisar contas";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "Selecione uma senha para preencher";
@@ -729,9 +699,6 @@
 
 /* Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "Marcar como não lido";
-
-/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
-"Menu.AddBookmark.AlternateLabel.v99" = "Adicionar favorito";
 
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "Favorito adicionado";
@@ -794,7 +761,7 @@
 "Menu.Paste.Title" = "Colar";
 
 /* The title for the button that lets you paste and go to a URL */
-"Menu.PasteAndGo.Title" = "Colar e ir";
+"Menu.PasteAndGo.Title" = "Colar e abrir";
 
 /* Label for the button, displayed in the menu, takes you to to Reading List screen when pressed. */
 "Menu.ReadingList.Label" = "Lista de leitura";
@@ -816,9 +783,6 @@
 
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "Removido dos atalhos";
-
-/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
-"Menu.RemoveReadingList.AlternateLabel.v99" = "Remover da lista de leitura";
 
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
 "Menu.RemoveReadingList.Confirm.v99" = "Removido da lista de leitura";
@@ -907,63 +871,6 @@
 /* Restore Tabs Affirmative Action */
 "Okay" = "Ok";
 
-/* Describes the action on the first onboarding page in our Onboarding screen. This string will be on a button so user can continue the onboarding. */
-"Onboarding.IntroAction.v102" = "Introdução";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. Indie means small independant. */
-"Onboarding.IntroDescriptionPart1.v102" = "Independente. Sem fins lucrativos. Para sempre.";
-
-/* String used to describes what Firefox is on the first onboarding page in our Onboarding screens. */
-"Onboarding.IntroDescriptionPart2.v102" = "Compromisso com a promessa de uma Internet melhor para todos.";
-
-/* Describes an action on some of the Onboarding screen, including the wallpaper onboarding screen. This string will be on a button so user can skip that onboarding page. */
-"Onboarding.LaterAction.v102" = "Agora não";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Description.v106" = "Pegue abas e senhas de seus outros dispositivos para continuar de onde parou.";
-
-/* String used to describes the option to skip the Sync sign in during onboarding for 106 version in Firefox Onboarding screens. */
-"Onboarding.Sync.Skip.Action.v106" = "Pular";
-
-/* String used to describes the title of what Firefox is on the Sync onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Sync.Title.v106" = "Alterne entre celular e computador";
-
-/* Describes an action on the sync onboarding page in our Onboarding screens. This string will be on a button so user can sign up or login directly in the onboarding. */
-"Onboarding.SyncAction.v102" = "Cadastrar-se e entrar";
-
-/* Description for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. */
-"Onboarding.SyncDescription.v102" = "Sincronize automaticamente abas e favoritos entre dispositivos para mudar de tela com facilidade.";
-
-/* Title for the sync onboarding page in our Onboarding screens. The user will be able to setup their Firefox sync account from that screen. 'Stay in the flow' means that a person is fully immersed in an activity. The user will sync with their Firefox sync account to stay connected and immersed in the activity they are doing. */
-"Onboarding.SyncTitle.v102" = "Sincronize para continuar em qualquer dispositivo";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.Classic.v106" = "Fundo de tela clássico";
-
-/* Accessibility label for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that which type of wallpaper they are seeing. */
-"Onboarding.Wallpaper.Accessibility.LimitedEdition.v106" = "Fundo de tela de edição limitada";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can set a wallpaper. */
-"Onboarding.Wallpaper.Action.v106" = "Mais fundos de tela";
-
-/* Description for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Description.v106" = "Escolha um fundo de tela que combina com você.";
-
-/* Title for the wallpaper onboarding modal displayed on top of the homepage. This describes to the user that they can choose different wallpapers. */
-"Onboarding.Wallpaper.Title.v106" = "Experimente um toque de cores";
-
-/* Description for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can set a wallpaper. */
-"Onboarding.WallpaperAction.v102" = "Escolha um fundo da tela";
-
-/* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "Escolha um fundo de tela no Firefox";
-
-/* String used to describes the description of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Description.v106" = "O Firefox coloca as pessoas acima dos lucros e defende sua privacidade por padrão.";
-
-/* String used to describes the title of what Firefox is on the welcome onboarding page for 106 version in our Onboarding screens. */
-"Onboarding.Welcome.Title.v106" = "Boas-vindas a uma internet independente";
-
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "Iniciar navegação";
 
@@ -971,7 +878,7 @@
 "Oops! Firefox crashed" = "Ops! O Firefox travou";
 
 /* See http://mzl.la/1LXbDOL */
-"Open articles in Reader View by tapping the book icon when it appears in the title bar." = "Abra artigos no Leitor tocando no ícone de livro quando ele aparecer na barra de título.";
+"Open articles in Reader View by tapping the book icon when it appears in the title bar." = "Abra artigos no modo de leitura tocando no ícone de livro quando ele aparecer na barra de título.";
 
 /* See http://mzl.la/1G7uHo7 */
 "Open Settings" = "Abrir configurações";
@@ -1019,10 +926,10 @@
 "read" = "lido";
 
 /* Accessibility label for the Reader View button */
-"Reader View" = "Leitor";
+"Reader View" = "Modo de leitura";
 
 /* Accessibility message e.g. spoken by VoiceOver when Reader Mode becomes available. */
-"ReaderMode.Available.VoiceOverAnnouncement" = "Modo Leitor disponível";
+"ReaderMode.Available.VoiceOverAnnouncement" = "Modo de leitura disponível";
 
 /* Name for Mark as read button in reader mode */
 "ReaderModeBar.MarkAsRead.v106" = "Marcar como lido";
@@ -1067,7 +974,7 @@
 "Sans-serif" = "Sem serifa";
 
 /* See http://mzl.la/1LXbDOL */
-"Save pages to your Reading List by tapping the book plus icon in the Reader View controls." = "Salve páginas na sua lista de leitura, tocando no ícone de livro com + nos controles do Leitor.";
+"Save pages to your Reading List by tapping the book plus icon in the Reader View controls." = "Salve páginas na sua lista de leitura, tocando no ícone de livro com + nos controles do modo de leitura.";
 
 /* OK button to dismiss the error prompt. */
 "ScanQRCode.Error.OK.Button" = "OK";
@@ -1129,15 +1036,6 @@
 /* The confirmation button */
 "Search.ThirdPartyEngines.OK" = "OK";
 
-/* Accessibility label for default search engine setting. */
-"SearchSettings.Accessibility.DefaultSearchEngine.v106" = "Mecanismo de pesquisa padrão";
-
-/* Title for default search engine settings section. */
-"SearchSettings.Title.DefaultSearchEngine.v106" = "Mecanismo de pesquisa padrão";
-
-/* Navigation title for search settings. */
-"SearchSettings.Title.Search.v106" = "Pesquisar";
-
 /* Message displayed in the crash dialog above the buttons used to select when sending reports */
 "Send a crash report so Mozilla can fix the problem?" = "Enviar um relatório de travamento para que a Mozilla possa corrigir o problema?";
 
@@ -1169,13 +1067,13 @@
 "SendTo.NavBar.Title" = "Enviar aba";
 
 /* Error message shown in the remote tabs panel */
-"SendTo.NoDevicesFound.Message" = "Você não tem nenhum outro dispositivo conectado a esta Conta Firefox, disponível para sincronizar.";
+"SendTo.NoDevicesFound.Message" = "Você não tem nenhum outro dispositivo conectado a esta conta Firefox, disponível para sincronizar.";
 
 /* See http://mzl.la/1ISlXnU */
 "SendTo.NotSignedIn.Message" = "Abra o Firefox, vá em Configurações e identifique-se para continuar.";
 
 /* See http://mzl.la/1ISlXnU */
-"SendTo.NotSignedIn.Title" = "Você não entrou na sua Conta Firefox.";
+"SendTo.NotSignedIn.Title" = "Você não entrou na sua conta Firefox.";
 
 /* Navigation bar button to Send the current page to a device */
 "SendTo.SendAction.Text" = "Enviar";
@@ -1259,7 +1157,7 @@
 "Settings.Disconnect.Body" = "O Firefox deixará de sincronizar com a sua conta, mas não excluirá seus dados de navegação neste dispositivo.";
 
 /* Button displayed at the bottom of settings page allowing users to Disconnect from FxA */
-"Settings.Disconnect.Button" = "Desconectar Sync";
+"Settings.Disconnect.Button" = "Desconectar sincronização";
 
 /* Cancel action button in alert when user is prompted for disconnect */
 "Settings.Disconnect.CancelButton" = "Cancelar";
@@ -1268,7 +1166,7 @@
 "Settings.Disconnect.DestructiveButton" = "Desconectar";
 
 /* Title of the alert when prompting the user asking to disconnect. */
-"Settings.Disconnect.Title" = "Desconectar Sync?";
+"Settings.Disconnect.Title" = "Desconectar sincronização?";
 
 /* Section header for brightness slider. */
 "Settings.DisplayTheme.BrightnessThreshold.SectionHeader" = "Tolerância";
@@ -1319,7 +1217,7 @@
 "Settings.FxA.DeviceName" = "Nome do dispositivo";
 
 /* Label used as a section title in the Firefox Accounts Settings screen. */
-"Settings.FxA.Sync.SectionName" = "Configurações do Sync";
+"Settings.FxA.Sync.SectionName" = "Configurações de sincronização";
 
 /* Title displayed in header of the FxA settings panel. */
 "Settings.FxA.Title" = "Conta Firefox";
@@ -1347,9 +1245,6 @@
 
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "Atalhos";
-
-/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
-"Settings.Home.Option.SponsoredPocket.v103" = "Histórias patrocinadas";
 
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "Tela inicial após quatro horas de inatividade";
@@ -1499,7 +1394,7 @@
 "Settings.Passwords.FingerPrintReason.v103" = "Use agora sua digital para acessar senhas.";
 
 /* Message shown when you enter Passwords screen for the first time. It explains how password are protected in the Firefox for iOS application. */
-"Settings.Passwords.OnboardingMessage.v103" = "Suas senhas agora estão protegidas por Face ID, Touch ID ou uma senha de dispositivo.";
+"Settings.Passwords.OnboardingMessage.v103" = "Suas senhas agora estão protegidas por Face ID, Touch ID ou um código de acesso do dispositivo.";
 
 /* Setting that appears in the Passwords screen to enable the built-in password manager so users can save their passwords. */
 "Settings.Passwords.SavePasswords.v103" = "Salvar senhas";
@@ -1553,7 +1448,7 @@
 "Settings.Studies.Toggle.Title" = "Estudos";
 
 /* Ddescription that appears in the settings screen to explain what Firefox Sync is useful for. */
-"Settings.Sync.ButtonDescription.v103" = "Entre para sincronizar abas, favoritos, senhas e muito mais.";
+"Settings.Sync.ButtonDescription.v103" = "Entre na conta para sincronizar abas, favoritos, senhas e muito mais.";
 
 /* Button label that appears in the settings to prompt the user to sign in to Firefox for iOS sync service to sync and save data. */
 "Settings.Sync.ButtonTitle.v103" = "Sincronizar e salvar dados";
@@ -1588,9 +1483,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "OK, entendi";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Se um site não funcionar conforme esperado, toque no escudo na barra de endereços e desative a proteção aprimorada contra rastreamento na página.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Atenção!";
 
@@ -1602,9 +1494,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Reduz anúncios direcionados e ajuda a impedir que anunciantes rastreiem sua navegação.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Se um site não funcionar conforme esperado, toque no escudo na barra de endereços e desative a proteção aprimorada contra rastreamento na página.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Permite algum rastreamento de anúncios para que sites funcionem corretamente.";
@@ -1688,7 +1577,7 @@
 "Sync.SyncingEllipsis.Label" = "Sincronizando…";
 
 /* Title for Sync status message when Sync failed due to being offline */
-"SyncState.Offline.Title" = "O Sync está offline";
+"SyncState.Offline.Title" = "A sincronização está offline";
 
 /* Message spoken by VoiceOver saying the position of the single currently visible tab in Tabs Tray, along with the total number of tabs. E.g. \"Tab 2 of 5\" says that tab 2 is visible (and is the only visible tab), out of 5 tabs total. */
 "Tab %@ of %@" = "Aba %1$@ de %2$@";
@@ -1751,7 +1640,7 @@
 "TabTrayButtons.Accessibility.ShowTabs.v106" = "Mostrar abas";
 
 /* Message displayed when the reader mode page could not be loaded. This message will appear only when sharing to Firefox reader mode from another app. */
-"The page could not be displayed in Reader View." = "A página não pôde ser exibida no Leitor.";
+"The page could not be displayed in Reader View." = "A página não pôde ser exibida no modo de leitura.";
 
 /* Error message in the remote tabs panel */
 "There was a problem accessing tabs from your other devices. Try again in a few moments." = "Houve um problema ao acessar abas de seus outros dispositivos. Tente novamente daqui a pouco.";
@@ -1802,31 +1691,13 @@
 "Twitter" = "Twitter";
 
 /* The menu item that pastes the current contents of the clipboard into the URL bar and navigates to the page */
-"UIMenuItem.PasteGo" = "Colar e ir";
+"UIMenuItem.PasteGo" = "Colar e abrir";
 
 /* Search in New Tab Text selection menu item */
 "UIMenuItem.SearchWithFirefox" = "Pesquisar com o Firefox";
 
 /* Accessibility label for unread article in reading list. It's a past participle - functions as an adjective. */
 "unread" = "não lido";
-
-/* Describes an action on the sync upgrade page in our Upgrade screens. This string will be on a button so user can sign up or login directly in the upgrade. */
-"Upgrade.SyncSign.Action.v106" = "Entrar";
-
-/* Description string used to to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Description.v106" = "Continue agora de onde parou, com abas de outros dispositivos na sua tela inicial.";
-
-/* Title string used to sign in to sync in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.SyncSign.Title.v106" = "Mudar de tela está mais fácil do que nunca";
-
-/* Describes the action on the first upgrade page in the Upgrade screen. This string will be on a button so user can continue the Upgrade. */
-"Upgrade.Welcome.Action.v106" = "Introdução";
-
-/* Description string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Description.v106" = "Novas cores. Nova conveniência. Mesmo compromisso com pessoas acima de lucros.";
-
-/* Title string used to welcome back users in the Upgrade screens. This screen is shown after user upgrades Firefox version. */
-"Upgrade.Welcome.Title.v106" = "Boas-vindas a uma internet mais pessoal";
 
 /* Debug option */
 "Use stage servers" = "Usar servidores de teste";

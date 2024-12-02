@@ -37,9 +37,6 @@
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "भर्खर भ्रमण गरिएको";
 
-/* Section title label for Shortcuts */
-"ActivityStream.Shortcuts.SectionTitle" = "सर्टकटहरु";
-
 /* The title for the setting page which lets you select the number of top site rows */
 "ActivityStream.TopSites.RowSettingFooter" = "पङ्क्तिहरु सेट गर्नुहोस्";
 
@@ -189,12 +186,6 @@
 
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "लिङ्क सेयर गर्नुहोस्";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "अब तपाइँ टुलबारलाई तल सार्न सक्नुहुन्छ, जसले गर्दा जानकारी प्रविष्ट गर्न सजिलो हुन्छ";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "जानकारी प्रविष्ट गर्न सजिलो बनाउन, टुलबार अब पूर्वनिर्धारित रूपमा तल छ।";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "टुलबारका सेटिङहरू";
@@ -583,9 +574,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "थप जान्नुहोस्";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "लग इनहरू र पासवर्डहरू बचत गर्न र स्वत: भर्नको लागि, फेस आईडी, टच आईडी वा यन्त्र पासकोड सक्षम गर्नुहोस्।";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "जारी राख्नुहोस्";
 
@@ -631,23 +619,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "फिल्टर";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "सुरक्षित गरिएका लगइनहरू यहाँ देखिने छन्। यदि तपाईंले आफ्नो लगइनहरू Firefox मा फरक यन्त्रमा सुरक्षित गर्नुभयो भने, आफ्नो Firefox खातामा साइन इन गर्नुहोस्।";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "कुनै पनि लगइनहरु फेला परेनन्";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "तपाईको खोजसँग मिल्ने कुनै पनि परिणामहरू छैनन्।";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "कुनै मिल्ने लगइनहरू छैनन्";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "रद्द गर्नुहोस्";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "लगइनहरु खोज्नुहोस्";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "भर्नको लागि कुनै एउटा पासवर्ड चयन गर्नुहोस्";
@@ -663,9 +639,6 @@
 
 /* Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "नपढेको रूपमा चिन्ह लगाउनुहोस्";
-
-/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
-"Menu.AddBookmark.AlternateLabel.v99" = "बुकमार्क थप्नुहोस्";
 
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "पुस्तकचिनो थपियो";
@@ -744,9 +717,6 @@
 
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "सर्टकटहरूबाट हटाइयो";
-
-/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
-"Menu.RemoveReadingList.AlternateLabel.v99" = "पठन सूचीबाट हटाउनुहोस्";
 
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
 "Menu.RemoveReadingList.Confirm.v99" = "पठन सूचीबाट हटाइयो";
@@ -1351,9 +1321,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "ठीक छ, थाहा पाएँ";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "यदि साइटले अपेक्षित रूपमा काम गर्दैन भने, ठेगाना पट्टीमा शिल्ड ट्याप गर्नुहोस् र त्यो पृष्ठको लागि, परिष्कृत ट्र्याकिङ्ग सुरक्षा बन्द गर्नुहोस्।";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "चेतावनी!";
 
@@ -1365,9 +1332,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "लक्षित विज्ञापनहरू घटाउँछ र विज्ञापनदाताहरूलाई तपाईंको ब्राउजिङ्ग ट्र्याक गर्नबाट रोक्न मद्दत गर्छ।";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "यदि साइटले अपेक्षित रूपमा काम गर्दैन भने, ठेगाना पट्टीमा शिल्ड ट्याप गर्नुहोस् र त्यो पृष्ठको लागि, परिष्कृत ट्र्याकिङ्ग सुरक्षा बन्द गर्नुहोस्।";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "वेबसाइटहरू राम्रोसँग काम गर्नका लागि केहि बिज्ञापन ट्रयाकरहरूलाई अनुमति दिनुहोस् ।";

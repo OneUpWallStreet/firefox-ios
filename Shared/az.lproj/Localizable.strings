@@ -28,9 +28,6 @@
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "Təzəlikcə ziyarət edilən";
 
-/* Section title label for Shortcuts */
-"ActivityStream.Shortcuts.SectionTitle" = "Qısayollar";
-
 /* The title for the setting page which lets you select the number of top site rows */
 "ActivityStream.TopSites.RowSettingFooter" = "Sətirləri qur";
 
@@ -988,9 +985,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "Tamam, başa düşdüm";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Əgər sayt gözlənildiyi kimi işləmirsə, ünvan sətrindəki qalxana toxunun və bu səhifə üçün artırılmış izlənmə qorumasını söndürün.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Diqqət!";
 
@@ -1002,9 +996,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Hədəflənmiş reklamları azaldır və reklam verənlərin sizi internetdə izləməsini dayandırmağa kömək edir.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Əgər sayt gözlənildiyi kimi işləmirsə, ünvan sətrindəki qalxana toxunun və bu səhifə üçün artırılmış izlənmə qorumasını söndürün.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Saytların düz işləyə bilmələri üçün bəzi reklam izləyicilərinə icazə verir.";

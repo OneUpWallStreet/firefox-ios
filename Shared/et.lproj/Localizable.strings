@@ -37,9 +37,6 @@
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "Hiljuti külastatud";
 
-/* Section title label for Shortcuts */
-"ActivityStream.Shortcuts.SectionTitle" = "Otseteed";
-
 /* The title for the setting page which lets you select the number of top site rows */
 "ActivityStream.TopSites.RowSettingFooter" = "Ridade määramine";
 
@@ -190,12 +187,6 @@
 /* Context menu item for sharing a link URL */
 "ContextMenu.ShareLinkButtonTitle" = "Jaga linki";
 
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to existing users. It tells them that the search bar can now be moved to the bottom of the screen. */
-"ContextualHint.SearchBarPlacement.ExistingUsers" = "Info lihtsamaks sisestamiseks saad nüüd tööriistariba alla liigutada";
-
-/* Contextual hints are little popups that appear for the users informing them of new features. This one introduces search bar placement to new users. It tells them that by default, the search bar will appear at the bottom of the device. */
-"ContextualHint.SearchBarPlacement.NewUsers" = "Info sisestamise lihtsustamiseks on tööriistariba nüüd vaikimisi allosas.";
-
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Tööriistariba sätted";
 
@@ -339,9 +330,6 @@
 
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Eemalda";
-
-/* Label showing how many sites there is in a search group. %d represents a number */
-"FirefoxHomepage.Common.SitesCount.v101" = "Saite: %d";
 
 /* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
 "FirefoxHomepage.ContextualMenu.Settings.v101" = "Sätted";
@@ -613,9 +601,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Rohkem teavet";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "Kasutajanimede ja paroolide salvestamiseks ning automaatseks täitmiseks luba Face ID, Touch ID või seadme pääsukood.";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "Jätka";
 
@@ -661,23 +646,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Filtreeri";
 
-/* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "Salvestatud kasutajatunnuseid kuvatakse siin. Kui salvestasid oma kasutajatunnused teises seadmes olevasse Firefoxi, siis logi sisse oma Firefoxi kontosse.";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "Kasutajakontosid ei leitud";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "Otsingule ei leitud vasteid.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "Sobivaid kasutajatunnuseid ei leitud";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "Loobu";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Otsi kasutajakontosid";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "Parooli valimine täitmiseks";
@@ -693,9 +666,6 @@
 
 /* Title for the button that marks a reading list item as unread */
 "Mark as Unread" = "Märgi mitteloetuks";
-
-/* Long label for the add bookmark button displayed in the menu. Pressing this button bookmarks the current page. */
-"Menu.AddBookmark.AlternateLabel.v99" = "Lisa järjehoidjatesse";
 
 /* Toast displayed to the user after a bookmark has been added. */
 "Menu.AddBookmark.Confirm" = "Järjehoidja lisatud";
@@ -774,9 +744,6 @@
 
 /* Toast displayed to the user after removing the item to the Shortcuts. */
 "Menu.RemovePin.Confirm2.v99" = "Eemalda otseteede hulgast";
-
-/* Long label for the remove from reading list button in the menu. Pressing this button removes the current page from the reading list. */
-"Menu.RemoveReadingList.AlternateLabel.v99" = "Eemalda lugemisnimekirjast";
 
 /* Toast displayed to confirm to the user that his reading list item was correctly removed. */
 "Menu.RemoveReadingList.Confirm.v99" = "Lugemisnimekirjast eemaldatud";
@@ -1423,9 +1390,6 @@
 /* Dismiss button for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Button" = "Olgu, sain aru";
 
-/* Decription for the tracker protection alert. */
-"Settings.TrackingProtection.Alert.Description" = "Kui sait ei tööta ootuspäraselt, siis puuduta aadressiribal olevat kilpi ning lülita selle lehe jaoks täiustatud jälitamisvastane kaitse välja.";
-
 /* Title for the tracker protection alert. */
 "Settings.TrackingProtection.Alert.Title" = "Tähelepanu!";
 
@@ -1437,9 +1401,6 @@
 
 /* Additional information about your Enhanced Tracking Protection */
 "Settings.TrackingProtection.ProtectionCellFooter" = "Vähendab sihitud reklaame ja takistab reklaamijatel sinu tegevuse jälitamist.";
-
-/* Footer information for tracker protection level. */
-"Settings.TrackingProtection.ProtectionLevel.Footer" = "Kui sait ei tööta ootuspäraselt, siis puuduta aadressiribal olevat kilpi ning lülita selle lehe jaoks täiustatud jälitamisvastane kaitse välja.";
 
 /* Description for standard level tracker protection */
 "Settings.TrackingProtection.ProtectionLevelStandard.Description" = "Mõned jälitavad reklaamid on lubatud, nii et saidid töötaksid ootuspäraselt.";
